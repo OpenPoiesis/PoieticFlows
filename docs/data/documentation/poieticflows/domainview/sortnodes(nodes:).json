@@ -242,7 +242,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Package for simulation of the ",
+      "text" : "Poietic library for modelling and simulation of the ",
       "type" : "text"
     },
     {
@@ -269,7 +269,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/DomainView": {
   "abstract" : [
     {
-      "text" : "Flows domain view on top of a graph.",
+      "text" : "View of Stock-and-Flow domain-specific aspects of the design.",
       "type" : "text"
     }
   ],

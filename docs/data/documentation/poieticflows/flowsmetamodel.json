@@ -86,6 +86,97 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "The ",
+              "type" : "text"
+            },
+            {
+              "code" : "FlowsMetamodel",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " describes concepts, components, constraints and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "queries that define the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Stock_and_flow",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "model domain.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The basic object types are: ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Stock",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Flow",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ", ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Auxiliary",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ". More advanced",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "node type is ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/GraphicalFunction",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "content" : [
             {
               "inlineContent" : [
@@ -147,7 +238,8 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PositionComponent"
-      ]
+      ],
+      "title" : "Model and Components"
     }
   ],
   "topicSections" : [
@@ -215,7 +307,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Package for simulation of the ",
+      "text" : "Poietic library for modelling and simulation of the ",
       "type" : "text"
     },
     {
@@ -1822,6 +1914,18 @@
   "title" : "StockComponent",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockcomponent"
+},
+"https://en.wikipedia.org/wiki/Stock_and_flow": {
+  "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Stock_and_flow",
+  "title" : "Stock and Flow",
+  "titleInlineContent" : [
+    {
+      "text" : "Stock and Flow",
+      "type" : "text"
+    }
+  ],
+  "type" : "link",
+  "url" : "https:\/\/en.wikipedia.org\/wiki\/Stock_and_flow"
 }
 }
 }

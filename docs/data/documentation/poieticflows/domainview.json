@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Flows domain view on top of a graph.",
+      "text" : "View of Stock-and-Flow domain-specific aspects of the design.",
       "type" : "text"
     }
   ],
@@ -76,6 +76,43 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The domain view provides higher level view of the design through higher",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "level concepts as defined in the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -152,7 +189,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Package for simulation of the ",
+      "text" : "Poietic library for modelling and simulation of the ",
       "type" : "text"
     },
     {
@@ -290,7 +327,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/DomainView": {
   "abstract" : [
     {
-      "text" : "Flows domain view on top of a graph.",
+      "text" : "View of Stock-and-Flow domain-specific aspects of the design.",
       "type" : "text"
     }
   ],
@@ -1356,6 +1393,40 @@
   "title" : "validateParameters(_:required:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/domainview\/validateparameters(_:required:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
+  "abstract" : [
+    {
+      "text" : "The metamodel for Stock-and-Flows domain model.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FlowsMetamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssue": {
   "abstract" : [

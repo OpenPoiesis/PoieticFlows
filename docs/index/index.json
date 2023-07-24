@@ -4,6 +4,10 @@
       {
         "children" : [
           {
+            "title" : "Model and Components",
+            "type" : "groupMarker"
+          },
+          {
             "children" : [
               {
                 "title" : "Type Properties",

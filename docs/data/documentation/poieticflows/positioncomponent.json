@@ -107,7 +107,8 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent"
-      ]
+      ],
+      "title" : "Model and Components"
     }
   ],
   "topicSections" : [
@@ -179,7 +180,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Package for simulation of the ",
+      "text" : "Poietic library for modelling and simulation of the ",
       "type" : "text"
     },
     {
