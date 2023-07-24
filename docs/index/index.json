@@ -1,0 +1,1748 @@
+{
+  "interfaceLanguages" : {
+    "swift" : [
+      {
+        "children" : [
+          {
+            "children" : [
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/auxiliary",
+                "title" : "static let Auxiliary: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/drains-38oqw",
+                "title" : "static let Drains: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/fills-8qqu8",
+                "title" : "static let Fills: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/flow",
+                "title" : "static let Flow: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/graphicalfunction",
+                "title" : "static let GraphicalFunction: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitflow",
+                "title" : "static let ImplicitFlow: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/parameter",
+                "title" : "static let Parameter: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/stock",
+                "title" : "static let Stock: ObjectType",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/timedeltavariable",
+                "title" : "static let TimeDeltaVariable: BuiltinVariable",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/timevariable",
+                "title" : "static let TimeVariable: BuiltinVariable",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/components",
+                "title" : "static let components: [Component.Type]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/constraints",
+                "title" : "static let constraints: [Constraint]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/drains-2akim",
+                "title" : "static let drains: NeighborhoodSelector",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/drainsedge",
+                "title" : "static let drainsEdge: IsTypePredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/expressionnodes",
+                "title" : "static let expressionNodes: HasComponentPredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/fills-ck6c",
+                "title" : "static let fills: NeighborhoodSelector",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/fillsedge",
+                "title" : "static let fillsEdge: IsTypePredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/flownodes",
+                "title" : "static let flowNodes: IsTypePredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/graphicalfunctionnodes",
+                "title" : "static let graphicalFunctionNodes: HasComponentPredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitdrains",
+                "title" : "static let implicitDrains: NeighborhoodSelector",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitfills",
+                "title" : "static let implicitFills: NeighborhoodSelector",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitflowedge",
+                "title" : "static let implicitFlowEdge: IsTypePredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/incomingparameters",
+                "title" : "static let incomingParameters: NeighborhoodSelector",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/inflows",
+                "title" : "static let inflows: NeighborhoodSelector",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/namednodes",
+                "title" : "static let namedNodes: HasComponentPredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/objecttypes",
+                "title" : "static let objectTypes: [ObjectType]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/outflows",
+                "title" : "static let outflows: NeighborhoodSelector",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/parameteredges",
+                "title" : "static let parameterEdges: IsTypePredicate",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/variables",
+                "title" : "static let variables: [BuiltinVariable]",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowsmetamodel\/variablenames",
+                    "title" : "static var variableNames: [String]",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Type Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowsmetamodel\/componenttype(name:)",
+                    "title" : "static func componentType(name: String) -> Component.Type?",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowsmetamodel\/objecttype(name:)",
+                    "title" : "static func objectType(name: String) -> ObjectType?",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/flowsmetamodel\/metamodel-implementations",
+                "title" : "Metamodel Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/flowsmetamodel",
+            "title" : "FlowsMetamodel",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Operators",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/==(_:_:)",
+                "title" : "static func == (FormulaComponent, FormulaComponent) -> Bool",
+                "type" : "op"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/init(expression:)",
+                "title" : "init(expression: String)",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/init(float:)",
+                "title" : "init(float: Float)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/expressionstring",
+                "title" : "var expressionString: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/attribute(forkey:)",
+                "title" : "func attribute(forKey: AttributeKey) -> AttributeValue?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/setattribute(value:forkey:)",
+                "title" : "func setAttribute(value: AttributeValue, forKey: AttributeKey) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/componentdescription",
+                "title" : "static var componentDescription: ComponentDescription",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/formulacomponent\/init(record:)",
+                    "title" : "init(record: ForeignRecord) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/formulacomponent\/componentname",
+                    "title" : "var componentName: String",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/formulacomponent\/foreignrecord()",
+                    "title" : "func foreignRecord() -> ForeignRecord",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/component-implementations",
+                "title" : "Component Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/formulacomponent\/attributekeys",
+                    "title" : "var attributeKeys: [String]",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/formulacomponent\/dictionary(withkeys:)",
+                    "title" : "func dictionary(withKeys: [AttributeKey]) -> AttributeDictionary",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/keyedattributes-implementations",
+                "title" : "KeyedAttributes Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/formulacomponent\/setattributes(_:)",
+                    "title" : "func setAttributes(AttributeDictionary) throws",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/formulacomponent\/mutablekeyedattributes-implementations",
+                "title" : "MutableKeyedAttributes Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/formulacomponent",
+            "title" : "FormulaComponent",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/init(priority:)",
+                "title" : "init(priority: Int)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/priority",
+                "title" : "var priority: Int",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/attribute(forkey:)",
+                "title" : "func attribute(forKey: AttributeKey) -> AttributeValue?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/setattribute(value:forkey:)",
+                "title" : "func setAttribute(value: AttributeValue, forKey: AttributeKey) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/componentdescription",
+                "title" : "static var componentDescription: ComponentDescription",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowcomponent\/init(record:)",
+                    "title" : "init(record: ForeignRecord) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowcomponent\/componentname",
+                    "title" : "var componentName: String",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowcomponent\/foreignrecord()",
+                    "title" : "func foreignRecord() -> ForeignRecord",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/component-implementations",
+                "title" : "Component Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowcomponent\/attributekeys",
+                    "title" : "var attributeKeys: [String]",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowcomponent\/dictionary(withkeys:)",
+                    "title" : "func dictionary(withKeys: [AttributeKey]) -> AttributeDictionary",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/keyedattributes-implementations",
+                "title" : "KeyedAttributes Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/flowcomponent\/setattributes(_:)",
+                    "title" : "func setAttributes(AttributeDictionary) throws",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/flowcomponent\/mutablekeyedattributes-implementations",
+                "title" : "MutableKeyedAttributes Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/flowcomponent",
+            "title" : "FlowComponent",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/init(allowsnegative:delayedinflow:)",
+                "title" : "init(allowsNegative: Bool, delayedInflow: Bool)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/attribute(forkey:)",
+                "title" : "func attribute(forKey: AttributeKey) -> AttributeValue?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/setattribute(value:forkey:)",
+                "title" : "func setAttribute(value: AttributeValue, forKey: AttributeKey) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/componentdescription",
+                "title" : "static var componentDescription: ComponentDescription",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/stockcomponent\/init(record:)",
+                    "title" : "init(record: ForeignRecord) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/stockcomponent\/componentname",
+                    "title" : "var componentName: String",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/stockcomponent\/foreignrecord()",
+                    "title" : "func foreignRecord() -> ForeignRecord",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/component-implementations",
+                "title" : "Component Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/stockcomponent\/attributekeys",
+                    "title" : "var attributeKeys: [String]",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/stockcomponent\/dictionary(withkeys:)",
+                    "title" : "func dictionary(withKeys: [AttributeKey]) -> AttributeDictionary",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/keyedattributes-implementations",
+                "title" : "KeyedAttributes Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/stockcomponent\/setattributes(_:)",
+                    "title" : "func setAttributes(AttributeDictionary) throws",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/stockcomponent\/mutablekeyedattributes-implementations",
+                "title" : "MutableKeyedAttributes Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/stockcomponent",
+            "title" : "StockComponent",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/init(x:y:)",
+                "title" : "init(x: Double, y: Double)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/attribute(forkey:)",
+                "title" : "func attribute(forKey: AttributeKey) -> AttributeValue?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/setattribute(value:forkey:)",
+                "title" : "func setAttribute(value: AttributeValue, forKey: AttributeKey) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/componentdescription",
+                "title" : "static var componentDescription: ComponentDescription",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/positioncomponent\/init(record:)",
+                    "title" : "init(record: ForeignRecord) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/positioncomponent\/componentname",
+                    "title" : "var componentName: String",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/positioncomponent\/foreignrecord()",
+                    "title" : "func foreignRecord() -> ForeignRecord",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/component-implementations",
+                "title" : "Component Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/positioncomponent\/attributekeys",
+                    "title" : "var attributeKeys: [String]",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/positioncomponent\/dictionary(withkeys:)",
+                    "title" : "func dictionary(withKeys: [AttributeKey]) -> AttributeDictionary",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/keyedattributes-implementations",
+                "title" : "KeyedAttributes Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/positioncomponent\/setattributes(_:)",
+                    "title" : "func setAttributes(AttributeDictionary) throws",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/positioncomponent\/mutablekeyedattributes-implementations",
+                "title" : "MutableKeyedAttributes Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/positioncomponent",
+            "title" : "PositionComponent",
+            "type" : "struct"
+          },
+          {
+            "title" : "Compiler",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/init(_:)",
+                "title" : "init(Graph)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/expressionnodes",
+                "title" : "var expressionNodes: [Node]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/graph",
+                "title" : "let graph: Graph",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/graphicalfunctionnodes",
+                "title" : "var graphicalFunctionNodes: [Node]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/namednodes",
+                "title" : "var namedNodes: [Node]",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/boundexpressions(names:)",
+                "title" : "func boundExpressions(names: [String : ObjectID]) throws -> [ObjectID : BoundExpression]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/boundgraphicalfunctions()",
+                "title" : "func boundGraphicalFunctions() throws -> [BoundGraphicalFunction]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/flowdrains(_:)",
+                "title" : "func flowDrains(ObjectID) -> ObjectID?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/flowfills(_:)",
+                "title" : "func flowFills(ObjectID) -> ObjectID?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/implicitdrains(_:)",
+                "title" : "func implicitDrains(ObjectID) -> [ObjectID]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/implicitfills(_:)",
+                "title" : "func implicitFills(ObjectID) -> [ObjectID]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/namestoobjects()",
+                "title" : "func namesToObjects() throws -> [String : ObjectID]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/objectstonames()",
+                "title" : "func objectsToNames() -> [ObjectID : String]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/parameteroutlets(_:)",
+                "title" : "func parameterOutlets(ObjectID) -> [ParameterOutlet]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/parameters(_:required:)",
+                "title" : "func parameters(ObjectID, required: [String]) -> [String : ParameterStatus]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/sortnodes(nodes:)",
+                "title" : "func sortNodes(nodes: [ObjectID]) throws -> [Node]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/sortedstocksbyimplicitflows(_:)",
+                "title" : "func sortedStocksByImplicitFlows([ObjectID]) throws -> [Node]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/stockinflows(_:)",
+                "title" : "func stockInflows(ObjectID) -> [ObjectID]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/stockoutflows(_:)",
+                "title" : "func stockOutflows(ObjectID) -> [ObjectID]",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainview\/validateparameters(_:required:)",
+                "title" : "func validateParameters(ObjectID, required: [String]) -> [NodeIssue]",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/domainview",
+            "title" : "DomainView",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/compiler\/init(frame:)",
+                "title" : "init(frame: MutableFrame)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/compiler\/compile()",
+                "title" : "func compile() throws -> CompiledModel",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/compiler\/updateimplicitflows()",
+                "title" : "func updateImplicitFlows()",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/compiler",
+            "title" : "Compiler",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/compiledmodel\/namednodes",
+                "title" : "var namedNodes: [String : Node]",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/compiledmodel\/expressionnode(name:)",
+                "title" : "func expressionNode(name: String) -> Node?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/compiledmodel\/node(named:)",
+                "title" : "func node(named: String) -> Node?",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/compiledmodel",
+            "title" : "CompiledModel",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/domainerror\/issues",
+                "title" : "var issues: [ObjectID : [NodeIssue]]",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/domainerror\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/domainerror\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/domainerror",
+            "title" : "DomainError",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/nodeissue\/duplicatename(_:)",
+                "title" : "case duplicateName(String)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/nodeissue\/expressionsyntaxerror(_:)",
+                "title" : "case expressionSyntaxError(ExpressionSyntaxError)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/nodeissue\/missinggraphicalfunctionparameter",
+                "title" : "case missingGraphicalFunctionParameter",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/nodeissue\/unknownparameter(_:)",
+                "title" : "case unknownParameter(String)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/nodeissue\/unusedinput(_:)",
+                "title" : "case unusedInput(String)",
+                "type" : "case"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/nodeissue\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/nodeissue\/hint",
+                "title" : "var hint: String?",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/nodeissue\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/nodeissue\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/nodeissue\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/nodeissue\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/nodeissue",
+            "title" : "NodeIssue",
+            "type" : "enum"
+          },
+          {
+            "title" : "Simulation and Solver",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/poieticflows\/statevector",
+            "title" : "StateVector",
+            "type" : "typealias"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/init(_:)",
+                "title" : "init(CompiledModel)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/compiledmodel",
+                "title" : "let compiledModel: CompiledModel",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/compute(at:with:timedelta:)",
+                "title" : "func compute(at: Double, with: StateVector, timeDelta: Double) -> StateVector",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/computestock(stock:at:with:)",
+                "title" : "func computeStock(stock: ObjectID, at: Double, with: inout StateVector) -> Double",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/evaluate(object:with:at:timedelta:)",
+                "title" : "func evaluate(object: ObjectID, with: StateVector, at: Double, timeDelta: Double) -> Double",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/initialize(time:override:)",
+                "title" : "func initialize(time: Double, override: [ObjectID : Double]) -> StateVector",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/registeredsolvernames",
+                "title" : "static var registeredSolverNames: [String]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/registeredsolvers",
+                "title" : "static var registeredSolvers: [String : Solver.Type]",
+                "type" : "property"
+              },
+              {
+                "title" : "Type Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/solver\/registersolver(name:solver:)",
+                "title" : "static func registerSolver(name: String, solver: Solver.Type)",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/solver",
+            "title" : "Solver",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/eulersolver\/compute(at:with:timedelta:)",
+                "title" : "func compute(at: Double, with: StateVector, timeDelta: Double) -> StateVector",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/eulersolver",
+            "title" : "EulerSolver",
+            "type" : "class"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/rungekutta4solver\/compute(at:with:timedelta:)",
+                "title" : "func compute(at: Double, with: StateVector, timeDelta: Double) -> StateVector",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/rungekutta4solver",
+            "title" : "RungeKutta4Solver",
+            "type" : "class"
+          },
+          {
+            "path" : "\/documentation\/poieticflows\/statevector",
+            "title" : "StateVector",
+            "type" : "typealias"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Operators",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/*(_:_:)-2fqit",
+                "title" : "static func * (Double, KeyedNumericVector<Key>) -> KeyedNumericVector<Key>",
+                "type" : "op"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/*(_:_:)-7bqwg",
+                "title" : "static func * (KeyedNumericVector<Key>, Double) -> KeyedNumericVector<Key>",
+                "type" : "op"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/\/(_:_:)",
+                "title" : "static func \/ (KeyedNumericVector<Key>, Double) -> KeyedNumericVector<Key>",
+                "type" : "op"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/init(_:)",
+                "title" : "init([Key : Double])",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/keys",
+                "title" : "var keys: [Key]",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/values",
+                "title" : "var values: [Double]",
+                "type" : "property"
+              },
+              {
+                "title" : "Subscripts",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/subscript(_:)",
+                "title" : "subscript(Key) -> Double?",
+                "type" : "subscript"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/keyednumericvector\/+(_:)",
+                    "title" : "static func + (Self) -> Self",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/keyednumericvector\/+(_:_:)",
+                    "title" : "static func + (KeyedNumericVector<Key>, KeyedNumericVector<Key>) -> KeyedNumericVector<Key>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/keyednumericvector\/+=(_:_:)",
+                    "title" : "static func += (inout Self, Self)",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/keyednumericvector\/-(_:_:)",
+                    "title" : "static func - (KeyedNumericVector<Key>, KeyedNumericVector<Key>) -> KeyedNumericVector<Key>",
+                    "type" : "op"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/keyednumericvector\/-=(_:_:)",
+                    "title" : "static func -= (inout Self, Self)",
+                    "type" : "op"
+                  },
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/keyednumericvector\/zero",
+                    "title" : "static var zero: KeyedNumericVector<Key>",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/additivearithmetic-implementations",
+                "title" : "AdditiveArithmetic Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/keyednumericvector\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/keyednumericvector\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/keyednumericvector",
+            "title" : "KeyedNumericVector",
+            "type" : "struct"
+          },
+          {
+            "title" : "Built-in Functions",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/poieticflows\/builtinunaryoperators",
+            "title" : "let BuiltinUnaryOperators: [FunctionProtocol]",
+            "type" : "var"
+          },
+          {
+            "path" : "\/documentation\/poieticflows\/builtinbinaryoperators",
+            "title" : "let BuiltinBinaryOperators: [FunctionProtocol]",
+            "type" : "var"
+          },
+          {
+            "path" : "\/documentation\/poieticflows\/builtinfunctions",
+            "title" : "let BuiltinFunctions: [FunctionProtocol]",
+            "type" : "var"
+          },
+          {
+            "title" : "Classes",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunction\/init(points:)",
+                "title" : "init(points: [Point])",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunction\/createfunction(name:)",
+                "title" : "func createFunction(name: String) -> NumericUnaryFunction",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunction\/stepfunction(x:)",
+                "title" : "func stepFunction(x: Double) -> Double",
+                "type" : "method"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/graphicalfunction",
+            "title" : "GraphicalFunction",
+            "type" : "class"
+          },
+          {
+            "title" : "Structures",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/boundgraphicalfunction\/function",
+                "title" : "let function: GraphicalFunction",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/boundgraphicalfunction\/functionnodeid",
+                "title" : "let functionNodeID: ObjectID",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/boundgraphicalfunction\/parameterid",
+                "title" : "let parameterID: ObjectID",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/boundgraphicalfunction",
+            "title" : "BoundGraphicalFunction",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/init()",
+                "title" : "init()",
+                "type" : "init"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/init(points:method:)",
+                "title" : "init(points: [Point], method: InterpolationMethod)",
+                "type" : "init"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/function",
+                "title" : "var function: GraphicalFunction",
+                "type" : "property"
+              },
+              {
+                "title" : "Instance Methods",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/attribute(forkey:)",
+                "title" : "func attribute(forKey: String) -> AttributeValue?",
+                "type" : "method"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/setattribute(value:forkey:)",
+                "title" : "func setAttribute(value: AttributeValue, forKey: AttributeKey) throws",
+                "type" : "method"
+              },
+              {
+                "title" : "Type Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/componentdescription",
+                "title" : "static var componentDescription: ComponentDescription",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Initializers",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/init(record:)",
+                    "title" : "init(record: ForeignRecord) throws",
+                    "type" : "init"
+                  },
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/componentname",
+                    "title" : "var componentName: String",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/foreignrecord()",
+                    "title" : "func foreignRecord() -> ForeignRecord",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/component-implementations",
+                "title" : "Component Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/attributekeys",
+                    "title" : "var attributeKeys: [String]",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/dictionary(withkeys:)",
+                    "title" : "func dictionary(withKeys: [AttributeKey]) -> AttributeDictionary",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/keyedattributes-implementations",
+                "title" : "KeyedAttributes Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/setattributes(_:)",
+                    "title" : "func setAttributes(AttributeDictionary) throws",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/mutablekeyedattributes-implementations",
+                "title" : "MutableKeyedAttributes Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/graphicalfunctioncomponent",
+            "title" : "GraphicalFunctionComponent",
+            "type" : "struct"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/parameteroutlet\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/parameteroutlet\/name",
+                "title" : "let name: String?",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/parameteroutlet\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/parameteroutlet\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/parameteroutlet",
+            "title" : "ParameterOutlet",
+            "type" : "struct"
+          },
+          {
+            "title" : "Functions",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/poieticflows\/createpredatorpreydemo(in:)",
+            "title" : "func CreatePredatorPreyDemo(in: ObjectMemory) throws",
+            "type" : "func"
+          },
+          {
+            "title" : "Enumerations",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/computationalrepresentation\/formula(_:)",
+                "title" : "case formula(BoundExpression)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/computationalrepresentation\/graphicalfunction(_:_:)",
+                "title" : "case graphicalFunction(NumericUnaryFunction, ObjectID)",
+                "type" : "case"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/computationalrepresentation",
+            "title" : "ComputationalRepresentation",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/interpolationmethod\/step",
+                "title" : "case step",
+                "type" : "case"
+              },
+              {
+                "title" : "Initializers",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/interpolationmethod\/init(rawvalue:)",
+                "title" : "init?(rawValue: String)",
+                "type" : "init"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/interpolationmethod\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/interpolationmethod\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/interpolationmethod\/hashvalue",
+                    "title" : "var hashValue: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/interpolationmethod\/hash(into:)",
+                    "title" : "func hash(into: inout Hasher)",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/interpolationmethod\/rawrepresentable-implementations",
+                "title" : "RawRepresentable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/interpolationmethod",
+            "title" : "InterpolationMethod",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/parameterstatus\/missing",
+                "title" : "case missing",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/parameterstatus\/unused(node:edge:)",
+                "title" : "case unused(node: ObjectID, edge: ObjectID)",
+                "type" : "case"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/parameterstatus\/used(node:edge:)",
+                "title" : "case used(node: ObjectID, edge: ObjectID)",
+                "type" : "case"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/parameterstatus\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/parameterstatus\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/parameterstatus",
+            "title" : "ParameterStatus",
+            "type" : "enum"
+          },
+          {
+            "title" : "Extended Modules",
+            "type" : "groupMarker"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Extended Classes",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Methods",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/node\/parsedexpression()",
+                    "title" : "func parsedExpression() throws -> UnboundExpression?",
+                    "type" : "method"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/poieticcore\/node",
+                "title" : "Node",
+                "type" : "extension"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/poieticcore",
+            "title" : "PoieticCore",
+            "type" : "extension"
+          }
+        ],
+        "path" : "\/documentation\/poieticflows",
+        "title" : "PoieticFlows",
+        "type" : "module"
+      }
+    ]
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 1,
+    "patch" : 1
+  }
+}
