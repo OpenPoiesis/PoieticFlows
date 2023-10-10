@@ -503,7 +503,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Chart": {
   "abstract" : [
-
+    {
+      "text" : "A user interface node representing a chart.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -545,7 +548,18 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ChartSeries": {
   "abstract" : [
-
+    {
+      "text" : "An edge type to connect a chart with a series that are included in the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "chart.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -587,7 +601,18 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Control": {
   "abstract" : [
-
+    {
+      "text" : "A user interface mode representing a control that modifies a value of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "its target node.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -807,7 +832,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/GraphicalFunction": {
   "abstract" : [
     {
-      "text" : "An auxiliary node - containing a constant or a formula.",
+      "text" : "An auxiliary node with a function that is described by a graph.",
       "type" : "text"
     }
   ],
@@ -904,7 +929,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Note": {
   "abstract" : [
-
+    {
+      "text" : "A node that contains a note, a comment.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -1126,7 +1154,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ValueBinding": {
   "abstract" : [
-
+    {
+      "text" : "An edge type to connect controls with their targets.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -1168,7 +1199,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/components": {
   "abstract" : [
-
+    {
+      "text" : "List of components that are used in the Stock and Flow models.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

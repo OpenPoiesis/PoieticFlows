@@ -1,15 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Inherited from ",
-      "type" : "text"
-    },
-    {
-      "code" : "Metamodel.components",
-      "type" : "codeVoice"
-    },
-    {
-      "text" : ".",
+      "text" : "List of components that are used in the Stock and Flow models.",
       "type" : "text"
     }
   ],
@@ -208,7 +200,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/components": {
   "abstract" : [
-
+    {
+      "text" : "List of components that are used in the Stock and Flow models.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

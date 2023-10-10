@@ -1608,7 +1608,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/GraphicalFunction": {
   "abstract" : [
     {
-      "text" : "An auxiliary node - containing a constant or a formula.",
+      "text" : "An auxiliary node with a function that is described by a graph.",
       "type" : "text"
     }
   ],

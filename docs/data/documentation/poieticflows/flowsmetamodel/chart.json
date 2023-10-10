@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "A user interface node representing a chart.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -99,6 +105,47 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Chart contains series that are connected with the chart using the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ChartSeries",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " edge where the origin is the chart and",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the target is a value node.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -186,7 +233,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Chart": {
   "abstract" : [
-
+    {
+      "text" : "A user interface node representing a chart.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -225,6 +275,59 @@
   "title" : "Chart",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel\/chart"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ChartSeries": {
+  "abstract" : [
+    {
+      "text" : "An edge type to connect a chart with a series that are included in the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "chart.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChartSeries"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ChartSeries",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChartSeries",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/chartseries"
 }
 }
 }

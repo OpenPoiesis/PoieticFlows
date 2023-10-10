@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "An auxiliary node - containing a constant or a formula.",
+      "text" : "An auxiliary node with a function that is described by a graph.",
       "type" : "text"
     }
   ],
@@ -105,6 +105,26 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Graphical function is specified by a collection of 2D points.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -193,7 +213,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/GraphicalFunction": {
   "abstract" : [
     {
-      "text" : "An auxiliary node - containing a constant or a formula.",
+      "text" : "An auxiliary node with a function that is described by a graph.",
       "type" : "text"
     }
   ],
