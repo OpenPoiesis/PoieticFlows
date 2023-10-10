@@ -1,0 +1,363 @@
+{
+  "abstract" : [
+    {
+      "text" : "A system that updates edges that denote implicit flows between stocks.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows08ImplicitB6SystemV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ImplicitFlowsSystem"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ImplicitFlowsSystem"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "ImplicitFlowsSystem"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ImplicitFlowsSystem"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The created edges are of type ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ImplicitFlow",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "For more information see the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem\/update(_:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " method of this system.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/TransformationSystem"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem\/update(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/implicitflowssystem"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ImplicitFlow": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ImplicitFlow"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ImplicitFlow",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ImplicitFlow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitflow"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ImplicitFlowsSystem": {
+  "abstract" : [
+    {
+      "text" : "A system that updates edges that denote implicit flows between stocks.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ImplicitFlowsSystem"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ImplicitFlowsSystem"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ImplicitFlowsSystem",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/implicitflowssystem"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ImplicitFlowsSystem/update(_:)": {
+  "abstract" : [
+    {
+      "text" : "Update edges that denote implicit flows between stocks.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "update"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows21TransformationContextV",
+      "text" : "TransformationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem\/update(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "update(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/implicitflowssystem\/update(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/TransformationSystem": {
+  "abstract" : [
+    {
+      "text" : "Protocol for systems that transform frame data into another kind",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of data within the same frame.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "TransformationSystem"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/TransformationSystem",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "TransformationSystem"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "TransformationSystem",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/transformationsystem"
+}
+}
+}

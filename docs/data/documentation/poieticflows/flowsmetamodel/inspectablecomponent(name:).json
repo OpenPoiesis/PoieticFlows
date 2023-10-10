@@ -1,0 +1,323 @@
+{
+  "abstract" : [
+    {
+      "text" : "Inherited from ",
+      "type" : "text"
+    },
+    {
+      "code" : "Metamodel.inspectableComponent(name:)",
+      "type" : "codeVoice"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Metamodel-Implementations"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/inspectableComponent(name:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "extendedModule" : "PoieticCore",
+    "externalID" : "s:11PoieticCore9MetamodelPAAE20inspectableComponent4nameAA011InspectableE0_pXpSgSS_tFZ::SYNTHESIZED::s:12PoieticFlows0B9MetamodelC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "static"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "inspectableComponent"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "name"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:SS",
+        "text" : "String"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:11PoieticCore20InspectableComponentP",
+        "text" : "InspectableComponent"
+      },
+      {
+        "kind" : "text",
+        "text" : ".Type?"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows",
+        "relatedModules" : [
+          "PoieticCore"
+        ]
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Method",
+    "symbolKind" : "method",
+    "title" : "inspectableComponent(name:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "static"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "inspectableComponent"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "name"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:SS",
+              "text" : "String"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11PoieticCore20InspectableComponentP",
+              "text" : "InspectableComponent"
+            },
+            {
+              "kind" : "text",
+              "text" : ".Type?"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/flowsmetamodel\/inspectablecomponent(name:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
+  "abstract" : [
+    {
+      "text" : "The metamodel for Stock-and-Flows domain model.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FlowsMetamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Metamodel-Implementations": {
+  "abstract" : [
+
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Metamodel-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Metamodel Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/metamodel-implementations"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/inspectableComponent(name:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "inspectableComponent"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore20InspectableComponentP",
+      "text" : "InspectableComponent"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/inspectableComponent(name:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "inspectableComponent(name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/inspectablecomponent(name:)"
+}
+}
+}

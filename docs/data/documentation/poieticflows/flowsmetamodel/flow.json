@@ -175,7 +175,7 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills-8qqu8",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills",
                   "isActive" : true,
                   "type" : "reference"
                 },
@@ -188,7 +188,7 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains-38oqw",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains",
                   "isActive" : true,
                   "type" : "reference"
                 },
@@ -291,7 +291,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Drains-38oqw": {
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Drains": {
   "abstract" : [
     {
       "text" : "Edge from a stock to a flow. Denotes “what the flow drains”.",
@@ -329,14 +329,14 @@
       "text" : "ObjectType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains-38oqw",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "Drains",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/drains-38oqw"
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/drains"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Fills-8qqu8": {
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Fills": {
   "abstract" : [
     {
       "text" : "Edge from a flow to a stock. Denotes “what the flow fills”.",
@@ -374,12 +374,12 @@
       "text" : "ObjectType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills-8qqu8",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "Fills",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/fills-8qqu8"
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/fills"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Flow": {
   "abstract" : [

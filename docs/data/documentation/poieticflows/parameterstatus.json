@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Status of a parameter.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -70,6 +76,35 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The status is provided by the function ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameters(_:required:)",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -155,7 +190,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ParameterStatus": {
   "abstract" : [
-
+    {
+      "text" : "Status of a parameter.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -345,6 +383,82 @@
   "title" : "ParameterStatus.used(node:edge:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/parameterstatus\/used(node:edge:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/parameters(_:required:)": {
+  "abstract" : [
+    {
+      "text" : "Function to get a map between parameter names and their status.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "parameters"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "required"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15ParameterStatusO",
+      "text" : "ParameterStatus"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameters(_:required:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "parameters(_:required:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/parameters(_:required:)"
 }
 }
 }

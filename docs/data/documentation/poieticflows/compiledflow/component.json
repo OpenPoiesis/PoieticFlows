@@ -1,0 +1,247 @@
+{
+  "abstract" : [
+    {
+      "text" : "Component representing the flow as it was at the time of compilation.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/component"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows12CompiledFlowV9componentAA0D9ComponentVvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "component"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows13FlowComponentV",
+        "text" : "FlowComponent"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "component"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "component"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows13FlowComponentV",
+              "text" : "FlowComponent"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/compiledflow\/component"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledFlow"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledFlow"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledFlow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledflow"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow/component": {
+  "abstract" : [
+    {
+      "text" : "Component representing the flow as it was at the time of compilation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "component"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13FlowComponentV",
+      "text" : "FlowComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/component",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "component",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledflow\/component"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowComponent": {
+  "abstract" : [
+    {
+      "text" : "Object representing a flow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FlowComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FlowComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FlowComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowcomponent"
+}
+}
+}

@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "An item that is represented by a node that is to be evaluated.",
+      "text" : "Representation of a node in the simulation denoting how the node will",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "be computed.",
       "type" : "text"
     }
   ],
@@ -78,6 +86,16 @@
       "kind" : "declarations"
     }
   ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/s23CustomStringConvertibleP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -93,6 +111,12 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation\/graphicalFunction(_:_:)"
       ],
       "title" : "Enumeration Cases"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation\/description"
+      ],
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -139,7 +163,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation": {
   "abstract" : [
     {
-      "text" : "An item that is represented by a node that is to be evaluated.",
+      "text" : "Representation of a node in the simulation denoting how the node will",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "be computed.",
       "type" : "text"
     }
   ],
@@ -170,6 +202,40 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation/description": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "description"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation\/description",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "description",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/computationalrepresentation\/description"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation/formula(_:)": {
   "abstract" : [
     {
@@ -196,7 +262,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15BoundExpressiona",
+      "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
       "text" : "BoundExpression"
     },
     {
@@ -246,8 +312,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
     },
     {
       "kind" : "text",
@@ -260,6 +326,11 @@
   "title" : "ComputationalRepresentation.graphicalFunction(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation\/graphicalfunction(_:_:)"
+},
+"doc://PoieticFlows/s23CustomStringConvertibleP": {
+  "identifier" : "doc:\/\/PoieticFlows\/s23CustomStringConvertibleP",
+  "title" : "Swift.CustomStringConvertible",
+  "type" : "unresolvable"
 }
 }
 }

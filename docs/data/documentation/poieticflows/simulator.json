@@ -1,0 +1,1061 @@
+{
+  "abstract" : [
+    {
+      "text" : "Object for controlling a simulation session.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows9SimulatorC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Simulator"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Simulator"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "Simulator"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Simulator"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EulerSolver",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/RungeKutta4Solver"
+      ],
+      "title" : "Simulation"
+    }
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/init(memory:solverType:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compiledModel",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentState",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentStep",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentTime",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/frame",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initialTime",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/memory",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/output",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/solver",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/solverType",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/systems",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/timeDelta"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compile(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initializeSimulation(override:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/run(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/step()"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/simulator"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/EulerSolver": {
+  "abstract" : [
+    {
+      "text" : "Solver that integrates using the Euler method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EulerSolver"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EulerSolver",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EulerSolver"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EulerSolver",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/eulersolver"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/RungeKutta4Solver": {
+  "abstract" : [
+    {
+      "text" : "Solver that integrates using the Runge Kutta 4 method.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "RungeKutta4Solver"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/RungeKutta4Solver",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "RungeKutta4Solver"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "RungeKutta4Solver",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/rungekutta4solver"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
+  "abstract" : [
+    {
+      "text" : "A simple vector-like structure to hold an unordered collection of numeric",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "values that can be accessed by key. Simple arithmetic operations can be done",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with the structure, such as addition, subtraction and multiplication",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a scalar value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationState",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator": {
+  "abstract" : [
+    {
+      "text" : "Object for controlling a simulation session.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simulator"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Simulator"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Simulator",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/compile(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "compile"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
+      "text" : "MutableFrame"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compile(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "compile(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/compile(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/compiledModel": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "compiledModel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13CompiledModelV",
+      "text" : "CompiledModel"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compiledModel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "compiledModel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/compiledmodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/currentState": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "currentState"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentState",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "currentState",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/currentstate"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/currentStep": {
+  "abstract" : [
+    {
+      "text" : "Current simulation step",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "currentStep"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentStep",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "currentStep",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/currentstep"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/currentTime": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "currentTime"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentTime",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "currentTime",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/currenttime"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/frame": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "frame"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
+      "text" : "MutableFrame"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/frame",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "frame",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/frame"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/init(memory:solverType:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "memory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ObjectMemoryC",
+      "text" : "ObjectMemory"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "solverType"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows6SolverC",
+      "text" : "Solver"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type)"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/init(memory:solverType:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(memory:solverType:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/init(memory:solvertype:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/initialTime": {
+  "abstract" : [
+    {
+      "text" : "Initial time of the simulation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "initialTime"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initialTime",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "initialTime",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/initialtime"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/initializeSimulation(override:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "initializeSimulation"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "override"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initializeSimulation(override:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "initializeSimulation(override:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/initializesimulation(override:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/memory": {
+  "abstract" : [
+    {
+      "text" : "Object memory in which the simulator operates.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "memory"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ObjectMemoryC",
+      "text" : "ObjectMemory"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/memory",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "memory",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/memory"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/output": {
+  "abstract" : [
+    {
+      "text" : "Collected data",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "output"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/output",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "output",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/output"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/run(_:)": {
+  "abstract" : [
+    {
+      "text" : "Run the simulation for given number of steps.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "run"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/run(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "run(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/run(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/solver": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "solver"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows6SolverC",
+      "text" : "Solver"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/solver",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "solver",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/solver"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/solverType": {
+  "abstract" : [
+    {
+      "text" : "Solver to be used for the simulation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "solverType"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows6SolverC",
+      "text" : "Solver"
+    },
+    {
+      "kind" : "text",
+      "text" : ".Type"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/solverType",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "solverType",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/solvertype"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/step()": {
+  "abstract" : [
+    {
+      "text" : "Perform one step of the simulation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "step"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/step()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "step()",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/step()"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/systems": {
+  "abstract" : [
+    {
+      "text" : "List of systems that the simulator will call during various stages",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of the simulation process.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "systems"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows16SimulationSystemP",
+      "text" : "SimulationSystem"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/systems",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "systems",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/systems"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/timeDelta": {
+  "abstract" : [
+    {
+      "text" : "Time between simulation steps.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "timeDelta"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/timeDelta",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "timeDelta",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/timedelta"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Solver": {
+  "abstract" : [
+    {
+      "text" : "An abstract class for equations solvers.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Solver"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Solver"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Solver",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/solver"
+}
+}
+}

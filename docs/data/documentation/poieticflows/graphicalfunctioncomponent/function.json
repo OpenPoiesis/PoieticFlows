@@ -155,7 +155,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
   "abstract" : [
-
+    {
+      "text" : "Object representing a function defined by a graph.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

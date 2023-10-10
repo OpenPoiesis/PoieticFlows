@@ -1,0 +1,269 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows7ControlV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "Control"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "Control"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "Control"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "Control"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control\/init(_:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control\/component",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control\/snapshot"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/control"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Control": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Control"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Control"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Control",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/control"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Control/component": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "component"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows16ControlComponentV",
+      "text" : "ControlComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control\/component",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "component",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/control\/component"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Control/init(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+      "text" : "ObjectSnapshot"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control\/init(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/control\/init(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Control/snapshot": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "snapshot"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+      "text" : "ObjectSnapshot"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control\/snapshot",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "snapshot",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/control\/snapshot"
+}
+}
+}

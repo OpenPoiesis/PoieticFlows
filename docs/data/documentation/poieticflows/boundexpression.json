@@ -1,0 +1,231 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundExpression"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows15BoundExpressiona",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "typealias"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "BoundExpression"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "BoundExpression"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
+    "title" : "BoundExpression"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "typealias"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "BoundExpression"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11PoieticCore20ArithmeticExpressionO",
+              "text" : "ArithmeticExpression"
+            },
+            {
+              "kind" : "text",
+              "text" : "<"
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+              "text" : "ForeignValue"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundVariableReference",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows22BoundVariableReferenceV",
+              "text" : "BoundVariableReference"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11PoieticCore16FunctionProtocolP",
+              "text" : "FunctionProtocol"
+            },
+            {
+              "kind" : "text",
+              "text" : ">"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/boundexpression"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BoundExpression": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BoundExpression"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundExpression",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BoundExpression"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BoundExpression",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/boundexpression"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BoundVariableReference": {
+  "abstract" : [
+    {
+      "text" : "Structure representing a reference to a simulation variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BoundVariableReference"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundVariableReference",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BoundVariableReference"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BoundVariableReference",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/boundvariablereference"
+}
+}
+}

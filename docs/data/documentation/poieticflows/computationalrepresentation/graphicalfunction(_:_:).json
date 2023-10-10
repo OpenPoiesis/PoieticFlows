@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows27ComputationalRepresentationO17graphicalFunctionyAC0A4Core012NumericUnaryF0C_s6UInt64VtcACmF",
+    "externalID" : "s:12PoieticFlows27ComputationalRepresentationO17graphicalFunctionyAC0A4Core012NumericUnaryF0C_SitcACmF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -48,8 +48,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-        "text" : "ObjectID"
+        "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+        "text" : "VariableIndex"
       },
       {
         "kind" : "text",
@@ -103,9 +103,10 @@
               "text" : ", "
             },
             {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-              "text" : "ObjectID"
+              "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+              "text" : "VariableIndex"
             },
             {
               "kind" : "text",
@@ -169,7 +170,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation": {
   "abstract" : [
     {
-      "text" : "An item that is represented by a node that is to be evaluated.",
+      "text" : "Representation of a node in the simulation denoting how the node will",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "be computed.",
       "type" : "text"
     }
   ],
@@ -235,8 +244,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
     },
     {
       "kind" : "text",
@@ -249,6 +258,40 @@
   "title" : "ComputationalRepresentation.graphicalFunction(_:_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation\/graphicalfunction(_:_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
+  "abstract" : [
+    {
+      "text" : "Index of a simulation variable that is represented by an object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "VariableIndex",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/variableindex"
 }
 }
 }

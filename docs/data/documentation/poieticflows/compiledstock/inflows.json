@@ -1,0 +1,275 @@
+{
+  "abstract" : [
+    {
+      "text" : "List indices of simulation variables representing flows",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which fill the stock.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/inflows"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows13CompiledStockV7inflowsSaySiGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "inflows"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+        "text" : "VariableIndex"
+      },
+      {
+        "kind" : "text",
+        "text" : "]"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "inflows"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "inflows"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+              "text" : "VariableIndex"
+            },
+            {
+              "kind" : "text",
+              "text" : "]"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/compiledstock\/inflows"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledStock"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledStock"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledStock",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledstock"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/inflows": {
+  "abstract" : [
+    {
+      "text" : "List indices of simulation variables representing flows",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which fill the stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "inflows"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/inflows",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "inflows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledstock\/inflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
+  "abstract" : [
+    {
+      "text" : "Index of a simulation variable that is represented by an object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "VariableIndex",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/variableindex"
+}
+}
+}

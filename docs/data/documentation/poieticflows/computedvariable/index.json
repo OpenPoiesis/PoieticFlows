@@ -1,0 +1,250 @@
+{
+  "abstract" : [
+    {
+      "text" : "Index of the variable in the simulation state vector.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable\/index"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows16ComputedVariableV5indexSivp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "index"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+        "text" : "VariableIndex"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "index"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "index"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+              "text" : "VariableIndex"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/computedvariable\/index"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ComputedVariable": {
+  "abstract" : [
+    {
+      "text" : "Object describing a simulation state variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ComputedVariable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ComputedVariable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ComputedVariable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/computedvariable"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ComputedVariable/index": {
+  "abstract" : [
+    {
+      "text" : "Index of the variable in the simulation state vector.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "index"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable\/index",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "index",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/computedvariable\/index"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
+  "abstract" : [
+    {
+      "text" : "Index of a simulation variable that is represented by an object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "VariableIndex",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/variableindex"
+}
+}
+}

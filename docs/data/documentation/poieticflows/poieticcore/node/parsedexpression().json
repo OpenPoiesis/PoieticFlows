@@ -14,6 +14,17 @@
       "type" : "text"
     }
   ],
+  "deprecationSummary" : [
+    {
+      "inlineContent" : [
+        {
+          "text" : "Use snapshot[FormulaComponent.self",
+          "type" : "text"
+        }
+      ],
+      "type" : "paragraph"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -30,7 +41,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:11PoieticCore4NodeC0A5FlowsE16parsedExpressionAA010ArithmeticF0OyAA12ForeignValueOS2SGSgyKF",
+    "externalID" : "s:11PoieticCore4NodeV0A5FlowsE16parsedExpressionAA010ArithmeticF0OyAA12ForeignValueOS2SGSgyKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -73,6 +84,9 @@
           "PoieticCore"
         ]
       }
+    ],
+    "platforms" : [
+
     ],
     "role" : "symbol",
     "roleHeading" : "Instance Method",
@@ -293,7 +307,7 @@
     },
     {
       "kind" : "identifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeC",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
       "text" : "Node"
     }
   ],
@@ -326,6 +340,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

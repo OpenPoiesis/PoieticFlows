@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Component.componentName",
+      "code" : "InspectableComponent.componentName",
       "type" : "codeVoice"
     },
     {
@@ -18,7 +18,7 @@
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/Component-Implementations"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/InspectableComponent-Implementations"
       ]
     ]
   },
@@ -29,7 +29,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:11PoieticCore9ComponentPAAE13componentNameSSvp::SYNTHESIZED::s:12PoieticFlows14StockComponentV",
+    "externalID" : "s:11PoieticCore20InspectableComponentPAAE13componentNameSSvp::SYNTHESIZED::s:12PoieticFlows14StockComponentV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -199,16 +199,16 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockcomponent"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/StockComponent/Component-Implementations": {
+"doc://PoieticFlows/documentation/PoieticFlows/StockComponent/InspectableComponent-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/Component-Implementations",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/InspectableComponent-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
-  "title" : "Component Implementations",
+  "title" : "InspectableComponent Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockcomponent\/component-implementations"
+  "url" : "\/documentation\/poieticflows\/stockcomponent\/inspectablecomponent-implementations"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockComponent/componentName": {
   "abstract" : [

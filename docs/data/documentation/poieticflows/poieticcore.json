@@ -12,7 +12,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:m:s:e:s:11PoieticCore4NodeC0A5FlowsE16parsedExpressionAA010ArithmeticF0OyAA12ForeignValueOS2SGSgyKF",
+    "externalID" : "s:m:s:e:s:11PoieticCore20ArithmeticExpressionO0A5FlowsAA12ForeignValueORszAD22BoundVariableReferenceVRs_AA16FunctionProtocol_pRs0_rlE8evaluateyAfD15SimulationStateVKF",
     "modules" : [
       {
         "name" : "PoieticFlows"
@@ -36,7 +36,13 @@
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Node"
       ],
-      "title" : "Extended Classes"
+      "title" : "Extended Structures"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression"
+      ],
+      "title" : "Extended Enumerations"
     }
   ],
   "variants" : [
@@ -91,6 +97,38 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ArithmeticExpression": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:11PoieticCore20ArithmeticExpressionO",
+      "text" : "ArithmeticExpression"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ArithmeticExpression"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ArithmeticExpression",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/arithmeticexpression"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Node": {
   "abstract" : [
 
@@ -106,7 +144,7 @@
     },
     {
       "kind" : "identifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeC",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
       "text" : "Node"
     }
   ],

@@ -277,12 +277,52 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/DomainError",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
                   "isActive" : true,
                   "type" : "reference"
                 },
                 {
-                  "text" : " when there are issues with the model.",
+                  "text" : " when there are issues with the model",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "that are caused by the user. Throws ",
+                  "type" : "text"
+                },
+                {
+                  "code" : "ConstraintViolationError",
+                  "type" : "codeVoice"
+                },
+                {
+                  "text" : " if",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "the frame constraints were violated. The later error is an",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "application error and means that either the provided frame is",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "mal-formed or one of the subsystems mis-behaved.",
                   "type" : "text"
                 }
               ],
@@ -468,7 +508,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/compile()"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/DomainError": {
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssuesError": {
   "abstract" : [
     {
       "text" : "An aggregate error of multiple issues grouped by a node.",
@@ -486,21 +526,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "DomainError"
+      "text" : "NodeIssuesError"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/DomainError",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "DomainError"
+      "text" : "NodeIssuesError"
     }
   ],
   "role" : "symbol",
-  "title" : "DomainError",
+  "title" : "NodeIssuesError",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/domainerror"
+  "url" : "\/documentation\/poieticflows\/nodeissueserror"
 }
 }
 }

@@ -1,0 +1,352 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/init(node:component:series:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows5ChartV4node9component6seriesAC0A4Core14ObjectSnapshotC_AA0C9ComponentVSayAIGtcfc",
+    "fragments" : [
+      {
+        "kind" : "identifier",
+        "text" : "init"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "node"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+        "text" : "ObjectSnapshot"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "component"
+      },
+      {
+        "kind" : "text",
+        "text" : ": "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows14ChartComponentV",
+        "text" : "ChartComponent"
+      },
+      {
+        "kind" : "text",
+        "text" : ", "
+      },
+      {
+        "kind" : "externalParam",
+        "text" : "series"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+        "text" : "ObjectSnapshot"
+      },
+      {
+        "kind" : "text",
+        "text" : "])"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Initializer",
+    "symbolKind" : "init",
+    "title" : "init(node:component:series:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "init"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "node"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+              "text" : "ObjectSnapshot"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "component"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows14ChartComponentV",
+              "text" : "ChartComponent"
+            },
+            {
+              "kind" : "text",
+              "text" : ", "
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "series"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+              "text" : "ObjectSnapshot"
+            },
+            {
+              "kind" : "text",
+              "text" : "])"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/chart\/init(node:component:series:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Chart": {
+  "abstract" : [
+    {
+      "text" : "Object representing a chart.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Chart"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Chart"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Chart",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chart"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Chart/init(node:component:series:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "node"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+      "text" : "ObjectSnapshot"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "component"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows14ChartComponentV",
+      "text" : "ChartComponent"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "series"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+      "text" : "ObjectSnapshot"
+    },
+    {
+      "kind" : "text",
+      "text" : "])"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/init(node:component:series:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(node:component:series:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chart\/init(node:component:series:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ChartComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChartComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chartcomponent"
+}
+}
+}

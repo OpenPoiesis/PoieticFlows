@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Create a new graphical function with given set of points.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -91,6 +97,35 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The default interpolation method is ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/InterpolationMethod\/step",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -144,7 +179,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
   "abstract" : [
-
+    {
+      "text" : "Object representing a function defined by a graph.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -175,7 +213,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction/init(points:)": {
   "abstract" : [
-
+    {
+      "text" : "Create a new graphical function with given set of points.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -210,6 +251,31 @@
   "title" : "init(points:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunction\/init(points:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/InterpolationMethod/step": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "step"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/InterpolationMethod\/step",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "InterpolationMethod.step",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/interpolationmethod\/step"
 }
 }
 }

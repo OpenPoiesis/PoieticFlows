@@ -1,0 +1,2296 @@
+{
+  "abstract" : [
+    {
+      "text" : "View of Stock-and-Flow domain-specific aspects of the design.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows13StockFlowViewC",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "class"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "StockFlowView"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "StockFlowView"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Class",
+    "symbolKind" : "class",
+    "title" : "StockFlowView"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "class"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "StockFlowView"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The domain view provides higher level view of the design through higher",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "level concepts as defined in the ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : ".",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundVariableReference",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IndexRepresentable",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledObject",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundBuiltinVariable",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundComponent"
+      ],
+      "title" : "Compiled Model and Compiler"
+    }
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/init(_:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/charts",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/drainsEdges",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/fillsEdges",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowNodes",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/frame",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graph",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graphicalFunctionNodes",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFlowEdges",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/namedObjects",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameterEdges",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/simulationNodes",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stateNodes"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/builtinReferences(names:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/drains(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/fills(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowDrains(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowFills(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitDrains(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFills(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/incomingParameters(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/inflows(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/objectVariableReferences(names:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/outflows(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameters(_:required:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/sortedNodesByParameter(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/sortedStocksByImplicitFlows(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stockInflows(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stockOutflows(_:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/stockflowview"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BoundBuiltinVariable": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BoundBuiltinVariable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundBuiltinVariable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BoundBuiltinVariable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BoundBuiltinVariable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/boundbuiltinvariable"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BoundComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BoundComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BoundComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BoundComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/boundcomponent"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BoundVariableReference": {
+  "abstract" : [
+    {
+      "text" : "Structure representing a reference to a simulation variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BoundVariableReference"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundVariableReference",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BoundVariableReference"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BoundVariableReference",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/boundvariablereference"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledControlBinding": {
+  "abstract" : [
+    {
+      "text" : "Structure representing compiled control-to-value binding.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledControlBinding"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledControlBinding"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledControlBinding",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledcontrolbinding"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledFlow"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledFlow"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledFlow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledflow"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledGraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "A structure representing a concrete instance of a graphical function",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "in the context of a graph.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledGraphicalFunction"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledGraphicalFunction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledGraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledgraphicalfunction"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel": {
+  "abstract" : [
+    {
+      "text" : "Structure used by the simulator.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledModel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledModel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledModel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledObject": {
+  "abstract" : [
+    {
+      "text" : "Plain compiled variable without any additional information.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledObject"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledObject",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledObject"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledObject",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledobject"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledStock"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledStock"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledStock",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledstock"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler": {
+  "abstract" : [
+    {
+      "text" : "An object that compiles the model into a ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Compiler"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Compiler"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Compiler",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiler"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ComputedVariable": {
+  "abstract" : [
+    {
+      "text" : "Object describing a simulation state variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ComputedVariable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ComputedVariable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ComputedVariable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/computedvariable"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
+  "abstract" : [
+    {
+      "text" : "The metamodel for Stock-and-Flows domain model.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "FlowsMetamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/IndexRepresentable": {
+  "abstract" : [
+    {
+      "text" : "Protocol for structures and objects that contain or represent an index.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "IndexRepresentable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IndexRepresentable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "IndexRepresentable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "IndexRepresentable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/indexrepresentable"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue": {
+  "abstract" : [
+    {
+      "text" : "An issue detected by the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " or the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssue"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NodeIssue",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/nodeissue"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssuesError": {
+  "abstract" : [
+    {
+      "text" : "An aggregate error of multiple issues grouped by a node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssuesError"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssuesError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NodeIssuesError",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/nodeissueserror"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
+  "abstract" : [
+    {
+      "text" : "View of Stock-and-Flow domain-specific aspects of the design.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "StockFlowView"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "StockFlowView"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "StockFlowView",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/builtinReferences(names:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "builtinReferences"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "names"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore17VariableReferenceO",
+      "text" : "VariableReference"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/builtinReferences(names:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "builtinReferences(names:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/builtinreferences(names:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/charts": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "charts"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows5ChartV",
+      "text" : "Chart"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/charts",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "charts",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/charts"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/drains(_:)": {
+  "abstract" : [
+    {
+      "text" : "Selector for an edge originating in a stock and ending in a flow denoting",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which stock the flow drains. There must be only one of such edges",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "ending in a flow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "drains"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12NeighborhoodC",
+      "text" : "Neighborhood"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/drains(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "drains(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/drains(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/drainsEdges": {
+  "abstract" : [
+    {
+      "text" : "Predicate for an edge that drains from a stocks. It originates in a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "stock and terminates in a flow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "drainsEdges"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4EdgeV",
+      "text" : "Edge"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/drainsEdges",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "drainsEdges",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/drainsedges"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/fills(_:)": {
+  "abstract" : [
+    {
+      "text" : "Selector for an edge originating in a flow and ending in a stock denoting",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "which stock the flow fills. There must be only one of such edges",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "originating in a flow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fills"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12NeighborhoodC",
+      "text" : "Neighborhood"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/fills(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fills(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/fills(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/fillsEdges": {
+  "abstract" : [
+    {
+      "text" : "Predicate for an edge that fills a stocks. It originates in a flow,",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "and terminates in a stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "fillsEdges"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4EdgeV",
+      "text" : "Edge"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/fillsEdges",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "fillsEdges",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/fillsedges"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/flowDrains(_:)": {
+  "abstract" : [
+    {
+      "text" : "Get a node that the given flow drains.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flowDrains"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowDrains(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flowDrains(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/flowdrains(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/flowFills(_:)": {
+  "abstract" : [
+    {
+      "text" : "Get a node that the given flow fills.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flowFills"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowFills(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flowFills(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/flowfills(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/flowNodes": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flowNodes"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowNodes",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flowNodes",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/flownodes"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/frame": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "frame"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5FrameP",
+      "text" : "Frame"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/frame",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "frame",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/frame"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/graph": {
+  "abstract" : [
+    {
+      "text" : "Graph that the view projects.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "graph"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5GraphP",
+      "text" : "Graph"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graph",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "graph",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/graph"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/graphicalFunctionNodes": {
+  "abstract" : [
+    {
+      "text" : "List of expression nodes in the graph.",
+      "type" : "text"
+    }
+  ],
+  "deprecated" : true,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "graphicalFunctionNodes"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graphicalFunctionNodes",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "graphicalFunctionNodes",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/graphicalfunctionnodes"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/implicitDrains(_:)": {
+  "abstract" : [
+    {
+      "text" : "Return a list of stock nodes that the given stock drains.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "implicitDrains"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitDrains(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "implicitDrains(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/implicitdrains(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/implicitFills(_:)": {
+  "abstract" : [
+    {
+      "text" : "Return a list of stock nodes that the given stock fills.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "implicitFills"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFills(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "implicitFills(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/implicitfills(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/implicitFlowEdges": {
+  "abstract" : [
+    {
+      "text" : "List of all edges that denotes an implicit flow between",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "two stocks.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "implicitFlowEdges"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4EdgeV",
+      "text" : "Edge"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFlowEdges",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "implicitFlowEdges",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/implicitflowedges"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/incomingParameters(_:)": {
+  "abstract" : [
+    {
+      "text" : "A neighbourhood for incoming parameters of a node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "incomingParameters"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12NeighborhoodC",
+      "text" : "Neighborhood"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/incomingParameters(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "incomingParameters(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/incomingparameters(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/inflows(_:)": {
+  "abstract" : [
+    {
+      "text" : "Selector for edges originating in a flow and ending in a stock denoting",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the inflow from multiple flows into a single stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "inflows"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12NeighborhoodC",
+      "text" : "Neighborhood"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/inflows(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "inflows(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/inflows(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/init(_:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new view on top of a graph.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5GraphP",
+      "text" : "Graph"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/init(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/init(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/namedObjects": {
+  "abstract" : [
+    {
+      "text" : "Predicate that matches all objects that have a name through",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "NamedComponent.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "namedObjects"
+    },
+    {
+      "kind" : "text",
+      "text" : ": [("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore14ObjectSnapshotC",
+      "text" : "ObjectSnapshot"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/namedObjects",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "namedObjects",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/namedobjects"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/objectVariableReferences(names:)": {
+  "abstract" : [
+    {
+      "text" : "A list of variable references to their corresponding objects.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "objectVariableReferences"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "names"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore17VariableReferenceO",
+      "text" : "VariableReference"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/objectVariableReferences(names:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "objectVariableReferences(names:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/objectvariablereferences(names:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/outflows(_:)": {
+  "abstract" : [
+    {
+      "text" : "Selector for edges originating in a stock and ending in a flow denoting",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "the outflow from the stock to multiple flows.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "outflows"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12NeighborhoodC",
+      "text" : "Neighborhood"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/outflows(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "outflows(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/outflows(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/parameterEdges": {
+  "abstract" : [
+    {
+      "text" : "Predicate that matches all edges that represent parameter connections.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "parameterEdges"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4EdgeV",
+      "text" : "Edge"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameterEdges",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "parameterEdges",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/parameteredges"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/parameters(_:required:)": {
+  "abstract" : [
+    {
+      "text" : "Function to get a map between parameter names and their status.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "parameters"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "required"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15ParameterStatusO",
+      "text" : "ParameterStatus"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameters(_:required:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "parameters(_:required:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/parameters(_:required:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/simulationNodes": {
+  "abstract" : [
+    {
+      "text" : "A list of nodes that are part of the simulation. The simulation nodes",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "correspond to the simulation variables, where one node corresponds to",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "exactly one simulation variable and vice-versa.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "simulationNodes"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/simulationNodes",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "simulationNodes",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/simulationnodes"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/sortedNodesByParameter(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sort the nodes based on their parameter dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sortedNodesByParameter"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/sortedNodesByParameter(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sortedNodesByParameter(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/sortednodesbyparameter(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/sortedStocksByImplicitFlows(_:)": {
+  "abstract" : [
+    {
+      "text" : "Sort given list of stocks by the order of their implicit flows.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "sortedStocksByImplicitFlows"
+    },
+    {
+      "kind" : "text",
+      "text" : "(["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/sortedStocksByImplicitFlows(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "sortedStocksByImplicitFlows(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/sortedstocksbyimplicitflows(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/stateNodes": {
+  "abstract" : [
+    {
+      "text" : "List of all nodes that hold a simulation state and are therefore part",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of the state vector.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stateNodes"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stateNodes",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stateNodes",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/statenodes"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/stockInflows(_:)": {
+  "abstract" : [
+    {
+      "text" : "Return a list of flows that fill a stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stockInflows"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stockInflows(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stockInflows(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/stockinflows(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/stockOutflows(_:)": {
+  "abstract" : [
+    {
+      "text" : "Return a list of flows that drain a stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stockOutflows"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stockOutflows(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stockOutflows(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/stockoutflows(_:)"
+}
+}
+}

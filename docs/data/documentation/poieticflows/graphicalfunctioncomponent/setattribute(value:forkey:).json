@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Component.setAttribute(value:forKey:)",
+      "code" : "InspectableComponent.setAttribute(value:forKey:)",
       "type" : "codeVoice"
     },
     {
@@ -55,8 +55,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore14AttributeValuea",
-        "text" : "AttributeValue"
+        "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+        "text" : "ForeignValue"
       },
       {
         "kind" : "text",
@@ -139,8 +139,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore14AttributeValuea",
-              "text" : "AttributeValue"
+              "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+              "text" : "ForeignValue"
             },
             {
               "kind" : "text",
@@ -292,8 +292,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore14AttributeValuea",
-      "text" : "AttributeValue"
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
     },
     {
       "kind" : "text",

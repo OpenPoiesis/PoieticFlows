@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows27ComputationalRepresentationO7formulayAC0A4Core20ArithmeticExpressionOyAE12ForeignValueOAE22BoundVariableReferenceOAE16FunctionProtocol_pGcACmF",
+    "externalID" : "s:12PoieticFlows27ComputationalRepresentationO7formulayAC0A4Core20ArithmeticExpressionOyAE12ForeignValueOAA22BoundVariableReferenceVAE16FunctionProtocol_pGcACmF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,7 +39,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore15BoundExpressiona",
+        "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
         "text" : "BoundExpression"
       },
       {
@@ -85,8 +85,9 @@
               "text" : "("
             },
             {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundExpression",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore15BoundExpressiona",
+              "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
               "text" : "BoundExpression"
             },
             {
@@ -148,10 +149,49 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/BoundExpression": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BoundExpression"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundExpression",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "BoundExpression"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "BoundExpression",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/boundexpression"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation": {
   "abstract" : [
     {
-      "text" : "An item that is represented by a node that is to be evaluated.",
+      "text" : "Representation of a node in the simulation denoting how the node will",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "be computed.",
       "type" : "text"
     }
   ],
@@ -208,7 +248,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15BoundExpressiona",
+      "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
       "text" : "BoundExpression"
     },
     {

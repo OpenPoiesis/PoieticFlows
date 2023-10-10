@@ -1,0 +1,223 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent\/KeyedAttributes-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "KeyedAttributes Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent\/attributeKeys"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent\/dictionary(withKeys:)"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/chartcomponent\/keyedattributes-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ChartComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChartComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chartcomponent"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ChartComponent/attributeKeys": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "attributeKeys"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent\/attributeKeys",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "attributeKeys",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chartcomponent\/attributekeys"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ChartComponent/dictionary(withKeys:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "dictionary"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "withKeys"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12AttributeKeya",
+      "text" : "AttributeKey"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12AttributeKeya",
+      "text" : "AttributeKey"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent\/dictionary(withKeys:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "dictionary(withKeys:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chartcomponent\/dictionary(withkeys:)"
+}
+}
+}

@@ -1,0 +1,238 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/InspectableComponent-Implementations"
+  },
+  "kind" : "article",
+  "metadata" : {
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "collectionGroup",
+    "title" : "InspectableComponent Implementations"
+  },
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/init(record:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/componentName"
+      ],
+      "title" : "Instance Properties"
+    },
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/foreignRecord()"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/graphicalfunctioncomponent\/inspectablecomponent-implementations"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunctionComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunctionComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GraphicalFunctionComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent/componentName": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "componentName"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/componentName",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "componentName",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/componentname"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent/foreignRecord()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "foreignRecord"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore13ForeignRecordV",
+      "text" : "ForeignRecord"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/foreignRecord()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "foreignRecord()",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/foreignrecord()"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent/init(record:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "record"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore13ForeignRecordV",
+      "text" : "ForeignRecord"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/init(record:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(record:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/init(record:)"
+}
+}
+}

@@ -1,0 +1,416 @@
+{
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows22ParsedFormulaComponentV",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "struct"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "ParsedFormulaComponent"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "ParsedFormulaComponent"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Structure",
+    "symbolKind" : "struct",
+    "title" : "ParsedFormulaComponent"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "struct"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "ParsedFormulaComponent"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/11PoieticCore9ComponentP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init()",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init(parsedFormula:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/attribute(forKey:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/setAttribute(value:forKey:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/componentDescription"
+      ],
+      "title" : "Type Properties"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/parsedformulacomponent"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/11PoieticCore9ComponentP": {
+  "identifier" : "doc:\/\/PoieticFlows\/11PoieticCore9ComponentP",
+  "title" : "PoieticCore.Component",
+  "type" : "unresolvable"
+},
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ParsedFormulaComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ParsedFormulaComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ParsedFormulaComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/attribute(forKey:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "attribute"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "forKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12AttributeKeya",
+      "text" : "AttributeKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/attribute(forKey:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "attribute(forKey:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/attribute(forkey:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/componentDescription": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "componentDescription"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore20ComponentDescriptionC",
+      "text" : "ComponentDescription"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/componentDescription",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "componentDescription",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/componentdescription"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/init()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "()"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init()",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/init()"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/init(parsedFormula:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "parsedFormula"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore17UnboundExpressiona",
+      "text" : "UnboundExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init(parsedFormula:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(parsedFormula:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/init(parsedformula:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/setAttribute(value:forKey:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "setAttribute"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "value"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "forKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12AttributeKeya",
+      "text" : "AttributeKey"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/setAttribute(value:forKey:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "setAttribute(value:forKey:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/setattribute(value:forkey:)"
+}
+}
+}

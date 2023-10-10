@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Component.foreignRecord()",
+      "code" : "InspectableComponent.foreignRecord()",
       "type" : "codeVoice"
     },
     {
@@ -18,7 +18,7 @@
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/Component-Implementations"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/InspectableComponent-Implementations"
       ]
     ]
   },
@@ -29,7 +29,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:11PoieticCore9ComponentPAAE13foreignRecordAA07ForeignE0VyF::SYNTHESIZED::s:12PoieticFlows26GraphicalFunctionComponentV",
+    "externalID" : "s:11PoieticCore20InspectableComponentPAAE13foreignRecordAA07ForeignF0VyF::SYNTHESIZED::s:12PoieticFlows26GraphicalFunctionComponentV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -184,16 +184,16 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent/Component-Implementations": {
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent/InspectableComponent-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/Component-Implementations",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent\/InspectableComponent-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
-  "title" : "Component Implementations",
+  "title" : "InspectableComponent Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/component-implementations"
+  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent\/inspectablecomponent-implementations"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent/foreignRecord()": {
   "abstract" : [

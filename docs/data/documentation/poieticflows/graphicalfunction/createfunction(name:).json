@@ -147,8 +147,9 @@
               "type" : "text"
             },
             {
-              "code" : "stepFunction(time:)",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/stepFunction(x:)",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : ".",
@@ -212,7 +213,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
   "abstract" : [
-
+    {
+      "text" : "Object representing a function defined by a graph.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -302,6 +306,60 @@
   "title" : "createFunction(name:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunction\/createfunction(name:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction/stepFunction(x:)": {
+  "abstract" : [
+    {
+      "text" : "Function that finds the nearest time point and returns its y-value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stepFunction"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "x"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/stepFunction(x:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stepFunction(x:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunction\/stepfunction(x:)"
 }
 }
 }

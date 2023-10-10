@@ -1,0 +1,355 @@
+{
+  "abstract" : [
+    {
+      "text" : "List of variables that are computed, ordered by computational dependency.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedVariables"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows13CompiledModelV17computedVariablesSayAA16ComputedVariableVGvp",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "let"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "computedVariables"
+      },
+      {
+        "kind" : "text",
+        "text" : ": ["
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows16ComputedVariableV",
+        "text" : "ComputedVariable"
+      },
+      {
+        "kind" : "text",
+        "text" : "]"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Property",
+    "symbolKind" : "property",
+    "title" : "computedVariables"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "let"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "computedVariables"
+            },
+            {
+              "kind" : "text",
+              "text" : ": ["
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows16ComputedVariableV",
+              "text" : "ComputedVariable"
+            },
+            {
+              "kind" : "text",
+              "text" : "]"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The variables are ordered so that variables that do not require other",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "variables to be computed, such as constants are at the beginning.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The variables that depend on others by using them as a parameter",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "follow the variables they depend on.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Computing variables in this order assures that we have all the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "parameters computed when needed them.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "It is guaranteed that the variables are ordered. If a cycle was",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "present in the model, the compiled model would not have been",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "created.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Note",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/compiledmodel\/computedvariables"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel": {
+  "abstract" : [
+    {
+      "text" : "Structure used by the simulator.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledModel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledModel"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledModel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/computedVariables": {
+  "abstract" : [
+    {
+      "text" : "List of variables that are computed, ordered by computational dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "computedVariables"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows16ComputedVariableV",
+      "text" : "ComputedVariable"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedVariables",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "computedVariables",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/computedvariables"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ComputedVariable": {
+  "abstract" : [
+    {
+      "text" : "Object describing a simulation state variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ComputedVariable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ComputedVariable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ComputedVariable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/computedvariable"
+}
+}
+}

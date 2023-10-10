@@ -29,7 +29,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:11PoieticCore9ComponentPAAE13attributeKeysSaySSGvp::SYNTHESIZED::s:12PoieticFlows13FlowComponentV",
+    "externalID" : "s:11PoieticCore20InspectableComponentPAAE13attributeKeysSaySSGvp::SYNTHESIZED::s:12PoieticFlows13FlowComponentV",
     "fragments" : [
       {
         "kind" : "keyword",

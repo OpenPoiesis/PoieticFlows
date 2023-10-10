@@ -195,40 +195,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/DomainView": {
-  "abstract" : [
-    {
-      "text" : "View of Stock-and-Flow domain-specific aspects of the design.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "DomainView"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/DomainView",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "DomainView"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "DomainView",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/domainview"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssue": {
   "abstract" : [
     {
@@ -236,7 +202,7 @@
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/DomainView",
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
       "isActive" : true,
       "type" : "reference"
     },
@@ -317,6 +283,40 @@
   "title" : "description",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissue\/description"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssuesError": {
+  "abstract" : [
+    {
+      "text" : "An aggregate error of multiple issues grouped by a node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssuesError"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssuesError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NodeIssuesError",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/nodeissueserror"
 }
 }
 }

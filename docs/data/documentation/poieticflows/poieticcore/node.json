@@ -14,7 +14,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:e:s:11PoieticCore4NodeC0A5FlowsE16parsedExpressionAA010ArithmeticF0OyAA12ForeignValueOS2SGSgyKF",
+    "externalID" : "s:e:s:11PoieticCore4NodeV0A5FlowsE16parsedExpressionAA010ArithmeticF0OyAA12ForeignValueOS2SGSgyKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -26,7 +26,7 @@
       },
       {
         "kind" : "identifier",
-        "preciseIdentifier" : "s:11PoieticCore4NodeC",
+        "preciseIdentifier" : "s:11PoieticCore4NodeV",
         "text" : "Node"
       }
     ],
@@ -45,7 +45,7 @@
       }
     ],
     "role" : "symbol",
-    "roleHeading" : "Extended Class",
+    "roleHeading" : "Extended Structure",
     "symbolKind" : "extension",
     "title" : "Node"
   },
@@ -70,7 +70,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore4NodeC",
+              "preciseIdentifier" : "s:11PoieticCore4NodeV",
               "text" : "Node"
             }
           ]
@@ -196,7 +196,7 @@
     },
     {
       "kind" : "identifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeC",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
       "text" : "Node"
     }
   ],
@@ -229,6 +229,7 @@
       "type" : "text"
     }
   ],
+  "deprecated" : true,
   "fragments" : [
     {
       "kind" : "keyword",

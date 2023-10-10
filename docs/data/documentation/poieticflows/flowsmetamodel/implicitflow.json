@@ -1,10 +1,4 @@
 {
-  "abstract" : [
-    {
-      "text" : "Edge between two stocks that are connected through a flow.",
-      "type" : "text"
-    }
-  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -219,10 +213,7 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ImplicitFlow": {
   "abstract" : [
-    {
-      "text" : "Edge between two stocks that are connected through a flow.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

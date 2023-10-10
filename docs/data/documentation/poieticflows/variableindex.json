@@ -1,0 +1,327 @@
+{
+  "abstract" : [
+    {
+      "text" : "Index of a simulation variable that is represented by an object.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows13VariableIndexa",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "typealias"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "VariableIndex"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "VariableIndex"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Type Alias",
+    "symbolKind" : "typealias",
+    "title" : "VariableIndex"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "typealias"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "VariableIndex"
+            },
+            {
+              "kind" : "text",
+              "text" : " = "
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:Si",
+              "text" : "Int"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The index is used to refer to a variable value in the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
+              "isActive" : true,
+              "type" : "reference"
+            },
+            {
+              "text" : " vector.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+                  "isActive" : true,
+                  "type" : "reference"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/variableindex"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
+  "abstract" : [
+    {
+      "text" : "A simple vector-like structure to hold an unordered collection of numeric",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "values that can be accessed by key. Simple arithmetic operations can be done",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with the structure, such as addition, subtraction and multiplication",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a scalar value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationState",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/values": {
+  "abstract" : [
+    {
+      "text" : "Values of computed variables.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "values"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "values",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate\/values"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
+  "abstract" : [
+    {
+      "text" : "Index of a simulation variable that is represented by an object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "typealias"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "VariableIndex"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "VariableIndex",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/variableindex"
+}
+}
+}

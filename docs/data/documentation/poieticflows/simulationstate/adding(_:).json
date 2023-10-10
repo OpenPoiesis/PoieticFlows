@@ -1,0 +1,336 @@
+{
+  "abstract" : [
+    {
+      "text" : "Create a new state by adding each value with corresponding value",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of another state.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/adding(_:)"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows15SimulationStateV6addingyA2CF",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "func"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "adding"
+      },
+      {
+        "kind" : "text",
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+        "text" : "SimulationState"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+        "text" : "SimulationState"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Instance Method",
+    "symbolKind" : "method",
+    "title" : "adding(_:)"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "func"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "adding"
+            },
+            {
+              "kind" : "text",
+              "text" : "("
+            },
+            {
+              "kind" : "externalParam",
+              "text" : "_"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "internalParam",
+              "text" : "state"
+            },
+            {
+              "kind" : "text",
+              "text" : ": "
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+              "text" : "SimulationState"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+              "text" : "SimulationState"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The built-in values will remain the same.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "The states must be of the same length.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "Precondition",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/simulationstate\/adding(_:)"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
+  "abstract" : [
+    {
+      "text" : "A simple vector-like structure to hold an unordered collection of numeric",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "values that can be accessed by key. Simple arithmetic operations can be done",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with the structure, such as addition, subtraction and multiplication",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a scalar value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationState",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/adding(_:)": {
+  "abstract" : [
+    {
+      "text" : "Create a new state by adding each value with corresponding value",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "of another state.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "adding"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/adding(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "adding(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate\/adding(_:)"
+}
+}
+}

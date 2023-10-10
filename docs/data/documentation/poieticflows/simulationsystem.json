@@ -1,0 +1,475 @@
+{
+  "abstract" : [
+    {
+      "text" : "Protocol for systems that support the simulation.",
+      "type" : "text"
+    }
+  ],
+  "hierarchy" : {
+    "paths" : [
+      [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+      ]
+    ]
+  },
+  "identifier" : {
+    "interfaceLanguage" : "swift",
+    "url" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem"
+  },
+  "kind" : "symbol",
+  "metadata" : {
+    "externalID" : "s:12PoieticFlows16SimulationSystemP",
+    "fragments" : [
+      {
+        "kind" : "keyword",
+        "text" : "protocol"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
+      },
+      {
+        "kind" : "identifier",
+        "text" : "SimulationSystem"
+      }
+    ],
+    "modules" : [
+      {
+        "name" : "PoieticFlows"
+      }
+    ],
+    "navigatorTitle" : [
+      {
+        "kind" : "identifier",
+        "text" : "SimulationSystem"
+      }
+    ],
+    "role" : "symbol",
+    "roleHeading" : "Protocol",
+    "symbolKind" : "protocol",
+    "title" : "SimulationSystem"
+  },
+  "primaryContentSections" : [
+    {
+      "declarations" : [
+        {
+          "languages" : [
+            "swift"
+          ],
+          "platforms" : [
+            "macOS"
+          ],
+          "tokens" : [
+            {
+              "kind" : "keyword",
+              "text" : "protocol"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
+            },
+            {
+              "kind" : "identifier",
+              "text" : "SimulationSystem"
+            }
+          ]
+        }
+      ],
+      "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The simulation system operates in two phases: compilation and simulation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "The compilation phase transforms the design into an internal representation",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "that can be interpreted. The simulation phase is an iterative phase",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "of simulation steps.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The typical flow is:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Prepare for compilation with ",
+                      "type" : "text"
+                    },
+                    {
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationContext",
+                      "isActive" : true,
+                      "type" : "reference"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Perform tasks after compilation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "orderedList"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        }
+      ],
+      "kind" : "content"
+    }
+  ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlBindingSystem"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforming Types",
+      "type" : "conformingTypes"
+    }
+  ],
+  "schemaVersion" : {
+    "major" : 0,
+    "minor" : 3,
+    "patch" : 0
+  },
+  "sections" : [
+
+  ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStep(_:)-2w0o0",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStop(_:)-5h612",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/prepareForRunning(_:)-92h5a"
+      ],
+      "title" : "Instance Methods"
+    }
+  ],
+  "variants" : [
+    {
+      "paths" : [
+        "\/documentation\/poieticflows\/simulationsystem"
+      ],
+      "traits" : [
+        {
+          "interfaceLanguage" : "swift"
+        }
+      ]
+    }
+  ]
+, 
+"references": {
+"doc://PoieticFlows/documentation/PoieticFlows": {
+  "abstract" : [
+    {
+      "text" : "Poietic library for modelling and simulation of the ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "Stock and Flow",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " model.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+  "kind" : "symbol",
+  "role" : "collection",
+  "title" : "PoieticFlows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ControlBindingSystem": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ControlBindingSystem"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlBindingSystem",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ControlBindingSystem"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ControlBindingSystem",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/controlbindingsystem"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationContext": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationContext"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationContext",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationcontext"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem": {
+  "abstract" : [
+    {
+      "text" : "Protocol for systems that support the simulation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationSystem"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationSystem"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationSystem",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationsystem"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/didStep(_:)-2w0o0": {
+  "abstract" : [
+    {
+      "text" : "Simulation step has been finished",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "didStep"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
+      "text" : "SimulationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStep(_:)-2w0o0",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "didStep(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationsystem\/didstep(_:)-2w0o0"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/didStop(_:)-5h612": {
+  "abstract" : [
+    {
+      "text" : "The simulation has been finished",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "didStop"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
+      "text" : "SimulationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStop(_:)-5h612",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "didStop(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationsystem\/didstop(_:)-5h612"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/prepareForRunning(_:)-92h5a": {
+  "abstract" : [
+    {
+      "text" : "Called before the first step of the simulation is run.",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "prepareForRunning"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
+      "text" : "SimulationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/prepareForRunning(_:)-92h5a",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "prepareForRunning(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationsystem\/prepareforrunning(_:)-92h5a"
+}
+}
+}

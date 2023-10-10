@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows0B9MetamodelC11constraintsSay0A4Core10Constraint_pGvpZ",
+    "externalID" : "s:12PoieticFlows0B9MetamodelC11constraintsSay0A4Core10ConstraintCGvpZ",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -47,7 +47,7 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore10ConstraintP",
+        "preciseIdentifier" : "s:11PoieticCore10ConstraintC",
         "text" : "Constraint"
       },
       {
@@ -102,7 +102,7 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore10ConstraintP",
+              "preciseIdentifier" : "s:11PoieticCore10ConstraintC",
               "text" : "Constraint"
             },
             {
@@ -283,7 +283,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ConstraintP",
+      "preciseIdentifier" : "s:11PoieticCore10ConstraintC",
       "text" : "Constraint"
     },
     {

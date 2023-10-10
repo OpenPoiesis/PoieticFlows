@@ -81,7 +81,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ParameterStatus": {
   "abstract" : [
-
+    {
+      "text" : "Status of a parameter.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

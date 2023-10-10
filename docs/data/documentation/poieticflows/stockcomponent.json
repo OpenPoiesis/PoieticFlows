@@ -82,6 +82,7 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/11PoieticCore9ComponentP",
+        "doc:\/\/PoieticFlows\/11PoieticCore20InspectableComponentP",
         "doc:\/\/PoieticFlows\/11PoieticCore15KeyedAttributesP",
         "doc:\/\/PoieticFlows\/11PoieticCore22MutableKeyedAttributesP",
         "doc:\/\/PoieticFlows\/s23CustomStringConvertibleP"
@@ -106,7 +107,11 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PositionComponent"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PositionComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlComponent"
       ],
       "title" : "Model and Components"
     }
@@ -141,7 +146,7 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/Component-Implementations",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/InspectableComponent-Implementations",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/KeyedAttributes-Implementations",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/MutableKeyedAttributes-Implementations"
       ],
@@ -165,6 +170,11 @@
 "doc://PoieticFlows/11PoieticCore15KeyedAttributesP": {
   "identifier" : "doc:\/\/PoieticFlows\/11PoieticCore15KeyedAttributesP",
   "title" : "PoieticCore.KeyedAttributes",
+  "type" : "unresolvable"
+},
+"doc://PoieticFlows/11PoieticCore20InspectableComponentP": {
+  "identifier" : "doc:\/\/PoieticFlows\/11PoieticCore20InspectableComponentP",
+  "title" : "PoieticCore.InspectableComponent",
   "type" : "unresolvable"
 },
 "doc://PoieticFlows/11PoieticCore22MutableKeyedAttributesP": {
@@ -203,6 +213,68 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ChartComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChartComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chartcomponent"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ControlComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ControlComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ControlComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ControlComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/controlcomponent"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowComponent": {
   "abstract" : [
@@ -306,6 +378,71 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/formulacomponent"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "Object representing a function defined by a graph.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunction"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunctionComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunctionComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GraphicalFunctionComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/PositionComponent": {
   "abstract" : [
     {
@@ -374,16 +511,16 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockcomponent"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/StockComponent/Component-Implementations": {
+"doc://PoieticFlows/documentation/PoieticFlows/StockComponent/InspectableComponent-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/Component-Implementations",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent\/InspectableComponent-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
-  "title" : "Component Implementations",
+  "title" : "InspectableComponent Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockcomponent\/component-implementations"
+  "url" : "\/documentation\/poieticflows\/stockcomponent\/inspectablecomponent-implementations"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockComponent/KeyedAttributes-Implementations": {
   "abstract" : [
@@ -447,8 +584,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore14AttributeValuea",
-      "text" : "AttributeValue"
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
     },
     {
       "kind" : "text",
@@ -648,8 +785,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore14AttributeValuea",
-      "text" : "AttributeValue"
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
     },
     {
       "kind" : "text",

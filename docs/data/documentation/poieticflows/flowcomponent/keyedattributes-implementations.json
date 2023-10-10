@@ -194,12 +194,25 @@
     },
     {
       "kind" : "text",
-      "text" : "]) -> "
+      "text" : "]) -> ["
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore19AttributeDictionarya",
-      "text" : "AttributeDictionary"
+      "preciseIdentifier" : "s:11PoieticCore12AttributeKeya",
+      "text" : "AttributeKey"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent\/dictionary(withKeys:)",

@@ -237,7 +237,11 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PositionComponent"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PositionComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlComponent"
       ],
       "title" : "Model and Components"
     }
@@ -246,33 +250,24 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Auxiliary",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains-38oqw",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills-8qqu8",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Chart",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ChartSeries",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Control",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/DesignInfo",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Flow",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/GraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ImplicitFlow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Note",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Parameter",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Stock",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/TimeDeltaVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/TimeVariable",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ValueBinding",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/components",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/constraints",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/drains-2akim",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/drainsEdge",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/expressionNodes",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/fills-ck6c",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/fillsEdge",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/flowNodes",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/graphicalFunctionNodes",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/implicitDrains",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/implicitFills",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/implicitFlowEdge",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/incomingParameters",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/inflows",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/namedNodes",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/objectTypes",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/outflows",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/parameterEdges",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/variables"
       ],
       "title" : "Type Properties"
@@ -330,6 +325,68 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ChartComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ChartComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ChartComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/chartcomponent"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ControlComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ControlComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ControlComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ControlComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/controlcomponent"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowComponent": {
   "abstract" : [
@@ -444,7 +501,175 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel\/auxiliary"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Drains-38oqw": {
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Chart": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Chart"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Chart",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Chart",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/chart"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ChartSeries": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChartSeries"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ChartSeries",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChartSeries",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/chartseries"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Control": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Control"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Control",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Control",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/control"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/DesignInfo": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "DesignInfo"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/DesignInfo",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "DesignInfo",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/designinfo"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Drains": {
   "abstract" : [
     {
       "text" : "Edge from a stock to a flow. Denotes “what the flow drains”.",
@@ -482,14 +707,14 @@
       "text" : "ObjectType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains-38oqw",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Drains",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "Drains",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/drains-38oqw"
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/drains"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Fills-8qqu8": {
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Fills": {
   "abstract" : [
     {
       "text" : "Edge from a flow to a stock. Denotes “what the flow fills”.",
@@ -527,12 +752,12 @@
       "text" : "ObjectType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills-8qqu8",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Fills",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "Fills",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/fills-8qqu8"
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/fills"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Flow": {
   "abstract" : [
@@ -626,10 +851,7 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ImplicitFlow": {
   "abstract" : [
-    {
-      "text" : "Edge between two stocks that are connected through a flow.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -679,6 +901,48 @@
   "title" : "Metamodel Implementations",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel\/metamodel-implementations"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Note": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Note"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Note",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Note",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/note"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Parameter": {
   "abstract" : [
@@ -860,6 +1124,48 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel\/timevariable"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/ValueBinding": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ValueBinding"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/ValueBinding",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ValueBinding",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/valuebinding"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/components": {
   "abstract" : [
 
@@ -940,7 +1246,7 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ConstraintP",
+      "preciseIdentifier" : "s:11PoieticCore10ConstraintC",
       "text" : "Constraint"
     },
     {
@@ -954,668 +1260,6 @@
   "title" : "constraints",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel\/constraints"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/drains-2akim": {
-  "abstract" : [
-    {
-      "text" : "Selector for an edge originating in a stock and ending in a flow denoting",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "which stock the flow drains. There must be only one of such edges",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "ending in a flow.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "drains"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NeighborhoodSelectorC",
-      "text" : "NeighborhoodSelector"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/drains-2akim",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "drains",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/drains-2akim"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/drainsEdge": {
-  "abstract" : [
-    {
-      "text" : "Predicate for an edge that drains from a stocks. It originates in a",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "stock and terminates in a flow.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "drainsEdge"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15IsTypePredicateC",
-      "text" : "IsTypePredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/drainsEdge",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "drainsEdge",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/drainsedge"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/expressionNodes": {
-  "abstract" : [
-    {
-      "text" : "Predicate that matches all nodes that have an arithmetic expression",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "(formula).",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "expressionNodes"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore21HasComponentPredicateC",
-      "text" : "HasComponentPredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/expressionNodes",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "expressionNodes",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/expressionnodes"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/fills-ck6c": {
-  "abstract" : [
-    {
-      "text" : "Selector for an edge originating in a flow and ending in a stock denoting",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "which stock the flow fills. There must be only one of such edges",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "originating in a flow.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "fills"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NeighborhoodSelectorC",
-      "text" : "NeighborhoodSelector"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/fills-ck6c",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "fills",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/fills-ck6c"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/fillsEdge": {
-  "abstract" : [
-    {
-      "text" : "Predicate for an edge that fills a stocks. It originates in a flow,",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "and terminates in a stock.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "fillsEdge"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15IsTypePredicateC",
-      "text" : "IsTypePredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/fillsEdge",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "fillsEdge",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/fillsedge"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/flowNodes": {
-  "abstract" : [
-    {
-      "text" : "Predicate that matches all nodes that are flows.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "flowNodes"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15IsTypePredicateC",
-      "text" : "IsTypePredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/flowNodes",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "flowNodes",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/flownodes"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/graphicalFunctionNodes": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "graphicalFunctionNodes"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore21HasComponentPredicateC",
-      "text" : "HasComponentPredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/graphicalFunctionNodes",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "graphicalFunctionNodes",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/graphicalfunctionnodes"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/implicitDrains": {
-  "abstract" : [
-    {
-      "text" : "Neighbourhood selector of stocks around a stock being drained by them.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "implicitDrains"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NeighborhoodSelectorC",
-      "text" : "NeighborhoodSelector"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/implicitDrains",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "implicitDrains",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitdrains"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/implicitFills": {
-  "abstract" : [
-    {
-      "text" : "Neighbourhood selector of stocks around a stock being filledby them.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "implicitFills"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NeighborhoodSelectorC",
-      "text" : "NeighborhoodSelector"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/implicitFills",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "implicitFills",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitfills"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/implicitFlowEdge": {
-  "abstract" : [
-    {
-      "text" : "Predicate for an edge that denotes an implicit flow between",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "two stocks.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "implicitFlowEdge"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15IsTypePredicateC",
-      "text" : "IsTypePredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/implicitFlowEdge",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "implicitFlowEdge",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/implicitflowedge"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/incomingParameters": {
-  "abstract" : [
-    {
-      "text" : "A neighbourhood for incoming parameters of a node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "incomingParameters"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NeighborhoodSelectorC",
-      "text" : "NeighborhoodSelector"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/incomingParameters",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "incomingParameters",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/incomingparameters"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/inflows": {
-  "abstract" : [
-    {
-      "text" : "Selector for edges originating in a flow and ending in a stock denoting",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the inflow from multiple flows into a single stock.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "inflows"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NeighborhoodSelectorC",
-      "text" : "NeighborhoodSelector"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/inflows",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "inflows",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/inflows"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/namedNodes": {
-  "abstract" : [
-    {
-      "text" : "Predicate that matches all nodes that have a name through",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "NamedComponent.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "namedNodes"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore21HasComponentPredicateC",
-      "text" : "HasComponentPredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/namedNodes",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "namedNodes",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/namednodes"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/objectTypes": {
   "abstract" : [
@@ -1665,104 +1309,6 @@
   "title" : "objectTypes",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel\/objecttypes"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/outflows": {
-  "abstract" : [
-    {
-      "text" : "Selector for edges originating in a stock and ending in a flow denoting",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "the outflow from the stock to multiple flows.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "outflows"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NeighborhoodSelectorC",
-      "text" : "NeighborhoodSelector"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/outflows",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "outflows",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/outflows"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/parameterEdges": {
-  "abstract" : [
-    {
-      "text" : "Predicate that matches all edges that represent parameter connections.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "parameterEdges"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15IsTypePredicateC",
-      "text" : "IsTypePredicate"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/parameterEdges",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "parameterEdges",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/parameteredges"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/variables": {
   "abstract" : [
@@ -1846,6 +1392,71 @@
   "title" : "FormulaComponent",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/formulacomponent"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "Object representing a function defined by a graph.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunction"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunctionComponent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunctionComponent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GraphicalFunctionComponent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PositionComponent": {
   "abstract" : [

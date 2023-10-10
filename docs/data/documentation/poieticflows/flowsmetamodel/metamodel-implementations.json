@@ -40,7 +40,7 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/componentType(name:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/inspectableComponent(name:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/objectType(name:)"
       ],
       "title" : "Type Methods"
@@ -121,7 +121,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/componentType(name:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/inspectableComponent(name:)": {
   "abstract" : [
 
   ],
@@ -144,7 +144,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "componentType"
+      "text" : "inspectableComponent"
     },
     {
       "kind" : "text",
@@ -169,20 +169,20 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore9ComponentP",
-      "text" : "Component"
+      "preciseIdentifier" : "s:11PoieticCore20InspectableComponentP",
+      "text" : "InspectableComponent"
     },
     {
       "kind" : "text",
       "text" : ".Type?"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/componentType(name:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/inspectableComponent(name:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "componentType(name:)",
+  "title" : "inspectableComponent(name:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/componenttype(name:)"
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/inspectablecomponent(name:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/objectType(name:)": {
   "abstract" : [

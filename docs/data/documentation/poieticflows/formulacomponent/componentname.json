@@ -5,7 +5,7 @@
       "type" : "text"
     },
     {
-      "code" : "Component.componentName",
+      "code" : "InspectableComponent.componentName",
       "type" : "codeVoice"
     },
     {
@@ -18,7 +18,7 @@
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent\/Component-Implementations"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent\/InspectableComponent-Implementations"
       ]
     ]
   },
@@ -29,7 +29,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:11PoieticCore9ComponentPAAE13componentNameSSvp::SYNTHESIZED::s:12PoieticFlows16FormulaComponentV",
+    "externalID" : "s:11PoieticCore20InspectableComponentPAAE13componentNameSSvp::SYNTHESIZED::s:12PoieticFlows16FormulaComponentV",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -199,16 +199,16 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/formulacomponent"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FormulaComponent/Component-Implementations": {
+"doc://PoieticFlows/documentation/PoieticFlows/FormulaComponent/InspectableComponent-Implementations": {
   "abstract" : [
 
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent\/Component-Implementations",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent\/InspectableComponent-Implementations",
   "kind" : "article",
   "role" : "collectionGroup",
-  "title" : "Component Implementations",
+  "title" : "InspectableComponent Implementations",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/formulacomponent\/component-implementations"
+  "url" : "\/documentation\/poieticflows\/formulacomponent\/inspectablecomponent-implementations"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FormulaComponent/componentName": {
   "abstract" : [
