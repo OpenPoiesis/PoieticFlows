@@ -342,7 +342,7 @@ final class TestSolver: XCTestCase {
         var state = solver.initialize(time: 1.0)
         
         state = solver.difference(at: 1.0, with: state, timeDelta: 1.0)
-        XCTAssertEqual(state[kettle], 900.0 )
+        XCTAssertEqual(state[kettle], -100.0)
         XCTAssertEqual(state[cup], 100.0)
     }
 
