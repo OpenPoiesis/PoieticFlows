@@ -60,7 +60,8 @@ public class Simulator {
         
     public func compile(_ frame: MutableFrame) throws {
         self.frame = frame
-        
+        let view = StockFlowView(frame)
+        // FIXME: [IMPORTANT] What if frame != view.frame???
         let compiler = Compiler(frame: frame)
         
 //        let context = CompilationContext(frame: frame)

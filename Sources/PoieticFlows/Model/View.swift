@@ -7,7 +7,6 @@
 
 import PoieticCore
 
-
 /// Status of a parameter.
 ///
 /// The status is provided by the function ``StockFlowView/parameters(_:required:)``.
@@ -25,6 +24,22 @@ public enum ParameterStatus:Equatable {
 /// level concepts as defined in the ``FlowsMetamodel``.
 ///
 public class StockFlowView {
+    /// Metamodel that the view uses to find relevant object types.
+    public let metamodel: Metamodel
+
+    public let Stock: ObjectType
+    public let Flow: ObjectType
+    public let Auxiliary: ObjectType
+    public let GraphicalFunction: ObjectType
+    public let Control: ObjectType
+    public let Chart: ObjectType
+    public let Drains: ObjectType
+    public let Fills: ObjectType
+    public let Parameter: ObjectType
+    public let ImplicitFlow: ObjectType
+    public let ValueBinding: ObjectType
+    public let ChartSeries: ObjectType
+    
     // TODO: Consolidate queries in metamodel and this domain view - move them here(?)
     /// Graph that the view projects.
     ///
@@ -33,10 +48,25 @@ public class StockFlowView {
     
     /// Create a new view on top of a graph.
     ///
-    public init(_ graph: Graph) {
+    public init(_ frame: Frame) {
         // TODO: Use only frame, not a graph
-        self.graph = graph
-        self.frame = graph.frame
+        self.metamodel = frame.memory.metamodel
+        self.frame = frame
+        self.graph = frame.graph
+        
+        // TODO: Handle missing types more gracefuly
+        self.Stock = metamodel.objectType(name: "Stock")!
+        self.Flow = metamodel.objectType(name: "Flow")!
+        self.Auxiliary = metamodel.objectType(name: "Auxiliary")!
+        self.GraphicalFunction = metamodel.objectType(name: "GraphicalFunction")!
+        self.Control = metamodel.objectType(name: "Control")!
+        self.Chart = metamodel.objectType(name: "Chart")!
+        self.Drains = metamodel.objectType(name: "Drains")!
+        self.Fills = metamodel.objectType(name: "Fills")!
+        self.Parameter = metamodel.objectType(name: "Parameter")!
+        self.ImplicitFlow = metamodel.objectType(name: "ImplicitFlow")!
+        self.ValueBinding = metamodel.objectType(name: "ValueBinding")!
+        self.ChartSeries = metamodel.objectType(name: "ChartSeries")!
     }
     
     /// A list of nodes that are part of the simulation. The simulation nodes
@@ -67,7 +97,7 @@ public class StockFlowView {
     }
     
     public var flowNodes: [Node] {
-        graph.selectNodes(IsTypePredicate(FlowsMetamodel.Flow))
+        graph.selectNodes(IsTypePredicate(Flow))
     }
    
     /// Predicate that matches all objects that have a name through
@@ -96,7 +126,7 @@ public class StockFlowView {
     /// Predicate that matches all edges that represent parameter connections.
     ///
     public var parameterEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(FlowsMetamodel.Parameter))
+        graph.selectEdges(IsTypePredicate(Parameter))
     }
     /// A neighbourhood for incoming parameters of a node.
     ///
@@ -106,7 +136,7 @@ public class StockFlowView {
     public func incomingParameters(_ nodeID: ObjectID) -> Neighborhood {
         graph.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(FlowsMetamodel.Parameter),
+                    predicate: IsTypePredicate(Parameter),
                     direction: .incoming
                 )
         )
@@ -119,7 +149,7 @@ public class StockFlowView {
     /// and terminates in a stock.
     ///
     public var fillsEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(FlowsMetamodel.Fills))
+        graph.selectEdges(IsTypePredicate(Fills))
     }
 
     /// Selector for an edge originating in a flow and ending in a stock denoting
@@ -137,7 +167,7 @@ public class StockFlowView {
     public func fills(_ nodeID: ObjectID) -> Neighborhood {
         graph.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(FlowsMetamodel.Fills),
+                    predicate: IsTypePredicate(Fills),
                     direction: .outgoing
                 )
         )
@@ -155,7 +185,7 @@ public class StockFlowView {
     public func inflows(_ nodeID: ObjectID) -> Neighborhood {
         graph.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(FlowsMetamodel.Fills),
+                    predicate: IsTypePredicate(Fills),
                     direction: .incoming
                 )
         )
@@ -176,7 +206,7 @@ public class StockFlowView {
     public func drains(_ nodeID: ObjectID) -> Neighborhood {
         graph.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(FlowsMetamodel.Drains),
+                    predicate: IsTypePredicate(Drains),
                     direction: .incoming
                 )
         )
@@ -195,7 +225,7 @@ public class StockFlowView {
     public func outflows(_ nodeID: ObjectID) -> Neighborhood {
         graph.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(FlowsMetamodel.Drains),
+                    predicate: IsTypePredicate(Drains),
                     direction: .incoming
                 )
         )
@@ -205,7 +235,7 @@ public class StockFlowView {
     /// stock and terminates in a flow.
     ///
     public var drainsEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(FlowsMetamodel.Drains))
+        graph.selectEdges(IsTypePredicate(Drains))
     }
     
     /// List of all edges that denotes an implicit flow between
@@ -231,7 +261,7 @@ public class StockFlowView {
     /// ``StockFlowView/sortedStocksByImplicitFlows(_:)``
     ///
     public var implicitFlowEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(FlowsMetamodel.ImplicitFlow))
+        graph.selectEdges(IsTypePredicate(ImplicitFlow))
     }
 
     
@@ -335,7 +365,7 @@ public class StockFlowView {
     public func flowFills(_ flowID: ObjectID) -> ObjectID? {
         let flowNode = graph.node(flowID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(flowNode.type === FlowsMetamodel.Flow)
+        precondition(flowNode.type === Flow)
         
         if let node = fills(flowID).nodes.first {
             return node.id
@@ -360,7 +390,7 @@ public class StockFlowView {
     public func flowDrains(_ flowID: ObjectID) -> ObjectID? {
         let flowNode = graph.node(flowID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(flowNode.type === FlowsMetamodel.Flow)
+        precondition(flowNode.type === Flow)
         
         if let node = drains(flowID).nodes.first {
             return node.id
@@ -386,7 +416,7 @@ public class StockFlowView {
     public func stockInflows(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = graph.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === FlowsMetamodel.Stock)
+        precondition(stockNode.type === Stock)
         
         return inflows(stockID).nodes.map { $0.id }
     }
@@ -408,7 +438,7 @@ public class StockFlowView {
     public func stockOutflows(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = graph.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === FlowsMetamodel.Stock)
+        precondition(stockNode.type === Stock)
         
         return outflows(stockID).nodes.map { $0.id }
     }
@@ -435,11 +465,11 @@ public class StockFlowView {
     public func implicitFills(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = graph.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === FlowsMetamodel.Stock)
+        precondition(stockNode.type === Stock)
         
         let hood = graph.hood(stockID,
                               selector: NeighborhoodSelector(
-                                predicate: IsTypePredicate(FlowsMetamodel.ImplicitFlow),
+                                predicate: IsTypePredicate(ImplicitFlow),
                                 direction: .outgoing))
         
         return hood.nodes.map { $0.id }
@@ -467,11 +497,11 @@ public class StockFlowView {
     public func implicitDrains(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = graph.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === FlowsMetamodel.Stock)
+        precondition(stockNode.type === Stock)
         
         let hood = graph.hood(stockID,
                               selector: NeighborhoodSelector(
-                                predicate: IsTypePredicate(FlowsMetamodel.ImplicitFlow),
+                                predicate: IsTypePredicate(ImplicitFlow),
                                 direction: .incoming))
 
         return hood.nodes.map { $0.id }

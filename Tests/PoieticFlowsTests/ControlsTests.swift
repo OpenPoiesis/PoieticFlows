@@ -24,13 +24,13 @@ final class TestControls: XCTestCase {
     }
     
     func testBinding() throws {
-        let a = graph.createNode(FlowsMetamodel.Auxiliary,
+        let a = graph.createNode(Metamodel.Auxiliary,
                                  name: "a",
                                  components: [FormulaComponent(expression: "10")])
-        let control = graph.createNode(FlowsMetamodel.Control,
+        let control = graph.createNode(Metamodel.Control,
                                  name: "control",
                                  components: [ControlComponent()])
-        let binding = graph.createEdge(FlowsMetamodel.ValueBinding,
+        let binding = graph.createEdge(Metamodel.ValueBinding,
                                        origin: control,
                                        target: a)
         try simulator.compile(frame)

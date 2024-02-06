@@ -20,7 +20,7 @@ import PoieticCore
 public struct FlowComponent: InspectableComponent,
                              CustomStringConvertible {
 
-    public static var componentSchema = ComponentSchema(
+    public static var componentSchema = ComponentDescription(
         name: "Flow",
         attributes: [
             Attribute(

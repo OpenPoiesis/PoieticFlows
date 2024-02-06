@@ -12,7 +12,7 @@ public typealias ParsedFormula = Result<UnboundExpression, ExpressionSyntaxError
 public struct ParsedFormulaComponent: Component {
     let parsedFormula: UnboundExpression?
     
-    public static var componentSchema = ComponentSchema(
+    public static var componentSchema = ComponentDescription(
         name: "ParsedFormula"
     )
     
@@ -108,7 +108,7 @@ public struct ImplicitFlowsTransformer: FrameTransformer {
     ///
     public mutating func update(_ context: TransformationContext) {
         let graph = context.frame.mutableGraph
-        let view = StockFlowView(context.frame.graph)
+        let view = StockFlowView(context.frame)
         var unused: [Edge] = view.implicitFlowEdges
         
         for flow in view.flowNodes {
@@ -128,7 +128,7 @@ public struct ImplicitFlowsTransformer: FrameTransformer {
                 continue
             }
             
-            graph.createEdge(FlowsMetamodel.ImplicitFlow,
+            graph.createEdge(view.ImplicitFlow,
                              origin: drains,
                              target: fills,
                              components: [])

@@ -18,9 +18,10 @@ final class TestDomainView: XCTestCase {
     var graph: MutableGraph!
     
     override func setUp() {
-        db = ObjectMemory()
+        db = ObjectMemory(metamodel: FlowsMetamodel)
         frame = db.deriveFrame()
         graph = frame.mutableGraph
+//        Metamodel = BoundStockFlowMetamodel(FlowsMetamodel)
     }
     
     
@@ -50,27 +51,27 @@ final class TestDomainView: XCTestCase {
     func testSortedNodes() throws {
         // a -> b -> c
         
-        let c = graph.createNode(FlowsMetamodel.Auxiliary,
+        let c = graph.createNode(Metamodel.Auxiliary,
                                  name: "c",
                                  components: [FormulaComponent(expression:"b")])
-        let b = graph.createNode(FlowsMetamodel.Auxiliary,
+        let b = graph.createNode(Metamodel.Auxiliary,
                                  name: "b",
                                  components: [FormulaComponent(expression:"a")])
-        let a = graph.createNode(FlowsMetamodel.Auxiliary,
+        let a = graph.createNode(Metamodel.Auxiliary,
                                  name: "a",
                                  components: [FormulaComponent(expression:"0")])
         
         
-        graph.createEdge(FlowsMetamodel.Parameter,
+        graph.createEdge(Metamodel.Parameter,
                          origin: a,
                          target: b,
                          components: [])
-        graph.createEdge(FlowsMetamodel.Parameter,
+        graph.createEdge(Metamodel.Parameter,
                          origin: b,
                          target: c,
                          components: [])
         
-        let view = StockFlowView(graph)
+        let view = StockFlowView(frame)
         let sortedNodes = try view.sortedNodesByParameter([b, c, a])
         
         if sortedNodes.isEmpty {
@@ -85,10 +86,10 @@ final class TestDomainView: XCTestCase {
     }
     
     func testInvalidInput2() throws {
-        let broken = graph.createNode(FlowsMetamodel.Stock,
+        let broken = graph.createNode(Metamodel.Stock,
                                       name: "broken",
                                       components: [FormulaComponent(expression: "price")])
-        let view = StockFlowView(graph)
+        let view = StockFlowView(frame)
         
         let parameters = view.parameters(broken, required:["price"])
         XCTAssertEqual(parameters.count, 1)
@@ -96,26 +97,26 @@ final class TestDomainView: XCTestCase {
     }
 
     func testUnusedInputs() throws {
-        let used = graph.createNode(FlowsMetamodel.Auxiliary,
+        let used = graph.createNode(Metamodel.Auxiliary,
                                     name: "used",
                                     components: [FormulaComponent(expression:"0")])
-        let unused = graph.createNode(FlowsMetamodel.Auxiliary,
+        let unused = graph.createNode(Metamodel.Auxiliary,
                                       name: "unused",
                                       components: [FormulaComponent(expression:"0")])
-        let tested = graph.createNode(FlowsMetamodel.Auxiliary,
+        let tested = graph.createNode(Metamodel.Auxiliary,
                                       name: "tested",
                                       components: [FormulaComponent(expression:"used")])
         
-        let usedEdge = graph.createEdge(FlowsMetamodel.Parameter,
+        let usedEdge = graph.createEdge(Metamodel.Parameter,
                          origin: used,
                          target: tested,
                          components: [])
-        let unusedEdge = graph.createEdge(FlowsMetamodel.Parameter,
+        let unusedEdge = graph.createEdge(Metamodel.Parameter,
                          origin: unused,
                          target: tested,
                          components: [])
         
-        let view = StockFlowView(graph)
+        let view = StockFlowView(frame)
         
         // TODO: Get the required list from the compiler
         let parameters = view.parameters(tested, required:["used"])
@@ -128,19 +129,19 @@ final class TestDomainView: XCTestCase {
     }
 
     func testUnknownParameters() throws {
-        let known = graph.createNode(FlowsMetamodel.Auxiliary,
+        let known = graph.createNode(Metamodel.Auxiliary,
                                      name: "known",
                                      components: [FormulaComponent(expression:"0")])
-        let tested = graph.createNode(FlowsMetamodel.Auxiliary,
+        let tested = graph.createNode(Metamodel.Auxiliary,
                                       name: "tested",
                                       components: [FormulaComponent(expression:"known + unknown")])
         
-        let knownEdge = graph.createEdge(FlowsMetamodel.Parameter,
+        let knownEdge = graph.createEdge(Metamodel.Parameter,
                          origin: known,
                          target: tested,
                          components: [])
         
-        let view = StockFlowView(graph)
+        let view = StockFlowView(frame)
         
         let parameters = view.parameters(tested, required:["known", "unknown"])
         XCTAssertEqual(parameters.count, 2)
@@ -151,26 +152,26 @@ final class TestDomainView: XCTestCase {
     }
     
     func testFlowFillsAndDrains() throws {
-        let flow = graph.createNode(FlowsMetamodel.Flow,
+        let flow = graph.createNode(Metamodel.Flow,
                                     name: "f",
                                     components: [FormulaComponent(expression:"1")])
-        let source = graph.createNode(FlowsMetamodel.Stock,
+        let source = graph.createNode(Metamodel.Stock,
                                       name: "source",
                                       components: [FormulaComponent(expression:"0")])
-        let sink = graph.createNode(FlowsMetamodel.Stock,
+        let sink = graph.createNode(Metamodel.Stock,
                                     name: "sink",
                                     components: [FormulaComponent(expression:"0")])
         
-        graph.createEdge(FlowsMetamodel.Drains,
+        graph.createEdge(Metamodel.Drains,
                          origin: source,
                          target: flow,
                          components: [])
-        graph.createEdge(FlowsMetamodel.Fills,
+        graph.createEdge(Metamodel.Fills,
                          origin: flow,
                          target: sink,
                          components: [])
         
-        let view = StockFlowView(graph)
+        let view = StockFlowView(frame)
         
         XCTAssertEqual(view.flowFills(flow), sink)
         XCTAssertEqual(view.flowDrains(flow), source)

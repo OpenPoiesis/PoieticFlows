@@ -8,7 +8,7 @@
 import PoieticCore
 
 public struct ChartComponent: InspectableComponent {
-    public static var componentSchema = ComponentSchema(
+    public static var componentSchema = ComponentDescription(
         name: "Chart",
         attributes: [
 //            AttributeDescription(
@@ -65,17 +65,17 @@ public struct ChartSeries {
 }
 
 extension StockFlowView {
-    public var charts: [Chart] {
+    public var charts: [PoieticFlows.Chart] {
         let nodes = graph.selectNodes(HasComponentPredicate(ChartComponent.self))
-        var charts: [Chart] = []
+        var charts: [PoieticFlows.Chart] = []
         for node in nodes {
             let component: ChartComponent = node[ChartComponent.self]!
             let hood = graph.hood(node.id,
                                   selector: NeighborhoodSelector(
-                                    predicate: IsTypePredicate(FlowsMetamodel.ChartSeries),
+                                    predicate: IsTypePredicate(ChartSeries),
                                     direction: .outgoing))
             let series = hood.nodes.map { $0.snapshot }
-            let chart = Chart(node: node.snapshot,
+            let chart = PoieticFlows.Chart(node: node.snapshot,
                               component: component,
                               series: series)
             charts.append(chart)

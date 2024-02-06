@@ -80,9 +80,10 @@ public class Compiler {
     ///
     public init(frame: MutableFrame) {
         // FIXME: [IMPORTANT] Compiler should get a stable frame, not a mutable frame!
+        // FIXME: [IMPORTANT] What if frame != view.frame???
         self.frame = frame
-        self.graph = self.frame.mutableGraph
-        self.view = StockFlowView(self.graph)
+        self.graph = frame.mutableGraph
+        self.view = StockFlowView(frame)
         
         builtinVariables = FlowsMetamodel.variables
         builtinVariableNames = builtinVariables.map { $0.name }
@@ -134,6 +135,7 @@ public class Compiler {
         // 1. Update pre-compilation systems
         // =================================================================
 
+        // TODO: We are passing view from metamodel just to create view in the context
         let context = TransformationContext(frame: frame)
 
         for index in _preCompilationTransforms.indices {
@@ -259,18 +261,18 @@ public class Compiler {
         var auxiliaries: [CompiledObject] = []
         
         for (index, node) in orderedSimulationNodes.enumerated() {
-            if node.type === FlowsMetamodel.Stock {
+            if node.type === view.Stock {
                 unsortedStocks.append(node)
             }
-            else if node.type === FlowsMetamodel.Flow {
+            else if node.type === view.Flow {
                 let component: FlowComponent = node[FlowComponent.self]!
                 let compiled = CompiledFlow(id: node.id,
                                             index: index,
                                             component: component)
                 flows.append(compiled)
             }
-            else if node.type === FlowsMetamodel.Auxiliary
-                        || node.type === FlowsMetamodel.GraphicalFunction {
+            else if node.type === view.Auxiliary
+                        || node.type === view.GraphicalFunction {
                 let compiled = CompiledObject(id: node.id, index: index)
                 auxiliaries.append(compiled)
             }
@@ -303,7 +305,7 @@ public class Compiler {
         // =================================================================
 
         var bindings: [CompiledControlBinding] = []
-        for object in frame.filter(type: FlowsMetamodel.ValueBinding) {
+        for object in frame.filter(type: view.ValueBinding) {
             guard let edge = Edge(object) else {
                 // This should not happen
                 fatalError("A value binding \(object.id) is not an edge")

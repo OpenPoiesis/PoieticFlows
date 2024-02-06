@@ -8,7 +8,7 @@
 import PoieticCore
 
 public struct GraphicalFunctionComponent: InspectableComponent, CustomStringConvertible {
-    public static var componentSchema = ComponentSchema(
+    public static var componentSchema = ComponentDescription(
         name: "GraphicalFunction",
         attributes: [
             Attribute(

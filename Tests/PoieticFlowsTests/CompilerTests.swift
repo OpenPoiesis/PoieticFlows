@@ -28,23 +28,23 @@ final class TestCompiler: XCTestCase {
     var graph: MutableGraph!
 
     override func setUp() {
-        db = ObjectMemory()
+        db = ObjectMemory(metamodel: FlowsMetamodel)
         frame = db.deriveFrame()
         graph = frame.mutableGraph
     }
 
     func testComputedVariables() throws {
         let compiler = Compiler(frame: frame)
-        graph.createNode(FlowsMetamodel.Stock,
+        graph.createNode(Metamodel.Stock,
                          name: "a",
                          components: [FormulaComponent(expression:"0")])
-        graph.createNode(FlowsMetamodel.Stock,
+        graph.createNode(Metamodel.Stock,
                          name: "b",
                          components: [FormulaComponent(expression:"0")])
-        graph.createNode(FlowsMetamodel.Stock,
+        graph.createNode(Metamodel.Stock,
                          name: "c",
                          components: [FormulaComponent(expression:"0")])
-        graph.createNode(FlowsMetamodel.Note,
+        graph.createNode(Metamodel.Note,
                          name: "note",
                          components: [])
         // TODO: Check using violation checker
@@ -58,16 +58,16 @@ final class TestCompiler: XCTestCase {
     
     func testValidateDuplicateName() throws {
         let compiler = Compiler(frame: frame)
-        let c1 = graph.createNode(FlowsMetamodel.Stock,
+        let c1 = graph.createNode(Metamodel.Stock,
                                   name: "things",
                                   components:[FormulaComponent(expression:"0")])
-        let c2 = graph.createNode(FlowsMetamodel.Stock,
+        let c2 = graph.createNode(Metamodel.Stock,
                                   name: "things",
                                   components: [FormulaComponent(expression:"0")])
-        graph.createNode(FlowsMetamodel.Stock,
+        graph.createNode(Metamodel.Stock,
                          name: "a",
                          components: [FormulaComponent(expression:"0")])
-        graph.createNode(FlowsMetamodel.Stock,
+        graph.createNode(Metamodel.Stock,
                          name: "b",
                          components: [FormulaComponent(expression:"0")])
         
@@ -87,21 +87,21 @@ final class TestCompiler: XCTestCase {
 
     
     func testInflowOutflow() throws {
-        let source = graph.createNode(FlowsMetamodel.Stock,
+        let source = graph.createNode(Metamodel.Stock,
                                       name: "source",
                                       components: [FormulaComponent(expression:"0")])
-        let flow = graph.createNode(FlowsMetamodel.Flow,
+        let flow = graph.createNode(Metamodel.Flow,
                                     name: "f",
                                     components: [FormulaComponent(expression:"1")])
-        let sink = graph.createNode(FlowsMetamodel.Stock,
+        let sink = graph.createNode(Metamodel.Stock,
                                     name: "sink",
                                     components: [FormulaComponent(expression:"0")])
         
-        graph.createEdge(FlowsMetamodel.Drains,
+        graph.createEdge(Metamodel.Drains,
                          origin: source,
                          target: flow,
                          components: [])
-        graph.createEdge(FlowsMetamodel.Fills,
+        graph.createEdge(Metamodel.Fills,
                          origin: flow,
                          target: sink,
                          components: [])
@@ -121,26 +121,26 @@ final class TestCompiler: XCTestCase {
     
     func testUpdateImplicitFlows() throws {
         // TODO: No compiler needed, now it is using a transformation system
-        let flow = graph.createNode(FlowsMetamodel.Flow,
+        let flow = graph.createNode(Metamodel.Flow,
                                     name: "f",
                                     components: [FormulaComponent(expression:"1")])
-        let source = graph.createNode(FlowsMetamodel.Stock,
+        let source = graph.createNode(Metamodel.Stock,
                                       name: "source",
                                       components: [FormulaComponent(expression:"0")])
-        let sink = graph.createNode(FlowsMetamodel.Stock,
+        let sink = graph.createNode(Metamodel.Stock,
                                     name: "sink",
                                     components: [FormulaComponent(expression:"0")])
         
-        graph.createEdge(FlowsMetamodel.Drains,
+        graph.createEdge(Metamodel.Drains,
                          origin: source,
                          target: flow,
                          components: [])
-        graph.createEdge(FlowsMetamodel.Fills,
+        graph.createEdge(Metamodel.Fills,
                          origin: flow,
                          target: sink,
                          components: [])
         
-        let view = StockFlowView(graph)
+        let view = StockFlowView(frame)
         
         XCTAssertEqual(view.implicitDrains(source).count, 0)
         XCTAssertEqual(view.implicitFills(sink).count, 0)
@@ -166,7 +166,7 @@ final class TestCompiler: XCTestCase {
     
     func testDisconnectedGraphicalFunction() throws {
         let compiler = Compiler(frame: frame)
-        let gf = graph.createNode(FlowsMetamodel.GraphicalFunction,
+        let gf = graph.createNode(Metamodel.GraphicalFunction,
                                   name: "g",
                                   components: [GraphicalFunctionComponent()])
 
@@ -195,18 +195,18 @@ final class TestCompiler: XCTestCase {
     func testGraphicalFunctionNameReferences() throws {
         let compiler = Compiler(frame: frame)
 
-        let param = graph.createNode(FlowsMetamodel.Auxiliary,
+        let param = graph.createNode(Metamodel.Auxiliary,
                                   name: "p",
                                   components: [FormulaComponent(expression: "1")])
-        let gf = graph.createNode(FlowsMetamodel.GraphicalFunction,
+        let gf = graph.createNode(Metamodel.GraphicalFunction,
                                   name: "g",
                                   components: [GraphicalFunctionComponent()])
-        let aux = graph.createNode(FlowsMetamodel.Auxiliary,
+        let aux = graph.createNode(Metamodel.Auxiliary,
                                    name:"a",
                                    components: [FormulaComponent(expression: "g")])
 
-        graph.createEdge(FlowsMetamodel.Parameter, origin: param, target: gf)
-        graph.createEdge(FlowsMetamodel.Parameter, origin: gf, target: aux)
+        graph.createEdge(Metamodel.Parameter, origin: param, target: gf)
+        graph.createEdge(Metamodel.Parameter, origin: gf, target: aux)
 
         let compiled = try compiler.compile()
 
@@ -225,19 +225,19 @@ final class TestCompiler: XCTestCase {
 
 
     func testGraphicalFunctionComputation() throws {
-        let p = graph.createNode(FlowsMetamodel.Auxiliary,
+        let p = graph.createNode(Metamodel.Auxiliary,
                                    name:"p",
                                    components: [FormulaComponent(expression: "0")])
 
-        let gf = graph.createNode(FlowsMetamodel.GraphicalFunction,
+        let gf = graph.createNode(Metamodel.GraphicalFunction,
                                   name: "g",
                                   components: [GraphicalFunctionComponent()])
-        let aux = graph.createNode(FlowsMetamodel.Auxiliary,
+        let aux = graph.createNode(Metamodel.Auxiliary,
                                    name:"a",
                                    components: [FormulaComponent(expression: "g")])
 
-        graph.createEdge(FlowsMetamodel.Parameter, origin: p, target: gf)
-        graph.createEdge(FlowsMetamodel.Parameter, origin: gf, target: aux)
+        graph.createEdge(Metamodel.Parameter, origin: p, target: gf)
+        graph.createEdge(Metamodel.Parameter, origin: gf, target: aux)
 
         let compiler = Compiler(frame: frame)
         let compiled = try compiler.compile()

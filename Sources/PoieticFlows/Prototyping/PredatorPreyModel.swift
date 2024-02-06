@@ -11,7 +11,7 @@
 
 import PoieticCore
 
-
+#if false
 
 extension MutableGraph {
     func createStock(name: String, expression: String) -> ObjectID {
@@ -115,3 +115,5 @@ public func CreatePredatorPreyDemo(in memory: ObjectMemory) throws {
 
     try memory.accept(frame)
 }
+
+#endif

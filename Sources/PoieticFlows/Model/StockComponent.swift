@@ -13,7 +13,7 @@ import PoieticCore
 public struct StockComponent: InspectableComponent,
                               CustomStringConvertible {
     
-    public static var componentSchema = ComponentSchema(
+    public static var componentSchema = ComponentDescription(
         name: "Stock",
         attributes: [
             Attribute(

@@ -25,7 +25,7 @@ import PoieticCore
 public struct FormulaComponent: InspectableComponent,
                                    CustomStringConvertible {
     
-    public static var componentSchema = ComponentSchema(
+    public static var componentSchema = ComponentDescription(
         name: "Formula",
         attributes: [
             Attribute(
