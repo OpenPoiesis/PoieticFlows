@@ -23,9 +23,6 @@ public class Compiler {
     ///
     let frame: MutableFrame
 
-    /// Mutable view of the frame as a graph.
-    let graph: MutableGraph
-    
     /// Flows domain view of the frame.
     let view: StockFlowView
 
@@ -82,7 +79,6 @@ public class Compiler {
         // FIXME: [IMPORTANT] Compiler should get a stable frame, not a mutable frame!
         // FIXME: [IMPORTANT] What if frame != view.frame???
         self.frame = frame
-        self.graph = frame.mutableGraph
         self.view = StockFlowView(frame)
         
         builtinVariables = FlowsMetamodel.variables
@@ -481,7 +477,7 @@ public class Compiler {
         for stock in stocks {
             let sortedOutflows = outflows[stock.id]?.map {
                 // 1. Get the priority component
-                    let node = graph.node($0)
+                    let node = frame.node($0)
                     let component: FlowComponent = node[FlowComponent.self]!
                     return (id: $0, priority: component.priority)
                 }

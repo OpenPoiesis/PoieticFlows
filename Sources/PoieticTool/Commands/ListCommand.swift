@@ -107,7 +107,7 @@ extension PoieticTool {
         
         func listCharts(_ memory: ObjectMemory) {
             let frame = memory.currentFrame
-            let view = StockFlowView(frame.graph)
+            let view = StockFlowView(frame)
             
             let charts = view.charts
             

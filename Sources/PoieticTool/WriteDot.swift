@@ -18,37 +18,37 @@ let DefaultDOTStyle = DotStyle(
                      attributes: [
                         "labelloc": "b",
                      ]),
-        DotNodeStyle(predicate: IsTypePredicate(FlowsMetamodel.Flow.self),
+        DotNodeStyle(predicate: IsTypePredicate(Metamodel.Flow.self),
                      attributes: [
                         "shape": "ellipse",
                         "style": "bold",
 
                      ]),
-        DotNodeStyle(predicate: IsTypePredicate(FlowsMetamodel.Stock.self),
+        DotNodeStyle(predicate: IsTypePredicate(Metamodel.Stock.self),
                      attributes: [
                         "style": "bold",
                         "shape": "box",
                      ]),
-        DotNodeStyle(predicate: IsTypePredicate(FlowsMetamodel.Auxiliary.self),
+        DotNodeStyle(predicate: IsTypePredicate(Metamodel.Auxiliary.self),
                      attributes: [
                         "shape": "ellipse",
                         "style": "dotted",
                      ]),
     ],
     edges: [
-        DotEdgeStyle(predicate: IsTypePredicate(FlowsMetamodel.Drains.self),
+        DotEdgeStyle(predicate: IsTypePredicate(Metamodel.Drains.self),
                      attributes: [
                         "color": "blue:white:blue",
                         "arrowhead": "empty",
                         "arrowsize": "2",
                      ]),
-        DotEdgeStyle(predicate: IsTypePredicate(FlowsMetamodel.Fills.self),
+        DotEdgeStyle(predicate: IsTypePredicate(Metamodel.Fills.self),
                      attributes: [
                         "color": "blue:white:blue",
                         "arrowhead": "empty",
                         "arrowsize": "2",
                      ]),
-        DotEdgeStyle(predicate: IsTypePredicate(FlowsMetamodel.Parameter.self),
+        DotEdgeStyle(predicate: IsTypePredicate(Metamodel.Parameter.self),
                      attributes: [
                         "arrowhead": "open",
                         "color": "red",

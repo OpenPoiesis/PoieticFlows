@@ -33,10 +33,10 @@ final class TestDomainView: XCTestCase {
             "b": 2,
         ]
         
-        let l = graph.createNode(FlowsMetamodel.Stock,
+        let l = frame.createNode(FlowsMetamodel.Stock,
                                  components: [FormulaComponent(name: "l",
                                                                expression: "sqrt(a*a + b*b)")])
-        let view = StockFlowView(graph)
+        let view = StockFlowView(frame)
         
         let exprs = try view.boundExpressions(names: names)
         

@@ -32,7 +32,7 @@ extension PoieticTool {
         mutating func run() throws {
             let memory = try openMemory(options: options)
             let frame = memory.deriveFrame()
-            let graph = frame.mutableGraph
+            let graph = frame
             
             guard let type = FlowsMetamodel.objectType(name: typeName) else {
                 throw ToolError.unknownObjectType(typeName)

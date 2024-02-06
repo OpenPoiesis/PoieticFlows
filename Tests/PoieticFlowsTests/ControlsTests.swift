@@ -20,7 +20,7 @@ final class TestControls: XCTestCase {
         memory = ObjectMemory(metamodel: FlowsMetamodel.self)
         simulator = Simulator(memory: memory)
         frame = memory.deriveFrame()
-        graph = frame.mutableGraph
+        graph = frame
     }
     
     func testBinding() throws {

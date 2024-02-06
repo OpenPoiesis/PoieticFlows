@@ -19,17 +19,8 @@ extension PoieticTool {
         
         @OptionGroup var options: Options
         
-        @Flag(name: [.long],
-                help: "Include demo model")
-        var includeDemo: Bool = false
-
-        
         mutating func run() throws {
             let memory = createMemory(options: options)
-            
-            if includeDemo {
-                try CreatePredatorPreyDemo(in: memory)
-            }
             
             try closeMemory(memory: memory, options: options)
             print("Database created.")

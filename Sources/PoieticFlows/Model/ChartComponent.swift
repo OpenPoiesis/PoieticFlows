@@ -66,11 +66,11 @@ public struct ChartSeries {
 
 extension StockFlowView {
     public var charts: [PoieticFlows.Chart] {
-        let nodes = graph.selectNodes(HasComponentPredicate(ChartComponent.self))
+        let nodes = frame.selectNodes(HasComponentPredicate(ChartComponent.self))
         var charts: [PoieticFlows.Chart] = []
         for node in nodes {
             let component: ChartComponent = node[ChartComponent.self]!
-            let hood = graph.hood(node.id,
+            let hood = frame.hood(node.id,
                                   selector: NeighborhoodSelector(
                                     predicate: IsTypePredicate(ChartSeries),
                                     direction: .outgoing))

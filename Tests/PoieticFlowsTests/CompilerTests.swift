@@ -30,7 +30,7 @@ final class TestCompiler: XCTestCase {
     override func setUp() {
         db = ObjectMemory(metamodel: FlowsMetamodel)
         frame = db.deriveFrame()
-        graph = frame.mutableGraph
+        graph = frame
     }
 
     func testComputedVariables() throws {

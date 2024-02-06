@@ -43,7 +43,6 @@ public class StockFlowView {
     // TODO: Consolidate queries in metamodel and this domain view - move them here(?)
     /// Graph that the view projects.
     ///
-    public let graph: Graph
     public let frame: Frame
     
     /// Create a new view on top of a graph.
@@ -52,7 +51,6 @@ public class StockFlowView {
         // TODO: Use only frame, not a graph
         self.metamodel = frame.memory.metamodel
         self.frame = frame
-        self.graph = frame.graph
         
         // TODO: Handle missing types more gracefuly
         self.Stock = metamodel.objectType(name: "Stock")!
@@ -76,7 +74,7 @@ public class StockFlowView {
     /// - SeeAlso: ``SimulationVariable``, ``CompiledModel``
     ///
     public var simulationNodes: [Node] {
-        graph.selectNodes(
+        frame.selectNodes(
             HasComponentPredicate(FormulaComponent.self)
                 .or(HasComponentPredicate(GraphicalFunctionComponent.self)))
     }
@@ -93,11 +91,11 @@ public class StockFlowView {
     @available(*, deprecated, message: "Use simulationNodes instead")
     public var graphicalFunctionNodes: [Node] {
         // TODO: Use tuple (Node, Component) instead of just Node
-        graph.selectNodes(HasComponentPredicate(GraphicalFunctionComponent.self))
+        frame.selectNodes(HasComponentPredicate(GraphicalFunctionComponent.self))
     }
     
     public var flowNodes: [Node] {
-        graph.selectNodes(IsTypePredicate(Flow))
+        frame.selectNodes(IsTypePredicate(Flow))
     }
    
     /// Predicate that matches all objects that have a name through
@@ -116,7 +114,7 @@ public class StockFlowView {
     ///
     public var stateNodes: [Node] {
         // For now we have only nodes with a formula component.
-        graph.selectNodes(HasComponentPredicate(FormulaComponent.self))
+        frame.selectNodes(HasComponentPredicate(FormulaComponent.self))
     }
 
     
@@ -126,7 +124,7 @@ public class StockFlowView {
     /// Predicate that matches all edges that represent parameter connections.
     ///
     public var parameterEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(Parameter))
+        frame.selectEdges(IsTypePredicate(Parameter))
     }
     /// A neighbourhood for incoming parameters of a node.
     ///
@@ -134,7 +132,7 @@ public class StockFlowView {
     /// are parameters for the node of focus.
     ///
     public func incomingParameters(_ nodeID: ObjectID) -> Neighborhood {
-        graph.hood(nodeID,
+        frame.hood(nodeID,
                    selector: NeighborhoodSelector(
                     predicate: IsTypePredicate(Parameter),
                     direction: .incoming
@@ -149,7 +147,7 @@ public class StockFlowView {
     /// and terminates in a stock.
     ///
     public var fillsEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(Fills))
+        frame.selectEdges(IsTypePredicate(Fills))
     }
 
     /// Selector for an edge originating in a flow and ending in a stock denoting
@@ -165,7 +163,7 @@ public class StockFlowView {
     ///      *Node of interest*
     ///
     public func fills(_ nodeID: ObjectID) -> Neighborhood {
-        graph.hood(nodeID,
+        frame.hood(nodeID,
                    selector: NeighborhoodSelector(
                     predicate: IsTypePredicate(Fills),
                     direction: .outgoing
@@ -183,7 +181,7 @@ public class StockFlowView {
     ///      Neighbourhood (many)
     ///
     public func inflows(_ nodeID: ObjectID) -> Neighborhood {
-        graph.hood(nodeID,
+        frame.hood(nodeID,
                    selector: NeighborhoodSelector(
                     predicate: IsTypePredicate(Fills),
                     direction: .incoming
@@ -204,7 +202,7 @@ public class StockFlowView {
     ///
     ///
     public func drains(_ nodeID: ObjectID) -> Neighborhood {
-        graph.hood(nodeID,
+        frame.hood(nodeID,
                    selector: NeighborhoodSelector(
                     predicate: IsTypePredicate(Drains),
                     direction: .incoming
@@ -223,7 +221,7 @@ public class StockFlowView {
     ///
     ///
     public func outflows(_ nodeID: ObjectID) -> Neighborhood {
-        graph.hood(nodeID,
+        frame.hood(nodeID,
                    selector: NeighborhoodSelector(
                     predicate: IsTypePredicate(Drains),
                     direction: .incoming
@@ -235,7 +233,7 @@ public class StockFlowView {
     /// stock and terminates in a flow.
     ///
     public var drainsEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(Drains))
+        frame.selectEdges(IsTypePredicate(Drains))
     }
     
     /// List of all edges that denotes an implicit flow between
@@ -261,7 +259,7 @@ public class StockFlowView {
     /// ``StockFlowView/sortedStocksByImplicitFlows(_:)``
     ///
     public var implicitFlowEdges: [Edge] {
-        graph.selectEdges(IsTypePredicate(ImplicitFlow))
+        frame.selectEdges(IsTypePredicate(ImplicitFlow))
     }
 
     
@@ -294,7 +292,7 @@ public class StockFlowView {
         var result: [String: ParameterStatus] = [:]
 
         for edge in incomingHood.edges {
-            let node = graph.node(edge.origin)
+            let node = frame.node(edge.origin)
             let name = node.name!
             if unseen.contains(name) {
                 result[name] = .used(node: node.id, edge: edge.id)
@@ -322,10 +320,10 @@ public class StockFlowView {
     /// - Throws: ``GraphCycleError`` when cycle was detected.
     ///
     public func sortedNodesByParameter(_ nodes: [ObjectID]) throws -> [Node] {
-        let sorted = try graph.topologicalSort(nodes, edges: parameterEdges)
+        let sorted = try frame.topologicalSort(nodes, edges: parameterEdges)
         
         let result: [Node] = sorted.map {
-            graph.node($0)
+            frame.node($0)
         }
         
         return result
@@ -341,10 +339,10 @@ public class StockFlowView {
     ///   ``implicitDrains(_:)``,
     ///   ``ImplicitFlowsSystem/update(_:)``
     public func sortedStocksByImplicitFlows(_ nodes: [ObjectID]) throws -> [Node] {
-        let sorted = try graph.topologicalSort(nodes, edges: implicitFlowEdges)
+        let sorted = try frame.topologicalSort(nodes, edges: implicitFlowEdges)
         
         let result: [Node] = sorted.map {
-            graph.node($0)
+            frame.node($0)
         }
         
         return result
@@ -363,7 +361,7 @@ public class StockFlowView {
     /// - SeeAlso: ``flowDrains(_:)``,
     ///
     public func flowFills(_ flowID: ObjectID) -> ObjectID? {
-        let flowNode = graph.node(flowID)
+        let flowNode = frame.node(flowID)
         // TODO: Do we need to check it here? We assume model is valid.
         precondition(flowNode.type === Flow)
         
@@ -388,7 +386,7 @@ public class StockFlowView {
     /// - SeeAlso: ``flowDrains(_:)``,
     ///
     public func flowDrains(_ flowID: ObjectID) -> ObjectID? {
-        let flowNode = graph.node(flowID)
+        let flowNode = frame.node(flowID)
         // TODO: Do we need to check it here? We assume model is valid.
         precondition(flowNode.type === Flow)
         
@@ -414,7 +412,7 @@ public class StockFlowView {
     /// - Precondition: `stockID` must be an ID of a node that is a stock.
     ///
     public func stockInflows(_ stockID: ObjectID) -> [ObjectID] {
-        let stockNode = graph.node(stockID)
+        let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
         precondition(stockNode.type === Stock)
         
@@ -436,7 +434,7 @@ public class StockFlowView {
     /// - Precondition: `stockID` must be an ID of a node that is a stock.
     ///
     public func stockOutflows(_ stockID: ObjectID) -> [ObjectID] {
-        let stockNode = graph.node(stockID)
+        let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
         precondition(stockNode.type === Stock)
         
@@ -463,11 +461,11 @@ public class StockFlowView {
     /// - Precondition: `stockID` must be an ID of a node that is a stock.
     ///
     public func implicitFills(_ stockID: ObjectID) -> [ObjectID] {
-        let stockNode = graph.node(stockID)
+        let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
         precondition(stockNode.type === Stock)
         
-        let hood = graph.hood(stockID,
+        let hood = frame.hood(stockID,
                               selector: NeighborhoodSelector(
                                 predicate: IsTypePredicate(ImplicitFlow),
                                 direction: .outgoing))
@@ -495,11 +493,11 @@ public class StockFlowView {
     /// - Precondition: `stockID` must be an ID of a node that is a stock.
     ///
     public func implicitDrains(_ stockID: ObjectID) -> [ObjectID] {
-        let stockNode = graph.node(stockID)
+        let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
         precondition(stockNode.type === Stock)
         
-        let hood = graph.hood(stockID,
+        let hood = frame.hood(stockID,
                               selector: NeighborhoodSelector(
                                 predicate: IsTypePredicate(ImplicitFlow),
                                 direction: .incoming))

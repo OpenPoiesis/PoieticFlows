@@ -26,8 +26,7 @@ extension PoieticTool {
         mutating func run() throws {
             let memory = try openMemory(options: options)
             let frame = memory.deriveFrame()
-            let graph = frame.mutableGraph
-            let view = StockFlowView(graph)
+            let view = StockFlowView(frame)
             var addedCount = 0
             var removedCount = 0
             
@@ -48,7 +47,7 @@ extension PoieticTool {
                     case .missing:
                         // Find missing parameter
                         let parameterID = frame.object(named: name)!.id
-                        let edge = graph.createEdge(FlowsMetamodel.Parameter,
+                        let edge = frame.createEdge(Metamodel.Parameter,
                                                     origin: parameterID,
                                                   target: target.id)
                         if verbose {
@@ -56,7 +55,7 @@ extension PoieticTool {
                         }
                         addedCount += 1
                     case let .unused(node, edge):
-                        graph.remove(edge: edge)
+                        frame.remove(edge: edge)
                         if verbose {
                             print("Disconnected parameter \(name) (\(node)) from \(target.name!) (\(target.id)), edge: \(edge)")
                         }

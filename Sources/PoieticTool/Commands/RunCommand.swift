@@ -213,7 +213,7 @@ func writeGnuplotBundle(path: String,
                         compiledModel: CompiledModel,
                         output: [SimulationState]) throws {
     let path = if path == "-" { "." } else { path }
-    let view = StockFlowView(frame.graph)
+    let view = StockFlowView(frame)
     let variables = compiledModel.allVariables
     let fm = FileManager()
     try fm.createDirectory(atPath: path, withIntermediateDirectories: true)

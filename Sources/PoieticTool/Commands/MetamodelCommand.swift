@@ -25,7 +25,7 @@ extension PoieticTool {
 
         mutating func run() throws {
             let memory = try openMemory(options: options)
-            let metamodel: Metamodel.Type = memory.metamodel
+            let metamodel = memory.metamodel
             
             if let typeName = objectType {
                 guard let type = metamodel.objectType(name: typeName) else {
@@ -41,7 +41,7 @@ extension PoieticTool {
             }
         }
         
-        func printAll(metamodel: Metamodel.Type) throws {
+        func printAll(metamodel: Metamodel) throws {
             print("TYPES AND COMPONENTS\n")
 
             for type in metamodel.objectTypes {
@@ -63,7 +63,7 @@ extension PoieticTool {
         
         func printType(_ type: ObjectType,
                        includeAbstract: Bool = false,
-                       metamodel: Metamodel.Type) throws {
+                       metamodel: Metamodel) throws {
             print("\(type.name) (\(type.structuralType))")
 
             if type.components.isEmpty {

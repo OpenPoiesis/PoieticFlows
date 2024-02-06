@@ -79,39 +79,39 @@ extension MutableGraph {
 ///
 public func CreatePredatorPreyDemo(in memory: ObjectMemory) throws {
     let frame = memory.deriveFrame()
-    let graph = frame.mutableGraph
+    let frame = frame.mutableGraph
     
-    let fish = graph.createStock(name: "fish", expression: "1000")
-    let shark = graph.createStock(name: "shark", expression: "10")
+    let fish = frame.createStock(name: "fish", expression: "1000")
+    let shark = frame.createStock(name: "shark", expression: "10")
 
-    let fish_birth_rate = graph.createAux(name: "fish_birth_rate", expression: "0.01" )
-    let shark_birth_rate = graph.createAux(name: "shark_birth_rate", expression: "0.6" )
-    let shark_efficiency = graph.createAux(name: "shark_efficiency", expression: "0.0003" )
-    let shark_death_rate = graph.createAux(name: "shark_death_rate", expression: "0.15" )
+    let fish_birth_rate = frame.createAux(name: "fish_birth_rate", expression: "0.01" )
+    let shark_birth_rate = frame.createAux(name: "shark_birth_rate", expression: "0.6" )
+    let shark_efficiency = frame.createAux(name: "shark_efficiency", expression: "0.0003" )
+    let shark_death_rate = frame.createAux(name: "shark_death_rate", expression: "0.15" )
 
-    let fish_births = graph.createFlow(name: "fish_births", expression: "fish * fish_birth_rate")
-    let shark_births = graph.createFlow(name: "shark_births", expression: "shark * shark_birth_rate * shark_efficiency * fish")
-    let fish_deaths = graph.createFlow(name: "fish_deaths", expression: "fish * shark_efficiency * shark")
-    let shark_deaths = graph.createFlow(name: "shark_deaths", expression: "shark_death_rate * shark")
+    let fish_births = frame.createFlow(name: "fish_births", expression: "fish * fish_birth_rate")
+    let shark_births = frame.createFlow(name: "shark_births", expression: "shark * shark_birth_rate * shark_efficiency * fish")
+    let fish_deaths = frame.createFlow(name: "fish_deaths", expression: "fish * shark_efficiency * shark")
+    let shark_deaths = frame.createFlow(name: "shark_deaths", expression: "shark_death_rate * shark")
 
-    graph.connectParameter(from: fish_birth_rate, to: fish_births)
-    graph.connectParameter(from: fish, to: fish_births)
-    graph.connectInflow(from: fish_births, to: fish)
+    frame.connectParameter(from: fish_birth_rate, to: fish_births)
+    frame.connectParameter(from: fish, to: fish_births)
+    frame.connectInflow(from: fish_births, to: fish)
 
-    graph.connectParameter(from: shark_birth_rate, to: shark_births)
-    graph.connectParameter(from: shark, to: shark_births)
-    graph.connectParameter(from: shark_efficiency, to: shark_births)
-    graph.connectParameter(from: fish, to: shark_births)
-    graph.connectInflow(from: shark_births, to: shark)
+    frame.connectParameter(from: shark_birth_rate, to: shark_births)
+    frame.connectParameter(from: shark, to: shark_births)
+    frame.connectParameter(from: shark_efficiency, to: shark_births)
+    frame.connectParameter(from: fish, to: shark_births)
+    frame.connectInflow(from: shark_births, to: shark)
 
-    graph.connectParameter(from: fish, to: fish_deaths)
-    graph.connectParameter(from: shark_efficiency, to: fish_deaths)
-    graph.connectParameter(from: shark, to: fish_deaths)
-    graph.connectOutflow(from: fish, to: fish_deaths)
+    frame.connectParameter(from: fish, to: fish_deaths)
+    frame.connectParameter(from: shark_efficiency, to: fish_deaths)
+    frame.connectParameter(from: shark, to: fish_deaths)
+    frame.connectOutflow(from: fish, to: fish_deaths)
 
-    graph.connectParameter(from: shark, to: shark_deaths)
-    graph.connectParameter(from: shark_death_rate, to: shark_deaths)
-    graph.connectOutflow(from: shark, to: shark_deaths)
+    frame.connectParameter(from: shark, to: shark_deaths)
+    frame.connectParameter(from: shark_death_rate, to: shark_deaths)
+    frame.connectOutflow(from: shark, to: shark_deaths)
 
     try memory.accept(frame)
 }
