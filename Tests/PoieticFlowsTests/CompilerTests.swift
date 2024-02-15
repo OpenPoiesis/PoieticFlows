@@ -33,7 +33,7 @@ final class TestCompiler: XCTestCase {
         graph = frame
     }
 
-    func testComputedVariables() throws {
+func testComputedVariables() throws {
         let compiler = Compiler(frame: frame)
         graph.createNode(Metamodel.Stock,
                          name: "a",

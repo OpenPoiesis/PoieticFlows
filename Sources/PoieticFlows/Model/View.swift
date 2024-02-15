@@ -74,28 +74,14 @@ public class StockFlowView {
     /// - SeeAlso: ``SimulationVariable``, ``CompiledModel``
     ///
     public var simulationNodes: [Node] {
-        frame.selectNodes(
-            HasComponentPredicate(FormulaComponent.self)
-                .or(HasComponentPredicate(GraphicalFunctionComponent.self)))
+        frame.filterNodes {
+            $0.components.has(FormulaComponent.self)
+            || $0.components.has(GraphicalFunctionComponent.self)
+        }
     }
 
-    // TODO: Use component filter directly here
-    /// List of expression nodes in the graph.
-    ///
-    @available(*, deprecated, message: "Use simulationNodes instead")
-//    public var expressionNodes: [Node] {
-//        // TODO: Use tuple (Node, Component) instead of just Node
-//        graph.selectNodes(HasComponentPredicate(FormulaComponent.self))
-//    }
-    
-    @available(*, deprecated, message: "Use simulationNodes instead")
-    public var graphicalFunctionNodes: [Node] {
-        // TODO: Use tuple (Node, Component) instead of just Node
-        frame.selectNodes(HasComponentPredicate(GraphicalFunctionComponent.self))
-    }
-    
     public var flowNodes: [Node] {
-        frame.selectNodes(IsTypePredicate(Flow))
+        frame.filterNodes { $0.type === Flow }
     }
    
     /// Predicate that matches all objects that have a name through
@@ -114,7 +100,9 @@ public class StockFlowView {
     ///
     public var stateNodes: [Node] {
         // For now we have only nodes with a formula component.
-        frame.selectNodes(HasComponentPredicate(FormulaComponent.self))
+        frame.filterNodes {
+            $0.components.has(FormulaComponent.self)
+        }
     }
 
     
@@ -124,7 +112,7 @@ public class StockFlowView {
     /// Predicate that matches all edges that represent parameter connections.
     ///
     public var parameterEdges: [Edge] {
-        frame.selectEdges(IsTypePredicate(Parameter))
+        frame.filterEdges { $0.type === Parameter }
     }
     /// A neighbourhood for incoming parameters of a node.
     ///
@@ -147,7 +135,7 @@ public class StockFlowView {
     /// and terminates in a stock.
     ///
     public var fillsEdges: [Edge] {
-        frame.selectEdges(IsTypePredicate(Fills))
+        frame.filterEdges { $0.type === Fills }
     }
 
     /// Selector for an edge originating in a flow and ending in a stock denoting
