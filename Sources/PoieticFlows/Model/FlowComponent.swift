@@ -7,6 +7,16 @@
 
 import PoieticCore
 
+extension Trait {
+    public static let Flow = Trait(
+        name: "Flow",
+        attributes: [
+            Attribute("priority", type: .int, default: ForeignValue(0),
+                abstract: "Priority during computation. The flows are considered in the ascending order of priority."),
+        ]
+    )
+}
+
 /// Object representing a flow.
 ///
 /// Flow is a node that can be connected to two stocks by a flow edge. One stock
@@ -17,18 +27,11 @@ import PoieticCore
 ///         flows. Flow with negative value, which is in fact an outflow,
 ///         will be ignored.
 ///
+// FIXME: [REFACTORING] Merge with CompiledFlow
 public struct FlowComponent: InspectableComponent,
                              CustomStringConvertible {
 
-    public static var componentSchema = ComponentDescription(
-        name: "Flow",
-        attributes: [
-            Attribute(
-                name: "priority",
-                type: .int,
-                abstract: "Priority during computation. The flows are considered in the ascending order of priority."),
-        ]
-    )
+    public static let trait = Trait.Flow
     
     /// Default priority – when a priority is not specified, then the priority
     /// is in the order of Flow nodes created.

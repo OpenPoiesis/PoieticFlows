@@ -6,6 +6,23 @@
 //
 import PoieticCore
 
+extension Trait {
+    public static let Stock = Trait(
+        name: "Stock",
+        attributes: [
+            Attribute("allows_negative", type: .bool,
+                      default: ForeignValue(false),
+                      abstract: "Flag whether the stock can contain a negative value."
+            ),
+            Attribute("delayed_inflow", type: .bool,
+                      default: ForeignValue(false),
+                      abstract: "Flag whether the inflow of the stock is delayed by one step, when the stock is part of a cycle."
+            ),
+        ]
+    )
+
+}
+
 // Alias: Accumulator, level, state, container, reservoir, pool
 
 /// A node representing a stock – accumulator, container, reservoir, a pool.
@@ -13,21 +30,7 @@ import PoieticCore
 public struct StockComponent: InspectableComponent,
                               CustomStringConvertible {
     
-    public static var componentSchema = ComponentDescription(
-        name: "Stock",
-        attributes: [
-            Attribute(
-                name: "allows_negative",
-                type: .bool,
-                abstract: "Flag whether the stock can contain a negative value."
-            ),
-            Attribute(
-                name: "delayed_inflow",
-                type: .bool,
-                abstract: "Flag whether the inflow of the stock is delayed by one step, when the stock is part of a cycle."
-            ),
-        ]
-    )
+    public static let trait = Trait.Stock
     
     /// Flag whether the value of the node can be negative.
     var allowsNegative: Bool = false

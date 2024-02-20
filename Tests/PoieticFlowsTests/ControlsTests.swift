@@ -14,23 +14,21 @@ final class TestControls: XCTestCase {
     var memory: ObjectMemory!
     var simulator: Simulator!
     var frame: MutableFrame!
-    var graph: MutableGraph!
     
     override func setUp() {
         memory = ObjectMemory(metamodel: FlowsMetamodel.self)
         simulator = Simulator(memory: memory)
         frame = memory.deriveFrame()
-        graph = frame
     }
     
     func testBinding() throws {
-        let a = graph.createNode(Metamodel.Auxiliary,
+        let a = frame.createNode(Metamodel.Auxiliary,
                                  name: "a",
-                                 components: [FormulaComponent(expression: "10")])
-        let control = graph.createNode(Metamodel.Control,
+                                 attributes: ["formula": "10"])
+        let control = frame.createNode(Metamodel.Control,
                                  name: "control",
                                  components: [ControlComponent()])
-        let binding = graph.createEdge(Metamodel.ValueBinding,
+        let binding = frame.createEdge(Metamodel.ValueBinding,
                                        origin: control,
                                        target: a)
         try simulator.compile(frame)

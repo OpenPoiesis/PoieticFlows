@@ -66,7 +66,7 @@ extension PoieticTool {
                        metamodel: Metamodel) throws {
             print("\(type.name) (\(type.structuralType))")
 
-            if type.components.isEmpty {
+            if type.traits.isEmpty {
                 print("    (no components)")
             }
             else {

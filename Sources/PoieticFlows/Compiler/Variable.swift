@@ -156,7 +156,7 @@ public struct BoundVariableReference: Hashable, CustomStringConvertible, TypedVa
     
     /// Type of the wrapped variable.
     ///
-    public var valueType: AtomType? { variable.valueType }
+    public var atomType: AtomType? { variable.valueType }
     
     public var description: String {
         "(\(index),\(variable))"

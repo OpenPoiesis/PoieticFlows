@@ -10,15 +10,11 @@ import PoieticCore
 public typealias ParsedFormula = Result<UnboundExpression, ExpressionSyntaxError>
 
 public struct ParsedFormulaComponent: Component {
-    let parsedFormula: UnboundExpression?
+    let parsedFormula: UnboundExpression
     
-    public static var componentSchema = ComponentDescription(
+    public static var componentSchema = Trait(
         name: "ParsedFormula"
     )
-    
-    public init() {
-        parsedFormula = nil
-    }
     
     public init(parsedFormula: UnboundExpression) {
         self.parsedFormula = parsedFormula
@@ -62,10 +58,11 @@ public struct IssueCleaner: FrameTransformer {
 ///
 public struct ExpressionTransformer: FrameTransformer {
     public mutating func update(_ context: TransformationContext) {
-        let items = context.frame.filter(component: FormulaComponent.self)
-        
-        for (snapshot, component) in items {
-            let parser = ExpressionParser(string: component.expressionString)
+        for snapshot in context.frame.snapshots {
+            guard let formula = try? snapshot["formula"]?.stringValue() else {
+                continue
+            }
+            let parser = ExpressionParser(string: formula)
             let expr: UnboundExpression
             do {
                 expr = try parser.parse()
@@ -131,6 +128,7 @@ public struct ImplicitFlowsTransformer: FrameTransformer {
             graph.createEdge(view.ImplicitFlow,
                              origin: drains,
                              target: fills,
+                             attributes: [:],
                              components: [])
         }
         

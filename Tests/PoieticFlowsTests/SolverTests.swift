@@ -23,7 +23,6 @@ extension SimulationState {
 final class TestSolver: XCTestCase {
     var db: ObjectMemory!
     var frame: MutableFrame!
-    var graph: MutableGraph!
     var compiler: Compiler!
     
     override func setUp() {
@@ -35,36 +34,35 @@ final class TestSolver: XCTestCase {
         }
         
         frame = db.deriveFrame()
-        graph = frame.mutableGraph
         compiler = Compiler(frame: frame)
     }
     func testInitializeStocks() throws {
         
-        let a = graph.createNode(Metamodel.Auxiliary,
+        let a = frame.createNode(Metamodel.Auxiliary,
                                  name: "a",
-                                 components: [FormulaComponent(expression: "1")])
-        let b = graph.createNode(Metamodel.Auxiliary,
+                                 attributes: ["formula": "1"])
+        let b = frame.createNode(Metamodel.Auxiliary,
                                  name: "b",
-                                 components: [FormulaComponent(expression: "a + 1")])
-        let c =  graph.createNode(Metamodel.Stock,
+                                 attributes: ["formula": "a + 1"])
+        let c =  frame.createNode(Metamodel.Stock,
                                   name: "const",
-                                  components: [FormulaComponent(expression: "100")])
-        let s_a = graph.createNode(Metamodel.Stock,
+                                  attributes: ["formula": "100"])
+        let s_a = frame.createNode(Metamodel.Stock,
                                    name: "use_a",
-                                   components: [FormulaComponent(expression: "a")])
-        let s_b = graph.createNode(Metamodel.Stock,
+                                   attributes: ["formula": "a"])
+        let s_b = frame.createNode(Metamodel.Stock,
                                    name: "use_b",
-                                   components: [FormulaComponent(expression: "b")])
-        
-        graph.createEdge(Metamodel.Parameter, origin: a, target: b, components: [])
-        graph.createEdge(Metamodel.Parameter, origin: a, target: s_a, components: [])
-        graph.createEdge(Metamodel.Parameter, origin: b, target: s_b, components: [])
+                                   attributes: ["formula": "b"])
+
+        frame.createEdge(Metamodel.Parameter, origin: a, target: b, components: [])
+        frame.createEdge(Metamodel.Parameter, origin: a, target: s_a, components: [])
+        frame.createEdge(Metamodel.Parameter, origin: b, target: s_b, components: [])
         
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         for v in compiled.computedVariables {
             let vstr = "\(v.id):\(v.name)@\(v.index)"
-            let expr = graph.node(v.id).attribute(forKey: "formula")!
+            let expr = frame.node(v.id).attribute(forKey: "formula")!
         }
 
         let state = solver.initialize()
@@ -77,9 +75,9 @@ final class TestSolver: XCTestCase {
     }
     func testOrphanedInitialize() throws {
         
-        let a = graph.createNode(Metamodel.Auxiliary,
+        let a = frame.createNode(Metamodel.Auxiliary,
                                  name: "a",
-                                 components: [FormulaComponent(expression: "1")])
+                                 attributes: ["formula": "1"])
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         
@@ -88,16 +86,16 @@ final class TestSolver: XCTestCase {
         XCTAssertNotNil(vector[a])
     }
     func testEverythingInitialized() throws {
-        let aux = graph.createNode(Metamodel.Auxiliary,
+        let aux = frame.createNode(Metamodel.Auxiliary,
                                    name: "a",
-                                   components: [FormulaComponent(expression: "10")])
-        let stock = graph.createNode(Metamodel.Stock,
+                                   attributes: ["formula": "10"])
+        let stock = frame.createNode(Metamodel.Stock,
                                      name: "b",
-                                     components: [FormulaComponent(expression: "20")])
-        let flow = graph.createNode(Metamodel.Flow,
+                                     attributes: ["formula": "20"])
+        let flow = frame.createNode(Metamodel.Flow,
                                     name: "c",
-                                    components: [FormulaComponent(expression: "30")])
-        
+                                    attributes: ["formula": "30"])
+
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         
@@ -121,12 +119,12 @@ final class TestSolver: XCTestCase {
     }
    
     func testStageWithTime() throws {
-        let aux = graph.createNode(Metamodel.Auxiliary,
+        let aux = frame.createNode(Metamodel.Auxiliary,
                                    name: "a",
-                                   components: [FormulaComponent(expression: "time")])
-        let flow = graph.createNode(Metamodel.Flow,
+                                   attributes: ["formula": "time"])
+        let flow = frame.createNode(Metamodel.Flow,
                                     name: "f",
-                                    components: [FormulaComponent(expression: "time * 10")])
+                                    attributes: ["formula": "time * 10"])
 
         let compiled = try compiler.compile()
         let solver = EulerSolver(compiled)
@@ -146,17 +144,17 @@ final class TestSolver: XCTestCase {
     }
 
     func testNegativeStock() throws {
-        let stock = graph.createNode(Metamodel.Stock,
+        let stock = frame.createNode(Metamodel.Stock,
                                      name: "stock",
-                                     components: [FormulaComponent(expression: "5")])
-        let node = graph.node(stock)
-        node.snapshot[StockComponent.self]!.allowsNegative = true
+                                     attributes: ["formula": "5"])
+        let node = frame.node(stock)
+        node.snapshot["allows_negative"] = ForeignValue(true)
         
-        let flow = graph.createNode(Metamodel.Flow,
+        let flow = frame.createNode(Metamodel.Flow,
                                     name: "flow",
-                                     components: [FormulaComponent(expression: "10")])
+                                    attributes: ["formula": "10"])
 
-        graph.createEdge(Metamodel.Drains, origin: stock, target: flow, components: [])
+        frame.createEdge(Metamodel.Drains, origin: stock, target: flow, components: [])
         
         let compiled = try compiler.compile()
         
@@ -168,17 +166,17 @@ final class TestSolver: XCTestCase {
     }
 
     func testNonNegativeStock() throws {
-        let stock = graph.createNode(Metamodel.Stock,
+        let stock = frame.createNode(Metamodel.Stock,
                                      name: "stock",
-                                     components: [FormulaComponent(expression: "5")])
-        let node = graph.node(stock)
-        node.snapshot[StockComponent.self]!.allowsNegative = false
-        
-        let flow = graph.createNode(Metamodel.Flow,
-                                    name: "flow",
-                                    components: [FormulaComponent(expression: "10")])
+                                     attributes: ["formula": "5"])
+        let node = frame.node(stock)
+        node.snapshot["allows_negative"] = ForeignValue(false)
 
-        graph.createEdge(Metamodel.Drains, origin: stock, target: flow, components: [])
+        let flow = frame.createNode(Metamodel.Flow,
+                                    name: "flow",
+                                    attributes: ["formula": "10"])
+
+        frame.createEdge(Metamodel.Drains, origin: stock, target: flow, components: [])
         
         let compiled = try compiler.compile()
         
@@ -190,17 +188,17 @@ final class TestSolver: XCTestCase {
     }
     // TODO: Also negative outflow
     func testNonNegativeStockNegativeInflow() throws {
-        let stock = graph.createNode(Metamodel.Stock,
+        let stock = frame.createNode(Metamodel.Stock,
                                      name: "stock",
-                                     components: [FormulaComponent(expression: "5")])
-        let obj = graph.node(stock)
-        obj.snapshot[StockComponent.self]!.allowsNegative = false
+                                     attributes: ["formula": "5"])
+        let obj = frame.node(stock)
+        obj.snapshot["allows_negative"] = ForeignValue(false)
         // FIXME: There is a bug in the expression parser
-        let flow = graph.createNode(Metamodel.Flow,
+        let flow = frame.createNode(Metamodel.Flow,
                                     name: "flow",
-                                    components: [FormulaComponent(expression: "0 - 10")])
+                                    attributes: ["formula": "0 - 10"])
 
-        graph.createEdge(Metamodel.Fills, origin: flow, target: stock, components: [])
+        frame.createEdge(Metamodel.Fills, origin: flow, target: stock, components: [])
         
         let compiled = try compiler.compile()
         
@@ -212,17 +210,17 @@ final class TestSolver: XCTestCase {
     }
 
     func testStockNegativeOutflow() throws {
-        let stock = graph.createNode(Metamodel.Stock,
+        let stock = frame.createNode(Metamodel.Stock,
                                      name: "stock",
-                                     components: [FormulaComponent(expression: "5")])
-        let obj = graph.node(stock)
-        obj.snapshot[StockComponent.self]!.allowsNegative = false
+                                     attributes: ["formula": "5"])
+        let obj = frame.node(stock)
+        obj.snapshot["allows_negative"] = ForeignValue(false)
         // FIXME: There is a bug in the expression parser
-        let flow = graph.createNode(Metamodel.Flow,
+        let flow = frame.createNode(Metamodel.Flow,
                                     name: "flow",
-                                    components: [FormulaComponent(expression: "-10")])
+                                    attributes: ["formula": "-10"])
 
-        graph.createEdge(Metamodel.Drains, origin: stock, target: flow, components: [])
+        frame.createEdge(Metamodel.Drains, origin: stock, target: flow, components: [])
         
         let compiled = try compiler.compile()
         
@@ -235,38 +233,38 @@ final class TestSolver: XCTestCase {
 
     func testNonNegativeToTwo() throws {
         // TODO: Break this into multiple tests
-        let source = graph.createNode(Metamodel.Stock,
+        let source = frame.createNode(Metamodel.Stock,
                                       name: "stock",
-                                     components: [FormulaComponent(expression: "5")])
-        let sourceNode = graph.node(source)
-        sourceNode.snapshot[StockComponent.self]!.allowsNegative = false
+                                      attributes: ["formula": "5"])
+        let sourceNode = frame.node(source)
+        sourceNode.snapshot["allows_negative"] = ForeignValue(false)
 
-        let happy = graph.createNode(Metamodel.Stock,
+        let happy = frame.createNode(Metamodel.Stock,
                                      name: "happy",
-                                     components: [FormulaComponent(expression: "0")])
-        let sad = graph.createNode(Metamodel.Stock,
+                                     attributes: ["formula": "0"])
+        let sad = frame.createNode(Metamodel.Stock,
                                    name: "sad",
-                                   components: [FormulaComponent(expression: "0")])
-        let happyFlow = graph.createNode(Metamodel.Flow,
+                                   attributes: ["formula": "0"])
+        let happyFlow = frame.createNode(Metamodel.Flow,
                                          name: "happy_flow",
-                                         components: [FormulaComponent(expression: "10")])
-        let happyFlowNode = graph.node(happyFlow)
-        happyFlowNode.snapshot[FlowComponent.self]!.priority = 1
+                                         attributes: ["formula": "10"])
+        let happyFlowNode = frame.node(happyFlow)
+        happyFlowNode.snapshot["priority"] = ForeignValue(1)
 
-        graph.createEdge(Metamodel.Drains,
+        frame.createEdge(Metamodel.Drains,
                          origin: source, target: happyFlow, components: [])
-        graph.createEdge(Metamodel.Fills,
+        frame.createEdge(Metamodel.Fills,
                          origin: happyFlow, target: happy, components: [])
 
-        let sadFlow = graph.createNode(Metamodel.Flow,
+        let sadFlow = frame.createNode(Metamodel.Flow,
                                        name: "sad_flow",
-                                       components: [FormulaComponent(expression: "10")])
-        let sadFlowNode = graph.node(sadFlow)
-        sadFlowNode.snapshot[FlowComponent.self]!.priority = 2
+                                       attributes: ["formula": "10"])
+        let sadFlowNode = frame.node(sadFlow)
+        sadFlowNode.snapshot["priority"] = ForeignValue(2)
 
-        graph.createEdge(Metamodel.Drains,
+        frame.createEdge(Metamodel.Drains,
                          origin: source, target: sadFlow, components: [])
-        graph.createEdge(Metamodel.Fills,
+        frame.createEdge(Metamodel.Fills,
                          origin: sadFlow, target: sad, components: [])
 
         let compiled: CompiledModel = try compiler.compile()
@@ -321,19 +319,19 @@ final class TestSolver: XCTestCase {
     }
 
     func testDifference() throws {
-        let kettle = graph.createNode(Metamodel.Stock,
+        let kettle = frame.createNode(Metamodel.Stock,
                                       name: "kettle",
-                                      components: [FormulaComponent(expression: "1000")])
-        let flow = graph.createNode(Metamodel.Flow,
+                                      attributes: ["formula": "1000"])
+        let flow = frame.createNode(Metamodel.Flow,
                                     name: "pour",
-                                    components: [FormulaComponent(expression: "100")])
-        let cup = graph.createNode(Metamodel.Stock,
+                                    attributes: ["formula": "100"])
+        let cup = frame.createNode(Metamodel.Stock,
                                       name: "cup",
-                                      components: [FormulaComponent(expression: "0")])
+                                   attributes: ["formula": "0"])
 
-        graph.createEdge(Metamodel.Drains,
+        frame.createEdge(Metamodel.Drains,
                          origin: kettle, target: flow, components: [])
-        graph.createEdge(Metamodel.Fills,
+        frame.createEdge(Metamodel.Fills,
                          origin: flow, target: cup, components: [])
 
         let compiled = try compiler.compile()
@@ -348,19 +346,19 @@ final class TestSolver: XCTestCase {
 
     
     func testCompute() throws {
-        let kettle = graph.createNode(Metamodel.Stock,
+        let kettle = frame.createNode(Metamodel.Stock,
                                       name: "kettle",
-                                      components: [FormulaComponent(expression: "1000")])
-        let flow = graph.createNode(Metamodel.Flow,
+                                      attributes: ["formula": "1000"])
+        let flow = frame.createNode(Metamodel.Flow,
                                     name: "pour",
-                                    components: [FormulaComponent(expression: "100")])
-        let cup = graph.createNode(Metamodel.Stock,
+                                    attributes: ["formula": "100"])
+        let cup = frame.createNode(Metamodel.Stock,
                                       name: "cup",
-                                      components: [FormulaComponent(expression: "0")])
+                                   attributes: ["formula": "0"])
 
-        graph.createEdge(Metamodel.Drains,
+        frame.createEdge(Metamodel.Drains,
                          origin: kettle, target: flow, components: [])
-        graph.createEdge(Metamodel.Fills,
+        frame.createEdge(Metamodel.Fills,
                          origin: flow, target: cup, components: [])
 
         let compiled = try compiler.compile()
@@ -379,28 +377,27 @@ final class TestSolver: XCTestCase {
 
     
     func testGraphicalFunction() throws {
-        let p1 = graph.createNode(Metamodel.Auxiliary,
+        let p1 = frame.createNode(Metamodel.Auxiliary,
                                    name:"p1",
-                                   components: [FormulaComponent(expression: "0")])
-        let g1 = graph.createNode(Metamodel.GraphicalFunction,
-                                  name: "g1",
-                                  components: [GraphicalFunctionComponent()])
+                                  attributes: ["formula": "0"])
+        let g1 = frame.createNode(Metamodel.GraphicalFunction,
+                                  name: "g1")
 
-        let p2 = graph.createNode(Metamodel.Auxiliary,
+        let p2 = frame.createNode(Metamodel.Auxiliary,
                                    name:"p2",
-                                   components: [FormulaComponent(expression: "0")])
+                                  attributes: ["formula": "0"])
         let points = [Point(0.0, 10.0), Point(1.0, 10.0)]
-        let g2 = graph.createNode(Metamodel.GraphicalFunction,
+        let g2 = frame.createNode(Metamodel.GraphicalFunction,
                                   name: "g2",
-                                  components: [GraphicalFunctionComponent(points: points)])
-        let aux = graph.createNode(Metamodel.Auxiliary,
+                                  attributes: ["points": ForeignValue(points)])
+        let aux = frame.createNode(Metamodel.Auxiliary,
                                    name:"a",
-                                   components: [FormulaComponent(expression: "g1 + g2")])
+                                   attributes: ["formula": "g1 + g2"])
 
-        graph.createEdge(Metamodel.Parameter, origin: g1, target: aux)
-        graph.createEdge(Metamodel.Parameter, origin: g2, target: aux)
-        graph.createEdge(Metamodel.Parameter, origin: p1, target: g1)
-        graph.createEdge(Metamodel.Parameter, origin: p2, target: g2)
+        frame.createEdge(Metamodel.Parameter, origin: g1, target: aux)
+        frame.createEdge(Metamodel.Parameter, origin: g2, target: aux)
+        frame.createEdge(Metamodel.Parameter, origin: p1, target: g1)
+        frame.createEdge(Metamodel.Parameter, origin: p2, target: g2)
 
         let compiled: CompiledModel = try compiler.compile()
         let solver = EulerSolver(compiled)

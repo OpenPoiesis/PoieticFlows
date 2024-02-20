@@ -254,6 +254,7 @@ public class Compiler {
 
         var unsortedStocks: [Node] = []
         var flows: [CompiledFlow] = []
+        var flowsByID: [ObjectID:CompiledFlow] = [:]
         var auxiliaries: [CompiledObject] = []
         
         for (index, node) in orderedSimulationNodes.enumerated() {
@@ -261,11 +262,13 @@ public class Compiler {
                 unsortedStocks.append(node)
             }
             else if node.type === view.Flow {
-                let component: FlowComponent = node[FlowComponent.self]!
-                let compiled = CompiledFlow(id: node.id,
-                                            index: index,
-                                            component: component)
-                flows.append(compiled)
+                // FIXME: [REFACTORING] Too many unwraps
+                let priority = try! node.snapshot["priority"]!.intValue()
+                let flow = CompiledFlow(id: node.id,
+                                        index: index,
+                                        priority: priority)
+                flows.append(flow)
+                flowsByID[node.id] = flow
             }
             else if node.type === view.Auxiliary
                         || node.type === view.GraphicalFunction {
@@ -295,7 +298,7 @@ public class Compiler {
             fatalError("Unhandled graph cycle error")
         }
         
-        let compiledStocks = compile(stocks: sortedStocks)
+        let compiledStocks = compile(stocks: sortedStocks, flows: flowsByID)
 
         // 8. Value Bindings
         // =================================================================
@@ -357,11 +360,11 @@ public class Compiler {
     ///
     public func compile(_ node: Node) throws -> ComputationalRepresentation {
         let rep: ComputationalRepresentation
-        if let component: FormulaComponent = node.snapshot[FormulaComponent.self] {
-            rep = try compile(node, formula: component)
+        if node.snapshot.type.hasTrait(Trait.Formula) {
+            rep = try compileFormulaNode(node)
         }
-        else if let component: GraphicalFunctionComponent = node.snapshot[GraphicalFunctionComponent.self] {
-            rep = try compile(node, graphicalFunction: component)
+        else if node.snapshot.type.hasTrait(Trait.GraphicalFunction) {
+            rep = try compileGraphicalFunctionNode(node)
         }
         else {
             // Hint: If this error happens, then either check the following:
@@ -395,17 +398,13 @@ public class Compiler {
     ///
     /// - Throws: ``NodeIssuesError`` with list of issues for the node.
     ///
-    public func compile(_ node: Node,
-                        formula: FormulaComponent) throws -> ComputationalRepresentation{
-        // 
+    public func compileFormulaNode(_ node: Node) throws -> ComputationalRepresentation{
+        guard let component: ParsedFormulaComponent = node.snapshot[ParsedFormulaComponent.self] else {
+            fatalError("Parsed formula component expected for node \(node.id)")
+        }
+        //
         // FIXME: [IMPORTANT] Parse expressions in a compiler sub-system, have it parsed here already
-        let unboundExpression: UnboundExpression
-        do {
-            unboundExpression =  try formula.parsedExpression()!
-        }
-        catch let error as ExpressionSyntaxError {
-            throw NodeIssue.expressionSyntaxError(error)
-        }
+        let unboundExpression: UnboundExpression = component.parsedFormula
         
         // List of required parameters: variables in the expression that
         // are not built-in variables.
@@ -433,15 +432,21 @@ public class Compiler {
     /// - Requires: node
     /// - Throws: ``NodeIssue`` if the function parameter is not connected.
     ///
-    public func compile(_ node: Node,
-                        graphicalFunction: GraphicalFunctionComponent) throws -> ComputationalRepresentation{
+    public func compileGraphicalFunctionNode(_ node: Node) throws -> ComputationalRepresentation{
+        guard let points = try? node.snapshot["points"]?.pointArray() else {
+            // TODO: [REFACTORING] Better error handling/reporting for these cases
+            fatalError("Got graphical function without points attribute")
+        }
+        // TODO: Interpolation method
+        let function = GraphicalFunction(points: points)
+        
         let hood = view.incomingParameters(node.id)
         guard let parameterNode = hood.nodes.first else {
             throw NodeIssue.missingGraphicalFunctionParameter
         }
         
         let funcName = "__graphical_\(node.id)"
-        let numericFunc = graphicalFunction.function.createFunction(name: funcName)
+        let numericFunc = function.createFunction(name: funcName)
 
         return .graphicalFunction(numericFunc, variableIndex(parameterNode.id))
 
@@ -455,7 +460,7 @@ public class Compiler {
     ///
     /// - Returns: Extracted and derived stock node information.
     ///
-    public func compile(stocks: [Node]) -> [CompiledStock] {
+    public func compile(stocks: [Node], flows: [ObjectID:CompiledFlow]) -> [CompiledStock] {
         var outflows: [ObjectID: [ObjectID]] = [:]
         var inflows: [ObjectID: [ObjectID]] = [:]
 
@@ -475,19 +480,19 @@ public class Compiler {
 
         // Sort the outflows by priority
         for stock in stocks {
-            let sortedOutflows = outflows[stock.id]?.map {
-                // 1. Get the priority component
-                    let node = frame.node($0)
-                    let component: FlowComponent = node[FlowComponent.self]!
-                    return (id: $0, priority: component.priority)
+            if let unsorted = outflows[stock.id] {
+                let sorted = unsorted.map {
+                    (id: $0, priority: flows[$0]!.priority)
                 }
-                // Sort by priority
                 .sorted { (lhs, rhs) in
                     return lhs.priority < rhs.priority
                 }
-                // Get what we need: the node id
                 .map { $0.id }
-            outflows[stock.id] = sortedOutflows ?? []
+                outflows[stock.id] = sorted
+            }
+            else {
+                outflows[stock.id] = []
+            }
         }
                 
         var result: [CompiledStock] = []
@@ -495,9 +500,11 @@ public class Compiler {
         for node in stocks {
             let inflowIndices = inflows[node.id]?.map { variableIndex($0) } ?? []
             let outflowIndices = outflows[node.id]?.map { variableIndex($0) } ?? []
-            guard let component: StockComponent = node.snapshot[StockComponent.self] else {
-                fatalError("Stock type object has no stock component")
-            }
+            let component: StockComponent
+
+            // FIXME: [REFACTORING] Use attributes directly instead of this 
+            component = try! StockComponent(from: node.snapshot)
+            
             let compiled = CompiledStock(
                 id: node.id,
                 index: variableIndex(node.id),

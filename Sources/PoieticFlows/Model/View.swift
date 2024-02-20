@@ -75,8 +75,8 @@ public class StockFlowView {
     ///
     public var simulationNodes: [Node] {
         frame.filterNodes {
-            $0.components.has(FormulaComponent.self)
-            || $0.components.has(GraphicalFunctionComponent.self)
+            $0.type.hasTrait(Trait.Formula)
+            || $0.type.hasTrait(Trait.GraphicalFunction)
         }
     }
 
@@ -88,8 +88,9 @@ public class StockFlowView {
     /// NamedComponent.
     ///
     public var namedObjects: [(ObjectSnapshot, String)] {
-        frame.filter(component: NameComponent.self).map {
-            return ($0.0, $0.1.name)
+        // FIXME: [IMPORTANT] Guarantee that the name exists for trait Name
+        frame.filter(trait: Trait.Name).map {
+            return ($0, $0.name!)
         }
     }
 
@@ -101,7 +102,7 @@ public class StockFlowView {
     public var stateNodes: [Node] {
         // For now we have only nodes with a formula component.
         frame.filterNodes {
-            $0.components.has(FormulaComponent.self)
+            $0.type.hasTrait(Trait.Formula)
         }
     }
 

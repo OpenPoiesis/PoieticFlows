@@ -7,8 +7,8 @@
 
 import PoieticCore
 
-public struct ChartComponent: InspectableComponent {
-    public static var componentSchema = ComponentDescription(
+extension Trait {
+    public static let Chart = Trait(
         name: "Chart",
         attributes: [
 //            AttributeDescription(
@@ -17,7 +17,11 @@ public struct ChartComponent: InspectableComponent {
 //                abstract: "Chart type"),
         ]
     )
+}
 
+public struct ChartComponent: InspectableComponent {
+    public static let trait = Trait.Chart
+    
     public var value: Double
 
     public init() {

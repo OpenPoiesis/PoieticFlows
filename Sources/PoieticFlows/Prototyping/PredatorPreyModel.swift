@@ -17,20 +17,20 @@ extension MutableGraph {
     func createStock(name: String, expression: String) -> ObjectID {
         let node = createNode(FlowsMetamodel.Stock,
                               name: name,
-                              components: [FormulaComponent(expression: expression)])
+                              traits: [FormulaComponent(expression: expression)])
         return node
     }
     
     func createAux(name: String, expression: String) -> ObjectID {
         let node = createNode(FlowsMetamodel.Auxiliary,
                               name: name,
-                              components: [FormulaComponent(expression: expression)])
+                              traits: [FormulaComponent(expression: expression)])
         return node
     }
     func createFlow(name: String, expression: String) -> ObjectID {
         let node = createNode(FlowsMetamodel.Flow,
                               name: name,
-                              components: [FormulaComponent(expression: expression)])
+                              traits: [FormulaComponent(expression: expression)])
         return node
     }
     
@@ -38,21 +38,21 @@ extension MutableGraph {
         self.createEdge(FlowsMetamodel.Parameter,
                          origin: origin,
                          target: target,
-                         components: [])
+                         traits: [])
     }
     
     func connectOutflow(from origin: ObjectID, to target: ObjectID) {
         self.createEdge(FlowsMetamodel.Drains,
                          origin: origin,
                          target: target,
-                         components: [])
+                         traits: [])
     }
 
     func connectInflow(from origin: ObjectID, to target: ObjectID) {
         self.createEdge(FlowsMetamodel.Fills,
                          origin: origin,
                          target: target,
-                         components: [])
+                         traits: [])
     }
 }
 

@@ -7,16 +7,20 @@
 
 import PoieticCore
 
-public struct ControlComponent: InspectableComponent {
-    public static var componentSchema = ComponentDescription(
+extension Trait {
+    public static let Control = Trait(
         name: "Control",
         attributes: [
-            Attribute(
-                name: "value",
-                type: .double,
-                abstract: "Value of the target node"),
+            Attribute("value",
+                      type: .double,
+                      default: ForeignValue(0.0),
+                      abstract: "Value of the target node"),
         ]
     )
+}
+
+public struct ControlComponent: InspectableComponent {
+    public static let trait = Trait.Control
 
     public var value: Double
 

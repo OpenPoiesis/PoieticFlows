@@ -58,7 +58,7 @@ public struct ObjectComponentList<T: Component> {
     // TODO: [IMPORTANT] Move to Frame
     public typealias ComponentType = T
     public let ids: [ObjectID]
-    public let components: [ObjectID:ComponentType]
+    public let traits: [ObjectID:ComponentType]
     
     /// Create a new object component list from a list of snapshots.
     ///
@@ -70,7 +70,7 @@ public struct ObjectComponentList<T: Component> {
             let component: ComponentType = $0[ComponentType.self]!
             return ($0.id, component)
         }
-        components = Dictionary(uniqueKeysWithValues: items)
+        traits = Dictionary(uniqueKeysWithValues: items)
     }
     
     /// Get a component for object with given ID.
@@ -78,7 +78,7 @@ public struct ObjectComponentList<T: Component> {
     /// The component list must contain the id.
     ///
     public subscript(id: ObjectID) -> ComponentType {
-        return components[id]!
+        return traits[id]!
     }
 }
 #endif
@@ -125,6 +125,7 @@ public struct CompiledStock: IndexRepresentable {
     public let outflows: [VariableIndex]
 }
 
+// FIXME: [REFACTORING] Merge with FlowComponent
 public struct CompiledFlow: IndexRepresentable {
     /// Object ID of the flow that this compiled structure represents.
     ///
@@ -140,7 +141,7 @@ public struct CompiledFlow: IndexRepresentable {
 
     /// Component representing the flow as it was at the time of compilation.
     ///
-    public let component: FlowComponent
+    public let priority: Int
 }
 
 

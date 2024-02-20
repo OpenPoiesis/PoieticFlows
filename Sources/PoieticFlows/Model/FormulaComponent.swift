@@ -7,6 +7,17 @@
 
 import PoieticCore
 
+extension Trait {
+    public static let Formula = Trait(
+        name: "Formula",
+        attributes: [
+            Attribute("formula", type: .string,
+                      abstract: "Arithmetic formula or a constant value represented by the node."
+            ),
+        ]
+    )
+}
+
 /// Component of all nodes that can contain arithmetic formula or a constant.
 ///
 /// The FormulaComponent provides a textual representation of an arithmetic
@@ -22,19 +33,10 @@ import PoieticCore
 ///
 /// All components with arithmetic formula are also named components.
 ///
-public struct FormulaComponent: InspectableComponent,
+public struct _DEPREC_FormulaComponent: InspectableComponent,
                                    CustomStringConvertible {
     
-    public static var componentSchema = ComponentDescription(
-        name: "Formula",
-        attributes: [
-            Attribute(
-                name: "formula",
-                type: .string,
-                abstract: "Arithmetic formula or a constant value represented by the node."
-            ),
-        ]
-    )
+    public static var trait = Trait.Formula
     
     /// Textual representation of the arithmetic expression.
     ///
@@ -122,9 +124,9 @@ public struct FormulaComponent: InspectableComponent,
     }
 }
 
-extension FormulaComponent {
-    public static func == (lhs: FormulaComponent, rhs: FormulaComponent) -> Bool {
-        // TODO: We should compare compiled expressions here.
-        lhs.expressionString == rhs.expressionString
-    }
-}
+//extension FormulaComponent {
+//    public static func == (lhs: FormulaComponent, rhs: FormulaComponent) -> Bool {
+//        // TODO: We should compare compiled expressions here.
+//        lhs.expressionString == rhs.expressionString
+//    }
+//}

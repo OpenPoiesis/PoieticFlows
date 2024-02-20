@@ -19,11 +19,11 @@ extension Metamodel {
     public static let Stock = ObjectType(
         name: "Stock",
         structuralType: .node,
-        components: [
-            NameComponent.self,
-            FormulaComponent.self,
-            StockComponent.self,
-            PositionComponent.self,
+        traits: [
+            Trait.Name,
+            Trait.Formula,
+            Trait.Stock,
+            Trait.Position,
             // DescriptionComponent.self,
             // ErrorComponent.self,
         ]
@@ -49,11 +49,11 @@ extension Metamodel {
     public static let Flow = ObjectType(
         name: "Flow",
         structuralType: .node,
-        components: [
-            NameComponent.self,
-            FormulaComponent.self,
-            FlowComponent.self,
-            PositionComponent.self,
+        traits: [
+            Trait.Name,
+            Trait.Formula,
+            Trait.Flow,
+            Trait.Position,
             // DescriptionComponent.self,
             // ErrorComponent.self,
         ]
@@ -64,10 +64,10 @@ extension Metamodel {
     public static let Auxiliary = ObjectType(
         name: "Auxiliary",
         structuralType: .node,
-        components: [
-            NameComponent.self,
-            FormulaComponent.self,
-            PositionComponent.self,
+        traits: [
+            Trait.Name,
+            Trait.Formula,
+            Trait.Position,
             // DescriptionComponent.self,
             // ErrorComponent.self,
         ]
@@ -80,10 +80,10 @@ extension Metamodel {
     public static let GraphicalFunction = ObjectType(
         name: "GraphicalFunction",
         structuralType: .node,
-        components: [
-            NameComponent.self,
-            PositionComponent.self,
-            GraphicalFunctionComponent.self,
+        traits: [
+            Trait.Name,
+            Trait.Position,
+            Trait.GraphicalFunction,
             // DescriptionComponent.self,
             // ErrorComponent.self,
             // TODO: IMPORTANT: Make sure we do not have formula component here or handle the type
@@ -99,9 +99,9 @@ extension Metamodel {
     public static let Control = ObjectType(
         name: "Control",
         structuralType: .node,
-        components: [
-            NameComponent.self,
-            ControlComponent.self,
+        traits: [
+            Trait.Name,
+            Trait.Control,
         ]
     )
     
@@ -114,9 +114,9 @@ extension Metamodel {
     public static let Chart = ObjectType(
         name: "Chart",
         structuralType: .node,
-        components: [
-            NameComponent.self,
-            ChartComponent.self,
+        traits: [
+            Trait.Name,
+            Trait.Chart,
         ]
     )
     
@@ -128,8 +128,8 @@ extension Metamodel {
     public static let Note = ObjectType(
         name: "Note",
         structuralType: .node,
-        components: [
-            NoteComponent.self,
+        traits: [
+            Trait.Note,
         ]
     )
     
@@ -140,7 +140,7 @@ extension Metamodel {
     public static let Drains = ObjectType(
         name: "Drains",
         structuralType: .edge,
-        components: [
+        traits: [
             // None for now
         ],
         abstract: "Edge from a stock node to a flow node, representing what the flow drains."
@@ -153,7 +153,7 @@ extension Metamodel {
     public static let Fills = ObjectType(
         name: "Fills",
         structuralType: .edge,
-        components: [
+        traits: [
             // None for now
         ],
         abstract: "Edge from a flow node to a stock node, representing what the flow fills."
@@ -168,7 +168,7 @@ extension Metamodel {
     public static let Parameter = ObjectType(
         name: "Parameter",
         structuralType: .edge,
-        components: [
+        traits: [
             // None for now
         ]
     )
@@ -193,7 +193,7 @@ extension Metamodel {
         name: "ImplicitFlow",
         structuralType: .edge,
         plane: .system,
-        components: [
+        traits: [
             // None for now
         ],
         abstract: "Edge between two stocks."
@@ -208,7 +208,7 @@ extension Metamodel {
         name: "ValueBinding",
         structuralType: .edge,
         plane: .system,
-        components: [
+        traits: [
             // None for now
         ],
         abstract: "Edge between a control and a value node. The control observes the value after each step."
@@ -225,7 +225,7 @@ extension Metamodel {
         name: "ChartSeries",
         structuralType: .edge,
         plane: .system,
-        components: [
+        traits: [
             // None for now
         ],
         abstract: "Edge between a control and its target."
@@ -278,17 +278,15 @@ public let FlowsMetamodel = Metamodel(
 
     /// List of components that are used in the Stock and Flow models.
     /// 
-    components: [
-        NameComponent.self,
-        StockComponent.self,
-        FlowComponent.self,
-        FormulaComponent.self,
-        PositionComponent.self,
-        GraphicalFunctionComponent.self,
-        ChartComponent.self,
-    ] + BasicMetamodel.components,
-    
-    
+    traits: BasicMetamodel.traits + [
+        Trait.Name,
+        Trait.Stock,
+        Trait.Flow,
+        Trait.Formula,
+        Trait.Position,
+        Trait.GraphicalFunction,
+        Trait.Chart,
+    ],
 
     // NOTE: If we were able to use Mirror on types, we would not need this
     /// List of object types for the Stock and Flow metamodel.
@@ -388,7 +386,7 @@ public let FlowsMetamodel = Metamodel(
             requirement: AllSatisfy(
                 EdgePredicate(
                     origin: IsTypePredicate(Metamodel.Control),
-                    target: HasComponentPredicate(FormulaComponent.self)
+                    target: HasTraitPredicate(Trait.Formula)
                 )
             )
         ),
@@ -401,7 +399,7 @@ public let FlowsMetamodel = Metamodel(
             requirement: AllSatisfy(
                 EdgePredicate(
                     origin: IsTypePredicate(Metamodel.Chart),
-                    target: HasComponentPredicate(FormulaComponent.self)
+                    target: HasTraitPredicate(Trait.Formula)
                 )
             )
         ),

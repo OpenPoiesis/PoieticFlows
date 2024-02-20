@@ -7,21 +7,23 @@
 
 import PoieticCore
 
-public struct GraphicalFunctionComponent: InspectableComponent, CustomStringConvertible {
-    public static var componentSchema = ComponentDescription(
+extension Trait {
+    public static let GraphicalFunction = Trait(
         name: "GraphicalFunction",
         attributes: [
-            Attribute(
-                name: "interpolation_method",
-                type: .string,
-                abstract: "Method of interpolation for values between the points."),
-            Attribute(
-                name: "points",
-                type: .points,
-                abstract: "Points of the graphical function."),
+            Attribute("interpolation_method", type: .string, default: "step",
+                      abstract: "Method of interpolation for values between the points."),
+            Attribute("points", type: .points,
+                      default: ForeignValue(Array<Point>()),
+                      abstract: "Points of the graphical function."),
         ],
         abstract: "Function represented by a set of points and an interpolation method."
     )
+
+}
+
+public struct _GraphicalFunctionComponent: InspectableComponent, CustomStringConvertible {
+    public static let trait = Trait.GraphicalFunction
     
     var points: [Point]
     
