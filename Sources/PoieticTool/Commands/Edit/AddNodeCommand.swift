@@ -62,7 +62,7 @@ poietic add Flow name=expenses formula=50
                                            string: stringValue)
 
             }
-            
+
             try acceptFrame(frame, in: memory)
             try closeMemory(memory: memory, options: options)
 

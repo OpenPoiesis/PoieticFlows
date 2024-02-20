@@ -18,6 +18,9 @@ enum ToolError: Error, CustomStringConvertible {
     case malformedLocation(String)
     case unableToSaveDatabase(Error)
     
+    // Database errors
+    case validationError(FrameValidationError)
+    
     // Simulation errors
     case unknownObjectName(String)
     case unknownVariables([String])
@@ -48,6 +51,19 @@ enum ToolError: Error, CustomStringConvertible {
         case .unableToSaveDatabase(let value):
             return "Unable to save database. Reason: \(value)"
 
+        case .validationError(let error):
+            var detail: String = ""
+            if !error.violations.isEmpty {
+                detail += "\(error.violations.count) constraint violation errors"
+            }
+            if !error.typeErrors.isEmpty {
+                detail += "\(error.typeErrors.count) objects with type errors"
+            }
+            if detail == "" {
+                detail = "unspecified validation error(s)"
+            }
+            return "Database validation failed: \(detail)"
+            
         case .unknownSolver(let value):
             return "Unknown solver '\(value)'"
         case .unknownObjectName(let value):
@@ -92,6 +108,10 @@ enum ToolError: Error, CustomStringConvertible {
             return nil
         case .unableToSaveDatabase(_):
             return "Check whether the location is correct and that you have permissions for writing."
+
+        case .validationError(_):
+            return "Unfortunately the only way is to inspect the database file. 'doctor' command is not yet implemented."
+            
         case .unknownSolver(_):
             return "Check the list of available solvers by running the 'info' command."
         case .unknownObjectName(_):
@@ -162,18 +182,36 @@ func databaseURL(options: Options) throws -> URL {
 /// Create a new empty memory.
 ///
 func createMemory(options: Options) -> ObjectMemory {
-    return ObjectMemory(metamodel: FlowsMetamodel.self)
+    return ObjectMemory(metamodel: FlowsMetamodel)
 }
 
 /// Opens a graph from a package specified in the options.
 ///
-func openMemory(options: Options) throws -> ObjectMemory {
-    let memory: ObjectMemory = ObjectMemory(metamodel: FlowsMetamodel.self)
+func openMemory(options: Options, metamodel: Metamodel = FlowsMetamodel) throws -> ObjectMemory {
+    let memory: ObjectMemory = ObjectMemory(metamodel: metamodel)
     let dataURL = try databaseURL(options: options)
-
-    try memory.restoreAll(from: dataURL)
-    
+    do {
+        try memory.restoreAll(from: dataURL)
+    }
+    catch let error as FrameValidationError {
+        printValidationError(error)
+        throw ToolError.validationError(error)
+        
+    }
     return memory
+}
+
+func printValidationError(_ error: FrameValidationError) {
+    // FIXME: Print to stderr
+    for violation in error.violations {
+        print("Constraint error: \(violation)")
+    }
+    for item in error.typeErrors {
+        let (id, typeErrors) = item
+        for typeError in typeErrors {
+            print("Type error (id:\(id)): \(typeError)")
+        }
+    }
 }
 
 /// Finalise operations on the design memory and save the memory to its store.
@@ -236,11 +274,11 @@ func setAttributeFromString(object: ObjectSnapshot,
     let type = object.type
     if let attr = type.attribute(attributeName), attr.type.isArray {
         let arrayValue = try ForeignValue.fromJSON(string)
-        try object.setAttribute(value: arrayValue,
+        object.setAttribute(value: arrayValue,
                                 forKey: attributeName)
     }
     else {
-        try object.setAttribute(value: ForeignValue(string),
+        object.setAttribute(value: ForeignValue(string),
                                 forKey: attributeName)
     }
 

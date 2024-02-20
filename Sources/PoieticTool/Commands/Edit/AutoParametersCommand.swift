@@ -33,12 +33,15 @@ extension PoieticTool {
             let builtinNames: Set<String> = Set(FlowsMetamodel.variables.map {
                 $0.name
             })
-            
+            let context = TransformationContext(frame: frame)
+            var transformer = ExpressionTransformer()
+            transformer.update(context)
+
             for target in view.simulationNodes {
-                guard let expression = try target.parsedExpression() else {
+                guard let expression: ParsedFormulaComponent = target[ParsedFormulaComponent.self] else {
                     continue
                 }
-                let allNodeVars: Set<String> = Set(expression.allVariables)
+                let allNodeVars: Set<String> = Set(expression.parsedFormula.allVariables)
                 let required = Array(allNodeVars.subtracting(builtinNames))
                 let params = view.parameters(target.id, required: required)
                 
@@ -46,7 +49,9 @@ extension PoieticTool {
                     switch status {
                     case .missing:
                         // Find missing parameter
-                        let parameterID = frame.object(named: name)!.id
+                        guard let parameterID = frame.object(named: name)?.id else {
+                            fatalError("Internal Error: No object named \(name)")
+                        }
                         let edge = frame.createEdge(Metamodel.Parameter,
                                                     origin: parameterID,
                                                   target: target.id)
@@ -80,5 +85,3 @@ extension PoieticTool {
     }
 
 }
-
-

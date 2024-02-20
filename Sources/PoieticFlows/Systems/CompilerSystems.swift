@@ -10,7 +10,7 @@ import PoieticCore
 public typealias ParsedFormula = Result<UnboundExpression, ExpressionSyntaxError>
 
 public struct ParsedFormulaComponent: Component {
-    let parsedFormula: UnboundExpression
+    public let parsedFormula: UnboundExpression
     
     public static var componentSchema = Trait(
         name: "ParsedFormula"
@@ -57,6 +57,7 @@ public struct IssueCleaner: FrameTransformer {
 /// Generates errors
 ///
 public struct ExpressionTransformer: FrameTransformer {
+    public init() {}
     public mutating func update(_ context: TransformationContext) {
         for snapshot in context.frame.snapshots {
             guard let formula = try? snapshot["formula"]?.stringValue() else {

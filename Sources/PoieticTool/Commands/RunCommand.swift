@@ -227,6 +227,7 @@ func writeGnuplotBundle(path: String,
 
     // Write chart output
     for chart in view.charts {
+        
         let chartName = chart.node.name!
         // TODO: Plot all the series
         if chart.series.count > 1 {

@@ -13,7 +13,7 @@ extension Trait {
         attributes: [
             Attribute("interpolation_method", type: .string, default: "step",
                       abstract: "Method of interpolation for values between the points."),
-            Attribute("points", type: .points,
+            Attribute("graphical_function_points", type: .points,
                       default: ForeignValue(Array<Point>()),
                       abstract: "Points of the graphical function."),
         ],
@@ -22,7 +22,8 @@ extension Trait {
 
 }
 
-public struct _GraphicalFunctionComponent: InspectableComponent, CustomStringConvertible {
+// TODO: Not used any more
+public struct GraphicalFunctionComponent: InspectableComponent, CustomStringConvertible {
     public static let trait = Trait.GraphicalFunction
     
     var points: [Point]
@@ -45,7 +46,7 @@ public struct _GraphicalFunctionComponent: InspectableComponent, CustomStringCon
         case "interpolation_method":
             let methodName = try value.stringValue()
             self.method = InterpolationMethod.init(rawValue: methodName) ?? .step
-        case "points":
+        case "graphical_function_points":
             points = try value.pointArray()
         default:
             throw AttributeError.unknownAttribute(name: key,
@@ -57,7 +58,7 @@ public struct _GraphicalFunctionComponent: InspectableComponent, CustomStringCon
     public func attribute(forKey key: String) -> ForeignValue? {
         switch key {
         case "interpolation_method": return ForeignValue(method.rawValue)
-        case "points": return ForeignValue(points)
+        case "graphical_function_points": return ForeignValue(points)
         default:
             return nil
         }

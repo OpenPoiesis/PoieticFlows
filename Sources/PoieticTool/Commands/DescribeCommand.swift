@@ -42,13 +42,13 @@ extension PoieticTool {
                 ("Structure", "\(object.structure.type)"),
             ]
             
-            for component in object.inspectableComponents {
-                let desc = type(of: component).componentSchema
-
+            var seenAttributes: [String] = []
+            
+            for trait in object.type.traits {
                 items.append((nil, nil))
-                items.append((desc.label, nil))
+                items.append((trait.label, nil))
 
-                for attr in desc.attributes {
+                for attr in trait.attributes {
                     let rawValue = object.attribute(forKey: attr.name)
                     let displayValue: String
                     if let rawValue {
@@ -59,11 +59,30 @@ extension PoieticTool {
                     }
 
                     items.append((attr.name, displayValue))
+                    seenAttributes.append(attr.name)
                 }
             }
             
+            var orphanedItems: [(String?, String?)]  = []
+
+            for item in object.attributes {
+                let (name, value) = item
+                if seenAttributes.contains(name) {
+                    continue
+                }
+                let displayValue = String(describing: value)
+
+                orphanedItems.append((name, displayValue))
+            }
+            
+            if !orphanedItems.isEmpty {
+                items.append((nil, nil))
+                items.append(("Extra attributes", ""))
+                items += orphanedItems
+            }
+            
             if items.isEmpty {
-                print("Object has no components.")
+                print("Object has no attributes.")
             }
             else {
                 let formattedItems = formatLabelledList(items,

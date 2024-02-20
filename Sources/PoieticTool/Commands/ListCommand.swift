@@ -88,11 +88,12 @@ extension PoieticTool {
                 guard let name = object.name else {
                     continue
                 }
-                if let component: FormulaComponent = object[FormulaComponent.self] {
-                    result[name] = component.expressionString
+                // TODO: Present error more nicely
+                if let formula = object["formula"] {
+                    result[name] = try? formula.stringValue() ?? "(type error)"
                 }
-                else if let component: GraphicalFunctionComponent = object[GraphicalFunctionComponent.self] {
-                    result[name] = component.description
+                else if let points = object["graphical_function_points"] {
+                    result[name] = try? points.stringValue() ?? "(type error)"
                 }
             }
             

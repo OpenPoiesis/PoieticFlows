@@ -19,6 +19,7 @@ extension Trait {
     )
 }
 
+#if false
 public struct ChartComponent: InspectableComponent {
     public static let trait = Trait.Chart
     
@@ -44,48 +45,48 @@ public struct ChartComponent: InspectableComponent {
         }
     }
 }
+#endif
 
-// TODO: [EXPERIMENTAL] The following is experimental
+// TODO: [EXPERIMENTAL] Make this a runtime component
 /// Object representing a chart.
 ///
 /// - ToDo: This is experimental.
 ///
 public struct Chart {
     public let node: ObjectSnapshot
-    public let component: ChartComponent
     public let series: [ObjectSnapshot]
     
-    public init(node: ObjectSnapshot, component: ChartComponent, series: [ObjectSnapshot]) {
+    public init(node: ObjectSnapshot, series: [ObjectSnapshot]) {
         self.node = node
-        self.component = component
         self.series = series
     }
     
 }
 
+// TODO: This is unused
 public struct ChartSeries {
     public let node: ObjectSnapshot
     var name: String { node.name! }
 }
 
 extension StockFlowView {
-    public var charts: [PoieticFlows.Chart] {
-        let nodes = frame.selectNodes(HasComponentPredicate(ChartComponent.self))
+    public var charts: [Chart] {
+        let nodes = frame.filterNodes { $0.type === Chart }
+        
         var charts: [PoieticFlows.Chart] = []
         for node in nodes {
-            let component: ChartComponent = node[ChartComponent.self]!
             let hood = frame.hood(node.id,
                                   selector: NeighborhoodSelector(
                                     predicate: IsTypePredicate(ChartSeries),
                                     direction: .outgoing))
             let series = hood.nodes.map { $0.snapshot }
             let chart = PoieticFlows.Chart(node: node.snapshot,
-                              component: component,
-                              series: series)
+                                           series: series)
             charts.append(chart)
         }
         return charts
     }
+
 }
 
 //public struct CompiledChart {

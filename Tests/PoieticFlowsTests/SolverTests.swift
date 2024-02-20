@@ -389,7 +389,7 @@ final class TestSolver: XCTestCase {
         let points = [Point(0.0, 10.0), Point(1.0, 10.0)]
         let g2 = frame.createNode(Metamodel.GraphicalFunction,
                                   name: "g2",
-                                  attributes: ["points": ForeignValue(points)])
+                                  attributes: ["graphical_function_points": ForeignValue(points)])
         let aux = frame.createNode(Metamodel.Auxiliary,
                                    name:"a",
                                    attributes: ["formula": "g1 + g2"])

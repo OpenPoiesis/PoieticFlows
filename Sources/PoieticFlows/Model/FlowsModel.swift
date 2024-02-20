@@ -7,6 +7,7 @@
 
 import PoieticCore
 
+// TODO: [REFACTORING] Move to ObjectType
 extension Metamodel {
     /// A stock node - one of the two core nodes.
     ///
