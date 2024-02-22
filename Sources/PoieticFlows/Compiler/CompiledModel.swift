@@ -329,5 +329,13 @@ public struct CompiledModel {
     public func variable(named name: String) -> ComputedVariable? {
         return computedVariables.first { $0.name == name }
     }
+    
+    // FIXME: [REFACTORING] Rework variable indices
+    public var timeVariableIndex: VariableIndex {
+        guard let index = builtinVariables.firstIndex(where: { $0.name == "time" }) else {
+            fatalError("No time variable")
+        }
+        return index
+    }
 }
 

@@ -10,8 +10,8 @@ import PoieticCore
 /// Object for controlling a simulation session.
 ///
 public class Simulator {
-    /// Object memory in which the simulator operates.
-    public var memory: ObjectMemory
+    // Object memory in which the simulator operates.
+    // public var memory: ObjectMemory
     
     /// List of systems that the simulator will call during various stages
     /// of the simulation process.
@@ -40,12 +40,14 @@ public class Simulator {
     public var compiledModel: CompiledModel?
     
     /// Collected data
+    /// TODO: Make this an object, so we can derive more info
     public var output: [SimulationState]
     
     // MARK: - Initialisation
     
+    // FIXME: [REFACTORING] We do not need memory here any more.
     public init(memory: ObjectMemory, solverType: Solver.Type = EulerSolver.self) {
-        self.memory = memory
+        // self.memory = memory
         self.solverType = solverType
         self.currentState = nil
         
@@ -57,10 +59,10 @@ public class Simulator {
     }
 
     // MARK: - Compilation methods
-        
+    
+    @available(*, deprecated, message: "This was a convenience. Compile separately.")
     public func compile(_ frame: MutableFrame) throws {
         self.frame = frame
-        let view = StockFlowView(frame)
         // FIXME: [IMPORTANT] What if frame != view.frame???
         let compiler = Compiler(frame: frame)
         
@@ -151,5 +153,20 @@ public class Simulator {
             step()
             output.append(self.currentState!)
         }
+    }
+    
+    /// Get data series for variable at given index.
+    ///
+    public func dataSeries(index: Int) -> [Double] {
+        return output.map { $0[index] }
+    }
+    
+    /// Get series of time points.
+    public var timePoints: [Double] {
+        guard let timeIndex = compiledModel?.timeVariableIndex else {
+            fatalError("Unable to get time variable index. Hint: Check compiled model.")
+        }
+        // FIXME: [REFACTORING] We need a cleaner way how to get this.
+        return output.map { try! $0.builtins[timeIndex].doubleValue() }
     }
 }

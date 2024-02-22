@@ -239,11 +239,8 @@ func acceptFrame(_ frame: MutableFrame, in memory: ObjectMemory) throws {
         try memory.accept(frame)
     }
     catch let error as FrameValidationError {
-        for (id, messages) in error.prettyDescriptionsByObject {
-            for message in messages {
-                print("ERROR: Object \(id): \(message)")
-            }
-        }
+        printValidationError(error)
+
         throw ToolError.constraintError
     }
 }

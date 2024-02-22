@@ -46,7 +46,7 @@ public struct BoundBuiltinVariable {
 ///
 /// - SeeAlso: ``SimulationVariable``
 ///
-public enum SimulationVariableType {
+public enum SimulationVariableType: String {
     /// The simulation variable represents a computation defined
     /// by a node.
     case computed

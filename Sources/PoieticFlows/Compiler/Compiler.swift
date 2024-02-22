@@ -433,7 +433,7 @@ public class Compiler {
     /// - Throws: ``NodeIssue`` if the function parameter is not connected.
     ///
     public func compileGraphicalFunctionNode(_ node: Node) throws -> ComputationalRepresentation{
-        guard let points = try? node.snapshot["points"]?.pointArray() else {
+        guard let points = try? node.snapshot["graphical_function_points"]?.pointArray() else {
             // TODO: [REFACTORING] Better error handling/reporting for these cases
             fatalError("Got graphical function without points attribute")
         }
