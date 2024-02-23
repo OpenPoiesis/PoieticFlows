@@ -33,16 +33,16 @@ final class TestCompiler: XCTestCase {
     
     func testComputedVariables() throws {
         let compiler = Compiler(frame: frame)
-        frame.createNode(Metamodel.Stock,
+        frame.createNode(ObjectType.Stock,
                          name: "a",
                          attributes: ["formula": "0"])
-        frame.createNode(Metamodel.Stock,
+        frame.createNode(ObjectType.Stock,
                          name: "b",
                          attributes: ["formula": "0"])
-        frame.createNode(Metamodel.Stock,
+        frame.createNode(ObjectType.Stock,
                          name: "c",
                          attributes: ["formula": "0"])
-        frame.createNode(Metamodel.Note,
+        frame.createNode(ObjectType.Note,
                          name: "note",
                          components: [])
         // TODO: Check using violation checker
@@ -56,16 +56,16 @@ final class TestCompiler: XCTestCase {
     
     func testValidateDuplicateName() throws {
         let compiler = Compiler(frame: frame)
-        let c1 = frame.createNode(Metamodel.Stock,
+        let c1 = frame.createNode(ObjectType.Stock,
                                   name: "things",
                                   attributes: ["formula": "0"])
-        let c2 = frame.createNode(Metamodel.Stock,
+        let c2 = frame.createNode(ObjectType.Stock,
                                   name: "things",
                                   attributes: ["formula": "0"])
-        frame.createNode(Metamodel.Stock,
+        frame.createNode(ObjectType.Stock,
                          name: "a",
                          attributes: ["formula": "0"])
-        frame.createNode(Metamodel.Stock,
+        frame.createNode(ObjectType.Stock,
                          name: "b",
                          attributes: ["formula": "0"])
 
@@ -85,21 +85,21 @@ final class TestCompiler: XCTestCase {
 
     
     func testInflowOutflow() throws {
-        let source = frame.createNode(Metamodel.Stock,
+        let source = frame.createNode(ObjectType.Stock,
                                       name: "source",
                                       attributes: ["formula": "0"])
-        let flow = frame.createNode(Metamodel.Flow,
+        let flow = frame.createNode(ObjectType.Flow,
                                     name: "f",
                                     attributes: ["formula": "1"])
-        let sink = frame.createNode(Metamodel.Stock,
+        let sink = frame.createNode(ObjectType.Stock,
                                     name: "sink",
                                     attributes: ["formula": "0"])
 
-        frame.createEdge(Metamodel.Drains,
+        frame.createEdge(ObjectType.Drains,
                          origin: source,
                          target: flow,
                          components: [])
-        frame.createEdge(Metamodel.Fills,
+        frame.createEdge(ObjectType.Fills,
                          origin: flow,
                          target: sink,
                          components: [])
@@ -119,21 +119,21 @@ final class TestCompiler: XCTestCase {
     
     func testUpdateImplicitFlows() throws {
         // TODO: No compiler needed, now it is using a transformation system
-        let flow = frame.createNode(Metamodel.Flow,
+        let flow = frame.createNode(ObjectType.Flow,
                                     name: "f",
                                     attributes: ["formula": "1"])
-        let source = frame.createNode(Metamodel.Stock,
+        let source = frame.createNode(ObjectType.Stock,
                                       name: "source",
                                       attributes: ["formula": "0"])
-        let sink = frame.createNode(Metamodel.Stock,
+        let sink = frame.createNode(ObjectType.Stock,
                                     name: "sink",
                                     attributes: ["formula": "0"])
 
-        frame.createEdge(Metamodel.Drains,
+        frame.createEdge(ObjectType.Drains,
                          origin: source,
                          target: flow,
                          components: [])
-        frame.createEdge(Metamodel.Fills,
+        frame.createEdge(ObjectType.Fills,
                          origin: flow,
                          target: sink,
                          components: [])
@@ -164,7 +164,7 @@ final class TestCompiler: XCTestCase {
     
     func testDisconnectedGraphicalFunction() throws {
         let compiler = Compiler(frame: frame)
-        let gf = frame.createNode(Metamodel.GraphicalFunction,
+        let gf = frame.createNode(ObjectType.GraphicalFunction,
                                   name: "g")
 
         XCTAssertThrowsError(try compiler.compile()) {
@@ -192,17 +192,17 @@ final class TestCompiler: XCTestCase {
     func testGraphicalFunctionNameReferences() throws {
         let compiler = Compiler(frame: frame)
 
-        let param = frame.createNode(Metamodel.Auxiliary,
+        let param = frame.createNode(ObjectType.Auxiliary,
                                   name: "p",
                                      attributes: ["formula": "1"])
-        let gf = frame.createNode(Metamodel.GraphicalFunction,
+        let gf = frame.createNode(ObjectType.GraphicalFunction,
                                   name: "g")
-        let aux = frame.createNode(Metamodel.Auxiliary,
+        let aux = frame.createNode(ObjectType.Auxiliary,
                                    name:"a",
                                    attributes: ["formula": "g"])
 
-        frame.createEdge(Metamodel.Parameter, origin: param, target: gf)
-        frame.createEdge(Metamodel.Parameter, origin: gf, target: aux)
+        frame.createEdge(ObjectType.Parameter, origin: param, target: gf)
+        frame.createEdge(ObjectType.Parameter, origin: gf, target: aux)
 
         let compiled = try compiler.compile()
 
@@ -221,18 +221,18 @@ final class TestCompiler: XCTestCase {
 
 
     func testGraphicalFunctionComputation() throws {
-        let p = frame.createNode(Metamodel.Auxiliary,
+        let p = frame.createNode(ObjectType.Auxiliary,
                                    name:"p",
                                  attributes: ["formula": "0"])
 
-        let gf = frame.createNode(Metamodel.GraphicalFunction,
+        let gf = frame.createNode(ObjectType.GraphicalFunction,
                                   name: "g")
-        let aux = frame.createNode(Metamodel.Auxiliary,
+        let aux = frame.createNode(ObjectType.Auxiliary,
                                    name:"a",
                                    attributes: ["formula": "g"])
 
-        frame.createEdge(Metamodel.Parameter, origin: p, target: gf)
-        frame.createEdge(Metamodel.Parameter, origin: gf, target: aux)
+        frame.createEdge(ObjectType.Parameter, origin: p, target: gf)
+        frame.createEdge(ObjectType.Parameter, origin: gf, target: aux)
 
         let compiler = Compiler(frame: frame)
         let compiled = try compiler.compile()

@@ -126,7 +126,7 @@ public struct ImplicitFlowsTransformer: FrameTransformer {
                 continue
             }
             
-            graph.createEdge(view.ImplicitFlow,
+            graph.createEdge(ObjectType.ImplicitFlow,
                              origin: drains,
                              target: fills,
                              attributes: [:],

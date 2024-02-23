@@ -110,9 +110,25 @@ public struct CompiledStock: IndexRepresentable {
     ///
     public let index: VariableIndex
     
+    // TODO: [REFACTORING] Merge StockComponent into here and remove the structure
     /// Component representing the stock as it was at the time of compilation.
     ///
-    public let component: StockComponent
+//    public let component: StockComponent
+    /// Flag whether the value of the node can be negative.
+    var allowsNegative: Bool = false
+    
+    /// Flag that controls how flow for the stock is being computed when the
+    /// stock is non-negative.
+    ///
+    /// If the stock is non-negative, normally its outflow depends on the
+    /// inflow. This is not a problem unless there is a loop of flows between
+    /// stocks. In that case, to proceed with computation we need to break the
+    /// loop. Stock being with 'delayed inflow' means that the outflow will not
+    /// immediately depend on the inflow. The outflow will be computed from
+    /// the actual stock value, ignoring the inflow. The inflow will be added
+    /// later to the stock.
+    ///
+    var delayedInflow: Bool = false
 
     /// List indices of simulation variables representing flows
     /// which fill the stock.

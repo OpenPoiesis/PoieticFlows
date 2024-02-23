@@ -258,10 +258,10 @@ public class Compiler {
         var auxiliaries: [CompiledObject] = []
         
         for (index, node) in orderedSimulationNodes.enumerated() {
-            if node.type === view.Stock {
+            if node.type === ObjectType.Stock {
                 unsortedStocks.append(node)
             }
-            else if node.type === view.Flow {
+            else if node.type === ObjectType.Flow {
                 // FIXME: [REFACTORING] Too many unwraps
                 let priority = try! node.snapshot["priority"]!.intValue()
                 let flow = CompiledFlow(id: node.id,
@@ -270,8 +270,8 @@ public class Compiler {
                 flows.append(flow)
                 flowsByID[node.id] = flow
             }
-            else if node.type === view.Auxiliary
-                        || node.type === view.GraphicalFunction {
+            else if node.type === ObjectType.Auxiliary
+                        || node.type === ObjectType.GraphicalFunction {
                 let compiled = CompiledObject(id: node.id, index: index)
                 auxiliaries.append(compiled)
             }
@@ -304,7 +304,7 @@ public class Compiler {
         // =================================================================
 
         var bindings: [CompiledControlBinding] = []
-        for object in frame.filter(type: view.ValueBinding) {
+        for object in frame.filter(type: ObjectType.ValueBinding) {
             guard let edge = Edge(object) else {
                 // This should not happen
                 fatalError("A value binding \(object.id) is not an edge")
@@ -500,15 +500,17 @@ public class Compiler {
         for node in stocks {
             let inflowIndices = inflows[node.id]?.map { variableIndex($0) } ?? []
             let outflowIndices = outflows[node.id]?.map { variableIndex($0) } ?? []
-            let component: StockComponent
 
-            // FIXME: [REFACTORING] Use attributes directly instead of this 
-            component = try! StockComponent(from: node.snapshot)
-            
+            // We can `try!` and force unwrap, because here we already assume
+            // the model was validated
+            let allowsNegative = try! node.snapshot["allows_negative"]!.boolValue()
+            let delayedInflow = try! node.snapshot["delayed_inflow"]!.boolValue()
+
             let compiled = CompiledStock(
                 id: node.id,
                 index: variableIndex(node.id),
-                component: component,
+                allowsNegative: allowsNegative,
+                delayedInflow: delayedInflow,
                 inflows: inflowIndices,
                 outflows: outflowIndices
             )

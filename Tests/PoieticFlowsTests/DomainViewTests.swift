@@ -32,7 +32,7 @@ final class TestDomainView: XCTestCase {
             "b": 2,
         ]
         
-        let l = frame.createNode(FlowsMetamodel.Stock,
+        let l = frame.createNode(FlowsObjectType.Stock,
                                  traits: [FormulaComponent(name: "l",
                                                                expression: "sqrt(a*a + b*b)")])
         let view = StockFlowView(frame)
@@ -50,22 +50,22 @@ final class TestDomainView: XCTestCase {
     func testSortedNodes() throws {
         // a -> b -> c
         
-        let c = frame.createNode(Metamodel.Auxiliary,
+        let c = frame.createNode(ObjectType.Auxiliary,
                                  name: "c",
                                  attributes: ["formula": "b"])
-        let b = frame.createNode(Metamodel.Auxiliary,
+        let b = frame.createNode(ObjectType.Auxiliary,
                                  name: "b",
                                  attributes: ["formula": "a"])
-        let a = frame.createNode(Metamodel.Auxiliary,
+        let a = frame.createNode(ObjectType.Auxiliary,
                                  name: "a",
                                  attributes: ["formula": "0"])
 
         
-        frame.createEdge(Metamodel.Parameter,
+        frame.createEdge(ObjectType.Parameter,
                          origin: a,
                          target: b,
                          components: [])
-        frame.createEdge(Metamodel.Parameter,
+        frame.createEdge(ObjectType.Parameter,
                          origin: b,
                          target: c,
                          components: [])
@@ -85,7 +85,7 @@ final class TestDomainView: XCTestCase {
     }
     
     func testInvalidInput2() throws {
-        let broken = frame.createNode(Metamodel.Stock,
+        let broken = frame.createNode(ObjectType.Stock,
                                       name: "broken",
                                       attributes: ["formula": "price"])
         let view = StockFlowView(frame)
@@ -96,21 +96,21 @@ final class TestDomainView: XCTestCase {
     }
 
     func testUnusedInputs() throws {
-        let used = frame.createNode(Metamodel.Auxiliary,
+        let used = frame.createNode(ObjectType.Auxiliary,
                                     name: "used",
                                     attributes: ["formula": "0"])
-        let unused = frame.createNode(Metamodel.Auxiliary,
+        let unused = frame.createNode(ObjectType.Auxiliary,
                                       name: "unused",
                                       attributes: ["formula": "0"])
-        let tested = frame.createNode(Metamodel.Auxiliary,
+        let tested = frame.createNode(ObjectType.Auxiliary,
                                       name: "tested",
                                       attributes: ["formula": "used"])
 
-        let usedEdge = frame.createEdge(Metamodel.Parameter,
+        let usedEdge = frame.createEdge(ObjectType.Parameter,
                          origin: used,
                          target: tested,
                          components: [])
-        let unusedEdge = frame.createEdge(Metamodel.Parameter,
+        let unusedEdge = frame.createEdge(ObjectType.Parameter,
                          origin: unused,
                          target: tested,
                          components: [])
@@ -128,14 +128,14 @@ final class TestDomainView: XCTestCase {
     }
 
     func testUnknownParameters() throws {
-        let known = frame.createNode(Metamodel.Auxiliary,
+        let known = frame.createNode(ObjectType.Auxiliary,
                                      name: "known",
                                      attributes: ["formula": "0"])
-        let tested = frame.createNode(Metamodel.Auxiliary,
+        let tested = frame.createNode(ObjectType.Auxiliary,
                                       name: "tested",
                                       attributes: ["formula": "known + unknown"])
 
-        let knownEdge = frame.createEdge(Metamodel.Parameter,
+        let knownEdge = frame.createEdge(ObjectType.Parameter,
                          origin: known,
                          target: tested,
                          components: [])
@@ -151,21 +151,21 @@ final class TestDomainView: XCTestCase {
     }
     
     func testFlowFillsAndDrains() throws {
-        let flow = frame.createNode(Metamodel.Flow,
+        let flow = frame.createNode(ObjectType.Flow,
                                     name: "f",
                                     attributes: ["formula": "1"])
-        let source = frame.createNode(Metamodel.Stock,
+        let source = frame.createNode(ObjectType.Stock,
                                       name: "source",
                                       attributes: ["formula": "0"])
-        let sink = frame.createNode(Metamodel.Stock,
+        let sink = frame.createNode(ObjectType.Stock,
                                     name: "sink",
                                     attributes: ["formula": "0"])
 
-        frame.createEdge(Metamodel.Drains,
+        frame.createEdge(ObjectType.Drains,
                          origin: source,
                          target: flow,
                          components: [])
-        frame.createEdge(Metamodel.Fills,
+        frame.createEdge(ObjectType.Fills,
                          origin: flow,
                          target: sink,
                          components: [])

@@ -146,10 +146,10 @@ public class Solver {
                                              count: compiledModel.builtinVariables.count)
         for (index, builtin) in compiledModel.builtinVariables.enumerated() {
             let value: ForeignValue
-            if builtin === Metamodel.TimeVariable {
+            if builtin === ObjectType.TimeVariable {
                  value = ForeignValue(time)
             }
-            else if builtin === Metamodel.TimeDeltaVariable {
+            else if builtin === ObjectType.TimeDeltaVariable {
                  value = ForeignValue(timeDelta)
             }
             else {
@@ -214,10 +214,10 @@ public class Solver {
         
         /// Set built-in variables in the state
         for (index, builtin) in compiledModel.builtinVariables.enumerated() {
-            if builtin === Metamodel.TimeVariable {
+            if builtin === ObjectType.TimeVariable {
                 state.builtins[index] = ForeignValue(time)
             }
-            else if builtin === Metamodel.TimeDeltaVariable {
+            else if builtin === ObjectType.TimeDeltaVariable {
                 state.builtins[index] = ForeignValue(timeDelta)
             }
             else {
@@ -322,7 +322,7 @@ public class Solver {
             totalInflow += max(state[inflow], 0)
         }
         
-        if stock.component.allowsNegative {
+        if stock.allowsNegative {
             for outflow in stock.outflows {
                 totalOutflow += state[outflow]
             }

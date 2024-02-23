@@ -27,18 +27,19 @@ public class StockFlowView {
     /// Metamodel that the view uses to find relevant object types.
     public let metamodel: Metamodel
 
-    public let Stock: ObjectType
-    public let Flow: ObjectType
-    public let Auxiliary: ObjectType
-    public let GraphicalFunction: ObjectType
-    public let Control: ObjectType
-    public let Chart: ObjectType
-    public let Drains: ObjectType
-    public let Fills: ObjectType
-    public let Parameter: ObjectType
-    public let ImplicitFlow: ObjectType
-    public let ValueBinding: ObjectType
-    public let ChartSeries: ObjectType
+    // TODO: Remove these.
+//    public let Stock: ObjectType
+//    public let Flow: ObjectType
+//    public let Auxiliary: ObjectType
+//    public let GraphicalFunction: ObjectType
+//    public let Control: ObjectType
+//    public let Chart: ObjectType
+//    public let Drains: ObjectType
+//    public let Fills: ObjectType
+//    public let Parameter: ObjectType
+//    public let ImplicitFlow: ObjectType
+//    public let ValueBinding: ObjectType
+//    public let ChartSeries: ObjectType
     
     // TODO: Consolidate queries in metamodel and this domain view - move them here(?)
     /// Graph that the view projects.
@@ -53,18 +54,18 @@ public class StockFlowView {
         self.frame = frame
         
         // TODO: Handle missing types more gracefuly
-        self.Stock = metamodel.objectType(name: "Stock")!
-        self.Flow = metamodel.objectType(name: "Flow")!
-        self.Auxiliary = metamodel.objectType(name: "Auxiliary")!
-        self.GraphicalFunction = metamodel.objectType(name: "GraphicalFunction")!
-        self.Control = metamodel.objectType(name: "Control")!
-        self.Chart = metamodel.objectType(name: "Chart")!
-        self.Drains = metamodel.objectType(name: "Drains")!
-        self.Fills = metamodel.objectType(name: "Fills")!
-        self.Parameter = metamodel.objectType(name: "Parameter")!
-        self.ImplicitFlow = metamodel.objectType(name: "ImplicitFlow")!
-        self.ValueBinding = metamodel.objectType(name: "ValueBinding")!
-        self.ChartSeries = metamodel.objectType(name: "ChartSeries")!
+//        self.Stock = metamodel.objectType(name: "Stock")!
+//        self.Flow = metamodel.objectType(name: "Flow")!
+//        self.Auxiliary = metamodel.objectType(name: "Auxiliary")!
+//        self.GraphicalFunction = metamodel.objectType(name: "GraphicalFunction")!
+//        self.Control = metamodel.objectType(name: "Control")!
+//        self.Chart = metamodel.objectType(name: "Chart")!
+//        self.Drains = metamodel.objectType(name: "Drains")!
+//        self.Fills = metamodel.objectType(name: "Fills")!
+//        self.Parameter = metamodel.objectType(name: "Parameter")!
+//        self.ImplicitFlow = metamodel.objectType(name: "ImplicitFlow")!
+//        self.ValueBinding = metamodel.objectType(name: "ValueBinding")!
+//        self.ChartSeries = metamodel.objectType(name: "ChartSeries")!
     }
     
     /// A list of nodes that are part of the simulation. The simulation nodes
@@ -81,7 +82,7 @@ public class StockFlowView {
     }
 
     public var flowNodes: [Node] {
-        frame.filterNodes { $0.type === Flow }
+        frame.filterNodes { $0.type === ObjectType.Flow }
     }
    
     /// Predicate that matches all objects that have a name through
@@ -113,7 +114,7 @@ public class StockFlowView {
     /// Predicate that matches all edges that represent parameter connections.
     ///
     public var parameterEdges: [Edge] {
-        frame.filterEdges { $0.type === Parameter }
+        frame.filterEdges { $0.type === ObjectType.Parameter }
     }
     /// A neighbourhood for incoming parameters of a node.
     ///
@@ -123,7 +124,7 @@ public class StockFlowView {
     public func incomingParameters(_ nodeID: ObjectID) -> Neighborhood {
         frame.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(Parameter),
+                    predicate: IsTypePredicate(ObjectType.Parameter),
                     direction: .incoming
                 )
         )
@@ -136,7 +137,7 @@ public class StockFlowView {
     /// and terminates in a stock.
     ///
     public var fillsEdges: [Edge] {
-        frame.filterEdges { $0.type === Fills }
+        frame.filterEdges { $0.type === ObjectType.Fills }
     }
 
     /// Selector for an edge originating in a flow and ending in a stock denoting
@@ -154,7 +155,7 @@ public class StockFlowView {
     public func fills(_ nodeID: ObjectID) -> Neighborhood {
         frame.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(Fills),
+                    predicate: IsTypePredicate(ObjectType.Fills),
                     direction: .outgoing
                 )
         )
@@ -172,7 +173,7 @@ public class StockFlowView {
     public func inflows(_ nodeID: ObjectID) -> Neighborhood {
         frame.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(Fills),
+                    predicate: IsTypePredicate(ObjectType.Fills),
                     direction: .incoming
                 )
         )
@@ -193,7 +194,7 @@ public class StockFlowView {
     public func drains(_ nodeID: ObjectID) -> Neighborhood {
         frame.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(Drains),
+                    predicate: IsTypePredicate(ObjectType.Drains),
                     direction: .incoming
                 )
         )
@@ -212,7 +213,7 @@ public class StockFlowView {
     public func outflows(_ nodeID: ObjectID) -> Neighborhood {
         frame.hood(nodeID,
                    selector: NeighborhoodSelector(
-                    predicate: IsTypePredicate(Drains),
+                    predicate: IsTypePredicate(ObjectType.Drains),
                     direction: .incoming
                 )
         )
@@ -222,7 +223,7 @@ public class StockFlowView {
     /// stock and terminates in a flow.
     ///
     public var drainsEdges: [Edge] {
-        frame.selectEdges(IsTypePredicate(Drains))
+        frame.selectEdges(IsTypePredicate(ObjectType.Drains))
     }
     
     /// List of all edges that denotes an implicit flow between
@@ -248,7 +249,7 @@ public class StockFlowView {
     /// ``StockFlowView/sortedStocksByImplicitFlows(_:)``
     ///
     public var implicitFlowEdges: [Edge] {
-        frame.selectEdges(IsTypePredicate(ImplicitFlow))
+        frame.selectEdges(IsTypePredicate(ObjectType.ImplicitFlow))
     }
 
     
@@ -352,7 +353,7 @@ public class StockFlowView {
     public func flowFills(_ flowID: ObjectID) -> ObjectID? {
         let flowNode = frame.node(flowID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(flowNode.type === Flow)
+        precondition(flowNode.type === ObjectType.Flow)
         
         if let node = fills(flowID).nodes.first {
             return node.id
@@ -377,7 +378,7 @@ public class StockFlowView {
     public func flowDrains(_ flowID: ObjectID) -> ObjectID? {
         let flowNode = frame.node(flowID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(flowNode.type === Flow)
+        precondition(flowNode.type === ObjectType.Flow)
         
         if let node = drains(flowID).nodes.first {
             return node.id
@@ -403,7 +404,7 @@ public class StockFlowView {
     public func stockInflows(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === Stock)
+        precondition(stockNode.type === ObjectType.Stock)
         
         return inflows(stockID).nodes.map { $0.id }
     }
@@ -425,7 +426,7 @@ public class StockFlowView {
     public func stockOutflows(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === Stock)
+        precondition(stockNode.type === ObjectType.Stock)
         
         return outflows(stockID).nodes.map { $0.id }
     }
@@ -452,11 +453,11 @@ public class StockFlowView {
     public func implicitFills(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === Stock)
+        precondition(stockNode.type === ObjectType.Stock)
         
         let hood = frame.hood(stockID,
                               selector: NeighborhoodSelector(
-                                predicate: IsTypePredicate(ImplicitFlow),
+                                predicate: IsTypePredicate(ObjectType.ImplicitFlow),
                                 direction: .outgoing))
         
         return hood.nodes.map { $0.id }
@@ -484,11 +485,11 @@ public class StockFlowView {
     public func implicitDrains(_ stockID: ObjectID) -> [ObjectID] {
         let stockNode = frame.node(stockID)
         // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === Stock)
+        precondition(stockNode.type === ObjectType.Stock)
         
         let hood = frame.hood(stockID,
                               selector: NeighborhoodSelector(
-                                predicate: IsTypePredicate(ImplicitFlow),
+                                predicate: IsTypePredicate(ObjectType.ImplicitFlow),
                                 direction: .incoming))
 
         return hood.nodes.map { $0.id }

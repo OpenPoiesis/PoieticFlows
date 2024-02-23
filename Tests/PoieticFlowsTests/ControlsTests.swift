@@ -22,13 +22,12 @@ final class TestControls: XCTestCase {
     }
     
     func testBinding() throws {
-        let a = frame.createNode(Metamodel.Auxiliary,
+        let a = frame.createNode(ObjectType.Auxiliary,
                                  name: "a",
                                  attributes: ["formula": "10"])
-        let control = frame.createNode(Metamodel.Control,
-                                 name: "control",
-                                 components: [ControlComponent()])
-        let binding = frame.createEdge(Metamodel.ValueBinding,
+        let control = frame.createNode(ObjectType.Control,
+                                 name: "control")
+        let binding = frame.createEdge(ObjectType.ValueBinding,
                                        origin: control,
                                        target: a)
         try simulator.compile(frame)
@@ -36,6 +35,6 @@ final class TestControls: XCTestCase {
         simulator.initializeSimulation()
         
         let controlObj = frame.object(control)
-        XCTAssertEqual(controlObj[ControlComponent.self]!.value, 10)
+        XCTAssertEqual(try! controlObj["value"]!.doubleValue(), 10)
     }
 }
