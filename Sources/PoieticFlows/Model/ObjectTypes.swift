@@ -14,7 +14,7 @@ extension ObjectType {
     ///
     /// Stock can be connected to many flows that drain or fill the stock.
     ///
-    /// - SeeAlso: ``FlowsMetamodel/Flow``, ``FlowsMetamodel/ImplicitFlow``
+    /// - SeeAlso: ``ObjectType/Flow``, ``ObjectType/ImplicitFlow``
     ///
     public static let Stock = ObjectType(
         name: "Stock",
@@ -43,8 +43,8 @@ extension ObjectType {
     ///
     /// ```
     ///
-    /// - SeeAlso: ``FlowsMetamodel/Stock``, ``FlowsMetamodel/Fills-8qqu8``,
-    /// ``FlowsMetamodel/Drains-38oqw``.
+    /// - SeeAlso: ``ObjectType/Stock``, ``ObjectType/Fills``,
+    /// ``ObjectType/Drains``.
     ///
     public static let Flow = ObjectType(
         name: "Flow",

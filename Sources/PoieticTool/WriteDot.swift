@@ -18,37 +18,37 @@ let DefaultDOTStyle = DotStyle(
                      attributes: [
                         "labelloc": "b",
                      ]),
-        DotNodeStyle(predicate: IsTypePredicate(Metamodel.Flow.self),
+        DotNodeStyle(predicate: IsTypePredicate(ObjectType.Flow),
                      attributes: [
                         "shape": "ellipse",
                         "style": "bold",
 
                      ]),
-        DotNodeStyle(predicate: IsTypePredicate(Metamodel.Stock.self),
+        DotNodeStyle(predicate: IsTypePredicate(ObjectType.Stock),
                      attributes: [
                         "style": "bold",
                         "shape": "box",
                      ]),
-        DotNodeStyle(predicate: IsTypePredicate(Metamodel.Auxiliary.self),
+        DotNodeStyle(predicate: IsTypePredicate(ObjectType.Auxiliary),
                      attributes: [
                         "shape": "ellipse",
                         "style": "dotted",
                      ]),
     ],
     edges: [
-        DotEdgeStyle(predicate: IsTypePredicate(Metamodel.Drains.self),
+        DotEdgeStyle(predicate: IsTypePredicate(ObjectType.Drains),
                      attributes: [
                         "color": "blue:white:blue",
                         "arrowhead": "empty",
                         "arrowsize": "2",
                      ]),
-        DotEdgeStyle(predicate: IsTypePredicate(Metamodel.Fills.self),
+        DotEdgeStyle(predicate: IsTypePredicate(ObjectType.Fills),
                      attributes: [
                         "color": "blue:white:blue",
                         "arrowhead": "empty",
                         "arrowsize": "2",
                      ]),
-        DotEdgeStyle(predicate: IsTypePredicate(Metamodel.Parameter.self),
+        DotEdgeStyle(predicate: IsTypePredicate(ObjectType.Parameter),
                      attributes: [
                         "arrowhead": "open",
                         "color": "red",

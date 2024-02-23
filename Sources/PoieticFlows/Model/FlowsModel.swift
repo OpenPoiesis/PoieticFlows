@@ -7,17 +7,6 @@
 
 import PoieticCore
 
-//public class _FlowsBoundMetamodel {
-//    let Stock: ObjectType
-//    let Flow: ObjectType
-//    let Auxiliary: ObjectType
-//    let GraphicalFunction: ObjectType
-//    
-//    public init(metamodel: Metamodel) {
-//        
-//    }
-//    
-//}
 /// The metamodel for Stock-and-Flows domain model.
 ///
 /// The `FlowsMetamodel` describes concepts, components, constraints and
@@ -50,12 +39,14 @@ public let FlowsMetamodel = Metamodel(
     // NOTE: If we were able to use Mirror on types, we would not need this
     /// List of object types for the Stock and Flow metamodel.
     ///
-    objectTypes: [
+    objectTypes: BasicMetamodel.objectTypes + [
+        // Nodes
         ObjectType.Stock,
         ObjectType.Flow,
         ObjectType.Auxiliary,
         ObjectType.GraphicalFunction,
         
+        // Edges
         ObjectType.Drains,
         ObjectType.Fills,
         ObjectType.Parameter,
@@ -66,7 +57,7 @@ public let FlowsMetamodel = Metamodel(
         ObjectType.Chart,
         ObjectType.ChartSeries,
         ObjectType.ValueBinding,
-    ] + BasicMetamodel.objectTypes,
+    ],
     
     /// List of all built-in variables.
     ///

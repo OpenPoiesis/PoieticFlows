@@ -19,8 +19,6 @@ extension Trait {
     )
 }
 
-
-
 extension StockFlowView {
 //    public var controls: [Chart] {
 //        graph.selectNodes(HasComponentPredicate(ControlComponent.self))

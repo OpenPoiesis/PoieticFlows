@@ -52,7 +52,7 @@ extension PoieticTool {
                         guard let parameterID = frame.object(named: name)?.id else {
                             fatalError("Internal Error: No object named \(name)")
                         }
-                        let edge = frame.createEdge(Metamodel.Parameter,
+                        let edge = frame.createEdge(ObjectType.Parameter,
                                                     origin: parameterID,
                                                   target: target.id)
                         if verbose {
