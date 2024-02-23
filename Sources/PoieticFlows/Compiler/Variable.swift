@@ -131,8 +131,8 @@ public enum SimulationVariable {
     ///
     public var id: ObjectID? {
         switch self {
-        case let .builtin(builtin): nil
-        case let .computed(computed): computed.id
+        case .builtin(_): nil
+        case .computed(let computed): computed.id
         }
     }
 }

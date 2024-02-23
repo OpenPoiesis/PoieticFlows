@@ -315,11 +315,18 @@ public class Compiler {
             bindings.append(binding)
         }
 
+        // 9. Misc
+        
+        guard let timeIndex = builtinVariables.firstIndex(where: { $0 === ObjectType.TimeVariable }) else {
+            fatalError("No time variable")
+        }
+
         // Finalise
         // =================================================================
         //
         let result = CompiledModel(
             builtinVariables: builtinVariables,
+            builtinTimeIndex: timeIndex,
             computedVariables: computedVariables,
             stocks: compiledStocks,
             flows: flows,

@@ -27,7 +27,7 @@ final class TestControls: XCTestCase {
                                  attributes: ["formula": "10"])
         let control = frame.createNode(ObjectType.Control,
                                  name: "control")
-        let binding = frame.createEdge(ObjectType.ValueBinding,
+        let _ = frame.createEdge(ObjectType.ValueBinding,
                                        origin: control,
                                        target: a)
         try simulator.compile(frame)

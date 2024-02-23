@@ -51,38 +51,7 @@ public struct CompiledControlBinding {
     let variableIndex: VariableIndex
 }
 
-#if false
-/// List of extracted components with associated IDs of objects containing them.
-///
-public struct ObjectComponentList<T: Component> {
-    // TODO: [IMPORTANT] Move to Frame
-    public typealias ComponentType = T
-    public let ids: [ObjectID]
-    public let traits: [ObjectID:ComponentType]
-    
-    /// Create a new object component list from a list of snapshots.
-    ///
-    /// - Precondition: All snapshots must contain the required component.
-    ///
-    public init(_ validatedSnapshots: [ObjectSnapshot]) {
-        ids = validatedSnapshots.map { $0.id }
-        let items = validatedSnapshots.map {
-            let component: ComponentType = $0[ComponentType.self]!
-            return ($0.id, component)
-        }
-        traits = Dictionary(uniqueKeysWithValues: items)
-    }
-    
-    /// Get a component for object with given ID.
-    ///
-    /// The component list must contain the id.
-    ///
-    public subscript(id: ObjectID) -> ComponentType {
-        return traits[id]!
-    }
-}
-#endif
-
+// FIXME: [REFACTORING] Remove this. A bit of over-engineering.
 /// Protocol for structures and objects that contain or represent an index.
 ///
 /// Typically compiled equivalents of various simulation types contain an
@@ -206,6 +175,16 @@ public struct CompiledModel {
     
     /// List of builtin variables
     let builtinVariables: [BuiltinVariable]
+    /// Index of time variable within built-ins
+    let builtinTimeIndex: VariableIndex
+    
+    /// Index of time variable within all variables.
+    ///
+    var absoluteTimeIndex: VariableIndex {
+        // The same as built-in index, since the list of variables is createded
+        // by concatenating builtins + computed.
+        builtinTimeIndex
+    }
 
     // TODO: Rename to: computedVariables with renamed type ComputedVariable
     /// List of variables that are computed, ordered by computational dependency.
@@ -344,14 +323,6 @@ public struct CompiledModel {
     ///
     public func variable(named name: String) -> ComputedVariable? {
         return computedVariables.first { $0.name == name }
-    }
-    
-    // FIXME: [REFACTORING] Rework variable indices
-    public var timeVariableIndex: VariableIndex {
-        guard let index = builtinVariables.firstIndex(where: { $0.name == "time" }) else {
-            fatalError("No time variable")
-        }
-        return index
     }
 }
 

@@ -163,7 +163,7 @@ public class Simulator {
     
     /// Get series of time points.
     public var timePoints: [Double] {
-        guard let timeIndex = compiledModel?.timeVariableIndex else {
+        guard let timeIndex = compiledModel?.builtinTimeIndex else {
             fatalError("Unable to get time variable index. Hint: Check compiled model.")
         }
         // FIXME: [REFACTORING] We need a cleaner way how to get this.

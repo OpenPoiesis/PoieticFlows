@@ -105,7 +105,6 @@ public struct ImplicitFlowsTransformer: FrameTransformer {
     ///   ``StockFlowView/sortedStocksByImplicitFlows(_:)``
     ///
     public mutating func update(_ context: TransformationContext) {
-        let graph = context.frame.mutableGraph
         let view = StockFlowView(context.frame)
         var unused: [Edge] = view.implicitFlowEdges
         
@@ -126,7 +125,7 @@ public struct ImplicitFlowsTransformer: FrameTransformer {
                 continue
             }
             
-            graph.createEdge(ObjectType.ImplicitFlow,
+            context.frame.createEdge(ObjectType.ImplicitFlow,
                              origin: drains,
                              target: fills,
                              attributes: [:],
@@ -134,7 +133,7 @@ public struct ImplicitFlowsTransformer: FrameTransformer {
         }
         
         for edge in unused {
-            graph.remove(edge: edge.id)
+            context.frame.remove(edge: edge.id)
         }
     }
 }

@@ -34,7 +34,6 @@ poietic add Flow name=expenses formula=50
         mutating func run() throws {
             let memory = try openMemory(options: options)
             let frame = memory.deriveFrame()
-            let graph = frame.mutableGraph
             
             guard let type = FlowsMetamodel.objectType(name: typeName) else {
                 throw ToolError.unknownObjectType(typeName)
@@ -49,7 +48,7 @@ poietic add Flow name=expenses formula=50
                 throw ToolError.creatingSystemPlaneType(type.name)
             }
             
-            let id = graph.createNode(type)
+            let id = frame.createNode(type)
             let object = frame.object(id)
             
             for item in attributeAssignments {

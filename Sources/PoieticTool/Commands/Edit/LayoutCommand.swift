@@ -43,7 +43,7 @@ extension PoieticTool {
             
             var objects: [ObjectSnapshot] = []
             if references.isEmpty {
-                objects = frame.graph.nodes.map { $0.snapshot }
+                objects = frame.nodes.map { $0.snapshot }
             }
             else {
                 for ref in references {

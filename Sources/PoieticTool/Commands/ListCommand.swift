@@ -90,10 +90,10 @@ extension PoieticTool {
                 }
                 // TODO: Present error more nicely
                 if let formula = object["formula"] {
-                    result[name] = try? formula.stringValue() ?? "(type error)"
+                    result[name] = (try? formula.stringValue()) ?? "(type error)"
                 }
                 else if let points = object["graphical_function_points"] {
-                    result[name] = try? points.stringValue() ?? "(type error)"
+                    result[name] = (try? points.stringValue()) ?? "(type error)"
                 }
             }
             

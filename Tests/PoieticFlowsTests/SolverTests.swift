@@ -60,10 +60,6 @@ final class TestSolver: XCTestCase {
         
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
-        for v in compiled.computedVariables {
-            let vstr = "\(v.id):\(v.name)@\(v.index)"
-            let expr = frame.node(v.id).attribute(forKey: "formula")!
-        }
 
         let state = solver.initialize()
         
