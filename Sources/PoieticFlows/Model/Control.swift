@@ -7,6 +7,15 @@
 
 import PoieticCore
 
+/**
+ 
+ - control_type: text | slider(min, max, step) | checkbox(0 | 1)
+ - min_value
+ - max_value
+ - step_value
+ 
+ */
+
 extension Trait {
     public static let Control = Trait(
         name: "Control",
@@ -15,6 +24,22 @@ extension Trait {
                       type: .double,
                       default: ForeignValue(0.0),
                       abstract: "Value of the target node"),
+            Attribute("control_type",
+                      type: .string,
+                      optional: true,
+                      abstract: "Visual type of the control"),
+            Attribute("min_value",
+                      type: .double,
+                      optional: true,
+                      abstract: "Minimum possible value of the target variable."),
+            Attribute("max_value",
+                      type: .double,
+                      optional: true,
+                      abstract: "Maximum possible value of the target variable."),
+            Attribute("step_value",
+                      type: .double,
+                      optional: true,
+                      abstract: "Step for a slider control."),
         ]
     )
 }

@@ -110,10 +110,10 @@ final class TestCompiler: XCTestCase {
         XCTAssertEqual(compiled.stocks.count, 2)
         XCTAssertEqual(compiled.stocks[0].id, source)
         XCTAssertEqual(compiled.stocks[0].inflows, [])
-        XCTAssertEqual(compiled.stocks[0].outflows, [compiled.index(of: flow)])
+        XCTAssertEqual(compiled.stocks[0].outflows, [compiled.computedVariableIndex(of: flow)])
 
         XCTAssertEqual(compiled.stocks[1].id, sink)
-        XCTAssertEqual(compiled.stocks[1].inflows, [compiled.index(of: flow)])
+        XCTAssertEqual(compiled.stocks[1].inflows, [compiled.computedVariableIndex(of: flow)])
         XCTAssertEqual(compiled.stocks[1].outflows, [])
     }
     
@@ -211,7 +211,7 @@ final class TestCompiler: XCTestCase {
 
         let boundFn = funcs.first!
         XCTAssertEqual(boundFn.id, gf)
-        XCTAssertEqual(boundFn.parameterIndex, compiled.index(of:param))
+        XCTAssertEqual(boundFn.parameterIndex, compiled.computedVariableIndex(of:param))
 
         XCTAssertTrue(compiled.computedVariables.contains { $0.name == "g" })
         

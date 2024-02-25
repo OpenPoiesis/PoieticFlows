@@ -43,12 +43,11 @@ public enum ComputationalRepresentation: CustomStringConvertible {
 /// Structure representing compiled control-to-value binding.
 ///
 public struct CompiledControlBinding {
-    // TODO: Rename to CompiledControlBinding
     /// ID of a control node.
-    let control: ObjectID
+    public let control: ObjectID
     
     /// Index of the simulation variable that the control controls.
-    let variableIndex: VariableIndex
+    public let variableIndex: VariableIndex
 }
 
 // FIXME: [REFACTORING] Remove this. A bit of over-engineering.
@@ -180,7 +179,7 @@ public struct CompiledModel {
     
     /// Index of time variable within all variables.
     ///
-    var absoluteTimeIndex: VariableIndex {
+    var timeResultIndex: VariableIndex {
         // The same as built-in index, since the list of variables is createded
         // by concatenating builtins + computed.
         builtinTimeIndex
@@ -201,6 +200,8 @@ public struct CompiledModel {
     ///         present in the model, the compiled model would not have been
     ///         created.
     ///
+    /// - SeeAlso: ``computedVariableIndex(of:)``
+    ///
     public let computedVariables: [ComputedVariable]
     
     /// List of all simulation variables: built-in and computed.
@@ -219,6 +220,8 @@ public struct CompiledModel {
     /// }
     /// ```
     ///
+    /// - SeeAlso: ``resultIndex(of:)``
+    ///
     public var allVariables: [SimulationVariable] {
         // TODO: Don't compute, materialize?
         var result: [SimulationVariable] = []
@@ -233,18 +236,33 @@ public struct CompiledModel {
  
         return result
     }
-    /// Get index of an object with given ID.
+    /// Get index into a list of computed variables for an object with given ID.
     ///
     /// This function is just for debugging purposes.
     ///
     /// - Complexity: O(n)
+    /// - SeeAlso: ``resultIndex(of:)``
     ///
-    public func index(of id: ObjectID) -> VariableIndex? {
+    public func computedVariableIndex(of id: ObjectID) -> VariableIndex? {
         // TODO: Do we need a pre-computed map here or are we fine with O(n)?
         // Since this is just for debug purposes, O(n) should be fine, no need
         // for added complexity of the code.
         return computedVariables.firstIndex { $0.id == id }
     }
+   
+    /// Get absolute index of an object-represented variable.
+    ///
+    /// Absolute index is an index to the list of all variables.
+    ///
+    /// - SeeAlso: ``allVariables``, ``computedVariableIndex(of:)``
+    ///
+    public func resultIndex(of id: ObjectID) -> VariableIndex? {
+        // TODO: Do we need a pre-computed map here or are we fine with O(n)?
+        // Since this is just for debug purposes, O(n) should be fine, no need
+        // for added complexity of the code.
+        return allVariables.firstIndex { $0.id == id }
+    }
+
     
     /// Get a simulation variable for an object with given ID, if exists.
     ///
@@ -264,7 +282,7 @@ public struct CompiledModel {
     ///
     /// See ``CompiledStock`` for more information.
     ///
-    let stocks: [CompiledStock]
+    public let stocks: [CompiledStock]
     
     /// Get a compiled stock by object ID.
     ///
@@ -278,21 +296,22 @@ public struct CompiledModel {
     
     /// Flows ordered by the computation (parameter) dependency.
     ///
-    let flows: [CompiledFlow]
+    public let flows: [CompiledFlow]
 
     /// Auxiliaries required by stocks, by order of dependency.
     ///
-    let auxiliaries: [CompiledObject]
+    public let auxiliaries: [CompiledObject]
 
 
     /// Compiled bindings of controls to their value objects.
     ///
     /// - See also: ``ControlComponent`` and ``ControlBindingSystem``.
     ///
-    let valueBindings: [CompiledControlBinding]
+    public let valueBindings: [CompiledControlBinding]
     
+    // TODO: [REFACTORING] Pre-compute in the compiler
     /// Selection of simulation variables that represent graphical functions.
-    var graphicalFunctions: [CompiledGraphicalFunction] {
+    public var graphicalFunctions: [CompiledGraphicalFunction] {
         let vars: [CompiledGraphicalFunction] = computedVariables.compactMap {
             if case let .graphicalFunction(fun, param) = $0.computation {
                 return CompiledGraphicalFunction(id: $0.id,

@@ -54,13 +54,13 @@ public protocol SimulationSystem {
 //    func didCompile(_ context: CompilationContext, model: CompiledModel)
 
     /// Called before the first step of the simulation is run.
-    func prepareForRunning(_ context: SimulationContext)
+    func didInitialize(_ context: SimulationContext)
 
     // TODO: Rename to update() and remove didStop(), use some flag in context, for example "isRunning"
     /// Simulation step has been finished
     func didStep(_ context: SimulationContext)
     /// The simulation has been finished
-    func didStop(_ context: SimulationContext)
+    func didRun(_ context: SimulationContext)
 }
 
 extension SimulationSystem {
@@ -72,7 +72,7 @@ extension SimulationSystem {
 //        // Do nothing
 //    }
 
-    public func prepareForRunning(_ context: SimulationContext) {
+    public func didInitialize(_ context: SimulationContext) {
         // Do nothing
     }
 
@@ -80,7 +80,7 @@ extension SimulationSystem {
         // Do nothing
     }
 
-    public func didStop(_ context: SimulationContext) {
+    public func didRun(_ context: SimulationContext) {
         // Do nothing
     }
 }
@@ -88,7 +88,7 @@ extension SimulationSystem {
 // MARK: - Systems
 
 public struct ControlBindingSystem: SimulationSystem {
-    public func prepareForRunning(_ context: SimulationContext) {
+    public func didInitialize(_ context: SimulationContext) {
         updateValues(context)
     }
     

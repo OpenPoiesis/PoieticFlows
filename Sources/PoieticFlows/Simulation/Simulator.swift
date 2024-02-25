@@ -109,7 +109,7 @@ public class Simulator {
             model: model)
 
         for system in systems {
-            system.prepareForRunning(context)
+            system.didInitialize(context)
         }
     }
     
@@ -149,9 +149,27 @@ public class Simulator {
     
     /// Run the simulation for given number of steps.
     public func run(_ steps: Int) {
+        guard let frame = self.frame else {
+            fatalError("Trying to run a simulation without a frame")
+        }
+        guard let model = self.compiledModel else {
+            fatalError("Trying to run a simulation without a compiled model")
+        }
+
         for _ in (1...steps) {
             step()
             output.append(self.currentState!)
+        }
+        
+        let context = SimulationContext(
+            time: currentTime,
+            timeDelta: timeDelta,
+            step: currentStep,
+            state: currentState!,
+            frame: frame,
+            model: model)
+        for system in systems {
+            system.didRun(context)
         }
     }
     
