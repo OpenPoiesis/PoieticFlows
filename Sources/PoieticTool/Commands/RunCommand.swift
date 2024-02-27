@@ -74,34 +74,10 @@ extension PoieticTool {
             guard let solverType = Solver.registeredSolvers[solverName] else {
                 throw ToolError.unknownSolver(solverName)
             }
-            let simulator = Simulator(memory: memory, solverType: solverType)
             let frame = memory.deriveFrame(original: memory.currentFrame.id)
-            do {
-                try simulator.compile(frame)
-            }
-            catch let error as NodeIssuesError {
-                for (id, issues) in error.issues {
-                    for issue in issues {
-                        let object = frame.object(id)
-                        let label: String
-                        if let name = object.name {
-                            label = "\(id)(\(name))"
-                        }
-                        else {
-                            label = "\(id)"
-                        }
+            let compiledModel = try compile(frame)
+            let simulator = Simulator(model: compiledModel, solverType: solverType)
 
-                        print("ERROR: node \(label): \(issue)")
-                        if let issue = issue as? NodeIssue, let hint = issue.hint {
-                            print("HINT: node \(label): \(hint)")
-                        }
-                    }
-                }
-                throw ToolError.compilationError
-            }
-
-            let compiledModel = simulator.compiledModel!
-            
             // Collect names of nodes to be observed
             // -------------------------------------------------------------
             let variables = compiledModel.allVariables
@@ -144,7 +120,7 @@ extension PoieticTool {
             
             // Create and initialize the solver
             // -------------------------------------------------------------
-            simulator.initializeSimulation(override: overrideConstants)
+            simulator.initializeState(override: overrideConstants)
             
             // Run the simulation
             // -------------------------------------------------------------

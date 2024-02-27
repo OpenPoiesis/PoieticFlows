@@ -30,6 +30,7 @@ public struct ChartSeries {
 }
 
 extension StockFlowView {
+    // FIXME: [REFACTORING] Move to Compiler
     public var charts: [Chart] {
         let nodes = frame.filterNodes { $0.type === ObjectType.Chart }
         

@@ -301,6 +301,8 @@ public struct CompiledModel {
     /// Auxiliaries required by stocks, by order of dependency.
     ///
     public let auxiliaries: [CompiledObject]
+    
+    public let charts: [Chart]
 
 
     /// Compiled bindings of controls to their value objects.

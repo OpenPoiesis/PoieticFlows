@@ -314,8 +314,14 @@ public class Compiler {
                                               variableIndex: variableIndex(edge.target))
             bindings.append(binding)
         }
-
-        // 9. Misc
+        
+        // 9. Charts
+        // =================================================================
+        //
+        // FIXME: [REFACTORING] Move StockFlowView.charts here
+        let charts = view.charts
+        
+        // 999. Misc
         
         guard let timeIndex = builtinVariables.firstIndex(where: { $0 === ObjectType.TimeVariable }) else {
             fatalError("No time variable")
@@ -331,6 +337,7 @@ public class Compiler {
             stocks: compiledStocks,
             flows: flows,
             auxiliaries: auxiliaries,
+            charts: charts,
             valueBindings: bindings
         )
         

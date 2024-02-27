@@ -245,6 +245,37 @@ func acceptFrame(_ frame: MutableFrame, in memory: ObjectMemory) throws {
     }
 }
 
+func compile(_ frame: MutableFrame) throws -> CompiledModel {
+    // NOTE: Make this in sync with the PoieticServer
+    // TODO: Use stderr as output
+    let compiledModel: CompiledModel
+    do {
+        let compiler = Compiler(frame: frame)
+        compiledModel = try compiler.compile()
+    }
+    catch let error as NodeIssuesError {
+        for (id, issues) in error.issues {
+            for issue in issues {
+                let object = frame.object(id)
+                let label: String
+                if let name = object.name {
+                    label = "\(id)(\(name))"
+                }
+                else {
+                    label = "\(id)"
+                }
+
+                print("ERROR: node \(label): \(issue)")
+                if let issue = issue as? NodeIssue, let hint = issue.hint {
+                    print("HINT: node \(label): \(hint)")
+                }
+            }
+        }
+        throw ToolError.compilationError
+    }
+    return compiledModel
+}
+
 /// Parse single-string value assignment into a (attributeName, value) tuple.
 ///
 /// The expected string format is: `attribute_name=value` where the value is

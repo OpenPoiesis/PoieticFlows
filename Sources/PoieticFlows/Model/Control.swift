@@ -40,6 +40,12 @@ extension Trait {
                       type: .double,
                       optional: true,
                       abstract: "Step for a slider control."),
+            // TODO: numeric (default), percent, currency
+            Attribute("value_format",
+                      type: .string,
+                      optional: true,
+                      abstract: "Display format of the value"),
+
         ]
     )
 }

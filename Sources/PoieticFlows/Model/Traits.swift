@@ -99,4 +99,21 @@ extension Trait {
         ]
     )
 
+    
+    public static let Simulation = Trait(
+        name: "Simulation",
+        attributes: [
+            Attribute("steps", type: .int,
+                      default: ForeignValue(100),
+                      optional: true,
+                      abstract: "Number of steps the simulation is run by default."
+                     ),
+            Attribute("time_delta", type: .double,
+                      default: ForeignValue(1.0),
+                      optional: true,
+                      abstract: "Simulation step time delta."
+                     ),
+        ]
+    )
+
 }

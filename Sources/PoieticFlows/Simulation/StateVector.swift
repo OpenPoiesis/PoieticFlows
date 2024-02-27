@@ -7,6 +7,8 @@
 
 import PoieticCore
 
+// FIXME: [REFACTORING] Consolidate SimulationState and SimulationContext
+
 /// A simple vector-like structure to hold an unordered collection of numeric
 /// values that can be accessed by key. Simple arithmetic operations can be done
 /// with the structure, such as addition, subtraction and multiplication
@@ -18,13 +20,13 @@ public struct SimulationState: CustomStringConvertible {
     /// Values of built-in variables.
     public var builtins: [ForeignValue] = []
     /// Values of computed variables.
-    public var values: [Double]
+    public var computedValues: [Double]
     
     /// All values of the state variables.
     ///
     /// The list is a concatenation of ``builtins`` and ``values``.
     public var allValues: [ForeignValue] {
-        return builtins + values.map { ForeignValue($0) }
+        return builtins + computedValues.map { ForeignValue($0) }
     }
     
     /// Create a simulation state with all variables set to zero.
@@ -36,7 +38,7 @@ public struct SimulationState: CustomStringConvertible {
     public init(model: CompiledModel) {
         self.builtins = Array(repeating: ForeignValue(0),
                               count: model.builtinVariables.count)
-        self.values = Array(repeating: 0,
+        self.computedValues = Array(repeating: 0,
                            count: model.computedVariables.count)
         self.model = model
     }
@@ -45,7 +47,7 @@ public struct SimulationState: CustomStringConvertible {
         precondition(items.count == model.computedVariables.count,
                      "Count of items (\(items.count) does not match required items count \(model.computedVariables.count)")
         self.builtins = builtins
-        self.values = items
+        self.computedValues = items
         self.model = model
     }
 
@@ -54,10 +56,10 @@ public struct SimulationState: CustomStringConvertible {
     @inlinable
     public subscript(rep: IndexRepresentable) -> Double {
         get {
-            return values[rep.index]
+            return computedValues[rep.index]
         }
         set(value) {
-            values[rep.index] = value
+            computedValues[rep.index] = value
         }
     }
     
@@ -66,10 +68,10 @@ public struct SimulationState: CustomStringConvertible {
     @inlinable
     public subscript(index: Int) -> Double {
         get {
-            return values[index]
+            return computedValues[index]
         }
         set(value) {
-            values[index] = value
+            computedValues[index] = value
         }
     }
     
@@ -91,7 +93,7 @@ public struct SimulationState: CustomStringConvertible {
         get {
             switch variable {
             case let .builtin(v): return builtins[v.index]
-            case let .computed(v): return ForeignValue(values[v.index])
+            case let .computed(v): return ForeignValue(computedValues[v.index])
             }
         }
     }
@@ -102,7 +104,7 @@ public struct SimulationState: CustomStringConvertible {
     ///
     @inlinable
     public func multiplied(by value: Double) -> SimulationState {
-        return SimulationState(values.map { value * $0 },
+        return SimulationState(computedValues.map { value * $0 },
                                builtins: builtins,
                                model: model)
 
@@ -118,7 +120,7 @@ public struct SimulationState: CustomStringConvertible {
     public func adding(_ state: SimulationState) -> SimulationState {
         precondition(model.computedVariables.count == state.model.computedVariables.count,
                      "Simulation states must be of the same length.")
-        let result = zip(values, state.values).map {
+        let result = zip(computedValues, state.computedValues).map {
             (lvalue, rvalue) in lvalue + rvalue
         }
         return SimulationState(result,
@@ -137,7 +139,7 @@ public struct SimulationState: CustomStringConvertible {
     public func subtracting(_ state: SimulationState) -> SimulationState {
         precondition(model.computedVariables.count == state.model.computedVariables.count,
                      "Simulation states must be of the same length.")
-        let result = zip(values, state.values).map {
+        let result = zip(computedValues, state.computedValues).map {
             (lvalue, rvalue) in lvalue - rvalue
         }
         return SimulationState(result,
@@ -152,7 +154,7 @@ public struct SimulationState: CustomStringConvertible {
     ///
     @inlinable
     public func divided(by value: Double) -> SimulationState {
-        return SimulationState(values.map { value / $0 },
+        return SimulationState(computedValues.map { value / $0 },
                                builtins: builtins,
                                model: model)
 
@@ -175,7 +177,7 @@ public struct SimulationState: CustomStringConvertible {
             let builtin = model.builtinVariables[index]
             return "\(builtin.name): \(value)"
         }.joined(separator: ",")
-        let stateStr = values.enumerated().map { (index, value) in
+        let stateStr = computedValues.enumerated().map { (index, value) in
             let variable = model.computedVariables[index]
             return "\(variable.id): \(value)"
         }.joined(separator: ", ")

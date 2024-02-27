@@ -12,10 +12,10 @@ import XCTest
 extension SimulationState {
     public subscript(id: ObjectID) -> Double {
         get {
-            return values[model.computedVariableIndex(of: id)!]
+            return computedValues[model.computedVariableIndex(of: id)!]
         }
         set(value) {
-            values[model.computedVariableIndex(of: id)!] = value
+            computedValues[model.computedVariableIndex(of: id)!] = value
         }
     }
 }

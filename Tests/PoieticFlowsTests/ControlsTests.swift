@@ -12,13 +12,21 @@ import XCTest
 
 final class TestControls: XCTestCase {
     var memory: ObjectMemory!
-    var simulator: Simulator!
     var frame: MutableFrame!
+    var model: CompiledModel!
     
     override func setUp() {
         memory = ObjectMemory(metamodel: FlowsMetamodel.self)
-        simulator = Simulator(memory: memory)
         frame = memory.deriveFrame()
+    }
+    
+    func compile() throws {
+        guard let frame else {
+            XCTFail("No frame to compile")
+            return
+        }
+        let compiler = Compiler(frame: frame)
+        model = try compiler.compile()
     }
     
     func testBinding() throws {
@@ -30,11 +38,13 @@ final class TestControls: XCTestCase {
         let _ = frame.createEdge(ObjectType.ValueBinding,
                                        origin: control,
                                        target: a)
-        try simulator.compile(frame)
+        try compile()
+       
+        XCTAssertEqual(model.valueBindings.count, 1)
         
-        simulator.initializeSimulation()
+        let binding = model.valueBindings[0]
         
-        let controlObj = frame.object(control)
-        XCTAssertEqual(try! controlObj["value"]!.doubleValue(), 10)
+        XCTAssertEqual(binding.control, control)
+        XCTAssertEqual(binding.variableIndex, model.computedVariableIndex(of: a))
     }
 }

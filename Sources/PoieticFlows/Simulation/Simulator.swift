@@ -7,16 +7,16 @@
 
 import PoieticCore
 
+public protocol SimulatorDelegate {
+    func simulatorDidInitialize(_ simulator: Simulator, context: SimulationContext)
+    func simulatorDidStep(_ simulator: Simulator, context: SimulationContext)
+    func simulatorDidRun(_ simulator: Simulator, context: SimulationContext)
+}
+
 /// Object for controlling a simulation session.
 ///
 public class Simulator {
-    // Object memory in which the simulator operates.
-    // public var memory: ObjectMemory
-    
-    /// List of systems that the simulator will call during various stages
-    /// of the simulation process.
-    ///
-    public var systems: [any SimulationSystem]
+    var delegate: SimulatorDelegate?
     
     /// Solver to be used for the simulation.
     public var solverType: Solver.Type
@@ -36,8 +36,7 @@ public class Simulator {
     public var currentStep: Int = 0
     public var currentTime: Double = 0
     public var currentState: SimulationState?
-    public var frame: MutableFrame?
-    public var compiledModel: CompiledModel?
+    public var compiledModel: CompiledModel
     
     /// Collected data
     /// TODO: Make this an object, so we can derive more info
@@ -45,58 +44,28 @@ public class Simulator {
     
     // MARK: - Initialisation
     
-    // FIXME: [REFACTORING] We do not need memory here any more.
-    public init(memory: ObjectMemory, solverType: Solver.Type = EulerSolver.self) {
-        // self.memory = memory
+    public init(model: CompiledModel, solverType: Solver.Type = EulerSolver.self) {
+        self.compiledModel = model
         self.solverType = solverType
         self.currentState = nil
-        
-        // TODO: Make this not built-in
-        systems = [
-            ControlBindingSystem()
-        ]
         output = []
     }
 
-    // MARK: - Compilation methods
-    
-    @available(*, deprecated, message: "This was a convenience. Compile separately.")
-    public func compile(_ frame: MutableFrame) throws {
-        self.frame = frame
-        // FIXME: [IMPORTANT] What if frame != view.frame???
-        let compiler = Compiler(frame: frame)
-        
-//        let context = CompilationContext(frame: frame)
-//        for system in systems {
-//            system.prepareForCompilation(context)
-//        }
-
-        let compiledModel = try compiler.compile()
-
-//        for system in systems {
-//            system.didCompile(context, model: compiledModel)
-//        }
-//        
-        self.compiledModel = compiledModel
-    }
-    
     // MARK: - Simulation methods
-    
-    public func initializeSimulation(override: [ObjectID:Double] = [:]) {
-        guard let frame = self.frame else {
-            fatalError("Trying to initialize a simulation without a frame")
-        }
-        guard let model = self.compiledModel else {
-            fatalError("Trying to step a simulation without a compiled model")
-        }
+
+    /// Initialize the simulation state with existing frame.
+    ///
+    @discardableResult
+    public func initializeState(override: [ObjectID:Double] = [:]) -> SimulationState {
         currentStep = 0
         currentTime = initialTime
         
-        solver = solverType.init(model)
+        solver = solverType.init(compiledModel)
+//        print("=== Initialize state. Override: \(override)")
         currentState = solver!.initialize(time: currentTime,
                                           override: override,
                                           timeDelta: timeDelta)
-
+//        print("--- First state: \(currentState)")
         output.removeAll()
         output.append(currentState!)
         
@@ -105,12 +74,11 @@ public class Simulator {
             timeDelta: timeDelta,
             step: currentStep,
             state: currentState!,
-            frame: frame,
-            model: model)
+            model: compiledModel)
 
-        for system in systems {
-            system.didInitialize(context)
-        }
+        delegate?.simulatorDidInitialize(self, context: context)
+
+        return currentState!
     }
     
     /// Perform one step of the simulation.
@@ -118,12 +86,6 @@ public class Simulator {
     /// - Precondition: Frame and model must exist.
     ///
     public func step() {
-        guard let frame = self.frame else {
-            fatalError("Trying to step a simulation without a frame")
-        }
-        guard let model = self.compiledModel else {
-            fatalError("Trying to step a simulation without a compiled model")
-        }
         guard let solver = self.solver else {
             fatalError("Trying to step a simulation without a solver")
         }
@@ -139,23 +101,13 @@ public class Simulator {
             timeDelta: timeDelta,
             step: currentStep,
             state: currentState!,
-            frame: frame,
-            model: model)
+            model: compiledModel)
 
-        for system in systems {
-            system.didStep(context)
-        }
+        delegate?.simulatorDidStep(self, context: context)
     }
     
     /// Run the simulation for given number of steps.
     public func run(_ steps: Int) {
-        guard let frame = self.frame else {
-            fatalError("Trying to run a simulation without a frame")
-        }
-        guard let model = self.compiledModel else {
-            fatalError("Trying to run a simulation without a compiled model")
-        }
-
         for _ in (1...steps) {
             step()
             output.append(self.currentState!)
@@ -166,25 +118,36 @@ public class Simulator {
             timeDelta: timeDelta,
             step: currentStep,
             state: currentState!,
-            frame: frame,
-            model: model)
-        for system in systems {
-            system.didRun(context)
-        }
+            model: compiledModel)
+        delegate?.simulatorDidRun(self, context: context)
     }
     
-    /// Get data series for variable at given index.
+    /// Get data series for computed variable at given index.
     ///
     public func dataSeries(index: Int) -> [Double] {
         return output.map { $0[index] }
     }
     
+    /// Return a mapping of control IDs and values of their targets.
+    ///
+    /// The values are obtained from the current simulation state.
+    ///
+    public func controlValues() -> [ObjectID:Double] {
+        precondition(currentState != nil,
+                    "Trying to get control values without initialized state")
+        // TODO: [REFACTORING] Move to SimulationState
+        // TODO: This is redundant, it is extracted in the control nodes
+        var values: [ObjectID:Double] = [:]
+        for binding in compiledModel.valueBindings {
+            values[binding.control] = currentState!.computedValues[binding.variableIndex]
+        }
+        return values
+    }
     /// Get series of time points.
     public var timePoints: [Double] {
-        guard let timeIndex = compiledModel?.builtinTimeIndex else {
-            fatalError("Unable to get time variable index. Hint: Check compiled model.")
-        }
         // FIXME: [REFACTORING] We need a cleaner way how to get this.
-        return output.map { try! $0.builtins[timeIndex].doubleValue() }
+        return output.map {
+            try! $0.builtins[compiledModel.builtinTimeIndex].doubleValue()
+        }
     }
 }

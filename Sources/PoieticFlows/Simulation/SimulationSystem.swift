@@ -12,19 +12,13 @@ public struct CompilationContext {
     let frame: MutableFrame
 }
 
+// FIXME: [REFACTORING] Consolidate SimulationState and SimulationContext
+
 public struct SimulationContext {
-    // let isRunning: Bool
     let time: Double
     let timeDelta: Double
     let step: Int
     let state: SimulationState
-    
-    /// Frame used to capture derived outputs of the simulation.
-    ///
-    /// - Note: Changes in the frame have no effect on the simulaton itself,
-    ///   it should be considered as write-only frame.
-    ///
-    let frame: MutableFrame
     let model: CompiledModel
 }
 
@@ -86,7 +80,7 @@ extension SimulationSystem {
 }
 
 // MARK: - Systems
-
+#if false
 public struct ControlBindingSystem: SimulationSystem {
     public func didInitialize(_ context: SimulationContext) {
         updateValues(context)
@@ -98,10 +92,11 @@ public struct ControlBindingSystem: SimulationSystem {
 
     public func updateValues(_ context: SimulationContext) {
         for binding in context.model.valueBindings {
-            let value = context.state.values[binding.variableIndex]
+            let value = context.state.computedValues[binding.variableIndex]
             let control = context.frame.mutableObject(binding.control)
             control["value"] = ForeignValue(value)
         }
     }
 }
 
+#endif
