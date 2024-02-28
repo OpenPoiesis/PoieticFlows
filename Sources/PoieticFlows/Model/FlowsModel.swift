@@ -153,5 +153,22 @@ public let FlowsMetamodel = Metamodel(
                 )
             )
         ),
+        Constraint(
+            name: "control_target_must_be_aux_or_stock",
+            abstract: """
+                      Control target must be Auxiliary or a Stock node.
+                      """,
+            match: EdgePredicate(
+                    IsTypePredicate(ObjectType.ValueBinding),
+                    origin: IsTypePredicate(ObjectType.Control)
+            ),
+            requirement: AllSatisfy(
+                EdgePredicate(
+                    target: IsTypePredicate(ObjectType.Auxiliary)
+                            .or(IsTypePredicate(ObjectType.Stock))
+                )
+            )
+        ),
+
     ]
 )

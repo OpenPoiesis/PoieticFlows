@@ -88,6 +88,13 @@ public class Solver {
     /// - SeeAlso: ``Compiler``
     ///
     public let compiledModel: CompiledModel
+    
+    /// Values of constants (auxiliaries) to be replaced.
+    ///
+    /// This mapping is typically used to replace values of constants by
+    /// controls.
+    ///
+    public var constants: [ObjectID:Double]
 
     /// Return list of registered solver names.
     ///
@@ -136,6 +143,8 @@ public class Solver {
         //
         
         self.compiledModel = compiledModel
+        // TODO: Pass overrides in init()
+        self.constants = [:]
     }
 
     /// Get builtins vector.
@@ -185,6 +194,10 @@ public class Solver {
                          at time: Double,
                          timeDelta: Double = 1.0) -> Double {
         let variable = compiledModel.computedVariables[index]
+
+        if let value = constants[variable.id] {
+            return value
+        }
         
         switch variable.computation {
 
@@ -259,9 +272,14 @@ public class Solver {
     ///   any node value can be provided, in the future only constants will
     ///   be allowed.
     ///
-    public func initialize(time: Double = 0.0,
-                           override: [ObjectID:Double] = [:],
-                           timeDelta: Double = 1.0) -> SimulationState {
+    /// - Note: Values for stocks in the `override` dictionary will be used
+    ///   only during initialisation.
+    ///
+    public func initializeState(time: Double = 0.0,
+                                override: [ObjectID:Double] = [:],
+                                timeDelta: Double = 1.0) -> SimulationState {
+        self.constants = [:]
+        
         var state = zeroState(time: time, timeDelta: timeDelta)
         for variable in compiledModel.computedVariables {
             if let value = override[variable.id] {
@@ -271,6 +289,11 @@ public class Solver {
                 state[variable] = evaluate(variable: variable.index,
                                            with: state,
                                            at: time)
+            }
+            // TODO: Make this nicer
+            // Keep only overrides for auxiliaries
+            if compiledModel.auxiliaries.contains(where: { $0.id == variable.id }) {
+                self.constants[variable.id] = override[variable.id]
             }
         }
         

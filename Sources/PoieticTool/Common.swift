@@ -204,7 +204,11 @@ func openMemory(options: Options, metamodel: Metamodel = FlowsMetamodel) throws 
 func printValidationError(_ error: FrameValidationError) {
     // FIXME: Print to stderr
     for violation in error.violations {
-        print("Constraint error: \(violation)")
+        let objects = violation.objects.map { String($0) }.joined(separator: ",")
+        print("Constraint error: \(violation.constraint.name) object IDs: \(objects)")
+        if let abstract = violation.constraint.abstract {
+            print("    - \(abstract)")
+        }
     }
     for item in error.typeErrors {
         let (id, typeErrors) = item

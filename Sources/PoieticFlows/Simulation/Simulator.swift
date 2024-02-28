@@ -20,7 +20,7 @@ public class Simulator {
     
     /// Solver to be used for the simulation.
     public var solverType: Solver.Type
-    public var solver: Solver?
+    public var solver: Solver
     
     // Simulation parameters
 
@@ -35,7 +35,8 @@ public class Simulator {
     /// Current simulation step
     public var currentStep: Int = 0
     public var currentTime: Double = 0
-    public var currentState: SimulationState?
+    // TODO: Make currentState non-optional
+    public var currentState: SimulationState!
     public var compiledModel: CompiledModel
     
     /// Collected data
@@ -47,6 +48,7 @@ public class Simulator {
     public init(model: CompiledModel, solverType: Solver.Type = EulerSolver.self) {
         self.compiledModel = model
         self.solverType = solverType
+        self.solver = solverType.init(compiledModel)
         self.currentState = nil
         output = []
     }
@@ -60,12 +62,10 @@ public class Simulator {
         currentStep = 0
         currentTime = initialTime
         
-        solver = solverType.init(compiledModel)
-//        print("=== Initialize state. Override: \(override)")
-        currentState = solver!.initialize(time: currentTime,
-                                          override: override,
-                                          timeDelta: timeDelta)
-//        print("--- First state: \(currentState)")
+        currentState = solver.initializeState(time: currentTime,
+                                         override: override,
+                                         timeDelta: timeDelta)
+
         output.removeAll()
         output.append(currentState!)
         
@@ -86,9 +86,6 @@ public class Simulator {
     /// - Precondition: Frame and model must exist.
     ///
     public func step() {
-        guard let solver = self.solver else {
-            fatalError("Trying to step a simulation without a solver")
-        }
         currentStep += 1
         currentTime += timeDelta
         
@@ -112,7 +109,7 @@ public class Simulator {
             step()
             output.append(self.currentState!)
         }
-        
+
         let context = SimulationContext(
             time: currentTime,
             timeDelta: timeDelta,
