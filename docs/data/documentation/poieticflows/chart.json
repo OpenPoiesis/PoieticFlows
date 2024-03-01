@@ -116,13 +116,12 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/init(node:component:series:)"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/init(node:series:)"
       ],
       "title" : "Initializers"
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/component",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/node",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/series"
       ],
@@ -204,41 +203,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/chart"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Chart/component": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "component"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14ChartComponentV",
-      "text" : "ChartComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/component",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "component",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/chart\/component"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Chart/init(node:component:series:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Chart/init(node:series:)": {
   "abstract" : [
 
   ],
@@ -270,23 +235,6 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "component"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14ChartComponentV",
-      "text" : "ChartComponent"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
       "text" : "series"
     },
     {
@@ -303,12 +251,12 @@
       "text" : "])"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/init(node:component:series:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart\/init(node:series:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(node:component:series:)",
+  "title" : "init(node:series:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/chart\/init(node:component:series:)"
+  "url" : "\/documentation\/poieticflows\/chart\/init(node:series:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Chart/node": {
   "abstract" : [

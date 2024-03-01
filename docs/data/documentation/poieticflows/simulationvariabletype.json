@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -70,13 +76,46 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable",
+                  "isActive" : true,
+                  "type" : "reference"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/SQ",
-        "doc:\/\/PoieticFlows\/SH"
+        "doc:\/\/PoieticFlows\/SH",
+        "doc:\/\/PoieticFlows\/SY"
       ],
       "kind" : "relationships",
       "title" : "Conforms To",
@@ -100,9 +139,16 @@
       "title" : "Enumeration Cases"
     },
     {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/init(rawValue:)"
+      ],
+      "title" : "Initializers"
+    },
+    {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/Equatable-Implementations"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/Equatable-Implementations",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/RawRepresentable-Implementations"
       ],
       "title" : "Default Implementations"
     }
@@ -129,6 +175,11 @@
 "doc://PoieticFlows/SQ": {
   "identifier" : "doc:\/\/PoieticFlows\/SQ",
   "title" : "Swift.Equatable",
+  "type" : "unresolvable"
+},
+"doc://PoieticFlows/SY": {
+  "identifier" : "doc:\/\/PoieticFlows\/SY",
+  "title" : "Swift.RawRepresentable",
   "type" : "unresolvable"
 },
 "doc://PoieticFlows/documentation/PoieticFlows": {
@@ -158,9 +209,46 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
+  "abstract" : [
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationVariable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationVariable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationVariable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationvariable"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType": {
   "abstract" : [
-
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -200,9 +288,23 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationvariabletype\/equatable-implementations"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/builtin": {
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/RawRepresentable-Implementations": {
   "abstract" : [
 
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/RawRepresentable-Implementations",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "RawRepresentable Implementations",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationvariabletype\/rawrepresentable-implementations"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/builtin": {
+  "abstract" : [
+    {
+      "text" : "The simulation variable represents a built-in variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -227,7 +329,18 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/computed": {
   "abstract" : [
-
+    {
+      "text" : "The simulation variable represents a computation defined",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a node.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -249,6 +362,44 @@
   "title" : "SimulationVariableType.computed",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationvariabletype\/computed"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/init(rawValue:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "identifier",
+      "text" : "init"
+    },
+    {
+      "kind" : "text",
+      "text" : "?("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "rawValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/init(rawValue:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "init(rawValue:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationvariabletype\/init(rawvalue:)"
 }
 }
 }

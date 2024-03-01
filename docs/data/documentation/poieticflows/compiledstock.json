@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -70,6 +76,47 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This structure is used during computation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/computeStock(_:at:with:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "relationshipsSections" : [
@@ -115,7 +162,8 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/component",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/allowsNegative",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/delayedInflow",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/id",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/index",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/inflows",
@@ -438,7 +486,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -467,17 +518,17 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledstock"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/component": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/allowsNegative": {
   "abstract" : [
     {
-      "text" : "Component representing the stock as it was at the time of compilation.",
+      "text" : "Flag whether the value of the node can be negative.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "let"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -485,7 +536,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "component"
+      "text" : "allowsNegative"
     },
     {
       "kind" : "text",
@@ -493,16 +544,61 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14StockComponentV",
-      "text" : "StockComponent"
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/component",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/allowsNegative",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "component",
+  "title" : "allowsNegative",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledstock\/component"
+  "url" : "\/documentation\/poieticflows\/compiledstock\/allowsnegative"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/delayedInflow": {
+  "abstract" : [
+    {
+      "text" : "Flag that controls how flow for the stock is being computed when the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "stock is non-negative.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "delayedInflow"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/delayedInflow",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "delayedInflow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledstock\/delayedinflow"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/id": {
   "abstract" : [
@@ -872,6 +968,94 @@
   "title" : "NodeIssuesError",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissueserror"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/computeStock(_:at:with:)": {
+  "abstract" : [
+    {
+      "text" : "Compute a difference of a stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "computeStock"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13CompiledStockV",
+      "text" : "CompiledStock"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/computeStock(_:at:with:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "computeStock(_:at:with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/solver\/computestock(_:at:with:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [

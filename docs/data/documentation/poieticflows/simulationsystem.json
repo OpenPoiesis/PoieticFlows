@@ -177,16 +177,6 @@
       "kind" : "content"
     }
   ],
-  "relationshipsSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlBindingSystem"
-      ],
-      "kind" : "relationships",
-      "title" : "Conforming Types",
-      "type" : "conformingTypes"
-    }
-  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -198,9 +188,9 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStep(_:)-2w0o0",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStop(_:)-5h612",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/prepareForRunning(_:)-92h5a"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didInitialize(_:)-6c8up",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didRun(_:)-6pbgr",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStep(_:)-2w0o0"
       ],
       "title" : "Instance Methods"
     }
@@ -245,37 +235,6 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ControlBindingSystem": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ControlBindingSystem"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlBindingSystem",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ControlBindingSystem"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ControlBindingSystem",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/controlbindingsystem"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationContext": {
   "abstract" : [
@@ -342,6 +301,92 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationsystem"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/didInitialize(_:)-6c8up": {
+  "abstract" : [
+    {
+      "text" : "Called before the first step of the simulation is run.",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "didInitialize"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
+      "text" : "SimulationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didInitialize(_:)-6c8up",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "didInitialize(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationsystem\/didinitialize(_:)-6c8up"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/didRun(_:)-6pbgr": {
+  "abstract" : [
+    {
+      "text" : "The simulation has been finished",
+      "type" : "text"
+    }
+  ],
+  "defaultImplementations" : 1,
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "didRun"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
+      "text" : "SimulationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didRun(_:)-6pbgr",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "didRun(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationsystem\/didrun(_:)-6pbgr"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/didStep(_:)-2w0o0": {
   "abstract" : [
     {
@@ -384,92 +429,6 @@
   "title" : "didStep(_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationsystem\/didstep(_:)-2w0o0"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/didStop(_:)-5h612": {
-  "abstract" : [
-    {
-      "text" : "The simulation has been finished",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "didStop"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
-      "text" : "SimulationContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/didStop(_:)-5h612",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "didStop(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationsystem\/didstop(_:)-5h612"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem/prepareForRunning(_:)-92h5a": {
-  "abstract" : [
-    {
-      "text" : "Called before the first step of the simulation is run.",
-      "type" : "text"
-    }
-  ],
-  "defaultImplementations" : 1,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "prepareForRunning"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
-      "text" : "SimulationContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem\/prepareForRunning(_:)-92h5a",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "prepareForRunning(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationsystem\/prepareforrunning(_:)-92h5a"
 }
 }
 }

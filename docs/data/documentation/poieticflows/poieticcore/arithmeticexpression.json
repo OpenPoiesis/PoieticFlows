@@ -238,7 +238,7 @@
         "type" : "text"
       },
       {
-        "code" : "FunctionProtocol",
+        "code" : "any FunctionProtocol",
         "type" : "codeVoice"
       },
       {

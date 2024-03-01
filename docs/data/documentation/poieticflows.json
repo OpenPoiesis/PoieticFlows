@@ -97,7 +97,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Stock",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -110,7 +110,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Flow",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -119,7 +119,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Auxiliary",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Auxiliary",
                       "isActive" : true,
                       "type" : "reference"
                     }
@@ -133,7 +133,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/GraphicalFunction",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/GraphicalFunction",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -163,7 +163,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -355,16 +355,17 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PositionComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlComponent"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Flow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Auxiliary",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Stock",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/GraphicalFunction",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Chart",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Control"
       ],
-      "title" : "Model and Components"
+      "title" : "Model and Traits"
     },
     {
       "identifiers" : [
@@ -406,32 +407,35 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsPresenter",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Pictogram"
+      ],
+      "title" : "Classes"
+    },
+    {
+      "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/TransformationSystem"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulatorDelegate"
       ],
       "title" : "Protocols"
     },
     {
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ArrowStyle",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartSeries",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompilationContext",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlBindingSystem",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionParsingSystem",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IssueCleaningSystem",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionTransformer",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsTransformer",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IssueCleaner",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Rect",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationContext",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/TransformationContext"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size"
       ],
       "title" : "Structures"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CreatePredatorPreyDemo(in:)"
-      ],
-      "title" : "Functions"
     },
     {
       "identifiers" : [
@@ -443,8 +447,10 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ArrowEndpoint",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/InterpolationMethod",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Magnet",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParameterStatus",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType"
@@ -498,6 +504,68 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ArrowEndpoint": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ArrowEndpoint"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ArrowEndpoint",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ArrowEndpoint"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ArrowEndpoint",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/arrowendpoint"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ArrowStyle": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ArrowStyle"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ArrowStyle",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ArrowStyle"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ArrowStyle",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/arrowstyle"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/BoundBuiltinVariable": {
   "abstract" : [
@@ -648,7 +716,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": ["
+      "text" : ": [any "
     },
     {
       "kind" : "typeIdentifier",
@@ -689,7 +757,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": ["
+      "text" : ": [any "
     },
     {
       "kind" : "typeIdentifier",
@@ -730,7 +798,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": ["
+      "text" : ": [any "
     },
     {
       "kind" : "typeIdentifier",
@@ -782,37 +850,6 @@
   "title" : "Chart",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/chart"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ChartComponent": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ChartComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ChartComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ChartComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/chartcomponent"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ChartSeries": {
   "abstract" : [
@@ -1053,7 +1090,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -1201,110 +1241,17 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computedvariable"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Control": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Control"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Control",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Control"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Control",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/control"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ControlBindingSystem": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ControlBindingSystem"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlBindingSystem",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ControlBindingSystem"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ControlBindingSystem",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/controlbindingsystem"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ControlComponent": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ControlComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ControlComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ControlComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ControlComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/controlcomponent"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CreatePredatorPreyDemo(in:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent": {
   "abstract" : [
     {
-      "text" : "Create a demo model in a memory.",
+      "text" : "Component for visual connectors.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "func"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -1312,40 +1259,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "CreatePredatorPreyDemo"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "in"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12ObjectMemoryC",
-      "text" : "ObjectMemory"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
+      "text" : "ConnectorComponent"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CreatePredatorPreyDemo(in:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent",
   "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ConnectorComponent"
+    }
+  ],
   "role" : "symbol",
-  "title" : "CreatePredatorPreyDemo(in:)",
+  "title" : "ConnectorComponent",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/createpredatorpreydemo(in:)"
+  "url" : "\/documentation\/poieticflows\/connectorcomponent"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/EulerSolver": {
   "abstract" : [
@@ -1381,7 +1309,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/eulersolver"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/ExpressionParsingSystem": {
+"doc://PoieticFlows/documentation/PoieticFlows/ExpressionTransformer": {
   "abstract" : [
     {
       "text" : "Input:",
@@ -1431,55 +1359,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ExpressionParsingSystem"
+      "text" : "ExpressionTransformer"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionParsingSystem",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionTransformer",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ExpressionParsingSystem"
+      "text" : "ExpressionTransformer"
     }
   ],
   "role" : "symbol",
-  "title" : "ExpressionParsingSystem",
+  "title" : "ExpressionTransformer",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/expressionparsingsystem"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowComponent": {
-  "abstract" : [
-    {
-      "text" : "Object representing a flow.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "FlowComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FlowComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "FlowComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowcomponent"
+  "url" : "\/documentation\/poieticflows\/expressiontransformer"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
   "abstract" : [
@@ -1487,6 +1381,40 @@
       "text" : "The metamodel for Stock-and-Flows domain model.",
       "type" : "text"
     }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore9MetamodelC",
+      "text" : "Metamodel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FlowsMetamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsPresenter": {
+  "abstract" : [
+
   ],
   "fragments" : [
     {
@@ -1499,235 +1427,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "FlowsMetamodel"
+      "text" : "FlowsPresenter"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsPresenter",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "FlowsMetamodel"
+      "text" : "FlowsPresenter"
     }
   ],
   "role" : "symbol",
-  "title" : "FlowsMetamodel",
+  "title" : "FlowsPresenter",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Auxiliary": {
-  "abstract" : [
-    {
-      "text" : "An auxiliary node - containing a constant or a formula.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Auxiliary"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Auxiliary",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Auxiliary",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/auxiliary"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Flow": {
-  "abstract" : [
-    {
-      "text" : "A flow node - one of the two core nodes.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Flow"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Flow",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Flow",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/flow"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/GraphicalFunction": {
-  "abstract" : [
-    {
-      "text" : "An auxiliary node with a function that is described by a graph.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "GraphicalFunction"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/GraphicalFunction",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "GraphicalFunction",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/graphicalfunction"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Stock": {
-  "abstract" : [
-    {
-      "text" : "A stock node - one of the two core nodes.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Stock"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Stock",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Stock",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/stock"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/FormulaComponent": {
-  "abstract" : [
-    {
-      "text" : "Component of all nodes that can contain arithmetic formula or a constant.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "FormulaComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FormulaComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "FormulaComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/formulacomponent"
+  "url" : "\/documentation\/poieticflows\/flowspresenter"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
   "abstract" : [
@@ -1763,38 +1477,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunction"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "GraphicalFunctionComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "GraphicalFunctionComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "GraphicalFunctionComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ImplicitFlowsSystem": {
+"doc://PoieticFlows/documentation/PoieticFlows/ImplicitFlowsTransformer": {
   "abstract" : [
     {
       "text" : "A system that updates edges that denote implicit flows between stocks.",
@@ -1812,21 +1495,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ImplicitFlowsSystem"
+      "text" : "ImplicitFlowsTransformer"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsTransformer",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ImplicitFlowsSystem"
+      "text" : "ImplicitFlowsTransformer"
     }
   ],
   "role" : "symbol",
-  "title" : "ImplicitFlowsSystem",
+  "title" : "ImplicitFlowsTransformer",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/implicitflowssystem"
+  "url" : "\/documentation\/poieticflows\/implicitflowstransformer"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/IndexRepresentable": {
   "abstract" : [
@@ -1893,7 +1576,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/interpolationmethod"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/IssueCleaningSystem": {
+"doc://PoieticFlows/documentation/PoieticFlows/IssueCleaner": {
   "abstract" : [
     {
       "text" : "Input:",
@@ -1951,21 +1634,52 @@
     },
     {
       "kind" : "identifier",
-      "text" : "IssueCleaningSystem"
+      "text" : "IssueCleaner"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IssueCleaningSystem",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IssueCleaner",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "IssueCleaningSystem"
+      "text" : "IssueCleaner"
     }
   ],
   "role" : "symbol",
-  "title" : "IssueCleaningSystem",
+  "title" : "IssueCleaner",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/issuecleaningsystem"
+  "url" : "\/documentation\/poieticflows\/issuecleaner"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Magnet": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Magnet"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Magnet",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Magnet"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Magnet",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/magnet"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssue": {
   "abstract" : [
@@ -2149,6 +1863,37 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/parsedformulacomponent"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Pictogram": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Pictogram"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Pictogram",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Pictogram"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Pictogram",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/pictogram"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore": {
   "abstract" : [
 
@@ -2160,12 +1905,467 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/PositionComponent": {
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Auxiliary": {
   "abstract" : [
     {
-      "text" : "Component representing a position of a node in a canvas.",
+      "text" : "An auxiliary node - containing a constant or a formula.",
       "type" : "text"
     }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Auxiliary"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Auxiliary",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Auxiliary",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/auxiliary"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Control": {
+  "abstract" : [
+    {
+      "text" : "A user interface mode representing a control that modifies a value of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "its target node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Control"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Control",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Control",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/control"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Flow": {
+  "abstract" : [
+    {
+      "text" : "A flow node - one of the two core nodes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Flow"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Flow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/flow"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/GraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "An auxiliary node with a function that is described by a graph.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/GraphicalFunction",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "GraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/graphicalfunction"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Stock": {
+  "abstract" : [
+    {
+      "text" : "A stock node - one of the two core nodes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Stock"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Stock",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/stock"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Chart": {
+  "abstract" : [
+    {
+      "text" : "Trait of a node that represents a chart.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Chart"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Chart",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Chart",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/chart"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Flow": {
+  "abstract" : [
+    {
+      "text" : "Trait of nodes representing a flow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Flow"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Flow",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Flow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/flow"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Formula": {
+  "abstract" : [
+    {
+      "text" : "Trait of simulation nodes that are computed using an arithmetic formula.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Formula"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Formula",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/formula"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/GraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "Trait of a node representing a graphical function.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/GraphicalFunction",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "GraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/graphicalfunction"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Stock": {
+  "abstract" : [
+    {
+      "text" : "Trait of nodes representing a stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Stock"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Stock",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Stock",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/stock"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Rect": {
+  "abstract" : [
+
   ],
   "fragments" : [
     {
@@ -2178,21 +2378,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "PositionComponent"
+      "text" : "Rect"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PositionComponent",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Rect",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "PositionComponent"
+      "text" : "Rect"
     }
   ],
   "role" : "symbol",
-  "title" : "PositionComponent",
+  "title" : "Rect",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/positioncomponent"
+  "url" : "\/documentation\/poieticflows\/rect"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/RungeKutta4Solver": {
   "abstract" : [
@@ -2353,7 +2553,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
   "abstract" : [
-
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -2384,7 +2587,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType": {
   "abstract" : [
-
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -2447,6 +2653,68 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/SimulatorDelegate": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulatorDelegate"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulatorDelegate",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulatorDelegate"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulatorDelegate",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulatordelegate"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Size": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Size"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Size"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Size",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/size"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/Solver": {
   "abstract" : [
     {
@@ -2481,40 +2749,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/solver"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/StockComponent": {
-  "abstract" : [
-    {
-      "text" : "A node representing a stock – accumulator, container, reservoir, a pool.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "StockComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "StockComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "StockComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockcomponent"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [
     {
@@ -2548,79 +2782,6 @@
   "title" : "StockFlowView",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockflowview"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/TransformationContext": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TransformationContext"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/TransformationContext",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TransformationContext"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TransformationContext",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/transformationcontext"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/TransformationSystem": {
-  "abstract" : [
-    {
-      "text" : "Protocol for systems that transform frame data into another kind",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "of data within the same frame.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TransformationSystem"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/TransformationSystem",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "TransformationSystem"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "TransformationSystem",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/transformationsystem"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
   "abstract" : [

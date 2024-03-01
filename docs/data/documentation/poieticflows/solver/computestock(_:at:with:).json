@@ -442,7 +442,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

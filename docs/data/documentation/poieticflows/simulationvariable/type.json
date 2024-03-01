@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -149,7 +155,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
   "abstract" : [
-
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -180,7 +189,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/type": {
   "abstract" : [
-
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -214,7 +226,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType": {
   "abstract" : [
-
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

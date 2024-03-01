@@ -108,6 +108,15 @@
       "title" : "Compiled Model and Compiler"
     }
   ],
+  "topicSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding\/control",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding\/variableIndex"
+      ],
+      "title" : "Instance Properties"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -279,6 +288,80 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledcontrolbinding"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledControlBinding/control": {
+  "abstract" : [
+    {
+      "text" : "ID of a control node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "control"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding\/control",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "control",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledcontrolbinding\/control"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledControlBinding/variableIndex": {
+  "abstract" : [
+    {
+      "text" : "Index of the simulation variable that the control controls.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "variableIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding\/variableIndex",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "variableIndex",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledcontrolbinding\/variableindex"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow": {
   "abstract" : [
 
@@ -422,7 +505,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

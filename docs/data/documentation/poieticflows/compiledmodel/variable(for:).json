@@ -152,7 +152,15 @@
         {
           "inlineContent" : [
             {
-              "text" : "This function is just for debugging purposes.",
+              "text" : "This function is not used during computation, it is provided for",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "consumers of the simulation state or simulation result.",
               "type" : "text"
             }
           ],

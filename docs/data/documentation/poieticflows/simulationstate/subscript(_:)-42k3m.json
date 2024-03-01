@@ -112,6 +112,31 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "code" : [
+            " \/\/ Let the following two be given",
+            "let state: SimulationState",
+            "let variable: SimulationVariable",
+            "",
+            "\/\/ Fetch the value",
+            "let value: ForeignValue = state[variable]",
+            "",
+            "\/\/ Use the value..."
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -261,7 +286,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
   "abstract" : [
-
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "The simulation variable represents a built-in variable.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -118,7 +124,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType": {
   "abstract" : [
-
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -149,7 +158,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/builtin": {
   "abstract" : [
-
+    {
+      "text" : "The simulation variable represents a built-in variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

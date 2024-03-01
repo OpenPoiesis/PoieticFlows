@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -70,6 +76,73 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "overview",
+          "level" : 2,
+          "text" : "Overview",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This structure provides information about a variable used in the simulation.",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "Variable can be built-in or computed. The computed variable is representing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "a node in the model, typically a node with a formula.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The structure can be used directly to fetch a variable value from a state",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "vector:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            " \/\/ Let the following two be given",
+            "let state: SimulationState",
+            "let variable: SimulationVariable",
+            "",
+            "\/\/ Fetch the value",
+            "let value: ForeignValue = state[variable]",
+            "",
+            "\/\/ Use the value..."
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -90,6 +163,7 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable\/id",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable\/index",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable\/name",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable\/type"
@@ -138,9 +212,57 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Formula": {
+  "abstract" : [
+    {
+      "text" : "Trait of simulation nodes that are computed using an arithmetic formula.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Formula"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Formula",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/formula"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
   "abstract" : [
-
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -171,7 +293,18 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/builtin(_:)": {
   "abstract" : [
-
+    {
+      "text" : "Represents a built-in variable – a variable which value is provided",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by the simulation system.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -209,7 +342,35 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/computed(_:)": {
   "abstract" : [
-
+    {
+      "text" : "A variable that corresponds to a node of the model. The variable",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "is computed during the simulation, for example from a node",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with the ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : " trait.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -245,9 +406,69 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationvariable\/computed(_:)"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/id": {
+  "abstract" : [
+    {
+      "text" : "ID of a simulation node that the variable represents, if the variable",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "represents a node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "id"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariable\/id",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "id",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationvariable\/id"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/index": {
   "abstract" : [
-
+    {
+      "text" : "Index of the variable in the corresponding list of state vector",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "variables.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -281,7 +502,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/name": {
   "abstract" : [
-
+    {
+      "text" : "Name of the variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -315,7 +539,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/type": {
   "abstract" : [
-
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

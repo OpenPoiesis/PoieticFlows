@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Name of the variable.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -95,6 +101,34 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Convenience attribute that uses the name from the underlying variable",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "type.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -148,7 +182,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
   "abstract" : [
-
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -179,7 +216,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/name": {
   "abstract" : [
-
+    {
+      "text" : "Name of the variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

@@ -115,9 +115,9 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/component",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/id",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/index"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/index",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/priority"
       ],
       "title" : "Instance Properties"
     }
@@ -324,43 +324,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledflow"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow/component": {
-  "abstract" : [
-    {
-      "text" : "Component representing the flow as it was at the time of compilation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "component"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13FlowComponentV",
-      "text" : "FlowComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/component",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "component",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledflow\/component"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow/id": {
   "abstract" : [
     {
@@ -434,6 +397,43 @@
   "title" : "index",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledflow\/index"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow/priority": {
+  "abstract" : [
+    {
+      "text" : "Component representing the flow as it was at the time of compilation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "priority"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow\/priority",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "priority",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledflow\/priority"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledGraphicalFunction": {
   "abstract" : [
@@ -547,7 +547,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

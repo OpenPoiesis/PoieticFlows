@@ -502,7 +502,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -778,7 +781,7 @@
     },
     {
       "kind" : "text",
-      "text" : " : ["
+      "text" : " : [any "
     },
     {
       "kind" : "typeIdentifier",

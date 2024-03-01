@@ -27,7 +27,7 @@
       },
       {
         "kind" : "text",
-        "text" : "("
+        "text" : "(any "
       },
       {
         "kind" : "typeIdentifier",
@@ -79,7 +79,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
             },
             {
               "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IndexRepresentable",
@@ -277,7 +277,7 @@
     },
     {
       "kind" : "text",
-      "text" : "("
+      "text" : "(any "
     },
     {
       "kind" : "typeIdentifier",

@@ -159,9 +159,8 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/fillsEdges",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowNodes",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/frame",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graph",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graphicalFunctionNodes",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFlowEdges",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/metamodel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/namedObjects",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameterEdges",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/simulationNodes",
@@ -505,7 +504,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -621,7 +623,7 @@
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "let"
     },
     {
       "kind" : "text",
@@ -630,16 +632,19 @@
     {
       "kind" : "identifier",
       "text" : "FlowsMetamodel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore9MetamodelC",
+      "text" : "Metamodel"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
   "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FlowsMetamodel"
-    }
-  ],
   "role" : "symbol",
   "title" : "FlowsMetamodel",
   "type" : "topic",
@@ -1272,40 +1277,6 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/frame": {
   "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "frame"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5FrameP",
-      "text" : "Frame"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/frame",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "frame",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview\/frame"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/graph": {
-  "abstract" : [
     {
       "text" : "Graph that the view projects.",
       "type" : "text"
@@ -1322,66 +1293,24 @@
     },
     {
       "kind" : "identifier",
-      "text" : "graph"
+      "text" : "frame"
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5GraphP",
-      "text" : "Graph"
+      "preciseIdentifier" : "s:11PoieticCore5FrameP",
+      "text" : "Frame"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graph",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/frame",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "graph",
+  "title" : "frame",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview\/graph"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/graphicalFunctionNodes": {
-  "abstract" : [
-    {
-      "text" : "List of expression nodes in the graph.",
-      "type" : "text"
-    }
-  ],
-  "deprecated" : true,
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "graphicalFunctionNodes"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeV",
-      "text" : "Node"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/graphicalFunctionNodes",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "graphicalFunctionNodes",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview\/graphicalfunctionnodes"
+  "url" : "\/documentation\/poieticflows\/stockflowview\/frame"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/implicitDrains(_:)": {
   "abstract" : [
@@ -1646,12 +1575,12 @@
     },
     {
       "kind" : "text",
-      "text" : "("
+      "text" : "(any "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5GraphP",
-      "text" : "Graph"
+      "preciseIdentifier" : "s:11PoieticCore5FrameP",
+      "text" : "Frame"
     },
     {
       "kind" : "text",
@@ -1664,6 +1593,43 @@
   "title" : "init(_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockflowview\/init(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/metamodel": {
+  "abstract" : [
+    {
+      "text" : "Metamodel that the view uses to find relevant object types.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "metamodel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore9MetamodelC",
+      "text" : "Metamodel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/metamodel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "metamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockflowview\/metamodel"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/namedObjects": {
   "abstract" : [

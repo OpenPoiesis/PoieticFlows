@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "Graph that the view projects.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -29,7 +35,7 @@
       },
       {
         "kind" : "text",
-        "text" : ": "
+        "text" : ": any "
       },
       {
         "kind" : "typeIdentifier",
@@ -72,7 +78,7 @@
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
             },
             {
               "kind" : "typeIdentifier",
@@ -170,7 +176,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/frame": {
   "abstract" : [
-
+    {
+      "text" : "Graph that the view projects.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -187,7 +196,7 @@
     },
     {
       "kind" : "text",
-      "text" : ": "
+      "text" : ": any "
     },
     {
       "kind" : "typeIdentifier",

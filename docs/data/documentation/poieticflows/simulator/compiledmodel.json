@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows9SimulatorC13compiledModelAA08CompiledE0VSgvp",
+    "externalID" : "s:12PoieticFlows9SimulatorC13compiledModelAA08CompiledE0Vvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -35,10 +35,6 @@
         "kind" : "typeIdentifier",
         "preciseIdentifier" : "s:12PoieticFlows13CompiledModelV",
         "text" : "CompiledModel"
-      },
-      {
-        "kind" : "text",
-        "text" : "?"
       }
     ],
     "modules" : [
@@ -83,10 +79,6 @@
               "kind" : "typeIdentifier",
               "preciseIdentifier" : "s:12PoieticFlows13CompiledModelV",
               "text" : "CompiledModel"
-            },
-            {
-              "kind" : "text",
-              "text" : "?"
             }
           ]
         }
@@ -236,10 +228,6 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:12PoieticFlows13CompiledModelV",
       "text" : "CompiledModel"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compiledModel",

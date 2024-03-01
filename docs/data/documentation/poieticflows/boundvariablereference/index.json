@@ -26,7 +26,7 @@
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/computedValues",
       "isActive" : true,
       "type" : "reference"
     },
@@ -249,7 +249,7 @@
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/computedValues",
       "isActive" : true,
       "type" : "reference"
     },
@@ -404,7 +404,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/builtins"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/values": {
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/computedValues": {
   "abstract" : [
     {
       "text" : "Values of computed variables.",
@@ -422,7 +422,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "values"
+      "text" : "computedValues"
     },
     {
       "kind" : "text",
@@ -438,12 +438,12 @@
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/computedValues",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "values",
+  "title" : "computedValues",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationstate\/values"
+  "url" : "\/documentation\/poieticflows\/simulationstate\/computedvalues"
 }
 }
 }

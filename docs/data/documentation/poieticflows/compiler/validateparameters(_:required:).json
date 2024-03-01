@@ -318,7 +318,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Parameter",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -361,7 +361,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Parameter",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -608,51 +608,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/validateparameters(_:required:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel/Parameter": {
-  "abstract" : [
-    {
-      "text" : "An edge between a node that serves as a parameter in another node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Parameter"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel\/Parameter",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Parameter",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/flowsmetamodel\/parameter"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssue": {
   "abstract" : [
     {
@@ -820,6 +775,51 @@
   "title" : "NodeIssuesError",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissueserror"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Parameter": {
+  "abstract" : [
+    {
+      "text" : "An edge between a node that serves as a parameter in another node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Parameter"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Parameter",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/parameter"
 }
 }
 }

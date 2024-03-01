@@ -12,7 +12,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:m:s:e:s:11PoieticCore20ArithmeticExpressionO0A5FlowsAA12ForeignValueORszAD22BoundVariableReferenceVRs_AA16FunctionProtocol_pRs0_rlE8evaluateyAfD15SimulationStateVKF",
+    "externalID" : "s:m:s:e:s:11PoieticCore10ObjectTypeC0A5FlowsE12TimeVariableAA07BuiltinG0CvpZ",
     "modules" : [
       {
         "name" : "PoieticFlows"
@@ -34,9 +34,10 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Node"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait"
       ],
-      "title" : "Extended Structures"
+      "title" : "Extended Classes"
     },
     {
       "identifiers" : [
@@ -129,7 +130,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/arithmeticexpression"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Node": {
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType": {
   "abstract" : [
 
   ],
@@ -144,22 +145,54 @@
     },
     {
       "kind" : "identifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeV",
-      "text" : "Node"
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Node",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "Node"
+      "text" : "ObjectType"
     }
   ],
   "role" : "symbol",
-  "title" : "Node",
+  "title" : "ObjectType",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/node"
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Trait"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Trait",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait"
 }
 }
 }

@@ -1,4 +1,18 @@
 {
+  "abstract" : [
+    {
+      "text" : "The simulation variable represents a computation defined",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a node.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -118,7 +132,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType": {
   "abstract" : [
-
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -149,7 +166,18 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/computed": {
   "abstract" : [
-
+    {
+      "text" : "The simulation variable represents a computation defined",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a node.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

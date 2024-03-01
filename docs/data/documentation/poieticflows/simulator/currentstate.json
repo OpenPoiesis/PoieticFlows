@@ -38,7 +38,7 @@
       },
       {
         "kind" : "text",
-        "text" : "?"
+        "text" : "!"
       }
     ],
     "modules" : [
@@ -86,7 +86,7 @@
             },
             {
               "kind" : "text",
-              "text" : "?"
+              "text" : "!"
             }
           ]
         }
@@ -263,7 +263,7 @@
     },
     {
       "kind" : "text",
-      "text" : "?"
+      "text" : "!"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentState",

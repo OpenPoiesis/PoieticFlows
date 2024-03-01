@@ -206,19 +206,6 @@
                   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitDrains(_:)",
                   "isActive" : true,
                   "type" : "reference"
-                },
-                {
-                  "text" : ",",
-                  "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem\/update(_:)",
-                  "isActive" : true,
-                  "type" : "reference"
                 }
               ],
               "type" : "paragraph"
@@ -280,55 +267,6 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ImplicitFlowsSystem/update(_:)": {
-  "abstract" : [
-    {
-      "text" : "Update edges that denote implicit flows between stocks.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "update"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows21TransformationContextV",
-      "text" : "TransformationContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsSystem\/update(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "update(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/implicitflowssystem\/update(_:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [

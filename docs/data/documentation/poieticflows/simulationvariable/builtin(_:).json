@@ -1,4 +1,18 @@
 {
+  "abstract" : [
+    {
+      "text" : "Represents a built-in variable – a variable which value is provided",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by the simulation system.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -176,7 +190,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
   "abstract" : [
-
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -207,7 +224,18 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable/builtin(_:)": {
   "abstract" : [
-
+    {
+      "text" : "Represents a built-in variable – a variable which value is provided",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by the simulation system.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

@@ -101,7 +101,7 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/init(memory:solverType:)"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/init(model:solverType:)"
       ],
       "title" : "Initializers"
     },
@@ -111,21 +111,20 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentState",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentStep",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentTime",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/frame",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initialTime",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/memory",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/output",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/solver",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/solverType",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/systems",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/timeDelta"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/timeDelta",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/timePoints"
       ],
       "title" : "Instance Properties"
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compile(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initializeSimulation(override:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/controlValues()",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/dataSeries(index:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initializeState(override:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/run(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/step()"
       ],
@@ -333,48 +332,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator/compile(_:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "compile"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
-      "text" : "MutableFrame"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compile(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "compile(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator\/compile(_:)"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/compiledModel": {
   "abstract" : [
 
@@ -400,10 +357,6 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:12PoieticFlows13CompiledModelV",
       "text" : "CompiledModel"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compiledModel",
@@ -412,6 +365,56 @@
   "title" : "compiledModel",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator\/compiledmodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/controlValues()": {
+  "abstract" : [
+    {
+      "text" : "Return a mapping of control IDs and values of their targets.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "controlValues"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/controlValues()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "controlValues()",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/controlvalues()"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/currentState": {
   "abstract" : [
@@ -441,7 +444,7 @@
     },
     {
       "kind" : "text",
-      "text" : "?"
+      "text" : "!"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentState",
@@ -522,14 +525,17 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator\/currenttime"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator/frame": {
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/dataSeries(index:)": {
   "abstract" : [
-
+    {
+      "text" : "Get data series for computed variable at given index.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "var"
+      "text" : "func"
     },
     {
       "kind" : "text",
@@ -537,7 +543,15 @@
     },
     {
       "kind" : "identifier",
-      "text" : "frame"
+      "text" : "dataSeries"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "index"
     },
     {
       "kind" : "text",
@@ -545,22 +559,31 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
-      "text" : "MutableFrame"
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
     },
     {
       "kind" : "text",
-      "text" : "?"
+      "text" : ") -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/frame",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/dataSeries(index:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "frame",
+  "title" : "dataSeries(index:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator\/frame"
+  "url" : "\/documentation\/poieticflows\/simulator\/dataseries(index:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator/init(memory:solverType:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/init(model:solverType:)": {
   "abstract" : [
 
   ],
@@ -575,7 +598,7 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "memory"
+      "text" : "model"
     },
     {
       "kind" : "text",
@@ -583,8 +606,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12ObjectMemoryC",
-      "text" : "ObjectMemory"
+      "preciseIdentifier" : "s:12PoieticFlows13CompiledModelV",
+      "text" : "CompiledModel"
     },
     {
       "kind" : "text",
@@ -608,12 +631,12 @@
       "text" : ".Type)"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/init(memory:solverType:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/init(model:solverType:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "init(memory:solverType:)",
+  "title" : "init(model:solverType:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator\/init(memory:solvertype:)"
+  "url" : "\/documentation\/poieticflows\/simulator\/init(model:solvertype:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/initialTime": {
   "abstract" : [
@@ -652,9 +675,12 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator\/initialtime"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator/initializeSimulation(override:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/initializeState(override:)": {
   "abstract" : [
-
+    {
+      "text" : "Initialize the simulation state with existing frame.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -667,7 +693,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "initializeSimulation"
+      "text" : "initializeState"
     },
     {
       "kind" : "text",
@@ -697,57 +723,33 @@
     },
     {
       "kind" : "text",
-      "text" : "])"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initializeSimulation(override:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "initializeSimulation(override:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator\/initializesimulation(override:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator/memory": {
-  "abstract" : [
-    {
-      "text" : "Object memory in which the simulator operates.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "memory"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
+      "text" : "]) -> "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12ObjectMemoryC",
-      "text" : "ObjectMemory"
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/memory",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initializeState(override:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "memory",
+  "title" : "initializeState(override:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator\/memory"
+  "url" : "\/documentation\/poieticflows\/simulator\/initializestate(override:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/output": {
   "abstract" : [
     {
       "text" : "Collected data",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "TODO: Make this an object, so we can derive more info",
       "type" : "text"
     }
   ],
@@ -851,10 +853,6 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:12PoieticFlows6SolverC",
       "text" : "Solver"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/solver",
@@ -937,55 +935,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator\/step()"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator/systems": {
-  "abstract" : [
-    {
-      "text" : "List of systems that the simulator will call during various stages",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "of the simulation process.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "systems"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows16SimulationSystemP",
-      "text" : "SimulationSystem"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/systems",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "systems",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator\/systems"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/timeDelta": {
   "abstract" : [
     {
@@ -1022,6 +971,47 @@
   "title" : "timeDelta",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator\/timedelta"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/timePoints": {
+  "abstract" : [
+    {
+      "text" : "Get series of time points.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "timePoints"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/timePoints",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "timePoints",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/timepoints"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Solver": {
   "abstract" : [

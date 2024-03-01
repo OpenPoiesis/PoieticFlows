@@ -3,6 +3,14 @@
     {
       "text" : "Collected data",
       "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "TODO: Make this an object, so we can derive more info",
+      "type" : "text"
     }
   ],
   "hierarchy" : {
@@ -245,6 +253,14 @@
   "abstract" : [
     {
       "text" : "Collected data",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "TODO: Make this an object, so we can derive more info",
       "type" : "text"
     }
   ],

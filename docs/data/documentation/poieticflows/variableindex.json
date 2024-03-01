@@ -105,7 +105,7 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/allValues",
               "isActive" : true,
               "type" : "reference"
             },
@@ -248,10 +248,10 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/values": {
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/allValues": {
   "abstract" : [
     {
-      "text" : "Values of computed variables.",
+      "text" : "All values of the state variables.",
       "type" : "text"
     }
   ],
@@ -266,7 +266,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "values"
+      "text" : "allValues"
     },
     {
       "kind" : "text",
@@ -274,20 +274,20 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
     },
     {
       "kind" : "text",
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/allValues",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "values",
+  "title" : "allValues",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationstate\/values"
+  "url" : "\/documentation\/poieticflows\/simulationstate\/allvalues"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
   "abstract" : [

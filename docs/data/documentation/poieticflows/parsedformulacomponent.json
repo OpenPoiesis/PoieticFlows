@@ -93,10 +93,15 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init(parsedFormula:)"
       ],
       "title" : "Initializers"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/parsedFormula"
+      ],
+      "title" : "Instance Properties"
     },
     {
       "identifiers" : [
@@ -107,7 +112,7 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/componentDescription"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/trait"
       ],
       "title" : "Type Properties"
     }
@@ -244,69 +249,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/attribute(forkey:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/componentDescription": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "componentDescription"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20ComponentDescriptionC",
-      "text" : "ComponentDescription"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/componentDescription",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "componentDescription",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/componentdescription"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/init()": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "identifier",
-      "text" : "init"
-    },
-    {
-      "kind" : "text",
-      "text" : "()"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "init()",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/init()"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/init(parsedFormula:)": {
   "abstract" : [
 
@@ -344,6 +286,40 @@
   "title" : "init(parsedFormula:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/init(parsedformula:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/parsedFormula": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "parsedFormula"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore17UnboundExpressiona",
+      "text" : "UnboundExpression"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/parsedFormula",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "parsedFormula",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/parsedformula"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/setAttribute(value:forKey:)": {
   "abstract" : [
@@ -411,6 +387,48 @@
   "title" : "setAttribute(value:forKey:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/setattribute(value:forkey:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/trait": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "trait"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/trait",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "trait",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/trait"
 }
 }
 }

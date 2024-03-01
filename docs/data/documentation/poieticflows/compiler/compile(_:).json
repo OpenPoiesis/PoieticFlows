@@ -206,7 +206,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -228,7 +228,7 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
+                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/GraphicalFunction",
                       "isActive" : true,
                       "type" : "reference"
                     },
@@ -286,7 +286,7 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:formula:)",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:)",
                   "isActive" : true,
                   "type" : "reference"
                 },
@@ -295,7 +295,7 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:graphicalFunction:)",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileGraphicalFunctionNode(_:)",
                   "isActive" : true,
                   "type" : "reference"
                 },
@@ -495,7 +495,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/compile(_:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(_:formula:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileFormulaNode(_:)": {
   "abstract" : [
     {
       "text" : "Return a dictionary of bound expressions.",
@@ -513,7 +513,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "compile"
+      "text" : "compileFormulaNode"
     },
     {
       "kind" : "text",
@@ -523,23 +523,6 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:11PoieticCore4NodeV",
       "text" : "Node"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "formula"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows16FormulaComponentV",
-      "text" : "FormulaComponent"
     },
     {
       "kind" : "text",
@@ -559,14 +542,14 @@
       "text" : "ComputationalRepresentation"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:formula:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "compile(_:formula:)",
+  "title" : "compileFormulaNode(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compile(_:formula:)"
+  "url" : "\/documentation\/poieticflows\/compiler\/compileformulanode(_:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(_:graphicalFunction:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileGraphicalFunctionNode(_:)": {
   "abstract" : [
 
   ],
@@ -581,7 +564,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "compile"
+      "text" : "compileGraphicalFunctionNode"
     },
     {
       "kind" : "text",
@@ -591,23 +574,6 @@
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:11PoieticCore4NodeV",
       "text" : "Node"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "graphicalFunction"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows26GraphicalFunctionComponentV",
-      "text" : "GraphicalFunctionComponent"
     },
     {
       "kind" : "text",
@@ -627,12 +593,12 @@
       "text" : "ComputationalRepresentation"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:graphicalFunction:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileGraphicalFunctionNode(_:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "compile(_:graphicalFunction:)",
+  "title" : "compileGraphicalFunctionNode(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compile(_:graphicalfunction:)"
+  "url" : "\/documentation\/poieticflows\/compiler\/compilegraphicalfunctionnode(_:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation": {
   "abstract" : [
@@ -676,71 +642,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/FormulaComponent": {
-  "abstract" : [
-    {
-      "text" : "Component of all nodes that can contain arithmetic formula or a constant.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "FormulaComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "FormulaComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "FormulaComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/formulacomponent"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunctionComponent": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "GraphicalFunctionComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunctionComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "GraphicalFunctionComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "GraphicalFunctionComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/graphicalfunctioncomponent"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssuesError": {
   "abstract" : [
     {
@@ -774,6 +675,96 @@
   "title" : "NodeIssuesError",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissueserror"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Formula": {
+  "abstract" : [
+    {
+      "text" : "Trait of simulation nodes that are computed using an arithmetic formula.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Formula"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Formula",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/formula"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/GraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "Trait of a node representing a graphical function.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/GraphicalFunction",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "GraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/graphicalfunction"
 }
 }
 }

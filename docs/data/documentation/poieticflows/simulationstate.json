@@ -139,7 +139,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/*(_:_:)-o307",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/+(_:_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/-(_:_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/\/(_:_:)"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/_(_:_:)"
       ],
       "title" : "Operators"
     },
@@ -152,10 +152,11 @@
     },
     {
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/allValues",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/builtins",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/computedValues",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/description",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/model",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/model"
       ],
       "title" : "Instance Properties"
     },
@@ -164,6 +165,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/adding(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/divided(by:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/multiplied(by:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/namedDictionary()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/subtracting(_:)"
       ],
       "title" : "Instance Methods"
@@ -600,7 +602,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/-(_:_:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationState//(_:_:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/_(_:_:)": {
   "abstract" : [
 
   ],
@@ -657,12 +659,12 @@
       "text" : "SimulationState"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/\/(_:_:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/_(_:_:)",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "\/(_:_:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationstate\/\/(_:_:)"
+  "url" : "\/documentation\/poieticflows\/simulationstate\/_(_:_:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState/adding(_:)": {
   "abstract" : [
@@ -718,6 +720,47 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/adding(_:)"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/allValues": {
+  "abstract" : [
+    {
+      "text" : "All values of the state variables.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "allValues"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/allValues",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "allValues",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate\/allvalues"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState/builtins": {
   "abstract" : [
     {
@@ -758,6 +801,47 @@
   "title" : "builtins",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/builtins"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/computedValues": {
+  "abstract" : [
+    {
+      "text" : "Values of computed variables.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "computedValues"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/computedValues",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "computedValues",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate\/computedvalues"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState/description": {
   "abstract" : [
@@ -1040,6 +1124,53 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/multiplied(by:)"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/namedDictionary()": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "namedDictionary"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
+      "text" : "ForeignValue"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/namedDictionary()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "namedDictionary()",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate\/nameddictionary()"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState/subscript(_:)-42k3m": {
   "abstract" : [
     {
@@ -1130,7 +1261,7 @@
     },
     {
       "kind" : "text",
-      "text" : "("
+      "text" : "(any "
     },
     {
       "kind" : "typeIdentifier",
@@ -1207,47 +1338,6 @@
   "title" : "subtracting(_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/subtracting(_:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/values": {
-  "abstract" : [
-    {
-      "text" : "Values of computed variables.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "values"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "values",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationstate\/values"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator": {
   "abstract" : [

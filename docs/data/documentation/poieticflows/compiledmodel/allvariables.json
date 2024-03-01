@@ -1,4 +1,10 @@
 {
+  "abstract" : [
+    {
+      "text" : "List of all simulation variables: built-in and computed.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
@@ -100,6 +106,92 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "To fetch values from a simulation state:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "code" : [
+            "\/\/ Let the following two be given",
+            "let model: CompiledModel",
+            "let state: SimulationState",
+            "",
+            "\/\/ Print values from the state",
+            "for variable in model.allVariables {",
+            "    let value = state[variable]",
+            "    print(\"\\(variable.name): \\(value)\"",
+            "}"
+          ],
+          "syntax" : "swift",
+          "type" : "codeListing"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "This property is ",
+              "type" : "text"
+            },
+            {
+              "inlineContent" : [
+                {
+                  "text" : "not",
+                  "type" : "text"
+                }
+              ],
+              "type" : "emphasis"
+            },
+            {
+              "text" : " used during computation. It is provided for",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "controllers (tools) of the simulation or for consumers of the result.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/resultIndex(of:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
+          "style" : "note",
+          "type" : "aside"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -187,7 +279,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/allVariables": {
   "abstract" : [
-
+    {
+      "text" : "List of all simulation variables: built-in and computed.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -223,9 +318,70 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/allvariables"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/resultIndex(of:)": {
+  "abstract" : [
+    {
+      "text" : "Get absolute index of an object-represented variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "resultIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "of"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/resultIndex(of:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "resultIndex(of:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/resultindex(of:)"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariable": {
   "abstract" : [
-
+    {
+      "text" : "Representation of a variable in a simulation.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

@@ -197,13 +197,23 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/allVariables",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedVariables"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/auxiliaries",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/builtinTimeIndex",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/builtinVariables",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/charts",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedVariables",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/flows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/graphicalFunctions",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/stocks",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/timeResultIndex",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/valueBindings"
       ],
       "title" : "Instance Properties"
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/index(of:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedVariableIndex(of:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/resultIndex(of:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/variable(for:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/variable(named:)"
       ],
@@ -490,7 +500,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/allVariables": {
   "abstract" : [
-
+    {
+      "text" : "List of all simulation variables: built-in and computed.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -525,6 +538,237 @@
   "title" : "allVariables",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/allvariables"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/auxiliaries": {
+  "abstract" : [
+    {
+      "text" : "Auxiliaries required by stocks, by order of dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "auxiliaries"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows14CompiledObjectV",
+      "text" : "CompiledObject"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/auxiliaries",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "auxiliaries",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/auxiliaries"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/builtinTimeIndex": {
+  "abstract" : [
+    {
+      "text" : "Index of ",
+      "type" : "text"
+    },
+    {
+      "inlineContent" : [
+        {
+          "text" : "time",
+          "type" : "text"
+        }
+      ],
+      "type" : "emphasis"
+    },
+    {
+      "text" : " variable within built-ins.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "builtinTimeIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/builtinTimeIndex",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "builtinTimeIndex",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/builtintimeindex"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/builtinVariables": {
+  "abstract" : [
+    {
+      "text" : "List of builtin variables.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "builtinVariables"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore15BuiltinVariableC",
+      "text" : "BuiltinVariable"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/builtinVariables",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "builtinVariables",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/builtinvariables"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/charts": {
+  "abstract" : [
+    {
+      "text" : "List of charts.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "charts"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows5ChartV",
+      "text" : "Chart"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/charts",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "charts",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/charts"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/computedVariableIndex(of:)": {
+  "abstract" : [
+    {
+      "text" : "Get index into a list of computed variables for an object with given ID.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "computedVariableIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "of"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedVariableIndex(of:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "computedVariableIndex(of:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/computedvariableindex(of:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/computedVariables": {
   "abstract" : [
@@ -567,10 +811,92 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/computedvariables"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/index(of:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/flows": {
   "abstract" : [
     {
-      "text" : "Get index of an object with given ID.",
+      "text" : "Flows ordered by the computation (parameter) dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flows"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows12CompiledFlowV",
+      "text" : "CompiledFlow"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/flows",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "flows",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/flows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/graphicalFunctions": {
+  "abstract" : [
+    {
+      "text" : "Selection of simulation variables that represent graphical functions.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "graphicalFunctions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows25CompiledGraphicalFunctionV",
+      "text" : "CompiledGraphicalFunction"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/graphicalFunctions",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "graphicalFunctions",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/graphicalfunctions"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/resultIndex(of:)": {
+  "abstract" : [
+    {
+      "text" : "Get absolute index of an object-represented variable.",
       "type" : "text"
     }
   ],
@@ -585,7 +911,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "index"
+      "text" : "resultIndex"
     },
     {
       "kind" : "text",
@@ -618,12 +944,131 @@
       "text" : "?"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/index(of:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/resultIndex(of:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "index(of:)",
+  "title" : "resultIndex(of:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel\/index(of:)"
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/resultindex(of:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/stocks": {
+  "abstract" : [
+    {
+      "text" : "Stocks ordered by the computation (parameter) dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stocks"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13CompiledStockV",
+      "text" : "CompiledStock"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/stocks",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stocks",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/stocks"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/timeResultIndex": {
+  "abstract" : [
+    {
+      "text" : "Index of time variable within all variables.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "var"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "timeResultIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
+      "text" : "VariableIndex"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/timeResultIndex",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "timeResultIndex",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/timeresultindex"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/valueBindings": {
+  "abstract" : [
+    {
+      "text" : "Compiled bindings of controls to their value objects.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "valueBindings"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows22CompiledControlBindingV",
+      "text" : "CompiledControlBinding"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/valueBindings",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "valueBindings",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/valuebindings"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/variable(for:)": {
   "abstract" : [
@@ -777,7 +1222,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

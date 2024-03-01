@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows13StockFlowViewCyAC0A4Core5Graph_pcfc",
+    "externalID" : "s:12PoieticFlows13StockFlowViewCyAC0A4Core5Frame_pcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -27,12 +27,12 @@
       },
       {
         "kind" : "text",
-        "text" : "("
+        "text" : "(any "
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore5GraphP",
-        "text" : "Graph"
+        "preciseIdentifier" : "s:11PoieticCore5FrameP",
+        "text" : "Frame"
       },
       {
         "kind" : "text",
@@ -78,16 +78,16 @@
             },
             {
               "kind" : "internalParam",
-              "text" : "graph"
+              "text" : "frame"
             },
             {
               "kind" : "text",
-              "text" : ": "
+              "text" : ": any "
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore5GraphP",
-              "text" : "Graph"
+              "preciseIdentifier" : "s:11PoieticCore5FrameP",
+              "text" : "Frame"
             },
             {
               "kind" : "text",
@@ -196,12 +196,12 @@
     },
     {
       "kind" : "text",
-      "text" : "("
+      "text" : "(any "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5GraphP",
-      "text" : "Graph"
+      "preciseIdentifier" : "s:11PoieticCore5FrameP",
+      "text" : "Frame"
     },
     {
       "kind" : "text",

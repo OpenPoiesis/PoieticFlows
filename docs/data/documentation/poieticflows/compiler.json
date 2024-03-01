@@ -190,9 +190,9 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/appendIssue(_:to:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:formula:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:graphicalFunction:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(stocks:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(stocks:flows:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileGraphicalFunctionNode(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/validateParameters(_:required:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/variableIndex(_:)"
       ],
@@ -513,7 +513,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of the stock.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -604,7 +607,7 @@
     },
     {
       "kind" : "text",
-      "text" : "("
+      "text" : "(any "
     },
     {
       "kind" : "typeIdentifier",
@@ -739,146 +742,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/compile(_:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(_:formula:)": {
-  "abstract" : [
-    {
-      "text" : "Return a dictionary of bound expressions.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "compile"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeV",
-      "text" : "Node"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "formula"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows16FormulaComponentV",
-      "text" : "FormulaComponent"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows27ComputationalRepresentationO",
-      "text" : "ComputationalRepresentation"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:formula:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "compile(_:formula:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compile(_:formula:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(_:graphicalFunction:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "compile"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeV",
-      "text" : "Node"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "graphicalFunction"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows26GraphicalFunctionComponentV",
-      "text" : "GraphicalFunctionComponent"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows27ComputationalRepresentationO",
-      "text" : "ComputationalRepresentation"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:graphicalFunction:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "compile(_:graphicalFunction:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compile(_:graphicalfunction:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(stocks:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(stocks:flows:)": {
   "abstract" : [
     {
       "text" : "Compile all stock nodes.",
@@ -917,6 +781,32 @@
     },
     {
       "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "flows"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows12CompiledFlowV",
+      "text" : "CompiledFlow"
+    },
+    {
+      "kind" : "text",
       "text" : "]) -> ["
     },
     {
@@ -929,12 +819,117 @@
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(stocks:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(stocks:flows:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "compile(stocks:)",
+  "title" : "compile(stocks:flows:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compile(stocks:)"
+  "url" : "\/documentation\/poieticflows\/compiler\/compile(stocks:flows:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileFormulaNode(_:)": {
+  "abstract" : [
+    {
+      "text" : "Return a dictionary of bound expressions.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "compileFormulaNode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows27ComputationalRepresentationO",
+      "text" : "ComputationalRepresentation"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "compileFormulaNode(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiler\/compileformulanode(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileGraphicalFunctionNode(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "compileGraphicalFunctionNode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows27ComputationalRepresentationO",
+      "text" : "ComputationalRepresentation"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileGraphicalFunctionNode(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "compileGraphicalFunctionNode(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiler\/compilegraphicalfunctionnode(_:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/init(frame:)": {
   "abstract" : [
