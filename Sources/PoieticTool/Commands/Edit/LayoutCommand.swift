@@ -62,13 +62,7 @@ extension PoieticTool {
                 let obj = frame.mutableObject(obj.id)
                 let position = Point(center.x + radius * Double.cos(angle),
                                      center.y + radius * Double.sin(angle))
-                if obj.components.has(PositionComponent.self) {
-                    obj[PositionComponent.self]!.position = position
-                }
-                else {
-                    let component = PositionComponent(position)
-                    obj.components.set(component)
-                }
+                obj.position = position
                 angle += step
             }
             
