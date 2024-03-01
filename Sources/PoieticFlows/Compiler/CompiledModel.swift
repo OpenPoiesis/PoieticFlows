@@ -10,7 +10,7 @@ import PoieticCore
 /// Index of a simulation variable that is represented by an object.
 ///
 /// The index is used to refer to a variable value in the
-/// ``SimulationState//values`` vector.
+/// ``SimulationState/allValues`` vector.
 ///
 /// - SeeAlso: ``SimulationState``
 public typealias VariableIndex = Int
@@ -65,6 +65,12 @@ public protocol IndexRepresentable {
     var index: VariableIndex { get }
 }
 
+/// Compiled representation of the stock.
+///
+/// This structure is used during computation.
+///
+/// - SeeAlso: ``Solver/computeStock(_:at:with:)``
+///
 public struct CompiledStock: IndexRepresentable {
     /// Object ID of the stock that this compiled structure represents.
     ///
@@ -78,12 +84,8 @@ public struct CompiledStock: IndexRepresentable {
     ///
     public let index: VariableIndex
     
-    // TODO: [REFACTORING] Merge StockComponent into here and remove the structure
-    /// Component representing the stock as it was at the time of compilation.
-    ///
-//    public let component: StockComponent
     /// Flag whether the value of the node can be negative.
-    var allowsNegative: Bool = false
+    public var allowsNegative: Bool = false
     
     /// Flag that controls how flow for the stock is being computed when the
     /// stock is non-negative.
@@ -96,20 +98,23 @@ public struct CompiledStock: IndexRepresentable {
     /// the actual stock value, ignoring the inflow. The inflow will be added
     /// later to the stock.
     ///
-    var delayedInflow: Bool = false
+    public var delayedInflow: Bool = false
 
     /// List indices of simulation variables representing flows
     /// which fill the stock.
+    ///
+    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
     ///
     public let inflows: [VariableIndex]
 
     /// List indices of simulation variables representing flows
     /// which drain the stock.
     ///
+    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
+    ///
     public let outflows: [VariableIndex]
 }
 
-// FIXME: [REFACTORING] Merge with FlowComponent
 public struct CompiledFlow: IndexRepresentable {
     /// Object ID of the flow that this compiled structure represents.
     ///
@@ -135,8 +140,8 @@ public struct CompiledFlow: IndexRepresentable {
 /// in which any additional information is not relevant to the computation.
 ///
 /// It is used for example for nodes of type auxiliary –
-/// ``FlowsMetamodel/Auxiliary``.
-/// 
+/// ``/PoieticCore/ObjectType/Auxiliary``.
+///
 public struct CompiledObject: IndexRepresentable {
     public let id: ObjectID
     public let index: VariableIndex
@@ -144,6 +149,7 @@ public struct CompiledObject: IndexRepresentable {
 
 /// A structure representing a concrete instance of a graphical function
 /// in the context of a graph.
+///
 public struct CompiledGraphicalFunction: IndexRepresentable {
     /// ID of a node where the function is defined
     public let id: ObjectID
@@ -172,20 +178,37 @@ public struct CompiledGraphicalFunction: IndexRepresentable {
 public struct CompiledModel {
     // TODO: Alternative names: InternalRepresentation, SimulableRepresentation, SRep, ResolvedModel, ExecutableModel
     
-    /// List of builtin variables
-    let builtinVariables: [BuiltinVariable]
-    /// Index of time variable within built-ins
-    let builtinTimeIndex: VariableIndex
+    /// List of builtin variables.
+    ///
+    /// Used in computation to set built-in variable values such as time,
+    /// time delta.
+    ///
+    /// - SeeAlso: ``builtinTimeIndex``, ``allVariables``
+    ///
+    public let builtinVariables: [BuiltinVariable]
+    
+    /// Index of _time_ variable within built-ins.
+    ///
+    /// This property is not used during computation, it is provided for
+    /// consumers of the computation state.
+    ///
+    /// - SeeAlso: ``builtinVariables``, ``timeResultIndex``
+    ///
+    public let builtinTimeIndex: VariableIndex
     
     /// Index of time variable within all variables.
     ///
-    var timeResultIndex: VariableIndex {
+    /// This property is not used during computation, it is provided for
+    /// consumers of the computation state.
+    ///
+    /// - SeeAlso: ``allVariables``, ``builtinTimeIndex``
+    ///
+    public var timeResultIndex: VariableIndex {
         // The same as built-in index, since the list of variables is createded
         // by concatenating builtins + computed.
         builtinTimeIndex
     }
 
-    // TODO: Rename to: computedVariables with renamed type ComputedVariable
     /// List of variables that are computed, ordered by computational dependency.
     ///
     /// The variables are ordered so that variables that do not require other
@@ -204,6 +227,7 @@ public struct CompiledModel {
     ///
     public let computedVariables: [ComputedVariable]
     
+    
     /// List of all simulation variables: built-in and computed.
     ///
     /// To fetch values from a simulation state:
@@ -219,6 +243,9 @@ public struct CompiledModel {
     ///     print("\(variable.name): \(value)"
     /// }
     /// ```
+    ///
+    /// This property is _not_ used during computation. It is provided for
+    /// controllers (tools) of the simulation or for consumers of the result.
     ///
     /// - SeeAlso: ``resultIndex(of:)``
     ///
@@ -236,9 +263,12 @@ public struct CompiledModel {
  
         return result
     }
+    
+    
     /// Get index into a list of computed variables for an object with given ID.
     ///
-    /// This function is just for debugging purposes.
+    /// This function is just for inspection and debugging purposes, it is not
+    /// used during computation.
     ///
     /// - Complexity: O(n)
     /// - SeeAlso: ``resultIndex(of:)``
@@ -250,9 +280,13 @@ public struct CompiledModel {
         return computedVariables.firstIndex { $0.id == id }
     }
    
+    
     /// Get absolute index of an object-represented variable.
     ///
     /// Absolute index is an index to the list of all variables.
+    ///
+    /// This function is not used during computation, it is provided for
+    /// consumers of the simulation state or simulation result.
     ///
     /// - SeeAlso: ``allVariables``, ``computedVariableIndex(of:)``
     ///
@@ -266,7 +300,8 @@ public struct CompiledModel {
     
     /// Get a simulation variable for an object with given ID, if exists.
     ///
-    /// This function is just for debugging purposes.
+    /// This function is not used during computation, it is provided for
+    /// consumers of the simulation state or simulation result.
     ///
     /// - Complexity: O(n)
     ///
@@ -280,12 +315,19 @@ public struct CompiledModel {
     /// This list contains all stocks used in the simulation and adds
     /// derived information to each stock such as its inflows and outflows.
     ///
+    /// This property is used in computation.
+    ///
     /// See ``CompiledStock`` for more information.
+    ///
+    /// - SeeAlso: ``Solver/difference(at:with:timeDelta:)``,
     ///
     public let stocks: [CompiledStock]
     
     /// Get a compiled stock by object ID.
     ///
+    /// This property is used in computation.
+    ///
+    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
     ///
     /// - Complexity: O(n)
     ///
@@ -296,23 +338,40 @@ public struct CompiledModel {
     
     /// Flows ordered by the computation (parameter) dependency.
     ///
+    /// This property is used in computation.
+    ///
+    /// - SeeAlso: ``Solver/difference(at:with:timeDelta:)``,
+    ///
     public let flows: [CompiledFlow]
 
     /// Auxiliaries required by stocks, by order of dependency.
     ///
+    /// This property is used in computation.
+    ///
+    /// - SeeAlso: ``Solver/difference(at:with:timeDelta:)``,
+    ///
     public let auxiliaries: [CompiledObject]
     
+    /// List of charts.
+    ///
+    /// This property is not used during computation, it is provided for
+    /// consumers of the simulation state or simulation result.
+    ///
     public let charts: [Chart]
 
 
     /// Compiled bindings of controls to their value objects.
     ///
-    /// - See also: ``ControlComponent`` and ``ControlBindingSystem``.
+    /// - See also: ``/PoieticCore/ObjectType/Control``.
     ///
     public let valueBindings: [CompiledControlBinding]
     
     // TODO: [REFACTORING] Pre-compute in the compiler
     /// Selection of simulation variables that represent graphical functions.
+    ///
+    /// This property is not used during computation, it is provided for
+    /// consumers of the simulation state or simulation result.
+    ///
     public var graphicalFunctions: [CompiledGraphicalFunction] {
         let vars: [CompiledGraphicalFunction] = computedVariables.compactMap {
             if case let .graphicalFunction(fun, param) = $0.computation {
@@ -339,6 +398,9 @@ public struct CompiledModel {
     ///
     /// Since the function is slow, it is highly not recommended to be used
     /// during iterative computation.
+    ///
+    /// This property is not used during computation, it is provided for
+    /// consumers of the simulation state or simulation result.
     ///
     /// - Complexity: O(n)
     ///

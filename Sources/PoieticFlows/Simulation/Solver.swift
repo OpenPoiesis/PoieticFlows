@@ -310,6 +310,8 @@ public class Solver {
                                  with: &state)
     }
     
+    // TODO: [REFACTORING] Review documentation
+    // TODO: [REFACTORING] Reconsider name
     /// Compute a difference of a stock.
     ///
     /// This function computes amount which is expected to be drained from/
@@ -443,7 +445,7 @@ public class Solver {
     /// - Returns: A state vector that contains difference values for each
     /// stock.
     ///
-    func difference(at time: Double,
+    public func difference(at time: Double,
                     with current: SimulationState,
                     timeDelta: Double = 1.0) -> SimulationState {
         // TODO: Move vector to the beginning of the argument list

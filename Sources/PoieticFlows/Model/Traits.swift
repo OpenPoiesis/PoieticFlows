@@ -115,5 +115,4 @@ extension Trait {
                      ),
         ]
     )
-
 }

@@ -94,6 +94,7 @@ public class Compiler {
         namedReferences = [:]
     }
 
+    // TODO: Verify which errors are thrown in here
     /// Compiles the model and returns the compiled version of the model.
     ///
     /// The compilation process is as follows:
@@ -109,7 +110,7 @@ public class Compiler {
     /// 6. Finalise the compiled model.
     ///
     /// - Throws: A ``NodeIssuesError`` when there are issues with the model
-    ///   that are caused by the user. Throws ``ConstraintViolationError`` if
+    ///   that are caused by the user. Throws ``/PoieticCore/ConstraintViolation`` if
     ///   the frame constraints were violated. The later error is an
     ///   application error and means that either the provided frame is
     ///   mal-formed or one of the subsystems mis-behaved.
@@ -363,14 +364,14 @@ public class Compiler {
     /// computation.
     ///
     /// The following types of nodes are considered:
-    /// - a node with a ``FormulaComponent``, compiled as a formula.
-    /// - a node with a ``GraphicalFunctionComponent``, compiled as a graphical
+    /// - a node with a ``/PoieticCore/Trait/Formula``, compiled as a formula.
+    /// - a node with a ``/PoieticCore/Trait/GraphicalFunction``, compiled as a graphical
     ///   function.
     ///
     /// - Returns: a computational representation of the simulation node.
     ///
     /// - Throws: ``NodeIssuesError`` with list of issues for the node.
-    /// - SeeAlso: ``compile(_:formula:)``, ``compile(_:graphicalFunction:)``.
+    /// - SeeAlso: ``compileFormulaNode(_:)``, ``compileGraphicalFunctionNode(_:)``.
     ///
     public func compile(_ node: Node) throws -> ComputationalRepresentation {
         let rep: ComputationalRepresentation
@@ -539,9 +540,9 @@ public class Compiler {
     /// The method checks whether the following two requirements are met:
     ///
     /// - node using a parameter name in an expression (in the `required` list)
-    ///   must have a ``FlowsMetamodel/Parameter`` edge from the parameter node
+    ///   must have a ``/PoieticCore/ObjectType/Parameter`` edge from the parameter node
     ///   with given name.
-    /// - node must _not_ have a ``FlowsMetamodel/Parameter``connection from
+    /// - node must _not_ have a ``/PoieticCore/ObjectType/Parameter``connection from
     ///   a node if the expression is not referring to that node.
     ///
     /// If any of the two requirements are not met, then a corresponding

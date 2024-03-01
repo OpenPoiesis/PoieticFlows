@@ -24,8 +24,6 @@ extension ObjectType {
             Trait.Formula,
             Trait.Stock,
             Trait.Position,
-            // DescriptionComponent.self,
-            // ErrorComponent.self,
         ]
     )
     
@@ -94,7 +92,7 @@ extension ObjectType {
     /// its target node.
     ///
     /// For control node to work, it should be connected to its target node with
-    /// ``FlowsMetamodel/ValueBinding`` edge.
+    /// ``/PoieticCore/ObjectType/ValueBinding`` edge.
     ///
     public static let Control = ObjectType(
         name: "Control",
@@ -108,7 +106,7 @@ extension ObjectType {
     /// A user interface node representing a chart.
     ///
     /// Chart contains series that are connected with the chart using the
-    /// ``FlowsMetamodel/ChartSeries`` edge where the origin is the chart and
+    /// ``/PoieticCore/ObjectType/ChartSeries`` edge where the origin is the chart and
     /// the target is a value node.
     ///
     public static let Chart = ObjectType(
@@ -135,7 +133,7 @@ extension ObjectType {
     
     /// Edge from a stock to a flow. Denotes "what the flow drains".
     ///
-    /// - SeeAlso: ``FlowsMetamodel/Flow``, ``FlowsMetamodel/Fills-8qqu8``
+    /// - SeeAlso: ``/PoieticCore/ObjectType/Flow``, ``/PoieticCore/ObjectType/Fills``
     ///
     public static let Drains = ObjectType(
         name: "Drains",
@@ -148,7 +146,7 @@ extension ObjectType {
     
     /// Edge from a flow to a stock. Denotes "what the flow fills".
     ///
-    /// - SeeAlso: ``FlowsMetamodel/Flow``, ``FlowsMetamodel/Drains-38oqw``
+    /// - SeeAlso: ``/PoieticCore/ObjectType/Flow``, ``/PoieticCore/ObjectType/Drains``
     ///
     public static let Fills = ObjectType(
         name: "Fills",
@@ -201,7 +199,7 @@ extension ObjectType {
     
     /// An edge type to connect controls with their targets.
     ///
-    /// The origin of the node is a control – ``FlowsMetamodel/Control``, the
+    /// The origin of the node is a control – ``/PoieticCore/ObjectType/Control``, the
     /// target is a node representing a value.
     ///
     public static let ValueBinding = ObjectType(
@@ -217,7 +215,7 @@ extension ObjectType {
     /// An edge type to connect a chart with a series that are included in the
     /// chart.
     ///
-    /// The origin of the node is a chart – ``FlowsMetamodel/Chart`` and
+    /// The origin of the node is a chart – ``/PoieticCore/ObjectType/Chart`` and
     /// the target of the node is a node representing a value.
     ///
     public static let ChartSeries = ObjectType(
@@ -229,6 +227,20 @@ extension ObjectType {
             // None for now
         ],
         abstract: "Edge between a control and its target."
+    )
+    // ---------------------------------------------------------------------
+
+    // Scenario
+    
+    public static let Scenario = ObjectType(
+        name: "Scenario",
+        structuralType: .node,
+        traits: [
+            Trait.Name,
+            Trait.Documentation,
+        ]
+        
+        // Outgoing edges: ValueBinding with attribute "value"
     )
 }
 

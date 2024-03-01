@@ -12,7 +12,7 @@ public typealias ParsedFormula = Result<UnboundExpression, ExpressionSyntaxError
 public struct ParsedFormulaComponent: Component {
     public let parsedFormula: UnboundExpression
     
-    public static var componentSchema = Trait(
+    public static var trait = Trait(
         name: "ParsedFormula"
     )
     

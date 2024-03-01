@@ -319,6 +319,7 @@ public class StockFlowView {
         return result
     }
     
+    // TODO: Add "see also" doc reference for the system updating the flows
     /// Sort given list of stocks by the order of their implicit flows.
     ///
     /// Imagine that we replace the flow nodes with a direct edge between
@@ -326,8 +327,8 @@ public class StockFlowView {
     /// filled stock.
     ///
     /// - SeeAlso: ``implicitFills(_:)``,
-    ///   ``implicitDrains(_:)``,
-    ///   ``ImplicitFlowsSystem/update(_:)``
+    ///   ``implicitDrains(_:)``
+    ///
     public func sortedStocksByImplicitFlows(_ nodes: [ObjectID]) throws -> [Node] {
         let sorted = try frame.topologicalSort(nodes, edges: implicitFlowEdges)
         

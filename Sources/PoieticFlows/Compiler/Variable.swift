@@ -76,16 +76,15 @@ public enum SimulationVariableType: String {
 /// ```
 ///
 public enum SimulationVariable {
+    // TODO: Reference where the variables are defined
     /// Represents a built-in variable – a variable which value is provided
     /// by the simulation system.
-    ///
-    /// - SeeAlso: ``FlowsMetamodel/variables``
     ///
     case builtin(BoundBuiltinVariable)
     
     /// A variable that corresponds to a node of the model. The variable
     /// is computed during the simulation, for example from a node
-    /// containing a ``FormulaComponent``.
+    /// with the ``/PoieticCore/Trait/Formula`` trait.
     ///
     case computed(ComputedVariable)
     
@@ -150,8 +149,8 @@ public struct BoundVariableReference: Hashable, CustomStringConvertible, TypedVa
     
     /// Index in the ``SimulationState`` where the variable value is contained.
     /// For variables representing simulation objects, the index is into the
-    /// ``SimulationState//values``, for variables representing built-ins, the
-    /// index is into the ``SimulationState//builtins``.
+    /// ``SimulationState/computedValues``, for variables representing built-ins, the
+    /// index is into the ``SimulationState/builtins``.
     public let index: Int
     
     /// Type of the wrapped variable.
