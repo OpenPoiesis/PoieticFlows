@@ -70,7 +70,7 @@ public enum SimulationVariableType: String {
 /// let variable: SimulationVariable
 ///
 /// // Fetch the value
-/// let value: ForeignValue = state[variable]
+/// let value: Variant = state[variable]
 ///
 /// // Use the value...
 /// ```

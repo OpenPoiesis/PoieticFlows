@@ -7,7 +7,7 @@
 import PoieticCore
 
 // TODO: Rename to Bound Numeric Expression
-public typealias BoundExpression = ArithmeticExpression<ForeignValue,
+public typealias BoundExpression = ArithmeticExpression<Variant,
                                                         BoundVariableReference,
                                                         any FunctionProtocol>
 
@@ -150,16 +150,16 @@ public class Solver {
     /// Get builtins vector.
     ///
     public func makeBuiltins(time: Double,
-                         timeDelta: Double) -> [ForeignValue] {
-        var builtins: [ForeignValue] = Array(repeating: ForeignValue(0.0),
+                         timeDelta: Double) -> [Variant] {
+        var builtins: [Variant] = Array(repeating: Variant(0.0),
                                              count: compiledModel.builtinVariables.count)
         for (index, builtin) in compiledModel.builtinVariables.enumerated() {
-            let value: ForeignValue
+            let value: Variant
             if builtin === ObjectType.TimeVariable {
-                 value = ForeignValue(time)
+                 value = Variant(time)
             }
             else if builtin === ObjectType.TimeDeltaVariable {
-                 value = ForeignValue(timeDelta)
+                 value = Variant(timeDelta)
             }
             else {
                 fatalError("Unknown builtin variable: \(builtin)")
@@ -210,7 +210,7 @@ public class Solver {
         case let .graphicalFunction(function, index):
             do {
                 let value = state[index]
-                return try function.apply([ForeignValue(value)]).doubleValue()
+                return try function.apply([Variant(value)]).doubleValue()
             }
             catch {
                 // Evaluation must not fail
@@ -228,17 +228,17 @@ public class Solver {
         /// Set built-in variables in the state
         for (index, builtin) in compiledModel.builtinVariables.enumerated() {
             if builtin === ObjectType.TimeVariable {
-                state.builtins[index] = ForeignValue(time)
+                state.builtins[index] = Variant(time)
             }
             else if builtin === ObjectType.TimeDeltaVariable {
-                state.builtins[index] = ForeignValue(timeDelta)
+                state.builtins[index] = Variant(timeDelta)
             }
             else {
                 fatalError("Unknown builtin variable: \(builtin)")
             }
         }
         
-        let value: ForeignValue
+        let value: Variant
         do {
             value = try expression.evaluate(state)
         }
@@ -507,7 +507,7 @@ public class Solver {
 }
 
 extension BoundExpression {
-    public func evaluate(_ state: SimulationState) throws -> ForeignValue {
+    public func evaluate(_ state: SimulationState) throws -> Variant {
         switch self {
         case let .value(value):
             return value
@@ -526,10 +526,10 @@ extension BoundExpression {
             return try functionRef.apply(evaluatedArgs)
 
         case let .variable(ref):
-            let value: ForeignValue
+            let value: Variant
             switch ref.variable {
             case .builtin: value = state.builtins[ref.index]
-            case .object: value = ForeignValue(state[ref.index])
+            case .object: value = Variant(state[ref.index])
             }
             return value
         }

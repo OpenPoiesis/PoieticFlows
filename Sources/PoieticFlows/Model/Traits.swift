@@ -33,11 +33,11 @@ extension Trait {
         name: "Stock",
         attributes: [
             Attribute("allows_negative", type: .bool,
-                      default: ForeignValue(false),
+                      default: Variant(false),
                       abstract: "Flag whether the stock can contain a negative value."
                      ),
             Attribute("delayed_inflow", type: .bool,
-                      default: ForeignValue(false),
+                      default: Variant(false),
                       abstract: "Flag whether the inflow of the stock is delayed by one step, when the stock is part of a cycle."
                      ),
         ]
@@ -64,7 +64,7 @@ extension Trait {
             /// functionality that considers the priority is used. It is not advised
             /// to rely on the default priority.
             ///
-            Attribute("priority", type: .int, default: ForeignValue(0),
+            Attribute("priority", type: .int, default: Variant(0),
                       abstract: "Priority during computation. The flows are considered in the ascending order of priority."),
         ]
     )
@@ -80,7 +80,7 @@ extension Trait {
             Attribute("interpolation_method", type: .string, default: "step",
                       abstract: "Method of interpolation for values between the points."),
             Attribute("graphical_function_points", type: .points,
-                      default: ForeignValue(Array<Point>()),
+                      default: Variant(Array<Point>()),
                       abstract: "Points of the graphical function."),
         ],
         abstract: "Function represented by a set of points and an interpolation method."
@@ -104,12 +104,12 @@ extension Trait {
         name: "Simulation",
         attributes: [
             Attribute("steps", type: .int,
-                      default: ForeignValue(100),
+                      default: Variant(100),
                       optional: true,
                       abstract: "Number of steps the simulation is run by default."
                      ),
             Attribute("time_delta", type: .double,
-                      default: ForeignValue(1.0),
+                      default: Variant(1.0),
                       optional: true,
                       abstract: "Simulation step time delta."
                      ),

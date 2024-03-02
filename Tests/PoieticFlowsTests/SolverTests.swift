@@ -144,7 +144,7 @@ final class TestSolver: XCTestCase {
                                      name: "stock",
                                      attributes: ["formula": "5"])
         let node = frame.node(stock)
-        node.snapshot["allows_negative"] = ForeignValue(true)
+        node.snapshot["allows_negative"] = Variant(true)
         
         let flow = frame.createNode(ObjectType.Flow,
                                     name: "flow",
@@ -166,7 +166,7 @@ final class TestSolver: XCTestCase {
                                      name: "stock",
                                      attributes: ["formula": "5"])
         let node = frame.node(stock)
-        node.snapshot["allows_negative"] = ForeignValue(false)
+        node.snapshot["allows_negative"] = Variant(false)
 
         let flow = frame.createNode(ObjectType.Flow,
                                     name: "flow",
@@ -188,7 +188,7 @@ final class TestSolver: XCTestCase {
                                      name: "stock",
                                      attributes: ["formula": "5"])
         let obj = frame.node(stock)
-        obj.snapshot["allows_negative"] = ForeignValue(false)
+        obj.snapshot["allows_negative"] = Variant(false)
         // FIXME: There is a bug in the expression parser
         let flow = frame.createNode(ObjectType.Flow,
                                     name: "flow",
@@ -210,7 +210,7 @@ final class TestSolver: XCTestCase {
                                      name: "stock",
                                      attributes: ["formula": "5"])
         let obj = frame.node(stock)
-        obj.snapshot["allows_negative"] = ForeignValue(false)
+        obj.snapshot["allows_negative"] = Variant(false)
         // FIXME: There is a bug in the expression parser
         let flow = frame.createNode(ObjectType.Flow,
                                     name: "flow",
@@ -233,7 +233,7 @@ final class TestSolver: XCTestCase {
                                       name: "stock",
                                       attributes: ["formula": "5"])
         let sourceNode = frame.node(source)
-        sourceNode.snapshot["allows_negative"] = ForeignValue(false)
+        sourceNode.snapshot["allows_negative"] = Variant(false)
 
         let happy = frame.createNode(ObjectType.Stock,
                                      name: "happy",
@@ -245,7 +245,7 @@ final class TestSolver: XCTestCase {
                                          name: "happy_flow",
                                          attributes: ["formula": "10"])
         let happyFlowNode = frame.node(happyFlow)
-        happyFlowNode.snapshot["priority"] = ForeignValue(1)
+        happyFlowNode.snapshot["priority"] = Variant(1)
 
         frame.createEdge(ObjectType.Drains,
                          origin: source, target: happyFlow, components: [])
@@ -256,7 +256,7 @@ final class TestSolver: XCTestCase {
                                        name: "sad_flow",
                                        attributes: ["formula": "10"])
         let sadFlowNode = frame.node(sadFlow)
-        sadFlowNode.snapshot["priority"] = ForeignValue(2)
+        sadFlowNode.snapshot["priority"] = Variant(2)
 
         frame.createEdge(ObjectType.Drains,
                          origin: source, target: sadFlow, components: [])
@@ -385,7 +385,7 @@ final class TestSolver: XCTestCase {
         let points = [Point(0.0, 10.0), Point(1.0, 10.0)]
         let g2 = frame.createNode(ObjectType.GraphicalFunction,
                                   name: "g2",
-                                  attributes: ["graphical_function_points": ForeignValue(points)])
+                                  attributes: ["graphical_function_points": Variant(points)])
         let aux = frame.createNode(ObjectType.Auxiliary,
                                    name:"a",
                                    attributes: ["formula": "g1 + g2"])

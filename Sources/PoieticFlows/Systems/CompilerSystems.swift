@@ -20,11 +20,11 @@ public struct ParsedFormulaComponent: Component {
         self.parsedFormula = parsedFormula
     }
 
-    public func attribute(forKey key: PoieticCore.AttributeKey) -> PoieticCore.ForeignValue? {
+    public func attribute(forKey key: PoieticCore.AttributeKey) -> PoieticCore.Variant? {
         fatalError("Not implemented")
     }
     
-    public mutating func setAttribute(value: PoieticCore.ForeignValue, forKey key: PoieticCore.AttributeKey) throws {
+    public mutating func setAttribute(value: PoieticCore.Variant, forKey key: PoieticCore.AttributeKey) throws {
         fatalError("Not implemented")
     }
     

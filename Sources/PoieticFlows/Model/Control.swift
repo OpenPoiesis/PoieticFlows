@@ -22,7 +22,7 @@ extension Trait {
         attributes: [
             Attribute("value",
                       type: .double,
-                      default: ForeignValue(0.0),
+                      default: Variant(0.0),
                       abstract: "Value of the target node"),
             Attribute("control_type",
                       type: .string,

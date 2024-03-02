@@ -18,15 +18,15 @@ public struct SimulationState: CustomStringConvertible {
     
     public var model: CompiledModel
     /// Values of built-in variables.
-    public var builtins: [ForeignValue] = []
+    public var builtins: [Variant] = []
     /// Values of computed variables.
     public var computedValues: [Double]
     
     /// All values of the state variables.
     ///
     /// The list is a concatenation of ``builtins`` and ``values``.
-    public var allValues: [ForeignValue] {
-        return builtins + computedValues.map { ForeignValue($0) }
+    public var allValues: [Variant] {
+        return builtins + computedValues.map { Variant($0) }
     }
     
     /// Create a simulation state with all variables set to zero.
@@ -36,14 +36,14 @@ public struct SimulationState: CustomStringConvertible {
     /// model.
     ///
     public init(model: CompiledModel) {
-        self.builtins = Array(repeating: ForeignValue(0),
+        self.builtins = Array(repeating: Variant(0),
                               count: model.builtinVariables.count)
         self.computedValues = Array(repeating: 0,
                            count: model.computedVariables.count)
         self.model = model
     }
     
-    public init(_ items: [Double], builtins: [ForeignValue], model: CompiledModel) {
+    public init(_ items: [Double], builtins: [Variant], model: CompiledModel) {
         precondition(items.count == model.computedVariables.count,
                      "Count of items (\(items.count) does not match required items count \(model.computedVariables.count)")
         self.builtins = builtins
@@ -83,17 +83,17 @@ public struct SimulationState: CustomStringConvertible {
     /// let variable: SimulationVariable
     ///
     /// // Fetch the value
-    /// let value: ForeignValue = state[variable]
+    /// let value: Variant = state[variable]
     ///
     /// // Use the value...
     /// ```
     ///
     @inlinable
-    public subscript(variable: SimulationVariable) -> ForeignValue {
+    public subscript(variable: SimulationVariable) -> Variant {
         get {
             switch variable {
             case let .builtin(v): return builtins[v.index]
-            case let .computed(v): return ForeignValue(computedValues[v.index])
+            case let .computed(v): return Variant(computedValues[v.index])
             }
         }
     }
@@ -184,7 +184,7 @@ public struct SimulationState: CustomStringConvertible {
         return "[builtins(\(builtinsStr)), values(\(stateStr))]"
     }
     
-    public func namedDictionary() -> [String:ForeignValue] {
+    public func namedDictionary() -> [String:Variant] {
         fatalError()
     }
 }

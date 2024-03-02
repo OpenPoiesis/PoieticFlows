@@ -305,12 +305,12 @@ func setAttributeFromString(object: ObjectSnapshot,
                             string: String) throws {
     let type = object.type
     if let attr = type.attribute(attributeName), attr.type.isArray {
-        let arrayValue = try ForeignValue.fromJSON(string)
+        let arrayValue = try Variant.fromJSON(string)
         object.setAttribute(value: arrayValue,
                                 forKey: attributeName)
     }
     else {
-        object.setAttribute(value: ForeignValue(string),
+        object.setAttribute(value: Variant(string),
                                 forKey: attributeName)
     }
 

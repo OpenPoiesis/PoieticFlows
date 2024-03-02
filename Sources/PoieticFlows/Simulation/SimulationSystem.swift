@@ -94,7 +94,7 @@ public struct ControlBindingSystem: SimulationSystem {
         for binding in context.model.valueBindings {
             let value = context.state.computedValues[binding.variableIndex]
             let control = context.frame.mutableObject(binding.control)
-            control["value"] = ForeignValue(value)
+            control["value"] = Variant(value)
         }
     }
 }
