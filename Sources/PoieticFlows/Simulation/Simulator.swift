@@ -25,10 +25,10 @@ public class Simulator {
     // Simulation parameters
 
     /// Initial time of the simulation.
-    public var initialTime: Double = 0
+    public var initialTime: Double
     
     /// Time between simulation steps.
-    public var timeDelta: Double = 1.0
+    public var timeDelta: Double
     
     // MARK: - Simulator state
     
@@ -50,6 +50,15 @@ public class Simulator {
         self.solverType = solverType
         self.solver = solverType.init(compiledModel)
         self.currentState = nil
+        if let defaults = model.simulationDefaults {
+            self.initialTime = defaults.initialTime
+            self.timeDelta = defaults.timeDelta
+        }
+        else {
+            self.initialTime = 0.0
+            self.timeDelta = 1.0
+        }
+        
         output = []
     }
 
@@ -57,6 +66,11 @@ public class Simulator {
 
     /// Initialize the simulation state with existing frame.
     ///
+    /// - Parameters:
+    ///     - override: Computed values to override. The keys are computed
+    ///       node IDs and dictionary values are values to be used instead
+    ///       the ones specified in the original nodes.
+    ///       
     @discardableResult
     public func initializeState(override: [ObjectID:Double] = [:]) -> SimulationState {
         currentStep = 0

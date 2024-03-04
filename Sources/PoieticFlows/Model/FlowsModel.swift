@@ -34,6 +34,8 @@ public let FlowsMetamodel = Metamodel(
         Trait.Position,
         Trait.GraphicalFunction,
         Trait.Chart,
+        Trait.Simulation,
+        Trait.BibliographicalReference,
     ],
 
     // NOTE: If we were able to use Mirror on types, we would not need this
@@ -57,6 +59,10 @@ public let FlowsMetamodel = Metamodel(
         ObjectType.Chart,
         ObjectType.ChartSeries,
         ObjectType.ValueBinding,
+        
+        // Other
+        ObjectType.Simulation,
+        ObjectType.BibliographicalReference,
     ],
     
     /// List of all built-in variables.

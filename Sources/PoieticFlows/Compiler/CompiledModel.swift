@@ -161,6 +161,16 @@ public struct CompiledGraphicalFunction: IndexRepresentable {
     public let parameterIndex: VariableIndex
 }
 
+// TODO: Not used
+/// Defaults fro simulation taken from an object with a trait
+/// ``/PoieticCore/Trait/Simulation``.
+///
+public struct SimulationDefaults {
+    public let initialTime: Double
+    public let timeDelta: Double
+    public let simulationSteps: Int
+}
+
 
 /// Structure used by the simulator.
 ///
@@ -365,6 +375,8 @@ public struct CompiledModel {
     /// - See also: ``/PoieticCore/ObjectType/Control``.
     ///
     public let valueBindings: [CompiledControlBinding]
+        
+    public var simulationDefaults: SimulationDefaults?
     
     // TODO: [REFACTORING] Pre-compute in the compiler
     /// Selection of simulation variables that represent graphical functions.

@@ -242,6 +242,14 @@ extension ObjectType {
         
         // Outgoing edges: ValueBinding with attribute "value"
     )
+    
+    public static let Simulation = ObjectType (
+        name: "Simulation",
+        structuralType: .unstructured,
+        traits: [
+            Trait.Simulation,
+        ]
+    )
 }
 
 // FIXME: [REFACTORING] This does not belong here (historical refactoring remnant)

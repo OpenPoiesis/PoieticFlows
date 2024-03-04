@@ -21,7 +21,7 @@ extension PoieticTool {
 
         @Option(name: [.long, .customShort("s")],
                 help: "Number of steps to run")
-        var steps: Int = 10
+        var steps: Int?
         
         @Option(name: [.long, .customShort("t")],
                 help: "Time delta")
@@ -124,7 +124,10 @@ extension PoieticTool {
             
             // Run the simulation
             // -------------------------------------------------------------
-            simulator.run(steps)
+            // Try to get number of steps providede in the design.
+            let defaultSteps = simulator.compiledModel.simulationDefaults?.simulationSteps
+            let actualSteps = steps ?? defaultSteps ?? 10
+            simulator.run(actualSteps)
 
             switch outputFormat {
             case .csv:

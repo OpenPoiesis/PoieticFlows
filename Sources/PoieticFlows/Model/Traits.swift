@@ -99,14 +99,33 @@ extension Trait {
         ]
     )
 
-    
+    /// Trait with simulation defaults.
+    ///
+    /// This trait is used to specify default values of a simulation such as
+    /// initial time or time delta in the model. Users usually override
+    /// these values in an application performing the simulation.
+    ///
+    /// Attributes:
+    ///
+    /// - `initial_time` (double) – initial time of the simulation, default is
+    ///    0.0 as most commonly used value
+    /// - `time_delta` (double) – time delta, default is 1.0 as most commonly
+    ///   used value
+    /// - `steps` (int) – default number of simulation steps, default is 10
+    ///    (arbitrary, low number just enough to demonstrate something)
+    ///
     public static let Simulation = Trait(
         name: "Simulation",
         attributes: [
             Attribute("steps", type: .int,
-                      default: Variant(100),
+                      default: Variant(10),
                       optional: true,
                       abstract: "Number of steps the simulation is run by default."
+                     ),
+            Attribute("initial_time", type: .double,
+                      default: Variant(0.0),
+                      optional: true,
+                      abstract: "Initial simulation time."
                      ),
             Attribute("time_delta", type: .double,
                       default: Variant(1.0),

@@ -322,12 +322,35 @@ public class Compiler {
         // FIXME: [REFACTORING] Move StockFlowView.charts here
         let charts = view.charts
         
+        // 10. Defaults
+        // =================================================================
+        //
+        let simulationDefaults: SimulationDefaults?
+        if let simInfo = frame.first(trait: Trait.Simulation) {
+            // NOTE: We do not need to check for types as the type
+            //       is validated on accept(). Frame is valid here.
+            let initialTime = try! simInfo["initial_time"]?.doubleValue()
+            let timeDelta = try! simInfo["time_delta"]?.doubleValue()
+            let steps = try! simInfo["steps"]?.intValue()
+            simulationDefaults = SimulationDefaults(
+                initialTime: initialTime ?? 0.0,
+                timeDelta: timeDelta ?? 1.0,
+                simulationSteps: steps ?? 10
+            )
+        }
+        else {
+            simulationDefaults = nil
+        }
+
+        
         // 999. Misc
         
         guard let timeIndex = builtinVariables.firstIndex(where: { $0 === ObjectType.TimeVariable }) else {
             fatalError("No time variable")
         }
 
+        
+        
         // Finalise
         // =================================================================
         //
@@ -339,7 +362,8 @@ public class Compiler {
             flows: flows,
             auxiliaries: auxiliaries,
             charts: charts,
-            valueBindings: bindings
+            valueBindings: bindings,
+            simulationDefaults: simulationDefaults
         )
         
         return result
