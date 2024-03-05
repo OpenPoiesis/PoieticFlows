@@ -305,7 +305,8 @@ func setAttributeFromString(object: ObjectSnapshot,
                             string: String) throws {
     let type = object.type
     if let attr = type.attribute(attributeName), attr.type.isArray {
-        let arrayValue = try Variant.fromJSON(string)
+        let json = try JSONValue(string: string)
+        let arrayValue = try Variant.fromJSON(json)
         object.setAttribute(value: arrayValue,
                                 forKey: attributeName)
     }
