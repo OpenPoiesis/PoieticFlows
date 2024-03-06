@@ -40,7 +40,7 @@ public class Compiler {
     /// List of built-in functions.
     ///
     /// Used in binding of arithmetic expressions.
-    private let functions: [String: any FunctionProtocol]
+    private let functions: [String: Function]
 
     /// Mapping between a variable name and a bound variable reference.
     ///

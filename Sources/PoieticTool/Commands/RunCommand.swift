@@ -120,14 +120,14 @@ extension PoieticTool {
             
             // Create and initialize the solver
             // -------------------------------------------------------------
-            simulator.initializeState(override: overrideConstants)
+            try simulator.initializeState(override: overrideConstants)
             
             // Run the simulation
             // -------------------------------------------------------------
             // Try to get number of steps providede in the design.
             let defaultSteps = simulator.compiledModel.simulationDefaults?.simulationSteps
             let actualSteps = steps ?? defaultSteps ?? 10
-            simulator.run(actualSteps)
+            try simulator.run(actualSteps)
 
             switch outputFormat {
             case .csv:

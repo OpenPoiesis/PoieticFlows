@@ -70,15 +70,15 @@ public class Simulator {
     ///     - override: Computed values to override. The keys are computed
     ///       node IDs and dictionary values are values to be used instead
     ///       the ones specified in the original nodes.
-    ///       
+    ///
     @discardableResult
-    public func initializeState(override: [ObjectID:Double] = [:]) -> SimulationState {
+    public func initializeState(override: [ObjectID:Double] = [:]) throws -> SimulationState {
         currentStep = 0
         currentTime = initialTime
         
-        currentState = solver.initializeState(time: currentTime,
-                                         override: override,
-                                         timeDelta: timeDelta)
+        currentState = try solver.initializeState(time: currentTime,
+                                                  override: override,
+                                                  timeDelta: timeDelta)
 
         output.removeAll()
         output.append(currentState!)
@@ -99,13 +99,13 @@ public class Simulator {
     ///
     /// - Precondition: Frame and model must exist.
     ///
-    public func step() {
+    public func step() throws {
         currentStep += 1
         currentTime += timeDelta
         
-        currentState = solver.compute(currentState!,
-                                      at: currentTime,
-                                      timeDelta: timeDelta)
+        currentState = try solver.compute(currentState!,
+                                          at: currentTime,
+                                          timeDelta: timeDelta)
         
         let context = SimulationContext(
             time: currentTime,
@@ -118,9 +118,9 @@ public class Simulator {
     }
     
     /// Run the simulation for given number of steps.
-    public func run(_ steps: Int) {
+    public func run(_ steps: Int) throws {
         for _ in (1...steps) {
-            step()
+            try step()
             output.append(self.currentState!)
         }
 

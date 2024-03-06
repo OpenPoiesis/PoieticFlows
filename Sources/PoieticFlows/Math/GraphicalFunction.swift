@@ -95,11 +95,10 @@ public class GraphicalFunction {
     ///
     /// Current implementation just wraps the ``stepFunction(x:)``.
     ///
-    public func createFunction(name: String) -> NumericUnaryFunction {
-        let function = NumericUnaryFunction(
-            name: name,
-            argumentName: "x",
-            implementation: self.stepFunction)
+    public func createFunction(name: String) -> Function {
+        let function = Function.numericUnary(name,
+                                             argumentName: "x",
+                                             body: self.stepFunction)
         
         return function
     }

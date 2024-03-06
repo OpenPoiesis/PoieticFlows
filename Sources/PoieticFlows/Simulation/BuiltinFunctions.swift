@@ -23,8 +23,8 @@ import Darwin
 ///
 /// - SeeAlso: ``bindExpression(_:variables:functions:)``
 ///
-public let BuiltinUnaryOperators: [any FunctionProtocol] = [
-    NumericUnaryFunction(name: "__neg__") { -$0 }
+public let BuiltinUnaryOperators: [Function] = [
+    .numericUnary("__neg__") { -$0 }
 ]
 
 /// List of built-in numeric binary operators.
@@ -39,12 +39,12 @@ public let BuiltinUnaryOperators: [any FunctionProtocol] = [
 ///
 /// - SeeAlso: ``bindExpression(_:variables:functions:)``
 ///
-public let BuiltinBinaryOperators: [any FunctionProtocol] = [
-    NumericBinaryFunction(name: "__add__") { $0 + $1 },
-    NumericBinaryFunction(name: "__sub__") { $0 - $1 },
-    NumericBinaryFunction(name: "__mul__") { $0 * $1 },
-    NumericBinaryFunction(name: "__div__") { $0 / $1 },
-    NumericBinaryFunction(name: "__mod__") { $0.truncatingRemainder(dividingBy: $1) },
+public let BuiltinBinaryOperators: [Function] = [
+    .numericBinary("__add__") { $0 + $1 },
+    .numericBinary("__sub__") { $0 - $1 },
+    .numericBinary("__mul__") { $0 * $1 },
+    .numericBinary("__div__") { $0 / $1 },
+    .numericBinary("__mod__") { $0.truncatingRemainder(dividingBy: $1) },
 ]
 
 /// List of built-in numeric function.
@@ -59,49 +59,67 @@ public let BuiltinBinaryOperators: [any FunctionProtocol] = [
 /// - `min(number, ...)` min out of of multiple values
 /// - `max(number, ...)` max out of of multiple values
 ///
-public let BuiltinFunctions: [any FunctionProtocol] = [
-    NumericFunction(name: "abs", signature: Signature(numeric: ["value"])) { args
-        in args[0].magnitude
+public let BuiltinFunctions: [Function] = [
+    .numericUnary("abs") {
+        $0.magnitude
     },
-    NumericFunction(name: "floor", signature: Signature(numeric: ["value"])) { args
-        in args[0].rounded(.down)
+    .numericUnary("floor") {
+        $0.rounded(.down)
     },
-    NumericFunction(name: "ceiling", signature: Signature(numeric: ["value"])) { args
-        in args[0].rounded(.up)
+    .numericUnary("ceiling") {
+        $0.rounded(.up)
     },
-    NumericFunction(name: "round", signature: Signature(numeric: ["value"])) { args
-        in args[0].rounded()
+    .numericUnary("round") {
+        $0.rounded()
     },
 
-    NumericFunction(name: "power", signature: Signature(numeric: ["value", "exponent"])) { args
-        in pow(args[0], args[1])
+    .numericBinary("power", leftArgument: "value", rightArgument: "exponent") {
+        pow($0, $1)
     },
 
     // Variadic
     
-    NumericFunction(name: "sum", signature: Signature(numericVariadic: "value")) { args
-        in args.reduce(0, { x, y in x + y })
+    .numericVariadic("sum") { args in
+        args.reduce(0, { x, y in x + y })
     },
-    NumericFunction(name: "min", signature: Signature(numericVariadic: "value")) { args
-        in args.min()!
+    .numericVariadic("min") { args in
+        args.min()!
     },
-    NumericFunction(name: "max", signature: Signature(numericVariadic: "value")) { args
-        in args.max()!
+    .numericVariadic("max") { args in
+        args.max()!
     },
 ]
 
 /// List of all built-in functions and operators.
-let AllBuiltinFunctions: [any FunctionProtocol] = BuiltinUnaryOperators
-                                                    + BuiltinBinaryOperators
-                                                    + BuiltinFunctions
+let AllBuiltinFunctions: [Function] = BuiltinUnaryOperators
+                                    + BuiltinBinaryOperators
+                                    + BuiltinFunctions
 
-enum BuiltinFunction: String {
-    case abs
-    case floor
-    case ceiling
-    case round
-    case power
-    case sum
-    case min
-    case max
-}
+
+// MARK: - Experimental -
+
+/// List of built-in binary comparison operators.
+///
+/// The operators:
+///
+/// - `__eq__` is `==`
+/// - `__neq__` is `!=`
+/// - `__gt__` is `>`
+/// - `__ge__` is `>=`
+/// - `__lt__` is `<`
+/// - `__le__` is `<=>`
+///
+/// - SeeAlso: ``bindExpression(_:variables:functions:)``
+///
+public let BuiltinComparisonOperators: [Function] = [
+    .comparison("__eq__") { (lhs, rhs) in
+        return lhs == rhs
+    },
+    .comparison("__neq__") { (lhs, rhs) in
+        return lhs != rhs
+    },
+    .comparison("__lt__") { (lhs, rhs) in
+        return try lhs.precedes(rhs)
+    },
+]
+

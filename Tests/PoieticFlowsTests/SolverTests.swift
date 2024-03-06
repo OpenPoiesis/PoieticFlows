@@ -61,7 +61,7 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
 
-        let state = solver.initializeState()
+        let state = try solver.initializeState()
         
         XCTAssertEqual(state[a], 1)
         XCTAssertEqual(state[b], 2)
@@ -77,7 +77,7 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         
-        let vector = solver.initializeState()
+        let vector = try solver.initializeState()
         
         XCTAssertNotNil(vector[a])
     }
@@ -95,7 +95,7 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         
-        let vector = solver.initializeState()
+        let vector = try solver.initializeState()
         
         XCTAssertEqual(vector[aux], 10)
         XCTAssertEqual(vector[stock], 20)
@@ -105,11 +105,11 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = EulerSolver(compiled)
         
-        var state = solver.initializeState(time: 10.0)
+        var state = try solver.initializeState(time: 10.0)
         XCTAssertEqual(state.builtins[0], 10.0)
-        state = solver.compute(state, at: 20.0 )
+        state = try solver.compute(state, at: 20.0 )
         XCTAssertEqual(state.builtins[0], 20.0)
-        state = solver.compute(state, at: 30.0 )
+        state = try solver.compute(state, at: 30.0 )
         XCTAssertEqual(state.builtins[0], 30.0)
 
     }
@@ -125,16 +125,16 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = EulerSolver(compiled)
         
-        var state = solver.initializeState(time: 1.0)
+        var state = try solver.initializeState(time: 1.0)
         
         XCTAssertEqual(state[aux], 1.0)
         XCTAssertEqual(state[flow], 10.0)
         
-        state = solver.compute(state, at: 2.0)
+        state = try solver.compute(state, at: 2.0)
         XCTAssertEqual(state[aux], 2.0)
         XCTAssertEqual(state[flow], 20.0)
 
-        state = solver.compute(state, at: 10.0, timeDelta: 1.0)
+        state = try solver.compute(state, at: 10.0, timeDelta: 1.0)
         XCTAssertEqual(state[aux], 10.0)
         XCTAssertEqual(state[flow], 100.0)
     }
@@ -155,8 +155,8 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         
         let solver = Solver(compiled)
-        let initial = solver.initializeState()
-        let diff = solver.difference(at: 1.0, with: initial)
+        let initial = try solver.initializeState()
+        let diff = try solver.difference(at: 1.0, with: initial)
 
         XCTAssertEqual(diff[stock], -10)
     }
@@ -177,8 +177,8 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         
         let solver = Solver(compiled)
-        let initial = solver.initializeState()
-        let diff = solver.difference(at: 1.0, with: initial)
+        let initial = try solver.initializeState()
+        let diff = try solver.difference(at: 1.0, with: initial)
 
         XCTAssertEqual(diff[stock], -5)
     }
@@ -199,8 +199,8 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         
         let solver = Solver(compiled)
-        let initial = solver.initializeState()
-        let diff = solver.difference(at: 1.0, with: initial)
+        let initial = try solver.initializeState()
+        let diff = try solver.difference(at: 1.0, with: initial)
 
         XCTAssertEqual(diff[stock], 0)
     }
@@ -221,8 +221,8 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         
         let solver = Solver(compiled)
-        let initial = solver.initializeState()
-        let diff = solver.difference(at: 1.0, with: initial)
+        let initial = try solver.initializeState()
+        let diff = try solver.difference(at: 1.0, with: initial)
 
         XCTAssertEqual(diff[stock], 0)
     }
@@ -276,7 +276,7 @@ final class TestSolver: XCTestCase {
         
         // Test compute()
         
-        let initial: SimulationState = solver.initializeState()
+        let initial: SimulationState = try solver.initializeState()
 
         // Compute test
         var state: SimulationState = initial
@@ -284,19 +284,19 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(state[happyFlow], 10)
         XCTAssertEqual(state[sadFlow], 10)
         
-        let sourceDiff = solver.computeStock(source, at: 0, with: &state)
+        let sourceDiff = try solver.computeStock(source, at: 0, with: &state)
         // Adjusted flow to actual outflow
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(sourceDiff,         -5.0)
 
-        let happyDiff = solver.computeStock(happy, at: 0, with: &state)
+        let happyDiff = try solver.computeStock(happy, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(happyDiff,          +5.0)
 
-        let sadDiff = solver.computeStock(sad, at: 0, with: &state)
+        let sadDiff = try solver.computeStock(sad, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
@@ -307,7 +307,7 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(initial[sadFlow], 10)
 
 
-        let diff = solver.difference(at: 1.0, with: initial)
+        let diff = try solver.difference(at: 1.0, with: initial)
 
         XCTAssertEqual(diff[source], -5)
         XCTAssertEqual(diff[happy],  +5)
@@ -333,9 +333,9 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         
-        var state = solver.initializeState(time: 1.0)
+        var state = try solver.initializeState(time: 1.0)
         
-        state = solver.difference(at: 1.0, with: state, timeDelta: 1.0)
+        state = try solver.difference(at: 1.0, with: state, timeDelta: 1.0)
         XCTAssertEqual(state[kettle], -100.0)
         XCTAssertEqual(state[cup], 100.0)
     }
@@ -360,13 +360,13 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = EulerSolver(compiled)
         
-        var state = solver.initializeState(time: 1.0)
+        var state = try solver.initializeState(time: 1.0)
         
-        state = solver.compute(state, at: 2.0)
+        state = try solver.compute(state, at: 2.0)
         XCTAssertEqual(state[kettle], 900.0 )
         XCTAssertEqual(state[cup], 100.0)
 
-        state = solver.compute(state, at: 3.0)
+        state = try solver.compute(state, at: 3.0)
         XCTAssertEqual(state[kettle], 800.0 )
         XCTAssertEqual(state[cup], 200.0)
     }
@@ -397,7 +397,7 @@ final class TestSolver: XCTestCase {
 
         let compiled: CompiledModel = try compiler.compile()
         let solver = EulerSolver(compiled)
-        let initial: SimulationState = solver.initializeState()
+        let initial: SimulationState = try solver.initializeState()
         
         XCTAssertEqual(initial[g1], 0.0)
         XCTAssertEqual(initial[g2], 10.0)
@@ -412,11 +412,11 @@ final class TestSolver: XCTestCase {
         let compiled: CompiledModel = try compiler.compile()
         let solver = EulerSolver(compiled)
 
-        let initial: SimulationState = solver.initializeState(override:[aux:20])
+        let initial: SimulationState = try solver.initializeState(override:[aux:20])
         XCTAssertEqual(initial[aux], 20.0,
                        "Auxiliary must be initialized using the override value.")
 
-        let state1 = solver.compute(initial, at: 1.0)
+        let state1 = try solver.compute(initial, at: 1.0)
         XCTAssertEqual(state1[aux], 20.0,
                        "Auxiliary must be kept constant using the override value")
     }
@@ -434,11 +434,11 @@ final class TestSolver: XCTestCase {
         let compiled: CompiledModel = try compiler.compile()
         let solver = EulerSolver(compiled)
 
-        let initial: SimulationState = solver.initializeState(override:[stock:20])
+        let initial: SimulationState = try solver.initializeState(override:[stock:20])
         XCTAssertEqual(initial[stock], 20.0,
                        "Stock must be initialized with overridevalue")
 
-        let state1 = solver.compute(initial, at: 1.0)
+        let state1 = try solver.compute(initial, at: 1.0)
         XCTAssertEqual(state1[stock], 10.0,
                        "Stock must not be kept constant")
     }

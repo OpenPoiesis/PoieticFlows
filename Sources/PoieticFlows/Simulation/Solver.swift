@@ -9,7 +9,7 @@ import PoieticCore
 // TODO: Rename to Bound Numeric Expression
 public typealias BoundExpression = ArithmeticExpression<Variant,
                                                         BoundVariableReference,
-                                                        any FunctionProtocol>
+                                                        Function>
 
 
 
@@ -94,7 +94,7 @@ public class Solver {
     /// This mapping is typically used to replace values of constants by
     /// controls.
     ///
-    public var constants: [ObjectID:Double]
+    public var constants: [ObjectID:Variant]
 
     /// Return list of registered solver names.
     ///
@@ -192,7 +192,7 @@ public class Solver {
     public func evaluate(variable index: VariableIndex,
                          with state: SimulationState,
                          at time: Double,
-                         timeDelta: Double = 1.0) -> Double {
+                         timeDelta: Double = 1.0) throws -> Variant {
         let variable = compiledModel.computedVariables[index]
 
         if let value = constants[variable.id] {
@@ -202,27 +202,21 @@ public class Solver {
         switch variable.computation {
 
         case let .formula(expression):
-            return evaluate(expression: expression,
-                             with: state,
-                             at: time,
-                             timeDelta: timeDelta)
+            return try evaluate(expression: expression,
+                                with: state,
+                                at: time,
+                                timeDelta: timeDelta)
             
         case let .graphicalFunction(function, index):
-            do {
-                let value = state[index]
-                return try function.apply([Variant(value)]).doubleValue()
-            }
-            catch {
-                // Evaluation must not fail
-                fatalError("Evaluation of graphical function \(function.name) failed: \(error)")
-            }
+            let value = Variant(state[index])
+            return try function.apply([value])
         }
     }
 
     public func evaluate(expression: BoundExpression,
                          with state: SimulationState,
                          at time: Double,
-                         timeDelta: Double = 1.0) -> Double {
+                         timeDelta: Double = 1.0) throws -> Variant {
         var state = state
         
         /// Set built-in variables in the state
@@ -238,15 +232,7 @@ public class Solver {
             }
         }
         
-        let value: Variant
-        do {
-            value = try expression.evaluate(state)
-        }
-        catch {
-            // Evaluation must not fail
-            fatalError("Evaluation of bound expression failed: \(error)")
-        }
-        return try! value.doubleValue()
+        return try expression.evaluate(state)
     }
 
     /// Initialise the computation state.
@@ -277,23 +263,24 @@ public class Solver {
     ///
     public func initializeState(time: Double = 0.0,
                                 override: [ObjectID:Double] = [:],
-                                timeDelta: Double = 1.0) -> SimulationState {
+                                timeDelta: Double = 1.0) throws -> SimulationState {
         self.constants = [:]
         
         var state = zeroState(time: time, timeDelta: timeDelta)
         for variable in compiledModel.computedVariables {
             if let value = override[variable.id] {
                 state[variable] = value
+
+                // Keep only overrides for auxiliaries
+                if compiledModel.auxiliaries.contains(where: { $0.id == variable.id }) {
+                    self.constants[variable.id] = Variant(value)
+                }
             }
             else {
-                state[variable] = evaluate(variable: variable.index,
-                                           with: state,
-                                           at: time)
-            }
-            // TODO: Make this nicer
-            // Keep only overrides for auxiliaries
-            if compiledModel.auxiliaries.contains(where: { $0.id == variable.id }) {
-                self.constants[variable.id] = override[variable.id]
+                let result = try evaluate(variable: variable.index,
+                                          with: state,
+                                          at: time)
+                state[variable] = try result.doubleValue()
             }
         }
         
@@ -418,7 +405,7 @@ public class Solver {
     ///
     func prepareStage(_ state: SimulationState,
                       at time: Double,
-                      timeDelta: Double = 1.0) -> SimulationState {
+                      timeDelta: Double = 1.0) throws -> SimulationState {
         var result: SimulationState = state
         let builtins = makeBuiltins(time: time,
                                     timeDelta: timeDelta)
@@ -426,15 +413,17 @@ public class Solver {
         
         // FIXME: This is called twice - with difference(...). Resolve this.
         for aux in compiledModel.auxiliaries {
-            result[aux] = evaluate(variable: aux.index,
-                                   with: result,
-                                   at: time)
+            let value = try evaluate(variable: aux.index,
+                                     with: result,
+                                     at: time)
+            result[aux] = try value.doubleValue()
         }
 
         for flow in compiledModel.flows {
-            result[flow] = evaluate(variable: flow.index,
-                                    with: result,
-                                    at: time)
+            let value = try evaluate(variable: flow.index,
+                                     with: result,
+                                     at: time)
+            result[flow] = try value.doubleValue()
         }
         
         return result
@@ -447,7 +436,7 @@ public class Solver {
     ///
     public func difference(at time: Double,
                     with current: SimulationState,
-                    timeDelta: Double = 1.0) -> SimulationState {
+                    timeDelta: Double = 1.0) throws -> SimulationState {
         // TODO: Move vector to the beginning of the argument list
         var estimate = zeroState(time: time, timeDelta: timeDelta)
         
@@ -455,17 +444,19 @@ public class Solver {
         //
         for aux in compiledModel.auxiliaries {
             // FIXME: This is called twice - with prepareStage. Resolve this.
-            estimate[aux] = evaluate(variable: aux.index,
+            let value = try evaluate(variable: aux.index,
                                      with: current,
                                      at: time)
+            estimate[aux] = try value.doubleValue()
         }
 
         // 2. Estimate flows
         //
         for flow in compiledModel.flows {
-            estimate[flow] = evaluate(variable: flow.index,
-                                      with: current,
-                                      at: time)
+            let value = try evaluate(variable: flow.index,
+                                     with: current,
+                                     at: time)
+            estimate[flow] = try value.doubleValue()
         }
 
         // 3. Copy stock values that we are going to adjust for estimate
@@ -501,12 +492,14 @@ public class Solver {
     ///
     public func compute(_ state: SimulationState,
                         at time: Double,
-                        timeDelta: Double = 1.0) -> SimulationState {
+                        timeDelta: Double = 1.0) throws -> SimulationState {
         fatalError("Subclasses of Solver are expected to override \(#function)")
     }
 }
 
 extension BoundExpression {
+    // TODO: Move to Solver
+    // TODO: Make non-recursive
     public func evaluate(_ state: SimulationState) throws -> Variant {
         switch self {
         case let .value(value):

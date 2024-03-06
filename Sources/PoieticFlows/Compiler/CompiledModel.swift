@@ -25,7 +25,7 @@ public enum ComputationalRepresentation: CustomStringConvertible {
     
     /// Graphic function representation of a node.
     ///
-    case graphicalFunction(NumericUnaryFunction, VariableIndex)
+    case graphicalFunction(Function, VariableIndex)
     
     // case dataInput(???)
 
@@ -156,7 +156,7 @@ public struct CompiledGraphicalFunction: IndexRepresentable {
     public let index: VariableIndex
     
     /// The function object itself
-    public let function: NumericUnaryFunction
+    public let function: Function
     /// ID of a node that is a parameter for the function.
     public let parameterIndex: VariableIndex
 }
