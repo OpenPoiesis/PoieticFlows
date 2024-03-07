@@ -199,17 +199,9 @@ public class Compiler {
         //
         for (index, builtin) in builtinVariables.enumerated() {
             let ref = BoundVariableReference(variable: .builtin(builtin),
+                                             valueType: builtin.valueType,
                                              index: index)
             self.namedReferences[builtin.name] = ref
-        }
-
-        // Collect simulation nodes and create ID to variable map
-        //
-        for (index, node) in orderedSimulationNodes.enumerated() {
-            let ref = BoundVariableReference(variable: .object(node.id),
-                                             index: index)
-            self.namedReferences[node.name!] = ref
-            self.objectToIndex[node.id] = index
         }
 
         // 5. Compile computational representations
@@ -244,6 +236,11 @@ public class Compiler {
                 name: node.name!
             )
             computedVariables.append(variable)
+            let ref = BoundVariableReference(variable: .object(node.id),
+                                             valueType: variable.valueType,
+                                             index: index)
+            self.namedReferences[node.name!] = ref
+            self.objectToIndex[node.id] = index
         }
         
         guard issues.isEmpty else {

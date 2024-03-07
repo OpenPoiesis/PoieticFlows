@@ -26,6 +26,15 @@ public enum ComputationalRepresentation: CustomStringConvertible {
     /// Graphic function representation of a node.
     ///
     case graphicalFunction(Function, VariableIndex)
+   
+    public var valueType: ValueType {
+        switch self {
+        case let .formula(formula):
+            return formula.valueType
+        case let .graphicalFunction(fun, index):
+            return ValueType.double
+        }
+    }
     
     // case dataInput(???)
 

@@ -26,7 +26,7 @@ extension PoieticTool {
             let url = try! databaseURL(options: options)
             
             let solverList = Solver.registeredSolverNames.joined(separator: ", ")
-            let functionList = BuiltinFunctions.map {
+            let functionList = PoieticFlows.BuiltinFunctions.map {
                 $0.name
             }.joined(separator: ", ")
             

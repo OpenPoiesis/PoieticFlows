@@ -29,6 +29,8 @@ public struct ComputedVariable: IndexRepresentable, CustomStringConvertible {
     /// Type of the computation of the variable.
     public let computation: ComputationalRepresentation
     
+    public var valueType: ValueType { computation.valueType }
+    
     /// Name of the variable.
     public let name: String
     
@@ -142,20 +144,22 @@ public enum SimulationVariable {
 /// compiler. It provides information about where a particular simulation
 /// variable can be found in the simulation state.
 ///
-public struct BoundVariableReference: Hashable, CustomStringConvertible, TypedValue {
+public struct BoundVariableReference: CustomStringConvertible, TypedValue {
     /// Reference to a variable.
     ///
     public let variable: VariableReference
-    
+
+    /// Computed type
+    public let valueType: ValueType
+    public var unionType: UnionType {
+        .concrete(valueType)
+    }
+
     /// Index in the ``SimulationState`` where the variable value is contained.
     /// For variables representing simulation objects, the index is into the
     /// ``SimulationState/computedValues``, for variables representing built-ins, the
     /// index is into the ``SimulationState/builtins``.
     public let index: Int
-    
-    /// Type of the wrapped variable.
-    ///
-    public var atomType: AtomType? { variable.valueType }
     
     public var description: String {
         "(\(index),\(variable))"

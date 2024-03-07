@@ -24,7 +24,7 @@ import Darwin
 /// - SeeAlso: ``bindExpression(_:variables:functions:)``
 ///
 public let BuiltinUnaryOperators: [Function] = [
-    .numericUnary("__neg__") { -$0 }
+    .NumericUnary("__neg__") { -$0 }
 ]
 
 /// List of built-in numeric binary operators.
@@ -40,11 +40,11 @@ public let BuiltinUnaryOperators: [Function] = [
 /// - SeeAlso: ``bindExpression(_:variables:functions:)``
 ///
 public let BuiltinBinaryOperators: [Function] = [
-    .numericBinary("__add__") { $0 + $1 },
-    .numericBinary("__sub__") { $0 - $1 },
-    .numericBinary("__mul__") { $0 * $1 },
-    .numericBinary("__div__") { $0 / $1 },
-    .numericBinary("__mod__") { $0.truncatingRemainder(dividingBy: $1) },
+    .NumericBinary("__add__") { $0 + $1 },
+    .NumericBinary("__sub__") { $0 - $1 },
+    .NumericBinary("__mul__") { $0 * $1 },
+    .NumericBinary("__div__") { $0 / $1 },
+    .NumericBinary("__mod__") { $0.truncatingRemainder(dividingBy: $1) },
 ]
 
 /// List of built-in numeric function.
@@ -60,32 +60,32 @@ public let BuiltinBinaryOperators: [Function] = [
 /// - `max(number, ...)` max out of of multiple values
 ///
 public let BuiltinFunctions: [Function] = [
-    .numericUnary("abs") {
+    .NumericUnary("abs") {
         $0.magnitude
     },
-    .numericUnary("floor") {
+    .NumericUnary("floor") {
         $0.rounded(.down)
     },
-    .numericUnary("ceiling") {
+    .NumericUnary("ceiling") {
         $0.rounded(.up)
     },
-    .numericUnary("round") {
+    .NumericUnary("round") {
         $0.rounded()
     },
 
-    .numericBinary("power", leftArgument: "value", rightArgument: "exponent") {
+    .NumericBinary("power", leftArgument: "value", rightArgument: "exponent") {
         pow($0, $1)
     },
 
     // Variadic
     
-    .numericVariadic("sum") { args in
+    .NumericVariadic("sum") { args in
         args.reduce(0, { x, y in x + y })
     },
-    .numericVariadic("min") { args in
+    .NumericVariadic("min") { args in
         args.min()!
     },
-    .numericVariadic("max") { args in
+    .NumericVariadic("max") { args in
         args.max()!
     },
 ]
@@ -112,13 +112,13 @@ let AllBuiltinFunctions: [Function] = BuiltinUnaryOperators
 /// - SeeAlso: ``bindExpression(_:variables:functions:)``
 ///
 public let BuiltinComparisonOperators: [Function] = [
-    .comparison("__eq__") { (lhs, rhs) in
+    .Comparison("__eq__") { (lhs, rhs) in
         return lhs == rhs
     },
-    .comparison("__neq__") { (lhs, rhs) in
+    .Comparison("__neq__") { (lhs, rhs) in
         return lhs != rhs
     },
-    .comparison("__lt__") { (lhs, rhs) in
+    .Comparison("__lt__") { (lhs, rhs) in
         return try lhs.precedes(rhs)
     },
 ]

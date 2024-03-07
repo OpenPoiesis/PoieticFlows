@@ -96,7 +96,7 @@ public class GraphicalFunction {
     /// Current implementation just wraps the ``stepFunction(x:)``.
     ///
     public func createFunction(name: String) -> Function {
-        let function = Function.numericUnary(name,
+        let function = Function.NumericUnary(name,
                                              argumentName: "x",
                                              body: self.stepFunction)
         
