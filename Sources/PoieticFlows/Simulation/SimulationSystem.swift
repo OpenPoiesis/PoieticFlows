@@ -12,7 +12,7 @@ public struct CompilationContext {
     let frame: MutableFrame
 }
 
-// FIXME: [REFACTORING] Consolidate SimulationState and SimulationContext
+// FIXME: [REVIEW] Consolidate SimulationState and SimulationContext
 
 public struct SimulationContext {
     let time: Double

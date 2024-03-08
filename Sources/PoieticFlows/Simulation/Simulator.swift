@@ -156,7 +156,7 @@ public class Simulator {
     }
     /// Get series of time points.
     public var timePoints: [Double] {
-        // FIXME: [REFACTORING] We need a cleaner way how to get this.
+        // FIXME: We need a cleaner way how to get this.
         return output.map {
             try! $0.builtins[compiledModel.builtinTimeIndex].doubleValue()
         }

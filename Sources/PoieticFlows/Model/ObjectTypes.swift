@@ -252,7 +252,7 @@ extension ObjectType {
     )
 }
 
-// FIXME: [REFACTORING] This does not belong here (historical refactoring remnant)
+// FIXME: [RELEASE] This does not belong here (historical refactoring remnant)
 extension ObjectType {
     // FIXME: Move this to some variable catalog, out of metamodel. This is specific to stock-flow model
     // MARK: Built-in variables

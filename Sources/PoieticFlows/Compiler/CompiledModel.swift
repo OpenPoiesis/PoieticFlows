@@ -387,7 +387,6 @@ public struct CompiledModel {
         
     public var simulationDefaults: SimulationDefaults?
     
-    // TODO: [REFACTORING] Pre-compute in the compiler
     /// Selection of simulation variables that represent graphical functions.
     ///
     /// This property is not used during computation, it is provided for

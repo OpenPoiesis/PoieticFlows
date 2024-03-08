@@ -212,7 +212,10 @@ func writeGnuplotBundle(path: String,
         if chart.series.count > 1 {
             print("NOTE: Printing only the first series, multiple series is not yet supported")
         }
-        let series = chart.series.first!
+        guard let series = chart.series.first else {
+            print("WARNING: Chart '\(chart.node.name ?? "(unnamed)")' has no series.")
+            continue
+        }
         let seriesIndex = variables.firstIndex { $0.name == series.name }!
         let imageFile = path + "chart_\(chartName).png"
         

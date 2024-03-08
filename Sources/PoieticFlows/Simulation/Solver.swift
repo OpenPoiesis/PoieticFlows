@@ -290,8 +290,7 @@ public class Solver {
                                  with: &state)
     }
     
-    // TODO: [REFACTORING] Review documentation
-    // TODO: [REFACTORING] Reconsider name
+    // TODO: [RELEASE] Review documentation
     /// Compute a difference of a stock.
     ///
     /// This function computes amount which is expected to be drained from/

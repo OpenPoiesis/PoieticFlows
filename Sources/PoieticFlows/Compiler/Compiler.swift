@@ -124,7 +124,6 @@ public class Compiler {
         // Context:
         //  - unsorted simulation nodes
         //      - (id, name, computationalRepresentation)
-        // FIXME: [REFACTORING] remove instance variable equivalent
         var computedVariables: [ComputedVariable] = []
 
         try frame.memory.validate(frame)
@@ -256,8 +255,9 @@ public class Compiler {
                 unsortedStocks.append(node)
             }
             else if node.type === ObjectType.Flow {
-                // FIXME: [REFACTORING] Too many unwraps
-                let priority = try! node.snapshot["priority"]!.intValue()
+                guard let priority = try? node.snapshot["priority"]?.intValue() else {
+                    fatalError("Unable to get priority of Stock node \(node.id). Hint: Frame passed constraint validation while it should have not.")
+                }
                 let flow = CompiledFlow(id: node.id,
                                         index: index,
                                         priority: priority)
@@ -312,7 +312,7 @@ public class Compiler {
         // 9. Charts
         // =================================================================
         //
-        // FIXME: [REFACTORING] Move StockFlowView.charts here
+        // FIXME: [RELEASE] Move StockFlowView.charts here
         let charts = view.charts
         
         // 10. Defaults
@@ -473,7 +473,7 @@ public class Compiler {
     ///
     public func compileGraphicalFunctionNode(_ node: Node) throws -> ComputationalRepresentation{
         guard let points = try? node.snapshot["graphical_function_points"]?.pointArray() else {
-            // TODO: [REFACTORING] Better error handling/reporting for these cases
+            // TODO: [RELEASE] Better error handling/reporting for these cases
             fatalError("Got graphical function without points attribute")
         }
         // TODO: Interpolation method
