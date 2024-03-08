@@ -224,10 +224,6 @@ public class Compiler {
                 issues.merge(error)
                 continue
             }
-            catch {
-                continue
-
-            }
             
             let variable = ComputedVariable(
                 id: node.id,
@@ -459,9 +455,16 @@ public class Compiler {
         
         // Finally bind the expression.
         //
-        let boundExpression = try bindExpression(unboundExpression,
+        let boundExpression: BoundExpression
+        do {
+            boundExpression = try bindExpression(unboundExpression,
                                                  variables: namedReferences,
                                                  functions: functions)
+        }
+        catch let error as ExpressionError {
+            throw NodeIssue.expressionError(error)
+        }
+
         return .formula(boundExpression)
     }
 

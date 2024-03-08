@@ -83,9 +83,11 @@ public let BuiltinFunctions: [Function] = [
         args.reduce(0, { x, y in x + y })
     },
     .NumericVariadic("min") { args in
+        // FIXME: Crashes on zero arguments. Validate during compilation.
         args.min()!
     },
     .NumericVariadic("max") { args in
+        // FIXME: Crashes on zero arguments. Validate during compilation.
         args.max()!
     },
 ]
@@ -94,32 +96,4 @@ public let BuiltinFunctions: [Function] = [
 let AllBuiltinFunctions: [Function] = BuiltinUnaryOperators
                                     + BuiltinBinaryOperators
                                     + BuiltinFunctions
-
-
-// MARK: - Experimental -
-
-/// List of built-in binary comparison operators.
-///
-/// The operators:
-///
-/// - `__eq__` is `==`
-/// - `__neq__` is `!=`
-/// - `__gt__` is `>`
-/// - `__ge__` is `>=`
-/// - `__lt__` is `<`
-/// - `__le__` is `<=>`
-///
-/// - SeeAlso: ``bindExpression(_:variables:functions:)``
-///
-public let BuiltinComparisonOperators: [Function] = [
-    .Comparison("__eq__") { (lhs, rhs) in
-        return lhs == rhs
-    },
-    .Comparison("__neq__") { (lhs, rhs) in
-        return lhs != rhs
-    },
-    .Comparison("__lt__") { (lhs, rhs) in
-        return try lhs.precedes(rhs)
-    },
-]
-
+                                    + PoieticCore.BuiltinFunctions

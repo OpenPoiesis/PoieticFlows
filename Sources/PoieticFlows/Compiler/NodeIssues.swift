@@ -45,6 +45,8 @@ public struct NodeIssuesError: Error {
 public enum NodeIssue: Equatable, CustomStringConvertible, Error {
     /// An error caused by a syntax error in the formula (arithmetic expression).
     case expressionSyntaxError(ExpressionSyntaxError)
+   
+    case expressionError(ExpressionError)
     
     /// Parameter connected to a node is not used in the formula.
     case unusedInput(String)
@@ -68,6 +70,8 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
         switch self {
         case .expressionSyntaxError(let error):
             return "Syntax error: \(error)"
+        case .expressionError(let error):
+            return "Expression error: \(error)"
         case .unusedInput(let name):
             return "Parameter '\(name)' is connected but not used"
         case .unknownParameter(let name):
@@ -87,7 +91,9 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
     public var hint: String? {
         switch self {
         case .expressionSyntaxError(_):
-            return nil
+            return "Check the expression"
+        case .expressionError(_):
+            return "Check the expression for correct variables, types and functions"
         case .unusedInput(let name):
             return "Use the connected parameter or disconnect the node '\(name)'."
         case .unknownParameter(let name):

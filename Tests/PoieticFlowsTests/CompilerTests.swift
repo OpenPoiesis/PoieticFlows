@@ -9,19 +9,6 @@ import XCTest
 @testable import PoieticFlows
 @testable import PoieticCore
 
-final class BuiltinFunctionTests: XCTestCase {
-    func testAllBuiltinsHaveReturnType() throws {
-        for function in AllBuiltinFunctions {
-            if function.signature.returnType == nil {
-                XCTFail("Built-in function \(function.name) has no return type specified")
-            }
-            if function.signature.returnType != .double {
-                XCTFail("Built-in function \(function.name) does not have a double return type")
-            }
-        }
-    }
-}
-
 final class TestCompiler: XCTestCase {
     var db: ObjectMemory!
     var frame: MutableFrame!
@@ -53,7 +40,45 @@ final class TestCompiler: XCTestCase {
         
         XCTAssertEqual(names, ["a", "b", "c"])
     }
-    
+    func testBadFunctionName() throws {
+        let compiler = Compiler(frame: frame)
+        let aux = frame.createNode(ObjectType.Auxiliary,
+                                   name: "a",
+                                   attributes: ["formula": "nonexistent(10)"])
+        
+        XCTAssertThrowsError(try compiler.compile()) {
+            guard let error = $0 as? NodeIssuesError else {
+                XCTFail("Expected DomainError, got: \($0)")
+                return
+            }
+            guard let first = error.issues[aux]?.first else {
+                XCTFail("Expected an issue")
+                return
+            }
+            
+            XCTAssertEqual(error.issues.count, 1)
+
+            guard let issue = first as? NodeIssue else {
+                XCTFail("Did not get expected node issue error type")
+                return
+            }
+            XCTAssertEqual(issue, NodeIssue.expressionError(.unknownFunction("nonexistent")))
+ 
+        }
+    }
+    func testSingleComputedVariable() throws {
+        let compiler = Compiler(frame: frame)
+        let aux = frame.createNode(ObjectType.Auxiliary,
+                                   name: "a",
+                                   attributes: ["formula": "if(time < 2, 0, 1)"])
+        
+        let compiled = try compiler.compile()
+        let names = compiled.computedVariables.map { $0.name }
+            .sorted()
+        
+        XCTAssertEqual(names, ["a"])
+    }
+
     func testValidateDuplicateName() throws {
         let compiler = Compiler(frame: frame)
         let c1 = frame.createNode(ObjectType.Stock,
