@@ -31,7 +31,7 @@ public enum ComputationalRepresentation: CustomStringConvertible {
         switch self {
         case let .formula(formula):
             return formula.valueType
-        case let .graphicalFunction(fun, index):
+        case .graphicalFunction(_, _):
             return ValueType.double
         }
     }

@@ -312,7 +312,7 @@ public class Compiler {
         // 9. Charts
         // =================================================================
         //
-        // FIXME: [RELEASE] Move StockFlowView.charts here
+        // TODO: [RELEASE] Move StockFlowView.charts here
         let charts = view.charts
         
         // 10. Defaults
@@ -338,7 +338,7 @@ public class Compiler {
         
         // 999. Misc
         
-        guard let timeIndex = builtinVariables.firstIndex(where: { $0 === ObjectType.TimeVariable }) else {
+        guard let timeIndex = builtinVariables.firstIndex(where: { $0 === BuiltinVariable.TimeVariable }) else {
             fatalError("No time variable")
         }
 

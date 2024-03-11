@@ -92,30 +92,18 @@ func align(objects: [ObjectSnapshot], mode: AlignmentMode, spacing: Double) {
     switch mode {
     case .alignCenterHorizontal, .alignTop, .alignBottom:
         for (object, current) in items {
-            let newPosition = Point(
-                x: current.x,
-                y: reference.y
-            )
-            object.position = newPosition
+            object.position = Point(x:current.x, y:reference.y)
         }
     case .alignCenterVertical, .alignLeft, .alignRight:
         for (object, current) in items {
-            let newPosition = Point(
-                x: reference.x,
-                y: current.y
-            )
-            object.position = newPosition
+            object.position = Point(x:reference.x, y:current.y)
         }
     case .offsetHorizontal:
         // FIXME: Spacing requires bounding box
         var x = reference.x
         
         for (object, current) in items {
-            let newPosition = Point(
-                x: x,
-                y: current.y
-            )
-            object.position = newPosition
+            object.position = Point(x:x, y:current.y)
             x += spacing
         }
     case .offsetVertical:
@@ -123,11 +111,7 @@ func align(objects: [ObjectSnapshot], mode: AlignmentMode, spacing: Double) {
         var y = reference.y
         
         for (object, current) in items {
-            let newPosition = Point(
-                x: current.x,
-                y: y
-            )
-            object.position = newPosition
+            object.position = Point(x: current.x, y: y)
             y += spacing
         }
     case .spreadHorizontal:
@@ -136,11 +120,7 @@ func align(objects: [ObjectSnapshot], mode: AlignmentMode, spacing: Double) {
         var x = reference.x
         
         for (object, current) in items {
-            let newPosition = Point(
-                x: x,
-                y: current.y
-            )
-            object.position = newPosition
+            object.position = Point(x:x, y:current.y)
             x += spacing
         }
 
@@ -150,11 +130,7 @@ func align(objects: [ObjectSnapshot], mode: AlignmentMode, spacing: Double) {
         var y = reference.y
         
         for (object, current) in items {
-            let newPosition = Point(
-                x: current.x,
-                y: y
-            )
-            object.position = newPosition
+            object.position = Point(x:current.x, y:y)
             y += spacing
         }
     }

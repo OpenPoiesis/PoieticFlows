@@ -148,10 +148,10 @@ public class Solver {
                                              count: compiledModel.builtinVariables.count)
         for (index, builtin) in compiledModel.builtinVariables.enumerated() {
             let value: Variant
-            if builtin === ObjectType.TimeVariable {
+            if builtin === BuiltinVariable.TimeVariable {
                  value = Variant(time)
             }
-            else if builtin === ObjectType.TimeDeltaVariable {
+            else if builtin === BuiltinVariable.TimeDeltaVariable {
                  value = Variant(timeDelta)
             }
             else {
@@ -214,10 +214,10 @@ public class Solver {
         
         /// Set built-in variables in the state
         for (index, builtin) in compiledModel.builtinVariables.enumerated() {
-            if builtin === ObjectType.TimeVariable {
+            if builtin === BuiltinVariable.TimeVariable {
                 state.builtins[index] = Variant(time)
             }
-            else if builtin === ObjectType.TimeDeltaVariable {
+            else if builtin === BuiltinVariable.TimeDeltaVariable {
                 state.builtins[index] = Variant(timeDelta)
             }
             else {
@@ -371,7 +371,6 @@ public class Solver {
                 // FIXME: We are changing the current state, we should be changing some "estimated state"
                 state[outflow] = actualOutflow
 
-                // FIXME: [IMPORTANT] When totalInflow is negative then this check fails.
                 // Sanity check. This should always pass, unless we did
                 // something wrong above.
                 assert(state[outflow] >= 0.0,
@@ -488,4 +487,3 @@ public class Solver {
         fatalError("Subclasses of Solver are expected to override \(#function)")
     }
 }
-

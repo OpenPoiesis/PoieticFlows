@@ -83,11 +83,9 @@ public let BuiltinFunctions: [Function] = [
         args.reduce(0, { x, y in x + y })
     },
     .NumericVariadic("min") { args in
-        // FIXME: Crashes on zero arguments. Validate during compilation.
         args.min()!
     },
     .NumericVariadic("max") { args in
-        // FIXME: Crashes on zero arguments. Validate during compilation.
         args.max()!
     },
 ]

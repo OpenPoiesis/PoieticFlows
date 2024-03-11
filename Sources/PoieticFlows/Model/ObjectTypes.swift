@@ -252,22 +252,3 @@ extension ObjectType {
     )
 }
 
-// FIXME: [RELEASE] This does not belong here (historical refactoring remnant)
-extension ObjectType {
-    // FIXME: Move this to some variable catalog, out of metamodel. This is specific to stock-flow model
-    // MARK: Built-in variables
-    // ---------------------------------------------------------------------
-    /// Built-in variable reference that represents the simulation time.
-    ///
-    public static let TimeVariable = BuiltinVariable(
-        name: "time",
-        abstract: "Current simulation time"
-    )
-
-    /// Built-in variable reference that represents the time delta.
-    ///
-    public static let TimeDeltaVariable = BuiltinVariable(
-        name: "time_delta",
-        abstract: "Simulation time delta - time between discrete steps of the simulation."
-    )
-}

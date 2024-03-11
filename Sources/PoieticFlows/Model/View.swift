@@ -89,7 +89,6 @@ public class StockFlowView {
     /// NamedComponent.
     ///
     public var namedObjects: [(ObjectSnapshot, String)] {
-        // FIXME: [IMPORTANT] Guarantee that the name exists for trait Name
         frame.filter(trait: Trait.Name).map {
             return ($0, $0.name!)
         }

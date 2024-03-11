@@ -30,7 +30,7 @@ public struct ChartSeries {
 }
 
 extension StockFlowView {
-    // FIXME: [RELEASE] Move to Compiler
+    // TODO: [RELEASE] Move to Compiler
     public var charts: [Chart] {
         let nodes = frame.filterNodes { $0.type === ObjectType.Chart }
         

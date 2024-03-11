@@ -284,19 +284,19 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(state[happyFlow], 10)
         XCTAssertEqual(state[sadFlow], 10)
         
-        let sourceDiff = try solver.computeStock(source, at: 0, with: &state)
+        let sourceDiff = solver.computeStock(source, at: 0, with: &state)
         // Adjusted flow to actual outflow
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(sourceDiff,         -5.0)
         
-        let happyDiff = try solver.computeStock(happy, at: 0, with: &state)
+        let happyDiff = solver.computeStock(happy, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(happyDiff,          +5.0)
         
-        let sadDiff = try solver.computeStock(sad, at: 0, with: &state)
+        let sadDiff = solver.computeStock(sad, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)

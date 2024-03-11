@@ -68,7 +68,7 @@ final class TestCompiler: XCTestCase {
     }
     func testSingleComputedVariable() throws {
         let compiler = Compiler(frame: frame)
-        let aux = frame.createNode(ObjectType.Auxiliary,
+        let _ = frame.createNode(ObjectType.Auxiliary,
                                    name: "a",
                                    attributes: ["formula": "if(time < 2, 0, 1)"])
         
