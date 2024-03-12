@@ -284,19 +284,19 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(state[happyFlow], 10)
         XCTAssertEqual(state[sadFlow], 10)
         
-        let sourceDiff = solver.computeStock(source, at: 0, with: &state)
+        let sourceDiff = solver.computeStockDelta(source, at: 0, with: &state)
         // Adjusted flow to actual outflow
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(sourceDiff,         -5.0)
         
-        let happyDiff = solver.computeStock(happy, at: 0, with: &state)
+        let happyDiff = solver.computeStockDelta(happy, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(happyDiff,          +5.0)
         
-        let sadDiff = solver.computeStock(sad, at: 0, with: &state)
+        let sadDiff = solver.computeStockDelta(sad, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
@@ -339,6 +339,33 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(state[kettle], -100.0)
         XCTAssertEqual(state[cup], 100.0)
     }
+    
+    func testDifferenceTimeDelta() throws {
+        let kettle = frame.createNode(ObjectType.Stock,
+                                      name: "kettle",
+                                      attributes: ["formula": "1000"])
+        let flow = frame.createNode(ObjectType.Flow,
+                                    name: "pour",
+                                    attributes: ["formula": "100"])
+        let cup = frame.createNode(ObjectType.Stock,
+                                   name: "cup",
+                                   attributes: ["formula": "0"])
+        
+        frame.createEdge(ObjectType.Drains,
+                         origin: kettle, target: flow, components: [])
+        frame.createEdge(ObjectType.Fills,
+                         origin: flow, target: cup, components: [])
+        
+        let compiled = try compiler.compile()
+        let solver = Solver(compiled)
+        
+        var state = try solver.initializeState(time: 0.0)
+        
+        state = try solver.difference(at: 1.0, with: state, timeDelta: 0.5)
+        XCTAssertEqual(state[kettle], -50.0)
+        XCTAssertEqual(state[cup], 50.0)
+    }
+
     
     
     func testCompute() throws {

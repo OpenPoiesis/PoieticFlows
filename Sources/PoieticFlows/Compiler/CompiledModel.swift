@@ -78,7 +78,7 @@ public protocol IndexRepresentable {
 ///
 /// This structure is used during computation.
 ///
-/// - SeeAlso: ``Solver/computeStock(_:at:with:)``
+/// - SeeAlso: ``Solver/computeStockDelta(_:at:with:)``
 ///
 public struct CompiledStock: IndexRepresentable {
     /// Object ID of the stock that this compiled structure represents.
@@ -346,7 +346,7 @@ public struct CompiledModel {
     ///
     /// This property is used in computation.
     ///
-    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
+    /// - SeeAlso: ``Solver/computeStockDelta(_:at:with:)``
     ///
     /// - Complexity: O(n)
     ///

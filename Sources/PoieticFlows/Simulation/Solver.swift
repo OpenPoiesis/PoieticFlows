@@ -281,11 +281,11 @@ public class Solver {
     }
     /// - Important: Do not use for anything but testing or debugging.
     ///
-    func computeStock(_ id: ObjectID,
+    func computeStockDelta(_ id: ObjectID,
                       at time: Double,
                       with state: inout SimulationState) -> Double {
         let stock = compiledModel.compiledStock(id)
-        return self.computeStock(stock,
+        return self.computeStockDelta(stock,
                                  at: time,
                                  with: &state)
     }
@@ -313,9 +313,9 @@ public class Solver {
     /// - Precondition: The simulation state vector must have all variables
     ///   that are required to compute the stock difference.
     ///
-    public func computeStock(_ stock: CompiledStock,
-                             at time: Double,
-                             with state: inout SimulationState) -> Double {
+    public func computeStockDelta(_ stock: CompiledStock,
+                                  at time: Double,
+                                  with state: inout SimulationState) -> Double {
         var totalInflow: Double = 0.0
         var totalOutflow: Double = 0.0
         
@@ -458,13 +458,13 @@ public class Solver {
         
         // 4. Compute stock levels
         //
-        // FIXME: Multiply by time delta
         var deltaVector = zeroState(time: time, timeDelta: timeDelta)
 
         for stock in compiledModel.stocks {
-            let delta = computeStock(stock, at: time, with: &estimate)
-            estimate[stock] = estimate[stock] + delta
-            deltaVector[stock] = delta
+            let delta = computeStockDelta(stock, at: time, with: &estimate)
+            let dtAdjusted = delta * timeDelta
+            estimate[stock] = estimate[stock] + dtAdjusted
+            deltaVector[stock] = dtAdjusted
         }
         return deltaVector
     }
