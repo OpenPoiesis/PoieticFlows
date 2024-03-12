@@ -29,7 +29,9 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "PoieticFlows",
-            dependencies: ["PoieticCore"]),
+            dependencies: ["PoieticCore"],
+            swiftSettings: [.enableUpcomingFeature("FullTypedThrows")]
+        ),
 
         .executableTarget(
             name: "PoieticTool",
