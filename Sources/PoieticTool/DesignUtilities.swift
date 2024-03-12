@@ -61,7 +61,7 @@ func autoConnectParameters(_ frame: MutableFrame) throws -> (added: [ParameterIn
             case .missing:
                 // Find missing parameter
                 guard let parameterID = frame.object(named: name)?.id else {
-                    fatalError("Internal Error: No object named \(name)")
+                    throw ToolError.unknownObjectName(name)
                 }
                 let edge = frame.createEdge(ObjectType.Parameter,
                                             origin: parameterID,
