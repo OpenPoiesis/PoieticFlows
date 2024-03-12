@@ -26,54 +26,21 @@ extension PoieticTool {
         mutating func run() throws {
             let memory = try openMemory(options: options)
             let frame = memory.deriveFrame()
-            let view = StockFlowView(frame)
-            var addedCount = 0
-            var removedCount = 0
-            
-            let builtinNames: Set<String> = Set(FlowsMetamodel.variables.map {
-                $0.name
-            })
-            let context = TransformationContext(frame: frame)
-            var transformer = ExpressionTransformer()
-            transformer.update(context)
 
-            for target in view.simulationNodes {
-                guard let expression: ParsedFormulaComponent = target[ParsedFormulaComponent.self] else {
-                    continue
+            let result = try autoConnectParameters(frame)
+            
+            if verbose {
+                for info in result.added {
+                    print("Connected parameter \(info.parameterName) (\(info.parameterID)) to \(info.targetName ?? "(unnamed)") (\(info.targetID)), edge: \(info.edgeID)")
                 }
-                let allNodeVars: Set<String> = Set(expression.parsedFormula.allVariables)
-                let required = Array(allNodeVars.subtracting(builtinNames))
-                let params = view.parameters(target.id, required: required)
-                
-                for (name, status) in params {
-                    switch status {
-                    case .missing:
-                        // Find missing parameter
-                        guard let parameterID = frame.object(named: name)?.id else {
-                            fatalError("Internal Error: No object named \(name)")
-                        }
-                        let edge = frame.createEdge(ObjectType.Parameter,
-                                                    origin: parameterID,
-                                                  target: target.id)
-                        if verbose {
-                            print("Connected parameter\(name) (\(parameterID)) to \(target.name!) (\(target.id)), edge: \(edge)")
-                        }
-                        addedCount += 1
-                    case let .unused(node, edge):
-                        frame.remove(edge: edge)
-                        if verbose {
-                            print("Disconnected parameter \(name) (\(node)) from \(target.name!) (\(target.id)), edge: \(edge)")
-                        }
-                        removedCount += 1
-                    case .used:
-                        continue
-                    }
+                for info in result.removed {
+                    print("Disconnected parameter \(info.parameterName) (\(info.parameterID)) from \(info.targetName ?? "(unnamed)") (\(info.targetID)), edge: \(info.edgeID)")
                 }
             }
 
-            if addedCount + removedCount > 0 {
-                print("Added \(addedCount) edges and removed \(removedCount) edges.")
-                try acceptFrame(frame, in: memory)
+            try acceptFrame(frame, in: memory)
+            if result.added.count + result.removed.count > 0 {
+                print("Added \(result.added.count) edges and removed \(result.removed.count) edges.")
             }
             else {
                 print("All parameter connections seem to be ok.")

@@ -69,14 +69,8 @@ for DEMO_PATH in ${all_demos[*]}; do
 
     mkdir -p ${TEST_DEMO_OUT}
 
-    echo '--- Creating db'
-    poietic new
-    
-    echo '--- Importing frame'
-    poietic import $DEMO_PATH
-    
-    echo '--- Auto-parameters'
-    poietic edit auto-parameters
+    echo '--- Creating db and importing frame'
+    poietic new --import $DEMO_PATH --auto-parameters
 
     echo '--- Running'
     poietic run --steps 150 -f gnuplot -o ${TEST_DEMO_OUT}
