@@ -28,9 +28,36 @@ public class Compiler {
 
     // Compiler State
     // -----------------------------------------------------------------
+
+    /// List of simulation state variables.
+    ///
+    /// The list of state variables contain values of builtins, values of
+    /// nodes and values of internal states.
+    ///
+    /// Each node is typically assigned one state variable which represents
+    /// the node's value at given state. Some nodes might contain internal
+    /// state that might be present in multiple state variables.
+    ///
+    /// The internal state is typically not user-presentable and is a state
+    /// associated with stateful functions or other computation objects.
+    ///
+    /// The state variables are added to the list using
+    /// ``createStateVariable(content:valueType:)``, which allocates a variable
+    /// and sets other associated mappings depending on the variable content
+    /// type.
+    ///
+    /// - SeeAlso: ``CompiledModel/stateVariables``,
+    ///   ``createStateVariable(content:valueType:)``
+    ///
+    public private(set) var stateVariables: [StateVariable] = []
+
+    /// Index of the current state
+    public private(set) var currentVariableIndex = 0
+
+
     /// List of built-in variables used in the simulation.
     ///
-    private let builtinVariables: [BuiltinVariable]
+    private let builtinVariables: [Variable]
 
     /// List of built-in variable names, fetched from the metamodel.
     ///
@@ -42,18 +69,18 @@ public class Compiler {
     /// Used in binding of arithmetic expressions.
     private let functions: [String: Function]
 
+    // FIXME: [REFACTORING] Change to [String:SimulationState.Index]
     /// Mapping between a variable name and a bound variable reference.
     ///
     /// Used in binding of arithmetic expressions.
-    private var namedReferences: [String:BoundVariableReference]
-    // TODO: [REFACTORING] Status: check
+    private var namedReferences: [String:StateVariable]
 
     /// Mapping between object ID and index of its corresponding simulation
     /// variable.
     ///
     /// Used in compilation of simulation nodes.
     ///
-    private var objectToIndex: [ObjectID: Int]
+    private var objectToVariable: [ObjectID: Int]
 
     /// List of transformation systems run before the compilation.
     ///
@@ -88,12 +115,38 @@ public class Compiler {
         functions = Dictionary(uniqueKeysWithValues: items)
 
         // Intermediated variables and mappigns used for compilation
-        objectToIndex = [:]
+        objectToVariable = [:]
 
         // Variables for arithmetic expression binding
         namedReferences = [:]
     }
-
+    
+    /// Creates a state variable.
+    ///
+    /// - Parameters:
+    ///     - content: Content of the state variable – either an object or a
+    ///       builtin.
+    ///       See ``StateVariableContent`` for more information.
+    ///     - valueType: Type of the state variable value.
+    ///
+    public func createStateVariable(content: StateVariableContent,
+                                    valueType: ValueType,
+                                    name: String) -> SimulationState.Index {
+        let variableIndex = currentVariableIndex
+        let variable = StateVariable(index: variableIndex,
+                                     content: content,
+                                     valueType: valueType,
+                                     name: name)
+        stateVariables.append(variable)
+        currentVariableIndex += 1
+        
+        if case let .object(id) = content {
+            objectToVariable[id] = variableIndex
+        }
+        
+        return variableIndex
+    }
+    
     // TODO: Verify which errors are thrown in here
     /// Compiles the model and returns the compiled version of the model.
     ///
@@ -124,7 +177,8 @@ public class Compiler {
         // Context:
         //  - unsorted simulation nodes
         //      - (id, name, computationalRepresentation)
-        var computedVariables: [ComputedVariable] = []
+        var computedObjects: [ComputedObject] = []
+        // FIXME: [IMPORTANT] [REFACTORING] fill this
 
         try frame.memory.validate(frame)
         
@@ -196,12 +250,33 @@ public class Compiler {
 
         // Collect built-in variables.
         //
-        for (index, builtin) in builtinVariables.enumerated() {
-            let ref = BoundVariableReference(variable: .builtin(builtin),
-                                             valueType: builtin.valueType,
-                                             index: index)
-            self.namedReferences[builtin.name] = ref
+        var builtins: [CompiledBuiltin] = []
+        
+        for variable in builtinVariables {
+            let builtin: BuiltinVariable
+            if variable === Variable.TimeVariable {
+                builtin = .time
+            }
+            else if variable === Variable.TimeDeltaVariable {
+                builtin = .timeDelta
+            }
+            else {
+                fatalError("Unknown builtin variable: \(variable)")
+            }
+
+            let index = createStateVariable(content: .builtin(builtin),
+                                            valueType: variable.valueType,
+                                            name: variable.name)
+            
+            self.namedReferences[variable.name] = self.stateVariables[index]
+            builtins.append(CompiledBuiltin(builtin: builtin,
+                                            variableIndex: index))
         }
+
+        guard let timeIndex = namedReferences["time"]?.index else {
+            fatalError("No time variable within the builtins.")
+        }
+
 
         // 5. Compile computational representations
         // =================================================================
@@ -209,7 +284,9 @@ public class Compiler {
         var issues = NodeIssuesError()
         // FIXME: Use context, test whether the errors were appended to the node
         
-        for (index, node) in orderedSimulationNodes.enumerated() {
+        for node in orderedSimulationNodes {
+            assert(node.name != nil, "Node \(node.id) has no name. Validation before compilation failed.")
+
             let computation: ComputationalRepresentation
             do {
                 computation = try self.compile(node)
@@ -224,18 +301,20 @@ public class Compiler {
                 continue
             }
             
-            let variable = ComputedVariable(
-                id: node.id,
-                index: index,
-                computation: computation,
-                name: node.name!
-            )
-            computedVariables.append(variable)
-            let ref = BoundVariableReference(variable: .object(node.id),
-                                             valueType: variable.valueType,
-                                             index: index)
-            self.namedReferences[node.name!] = ref
-            self.objectToIndex[node.id] = index
+            let index = createStateVariable(content: .object(node.id),
+                                            valueType: computation.valueType,
+                                            name: node.name!)
+
+            let object = ComputedObject(id: node.id,
+                                        variableIndex: index,
+                                        valueType: computation.valueType,
+                                        computation: computation,
+                                        name: node.name!)
+            computedObjects.append(object)
+            
+
+            self.namedReferences[node.name!] = self.stateVariables[index]
+            self.objectToVariable[node.id] = index
         }
         
         guard issues.isEmpty else {
@@ -248,9 +327,9 @@ public class Compiler {
         var unsortedStocks: [Node] = []
         var flows: [CompiledFlow] = []
         var flowsByID: [ObjectID:CompiledFlow] = [:]
-        var auxiliaries: [CompiledObject] = []
+        var auxiliaries: [CompiledAuxiliary] = []
         
-        for (index, node) in orderedSimulationNodes.enumerated() {
+        for (objectIndex, node) in orderedSimulationNodes.enumerated() {
             if node.type === ObjectType.Stock {
                 unsortedStocks.append(node)
             }
@@ -258,15 +337,23 @@ public class Compiler {
                 guard let priority = try? node.snapshot["priority"]?.intValue() else {
                     fatalError("Unable to get priority of Stock node \(node.id). Hint: Frame passed constraint validation while it should have not.")
                 }
+                let computed = computedObjects[objectIndex]
                 let flow = CompiledFlow(id: node.id,
-                                        index: index,
+                                        variableIndex: computed.variableIndex,
+                                        objectIndex: objectIndex,
                                         priority: priority)
                 flows.append(flow)
                 flowsByID[node.id] = flow
             }
             else if node.type === ObjectType.Auxiliary
                         || node.type === ObjectType.GraphicalFunction {
-                let compiled = CompiledObject(id: node.id, index: index)
+
+                let computed = computedObjects[objectIndex]
+
+                let compiled = CompiledAuxiliary(id: node.id,
+                                                 variableIndex: computed.variableIndex,
+                                                 objectIndex: objectIndex)
+
                 auxiliaries.append(compiled)
             }
             else {
@@ -304,8 +391,12 @@ public class Compiler {
                 fatalError("A value binding \(object.id) is not an edge")
             }
             
+            // FIXME: Better error reporting
+            guard let index = objectToVariable[edge.target] else {
+                fatalError("Unknown index of object: \(edge.target), compilation failed")
+            }
             let binding = CompiledControlBinding(control: edge.origin,
-                                              variableIndex: variableIndex(edge.target))
+                                                 variableIndex: index)
             bindings.append(binding)
         }
         
@@ -338,19 +429,16 @@ public class Compiler {
         
         // 999. Misc
         
-        guard let timeIndex = builtinVariables.firstIndex(where: { $0 === BuiltinVariable.TimeVariable }) else {
-            fatalError("No time variable")
-        }
-
         
         
         // Finalise
         // =================================================================
         //
         let result = CompiledModel(
-            builtinVariables: builtinVariables,
-            builtinTimeIndex: timeIndex,
-            computedVariables: computedVariables,
+            stateVariables: self.stateVariables,
+            builtins: builtins,
+            computedObjects: computedObjects,
+            timeVariableIndex: timeIndex,
             stocks: compiledStocks,
             flows: flows,
             auxiliaries: auxiliaries,
@@ -368,8 +456,8 @@ public class Compiler {
     /// - Precondition: Object with given ID must have a corresponding
     ///   simulation variable.
     ///
-    public func variableIndex(_ id: ObjectID) -> VariableIndex {
-        guard let index = objectToIndex[id] else {
+    public func variableIndex(_ id: ObjectID) -> SimulationState.Index {
+        guard let index = objectToVariable[id] else {
             fatalError("Object \(id) not found in the simulation variable list")
         }
         return index
@@ -539,7 +627,7 @@ public class Compiler {
         for node in stocks {
             let inflowIndices = inflows[node.id]?.map { variableIndex($0) } ?? []
             let outflowIndices = outflows[node.id]?.map { variableIndex($0) } ?? []
-
+            
             // We can `try!` and force unwrap, because here we already assume
             // the model was validated
             let allowsNegative = try! node.snapshot["allows_negative"]!.boolValue()
@@ -547,7 +635,7 @@ public class Compiler {
 
             let compiled = CompiledStock(
                 id: node.id,
-                index: variableIndex(node.id),
+                variableIndex: variableIndex(node.id),
                 allowsNegative: allowsNegative,
                 delayedInflow: delayedInflow,
                 inflows: inflowIndices,

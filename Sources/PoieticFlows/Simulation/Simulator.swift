@@ -76,8 +76,8 @@ public class Simulator {
         currentStep = 0
         currentTime = initialTime
         
-        currentState = try solver.initializeState(time: currentTime,
-                                                  override: override,
+        currentState = try solver.initializeState(override: override,
+                                                  time: currentTime,
                                                   timeDelta: timeDelta)
 
         output.removeAll()
@@ -136,7 +136,7 @@ public class Simulator {
     /// Get data series for computed variable at given index.
     ///
     public func dataSeries(index: Int) -> [Double] {
-        return output.map { $0[index] }
+        return output.map { try! $0[index].doubleValue() }
     }
     
     /// Return a mapping of control IDs and values of their targets.
@@ -150,7 +150,7 @@ public class Simulator {
         // TODO: This is redundant, it is extracted in the control nodes
         var values: [ObjectID:Double] = [:]
         for binding in compiledModel.valueBindings {
-            values[binding.control] = currentState!.computedValues[binding.variableIndex]
+            values[binding.control] = currentState![double: binding.variableIndex]
         }
         return values
     }
@@ -158,7 +158,7 @@ public class Simulator {
     public var timePoints: [Double] {
         // TODO: We need a cleaner way how to get this.
         return output.map {
-            try! $0.builtins[compiledModel.builtinTimeIndex].doubleValue()
+            try! $0[compiledModel.timeVariableIndex].doubleValue()
         }
     }
 }

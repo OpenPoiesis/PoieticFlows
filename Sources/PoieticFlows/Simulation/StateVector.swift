@@ -7,7 +7,9 @@
 
 import PoieticCore
 
-// FIXME: [REFACTORING] Consolidate SimulationState and SimulationContext
+
+// FIXME: Consolidate SimulationState and SimulationContext?
+// FIXME: Extract the stock/flows vector
 
 /// A simple vector-like structure to hold an unordered collection of numeric
 /// values that can be accessed by key. Simple arithmetic operations can be done
@@ -16,18 +18,19 @@ import PoieticCore
 ///
 public struct SimulationState: CustomStringConvertible {
     
-    public var model: CompiledModel
-    /// Values of built-in variables.
-    public var builtins: [Variant] = []
-    /// Values of computed variables.
-    public var computedValues: [Double]
+    public typealias Index = Int
     
-    /// All values of the state variables.
-    ///
-    /// The list is a concatenation of ``builtins`` and ``values``.
-    public var allValues: [Variant] {
-        return builtins + computedValues.map { Variant($0) }
-    }
+    public var model: CompiledModel
+
+    public var values: [Variant]
+
+    // FIXME: [REFACTORING] [Swift6] No need to have all the variable types separate any more, can be one, with RangeSets
+    /// Values of built-in variables.
+//    public var builtins: [Variant] = []
+    /// Values of computed variables.
+//    public var computedValues: [Variant]
+    // FIXME: Swift 6: Replace with [Variant] and use RangeSet
+    public var internalStates: [SimulationState.Index:[Variant]]
     
     /// Create a simulation state with all variables set to zero.
     ///
@@ -36,172 +39,63 @@ public struct SimulationState: CustomStringConvertible {
     /// model.
     ///
     public init(model: CompiledModel) {
-        self.builtins = Array(repeating: Variant(0),
-                              count: model.builtinVariables.count)
-        self.computedValues = Array(repeating: 0,
-                           count: model.computedVariables.count)
         self.model = model
+        self.values = Array(repeating: Variant(0), count: model.stateVariables.count)
+        self.internalStates = [:]
     }
     
-    public init(_ items: [Double], builtins: [Variant], model: CompiledModel) {
-        precondition(items.count == model.computedVariables.count,
-                     "Count of items (\(items.count) does not match required items count \(model.computedVariables.count)")
-        self.builtins = builtins
-        self.computedValues = items
+    public init(_ values: [Variant], model: CompiledModel) {
+        precondition(values.count == model.stateVariables.count,
+                     "Count of values (\(values.count) does not match required items count \(model.stateVariables.count)")
         self.model = model
+        self.values = values
+        self.internalStates = [:]
     }
 
-    /// Get or set a computed variable at given index.
+    /// Get or set a simulation variable by reference.
     ///
     @inlinable
-    public subscript(rep: IndexRepresentable) -> Double {
+    public subscript(ref: Index) -> Variant {
         get {
-            return computedValues[rep.index]
+            return values[ref]
         }
         set(value) {
-            computedValues[rep.index] = value
+            values[ref] = value
         }
     }
     
-    /// Get or set a computed variable at given index.
+    /// Get or set a simulation variable as double by reference.
+    ///
+    /// This subscript should be used when it is guaranteed that the value
+    /// is convertible to _double_, such as values for stocks or flows.
     ///
     @inlinable
-    public subscript(index: Int) -> Double {
+    public subscript(double ref: Index) -> Double {
+        // FIXME: [REFACTORING] Alternative names: func double(at:)
         get {
-            return computedValues[index]
-        }
-        set(value) {
-            computedValues[index] = value
-        }
-    }
-    
-    /// Get or set a computed variable at given index.
-    ///
-    /// ```swift
-    ///  // Let the following two be given
-    /// let state: SimulationState
-    /// let variable: SimulationVariable
-    ///
-    /// // Fetch the value
-    /// let value: Variant = state[variable]
-    ///
-    /// // Use the value...
-    /// ```
-    ///
-    @inlinable
-    public subscript(variable: SimulationVariable) -> Variant {
-        get {
-            switch variable {
-            case let .builtin(v): return builtins[v.index]
-            case let .computed(v): return Variant(computedValues[v.index])
+            do {
+                return try values[ref].doubleValue()
+            }
+            catch {
+                fatalError("Unexpected non-double state value at \(ref)")
             }
         }
-    }
-
-    /// Create a new state with variable values multiplied by given value.
-    ///
-    /// The built-in values will remain the same.
-    ///
-    @inlinable
-    public func multiplied(by value: Double) -> SimulationState {
-        return SimulationState(computedValues.map { value * $0 },
-                               builtins: builtins,
-                               model: model)
-
-    }
-    
-    /// Create a new state by adding each value with corresponding value
-    /// of another state.
-    ///
-    /// The built-in values will remain the same.
-    ///
-    /// - Precondition: The states must be of the same length.
-    ///
-    public func adding(_ state: SimulationState) -> SimulationState {
-        precondition(model.computedVariables.count == state.model.computedVariables.count,
-                     "Simulation states must be of the same length.")
-        let result = zip(computedValues, state.computedValues).map {
-            (lvalue, rvalue) in lvalue + rvalue
+        set(value) {
+            values[ref] = Variant(value)
         }
-        return SimulationState(result,
-                               builtins: builtins,
-                               model: model)
-
     }
 
-    /// Create a new state by subtracting each value with corresponding value
-    /// of another state.
-    ///
-    /// The built-in values will remain the same.
-    ///
-    /// - Precondition: The states must be of the same length.
-    ///
-    public func subtracting(_ state: SimulationState) -> SimulationState {
-        precondition(model.computedVariables.count == state.model.computedVariables.count,
-                     "Simulation states must be of the same length.")
-        let result = zip(computedValues, state.computedValues).map {
-            (lvalue, rvalue) in lvalue - rvalue
-        }
-        return SimulationState(result,
-                               builtins: builtins,
-                               model: model)
-
-    }
     
-    /// Create a new state with variable values divided by given value.
-    ///
-    /// The built-in values will remain the same.
-    ///
-    @inlinable
-    public func divided(by value: Double) -> SimulationState {
-        return SimulationState(computedValues.map { value / $0 },
-                               builtins: builtins,
-                               model: model)
-
-    }
-
-    @inlinable
-    public static func *(lhs: Double, rhs: SimulationState) -> SimulationState {
-        return rhs.multiplied(by: lhs)
-    }
-
-    @inlinable
-    public static func *(lhs: SimulationState, rhs: Double) -> SimulationState {
-        return lhs.multiplied(by: rhs)
-    }
-    public static func /(lhs: SimulationState, rhs: Double) -> SimulationState {
-        return lhs.divided(by: rhs)
-    }
     public var description: String {
-        let builtinsStr = builtins.enumerated().map { (index, value) in
-            let builtin = model.builtinVariables[index]
-            return "\(builtin.name): \(value)"
-        }.joined(separator: ",")
-        let stateStr = computedValues.enumerated().map { (index, value) in
-            let variable = model.computedVariables[index]
-            return "\(variable.id): \(value)"
-        }.joined(separator: ", ")
-        return "[builtins(\(builtinsStr)), values(\(stateStr))]"
-    }
-    
-    public func namedDictionary() -> [String:Variant] {
-        fatalError()
+        // FIXME: [REFACTORING] [IMPORTANT] Requires state variable to have name
+        fatalError("re-implement this")
+//        let valuesString = values.enumerated().map { (index, value) in
+//            let variable = model.stateVariables[index]
+//            return "\(variable.name): \(value)"
+//        }.joined(separator: ", ")
+//        return "[\(valuesString)]"
     }
 }
 
 
-// TODO: Make proper additive arithmetic once we get rid of the map
-extension SimulationState {
-    public static func - (lhs: SimulationState, rhs: SimulationState) -> SimulationState {
-        return lhs.subtracting(rhs)
-    }
-    
-    public static func + (lhs: SimulationState, rhs: SimulationState) -> SimulationState {
-        return lhs.adding(rhs)
-    }
-    
-//    public static var zero: StateVector {
-//        return KeyedNumericVector<Key>()
-//    }
-}
 

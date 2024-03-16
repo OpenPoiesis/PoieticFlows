@@ -14,11 +14,12 @@ public class EulerSolver: Solver {
                                  at time: Double,
                                  timeDelta: Double = 1.0) throws -> SimulationState {
         let stage = try prepareStage(current, at: time, timeDelta: timeDelta)
-        let delta = try difference(at: time,
-                                   with: stage,
-                                   timeDelta: timeDelta)
+        let delta = try stockDifference(state: stage,
+                                        at: time,
+                                        timeDelta: timeDelta)
         
-        let result = stage + (delta * timeDelta)
+        var result = stage
+        addStocks(&result, delta: delta * timeDelta)
         return result
     }
 

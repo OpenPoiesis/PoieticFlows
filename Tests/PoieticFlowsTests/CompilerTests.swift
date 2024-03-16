@@ -18,6 +18,17 @@ final class TestCompiler: XCTestCase {
         frame = db.deriveFrame()
     }
     
+    func testNoComputedVariables() throws {
+        let compiler = Compiler(frame: frame)
+        // TODO: Check using violation checker
+        
+        let model = try compiler.compile()
+        
+        XCTAssertEqual(model.computedObjects.count, 0)
+        XCTAssertEqual(model.stateVariables.count,
+                       FlowsMetamodel.variables.count)
+    }
+    
     func testComputedVariables() throws {
         let compiler = Compiler(frame: frame)
         frame.createNode(ObjectType.Stock,
@@ -35,10 +46,12 @@ final class TestCompiler: XCTestCase {
         // TODO: Check using violation checker
         
         let compiled = try compiler.compile()
-        let names = compiled.computedVariables.map { $0.name }
+        let names = compiled.computedObjects.map { $0.name }
             .sorted()
         
         XCTAssertEqual(names, ["a", "b", "c"])
+        XCTAssertEqual(compiled.stateVariables.count,
+                       3 + FlowsMetamodel.variables.count)
     }
     func testBadFunctionName() throws {
         let compiler = Compiler(frame: frame)
@@ -73,7 +86,7 @@ final class TestCompiler: XCTestCase {
                                    attributes: ["formula": "if(time < 2, 0, 1)"])
         
         let compiled = try compiler.compile()
-        let names = compiled.computedVariables.map { $0.name }
+        let names = compiled.computedObjects.map { $0.name }
             .sorted()
         
         XCTAssertEqual(names, ["a"])
@@ -135,10 +148,12 @@ final class TestCompiler: XCTestCase {
         XCTAssertEqual(compiled.stocks.count, 2)
         XCTAssertEqual(compiled.stocks[0].id, source)
         XCTAssertEqual(compiled.stocks[0].inflows, [])
-        XCTAssertEqual(compiled.stocks[0].outflows, [compiled.computedVariableIndex(of: flow)])
+        XCTAssertEqual(compiled.stocks[0].outflows,
+                       [compiled.variableIndex(of: flow)])
 
         XCTAssertEqual(compiled.stocks[1].id, sink)
-        XCTAssertEqual(compiled.stocks[1].inflows, [compiled.computedVariableIndex(of: flow)])
+        XCTAssertEqual(compiled.stocks[1].inflows,
+                       [compiled.variableIndex(of: flow)])
         XCTAssertEqual(compiled.stocks[1].outflows, [])
     }
     
@@ -236,9 +251,10 @@ final class TestCompiler: XCTestCase {
 
         let boundFn = funcs.first!
         XCTAssertEqual(boundFn.id, gf)
-        XCTAssertEqual(boundFn.parameterIndex, compiled.computedVariableIndex(of:param))
+        XCTAssertEqual(boundFn.parameterIndex,
+                       compiled.variableIndex(of:param))
 
-        XCTAssertTrue(compiled.computedVariables.contains { $0.name == "g" })
+        XCTAssertTrue(compiled.computedObjects.contains { $0.name == "g" })
         
         let issues = compiler.validateParameters(aux, required: ["g"])
         XCTAssertTrue(issues.isEmpty)
@@ -261,12 +277,12 @@ final class TestCompiler: XCTestCase {
 
         let compiler = Compiler(frame: frame)
         let compiled = try compiler.compile()
-        guard let variable = compiled.variable(for: gf) else {
+        guard let object = compiled.computedObject(of: gf) else {
             XCTFail("No compiled variable for the graphical function")
             return
         }
 
-        switch variable.computation {
+        switch object.computation {
         case .formula(_): XCTFail("Graphical function compiled as formula")
         case .graphicalFunction(let fn, _):
             XCTAssertEqual(fn.name, "__graphical_\(gf)")

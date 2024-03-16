@@ -73,8 +73,8 @@ public let FlowsMetamodel = Metamodel(
     /// - ``TimeDeltaVariable``
     ///
     variables: [
-        BuiltinVariable.TimeVariable,
-        BuiltinVariable.TimeDeltaVariable,
+        Variable.TimeVariable,
+        Variable.TimeDeltaVariable,
     ],
 
     // MARK: Constraints

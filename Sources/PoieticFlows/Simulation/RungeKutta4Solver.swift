@@ -35,30 +35,31 @@ public class RungeKutta4Solver: Solver {
                                  at time: Double,
                                  timeDelta: Double = 1.0) throws -> SimulationState {
         var current = current
-
-        current.builtins = self.makeBuiltins(time: time, timeDelta: timeDelta)
-        let stage1 = try prepareStage(current, at: time, timeDelta: timeDelta)
-        let k1 = try difference(at: time,
-                                with: stage1,
-                                timeDelta: timeDelta)
-        
-        let stage2 = try prepareStage(current, at: time + timeDelta / 2, timeDelta: timeDelta)
-        let k2 = try difference(at: time + timeDelta / 2,
-                                with: stage2 + (timeDelta / 2) * k1,
-                                timeDelta: timeDelta / 2)
-        
-        let stage3 = try prepareStage(current, at: time + timeDelta / 2, timeDelta: timeDelta)
-        let k3 = try difference(at: time + timeDelta / 2,
-                                with: stage3 + (timeDelta / 2) * k2,
-                                timeDelta: timeDelta / 2)
-        
-        
-        let stage4 = try prepareStage(current, at: time, timeDelta: timeDelta)
-        let k4 = try difference(at: time,
-                                with: stage4 + timeDelta * k3,
-                                timeDelta: timeDelta)
-
-        let result = current + (1.0/6.0) * timeDelta * (k1 + (2*k2) + (2*k3) + k4)
-        return result
+        // FIXME: [IMPORTANT] [REFACTORING]
+        fatalError("FIX THIS")
+//        current.builtins = self.makeBuiltins(time: time, timeDelta: timeDelta)
+//        let stage1 = try prepareStage(current, at: time, timeDelta: timeDelta)
+//        let k1 = try stockDifference(state: stage1,
+//                                     at: time,
+//                                     timeDelta: timeDelta)
+//        
+//        let stage2 = try prepareStage(current, at: time + timeDelta / 2, timeDelta: timeDelta)
+//        let k2 = try difference(at: time + timeDelta / 2,
+//                                with: stage2 + (timeDelta / 2) * k1,
+//                                timeDelta: timeDelta / 2)
+//        
+//        let stage3 = try prepareStage(current, at: time + timeDelta / 2, timeDelta: timeDelta)
+//        let k3 = try difference(at: time + timeDelta / 2,
+//                                with: stage3 + (timeDelta / 2) * k2,
+//                                timeDelta: timeDelta / 2)
+//        
+//        
+//        let stage4 = try prepareStage(current, at: time, timeDelta: timeDelta)
+//        let k4 = try difference(at: time,
+//                                with: stage4 + timeDelta * k3,
+//                                timeDelta: timeDelta)
+//
+//        let result = current + (1.0/6.0) * timeDelta * (k1 + (2*k2) + (2*k3) + k4)
+//        return result
     }
 }

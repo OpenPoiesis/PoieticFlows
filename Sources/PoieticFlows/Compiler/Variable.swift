@@ -16,32 +16,29 @@ import PoieticCore
 /// in the simulation. A stock, a flow or an auxiliary - they all are state
 /// variables.
 ///
-public struct ComputedVariable: IndexRepresentable, CustomStringConvertible {
-    // TODO: Is not this too fat?
-    // TODO: Rename to ComputedVariable, ObjectVariable, NodeVariable
-    
+public struct ComputedObject: CustomStringConvertible {
     /// ID of the object, usually a node, that represents the variable.
     public let id: ObjectID
     
     /// Index of the variable in the simulation state vector.
-    public let index: VariableIndex
+    ///
+    public let variableIndex: Int
     
-    /// Type of the computation of the variable.
+    /// Type of the variable value.
+    ///
+    public var valueType: ValueType
+    
+    /// Type denoting how the object is being computed.
+    ///
     public let computation: ComputationalRepresentation
     
-    public var valueType: ValueType { computation.valueType }
-    
     /// Name of the variable.
+    ///
     public let name: String
     
     public var description: String {
-        "var(\(name), id:\(id), idx:\(index))"
+        "var(\(name), id:\(id), idx:\(variableIndex))"
     }
-}
-
-public struct BoundBuiltinVariable {
-    public let builtin: BuiltinVariable
-    public let index: VariableIndex
 }
 
 /// Type of the simulation variable.
@@ -57,83 +54,38 @@ public enum SimulationVariableType: String {
     case builtin
 }
 
-/// Representation of a variable in a simulation.
+/// Reference to a variable.
 ///
-/// This structure provides information about a variable used in the simulation.
-/// Variable can be built-in or computed. The computed variable is representing
-/// a node in the model, typically a node with a formula.
+/// The variable reference is used in arithmetic expressions and might represent
+/// a built-in variable provided by the application or a value of an object.
 ///
-/// The structure can be used directly to fetch a variable value from a state
-/// vector:
+/// One object can represent only one variable.
 ///
-/// ```swift
-///  // Let the following two be given
-/// let state: SimulationState
-/// let variable: SimulationVariable
-///
-/// // Fetch the value
-/// let value: Variant = state[variable]
-///
-/// // Use the value...
-/// ```
-///
-public enum SimulationVariable {
-    // TODO: Reference where the variables are defined
-    /// Represents a built-in variable – a variable which value is provided
-    /// by the simulation system.
+public enum StateVariableContent: Hashable, CustomStringConvertible {
+    /// The variable is represented by an object with given object ID.
     ///
-    case builtin(BoundBuiltinVariable)
+    case object(ObjectID)
+    // TODO: point to computed object
     
-    /// A variable that corresponds to a node of the model. The variable
-    /// is computed during the simulation, for example from a node
-    /// with the ``/PoieticCore/Trait/Formula`` trait.
+    /// The variable is a built-in variable.
     ///
-    case computed(ComputedVariable)
+    case builtin(BuiltinVariable)
     
-    /// Type of the simulation variable.
-    ///
-    public var type: SimulationVariableType {
-        switch self {
-        case .builtin: .builtin
-        case .computed: .computed
+    // FIXME: Add Stateful function state.
+    // case state(Int)
+    
+    public static func ==(lhs: StateVariableContent, rhs: StateVariableContent) -> Bool {
+        switch (lhs, rhs) {
+        case let (.object(left), .object(right)): return left == right
+        case let (.builtin(left), .builtin(right)): return left == right
+        default: return false
         }
     }
-    
-    /// Index of the variable in the corresponding list of state vector
-    /// variables.
-    ///
-    /// The index refers to an index either in a built-in variable list or
-    /// to an index within computed variable list, depends on the
-    /// variable type.
-    ///
-    public var index: VariableIndex {
+
+    public var description: String {
         switch self {
-        case let .builtin(builtin): builtin.index
-        case let .computed(computed): computed.index
-        }
-    }
-    
-    /// Name of the variable.
-    ///
-    /// Convenience attribute that uses the name from the underlying variable
-    /// type.
-    ///
-    public var name: String {
-        switch self {
-        case let .builtin(builtin): builtin.builtin.name
-        case let .computed(computed): computed.name
-        }
-    }
-    
-    /// ID of a simulation node that the variable represents, if the variable
-    /// represents a node.
-    ///
-    /// ID is `nil` when the variable is a built-in variable.
-    ///
-    public var id: ObjectID? {
-        switch self {
-        case .builtin(_): nil
-        case .computed(let computed): computed.id
+        case .object(let id): "object(\(id))"
+        case .builtin(let variable): "builtin(\(variable))"
         }
     }
 }
@@ -144,25 +96,53 @@ public enum SimulationVariable {
 /// compiler. It provides information about where a particular simulation
 /// variable can be found in the simulation state.
 ///
-public struct BoundVariableReference: CustomStringConvertible, TypedValue {
-    /// Reference to a variable.
-    ///
-    public let variable: VariableReference
+/// This structure provides information about a variable used in the simulation.
+/// Variable can be built-in or computed. The computed variable is representing
+/// a node in the model, typically a node with a formula.
+///
+public struct StateVariable: CustomStringConvertible, TypedValue {
+    // TODO: Rename to SimulationVariable
+    // FIXME: Add name
 
-    /// Computed type
-    public let valueType: ValueType
-    public var unionType: UnionType {
-        .concrete(valueType)
+    /// Index of the variable's value in a simulation state.
+    ///
+    public let index: Int
+
+    /// Content of the state variable - whether it is an object or a builtin.
+    ///
+    public let content: StateVariableContent
+
+    /// Type of the simulation variable.
+    ///
+    public var type: SimulationVariableType {
+        switch content {
+        case .builtin: .builtin
+            // FIXME: Rename computed to object
+        case .object: .computed
+        }
     }
 
-    /// Index in the ``SimulationState`` where the variable value is contained.
-    /// For variables representing simulation objects, the index is into the
-    /// ``SimulationState/computedValues``, for variables representing built-ins, the
-    /// index is into the ``SimulationState/builtins``.
-    public let index: Int
     
+    /// Variable value type
+    ///
+    public let valueType: ValueType
+
+    public let name: String
+    
+    /// ID of a simulation node that the variable represents, if the variable
+    /// represents a node.
+    ///
+    /// ID is `nil` when the variable is a built-in variable.
+    ///
+    public var objectID: ObjectID? {
+        switch content {
+        case .builtin(_): nil
+        case .object(let id): id
+        }
+    }
+
     public var description: String {
-        "(\(index),\(variable))"
+        "\(name)@\(index):\(type):\(valueType)"
     }
 }
 

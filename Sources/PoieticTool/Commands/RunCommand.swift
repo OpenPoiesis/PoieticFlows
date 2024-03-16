@@ -80,12 +80,12 @@ extension PoieticTool {
 
             // Collect names of nodes to be observed
             // -------------------------------------------------------------
-            let variables = compiledModel.allVariables
+            let variables = compiledModel.stateVariables
             if outputNames.isEmpty {
                 outputNames = Array(variables.map {$0.name})
             }
             else {
-                let allNames = compiledModel.allVariables.map { $0.name }
+                let allNames = compiledModel.stateVariables.map { $0.name }
                 let unknownNames = outputNames.filter {
                     !allNames.contains($0)
                 }
@@ -94,7 +94,7 @@ extension PoieticTool {
                 }
             }
             // TODO: We do not need this any more
-            var outputVariables: [SimulationVariable] = []
+            var outputVariables: [StateVariable] = []
             for name in outputNames {
                 let variable = variables.first { $0.name == name }!
                 outputVariables.append(variable)
@@ -150,7 +150,7 @@ extension PoieticTool {
 }
 
 func writeCSV(path: String,
-              variables: [SimulationVariable],
+              variables: [StateVariable],
               states: [SimulationState]) throws {
     let header: [String] = variables.map { $0.name }
 
@@ -166,7 +166,7 @@ func writeCSV(path: String,
     for state in states {
         var row: [String] = []
         for variable in variables {
-            let value = state[variable]
+            let value = state[variable.index]
             row.append(try value.stringValue())
         }
         try writer.write(row: row)
@@ -193,13 +193,13 @@ func writeGnuplotBundle(path: String,
                         output: [SimulationState]) throws {
     let path = if path == "-" { "." } else { path }
     let view = StockFlowView(frame)
-    let variables = compiledModel.allVariables
+    let variables = compiledModel.stateVariables
     let fm = FileManager()
     try fm.createDirectory(atPath: path, withIntermediateDirectories: true)
     let dataFileName = "output.csv"
     // Write all the output
     try writeCSV(path: path + "/" + dataFileName,
-                 variables: compiledModel.allVariables,
+                 variables: compiledModel.stateVariables,
                  states: output)
     
     let timeIndex = variables.firstIndex { $0.name == "time" }!

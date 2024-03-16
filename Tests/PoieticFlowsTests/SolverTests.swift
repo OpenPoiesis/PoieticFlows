@@ -12,10 +12,12 @@ import XCTest
 extension SimulationState {
     public subscript(id: ObjectID) -> Double {
         get {
-            return computedValues[model.computedVariableIndex(of: id)!]
+            let index = model.variableIndex(of: id)!
+            return try! values[index].doubleValue()
         }
         set(value) {
-            computedValues[model.computedVariableIndex(of: id)!] = value
+            let index = model.variableIndex(of: id)!
+            values[index] = Variant(value)
         }
     }
 }
@@ -104,13 +106,14 @@ final class TestSolver: XCTestCase {
     func testTime() throws {
         let compiled = try compiler.compile()
         let solver = EulerSolver(compiled)
+        let timeIndex = compiled.timeVariableIndex
         
         var state = try solver.initializeState(time: 10.0)
-        XCTAssertEqual(state.builtins[0], 10.0)
+        XCTAssertEqual(state[timeIndex], 10.0)
         state = try solver.compute(state, at: 20.0 )
-        XCTAssertEqual(state.builtins[0], 20.0)
+        XCTAssertEqual(state[timeIndex], 20.0)
         state = try solver.compute(state, at: 30.0 )
-        XCTAssertEqual(state.builtins[0], 30.0)
+        XCTAssertEqual(state[timeIndex], 30.0)
         
     }
     
@@ -156,9 +159,9 @@ final class TestSolver: XCTestCase {
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
-        let diff = try solver.difference(at: 1.0, with: initial)
+        let diff = try solver.stockDifference(state: initial, at: 1.0)
         
-        XCTAssertEqual(diff[stock], -10)
+        XCTAssertEqual(diff[compiled.stockIndex(stock)], -10)
     }
     
     func testNonNegativeStock() throws {
@@ -178,9 +181,9 @@ final class TestSolver: XCTestCase {
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
-        let diff = try solver.difference(at: 1.0, with: initial)
-        
-        XCTAssertEqual(diff[stock], -5)
+        let diff = try solver.stockDifference(state: initial, at: 1.0)
+
+        XCTAssertEqual(diff[compiled.stockIndex(stock)], -5)
     }
     // TODO: Also negative outflow
     func testNonNegativeStockNegativeInflow() throws {
@@ -200,9 +203,9 @@ final class TestSolver: XCTestCase {
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
-        let diff = try solver.difference(at: 1.0, with: initial)
-        
-        XCTAssertEqual(diff[stock], 0)
+        let diff = try solver.stockDifference(state: initial, at: 1.0)
+
+        XCTAssertEqual(diff[compiled.stockIndex(stock)], 0)
     }
     
     func testStockNegativeOutflow() throws {
@@ -222,9 +225,9 @@ final class TestSolver: XCTestCase {
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
-        let diff = try solver.difference(at: 1.0, with: initial)
-        
-        XCTAssertEqual(diff[stock], 0)
+        let diff = try solver.stockDifference(state: initial, at: 1.0)
+
+        XCTAssertEqual(diff[compiled.stockIndex(stock)], 0)
     }
     
     func testNonNegativeToTwo() throws {
@@ -284,19 +287,19 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(state[happyFlow], 10)
         XCTAssertEqual(state[sadFlow], 10)
         
-        let sourceDiff = solver.computeStockDelta(source, at: 0, with: &state)
+        let sourceDiff = try solver.computeStockDelta(source, at: 0, with: &state)
         // Adjusted flow to actual outflow
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(sourceDiff,         -5.0)
         
-        let happyDiff = solver.computeStockDelta(happy, at: 0, with: &state)
+        let happyDiff = try solver.computeStockDelta(happy, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
         XCTAssertEqual(happyDiff,          +5.0)
         
-        let sadDiff = solver.computeStockDelta(sad, at: 0, with: &state)
+        let sadDiff = try solver.computeStockDelta(sad, at: 0, with: &state)
         // Remains the same as above
         XCTAssertEqual(state[happyFlow],  5.0)
         XCTAssertEqual(state[sadFlow],    0.0)
@@ -307,11 +310,11 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(initial[sadFlow], 10)
         
         
-        let diff = try solver.difference(at: 1.0, with: initial)
+        let diff = try solver.stockDifference(state: initial, at: 1.0)
         
-        XCTAssertEqual(diff[source], -5)
-        XCTAssertEqual(diff[happy],  +5)
-        XCTAssertEqual(diff[sad],     0)
+        XCTAssertEqual(diff[compiled.stockIndex(source)], -5)
+        XCTAssertEqual(diff[compiled.stockIndex(happy)],  +5)
+        XCTAssertEqual(diff[compiled.stockIndex(sad)],     0)
     }
     
     func testDifference() throws {
@@ -333,11 +336,11 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         
-        var state = try solver.initializeState(time: 1.0)
-        
-        state = try solver.difference(at: 1.0, with: state, timeDelta: 1.0)
-        XCTAssertEqual(state[kettle], -100.0)
-        XCTAssertEqual(state[cup], 100.0)
+        let state = try solver.initializeState(time: 1.0)
+        let diff = try solver.stockDifference(state: state, at: 1.0, timeDelta: 1.0)
+
+        XCTAssertEqual(diff[compiled.stockIndex(kettle)], -100.0)
+        XCTAssertEqual(diff[compiled.stockIndex(cup)], 100.0)
     }
     
     func testDifferenceTimeDelta() throws {
@@ -359,11 +362,11 @@ final class TestSolver: XCTestCase {
         let compiled = try compiler.compile()
         let solver = Solver(compiled)
         
-        var state = try solver.initializeState(time: 0.0)
-        
-        state = try solver.difference(at: 1.0, with: state, timeDelta: 0.5)
-        XCTAssertEqual(state[kettle], -50.0)
-        XCTAssertEqual(state[cup], 50.0)
+        let state = try solver.initializeState(time: 0.0)
+        let diff = try solver.stockDifference(state: state, at: 1.0, timeDelta: 0.5)
+
+        XCTAssertEqual(diff[compiled.stockIndex(kettle)], -50.0)
+        XCTAssertEqual(diff[compiled.stockIndex(cup)], 50.0)
     }
 
     
@@ -483,18 +486,18 @@ final class TestSolver: XCTestCase {
         
         var state = try solver.initializeState(time: 0.0)
        
-        let index = compiled.computedVariableIndex(of: aux)!
+        let index = compiled.variableIndex(of: aux)!
         
-        XCTAssertEqual(state.computedValues[index], 0.0)
+        XCTAssertEqual(state[index], 0.0)
         
         state = try solver.compute(state, at: 1.0)
-        XCTAssertEqual(state.computedValues[index], 0.0)
+        XCTAssertEqual(state[index], 0.0)
 
         state = try solver.compute(state, at: 2.0)
-        XCTAssertEqual(state.computedValues[index], 1.0)
+        XCTAssertEqual(state[index], 1.0)
 
         state = try solver.compute(state, at: 3.0)
-        XCTAssertEqual(state.computedValues[index], 1.0)
+        XCTAssertEqual(state[index], 1.0)
     }
 
 }

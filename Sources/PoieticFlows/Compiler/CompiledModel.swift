@@ -7,13 +7,19 @@
 
 import PoieticCore
 
-/// Index of a simulation variable that is represented by an object.
-///
-/// The index is used to refer to a variable value in the
-/// ``SimulationState/allValues`` vector.
-///
-/// - SeeAlso: ``SimulationState``
-public typealias VariableIndex = Int
+public enum BuiltinVariable: Equatable, CustomStringConvertible {
+    case time
+    case timeDelta
+//    case initialTime
+//    case endTime
+    
+    public var description: String {
+        switch self {
+        case .time: "time"
+        case .timeDelta: "time_delta"
+        }
+    }
+}
 
 /// Representation of a node in the simulation denoting how the node will
 /// be computed.
@@ -25,8 +31,14 @@ public enum ComputationalRepresentation: CustomStringConvertible {
     
     /// Graphic function representation of a node.
     ///
-    case graphicalFunction(Function, VariableIndex)
-   
+    /// The first value is a generated function for computing the values. The
+    /// second value of the tuple is an index of a state variable representing
+    /// the function's parameter node.
+    /// 
+    case graphicalFunction(Function, SimulationState.Index)
+  
+//    case statefulFunction(StatefulFunction, [VariableIndex])
+    
     public var valueType: ValueType {
         switch self {
         case let .formula(formula):
@@ -56,23 +68,9 @@ public struct CompiledControlBinding {
     public let control: ObjectID
     
     /// Index of the simulation variable that the control controls.
-    public let variableIndex: VariableIndex
+    public let variableIndex: SimulationState.Index
 }
 
-// FIXME: [REFACTORING] Remove this. A bit of over-engineering.
-/// Protocol for structures and objects that contain or represent an index.
-///
-/// Typically compiled equivalents of various simulation types contain an
-/// index referring to their corresponding simulation variable. This
-/// protocol makes it more convenient to be used as indices directly, reducing
-/// noise in the code.
-///
-/// This is rather a cosmetic protocol.
-///
-public protocol IndexRepresentable {
-//    var id: ObjectID { get }
-    var index: VariableIndex { get }
-}
 
 /// Compiled representation of the stock.
 ///
@@ -80,7 +78,7 @@ public protocol IndexRepresentable {
 ///
 /// - SeeAlso: ``Solver/computeStockDelta(_:at:with:)``
 ///
-public struct CompiledStock: IndexRepresentable {
+public struct CompiledStock {
     /// Object ID of the stock that this compiled structure represents.
     ///
     /// This is used mostly for inspection and debugging purposes.
@@ -91,7 +89,7 @@ public struct CompiledStock: IndexRepresentable {
     ///
     /// This is the main information used during the computation.
     ///
-    public let index: VariableIndex
+    public let variableIndex: SimulationState.Index
     
     /// Flag whether the value of the node can be negative.
     public var allowsNegative: Bool = false
@@ -114,29 +112,29 @@ public struct CompiledStock: IndexRepresentable {
     ///
     /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
     ///
-    public let inflows: [VariableIndex]
+    public let inflows: [SimulationState.Index]
 
     /// List indices of simulation variables representing flows
     /// which drain the stock.
     ///
     /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
     ///
-    public let outflows: [VariableIndex]
+    public let outflows: [SimulationState.Index]
 }
 
-public struct CompiledFlow: IndexRepresentable {
+public struct CompiledFlow {
     /// Object ID of the flow that this compiled structure represents.
     ///
     /// This is used mostly for inspection and debugging purposes.
     ///
     public let id: ObjectID
 
+    public let variableIndex: SimulationState.Index
     /// Index in of the simulation state variable that represents the flow.
     ///
     /// This is the main information used during the computation.
     ///
-    public let index: VariableIndex
-
+    public let objectIndex: Int
     /// Component representing the flow as it was at the time of compilation.
     ///
     public let priority: Int
@@ -151,23 +149,25 @@ public struct CompiledFlow: IndexRepresentable {
 /// It is used for example for nodes of type auxiliary –
 /// ``/PoieticCore/ObjectType/Auxiliary``.
 ///
-public struct CompiledObject: IndexRepresentable {
+public struct CompiledAuxiliary {
     public let id: ObjectID
-    public let index: VariableIndex
+    public let variableIndex: SimulationState.Index
+    // Index into list of simulation objects
+    public let objectIndex: Int
 }
 
 /// A structure representing a concrete instance of a graphical function
 /// in the context of a graph.
 ///
-public struct CompiledGraphicalFunction: IndexRepresentable {
+public struct CompiledGraphicalFunction {
     /// ID of a node where the function is defined
     public let id: ObjectID
-    public let index: VariableIndex
+    public let variableIndex: SimulationState.Index
     
     /// The function object itself
     public let function: Function
     /// ID of a node that is a parameter for the function.
-    public let parameterIndex: VariableIndex
+    public let parameterIndex: SimulationState.Index
 }
 
 // TODO: Not used
@@ -197,37 +197,32 @@ public struct SimulationDefaults {
 public struct CompiledModel {
     // TODO: Alternative names: InternalRepresentation, SimulableRepresentation, SRep, ResolvedModel, ExecutableModel
     
-    /// List of builtin variables.
+    /// List of simulation state variables.
     ///
-    /// Used in computation to set built-in variable values such as time,
-    /// time delta.
+    /// The list of state variables contain values of builtins, values of
+    /// nodes and values of internal states.
     ///
-    /// - SeeAlso: ``builtinTimeIndex``, ``allVariables``
+    /// Each node is typically assigned one state variable which represents
+    /// the node's value at given state. Some nodes might contain internal
+    /// state that might be present in multiple state variables.
     ///
-    public let builtinVariables: [BuiltinVariable]
+    /// The internal state is typically not user-presentable and is a state
+    /// associated with stateful functions or other computation objects.
+    ///
+    /// - SeeAlso: ``Compiler/stateVariables``
+    ///
+    public let stateVariables: [StateVariable]
     
-    /// Index of _time_ variable within built-ins.
-    ///
-    /// This property is not used during computation, it is provided for
-    /// consumers of the computation state.
-    ///
-    /// - SeeAlso: ``builtinVariables``, ``timeResultIndex``
-    ///
-    public let builtinTimeIndex: VariableIndex
-    
-    /// Index of time variable within all variables.
-    ///
-    /// This property is not used during computation, it is provided for
-    /// consumers of the computation state.
-    ///
-    /// - SeeAlso: ``allVariables``, ``builtinTimeIndex``
-    ///
-    public var timeResultIndex: VariableIndex {
-        // The same as built-in index, since the list of variables is createded
-        // by concatenating builtins + computed.
-        builtinTimeIndex
-    }
 
+    /// List of compiled builtin variables.
+    ///
+    /// The compiled builtin variable references a state variable that holds
+    /// the value for the builtin variable and a kind of the builtin variable.
+    ///
+    /// - SeeAlso: ``stateVariables``, ``CompiledBuiltin``, ``Variable``,
+    ///   ``FlowsMetamodel``
+    ///
+    public let builtins: [CompiledBuiltin]
     /// List of variables that are computed, ordered by computational dependency.
     ///
     /// The variables are ordered so that variables that do not require other
@@ -244,44 +239,12 @@ public struct CompiledModel {
     ///
     /// - SeeAlso: ``computedVariableIndex(of:)``
     ///
-    public let computedVariables: [ComputedVariable]
+    public let computedObjects: [ComputedObject]
+
     
-    
-    /// List of all simulation variables: built-in and computed.
+    /// Index of _time_ variable within the state variables.
     ///
-    /// To fetch values from a simulation state:
-    ///
-    /// ```swift
-    /// // Let the following two be given
-    /// let model: CompiledModel
-    /// let state: SimulationState
-    ///
-    /// // Print values from the state
-    /// for variable in model.allVariables {
-    ///     let value = state[variable]
-    ///     print("\(variable.name): \(value)"
-    /// }
-    /// ```
-    ///
-    /// This property is _not_ used during computation. It is provided for
-    /// controllers (tools) of the simulation or for consumers of the result.
-    ///
-    /// - SeeAlso: ``resultIndex(of:)``
-    ///
-    public var allVariables: [SimulationVariable] {
-        // TODO: Don't compute, materialize?
-        var result: [SimulationVariable] = []
-        
-        for (index, builtin) in builtinVariables.enumerated() {
-            let variable = BoundBuiltinVariable(builtin: builtin, index: index)
-            result.append(SimulationVariable.builtin(variable))
-        }
-        for computed in computedVariables {
-            result.append(SimulationVariable.computed(computed))
-        }
- 
-        return result
-    }
+    public let timeVariableIndex: SimulationState.Index
     
     
     /// Get index into a list of computed variables for an object with given ID.
@@ -292,30 +255,16 @@ public struct CompiledModel {
     /// - Complexity: O(n)
     /// - SeeAlso: ``resultIndex(of:)``
     ///
-    public func computedVariableIndex(of id: ObjectID) -> VariableIndex? {
+    public func variableIndex(of id: ObjectID) -> SimulationState.Index? {
         // TODO: Do we need a pre-computed map here or are we fine with O(n)?
         // Since this is just for debug purposes, O(n) should be fine, no need
         // for added complexity of the code.
-        return computedVariables.firstIndex { $0.id == id }
+        guard let first = computedObjects.first(where: {$0.id == id}) else {
+            return nil
+        }
+        return first.variableIndex
     }
    
-    
-    /// Get absolute index of an object-represented variable.
-    ///
-    /// Absolute index is an index to the list of all variables.
-    ///
-    /// This function is not used during computation, it is provided for
-    /// consumers of the simulation state or simulation result.
-    ///
-    /// - SeeAlso: ``allVariables``, ``computedVariableIndex(of:)``
-    ///
-    public func resultIndex(of id: ObjectID) -> VariableIndex? {
-        // TODO: Do we need a pre-computed map here or are we fine with O(n)?
-        // Since this is just for debug purposes, O(n) should be fine, no need
-        // for added complexity of the code.
-        return allVariables.firstIndex { $0.id == id }
-    }
-
     
     /// Get a simulation variable for an object with given ID, if exists.
     ///
@@ -324,8 +273,8 @@ public struct CompiledModel {
     ///
     /// - Complexity: O(n)
     ///
-    public func variable(for id: ObjectID) -> ComputedVariable? {
-        return computedVariables.first { $0.id == id }
+    public func computedObject(of id: ObjectID) -> ComputedObject? {
+        return computedObjects.first { $0.id == id }
         
     }
 
@@ -369,7 +318,7 @@ public struct CompiledModel {
     ///
     /// - SeeAlso: ``Solver/difference(at:with:timeDelta:)``,
     ///
-    public let auxiliaries: [CompiledObject]
+    public let auxiliaries: [CompiledAuxiliary]
     
     /// List of charts.
     ///
@@ -393,10 +342,10 @@ public struct CompiledModel {
     /// consumers of the simulation state or simulation result.
     ///
     public var graphicalFunctions: [CompiledGraphicalFunction] {
-        let vars: [CompiledGraphicalFunction] = computedVariables.compactMap {
+        let vars: [CompiledGraphicalFunction] = computedObjects.compactMap {
             if case let .graphicalFunction(fun, param) = $0.computation {
                 return CompiledGraphicalFunction(id: $0.id,
-                                                 index: $0.index,
+                                                 variableIndex: $0.variableIndex,
                                                  function: fun,
                                                  parameterIndex: param)
             }
@@ -424,8 +373,26 @@ public struct CompiledModel {
     ///
     /// - Complexity: O(n)
     ///
-    public func variable(named name: String) -> ComputedVariable? {
-        return computedVariables.first { $0.name == name }
+    public func variable(named name: String) -> ComputedObject? {
+        guard let object = computedObjects.first(where: { $0.name == name}) else {
+            return nil
+        }
+                 
+        return object
+    }
+    
+    /// Index of a stock in a list of stocks or in a stock difference vector.
+    ///
+    /// This function is not used during computation. It is provided for
+    /// potential inspection, testing and debugging.
+    ///
+    /// - Precondition: The compiled model must contain a stock with given ID.
+    ///
+    public func stockIndex(_ id: ObjectID) -> NumericVector.Index {
+        guard let index = stocks.firstIndex(where: { $0.id == id }) else {
+            fatalError("The compiled model does not contain stock with ID \(id)")
+        }
+        return index
     }
 }
 

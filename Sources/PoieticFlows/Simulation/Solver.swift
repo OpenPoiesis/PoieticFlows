@@ -140,37 +140,37 @@ public class Solver {
         self.constants = [:]
     }
 
-    /// Get builtins vector.
+    /// Create a new simulation state.
     ///
-    public func makeBuiltins(time: Double,
-                         timeDelta: Double) -> [Variant] {
-        var builtins: [Variant] = Array(repeating: Variant(0.0),
-                                             count: compiledModel.builtinVariables.count)
-        for (index, builtin) in compiledModel.builtinVariables.enumerated() {
-            let value: Variant
-            if builtin === BuiltinVariable.TimeVariable {
-                 value = Variant(time)
-            }
-            else if builtin === BuiltinVariable.TimeDeltaVariable {
-                 value = Variant(timeDelta)
-            }
-            else {
-                fatalError("Unknown builtin variable: \(builtin)")
-            }
-            builtins[index] = value
-        }
-        return builtins
-    }
-    /// Create a state vector with node variables set to zero while preserving
-    /// the built-in variables.
-    public func zeroState(time: Double = 0.0,
-                          timeDelta: Double = 1.0) -> SimulationState {
+    /// All variables except built-ins will be set to _0.0_ (zero).
+    ///
+    /// The state will have built-ins initialized to their corresponding values.
+    ///
+    public func newState(time: Double = 0.0,
+                                timeDelta: Double = 1.0) -> SimulationState {
         var state = SimulationState(model: compiledModel)
-        state.builtins = makeBuiltins(time: time,
-                                      timeDelta: timeDelta)
+        setBuiltins(&state, time: time, timeDelta: timeDelta)
+
         return state
     }
+    public func setBuiltins(_ state: inout SimulationState,
+                            time: Double = 0.0,
+                            timeDelta: Double = 1.0) {
+        
+        for variable in compiledModel.builtins {
+            let value: Variant
+
+            switch variable.builtin {
+            case .time:
+                value = Variant(time)
+            case .timeDelta:
+                value = Variant(timeDelta)
+            }
+            state[variable.variableIndex] = value
+        }
+    }
    
+
 
     /// Evaluate an expression within the context of a simulation state.
     ///
@@ -182,50 +182,50 @@ public class Solver {
     ///
     /// - Returns: an evaluated value of the expression.
     ///
-    public func evaluate(variable index: VariableIndex,
-                         with state: SimulationState,
-                         at time: Double,
-                         timeDelta: Double = 1.0) throws -> Variant {
-        let variable = compiledModel.computedVariables[index]
-
-        if let value = constants[variable.id] {
+    public func evaluate(objectAt index: Int,
+                         with state: SimulationState) throws -> Variant {
+        let object = compiledModel.computedObjects[index]
+        if let value = constants[object.id] {
             return value
         }
         
-        switch variable.computation {
+        switch object.computation {
 
         case let .formula(expression):
             return try evaluate(expression: expression,
-                                with: state,
-                                at: time,
-                                timeDelta: timeDelta)
+                                with: state)
             
         case let .graphicalFunction(function, index):
-            let value = Variant(state[index])
+            let value = state[index]
             return try function.apply([value])
+//        case let .statefulFunction(function, indices):
+//            
+//            let values = state.allValues.
         }
     }
 
     public func evaluate(expression: BoundExpression,
-                         with state: SimulationState,
-                         at time: Double,
-                         timeDelta: Double = 1.0) throws -> Variant {
-        var state = state
-        
-        /// Set built-in variables in the state
-        for (index, builtin) in compiledModel.builtinVariables.enumerated() {
-            if builtin === BuiltinVariable.TimeVariable {
-                state.builtins[index] = Variant(time)
+                         with state: SimulationState) throws -> Variant {
+        switch expression {
+        case let .value(value):
+            return value
+
+        case let .binary(op, lhs, rhs):
+            return try op.apply([try evaluate(expression: lhs, with: state),
+                                 try evaluate(expression: rhs, with: state)])
+
+        case let .unary(op, operand):
+            return try op.apply([try evaluate(expression: operand, with: state)])
+
+        case let .function(functionRef, arguments):
+            let evaluatedArgs = try arguments.map {
+                try evaluate(expression: $0, with: state)
             }
-            else if builtin === BuiltinVariable.TimeDeltaVariable {
-                state.builtins[index] = Variant(timeDelta)
-            }
-            else {
-                fatalError("Unknown builtin variable: \(builtin)")
-            }
+            return try functionRef.apply(evaluatedArgs)
+
+        case let .variable(variable):
+            return state[variable.index]
         }
-        
-        return try expression.evaluate(state)
     }
 
     /// Initialise the computation state.
@@ -254,26 +254,28 @@ public class Solver {
     /// - Note: Values for stocks in the `override` dictionary will be used
     ///   only during initialisation.
     ///
-    public func initializeState(time: Double = 0.0,
-                                override: [ObjectID:Double] = [:],
+    public func initializeState(override: [ObjectID:Double] = [:],
+                                time: Double = 0.0,
                                 timeDelta: Double = 1.0) throws -> SimulationState {
+
+        // FIXME: make override [ObjectID:Variant] and validate types(?)
         self.constants = [:]
-        
-        var state = zeroState(time: time, timeDelta: timeDelta)
-        for variable in compiledModel.computedVariables {
-            if let value = override[variable.id] {
-                state[variable] = value
+        var state = newState(time: time, timeDelta: timeDelta)
+        for (index, object) in compiledModel.computedObjects.enumerated() {
+            if let value = override[object.id] {
+                state[object.variableIndex] = Variant(value)
 
                 // Keep only overrides for auxiliaries
-                if compiledModel.auxiliaries.contains(where: { $0.id == variable.id }) {
-                    self.constants[variable.id] = Variant(value)
+                // FIXME: [REFACTORING] simplify
+                // TODO: Introduce object.type enum? or isAuxiliary? (too specific)
+                if compiledModel.auxiliaries.contains(where: { $0.id == object.id }) {
+                    self.constants[object.id] = Variant(value)
                 }
             }
             else {
-                let result = try evaluate(variable: variable.index,
-                                          with: state,
-                                          at: time)
-                state[variable] = try result.doubleValue()
+                let result = try evaluate(objectAt: index,
+                                          with: state)
+                state[object.variableIndex] = result
             }
         }
         
@@ -282,12 +284,12 @@ public class Solver {
     /// - Important: Do not use for anything but testing or debugging.
     ///
     func computeStockDelta(_ id: ObjectID,
-                      at time: Double,
-                      with state: inout SimulationState) -> Double {
+                           at time: Double,
+                           with state: inout SimulationState) throws -> Double {
         let stock = compiledModel.compiledStock(id)
-        return self.computeStockDelta(stock,
-                                 at: time,
-                                 with: &state)
+        return try self.computeStockDelta(stock,
+                                          at: time,
+                                          with: &state)
     }
     
     // TODO: [RELEASE] Review documentation
@@ -315,7 +317,7 @@ public class Solver {
     ///
     public func computeStockDelta(_ stock: CompiledStock,
                                   at time: Double,
-                                  with state: inout SimulationState) -> Double {
+                                  with state: inout SimulationState) throws -> Double {
         var totalInflow: Double = 0.0
         var totalOutflow: Double = 0.0
         
@@ -323,12 +325,12 @@ public class Solver {
         //
         for inflow in stock.inflows {
             // TODO: All flows are uni-flows for now. Ignore negative inflows.
-            totalInflow += max(state[inflow], 0)
+            totalInflow += max(state[double: inflow], 0)
         }
         
         if stock.allowsNegative {
             for outflow in stock.outflows {
-                totalOutflow += state[outflow]
+                totalOutflow += state[double: outflow]
             }
         }
         else {
@@ -349,7 +351,7 @@ public class Solver {
             // Maximum outflow that we can drain from the stock. It is the
             // current value of the stock with aggregate of all inflows.
             //
-            var availableOutflow: Double = state[stock] + totalInflow
+            var availableOutflow: Double = state[double: stock.variableIndex] + totalInflow
             let initialAvailableOutflow: Double = availableOutflow
 
             for outflow in stock.outflows {
@@ -358,7 +360,7 @@ public class Solver {
                 // expected to be drained.
                 //
                 let actualOutflow = min(availableOutflow,
-                                        max(state[outflow], 0))
+                                        max(state[double: outflow], 0))
                 
                 totalOutflow += actualOutflow
                 // We drain the stock
@@ -369,11 +371,11 @@ public class Solver {
                 // did not drain.
                 //
                 // FIXME: We are changing the current state, we should be changing some "estimated state"
-                state[outflow] = actualOutflow
+                state[double: outflow] = actualOutflow
 
                 // Sanity check. This should always pass, unless we did
                 // something wrong above.
-                assert(state[outflow] >= 0.0,
+                assert(actualOutflow >= 0.0,
                        "Resulting state must be non-negative")
             }
             // Another sanity check. This should always pass, unless we did
@@ -398,23 +400,20 @@ public class Solver {
                       at time: Double,
                       timeDelta: Double = 1.0) throws -> SimulationState {
         var result: SimulationState = state
-        let builtins = makeBuiltins(time: time,
-                                    timeDelta: timeDelta)
-        result.builtins = builtins
+      
+        setBuiltins(&result, time: time, timeDelta: timeDelta)
         
         // FIXME: This is called twice - with difference(...). Resolve this.
         for aux in compiledModel.auxiliaries {
-            let value = try evaluate(variable: aux.index,
-                                     with: result,
-                                     at: time)
-            result[aux] = try value.doubleValue()
+            let value = try evaluate(objectAt: aux.objectIndex,
+                                     with: result)
+            result[aux.variableIndex] = value
         }
 
         for flow in compiledModel.flows {
-            let value = try evaluate(variable: flow.index,
-                                     with: result,
-                                     at: time)
-            result[flow] = try value.doubleValue()
+            let value = try evaluate(objectAt: flow.objectIndex,
+                                     with: result)
+            result[flow.variableIndex] = value
         }
         
         return result
@@ -425,48 +424,55 @@ public class Solver {
     /// - Returns: A state vector that contains difference values for each
     /// stock.
     ///
-    public func difference(at time: Double,
-                    with current: SimulationState,
-                    timeDelta: Double = 1.0) throws -> SimulationState {
+    public func stockDifference(state current: SimulationState,
+                                at time: Double,
+                                timeDelta: Double = 1.0) throws -> NumericVector {
         // TODO: Move vector to the beginning of the argument list
-        var estimate = zeroState(time: time, timeDelta: timeDelta)
+        var estimate = newState(time: time, timeDelta: timeDelta)
         
         // 1. Evaluate auxiliaries
         //
         for aux in compiledModel.auxiliaries {
             // FIXME: This is called twice - with prepareStage. Resolve this.
-            let value = try evaluate(variable: aux.index,
-                                     with: current,
-                                     at: time)
-            estimate[aux] = try value.doubleValue()
+            let value = try evaluate(objectAt: aux.objectIndex,
+                                     with: current)
+            estimate[aux.variableIndex] = value
         }
 
         // 2. Estimate flows
         //
         for flow in compiledModel.flows {
-            let value = try evaluate(variable: flow.index,
-                                     with: current,
-                                     at: time)
-            estimate[flow] = try value.doubleValue()
+            let value = try evaluate(objectAt: flow.objectIndex,
+                                     with: current)
+            estimate[flow.variableIndex] = value
         }
 
         // 3. Copy stock values that we are going to adjust for estimate
         //
         for stock in compiledModel.stocks {
-            estimate[stock] = current[stock]
+            estimate[stock.variableIndex] = current[stock.variableIndex]
         }
         
         // 4. Compute stock levels
         //
-        var deltaVector = zeroState(time: time, timeDelta: timeDelta)
+        var deltaVector = NumericVector(zeroCount: compiledModel.stocks.count)
 
-        for stock in compiledModel.stocks {
-            let delta = computeStockDelta(stock, at: time, with: &estimate)
+        for (index, stock) in compiledModel.stocks.enumerated() {
+            let delta = try computeStockDelta(stock, at: time, with: &estimate)
             let dtAdjusted = delta * timeDelta
-            estimate[stock] = estimate[stock] + dtAdjusted
-            deltaVector[stock] = dtAdjusted
+            let newValue = estimate[double: stock.variableIndex] + dtAdjusted
+            estimate[stock.variableIndex] = Variant(newValue)
+            deltaVector[index] = dtAdjusted
         }
         return deltaVector
+    }
+    
+    // FIXME: [REFACTORING] Rename to "accumulateStocks"
+    public func addStocks(_ state: inout SimulationState, delta: NumericVector) {
+        for (stock, stockDelta) in zip(compiledModel.stocks, delta) {
+            let value = try! state[stock.variableIndex].doubleValue()
+            state[stock.variableIndex] = Variant(value + stockDelta)
+        }
     }
     
     /// Compute the next state vector.
