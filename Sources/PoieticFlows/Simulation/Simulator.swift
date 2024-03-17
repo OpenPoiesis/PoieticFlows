@@ -45,6 +45,20 @@ public class Simulator {
     
     // MARK: - Initialisation
     
+    /// Creates and initialises a simulator.
+    ///
+    /// - Properties:
+    ///   - model: Compiled simulation model that describes the computation.
+    ///   - solverType: Type of the solver to be used.
+    ///
+    /// The simulator is initialised by creating a new solver and initialising
+    /// simulation values from the ``CompiledModel/simulationDefaults`` such as
+    /// initial time or time delta (_dt_). If the defaults are not provided then
+    /// the following values are used:
+    ///
+    /// - `initialTime = 0.0`
+    /// - `timeDelta = 1.0`
+    ///
     public init(model: CompiledModel, solverType: Solver.Type = EulerSolver.self) {
         self.compiledModel = model
         self.solverType = solverType
@@ -64,12 +78,22 @@ public class Simulator {
 
     // MARK: - Simulation methods
 
-    /// Initialize the simulation state with existing frame.
+    /// Initialise the simulation state with existing frame.
+    ///
+    /// The initialisation process:
+    /// - The current time is set to ``initialTime``.
+    /// - All output is cleared.
+    /// - Initial state is created and added to the output.
+    ///
+    /// If a delegate is set, then delegate's
+    /// ``SimulatorDelegate/simulatorDidInitialize(_:context:)`` is called.
     ///
     /// - Parameters:
     ///     - override: Computed values to override. The keys are computed
     ///       node IDs and dictionary values are values to be used instead
     ///       the ones specified in the original nodes.
+    ///
+    /// - Returns: Initial state.
     ///
     @discardableResult
     public func initializeState(override: [ObjectID:Double] = [:]) throws -> SimulationState {
@@ -118,6 +142,7 @@ public class Simulator {
     }
     
     /// Run the simulation for given number of steps.
+    ///
     public func run(_ steps: Int) throws {
         for _ in (1...steps) {
             try step()
@@ -143,6 +168,9 @@ public class Simulator {
     ///
     /// The values are obtained from the current simulation state.
     ///
+    /// - SeeAlso: ``CompiledModel/valueBindings``,
+    ///   ``PoieticCore/ObjectType/Control``
+    ///
     public func controlValues() -> [ObjectID:Double] {
         precondition(currentState != nil,
                     "Trying to get control values without initialized state")
@@ -154,7 +182,11 @@ public class Simulator {
         }
         return values
     }
+    
     /// Get series of time points.
+    ///
+    /// - SeeAlso: ``CompiledModel/timeVariableIndex``
+    ///
     public var timePoints: [Double] {
         // TODO: We need a cleaner way how to get this.
         return output.map {

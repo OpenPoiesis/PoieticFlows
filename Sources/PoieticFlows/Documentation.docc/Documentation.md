@@ -26,51 +26,10 @@ More information about the model is contained in the ``FlowsMetamodel``.
 
 ## Topics
 
-### Model and Traits
+- <doc:Metamodel>
+- <doc:Simulation>
+- <doc:CompiledModelAndCompiler>
 
-- ``FlowsMetamodel``
-- ``/PoieticCore/Trait/Formula``
-- ``/PoieticCore/Trait/Flow``
-- ``/PoieticCore/ObjectType/Flow``
-- ``/PoieticCore/ObjectType/Auxiliary``
-- ``/PoieticCore/Trait/Stock``
-- ``/PoieticCore/ObjectType/Stock``
-- ``/PoieticCore/Trait/Position``
-- ``/PoieticCore/Trait/GraphicalFunction``
-- ``/PoieticCore/Trait/Chart``
-- ``/PoieticCore/ObjectType/Control``
-
-### Compiled Model and Compiler
+### View
 
 - ``StockFlowView``
-- ``CompiledModel``
-- ``ComputedVariable``
-- ``Compiler``
-- ``NodeIssuesError``
-- ``NodeIssue``
-- ``BoundVariableReference``
-- ``IndexRepresentable``
-
-- ``CompiledControlBinding``
-- ``CompiledFlow``
-- ``CompiledGraphicalFunction``
-- ``CompiledObject``
-- ``CompiledStock``
-
-- ``BoundBuiltinVariable``
-- ``BoundComponent``
-
-### Simulation
-
-- ``Simulator``
-- ``SimulationState``
-- ``Solver``
-- ``EulerSolver``
-- ``RungeKutta4Solver``
-
-### Built-in Functions
-
-- ``BuiltinUnaryOperators``
-- ``BuiltinBinaryOperators``
-- ``BuiltinFunctions``
-

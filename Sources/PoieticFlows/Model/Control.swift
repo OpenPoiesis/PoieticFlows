@@ -49,25 +49,3 @@ extension Trait {
         ]
     )
 }
-
-extension StockFlowView {
-//    public var controls: [Chart] {
-//        graph.selectNodes(HasComponentPredicate(ControlComponent.self))
-//            .compactMap { Control($0.snapshot) }
-//    }
-}
-public struct BoundComponent<T: Component> {
-    public typealias ComponentType = T
-    public let snapshot: ObjectSnapshot
-    public let component: ComponentType
-    
-    public init?(_ snapshot: ObjectSnapshot) {
-        guard let component: ComponentType = snapshot[ComponentType.self] else {
-            return nil
-        }
-        self.snapshot = snapshot
-        self.component = component
-    }
-    
-}
-

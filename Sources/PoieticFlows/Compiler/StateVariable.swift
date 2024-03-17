@@ -1,45 +1,12 @@
 //
-//  File.swift
-//  
+//  StateVariable.swift
+//
 //
 //  Created by Stefan Urbanek on 19/09/2023.
 //
+
 import PoieticCore
 
-// TODO: Consolidate all the variable/reference types, we have way too many of them
-
-
-/// Object describing a simulation state variable.
-///
-/// This is the core detail information of the simulation. There is one
-/// state variable for each object, usually a node, that represent a state
-/// in the simulation. A stock, a flow or an auxiliary - they all are state
-/// variables.
-///
-public struct ComputedObject: CustomStringConvertible {
-    /// ID of the object, usually a node, that represents the variable.
-    public let id: ObjectID
-    
-    /// Index of the variable in the simulation state vector.
-    ///
-    public let variableIndex: Int
-    
-    /// Type of the variable value.
-    ///
-    public var valueType: ValueType
-    
-    /// Type denoting how the object is being computed.
-    ///
-    public let computation: ComputationalRepresentation
-    
-    /// Name of the variable.
-    ///
-    public let name: String
-    
-    public var description: String {
-        "var(\(name), id:\(id), idx:\(variableIndex))"
-    }
-}
 
 /// Type of the simulation variable.
 ///
@@ -100,7 +67,7 @@ public enum StateVariableContent: Hashable, CustomStringConvertible {
 /// Variable can be built-in or computed. The computed variable is representing
 /// a node in the model, typically a node with a formula.
 ///
-public struct StateVariable: CustomStringConvertible, TypedValue {
+public struct StateVariable: CustomStringConvertible {
     // TODO: Rename to SimulationVariable
     // FIXME: Add name
 

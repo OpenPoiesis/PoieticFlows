@@ -7,172 +7,10 @@
 
 import PoieticCore
 
-public enum BuiltinVariable: Equatable, CustomStringConvertible {
-    case time
-    case timeDelta
-//    case initialTime
-//    case endTime
-    
-    public var description: String {
-        switch self {
-        case .time: "time"
-        case .timeDelta: "time_delta"
-        }
-    }
-}
-
-/// Representation of a node in the simulation denoting how the node will
-/// be computed.
-///
-public enum ComputationalRepresentation: CustomStringConvertible {
-    /// Arithmetic formula representation of a node.
-    ///
-    case formula(BoundExpression)
-    
-    /// Graphic function representation of a node.
-    ///
-    /// The first value is a generated function for computing the values. The
-    /// second value of the tuple is an index of a state variable representing
-    /// the function's parameter node.
-    /// 
-    case graphicalFunction(Function, SimulationState.Index)
-  
-//    case statefulFunction(StatefulFunction, [VariableIndex])
-    
-    public var valueType: ValueType {
-        switch self {
-        case let .formula(formula):
-            return formula.valueType
-        case .graphicalFunction(_, _):
-            return ValueType.double
-        }
-    }
-    
-    // case dataInput(???)
-
-    public var description: String {
-        switch self {
-        case let .formula(formula):
-            return "\(formula)"
-        case let .graphicalFunction(fun, index):
-            return "graphical(\(fun.name), \(index))"
-        }
-        
-    }
-}
-
-/// Structure representing compiled control-to-value binding.
-///
-public struct CompiledControlBinding {
-    /// ID of a control node.
-    public let control: ObjectID
-    
-    /// Index of the simulation variable that the control controls.
-    public let variableIndex: SimulationState.Index
-}
-
-
-/// Compiled representation of the stock.
-///
-/// This structure is used during computation.
-///
-/// - SeeAlso: ``Solver/computeStockDelta(_:at:with:)``
-///
-public struct CompiledStock {
-    /// Object ID of the stock that this compiled structure represents.
-    ///
-    /// This is used mostly for inspection and debugging purposes.
-    ///
-    public let id: ObjectID
-    
-    /// Index in of the simulation state variable that represents the stock.
-    ///
-    /// This is the main information used during the computation.
-    ///
-    public let variableIndex: SimulationState.Index
-    
-    /// Flag whether the value of the node can be negative.
-    public var allowsNegative: Bool = false
-    
-    /// Flag that controls how flow for the stock is being computed when the
-    /// stock is non-negative.
-    ///
-    /// If the stock is non-negative, normally its outflow depends on the
-    /// inflow. This is not a problem unless there is a loop of flows between
-    /// stocks. In that case, to proceed with computation we need to break the
-    /// loop. Stock being with 'delayed inflow' means that the outflow will not
-    /// immediately depend on the inflow. The outflow will be computed from
-    /// the actual stock value, ignoring the inflow. The inflow will be added
-    /// later to the stock.
-    ///
-    public var delayedInflow: Bool = false
-
-    /// List indices of simulation variables representing flows
-    /// which fill the stock.
-    ///
-    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
-    ///
-    public let inflows: [SimulationState.Index]
-
-    /// List indices of simulation variables representing flows
-    /// which drain the stock.
-    ///
-    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
-    ///
-    public let outflows: [SimulationState.Index]
-}
-
-public struct CompiledFlow {
-    /// Object ID of the flow that this compiled structure represents.
-    ///
-    /// This is used mostly for inspection and debugging purposes.
-    ///
-    public let id: ObjectID
-
-    public let variableIndex: SimulationState.Index
-    /// Index in of the simulation state variable that represents the flow.
-    ///
-    /// This is the main information used during the computation.
-    ///
-    public let objectIndex: Int
-    /// Component representing the flow as it was at the time of compilation.
-    ///
-    public let priority: Int
-}
-
-
-/// Plain compiled variable without any additional information.
-///
-/// This is a default structure that represents a simulation node variable
-/// in which any additional information is not relevant to the computation.
-///
-/// It is used for example for nodes of type auxiliary –
-/// ``/PoieticCore/ObjectType/Auxiliary``.
-///
-public struct CompiledAuxiliary {
-    public let id: ObjectID
-    public let variableIndex: SimulationState.Index
-    // Index into list of simulation objects
-    public let objectIndex: Int
-}
-
-/// A structure representing a concrete instance of a graphical function
-/// in the context of a graph.
-///
-public struct CompiledGraphicalFunction {
-    /// ID of a node where the function is defined
-    public let id: ObjectID
-    public let variableIndex: SimulationState.Index
-    
-    /// The function object itself
-    public let function: Function
-    /// ID of a node that is a parameter for the function.
-    public let parameterIndex: SimulationState.Index
-}
-
-// TODO: Not used
 /// Defaults fro simulation taken from an object with a trait
 /// ``/PoieticCore/Trait/Simulation``.
+///
+/// - SeeAlso: ``Simulator/init(model:solverType:)``
 ///
 public struct SimulationDefaults {
     public let initialTime: Double
@@ -180,23 +18,71 @@ public struct SimulationDefaults {
     public let simulationSteps: Int
 }
 
-
-/// Structure used by the simulator.
+/// Core structure used by the simulator and the solver to perform the
+/// computation.
 ///
-/// Compiled model is an internal representation of the model design. The
-/// representation contains information that is necessary for computation
-/// and is guaranteed to be consistent.
+/// Compiled model is an internal representation of the model design for
+/// computation. The structure is guaranteed to provide computational
+/// information with integrity, such as order of computation or value types.
 ///
 /// If the model design violates constraints or contains user errors, the
 /// compiler refuses to create the compiled model.
+///
+/// The main content of the compiled model is a list of computed objects
+/// ``computedObjects`` and a list of simulation state variables
+/// ``stateVariables``. The computation of computed objects can be carried out
+/// in the order provided without causing broken computational dependencies.
+///
+/// Additional information about specific object types is provided in stored
+/// properties such as ``stocks``, ``flows``, ``auxiliaries`` or ``charts``.
+///
+/// ## Uses by Applications
+///
+/// Applications running simulations can use the compiled model to fetch various
+/// information that is to be presented to the user or that can be expected
+/// from the user as an input or as a configuration. For example:
+///
+/// - ``charts`` to get a list of charts that are specified in the design
+///   that the designer considers relevant to be displayed to the user.
+/// - ``valueBindings`` to get a list of controls and their targets to generate
+///   user interface for changing initial values of model-specific objects.
+/// - ``stateVariables`` and their stored property ``StateVariable/name`` to
+///   get a list of variables that can be observed.
+/// - ``variable(named:)`` to fetch detailed information about a specific
+///   variable.
+/// - ``timeVariableIndex`` to get an index into ``stateVariables`` where the
+///   time variable is stored.
+/// - ``simulationDefaults`` for simulation run configuration.
 ///
 /// - Note: The compiled model can also be used in a similar way as
 ///  "explain plan" in SQL. It contains some information how the simulation
 ///   will be carried out.
 ///
+/// - SeeAlso: ``Compiler/compile()``, ``Solver/init(_:)``,
+///   ``Simulator/init(model:solverType:)``
+///
 public struct CompiledModel {
-    // TODO: Alternative names: InternalRepresentation, SimulableRepresentation, SRep, ResolvedModel, ExecutableModel
+    // TODO: Alternative names: SimulationModel, ComputationalModel, InternalRepresentation, SimulableRepresentation, SRep, ResolvedModel, ExecutableModel
     
+    /// List of variables that are computed, ordered by computational dependency.
+    ///
+    /// The variables are ordered so that variables that do not require other
+    /// variables to be computed, such as constants are at the beginning.
+    /// The variables that depend on others by using them as a parameter
+    /// follow the variables they depend on.
+    ///
+    /// Computing variables in this order assures that we have all the
+    /// parameters computed when needed them.
+    ///
+    /// - Note: It is guaranteed that the variables are ordered. If a cycle was
+    ///         present in the model, the compiled model would not have been
+    ///         created.
+    ///
+    /// - SeeAlso: ``computedVariableIndex(of:)``
+    ///
+    public let computedObjects: [ComputedObject]
+
+
     /// List of simulation state variables.
     ///
     /// The list of state variables contain values of builtins, values of
@@ -223,26 +109,10 @@ public struct CompiledModel {
     ///   ``FlowsMetamodel``
     ///
     public let builtins: [CompiledBuiltin]
-    /// List of variables that are computed, ordered by computational dependency.
-    ///
-    /// The variables are ordered so that variables that do not require other
-    /// variables to be computed, such as constants are at the beginning.
-    /// The variables that depend on others by using them as a parameter
-    /// follow the variables they depend on.
-    ///
-    /// Computing variables in this order assures that we have all the
-    /// parameters computed when needed them.
-    ///
-    /// - Note: It is guaranteed that the variables are ordered. If a cycle was
-    ///         present in the model, the compiled model would not have been
-    ///         created.
-    ///
-    /// - SeeAlso: ``computedVariableIndex(of:)``
-    ///
-    public let computedObjects: [ComputedObject]
-
     
     /// Index of _time_ variable within the state variables.
+    ///
+    /// - SeeAlso: ``stateVariables``, ``Simulator/timePoints``
     ///
     public let timeVariableIndex: SimulationState.Index
     
@@ -253,7 +123,7 @@ public struct CompiledModel {
     /// used during computation.
     ///
     /// - Complexity: O(n)
-    /// - SeeAlso: ``resultIndex(of:)``
+    /// - SeeAlso:  ``stateVariables``, ``computedObject(of:)``
     ///
     public func variableIndex(of id: ObjectID) -> SimulationState.Index? {
         // TODO: Do we need a pre-computed map here or are we fine with O(n)?
@@ -272,6 +142,7 @@ public struct CompiledModel {
     /// consumers of the simulation state or simulation result.
     ///
     /// - Complexity: O(n)
+    /// - SeeAlso: ``computedObjects``, ``variableIndex(of:)``
     ///
     public func computedObject(of id: ObjectID) -> ComputedObject? {
         return computedObjects.first { $0.id == id }
@@ -287,7 +158,7 @@ public struct CompiledModel {
     ///
     /// See ``CompiledStock`` for more information.
     ///
-    /// - SeeAlso: ``Solver/difference(at:with:timeDelta:)``,
+    /// - SeeAlso: ``Solver/stockDifference(state:at:timeDelta:)``,
     ///
     public let stocks: [CompiledStock]
     
@@ -308,7 +179,7 @@ public struct CompiledModel {
     ///
     /// This property is used in computation.
     ///
-    /// - SeeAlso: ``Solver/difference(at:with:timeDelta:)``,
+    /// - SeeAlso: ``Solver/stockDifference(state:at:timeDelta:)``,
     ///
     public let flows: [CompiledFlow]
 
@@ -316,7 +187,7 @@ public struct CompiledModel {
     ///
     /// This property is used in computation.
     ///
-    /// - SeeAlso: ``Solver/difference(at:with:timeDelta:)``,
+    /// - SeeAlso: ``Solver/stockDifference(state:at:timeDelta:)``,
     ///
     public let auxiliaries: [CompiledAuxiliary]
     
@@ -325,15 +196,22 @@ public struct CompiledModel {
     /// This property is not used during computation, it is provided for
     /// consumers of the simulation state or simulation result.
     ///
+    /// - SeeAlso: ``PoieticCore/ObjectType/Chart``,
+    ///   ``PoieticCore/ObjectType/ChartSeries``
+    ///
     public let charts: [Chart]
 
 
     /// Compiled bindings of controls to their value objects.
     ///
-    /// - See also: ``/PoieticCore/ObjectType/Control``.
+    /// - See also: ``PoieticCore/ObjectType/Control``, ``Simulator/controlValues()``.
     ///
     public let valueBindings: [CompiledControlBinding]
         
+    /// Collection of default values for running a simulation.
+    ///
+    /// See ``SimulationDefaults`` for more information.
+    ///
     public var simulationDefaults: SimulationDefaults?
     
     /// Selection of simulation variables that represent graphical functions.
