@@ -6,6 +6,20 @@
 //
 import PoieticCore
 
+/**
+ 
+ initializeState()
+    newState()
+    builtins
+ compute(current)
+    new = prepareStage(current)
+    delta
+    add delta
+    return new
+ 
+ 
+ */
+
 /*
  
  INIT:
@@ -147,13 +161,13 @@ public class Solver {
     /// The state will have built-ins initialized to their corresponding values.
     ///
     public func newState(time: Double = 0.0,
-                                timeDelta: Double = 1.0) -> SimulationState {
+                         timeDelta: Double = 1.0) -> SimulationState {
         var state = SimulationState(model: compiledModel)
-        setBuiltins(&state, time: time, timeDelta: timeDelta)
+        updateBuiltins(&state, time: time, timeDelta: timeDelta)
 
         return state
     }
-    public func setBuiltins(_ state: inout SimulationState,
+    public func updateBuiltins(_ state: inout SimulationState,
                             time: Double = 0.0,
                             timeDelta: Double = 1.0) {
         
@@ -169,7 +183,6 @@ public class Solver {
             state[variable.variableIndex] = value
         }
     }
-   
 
 
     /// Evaluate an expression within the context of a simulation state.
@@ -183,7 +196,7 @@ public class Solver {
     /// - Returns: an evaluated value of the expression.
     ///
     public func evaluate(objectAt index: Int,
-                         with state: SimulationState) throws -> Variant {
+                         with state: inout SimulationState) throws -> Variant {
         let object = compiledModel.computedObjects[index]
         if let value = constants[object.id] {
             return value
@@ -198,12 +211,38 @@ public class Solver {
         case let .graphicalFunction(function, index):
             let value = state[index]
             return try function.apply([value])
-//        case let .statefulFunction(function, indices):
-//            
-//            let values = state.allValues.
+        case let .delay(delay):
+            return try evaluate(delay: delay,
+                                with: &state)
         }
     }
 
+    public func evaluate(delay: CompiledDelay,
+                         with state: inout SimulationState) throws -> Variant {
+        // FIXME: Propagate time or include time in the state
+        // FIXME: Numeric delay
+        let inputValue = try! state[delay.parameterIndex].doubleValue()
+        let queue = state[delay.valueQueueIndex]
+        let outputValue: Variant
+        
+        // TODO: This assumes time starts at 0.0
+        if state.time < delay.duration {
+            var items: [Double] = (try? queue.doubleArray()) ?? []
+            items.append(inputValue)
+            state[delay.valueQueueIndex] = Variant(items)
+            // TODO: Use first input value
+            outputValue = delay.initialValue!
+        }
+        else {
+            var items: [Double] = (try? queue.doubleArray()) ?? []
+            items.append(inputValue)
+            let output = items.remove(at:0)
+            state[delay.valueQueueIndex] = Variant(items)
+            outputValue = Variant(output)
+        }
+        return outputValue
+    }
+    
     public func evaluate(expression: BoundExpression,
                          with state: SimulationState) throws -> Variant {
         switch expression {
@@ -261,6 +300,7 @@ public class Solver {
         // FIXME: make override [ObjectID:Variant] and validate types(?)
         self.constants = [:]
         var state = newState(time: time, timeDelta: timeDelta)
+        
         for (index, object) in compiledModel.computedObjects.enumerated() {
             if let value = override[object.id] {
                 state[object.variableIndex] = Variant(value)
@@ -274,7 +314,7 @@ public class Solver {
             }
             else {
                 let result = try evaluate(objectAt: index,
-                                          with: state)
+                                          with: &state)
                 state[object.variableIndex] = result
             }
         }
@@ -396,27 +436,21 @@ public class Solver {
     /// The ``EulerSolver`` uses only one stage, the ``RungeKutta4Solver`` uses
     /// 4 stages.
     ///
-    func prepareStage(_ state: SimulationState,
-                      at time: Double,
-                      timeDelta: Double = 1.0) throws -> SimulationState {
-        var result: SimulationState = state
-      
-        setBuiltins(&result, time: time, timeDelta: timeDelta)
+    func update(_ state: inout SimulationState,
+                at time: Double,
+                timeDelta: Double = 1.0) throws {
         
-        // FIXME: This is called twice - with difference(...). Resolve this.
         for aux in compiledModel.auxiliaries {
             let value = try evaluate(objectAt: aux.objectIndex,
-                                     with: result)
-            result[aux.variableIndex] = value
+                                     with: &state)
+            state[aux.variableIndex] = value
         }
 
         for flow in compiledModel.flows {
             let value = try evaluate(objectAt: flow.objectIndex,
-                                     with: result)
-            result[flow.variableIndex] = value
+                                     with: &state)
+            state[flow.variableIndex] = value
         }
-        
-        return result
     }
     
     /// Comptes differences of stocks.
@@ -427,31 +461,8 @@ public class Solver {
     public func stockDifference(state current: SimulationState,
                                 at time: Double,
                                 timeDelta: Double = 1.0) throws -> NumericVector {
-        // TODO: Move vector to the beginning of the argument list
-        var estimate = newState(time: time, timeDelta: timeDelta)
-        
-        // 1. Evaluate auxiliaries
-        //
-        for aux in compiledModel.auxiliaries {
-            // FIXME: This is called twice - with prepareStage. Resolve this.
-            let value = try evaluate(objectAt: aux.objectIndex,
-                                     with: current)
-            estimate[aux.variableIndex] = value
-        }
-
-        // 2. Estimate flows
-        //
-        for flow in compiledModel.flows {
-            let value = try evaluate(objectAt: flow.objectIndex,
-                                     with: current)
-            estimate[flow.variableIndex] = value
-        }
-
-        // 3. Copy stock values that we are going to adjust for estimate
-        //
-        for stock in compiledModel.stocks {
-            estimate[stock.variableIndex] = current[stock.variableIndex]
-        }
+        // Get a mutable copy of the state.
+        var estimate = current
         
         // 4. Compute stock levels
         //

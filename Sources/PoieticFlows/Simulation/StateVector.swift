@@ -17,20 +17,22 @@ import PoieticCore
 /// by a scalar value.
 ///
 public struct SimulationState: CustomStringConvertible {
+    // FIXME: Add time and maybe step
     
     public typealias Index = Int
     
-    public var model: CompiledModel
+    public let model: CompiledModel
 
     public var values: [Variant]
+    
+    var time: Double {
+        // TODO: Make this a native property?
+        let timeValue = values[model.timeVariableIndex]
+        return try! timeValue.doubleValue()
+    }
 
-    // FIXME: [REFACTORING] [Swift6] No need to have all the variable types separate any more, can be one, with RangeSets
-    /// Values of built-in variables.
-//    public var builtins: [Variant] = []
-    /// Values of computed variables.
-//    public var computedValues: [Variant]
     // FIXME: Swift 6: Replace with [Variant] and use RangeSet
-    public var internalStates: [SimulationState.Index:[Variant]]
+//    public var internalStates: [SimulationState.Index:[Variant]]
     
     /// Create a simulation state with all variables set to zero.
     ///
@@ -41,7 +43,7 @@ public struct SimulationState: CustomStringConvertible {
     public init(model: CompiledModel) {
         self.model = model
         self.values = Array(repeating: Variant(0), count: model.stateVariables.count)
-        self.internalStates = [:]
+//        self.internalStates = [:]
     }
     
     public init(_ values: [Variant], model: CompiledModel) {
@@ -49,7 +51,7 @@ public struct SimulationState: CustomStringConvertible {
                      "Count of values (\(values.count) does not match required items count \(model.stateVariables.count)")
         self.model = model
         self.values = values
-        self.internalStates = [:]
+//        self.internalStates = [:]
     }
 
     /// Get or set a simulation variable by reference.

@@ -500,4 +500,33 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(state[index], 1.0)
     }
 
+    func testDelay() throws {
+        let delay = frame.createNode(ObjectType.Delay,
+                                      name: "delay",
+                                      attributes: [
+                                        "delay_duration": "2",
+                                        "initial_value": "0.0",
+                                      ])
+        let x = frame.createNode(ObjectType.Auxiliary,
+                                    name: "x",
+                                    attributes: ["formula": "10"])
+        
+        frame.createEdge(ObjectType.Parameter, origin: x, target: delay)
+        
+        let compiled = try compiler.compile()
+        let solver = EulerSolver(compiled)
+
+        var state = try solver.initializeState(time: 0.0)
+        XCTAssertEqual(state[delay], 0.0)
+
+        state = try solver.compute(state, at: 1.0)
+        XCTAssertEqual(state[delay], 0.0)
+
+        state = try solver.compute(state, at: 2.0)
+        XCTAssertEqual(state[delay], 10.0)
+
+        state = try solver.compute(state, at: 3.0)
+        XCTAssertEqual(state[delay], 10.0)
+    }
+
 }

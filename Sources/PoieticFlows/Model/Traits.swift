@@ -86,6 +86,14 @@ extension Trait {
         abstract: "Function represented by a set of points and an interpolation method."
     )
     
+    public static let Delay = Trait(
+        name: "Delay",
+        attributes: [
+            Attribute("delay_duration", type: .double, default: Variant(1),
+                      abstract: "Delay duration in time units."),
+        ]
+    )
+
     
     /// Trait of a node that represents a chart.
     /// 

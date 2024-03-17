@@ -27,20 +27,6 @@ public class StockFlowView {
     /// Metamodel that the view uses to find relevant object types.
     public let metamodel: Metamodel
 
-    // TODO: Remove these.
-//    public let Stock: ObjectType
-//    public let Flow: ObjectType
-//    public let Auxiliary: ObjectType
-//    public let GraphicalFunction: ObjectType
-//    public let Control: ObjectType
-//    public let Chart: ObjectType
-//    public let Drains: ObjectType
-//    public let Fills: ObjectType
-//    public let Parameter: ObjectType
-//    public let ImplicitFlow: ObjectType
-//    public let ValueBinding: ObjectType
-//    public let ChartSeries: ObjectType
-    
     // TODO: Consolidate queries in metamodel and this domain view - move them here(?)
     /// Graph that the view projects.
     ///
@@ -52,20 +38,6 @@ public class StockFlowView {
         // TODO: Use only frame, not a graph
         self.metamodel = frame.memory.metamodel
         self.frame = frame
-        
-        // TODO: Handle missing types more gracefuly
-//        self.Stock = metamodel.objectType(name: "Stock")!
-//        self.Flow = metamodel.objectType(name: "Flow")!
-//        self.Auxiliary = metamodel.objectType(name: "Auxiliary")!
-//        self.GraphicalFunction = metamodel.objectType(name: "GraphicalFunction")!
-//        self.Control = metamodel.objectType(name: "Control")!
-//        self.Chart = metamodel.objectType(name: "Chart")!
-//        self.Drains = metamodel.objectType(name: "Drains")!
-//        self.Fills = metamodel.objectType(name: "Fills")!
-//        self.Parameter = metamodel.objectType(name: "Parameter")!
-//        self.ImplicitFlow = metamodel.objectType(name: "ImplicitFlow")!
-//        self.ValueBinding = metamodel.objectType(name: "ValueBinding")!
-//        self.ChartSeries = metamodel.objectType(name: "ChartSeries")!
     }
     
     /// A list of nodes that are part of the simulation. The simulation nodes
@@ -78,6 +50,7 @@ public class StockFlowView {
         frame.filterNodes {
             $0.type.hasTrait(Trait.Formula)
             || $0.type.hasTrait(Trait.GraphicalFunction)
+            || $0.type.hasTrait(Trait.Delay)
         }
     }
 

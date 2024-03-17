@@ -345,7 +345,8 @@ public class Compiler {
                 flowsByID[node.id] = flow
             }
             else if node.type === ObjectType.Auxiliary
-                        || node.type === ObjectType.GraphicalFunction {
+                        || node.type === ObjectType.GraphicalFunction
+                        || node.type === ObjectType.Delay {
 
                 let computed = computedObjects[objectIndex]
 
@@ -357,7 +358,7 @@ public class Compiler {
             }
             else {
                 // TODO: Turn this into a global model error? (we do not have such concept yet)
-                fatalError("Unknown simulation node type: \(node.type)")
+                fatalError("Unknown simulation node type: \(node.type.name)")
             }
         }
         
@@ -485,6 +486,9 @@ public class Compiler {
         else if node.snapshot.type.hasTrait(Trait.GraphicalFunction) {
             rep = try compileGraphicalFunctionNode(node)
         }
+        else if node.snapshot.type.hasTrait(Trait.Delay) {
+            rep = try compileDelayNode(node)
+        }
         else {
             // Hint: If this error happens, then either check the following:
             // - the condition in the stock-flows view method returning
@@ -577,7 +581,7 @@ public class Compiler {
         
         let hood = view.incomingParameters(node.id)
         guard let parameterNode = hood.nodes.first else {
-            throw NodeIssue.missingGraphicalFunctionParameter
+            throw NodeIssue.missingRequiredParameter
         }
         
         let funcName = "__graphical_\(node.id)"
@@ -586,7 +590,34 @@ public class Compiler {
         return .graphicalFunction(numericFunc, variableIndex(parameterNode.id))
 
     }
+    public func compileDelayNode(_ node: Node) throws -> ComputationalRepresentation{
+        // TODO: What to do if the input is not numeric or not an atom?
+        let valueQueue = createStateVariable(content: .internalState(node.id),
+                                             valueType: .doubles,
+                                             name: "delay_\(node.id)")
 
+        let hood = view.incomingParameters(node.id)
+        guard let parameterNode = hood.nodes.first else {
+            throw NodeIssue.missingRequiredParameter
+        }
+        
+        let parameterIndex = variableIndex(parameterNode.id)
+        let variable = stateVariables[parameterIndex]
+        
+        let duration = try! node.snapshot["delay_duration"]!.doubleValue()
+        let initialValue = node.snapshot["initial_value"]
+
+        // TODO: Check whether the initial value and variable.valueType are the same
+        let compiled = CompiledDelay(
+            valueQueueIndex: valueQueue,
+            duration: duration,
+            initialValue: initialValue,
+            parameterIndex: parameterIndex,
+            valueType: variable.valueType
+        )
+        
+        return .delay(compiled)
+    }
     /// Compile all stock nodes.
     ///
     /// The function extracts component from the stock that is necessary

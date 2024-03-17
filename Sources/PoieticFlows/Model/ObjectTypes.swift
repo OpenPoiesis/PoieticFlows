@@ -87,6 +87,20 @@ extension ObjectType {
             // TODO: IMPORTANT: Make sure we do not have formula component here or handle the type
         ]
     )
+
+    /// An auxiliary node - containing a constant or a formula.
+    ///
+    public static let Delay = ObjectType(
+        name: "Delay",
+        structuralType: .node,
+        traits: [
+            Trait.Name,
+            Trait.Position,
+            Trait.Delay,
+            // DescriptionComponent.self,
+            // ErrorComponent.self,
+        ]
+    )
     
     /// A user interface mode representing a control that modifies a value of
     /// its target node.

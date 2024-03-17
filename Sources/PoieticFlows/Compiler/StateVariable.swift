@@ -38,13 +38,18 @@ public enum StateVariableContent: Hashable, CustomStringConvertible {
     ///
     case builtin(BuiltinVariable)
     
-    // FIXME: Add Stateful function state.
-    // case state(Int)
+    /// Internal state of an object.
+    ///
+    /// An object might have additional internal states. The case parameter
+    /// is ID of an object that owns the state.
+    ///
+    case internalState(ObjectID)
     
     public static func ==(lhs: StateVariableContent, rhs: StateVariableContent) -> Bool {
         switch (lhs, rhs) {
         case let (.object(left), .object(right)): return left == right
         case let (.builtin(left), .builtin(right)): return left == right
+        case let (.internalState(left), .internalState(right)): return left == right
         default: return false
         }
     }
@@ -53,6 +58,7 @@ public enum StateVariableContent: Hashable, CustomStringConvertible {
         switch self {
         case .object(let id): "object(\(id))"
         case .builtin(let variable): "builtin(\(variable))"
+        case .internalState(let id): "internal(\(id))"
         }
     }
 }
@@ -86,6 +92,8 @@ public struct StateVariable: CustomStringConvertible {
         case .builtin: .builtin
             // FIXME: Rename computed to object
         case .object: .computed
+        case .internalState:
+            fatalError("Internal state type not implemented")
         }
     }
 
@@ -99,12 +107,16 @@ public struct StateVariable: CustomStringConvertible {
     /// ID of a simulation node that the variable represents, if the variable
     /// represents a node.
     ///
-    /// ID is `nil` when the variable is a built-in variable.
+    /// ID is `nil` when the variable is a built-in variable or an internal
+    /// state variable.
+    ///
+    /// Each object can be represented by only one state variable.
     ///
     public var objectID: ObjectID? {
         switch content {
         case .builtin(_): nil
         case .object(let id): id
+        case .internalState(_): nil
         }
     }
 

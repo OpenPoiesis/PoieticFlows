@@ -24,7 +24,8 @@ public enum ComputationalRepresentation: CustomStringConvertible {
     ///
     case graphicalFunction(Function, SimulationState.Index)
   
-//    case statefulFunction(StatefulFunction, [VariableIndex])
+    /// First value is parameter node, the second is state variable.
+    case delay(CompiledDelay)
     
     public var valueType: ValueType {
         switch self {
@@ -32,6 +33,8 @@ public enum ComputationalRepresentation: CustomStringConvertible {
             return formula.valueType
         case .graphicalFunction(_, _):
             return ValueType.double
+        case let .delay(delay):
+            return delay.valueType
         }
     }
     
@@ -43,6 +46,9 @@ public enum ComputationalRepresentation: CustomStringConvertible {
             return "\(formula)"
         case let .graphicalFunction(fun, index):
             return "graphical(\(fun.name), \(index))"
+        case let .delay(delay):
+            let initialValue = delay.initialValue.map { $0.description } ?? "nil"
+            return "delay(\(delay.parameterIndex), \(delay.duration), \(initialValue)"
         }
         
     }
@@ -257,4 +263,13 @@ public struct CompiledControlBinding {
     
     /// Index of the simulation variable that the control controls.
     public let variableIndex: SimulationState.Index
+}
+
+public struct CompiledDelay {
+//    public let initialValueIndex: SimulationState.Index
+    public let valueQueueIndex: SimulationState.Index
+    public let duration: Double
+    public let initialValue: Variant?
+    public let parameterIndex: SimulationState.Index
+    public let valueType: ValueType
 }

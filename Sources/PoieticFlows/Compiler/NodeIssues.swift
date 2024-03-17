@@ -63,7 +63,7 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
     case duplicateName(String)
     
     /// Missing a connection from a parameter node to a graphical function.
-    case missingGraphicalFunctionParameter
+    case missingRequiredParameter
     
     /// Get the human-readable description of the issue.
     public var description: String {
@@ -78,8 +78,8 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
             return "Parameter '\(name)' is unknown or not connected"
         case .duplicateName(let name):
             return "Duplicate node name: '\(name)'"
-        case .missingGraphicalFunctionParameter:
-            return "Graphical function node is missing a parameter connection"
+        case .missingRequiredParameter:
+            return "Node is missing a required parameter connection"
         }
     }
     
@@ -100,8 +100,8 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
             return "Connect the parameter node '\(name)'; or check the formula for typos; or remove the parameter from the formula."
         case .duplicateName(_):
             return nil
-        case .missingGraphicalFunctionParameter:
-            return "Connect exactly one node as a parameter to the graphical function. Name does not matter."
+        case .missingRequiredParameter:
+            return "Connect exactly one node as a parameter. Name does not matter."
         }
     }
     
