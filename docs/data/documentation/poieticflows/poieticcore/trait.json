@@ -292,7 +292,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
   "abstract" : [
-
+    {
+      "text" : "Trait with simulation defaults.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {

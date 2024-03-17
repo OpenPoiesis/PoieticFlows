@@ -9,6 +9,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver"
       ]
     ]
@@ -19,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows6SolverC7compute_2at9timeDeltaAA15SimulationStateVAH_S2dtF",
+    "externalID" : "s:12PoieticFlows6SolverC7compute_2at9timeDeltaAA15SimulationStateVAH_S2dtKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -78,7 +79,15 @@
       },
       {
         "kind" : "text",
-        "text" : ") -> "
+        "text" : ") "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
+      },
+      {
+        "kind" : "text",
+        "text" : " -> "
       },
       {
         "kind" : "typeIdentifier",
@@ -189,7 +198,15 @@
             },
             {
               "kind" : "text",
-              "text" : " = 1.0) -> "
+              "text" : " = 1.0) "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
+            },
+            {
+              "kind" : "text",
+              "text" : " -> "
             },
             {
               "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
@@ -354,6 +371,20 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
+  "abstract" : [
+    {
+      "text" : "Simulation and computation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulation"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
   "abstract" : [
     {
@@ -511,7 +542,15 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
     },
     {
       "kind" : "typeIdentifier",

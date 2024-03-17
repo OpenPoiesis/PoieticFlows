@@ -9,6 +9,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator"
       ]
     ]
@@ -19,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows9SimulatorC4stepyyF",
+    "externalID" : "s:12PoieticFlows9SimulatorC4stepyyKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -35,7 +36,11 @@
       },
       {
         "kind" : "text",
-        "text" : "()"
+        "text" : "() "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "throws"
       }
     ],
     "modules" : [
@@ -73,7 +78,11 @@
             },
             {
               "kind" : "text",
-              "text" : "()"
+              "text" : "() "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "throws"
             }
           ]
         }
@@ -157,6 +166,20 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
+  "abstract" : [
+    {
+      "text" : "Simulation and computation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulation"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator": {
   "abstract" : [
     {
@@ -213,7 +236,11 @@
     },
     {
       "kind" : "text",
-      "text" : "()"
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/step()",

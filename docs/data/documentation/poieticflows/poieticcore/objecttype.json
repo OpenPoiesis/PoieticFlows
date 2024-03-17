@@ -14,7 +14,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:e:s:11PoieticCore10ObjectTypeC0A5FlowsE12TimeVariableAA07BuiltinG0CvpZ",
+    "externalID" : "s:e:s:11PoieticCore10ObjectTypeC0A5FlowsE5StockACvpZ",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -90,8 +90,6 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Chart",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/ChartSeries",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Drains",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Fills",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/GraphicalFunction",
@@ -99,8 +97,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Note",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Scenario",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/TimeDeltaVariable",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/TimeVariable",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Simulation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/ValueBinding"
       ],
       "title" : "Type Properties"
@@ -189,104 +186,6 @@
   "title" : "ObjectType",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Chart": {
-  "abstract" : [
-    {
-      "text" : "A user interface node representing a chart.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Chart"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Chart",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Chart",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chart"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/ChartSeries": {
-  "abstract" : [
-    {
-      "text" : "An edge type to connect a chart with a series that are included in the",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "chart.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ChartSeries"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/ChartSeries",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "ChartSeries",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chartseries"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Drains": {
   "abstract" : [
@@ -597,12 +496,9 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/scenario"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/TimeDeltaVariable": {
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Simulation": {
   "abstract" : [
-    {
-      "text" : "Built-in variable reference that represents the time delta.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -623,7 +519,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "TimeDeltaVariable"
+      "text" : "Simulation"
     },
     {
       "kind" : "text",
@@ -631,61 +527,16 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15BuiltinVariableC",
-      "text" : "BuiltinVariable"
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/TimeDeltaVariable",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Simulation",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "TimeDeltaVariable",
+  "title" : "Simulation",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/timedeltavariable"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/TimeVariable": {
-  "abstract" : [
-    {
-      "text" : "Built-in variable reference that represents the simulation time.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "TimeVariable"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore15BuiltinVariableC",
-      "text" : "BuiltinVariable"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/TimeVariable",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "TimeVariable",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/timevariable"
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/simulation"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/ValueBinding": {
   "abstract" : [

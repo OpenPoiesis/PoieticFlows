@@ -8,7 +8,8 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation"
       ]
     ]
   },
@@ -132,12 +133,11 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/RungeKutta4Solver"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/RungeKutta4Solver",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector"
       ],
-      "title" : "Simulation"
+      "title" : "Solver"
     }
   ],
   "topicSections" : [
@@ -285,7 +285,15 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -299,6 +307,37 @@
   "title" : "compute(_:at:timeDelta:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/eulersolver\/compute(_:at:timedelta:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NumericVector": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NumericVector"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NumericVector"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NumericVector",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/numericvector"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/RungeKutta4Solver": {
   "abstract" : [
@@ -334,97 +373,19 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/rungekutta4solver"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
   "abstract" : [
     {
-      "text" : "A simple vector-like structure to hold an unordered collection of numeric",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "values that can be accessed by key. Simple arithmetic operations can be done",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "with the structure, such as addition, subtraction and multiplication",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "by a scalar value.",
+      "text" : "Simulation and computation.",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "SimulationState"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "SimulationState"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "SimulationState",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationstate"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator": {
-  "abstract" : [
-    {
-      "text" : "Object for controlling a simulation session.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Simulator"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Simulator"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Simulator",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator"
+  "url" : "\/documentation\/poieticflows\/simulation"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Solver": {
   "abstract" : [

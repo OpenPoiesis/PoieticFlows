@@ -1,8 +1,15 @@
 {
+  "abstract" : [
+    {
+      "text" : "Compiles a graphical function.",
+      "type" : "text"
+    }
+  ],
   "hierarchy" : {
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler"
       ]
     ]
@@ -144,6 +151,47 @@
           "type" : "heading"
         },
         {
+          "inlineContent" : [
+            {
+              "text" : "This method creates a ",
+              "type" : "text"
+            },
+            {
+              "code" : "Function",
+              "type" : "codeVoice"
+            },
+            {
+              "text" : " object with a single argument and a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "numeric return value. The function will compute the output based on the",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "input parameter and on specifics of the graphical function points",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "interpolation.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
           "content" : [
             {
               "inlineContent" : [
@@ -181,6 +229,36 @@
             }
           ],
           "name" : "Throws",
+          "style" : "note",
+          "type" : "aside"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ", ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/evaluate(objectAt:with:)",
+                  "isActive" : true,
+                  "type" : "reference"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "See Also",
           "style" : "note",
           "type" : "aside"
         }
@@ -237,10 +315,60 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledGraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "A structure representing a concrete instance of a graphical function",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "in the context of a graph.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledGraphicalFunction"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledGraphicalFunction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledGraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledgraphicalfunction"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel": {
   "abstract" : [
     {
-      "text" : "Structure used by the simulator.",
+      "text" : "Core structure used by the simulator and the solver to perform the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "computation.",
       "type" : "text"
     }
   ],
@@ -270,6 +398,20 @@
   "title" : "CompiledModel",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
+  "abstract" : [
+    {
+      "text" : "Summary…",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Compiled Model and Compiler",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler": {
   "abstract" : [
@@ -316,7 +458,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileGraphicalFunctionNode(_:)": {
   "abstract" : [
-
+    {
+      "text" : "Compiles a graphical function.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -492,6 +637,85 @@
   "title" : "NodeIssuesError",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissueserror"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/evaluate(objectAt:with:)": {
+  "abstract" : [
+    {
+      "text" : "Evaluate an expression within the context of a simulation state.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "evaluate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "objectAt"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore7VariantO",
+      "text" : "Variant"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/evaluate(objectAt:with:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "evaluate(objectAt:with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/solver\/evaluate(objectat:with:)"
 }
 }
 }

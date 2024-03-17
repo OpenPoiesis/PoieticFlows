@@ -9,6 +9,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel"
       ]
     ]
@@ -19,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows13CompiledModelV11auxiliariesSayAA0C6ObjectVGvp",
+    "externalID" : "s:12PoieticFlows13CompiledModelV11auxiliariesSayAA0C9AuxiliaryVGvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,8 +40,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:12PoieticFlows14CompiledObjectV",
-        "text" : "CompiledObject"
+        "preciseIdentifier" : "s:12PoieticFlows17CompiledAuxiliaryV",
+        "text" : "CompiledAuxiliary"
       },
       {
         "kind" : "text",
@@ -85,10 +86,10 @@
               "text" : ": ["
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledObject",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:12PoieticFlows14CompiledObjectV",
-              "text" : "CompiledObject"
+              "preciseIdentifier" : "s:12PoieticFlows17CompiledAuxiliaryV",
+              "text" : "CompiledAuxiliary"
             },
             {
               "kind" : "text",
@@ -125,7 +126,7 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/difference(at:with:timeDelta:)",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/stockDifference(state:at:timeDelta:)",
                   "isActive" : true,
                   "type" : "reference"
                 },
@@ -194,10 +195,52 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledAuxiliary": {
+  "abstract" : [
+    {
+      "text" : "Compiled auxiliary node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledAuxiliary"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledAuxiliary"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledAuxiliary",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledauxiliary"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel": {
   "abstract" : [
     {
-      "text" : "Structure used by the simulator.",
+      "text" : "Core structure used by the simulator and the solver to perform the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "computation.",
       "type" : "text"
     }
   ],
@@ -254,8 +297,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14CompiledObjectV",
-      "text" : "CompiledObject"
+      "preciseIdentifier" : "s:12PoieticFlows17CompiledAuxiliaryV",
+      "text" : "CompiledAuxiliary"
     },
     {
       "kind" : "text",
@@ -269,41 +312,21 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/auxiliaries"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledObject": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Plain compiled variable without any additional information.",
+      "text" : "Summary…",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledObject"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledObject",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledObject"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledObject",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Compiled Model and Compiler",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledobject"
+  "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Solver/difference(at:with:timeDelta:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/stockDifference(state:at:timeDelta:)": {
   "abstract" : [
     {
       "text" : "Comptes differences of stocks.",
@@ -321,11 +344,28 @@
     },
     {
       "kind" : "identifier",
-      "text" : "difference"
+      "text" : "stockDifference"
     },
     {
       "kind" : "text",
       "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "state"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
     },
     {
       "kind" : "externalParam",
@@ -346,23 +386,6 @@
     },
     {
       "kind" : "externalParam",
-      "text" : "with"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
       "text" : "timeDelta"
     },
     {
@@ -376,20 +399,28 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
+      "preciseIdentifier" : "s:12PoieticFlows13NumericVectorV",
+      "text" : "NumericVector"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/difference(at:with:timeDelta:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/stockDifference(state:at:timeDelta:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "difference(at:with:timeDelta:)",
+  "title" : "stockDifference(state:at:timeDelta:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver\/difference(at:with:timedelta:)"
+  "url" : "\/documentation\/poieticflows\/solver\/stockdifference(state:at:timedelta:)"
 }
 }
 }

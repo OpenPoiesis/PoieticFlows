@@ -9,6 +9,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver"
       ]
     ]
@@ -19,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows6SolverC9constantsSDys6UInt64VSdGvp",
+    "externalID" : "s:12PoieticFlows6SolverC9constantsSDys6UInt64V0A4Core7VariantOGvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -48,8 +49,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:Sd",
-        "text" : "Double"
+        "preciseIdentifier" : "s:11PoieticCore7VariantO",
+        "text" : "Variant"
       },
       {
         "kind" : "text",
@@ -104,8 +105,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:Sd",
-              "text" : "Double"
+              "preciseIdentifier" : "s:11PoieticCore7VariantO",
+              "text" : "Variant"
             },
             {
               "kind" : "text",
@@ -194,6 +195,20 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
+  "abstract" : [
+    {
+      "text" : "Simulation and computation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulation"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/Solver": {
   "abstract" : [
     {
@@ -263,8 +278,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
+      "preciseIdentifier" : "s:11PoieticCore7VariantO",
+      "text" : "Variant"
     },
     {
       "kind" : "text",

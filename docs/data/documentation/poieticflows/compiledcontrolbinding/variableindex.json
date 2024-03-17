@@ -9,6 +9,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding"
       ]
     ]
@@ -39,8 +40,17 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-        "text" : "VariableIndex"
+        "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+        "text" : "SimulationState"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+        "text" : "Index"
       }
     ],
     "modules" : [
@@ -81,10 +91,20 @@
               "text" : ": "
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-              "text" : "VariableIndex"
+              "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+              "text" : "SimulationState"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/Index",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+              "text" : "Index"
             }
           ]
         }
@@ -201,8 +221,17 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-      "text" : "VariableIndex"
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding\/variableIndex",
@@ -212,12 +241,81 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledcontrolbinding\/variableindex"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Index of a simulation variable that is represented by an object.",
+      "text" : "Summary…",
       "type" : "text"
     }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Compiled Model and Compiler",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
+  "abstract" : [
+    {
+      "text" : "A simple vector-like structure to hold an unordered collection of numeric",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "values that can be accessed by key. Simple arithmetic operations can be done",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with the structure, such as addition, subtraction and multiplication",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a scalar value.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationState",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/Index": {
+  "abstract" : [
+
   ],
   "fragments" : [
     {
@@ -230,21 +328,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "VariableIndex"
+      "text" : "Index"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/Index",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "VariableIndex"
+      "text" : "Index"
     }
   ],
   "role" : "symbol",
-  "title" : "VariableIndex",
+  "title" : "SimulationState.Index",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/variableindex"
+  "url" : "\/documentation\/poieticflows\/simulationstate\/index"
 }
 }
 }

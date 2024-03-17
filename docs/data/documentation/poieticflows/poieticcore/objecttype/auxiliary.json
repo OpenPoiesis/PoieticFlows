@@ -8,7 +8,8 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel"
       ]
     ]
   },
@@ -130,6 +131,8 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/GraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Chart",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Chart",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/ChartSeries",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Control"
       ],
       "title" : "Model and Traits"
@@ -213,6 +216,20 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Metamodel": {
+  "abstract" : [
+    {
+      "text" : "…",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Stock and Flow Metamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/metamodel"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Auxiliary": {
   "abstract" : [
     {
@@ -257,6 +274,104 @@
   "title" : "Auxiliary",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/auxiliary"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Chart": {
+  "abstract" : [
+    {
+      "text" : "A user interface node representing a chart.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Chart"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Chart",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Chart",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chart"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/ChartSeries": {
+  "abstract" : [
+    {
+      "text" : "An edge type to connect a chart with a series that are included in the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "chart.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ChartSeries"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/ChartSeries",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ChartSeries",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chartseries"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Control": {
   "abstract" : [

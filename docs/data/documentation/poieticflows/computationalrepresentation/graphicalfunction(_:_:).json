@@ -9,6 +9,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation"
       ]
     ]
@@ -19,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows27ComputationalRepresentationO17graphicalFunctionyAC0A4Core012NumericUnaryF0C_SitcACmF",
+    "externalID" : "s:12PoieticFlows27ComputationalRepresentationO17graphicalFunctionyAC0A4Core0F0C_SitcACmF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,8 +40,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-        "text" : "NumericUnaryFunction"
+        "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+        "text" : "Function"
       },
       {
         "kind" : "text",
@@ -48,8 +49,17 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-        "text" : "VariableIndex"
+        "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+        "text" : "SimulationState"
+      },
+      {
+        "kind" : "text",
+        "text" : "."
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+        "text" : "Index"
       },
       {
         "kind" : "text",
@@ -95,18 +105,28 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-              "text" : "NumericUnaryFunction"
+              "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+              "text" : "Function"
             },
             {
               "kind" : "text",
               "text" : ", "
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-              "text" : "VariableIndex"
+              "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+              "text" : "SimulationState"
+            },
+            {
+              "kind" : "text",
+              "text" : "."
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/Index",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+              "text" : "Index"
             },
             {
               "kind" : "text",
@@ -116,6 +136,42 @@
         }
       ],
       "kind" : "declarations"
+    },
+    {
+      "content" : [
+        {
+          "anchor" : "discussion",
+          "level" : 2,
+          "text" : "Discussion",
+          "type" : "heading"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The first value is a generated function for computing the values. The",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "second value of the tuple is an index of a state variable representing",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the function’s parameter node.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        }
+      ],
+      "kind" : "content"
     }
   ],
   "schemaVersion" : {
@@ -166,6 +222,20 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
+  "abstract" : [
+    {
+      "text" : "Summary…",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Compiled Model and Compiler",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation": {
   "abstract" : [
@@ -235,8 +305,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-      "text" : "NumericUnaryFunction"
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
     },
     {
       "kind" : "text",
@@ -244,8 +314,17 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-      "text" : "VariableIndex"
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
     },
     {
       "kind" : "text",
@@ -259,12 +338,67 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation\/graphicalfunction(_:_:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/VariableIndex": {
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
   "abstract" : [
     {
-      "text" : "Index of a simulation variable that is represented by an object.",
+      "text" : "A simple vector-like structure to hold an unordered collection of numeric",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "values that can be accessed by key. Simple arithmetic operations can be done",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "with the structure, such as addition, subtraction and multiplication",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a scalar value.",
       "type" : "text"
     }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationState"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationState",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/Index": {
+  "abstract" : [
+
   ],
   "fragments" : [
     {
@@ -277,21 +411,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "VariableIndex"
+      "text" : "Index"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/VariableIndex",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/Index",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "VariableIndex"
+      "text" : "Index"
     }
   ],
   "role" : "symbol",
-  "title" : "VariableIndex",
+  "title" : "SimulationState.Index",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/variableindex"
+  "url" : "\/documentation\/poieticflows\/simulationstate\/index"
 }
 }
 }

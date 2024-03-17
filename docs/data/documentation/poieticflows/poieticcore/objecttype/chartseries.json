@@ -17,8 +17,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel"
       ]
     ]
   },
@@ -165,6 +164,25 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Flow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Auxiliary",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Stock",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/GraphicalFunction",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Chart",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Chart",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Control"
+      ],
+      "title" : "Model and Traits"
+    }
+  ],
   "variants" : [
     {
       "paths" : [
@@ -206,25 +224,17 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore": {
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
   "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore",
-  "kind" : "symbol",
-  "role" : "collection",
-  "title" : "PoieticCore",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType": {
-  "abstract" : [
-
+    {
+      "text" : "The metamodel for Stock-and-Flows domain model.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "extension"
+      "text" : "let"
     },
     {
       "kind" : "text",
@@ -232,22 +242,83 @@
     },
     {
       "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore9MetamodelC",
+      "text" : "Metamodel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FlowsMetamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Metamodel": {
+  "abstract" : [
+    {
+      "text" : "…",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Stock and Flow Metamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/metamodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Auxiliary": {
+  "abstract" : [
+    {
+      "text" : "An auxiliary node - containing a constant or a formula.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Auxiliary"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
       "text" : "ObjectType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Auxiliary",
   "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ObjectType"
-    }
-  ],
   "role" : "symbol",
-  "title" : "ObjectType",
+  "title" : "Auxiliary",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype"
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/auxiliary"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Chart": {
   "abstract" : [
@@ -346,6 +417,374 @@
   "title" : "ChartSeries",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chartseries"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Control": {
+  "abstract" : [
+    {
+      "text" : "A user interface mode representing a control that modifies a value of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "its target node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Control"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Control",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Control",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/control"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Flow": {
+  "abstract" : [
+    {
+      "text" : "A flow node - one of the two core nodes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Flow"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Flow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/flow"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Stock": {
+  "abstract" : [
+    {
+      "text" : "A stock node - one of the two core nodes.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Stock"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Stock",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/stock"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Chart": {
+  "abstract" : [
+    {
+      "text" : "Trait of a node that represents a chart.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Chart"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Chart",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Chart",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/chart"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Flow": {
+  "abstract" : [
+    {
+      "text" : "Trait of nodes representing a flow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Flow"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Flow",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Flow",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/flow"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Formula": {
+  "abstract" : [
+    {
+      "text" : "Trait of simulation nodes that are computed using an arithmetic formula.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Formula"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Formula",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/formula"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/GraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "Trait of a node representing a graphical function.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/GraphicalFunction",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "GraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/graphicalfunction"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Stock": {
+  "abstract" : [
+    {
+      "text" : "Trait of nodes representing a stock.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Stock"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Stock",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Stock",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/stock"
 }
 }
 }

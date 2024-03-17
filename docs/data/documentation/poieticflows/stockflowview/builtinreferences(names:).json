@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows13StockFlowViewC17builtinReferences5namesSDySS0A4Core17VariableReferenceOGSDySSs6UInt64VG_tF",
+    "externalID" : "s:12PoieticFlows13StockFlowViewC17builtinReferences5namesSDySSAA20StateVariableContentOGSDySSs6UInt64VG_tF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -68,8 +68,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore17VariableReferenceO",
-        "text" : "VariableReference"
+        "preciseIdentifier" : "s:12PoieticFlows20StateVariableContentO",
+        "text" : "StateVariableContent"
       },
       {
         "kind" : "text",
@@ -149,9 +149,10 @@
               "text" : " : "
             },
             {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore17VariableReferenceO",
-              "text" : "VariableReference"
+              "preciseIdentifier" : "s:12PoieticFlows20StateVariableContentO",
+              "text" : "StateVariableContent"
             },
             {
               "kind" : "text",
@@ -211,6 +212,40 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StateVariableContent": {
+  "abstract" : [
+    {
+      "text" : "Reference to a variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "StateVariableContent"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "StateVariableContent"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "StateVariableContent",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/statevariablecontent"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [
@@ -304,8 +339,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore17VariableReferenceO",
-      "text" : "VariableReference"
+      "preciseIdentifier" : "s:12PoieticFlows20StateVariableContentO",
+      "text" : "StateVariableContent"
     },
     {
       "kind" : "text",

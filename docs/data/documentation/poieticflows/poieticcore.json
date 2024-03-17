@@ -12,7 +12,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:m:s:e:s:11PoieticCore10ObjectTypeC0A5FlowsE12TimeVariableAA07BuiltinG0CvpZ",
+    "externalID" : "s:m:s:e:s:11PoieticCore10ObjectTypeC0A5FlowsE5StockACvpZ",
     "modules" : [
       {
         "name" : "PoieticFlows"
@@ -35,7 +35,8 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Variable"
       ],
       "title" : "Extended Classes"
     },
@@ -193,6 +194,38 @@
   "title" : "Trait",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/trait"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Variable": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:11PoieticCore8VariableC",
+      "text" : "Variable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Variable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Variable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Variable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/variable"
 }
 }
 }

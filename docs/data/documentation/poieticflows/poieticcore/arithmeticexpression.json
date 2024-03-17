@@ -14,7 +14,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:e:s:11PoieticCore20ArithmeticExpressionO0A5FlowsAA12ForeignValueORszAD22BoundVariableReferenceVRs_AA16FunctionProtocol_pRs0_rlE8evaluateyAfD15SimulationStateVKF",
+    "externalID" : "s:e:s:11PoieticCore20ArithmeticExpressionO0A5FlowsAD13BoundVariableVRszAA8FunctionCRs_rlE9valueTypeAA05ValueJ0Ovp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -90,9 +90,9 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression\/evaluate(_:)"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression\/valueType"
       ],
-      "title" : "Instance Methods"
+      "title" : "Instance Properties"
     }
   ],
   "variants" : [
@@ -179,7 +179,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/arithmeticexpression"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ArithmeticExpression/evaluate(_:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ArithmeticExpression/valueType": {
   "abstract" : [
 
   ],
@@ -198,22 +198,6 @@
     ],
     "constraints" : [
       {
-        "code" : "L",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : " is ",
-        "type" : "text"
-      },
-      {
-        "code" : "ForeignValue",
-        "type" : "codeVoice"
-      },
-      {
-        "text" : ", ",
-        "type" : "text"
-      },
-      {
         "code" : "V",
         "type" : "codeVoice"
       },
@@ -222,11 +206,11 @@
         "type" : "text"
       },
       {
-        "code" : "BoundVariableReference",
+        "code" : "BoundVariable",
         "type" : "codeVoice"
       },
       {
-        "text" : ", and ",
+        "text" : " and ",
         "type" : "text"
       },
       {
@@ -238,7 +222,7 @@
         "type" : "text"
       },
       {
-        "code" : "any FunctionProtocol",
+        "code" : "Function",
         "type" : "codeVoice"
       },
       {
@@ -250,7 +234,7 @@
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "func"
+      "text" : "var"
     },
     {
       "kind" : "text",
@@ -258,41 +242,24 @@
     },
     {
       "kind" : "identifier",
-      "text" : "evaluate"
+      "text" : "valueType"
     },
     {
       "kind" : "text",
-      "text" : "("
+      "text" : ": "
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
-      "text" : "ForeignValue"
+      "preciseIdentifier" : "s:11PoieticCore9ValueTypeO",
+      "text" : "ValueType"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression\/evaluate(_:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression\/valueType",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "evaluate(_:)",
+  "title" : "valueType",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/arithmeticexpression\/evaluate(_:)"
+  "url" : "\/documentation\/poieticflows\/poieticcore\/arithmeticexpression\/valuetype"
 }
 }
 }

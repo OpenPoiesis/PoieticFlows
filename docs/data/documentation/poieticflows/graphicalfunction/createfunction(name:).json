@@ -17,6 +17,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction"
       ]
     ]
@@ -27,7 +28,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows17GraphicalFunctionC06createD04name0A4Core012NumericUnaryD0CSS_tF",
+    "externalID" : "s:12PoieticFlows17GraphicalFunctionC06createD04name0A4Core0D0CSS_tF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -64,8 +65,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-        "text" : "NumericUnaryFunction"
+        "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+        "text" : "Function"
       }
     ],
     "modules" : [
@@ -124,8 +125,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-              "text" : "NumericUnaryFunction"
+              "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+              "text" : "Function"
             }
           ]
         }
@@ -296,8 +297,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-      "text" : "NumericUnaryFunction"
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/createFunction(name:)",
@@ -360,6 +361,20 @@
   "title" : "stepFunction(x:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunction\/stepfunction(x:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
+  "abstract" : [
+    {
+      "text" : "Simulation and computation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulation"
 }
 }
 }

@@ -9,6 +9,7 @@
     "paths" : [
       [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction"
       ]
     ]
@@ -19,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows25CompiledGraphicalFunctionV8function0A4Core012NumericUnaryE0Cvp",
+    "externalID" : "s:12PoieticFlows25CompiledGraphicalFunctionV8function0A4Core0E0Cvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -39,8 +40,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-        "text" : "NumericUnaryFunction"
+        "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+        "text" : "Function"
       }
     ],
     "modules" : [
@@ -82,8 +83,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-              "text" : "NumericUnaryFunction"
+              "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+              "text" : "Function"
             }
           ]
         }
@@ -208,8 +209,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-      "text" : "NumericUnaryFunction"
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction\/function",
@@ -218,6 +219,20 @@
   "title" : "function",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledgraphicalfunction\/function"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
+  "abstract" : [
+    {
+      "text" : "Summary…",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Compiled Model and Compiler",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
 }
 }
 }

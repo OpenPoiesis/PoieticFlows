@@ -8,7 +8,8 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation"
       ]
     ]
   },
@@ -90,12 +91,9 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EulerSolver",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/RungeKutta4Solver"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState"
       ],
-      "title" : "Simulation"
+      "title" : "Simulator"
     }
   ],
   "topicSections" : [
@@ -172,73 +170,19 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/EulerSolver": {
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
   "abstract" : [
     {
-      "text" : "Solver that integrates using the Euler method.",
+      "text" : "Simulation and computation.",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "EulerSolver"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EulerSolver",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "EulerSolver"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "EulerSolver",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/eulersolver"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/RungeKutta4Solver": {
-  "abstract" : [
-    {
-      "text" : "Solver that integrates using the Runge Kutta 4 method.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "RungeKutta4Solver"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/RungeKutta4Solver",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "RungeKutta4Solver"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "RungeKutta4Solver",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/rungekutta4solver"
+  "url" : "\/documentation\/poieticflows\/simulation"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
   "abstract" : [
@@ -585,7 +529,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/init(model:solverType:)": {
   "abstract" : [
-
+    {
+      "text" : "Creates and initialises a simulator.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -678,7 +625,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/initializeState(override:)": {
   "abstract" : [
     {
-      "text" : "Initialize the simulation state with existing frame.",
+      "text" : "Initialise the simulation state with existing frame.",
       "type" : "text"
     }
   ],
@@ -723,7 +670,15 @@
     },
     {
       "kind" : "text",
-      "text" : "]) -> "
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -818,7 +773,11 @@
     },
     {
       "kind" : "text",
-      "text" : ")"
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/run(_:)",
@@ -925,7 +884,11 @@
     },
     {
       "kind" : "text",
-      "text" : "()"
+      "text" : "() "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/step()",
@@ -1012,40 +975,6 @@
   "title" : "timePoints",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator\/timepoints"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Solver": {
-  "abstract" : [
-    {
-      "text" : "An abstract class for equations solvers.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "class"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Solver"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Solver"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Solver",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver"
 }
 }
 }

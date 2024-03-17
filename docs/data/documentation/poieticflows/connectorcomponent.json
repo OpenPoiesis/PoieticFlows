@@ -82,9 +82,6 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/11PoieticCore9ComponentP",
-        "doc:\/\/PoieticFlows\/11PoieticCore20InspectableComponentP",
-        "doc:\/\/PoieticFlows\/11PoieticCore15KeyedAttributesP",
-        "doc:\/\/PoieticFlows\/11PoieticCore22MutableKeyedAttributesP",
         "doc:\/\/PoieticFlows\/s23CustomStringConvertibleP"
       ],
       "kind" : "relationships",
@@ -117,25 +114,9 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/attribute(forKey:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/setAttribute(value:forKey:)"
-      ],
-      "title" : "Instance Methods"
-    },
-    {
-      "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/trait"
       ],
       "title" : "Type Properties"
-    },
-    {
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/InspectableComponent-Implementations",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/KeyedAttributes-Implementations",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/MutableKeyedAttributes-Implementations"
-      ],
-      "title" : "Default Implementations"
     }
   ],
   "variants" : [
@@ -152,21 +133,6 @@
   ]
 , 
 "references": {
-"doc://PoieticFlows/11PoieticCore15KeyedAttributesP": {
-  "identifier" : "doc:\/\/PoieticFlows\/11PoieticCore15KeyedAttributesP",
-  "title" : "PoieticCore.KeyedAttributes",
-  "type" : "unresolvable"
-},
-"doc://PoieticFlows/11PoieticCore20InspectableComponentP": {
-  "identifier" : "doc:\/\/PoieticFlows\/11PoieticCore20InspectableComponentP",
-  "title" : "PoieticCore.InspectableComponent",
-  "type" : "unresolvable"
-},
-"doc://PoieticFlows/11PoieticCore22MutableKeyedAttributesP": {
-  "identifier" : "doc:\/\/PoieticFlows\/11PoieticCore22MutableKeyedAttributesP",
-  "title" : "PoieticCore.MutableKeyedAttributes",
-  "type" : "unresolvable"
-},
 "doc://PoieticFlows/11PoieticCore9ComponentP": {
   "identifier" : "doc:\/\/PoieticFlows\/11PoieticCore9ComponentP",
   "title" : "PoieticCore.Component",
@@ -232,94 +198,6 @@
   "title" : "ConnectorComponent",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/connectorcomponent"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/InspectableComponent-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/InspectableComponent-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "InspectableComponent Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/connectorcomponent\/inspectablecomponent-implementations"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/KeyedAttributes-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/KeyedAttributes-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "KeyedAttributes Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/connectorcomponent\/keyedattributes-implementations"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/MutableKeyedAttributes-Implementations": {
-  "abstract" : [
-
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/MutableKeyedAttributes-Implementations",
-  "kind" : "article",
-  "role" : "collectionGroup",
-  "title" : "MutableKeyedAttributes Implementations",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/connectorcomponent\/mutablekeyedattributes-implementations"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/attribute(forKey:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "attribute"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "forKey"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12AttributeKeya",
-      "text" : "AttributeKey"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
-      "text" : "ForeignValue"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/attribute(forKey:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "attribute(forKey:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/connectorcomponent\/attribute(forkey:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/description": {
   "abstract" : [
@@ -454,73 +332,6 @@
   "title" : "midpoints",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/connectorcomponent\/midpoints"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/setAttribute(value:forKey:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "setAttribute"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "value"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
-      "text" : "ForeignValue"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "forKey"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12AttributeKeya",
-      "text" : "AttributeKey"
-    },
-    {
-      "kind" : "text",
-      "text" : ") "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/setAttribute(value:forKey:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "setAttribute(value:forKey:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/connectorcomponent\/setattribute(value:forkey:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/trait": {
   "abstract" : [

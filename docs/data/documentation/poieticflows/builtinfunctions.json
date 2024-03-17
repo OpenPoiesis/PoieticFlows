@@ -8,7 +8,8 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation"
       ]
     ]
   },
@@ -18,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows16BuiltinFunctionsSay0A4Core16FunctionProtocol_pGvp",
+    "externalID" : "s:12PoieticFlows16BuiltinFunctionsSay0A4Core8FunctionCGvp",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -34,12 +35,12 @@
       },
       {
         "kind" : "text",
-        "text" : ": [any "
+        "text" : ": ["
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore16FunctionProtocolP",
-        "text" : "FunctionProtocol"
+        "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+        "text" : "Function"
       },
       {
         "kind" : "text",
@@ -81,12 +82,12 @@
             },
             {
               "kind" : "text",
-              "text" : ": [any "
+              "text" : ": ["
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore16FunctionProtocolP",
-              "text" : "FunctionProtocol"
+              "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+              "text" : "Function"
             },
             {
               "kind" : "text",
@@ -255,9 +256,10 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinUnaryOperators",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinBinaryOperators"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinBinaryOperators",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction"
       ],
-      "title" : "Built-in Functions"
+      "title" : "Functions"
     }
   ],
   "variants" : [
@@ -323,12 +325,12 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore16FunctionProtocolP",
-      "text" : "FunctionProtocol"
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
     },
     {
       "kind" : "text",
@@ -364,12 +366,12 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore16FunctionProtocolP",
-      "text" : "FunctionProtocol"
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
     },
     {
       "kind" : "text",
@@ -405,12 +407,12 @@
     },
     {
       "kind" : "text",
-      "text" : ": [any "
+      "text" : ": ["
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore16FunctionProtocolP",
-      "text" : "FunctionProtocol"
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
     },
     {
       "kind" : "text",
@@ -423,6 +425,54 @@
   "title" : "BuiltinUnaryOperators",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/builtinunaryoperators"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
+  "abstract" : [
+    {
+      "text" : "Object representing a function defined by a graph.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "class"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "GraphicalFunction"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "GraphicalFunction",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunction"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
+  "abstract" : [
+    {
+      "text" : "Simulation and computation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulation"
 }
 }
 }

@@ -8,7 +8,8 @@
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation"
       ]
     ]
   },
@@ -122,6 +123,17 @@
   "sections" : [
 
   ],
+  "seeAlsoSections" : [
+    {
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinUnaryOperators",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinBinaryOperators",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinFunctions"
+      ],
+      "title" : "Functions"
+    }
+  ],
   "topicSections" : [
     {
       "identifiers" : [
@@ -177,6 +189,129 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BuiltinBinaryOperators": {
+  "abstract" : [
+    {
+      "text" : "List of built-in numeric binary operators.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BuiltinBinaryOperators"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinBinaryOperators",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "BuiltinBinaryOperators",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/builtinbinaryoperators"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BuiltinFunctions": {
+  "abstract" : [
+    {
+      "text" : "List of built-in numeric function.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BuiltinFunctions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinFunctions",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "BuiltinFunctions",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/builtinfunctions"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/BuiltinUnaryOperators": {
+  "abstract" : [
+    {
+      "text" : "List of built-in numeric unary operators.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "BuiltinUnaryOperators"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinUnaryOperators",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "BuiltinUnaryOperators",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/builtinunaryoperators"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction": {
   "abstract" : [
@@ -263,8 +398,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore20NumericUnaryFunctionC",
-      "text" : "NumericUnaryFunction"
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/createFunction(name:)",
@@ -368,6 +503,20 @@
   "title" : "stepFunction(x:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunction\/stepfunction(x:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
+  "abstract" : [
+    {
+      "text" : "Simulation and computation.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Simulation and Computation",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulation"
 }
 }
 }

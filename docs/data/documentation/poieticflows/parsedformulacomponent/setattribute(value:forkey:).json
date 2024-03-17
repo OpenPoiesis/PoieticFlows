@@ -13,7 +13,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows22ParsedFormulaComponentV12setAttribute5value6forKeyy0A4Core12ForeignValueO_SStKF",
+    "externalID" : "s:12PoieticFlows22ParsedFormulaComponentV12setAttribute5value6forKeyy0A4Core7VariantO_SStKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -41,8 +41,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
-        "text" : "ForeignValue"
+        "preciseIdentifier" : "s:11PoieticCore7VariantO",
+        "text" : "Variant"
       },
       {
         "kind" : "text",
@@ -125,8 +125,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
-              "text" : "ForeignValue"
+              "preciseIdentifier" : "s:11PoieticCore7VariantO",
+              "text" : "Variant"
             },
             {
               "kind" : "text",
@@ -278,8 +278,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12ForeignValueO",
-      "text" : "ForeignValue"
+      "preciseIdentifier" : "s:11PoieticCore7VariantO",
+      "text" : "Variant"
     },
     {
       "kind" : "text",

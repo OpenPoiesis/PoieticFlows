@@ -1,14 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Compiled representation of the stock.",
+      "text" : "Compiled representation of a stock.",
       "type" : "text"
     }
   ],
   "hierarchy" : {
     "paths" : [
       [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler"
       ]
     ]
   },
@@ -103,7 +104,7 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/computeStock(_:at:with:)",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/computeStockDelta(_:at:with:)",
                   "isActive" : true,
                   "type" : "reference"
                 }
@@ -119,16 +120,6 @@
       "kind" : "content"
     }
   ],
-  "relationshipsSections" : [
-    {
-      "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IndexRepresentable"
-      ],
-      "kind" : "relationships",
-      "title" : "Conforms To",
-      "type" : "conformsTo"
-    }
-  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -141,22 +132,20 @@
     {
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundVariableReference",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IndexRepresentable",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledObject",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundBuiltinVariable",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundComponent"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType"
       ],
-      "title" : "Compiled Model and Compiler"
+      "title" : "Compiled Model"
     }
   ],
   "topicSections" : [
@@ -165,9 +154,9 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/allowsNegative",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/delayedInflow",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/id",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/index",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/inflows",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/outflows"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/outflows",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/variableIndex"
       ],
       "title" : "Instance Properties"
     }
@@ -213,14 +202,17 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/BoundBuiltinVariable": {
+"doc://PoieticFlows/documentation/PoieticFlows/BuiltinVariable": {
   "abstract" : [
-
+    {
+      "text" : "Builtin variable kind.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "struct"
+      "text" : "enum"
     },
     {
       "kind" : "text",
@@ -228,57 +220,26 @@
     },
     {
       "kind" : "identifier",
-      "text" : "BoundBuiltinVariable"
+      "text" : "BuiltinVariable"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundBuiltinVariable",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "BoundBuiltinVariable"
+      "text" : "BuiltinVariable"
     }
   ],
   "role" : "symbol",
-  "title" : "BoundBuiltinVariable",
+  "title" : "BuiltinVariable",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/boundbuiltinvariable"
+  "url" : "\/documentation\/poieticflows\/builtinvariable"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/BoundComponent": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "BoundComponent"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundComponent",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "BoundComponent"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "BoundComponent",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/boundcomponent"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/BoundVariableReference": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledAuxiliary": {
   "abstract" : [
     {
-      "text" : "Structure representing a reference to a simulation variable.",
+      "text" : "Compiled auxiliary node.",
       "type" : "text"
     }
   ],
@@ -293,21 +254,63 @@
     },
     {
       "kind" : "identifier",
-      "text" : "BoundVariableReference"
+      "text" : "CompiledAuxiliary"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundVariableReference",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "BoundVariableReference"
+      "text" : "CompiledAuxiliary"
     }
   ],
   "role" : "symbol",
-  "title" : "BoundVariableReference",
+  "title" : "CompiledAuxiliary",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/boundvariablereference"
+  "url" : "\/documentation\/poieticflows\/compiledauxiliary"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledBuiltin": {
+  "abstract" : [
+    {
+      "text" : "Structure representing builtin and reference to its simulation state",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledBuiltin"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledBuiltin"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledBuiltin",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledbuiltin"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledControlBinding": {
   "abstract" : [
@@ -345,7 +348,10 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow": {
   "abstract" : [
-
+    {
+      "text" : "Compiled representation of a flow.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -419,7 +425,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel": {
   "abstract" : [
     {
-      "text" : "Structure used by the simulator.",
+      "text" : "Core structure used by the simulator and the solver to perform the",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "computation.",
       "type" : "text"
     }
   ],
@@ -450,44 +464,24 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledObject": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Plain compiled variable without any additional information.",
+      "text" : "Summary…",
       "type" : "text"
     }
   ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledObject"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledObject",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledObject"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledObject",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
+  "kind" : "article",
+  "role" : "collectionGroup",
+  "title" : "Compiled Model and Compiler",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledobject"
+  "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock": {
   "abstract" : [
     {
-      "text" : "Compiled representation of the stock.",
+      "text" : "Compiled representation of a stock.",
       "type" : "text"
     }
   ],
@@ -637,43 +631,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledstock\/id"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/index": {
-  "abstract" : [
-    {
-      "text" : "Index in of the simulation state variable that represents the stock.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "index"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-      "text" : "VariableIndex"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/index",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "index",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledstock\/index"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/inflows": {
   "abstract" : [
     {
@@ -708,8 +665,17 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-      "text" : "VariableIndex"
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
     },
     {
       "kind" : "text",
@@ -757,8 +723,17 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13VariableIndexa",
-      "text" : "VariableIndex"
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
     },
     {
       "kind" : "text",
@@ -772,26 +747,17 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledstock\/outflows"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledStock/variableIndex": {
   "abstract" : [
     {
-      "text" : "An object that compiles the model into a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "Index in of the simulation state variable that represents the stock.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "let"
     },
     {
       "kind" : "text",
@@ -799,112 +765,46 @@
     },
     {
       "kind" : "identifier",
-      "text" : "Compiler"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Compiler"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Compiler",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ComputedVariable": {
-  "abstract" : [
-    {
-      "text" : "Object describing a simulation state variable.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
+      "text" : "variableIndex"
     },
     {
       "kind" : "text",
-      "text" : " "
+      "text" : ": "
     },
     {
-      "kind" : "identifier",
-      "text" : "ComputedVariable"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedVariable",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ComputedVariable"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ComputedVariable",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/computedvariable"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/IndexRepresentable": {
-  "abstract" : [
-    {
-      "text" : "Protocol for structures and objects that contain or represent an index.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "protocol"
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
     },
     {
       "kind" : "text",
-      "text" : " "
+      "text" : "."
     },
     {
-      "kind" : "identifier",
-      "text" : "IndexRepresentable"
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IndexRepresentable",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock\/variableIndex",
   "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "IndexRepresentable"
-    }
-  ],
   "role" : "symbol",
-  "title" : "IndexRepresentable",
+  "title" : "variableIndex",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/indexrepresentable"
+  "url" : "\/documentation\/poieticflows\/compiledstock\/variableindex"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue": {
+"doc://PoieticFlows/documentation/PoieticFlows/ComputationalRepresentation": {
   "abstract" : [
     {
-      "text" : "An issue detected by the ",
+      "text" : "Representation of a node in the simulation denoting how the node will",
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " or the ",
+      "text" : " ",
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "be computed.",
       "type" : "text"
     }
   ],
@@ -919,26 +819,26 @@
     },
     {
       "kind" : "identifier",
-      "text" : "NodeIssue"
+      "text" : "ComputationalRepresentation"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "NodeIssue"
+      "text" : "ComputationalRepresentation"
     }
   ],
   "role" : "symbol",
-  "title" : "NodeIssue",
+  "title" : "ComputationalRepresentation",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/nodeissue"
+  "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/NodeIssuesError": {
+"doc://PoieticFlows/documentation/PoieticFlows/ComputedObject": {
   "abstract" : [
     {
-      "text" : "An aggregate error of multiple issues grouped by a node.",
+      "text" : "Structure representing a computation of an object.",
       "type" : "text"
     }
   ],
@@ -953,23 +853,149 @@
     },
     {
       "kind" : "identifier",
-      "text" : "NodeIssuesError"
+      "text" : "ComputedObject"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "NodeIssuesError"
+      "text" : "ComputedObject"
     }
   ],
   "role" : "symbol",
-  "title" : "NodeIssuesError",
+  "title" : "ComputedObject",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/nodeissueserror"
+  "url" : "\/documentation\/poieticflows\/computedobject"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Solver/computeStock(_:at:with:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
+  "abstract" : [
+    {
+      "text" : "Trait with simulation defaults.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Simulation"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Simulation",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Simulation",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/simulation"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationDefaults": {
+  "abstract" : [
+    {
+      "text" : "Defaults fro simulation taken from an object with a trait",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Simulation",
+      "isActive" : true,
+      "type" : "reference"
+    },
+    {
+      "text" : ".",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationDefaults"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationDefaults"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationDefaults",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationdefaults"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType": {
+  "abstract" : [
+    {
+      "text" : "Type of the simulation variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationVariableType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationVariableType"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationVariableType",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationvariabletype"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/computeStockDelta(_:at:with:)": {
   "abstract" : [
     {
       "text" : "Compute a difference of a stock.",
@@ -987,7 +1013,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "computeStock"
+      "text" : "computeStockDelta"
     },
     {
       "kind" : "text",
@@ -1042,7 +1068,15 @@
     },
     {
       "kind" : "text",
-      "text" : ") -> "
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1050,24 +1084,24 @@
       "text" : "Double"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/computeStock(_:at:with:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/computeStockDelta(_:at:with:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "computeStock(_:at:with:)",
+  "title" : "computeStockDelta(_:at:with:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver\/computestock(_:at:with:)"
+  "url" : "\/documentation\/poieticflows\/solver\/computestockdelta(_:at:with:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
+"doc://PoieticFlows/documentation/PoieticFlows/StateVariable": {
   "abstract" : [
     {
-      "text" : "View of Stock-and-Flow domain-specific aspects of the design.",
+      "text" : "Structure representing a reference to a simulation variable.",
       "type" : "text"
     }
   ],
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "class"
+      "text" : "struct"
     },
     {
       "kind" : "text",
@@ -1075,21 +1109,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "StockFlowView"
+      "text" : "StateVariable"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "StockFlowView"
+      "text" : "StateVariable"
     }
   ],
   "role" : "symbol",
-  "title" : "StockFlowView",
+  "title" : "StateVariable",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview"
+  "url" : "\/documentation\/poieticflows\/statevariable"
 }
 }
 }
