@@ -34,32 +34,39 @@ public class RungeKutta4Solver: Solver {
     override public func compute(_ current: SimulationState,
                                  at time: Double,
                                  timeDelta: Double = 1.0) throws -> SimulationState {
-        var current = current
-        // FIXME: [IMPORTANT] [REFACTORING]
-        fatalError("FIX THIS")
-//        current.builtins = self.makeBuiltins(time: time, timeDelta: timeDelta)
-//        let stage1 = try prepareStage(current, at: time, timeDelta: timeDelta)
-//        let k1 = try stockDifference(state: stage1,
-//                                     at: time,
-//                                     timeDelta: timeDelta)
-//        
-//        let stage2 = try prepareStage(current, at: time + timeDelta / 2, timeDelta: timeDelta)
-//        let k2 = try difference(at: time + timeDelta / 2,
-//                                with: stage2 + (timeDelta / 2) * k1,
-//                                timeDelta: timeDelta / 2)
-//        
-//        let stage3 = try prepareStage(current, at: time + timeDelta / 2, timeDelta: timeDelta)
-//        let k3 = try difference(at: time + timeDelta / 2,
-//                                with: stage3 + (timeDelta / 2) * k2,
-//                                timeDelta: timeDelta / 2)
-//        
-//        
-//        let stage4 = try prepareStage(current, at: time, timeDelta: timeDelta)
-//        let k4 = try difference(at: time,
-//                                with: stage4 + timeDelta * k3,
-//                                timeDelta: timeDelta)
-//
-//        let result = current + (1.0/6.0) * timeDelta * (k1 + (2*k2) + (2*k3) + k4)
-//        return result
+        var stage1 = current
+        updateBuiltins(&stage1, time: time, timeDelta: timeDelta)
+        let k1 = try stockDifference(state: stage1,
+                                        at: time,
+                                        timeDelta: timeDelta)
+
+        var stage2 = current
+        updateBuiltins(&stage2, time: time, timeDelta: timeDelta)
+        accumulateStocks(&stage2, delta: timeDelta * (k1 / 2))
+        let k2 = try stockDifference(state: stage2,
+                                        at: time + timeDelta / 2,
+                                        timeDelta: timeDelta)
+
+        var stage3 = current
+        updateBuiltins(&stage3, time: time, timeDelta: timeDelta)
+        accumulateStocks(&stage3, delta: timeDelta * (k2 / 2))
+        let k3 = try stockDifference(state: stage3,
+                                        at: time + timeDelta / 2,
+                                        timeDelta: timeDelta)
+
+        var stage4 = current
+        updateBuiltins(&stage4, time: time, timeDelta: timeDelta)
+        accumulateStocks(&stage4, delta: timeDelta * (k2 / 2))
+        let k4 = try stockDifference(state: stage3,
+                                        at: time + timeDelta / 2,
+                                        timeDelta: timeDelta)
+
+        let resultDelta = (1.0/6.0) * timeDelta * (k1 + (2*k2) + (2*k3) + k4)
+        var result = current
+        updateBuiltins(&result, time: time, timeDelta: timeDelta)
+        accumulateStocks(&result, delta: resultDelta)
+        try update(&result, at: time, timeDelta: timeDelta)
+
+        return result
     }
 }
