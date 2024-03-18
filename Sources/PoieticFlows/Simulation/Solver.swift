@@ -154,22 +154,65 @@ public class Solver {
         self.constants = [:]
     }
 
-    /// Create a new simulation state.
+    /// Initialise the computation state.
     ///
-    /// All variables except built-ins will be set to _0.0_ (zero).
+    /// - Parameters:
+    ///     - `time`: Initial time. This parameter is usually not used, but
+    ///     some computations in the model might use it. Default value is 0.0
+    ///     - `override`: Dictionary of values to override during initialisation.
+    ///     The values of nodes that are present in the dictionary will not be
+    ///     evaluated, but the value from the dictionary will be used.
     ///
-    /// The state will have built-ins initialized to their corresponding values.
+    /// This function computes the initial state of the computation by
+    /// evaluating all the nodes in the order of their dependency by parameter.
     ///
-    public func newState(time: Double = 0.0,
-                         timeDelta: Double = 1.0) -> SimulationState {
+    /// - Returns: `StateVector` with initialised values.
+    ///
+    /// - Precondition: The compiled model must be valid. If the model
+    ///   is not valid and contains elements that can not be computed
+    ///   correctly, such as invalid variable references, this function
+    ///   will fail.
+    ///
+    /// - Note: Use only constants in the `override` dictionary. Even-though
+    ///   any node value can be provided, in the future only constants will
+    ///   be allowed.
+    ///
+    /// - Note: Values for stocks in the `override` dictionary will be used
+    ///   only during initialisation.
+    ///
+    public func initializeState(override: [ObjectID:Double] = [:],
+                                time: Double = 0.0,
+                                timeDelta: Double = 1.0) throws -> SimulationState {
+
+        // FIXME: make override [ObjectID:Variant] and validate types(?)
+        self.constants = [:]
         var state = SimulationState(model: compiledModel)
         updateBuiltins(&state, time: time, timeDelta: timeDelta)
 
+        for (index, object) in compiledModel.computedObjects.enumerated() {
+            if let value = override[object.id] {
+                state[object.variableIndex] = Variant(value)
+
+                // Keep only overrides for auxiliaries
+                // FIXME: [REFACTORING] simplify
+                // TODO: Introduce object.type enum? or isAuxiliary? (too specific)
+                if compiledModel.auxiliaries.contains(where: { $0.id == object.id }) {
+                    self.constants[object.id] = Variant(value)
+                }
+            }
+            else {
+                let result = try evaluate(objectAt: index,
+                                          with: &state)
+                state[object.variableIndex] = result
+            }
+        }
+        
         return state
     }
+
     public func updateBuiltins(_ state: inout SimulationState,
-                            time: Double = 0.0,
-                            timeDelta: Double = 1.0) {
+                               time: Double = 0.0,
+                               timeDelta: Double = 1.0) {
         
         for variable in compiledModel.builtins {
             let value: Variant
@@ -184,6 +227,31 @@ public class Solver {
         }
     }
 
+    /// Compute auxiliaries and stocks for given stage of the computation step.
+    ///
+    /// If solvers use multiple stages, they must call this method if they do
+    /// not prepare the state by themselves.
+    ///
+    /// The ``EulerSolver`` uses only one stage, the ``RungeKutta4Solver`` uses
+    /// 4 stages.
+    ///
+    func update(_ state: inout SimulationState,
+                at time: Double,
+                timeDelta: Double = 1.0) throws {
+        
+        for aux in compiledModel.auxiliaries {
+            let value = try evaluate(objectAt: aux.objectIndex,
+                                     with: &state)
+            state[aux.variableIndex] = value
+        }
+
+        for flow in compiledModel.flows {
+            let value = try evaluate(objectAt: flow.objectIndex,
+                                     with: &state)
+            state[flow.variableIndex] = value
+        }
+    }
+    
 
     /// Evaluate an expression within the context of a simulation state.
     ///
@@ -217,6 +285,30 @@ public class Solver {
         }
     }
 
+    public func evaluate(expression: BoundExpression,
+                         with state: SimulationState) throws -> Variant {
+        switch expression {
+        case let .value(value):
+            return value
+
+        case let .binary(op, lhs, rhs):
+            return try op.apply([try evaluate(expression: lhs, with: state),
+                                 try evaluate(expression: rhs, with: state)])
+
+        case let .unary(op, operand):
+            return try op.apply([try evaluate(expression: operand, with: state)])
+
+        case let .function(functionRef, arguments):
+            let evaluatedArgs = try arguments.map {
+                try evaluate(expression: $0, with: state)
+            }
+            return try functionRef.apply(evaluatedArgs)
+
+        case let .variable(variable):
+            return state[variable.index]
+        }
+    }
+
     public func evaluate(delay: CompiledDelay,
                          with state: inout SimulationState) throws -> Variant {
         // FIXME: Propagate time or include time in the state
@@ -243,84 +335,6 @@ public class Solver {
         return outputValue
     }
     
-    public func evaluate(expression: BoundExpression,
-                         with state: SimulationState) throws -> Variant {
-        switch expression {
-        case let .value(value):
-            return value
-
-        case let .binary(op, lhs, rhs):
-            return try op.apply([try evaluate(expression: lhs, with: state),
-                                 try evaluate(expression: rhs, with: state)])
-
-        case let .unary(op, operand):
-            return try op.apply([try evaluate(expression: operand, with: state)])
-
-        case let .function(functionRef, arguments):
-            let evaluatedArgs = try arguments.map {
-                try evaluate(expression: $0, with: state)
-            }
-            return try functionRef.apply(evaluatedArgs)
-
-        case let .variable(variable):
-            return state[variable.index]
-        }
-    }
-
-    /// Initialise the computation state.
-    ///
-    /// - Parameters:
-    ///     - `time`: Initial time. This parameter is usually not used, but
-    ///     some computations in the model might use it. Default value is 0.0
-    ///     - `override`: Dictionary of values to override during initialisation.
-    ///     The values of nodes that are present in the dictionary will not be
-    ///     evaluated, but the value from the dictionary will be used.
-    ///
-    /// This function computes the initial state of the computation by
-    /// evaluating all the nodes in the order of their dependency by parameter.
-    ///
-    /// - Returns: `StateVector` with initialised values.
-    ///
-    /// - Precondition: The compiled model must be valid. If the model
-    ///   is not valid and contains elements that can not be computed
-    ///   correctly, such as invalid variable references, this function
-    ///   will fail.
-    ///
-    /// - Note: Use only constants in the `override` dictionary. Even-though
-    ///   any node value can be provided, in the future only constants will
-    ///   be allowed.
-    ///
-    /// - Note: Values for stocks in the `override` dictionary will be used
-    ///   only during initialisation.
-    ///
-    public func initializeState(override: [ObjectID:Double] = [:],
-                                time: Double = 0.0,
-                                timeDelta: Double = 1.0) throws -> SimulationState {
-
-        // FIXME: make override [ObjectID:Variant] and validate types(?)
-        self.constants = [:]
-        var state = newState(time: time, timeDelta: timeDelta)
-        
-        for (index, object) in compiledModel.computedObjects.enumerated() {
-            if let value = override[object.id] {
-                state[object.variableIndex] = Variant(value)
-
-                // Keep only overrides for auxiliaries
-                // FIXME: [REFACTORING] simplify
-                // TODO: Introduce object.type enum? or isAuxiliary? (too specific)
-                if compiledModel.auxiliaries.contains(where: { $0.id == object.id }) {
-                    self.constants[object.id] = Variant(value)
-                }
-            }
-            else {
-                let result = try evaluate(objectAt: index,
-                                          with: &state)
-                state[object.variableIndex] = result
-            }
-        }
-        
-        return state
-    }
     /// - Important: Do not use for anything but testing or debugging.
     ///
     func computeStockDelta(_ id: ObjectID,
@@ -426,31 +440,6 @@ public class Solver {
         }
         let delta = totalInflow - totalOutflow
         return delta
-    }
-    
-    /// Compute auxiliaries and stocks for given stage of the computation step.
-    ///
-    /// If solvers use multiple stages, they must call this method if they do
-    /// not prepare the state by themselves.
-    ///
-    /// The ``EulerSolver`` uses only one stage, the ``RungeKutta4Solver`` uses
-    /// 4 stages.
-    ///
-    func update(_ state: inout SimulationState,
-                at time: Double,
-                timeDelta: Double = 1.0) throws {
-        
-        for aux in compiledModel.auxiliaries {
-            let value = try evaluate(objectAt: aux.objectIndex,
-                                     with: &state)
-            state[aux.variableIndex] = value
-        }
-
-        for flow in compiledModel.flows {
-            let value = try evaluate(objectAt: flow.objectIndex,
-                                     with: &state)
-            state[flow.variableIndex] = value
-        }
     }
     
     /// Comptes differences of stocks.
