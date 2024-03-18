@@ -19,7 +19,7 @@ public class EulerSolver: Solver {
                                         at: time,
                                         timeDelta: timeDelta)
         
-        addStocks(&new, delta: delta * timeDelta)
+        accumulateStocks(&new, delta: delta * timeDelta)
         try update(&new, at: time, timeDelta: timeDelta)
         return new
     }

@@ -189,14 +189,12 @@ public class Solver {
         var state = SimulationState(model: compiledModel)
         updateBuiltins(&state, time: time, timeDelta: timeDelta)
 
-        for (index, object) in compiledModel.computedObjects.enumerated() {
+        for (index, object) in compiledModel.simulationObjects.enumerated() {
             if let value = override[object.id] {
                 state[object.variableIndex] = Variant(value)
 
                 // Keep only overrides for auxiliaries
-                // FIXME: [REFACTORING] simplify
-                // TODO: Introduce object.type enum? or isAuxiliary? (too specific)
-                if compiledModel.auxiliaries.contains(where: { $0.id == object.id }) {
+                if object.type == .auxiliary {
                     self.constants[object.id] = Variant(value)
                 }
             }
@@ -227,7 +225,9 @@ public class Solver {
         }
     }
 
-    /// Compute auxiliaries and stocks for given stage of the computation step.
+    /// Compute auxiliaries and flows for given stage of the computation step.
+    ///
+    /// Stocks are skipped.
     ///
     /// If solvers use multiple stages, they must call this method if they do
     /// not prepare the state by themselves.
@@ -238,17 +238,15 @@ public class Solver {
     func update(_ state: inout SimulationState,
                 at time: Double,
                 timeDelta: Double = 1.0) throws {
-        
-        for aux in compiledModel.auxiliaries {
-            let value = try evaluate(objectAt: aux.objectIndex,
+       
+        for (index, object) in compiledModel.simulationObjects.enumerated() {
+            // Skip the stocks
+            if object.type == .stock {
+                continue
+            }
+            let value = try evaluate(objectAt: index,
                                      with: &state)
-            state[aux.variableIndex] = value
-        }
-
-        for flow in compiledModel.flows {
-            let value = try evaluate(objectAt: flow.objectIndex,
-                                     with: &state)
-            state[flow.variableIndex] = value
+            state[object.variableIndex] = value
         }
     }
     
@@ -265,7 +263,7 @@ public class Solver {
     ///
     public func evaluate(objectAt index: Int,
                          with state: inout SimulationState) throws -> Variant {
-        let object = compiledModel.computedObjects[index]
+        let object = compiledModel.simulationObjects[index]
         if let value = constants[object.id] {
             return value
         }
@@ -379,12 +377,12 @@ public class Solver {
         //
         for inflow in stock.inflows {
             // TODO: All flows are uni-flows for now. Ignore negative inflows.
-            totalInflow += max(state[double: inflow], 0)
+            totalInflow += max(state.double(at: inflow), 0)
         }
         
         if stock.allowsNegative {
             for outflow in stock.outflows {
-                totalOutflow += state[double: outflow]
+                totalOutflow += state.double(at: outflow)
             }
         }
         else {
@@ -405,7 +403,7 @@ public class Solver {
             // Maximum outflow that we can drain from the stock. It is the
             // current value of the stock with aggregate of all inflows.
             //
-            var availableOutflow: Double = state[double: stock.variableIndex] + totalInflow
+            var availableOutflow: Double = state.double(at: stock.variableIndex) + totalInflow
             let initialAvailableOutflow: Double = availableOutflow
 
             for outflow in stock.outflows {
@@ -414,7 +412,7 @@ public class Solver {
                 // expected to be drained.
                 //
                 let actualOutflow = min(availableOutflow,
-                                        max(state[double: outflow], 0))
+                                        max(state.double(at: outflow), 0))
                 
                 totalOutflow += actualOutflow
                 // We drain the stock
@@ -425,7 +423,7 @@ public class Solver {
                 // did not drain.
                 //
                 // FIXME: We are changing the current state, we should be changing some "estimated state"
-                state[double: outflow] = actualOutflow
+                state[outflow] = Variant(actualOutflow)
 
                 // Sanity check. This should always pass, unless we did
                 // something wrong above.
@@ -460,17 +458,19 @@ public class Solver {
         for (index, stock) in compiledModel.stocks.enumerated() {
             let delta = try computeStockDelta(stock, at: time, with: &estimate)
             let dtAdjusted = delta * timeDelta
-            let newValue = estimate[double: stock.variableIndex] + dtAdjusted
+            let newValue = estimate.double(at: stock.variableIndex) + dtAdjusted
             estimate[stock.variableIndex] = Variant(newValue)
             deltaVector[index] = dtAdjusted
         }
         return deltaVector
     }
     
-    // FIXME: [REFACTORING] Rename to "accumulateStocks"
-    public func addStocks(_ state: inout SimulationState, delta: NumericVector) {
+    /// Add stock difference to the simulation state.
+    ///
+    public func accumulateStocks(_ state: inout SimulationState,
+                                 delta: NumericVector) {
         for (stock, stockDelta) in zip(compiledModel.stocks, delta) {
-            let value = try! state[stock.variableIndex].doubleValue()
+            let value = state.double(at: stock.variableIndex)
             state[stock.variableIndex] = Variant(value + stockDelta)
         }
     }

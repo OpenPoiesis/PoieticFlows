@@ -178,7 +178,7 @@ public class Simulator {
         // TODO: This is redundant, it is extracted in the control nodes
         var values: [ObjectID:Double] = [:]
         for binding in compiledModel.valueBindings {
-            values[binding.control] = currentState![double: binding.variableIndex]
+            values[binding.control] = currentState.double(at: binding.variableIndex)
         }
         return values
     }

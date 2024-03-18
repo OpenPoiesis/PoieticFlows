@@ -177,7 +177,7 @@ public class Compiler {
         // Context:
         //  - unsorted simulation nodes
         //      - (id, name, computationalRepresentation)
-        var computedObjects: [ComputedObject] = []
+        var simulationObjects: [SimulationObject] = []
 
         try frame.memory.validate(frame)
         
@@ -303,13 +303,31 @@ public class Compiler {
             let index = createStateVariable(content: .object(node.id),
                                             valueType: computation.valueType,
                                             name: node.name!)
-
-            let object = ComputedObject(id: node.id,
-                                        variableIndex: index,
-                                        valueType: computation.valueType,
-                                        computation: computation,
-                                        name: node.name!)
-            computedObjects.append(object)
+            // Determine simulation type
+            //
+            let objectType: SimulationObject.SimulationObjectType
+            if node.snapshot.type === ObjectType.Stock {
+                objectType = .stock
+            }
+            else if node.snapshot.type === ObjectType.Flow {
+                objectType = .flow
+            }
+            else if node.type === ObjectType.Auxiliary
+                        || node.type === ObjectType.GraphicalFunction
+                        || node.type === ObjectType.Delay {
+                objectType = .auxiliary
+            }
+            else {
+                fatalError("Unknown simulation node type: \(node.type.name)")
+            }
+            
+            let object = SimulationObject(id: node.id,
+                                          type: objectType,
+                                          variableIndex: index,
+                                          valueType: computation.valueType,
+                                          computation: computation,
+                                          name: node.name!)
+            simulationObjects.append(object)
             
 
             self.namedReferences[node.name!] = self.stateVariables[index]
@@ -326,39 +344,29 @@ public class Compiler {
         var unsortedStocks: [Node] = []
         var flows: [CompiledFlow] = []
         var flowsByID: [ObjectID:CompiledFlow] = [:]
-        var auxiliaries: [CompiledAuxiliary] = []
         
-        for (objectIndex, node) in orderedSimulationNodes.enumerated() {
-            if node.type === ObjectType.Stock {
+        for (objectIndex, item) in zip(orderedSimulationNodes, simulationObjects).enumerated() {
+            let (node, object) = item
+
+            switch object.type {
+            case .stock:
                 unsortedStocks.append(node)
-            }
-            else if node.type === ObjectType.Flow {
+
+            case .flow:
                 guard let priority = try? node.snapshot["priority"]?.intValue() else {
                     fatalError("Unable to get priority of Stock node \(node.id). Hint: Frame passed constraint validation while it should have not.")
                 }
-                let computed = computedObjects[objectIndex]
-                let flow = CompiledFlow(id: node.id,
+                let computed = simulationObjects[objectIndex]
+                let flow = CompiledFlow(id: object.id,
                                         variableIndex: computed.variableIndex,
                                         objectIndex: objectIndex,
                                         priority: priority)
                 flows.append(flow)
-                flowsByID[node.id] = flow
-            }
-            else if node.type === ObjectType.Auxiliary
-                        || node.type === ObjectType.GraphicalFunction
-                        || node.type === ObjectType.Delay {
+                flowsByID[object.id] = flow
 
-                let computed = computedObjects[objectIndex]
-
-                let compiled = CompiledAuxiliary(id: node.id,
-                                                 variableIndex: computed.variableIndex,
-                                                 objectIndex: objectIndex)
-
-                auxiliaries.append(compiled)
-            }
-            else {
-                // TODO: Turn this into a global model error? (we do not have such concept yet)
-                fatalError("Unknown simulation node type: \(node.type.name)")
+            case .auxiliary:
+                // Nothing special to be done
+                break
             }
         }
         
@@ -435,13 +443,12 @@ public class Compiler {
         // =================================================================
         //
         let result = CompiledModel(
-            computedObjects: computedObjects,
+            simulationObjects: simulationObjects,
             stateVariables: self.stateVariables,
             builtins: builtins,
             timeVariableIndex: timeIndex,
             stocks: compiledStocks,
             flows: flows,
-            auxiliaries: auxiliaries,
             charts: charts,
             valueBindings: bindings,
             simulationDefaults: simulationDefaults

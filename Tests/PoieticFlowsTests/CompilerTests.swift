@@ -24,7 +24,7 @@ final class TestCompiler: XCTestCase {
         
         let model = try compiler.compile()
         
-        XCTAssertEqual(model.computedObjects.count, 0)
+        XCTAssertEqual(model.simulationObjects.count, 0)
         XCTAssertEqual(model.stateVariables.count,
                        FlowsMetamodel.variables.count)
     }
@@ -46,7 +46,7 @@ final class TestCompiler: XCTestCase {
         // TODO: Check using violation checker
         
         let compiled = try compiler.compile()
-        let names = compiled.computedObjects.map { $0.name }
+        let names = compiled.simulationObjects.map { $0.name }
             .sorted()
         
         XCTAssertEqual(names, ["a", "b", "c"])
@@ -86,7 +86,7 @@ final class TestCompiler: XCTestCase {
                                    attributes: ["formula": "if(time < 2, 0, 1)"])
         
         let compiled = try compiler.compile()
-        let names = compiled.computedObjects.map { $0.name }
+        let names = compiled.simulationObjects.map { $0.name }
             .sorted()
         
         XCTAssertEqual(names, ["a"])
@@ -254,7 +254,7 @@ final class TestCompiler: XCTestCase {
         XCTAssertEqual(boundFn.parameterIndex,
                        compiled.variableIndex(of:param))
 
-        XCTAssertTrue(compiled.computedObjects.contains { $0.name == "g" })
+        XCTAssertTrue(compiled.simulationObjects.contains { $0.name == "g" })
         
         let issues = compiler.validateParameters(aux, required: ["g"])
         XCTAssertTrue(issues.isEmpty)
@@ -277,7 +277,7 @@ final class TestCompiler: XCTestCase {
 
         let compiler = Compiler(frame: frame)
         let compiled = try compiler.compile()
-        guard let object = compiled.computedObject(of: gf) else {
+        guard let object = compiled.simulationObject(gf) else {
             XCTFail("No compiled variable for the graphical function")
             return
         }

@@ -8,8 +8,7 @@
 import PoieticCore
 
 
-// FIXME: Consolidate SimulationState and SimulationContext?
-// FIXME: Extract the stock/flows vector
+// TODO: Consolidate SimulationState and SimulationContext?
 
 /// A simple vector-like structure to hold an unordered collection of numeric
 /// values that can be accessed by key. Simple arithmetic operations can be done
@@ -17,7 +16,7 @@ import PoieticCore
 /// by a scalar value.
 ///
 public struct SimulationState: CustomStringConvertible {
-    // FIXME: Add time and maybe step
+    // TODO: Add time as property, maybe step as well
     
     public typealias Index = Int
     
@@ -31,9 +30,6 @@ public struct SimulationState: CustomStringConvertible {
         return try! timeValue.doubleValue()
     }
 
-    // FIXME: Swift 6: Replace with [Variant] and use RangeSet
-//    public var internalStates: [SimulationState.Index:[Variant]]
-    
     /// Create a simulation state with all variables set to zero.
     ///
     /// The list of builtins and simulation variables will be initialised
@@ -43,7 +39,6 @@ public struct SimulationState: CustomStringConvertible {
     public init(model: CompiledModel) {
         self.model = model
         self.values = Array(repeating: Variant(0), count: model.stateVariables.count)
-//        self.internalStates = [:]
     }
     
     public init(_ values: [Variant], model: CompiledModel) {
@@ -51,7 +46,6 @@ public struct SimulationState: CustomStringConvertible {
                      "Count of values (\(values.count) does not match required items count \(model.stateVariables.count)")
         self.model = model
         self.values = values
-//        self.internalStates = [:]
     }
 
     /// Get or set a simulation variable by reference.
@@ -71,31 +65,24 @@ public struct SimulationState: CustomStringConvertible {
     /// This subscript should be used when it is guaranteed that the value
     /// is convertible to _double_, such as values for stocks or flows.
     ///
-    @inlinable
-    public subscript(double ref: Index) -> Double {
-        // FIXME: [REFACTORING] Alternative names: func double(at:)
-        get {
-            do {
-                return try values[ref].doubleValue()
-            }
-            catch {
-                fatalError("Unexpected non-double state value at \(ref)")
-            }
+    public func double(at index: Index) -> Double {
+        do {
+            return try values[index].doubleValue()
         }
-        set(value) {
-            values[ref] = Variant(value)
+        catch {
+            fatalError("Unexpected non-double state value at \(index)")
         }
     }
 
     
     public var description: String {
-        // FIXME: [REFACTORING] [IMPORTANT] Requires state variable to have name
-        fatalError("re-implement this")
-//        let valuesString = values.enumerated().map { (index, value) in
-//            let variable = model.stateVariables[index]
-//            return "\(variable.name): \(value)"
-//        }.joined(separator: ", ")
-//        return "[\(valuesString)]"
+        var items: [String] = []
+        for (variable, value) in zip(model.stateVariables, values) {
+            let item = "\(variable.name): \(value)"
+            items.append(item)
+        }
+        let text = items.joined(separator: ", ")
+        return "[\(text)]"
     }
 }
 

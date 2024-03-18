@@ -100,7 +100,7 @@ extension PoieticTool {
                 outputVariables.append(variable)
             }
 
-            // FIXME: Remove this! Replace with JSON for controls
+            // TODO: Add JSON for controls
             // Collect constants to be overridden during initialization.
             // -------------------------------------------------------------
             var overrideConstants: [ObjectID: Double] = [:]
@@ -175,7 +175,7 @@ func writeCSV(path: String,
     
 }
 
-// FIXME: This is quickly put together, just to see what we need. Requires proper design.
+// TODO: This is quickly put together, just to see what we need. Requires proper design.
 /// Write a Gnuplot directory bundle.
 ///
 /// The function will create a directory at `path` if it does not exist and then

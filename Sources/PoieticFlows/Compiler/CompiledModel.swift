@@ -29,7 +29,7 @@ public struct SimulationDefaults {
 /// compiler refuses to create the compiled model.
 ///
 /// The main content of the compiled model is a list of computed objects
-/// ``computedObjects`` and a list of simulation state variables
+/// ``simulationObjects`` and a list of simulation state variables
 /// ``stateVariables``. The computation of computed objects can be carried out
 /// in the order provided without causing broken computational dependencies.
 ///
@@ -80,7 +80,7 @@ public struct CompiledModel {
     ///
     /// - SeeAlso: ``computedVariableIndex(of:)``
     ///
-    public let computedObjects: [ComputedObject]
+    public let simulationObjects: [SimulationObject]
 
 
     /// List of simulation state variables.
@@ -129,7 +129,7 @@ public struct CompiledModel {
         // TODO: Do we need a pre-computed map here or are we fine with O(n)?
         // Since this is just for debug purposes, O(n) should be fine, no need
         // for added complexity of the code.
-        guard let first = computedObjects.first(where: {$0.id == id}) else {
+        guard let first = simulationObjects.first(where: {$0.id == id}) else {
             return nil
         }
         return first.variableIndex
@@ -142,10 +142,10 @@ public struct CompiledModel {
     /// consumers of the simulation state or simulation result.
     ///
     /// - Complexity: O(n)
-    /// - SeeAlso: ``computedObjects``, ``variableIndex(of:)``
+    /// - SeeAlso: ``simulationObjects``, ``variableIndex(of:)``
     ///
-    public func computedObject(of id: ObjectID) -> ComputedObject? {
-        return computedObjects.first { $0.id == id }
+    public func simulationObject(_ id: ObjectID) -> SimulationObject? {
+        return simulationObjects.first { $0.id == id }
         
     }
 
@@ -183,13 +183,6 @@ public struct CompiledModel {
     ///
     public let flows: [CompiledFlow]
 
-    /// Auxiliaries required by stocks, by order of dependency.
-    ///
-    /// This property is used in computation.
-    ///
-    /// - SeeAlso: ``Solver/stockDifference(state:at:timeDelta:)``,
-    ///
-    public let auxiliaries: [CompiledAuxiliary]
     
     /// List of charts.
     ///
@@ -220,7 +213,7 @@ public struct CompiledModel {
     /// consumers of the simulation state or simulation result.
     ///
     public var graphicalFunctions: [CompiledGraphicalFunction] {
-        let vars: [CompiledGraphicalFunction] = computedObjects.compactMap {
+        let vars: [CompiledGraphicalFunction] = simulationObjects.compactMap {
             if case let .graphicalFunction(fun, param) = $0.computation {
                 return CompiledGraphicalFunction(id: $0.id,
                                                  variableIndex: $0.variableIndex,
@@ -251,8 +244,8 @@ public struct CompiledModel {
     ///
     /// - Complexity: O(n)
     ///
-    public func variable(named name: String) -> ComputedObject? {
-        guard let object = computedObjects.first(where: { $0.name == name}) else {
+    public func variable(named name: String) -> SimulationObject? {
+        guard let object = simulationObjects.first(where: { $0.name == name}) else {
             return nil
         }
                  

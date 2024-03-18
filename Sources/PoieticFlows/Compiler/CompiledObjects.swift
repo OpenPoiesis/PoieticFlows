@@ -54,21 +54,30 @@ public enum ComputationalRepresentation: CustomStringConvertible {
     }
 }
 
-/// Structure representing a computation of an object.
+/// Structure describing an object to be simulated.
 ///
 /// This is the core detail information of the simulation.
 ///
-/// The ComputedObject provides information about what kind of computation
+/// The simulation object provides information about what kind of computation
 /// is performed (see ``ComputationalRepresentation``), which variable
 /// represents the object's state and what is the type of the stored value.
 ///
 /// - SeeAlso: ``ComputationalRepresentation``,
 ///   ``Solver/evaluate(objectAt:with:)``
 ///
-public struct ComputedObject: CustomStringConvertible {
-    /// ID of the object, usually a node, that represents the variable.
+public struct SimulationObject: CustomStringConvertible {
+    /// ID of the object, usually a node, that is being represented.
+    ///
     public let id: ObjectID
-    
+
+    public enum SimulationObjectType {
+        case stock
+        case flow
+        case auxiliary
+    }
+   
+    public let type: SimulationObjectType
+
     /// Index of the variable representing the object's state in the
     /// simulation state.
     ///
@@ -215,22 +224,6 @@ public struct CompiledFlow {
 }
 
 
-/// Compiled auxiliary node.
-///
-/// This is a default structure that represents a simulation node variable
-/// in which any additional information is not relevant to the computation.
-///
-/// It is used for example for nodes of type auxiliary –
-/// ``/PoieticCore/ObjectType/Auxiliary``.
-///
-public struct CompiledAuxiliary {
-    public let id: ObjectID
-    public let variableIndex: SimulationState.Index
-    // Index into list of simulation objects
-    public let objectIndex: Int
-}
-
-
 /// A structure representing a concrete instance of a graphical function
 /// in the context of a graph.
 ///
@@ -266,7 +259,14 @@ public struct CompiledControlBinding {
 }
 
 public struct CompiledDelay {
-//    public let initialValueIndex: SimulationState.Index
+    // TODO: add at least smoothing (SMTH1)
+    public enum OutputType {
+        case delay
+        case smooth
+    }
+//    public let order: Int
+    
+    //    public let initialValueIndex: SimulationState.Index
     public let valueQueueIndex: SimulationState.Index
     public let duration: Double
     public let initialValue: Variant?
