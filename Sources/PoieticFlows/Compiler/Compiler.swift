@@ -399,7 +399,7 @@ public class Compiler {
                 fatalError("A value binding \(object.id) is not an edge")
             }
             
-            // FIXME: Better error reporting
+            // TODO: Better error reporting
             guard let index = objectToVariable[edge.target] else {
                 fatalError("Unknown index of object: \(edge.target), compilation failed")
             }
@@ -509,31 +509,30 @@ public class Compiler {
         return rep
     }
 
-    // FIXME: Update documentation
-    /// Return a dictionary of bound expressions.
+    /// Compile a node containing a formula.
     ///
     /// For each node with an arithmetic expression the expression is parsed
     /// from a text into an internal representation. The variable and function
     /// names are resolved to point to actual entities and a new bound
     /// expression is formed.
     ///
+    /// - Returns: Computational representation wrapping a formula.
+    ///
     /// - Parameters:
-    ///     - names: mapping of variable names to their corresponding objects.
+    ///     - node: node containing already parsed formula in
+    ///       ``ParsedFormulaComponent``.
     ///
-    /// - Returns: A dictionary where the keys are expression node IDs and values
-    ///   are compiled BoundExpressions.
+    /// - Precondition: The node must have ``ParsedFormulaComponent`` associated
+    ///   with it.
     ///
-    /// - Throws: ``NodeIssue`` with ``NodeIssue/expressionSyntaxError(_:)`` for each node
-    ///   which has a syntax error in the expression.
+    /// - Throws: ``NodeIssueError`` if there is an issue with parameters,
+    ///   function names or other variable names in the expression.
     ///
-    /// - Throws: ``NodeIssuesError`` with list of issues for the node.
-    ///
-    public func compileFormulaNode(_ node: Node) throws -> ComputationalRepresentation{
+    public func compileFormulaNode(_ node: Node) throws -> ComputationalRepresentation {
         guard let component: ParsedFormulaComponent = node.snapshot[ParsedFormulaComponent.self] else {
             fatalError("Parsed formula component expected for node \(node.id)")
         }
-        //
-        // FIXME: [IMPORTANT] Parse expressions in a compiler sub-system, have it parsed here already
+
         let unboundExpression: UnboundExpression = component.parsedFormula
         
         // List of required parameters: variables in the expression that
@@ -692,8 +691,7 @@ public class Compiler {
         return result
     }
     
-    // FIXME: Update documentation
-    /// Validates parameter  of a node.
+    /// Validates parameter of a node.
     ///
     /// The method checks whether the following two requirements are met:
     ///
@@ -709,7 +707,7 @@ public class Compiler {
     /// - Parameters:
     ///     - nodeID: ID of a node to be validated for inputs
     ///     - required: List of names (of nodes) that are required for the node
-    ///       with id `nodeID`.
+    ///       with an id `nodeID`.
     ///
     /// - Returns: List of issues that the node with ID `nodeID` caused. The
     ///   issues can be either ``NodeIssue/unknownParameter(_:)`` or

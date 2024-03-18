@@ -15,7 +15,7 @@ import PoieticCore
 public enum SimulationVariableType: String {
     /// The simulation variable represents a computation defined
     /// by a node.
-    case computed
+    case object
     /// The simulation variable represents a built-in variable.
     ///
     case builtin
@@ -74,8 +74,7 @@ public enum StateVariableContent: Hashable, CustomStringConvertible {
 /// a node in the model, typically a node with a formula.
 ///
 public struct StateVariable: CustomStringConvertible {
-    // TODO: Rename to SimulationVariable
-    // FIXME: Add name
+    // TODO: Rename to SimulationVariable?
 
     /// Index of the variable's value in a simulation state.
     ///
@@ -90,9 +89,9 @@ public struct StateVariable: CustomStringConvertible {
     public var type: SimulationVariableType {
         switch content {
         case .builtin: .builtin
-            // FIXME: Rename computed to object
-        case .object: .computed
+        case .object: .object
         case .internalState:
+            // FIXME: What was the original intent here?
             fatalError("Internal state type not implemented")
         }
     }
