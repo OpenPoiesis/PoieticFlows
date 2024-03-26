@@ -152,11 +152,11 @@ let databaseEnvironment = "POIETIC_DESIGN"
 
 /// Get the database URL. The database location can be specified by options,
 /// environment variable or as a default name, in respective order.
-func databaseURL(options: Options) throws -> URL {
+func databaseURL(options: Options? = nil) throws -> URL {
     let location: String
     let env = ProcessInfo.processInfo.environment
     
-    if let path = options.database {
+    if let path = options?.database {
         location = path
     }
     else if let path = env[databaseEnvironment] {
@@ -185,13 +185,10 @@ func createMemory(options: Options) -> ObjectMemory {
     return ObjectMemory(metamodel: FlowsMetamodel)
 }
 
-/// Opens a graph from a package specified in the options.
-///
-func openMemory(options: Options, metamodel: Metamodel = FlowsMetamodel) throws -> ObjectMemory {
+func openMemory(url: URL, metamodel: Metamodel = FlowsMetamodel) throws -> ObjectMemory {
     let memory: ObjectMemory = ObjectMemory(metamodel: metamodel)
-    let dataURL = try databaseURL(options: options)
     do {
-        try memory.restoreAll(from: dataURL)
+        try memory.restoreAll(from: url)
     }
     catch let error as FrameValidationError {
         printValidationError(error)
@@ -199,6 +196,13 @@ func openMemory(options: Options, metamodel: Metamodel = FlowsMetamodel) throws 
         
     }
     return memory
+}
+
+/// Opens a graph from a package specified in the options.
+///
+func openMemory(options: Options? = nil, metamodel: Metamodel = FlowsMetamodel) throws -> ObjectMemory {
+    let dataURL = try databaseURL(options: options)
+    return try openMemory(url: dataURL, metamodel: metamodel)
 }
 
 func printValidationError(_ error: FrameValidationError) {

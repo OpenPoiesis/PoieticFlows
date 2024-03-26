@@ -27,7 +27,6 @@ public class StockFlowView {
     /// Metamodel that the view uses to find relevant object types.
     public let metamodel: Metamodel
 
-    // TODO: Consolidate queries in metamodel and this domain view - move them here(?)
     /// Graph that the view projects.
     ///
     public let frame: Frame
@@ -35,7 +34,6 @@ public class StockFlowView {
     /// Create a new view on top of a graph.
     ///
     public init(_ frame: Frame) {
-        // TODO: Use only frame, not a graph
         self.metamodel = frame.memory.metamodel
         self.frame = frame
     }

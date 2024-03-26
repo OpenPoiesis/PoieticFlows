@@ -213,6 +213,8 @@ public struct CompiledModel {
     /// consumers of the simulation state or simulation result.
     ///
     public var graphicalFunctions: [CompiledGraphicalFunction] {
+        // FIXME: Remove this, used only for tests
+        // FIXME: Materialise this in the simulation object or somewhere
         let vars: [CompiledGraphicalFunction] = simulationObjects.compactMap {
             if case let .graphicalFunction(fun, param) = $0.computation {
                 return CompiledGraphicalFunction(id: $0.id,

@@ -50,22 +50,49 @@ extension PoieticTool {
             }
         }
         func listAll(_ memory: ObjectMemory) {
-            let graph = memory.currentFrame.graph
-
-            print("NODES:")
-            let nodes = graph.nodes.sorted { left, right in
+            let sorted = memory.currentFrame.snapshots.sorted { left, right in
                 left.id < right.id
             }
-            for node in nodes {
-                print("    \(node.snapshot.prettyDescription)")
-            }
+            let nodes = sorted.compactMap { Node($0) }
+            let edges = sorted.compactMap { Edge($0) }
+            let unstructured = sorted.filter { $0.structure.type == .unstructured }
 
-            print("EDGES:")
-            let edges = graph.edges.sorted { left, right in
-                left.id < right.id
+            if unstructured.count > 0 {
+                print("UNSTRUCTURED OBJECTS")
+                for object in unstructured {
+                    let name: String = object.name ?? "(unnamed)"
+                    let line: String = [
+                        "\(object.id)",
+                        "\(object.type.name)",
+                        "\(name)",
+                    ].joined(separator: " ")
+                    print("  \(line)")
+                }
             }
-            for edge in edges {
-                print("    \(edge.snapshot.prettyDescription)")
+            if nodes.count > 0 {
+                print("NODES")
+                for object in nodes {
+                    let name: String = object.name ?? "(unnamed)"
+                    let line: String = [
+                        "\(object.id)",
+                        "\(object.type.name)",
+                        "\(name)",
+                    ].joined(separator: " ")
+                    print("  \(line)")
+                }
+            }
+            if edges.count > 0 {
+                print("EDGES")
+                for object in edges {
+                    let name: String = object.name ?? "(unnamed)"
+                    let line: String = [
+                        "\(object.id)",
+                        "\(object.origin)-->\(object.target)",
+                        "\(object.type.name)",
+                        "\(name)",
+                    ].joined(separator: " ")
+                    print("  \(line)")
+                }
             }
         }
         

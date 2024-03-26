@@ -53,7 +53,7 @@ public enum StateVariableContent: Hashable, CustomStringConvertible {
         default: return false
         }
     }
-
+    
     public var description: String {
         switch self {
         case .object(let id): "object(\(id))"

@@ -164,25 +164,6 @@ public class Simulator {
         return output.map { try! $0[index].doubleValue() }
     }
     
-    /// Return a mapping of control IDs and values of their targets.
-    ///
-    /// The values are obtained from the current simulation state.
-    ///
-    /// - SeeAlso: ``CompiledModel/valueBindings``,
-    ///   ``PoieticCore/ObjectType/Control``
-    ///
-    public func controlValues() -> [ObjectID:Double] {
-        precondition(currentState != nil,
-                    "Trying to get control values without initialized state")
-        // TODO: [REFACTORING] Move to SimulationState
-        // TODO: This is redundant, it is extracted in the control nodes
-        var values: [ObjectID:Double] = [:]
-        for binding in compiledModel.valueBindings {
-            values[binding.control] = currentState.double(at: binding.variableIndex)
-        }
-        return values
-    }
-    
     /// Get series of time points.
     ///
     /// - SeeAlso: ``CompiledModel/timeVariableIndex``

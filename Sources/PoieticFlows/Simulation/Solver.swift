@@ -6,20 +6,6 @@
 //
 import PoieticCore
 
-/**
- 
- initializeState()
-    newState()
-    builtins
- compute(current)
-    new = prepareStage(current)
-    delta
-    add delta
-    return new
- 
- 
- */
-
 /*
  
  INIT:
@@ -59,14 +45,16 @@ import PoieticCore
 ///
 /// let solver = EulerSolver(compiled)
 ///
-/// var state: StateVector = solver.initialize()
 /// var time: Double = 0.0
 /// let timeDelta: Double = 1.0
 ///
+/// var state: StateVector = solver.initializeState(time: time,
+///                                                 timeDelta: timeDelta)
+///
 /// for step in (1...100) {
 ///     time += timeDelta
-///     state = try solver.compute(at: time,
-///                                with: state,
+///     state = try solver.compute(state,
+///                                at: time,
 ///                                timeDelta: timeDelta)
 ///     print(state)
 /// }

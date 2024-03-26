@@ -70,7 +70,7 @@ public struct SimulationObject: CustomStringConvertible {
     ///
     public let id: ObjectID
 
-    public enum SimulationObjectType {
+    public enum SimulationObjectType: Codable {
         case stock
         case flow
         case auxiliary
