@@ -35,7 +35,7 @@ struct PoieticTool: ParsableCommand {
 }
 
 struct Options: ParsableArguments {
-    @Option(name: [.long, .customShort("d")], help: "Path to a poietic design")
+    @Option(name: [.customLong("design"), .customShort("d")], help: "Path to a design file.")
     var database: String?
 }
 

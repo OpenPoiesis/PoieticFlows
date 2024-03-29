@@ -59,7 +59,7 @@ extension PoieticTool {
             }
             
             try closeMemory(memory: memory, options: options)
-            print("Database created.")
+            print("Design created.")
         }
     }
 }

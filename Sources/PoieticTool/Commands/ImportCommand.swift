@@ -13,7 +13,7 @@ import PoieticFlows
 extension PoieticTool {
     struct Import: ParsableCommand {
         static var configuration
-            = CommandConfiguration(abstract: "Import a frame bundle into the design")
+            = CommandConfiguration(abstract: "Import a frame into the design")
         @OptionGroup var options: Options
 
         @Argument(help: "Path to a frame bundle to import")

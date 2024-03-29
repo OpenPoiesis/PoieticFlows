@@ -13,7 +13,7 @@ import PoieticFlows
 extension PoieticTool {
     struct List: ParsableCommand {
         static var configuration
-            = CommandConfiguration(abstract: "List all nodes and edges")
+            = CommandConfiguration(abstract: "List design content objects.")
         @OptionGroup var options: Options
 
         enum ListType: String, CaseIterable, ExpressibleByArgument{

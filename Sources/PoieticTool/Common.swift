@@ -147,7 +147,7 @@ enum ToolError: Error, CustomStringConvertible {
 
 }
 
-let defaultDatabase = "Design.poietic"
+let defaultDatabase = "design.poietic"
 let databaseEnvironment = "POIETIC_DESIGN"
 
 /// Get the database URL. The database location can be specified by options,

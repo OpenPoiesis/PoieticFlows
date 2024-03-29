@@ -47,7 +47,7 @@ directory. Make sure you have the directory in your `PATH`, if you do not, then
 add the following to the end of your `~/.zshrc` or `~/.bashrc` file:
 
 ```
-export PATH=~/.swiftpm/bin:\$PATH
+export PATH=~/.swiftpm/bin:$PATH
 ```
 
 ## Examples
