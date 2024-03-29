@@ -9,6 +9,8 @@ import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
+// TODO: Add possibility of using multiple references
+
 extension PoieticTool {
     struct Remove: ParsableCommand {
         static var configuration

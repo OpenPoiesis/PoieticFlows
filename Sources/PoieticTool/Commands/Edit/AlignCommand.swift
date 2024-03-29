@@ -10,7 +10,10 @@ import PoieticCore
 import PoieticFlows
 import RealModule
 
-enum AlignmentMode: String, CaseIterable, ExpressibleByArgument{
+// TODO: We need bounding box
+// TODO: For bounding box, we need "VisualLanguage" metadata or something like that, related to Metamodel
+
+enum AlignmentMode: String, CaseIterable, ExpressibleByArgument {
     case alignLeft = "left"
     case alignCenterHorizontal = "center-horizontal" // center-horizontal
     case alignRight = "right"
@@ -25,10 +28,10 @@ enum AlignmentMode: String, CaseIterable, ExpressibleByArgument{
     case spreadHorizontal = "spread-horizontal"
     case spreadVertical = "spread-vertical"
     
-    var defaultValueDescription: String { "align" }
+    var defaultValueDescription: String { "left" }
     
     static var allValueStrings: [String] {
-        AlignmentMode.allCases.map { "\($0)" }
+        AlignmentMode.allCases.map { "\($0.rawValue)" }
     }
 }
 

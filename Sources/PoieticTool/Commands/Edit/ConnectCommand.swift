@@ -9,6 +9,8 @@ import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
+// TODO: Allow setting attributes on creation
+
 extension PoieticTool {
     struct NewConnection: ParsableCommand {
         static var configuration

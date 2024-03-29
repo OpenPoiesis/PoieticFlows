@@ -23,3 +23,8 @@ if [[ $PATH != *${SWIFTPM_BIN}* ]]; then
     echo "    export PATH=~/${SWIFTPM_BIN}:\$PATH"
     echo
 fi
+
+echo "Get more information about the command and its subcommands:"
+echo
+echo "    poietic --help"
+echo

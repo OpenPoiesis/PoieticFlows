@@ -9,12 +9,16 @@ import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
+// TODO: Add option to use foreign object JSON representation
+// TODO: Add option to use JSON attributes
+// TODO: Add option to specify object ID
+
 extension PoieticTool {
     struct Add: ParsableCommand {
         static var configuration
             = CommandConfiguration(
                 commandName: "add",
-                abstract: "Create a new node",
+                abstract: "Create a new node or an unstructured object",
                 usage: """
 Create a new node:
 
@@ -25,7 +29,7 @@ poietic add Flow name=expenses formula=50
 
         @OptionGroup var options: Options
 
-        @Argument(help: "Type of the node to be created")
+        @Argument(help: "Type of the object to be created")
         var typeName: String
 
         @Argument(help: "Attributes to be set in form 'attribute=value'")
@@ -39,16 +43,22 @@ poietic add Flow name=expenses formula=50
                 throw ToolError.unknownObjectType(typeName)
             }
             
-            guard type.structuralType == .node else {
-                throw ToolError.structuralTypeMismatch(StructuralType.node.rawValue,
-                                                       type.structuralType.rawValue)
-            }
-
             guard type.plane == .user else {
                 throw ToolError.creatingSystemPlaneType(type.name)
             }
+
+            let id: ObjectID
             
-            let id = frame.createNode(type)
+            switch type.structuralType {
+            case .unstructured:
+                id = frame.create(type)
+            case .node:
+                id = frame.createNode(type)
+            default:
+                throw ToolError.structuralTypeMismatch("node or unstructured",
+                                                       type.structuralType.rawValue)
+            }
+            
             let object = frame.object(id)
             
             for item in attributeAssignments {

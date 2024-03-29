@@ -16,13 +16,14 @@
 # TEST_OUT - test output directory, default is ./test_out
 # POIETIC  - path to the poietic tool. By default it will be freshly built debug
 #            executable in .build/debug/poietic
-# DEMOS    - path to demos top-level directory, default is ../Poietic-demos
+# DEMOS    - path to demos top-level directory, default is ../PoieticExamples
 #
 
 
 set -e
 
 TEST_OUT="${TEST_OUT:-./test_out}"
+DEMOS_PATH=${DEMOS:-../PoieticExamples}
 
 poietic () {
     if [[ -v POIETIC ]]
@@ -52,8 +53,6 @@ set_up() {
     fi
 
 }
-
-DEMOS_PATH=${DEMOS:-../Poietic-demos}
 
 set_up
 

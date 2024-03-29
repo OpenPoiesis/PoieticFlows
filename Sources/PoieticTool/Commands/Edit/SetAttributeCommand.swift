@@ -9,9 +9,11 @@ import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
+// TODO: Add import from CSV for multiple attributes and objects
+// TODO: Add import from JSON for multiple attributes and objects
+
 extension PoieticTool {
     struct SetAttribute: ParsableCommand {
-        // TODO: Add import from CSV with format: id,attr,value
         static var configuration
             = CommandConfiguration(
                 commandName: "set",

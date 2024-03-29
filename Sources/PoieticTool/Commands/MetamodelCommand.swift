@@ -8,13 +8,15 @@
 import ArgumentParser
 import PoieticCore
 
+// TODO: Add output to JSON
+// TODO: Add output to CSV
+
 extension PoieticTool {
     struct MetamodelCommand: ParsableCommand {
-        // TODO: Add import from CSV with format: id,attr,value
         static var configuration
             = CommandConfiguration(
                 commandName: "metamodel",
-                abstract: "Show the metamodel"
+                abstract: "Show information about the metamodel and object types"
             )
 
         @OptionGroup var options: Options
