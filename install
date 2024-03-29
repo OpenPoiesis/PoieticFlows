@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Script to install the poietic tool.
+#
+# The tool is installed to the Swift Package Manager binary directory:
+#
+#     ~/.swiftpm/bin
+#
+# Make sure the directory is in your PATH to use the tool.
+#
+
+SWIFTPM_BIN=.swiftpm/bin
+
+(swift package experimental-uninstall poietic 2> /dev/null) || true
+swift package experimental-install
+
+
+if [[ $PATH != *${SWIFTPM_BIN}* ]]; then
+    echo "WARNING: The directory $HOME/$SWIFTPM_BIN does not seem to be in your PATH."
+    echo
+    echo "Add the following to the end of your ~/.zshrc or ~/.bashrc file:"
+    echo
+    echo "    export PATH=~/${SWIFTPM_BIN}:\$PATH"
+    echo
+fi
