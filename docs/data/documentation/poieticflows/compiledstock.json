@@ -135,12 +135,10 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType"
@@ -235,40 +233,6 @@
   "title" : "BuiltinVariable",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/builtinvariable"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledAuxiliary": {
-  "abstract" : [
-    {
-      "text" : "Compiled auxiliary node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledAuxiliary",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledauxiliary"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledBuiltin": {
   "abstract" : [
@@ -834,40 +798,6 @@
   "title" : "ComputationalRepresentation",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ComputedObject": {
-  "abstract" : [
-    {
-      "text" : "Structure representing a computation of an object.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ComputedObject",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/computedobject"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
   "abstract" : [

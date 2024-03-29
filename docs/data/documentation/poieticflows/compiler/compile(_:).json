@@ -521,7 +521,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileFormulaNode(_:)": {
   "abstract" : [
     {
-      "text" : "Return a dictionary of bound expressions.",
+      "text" : "Compile a node containing a formula.",
       "type" : "text"
     }
   ],

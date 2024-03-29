@@ -220,9 +220,8 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedObject(of:)",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "computedObject(of:)",
+                  "type" : "codeVoice"
                 }
               ],
               "type" : "paragraph"
@@ -326,64 +325,6 @@
   "title" : "CompiledModel",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/computedObject(of:)": {
-  "abstract" : [
-    {
-      "text" : "Get a simulation variable for an object with given ID, if exists.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "computedObject"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "of"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14ComputedObjectV",
-      "text" : "ComputedObject"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedObject(of:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "computedObject(of:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel\/computedobject(of:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/stateVariables": {
   "abstract" : [

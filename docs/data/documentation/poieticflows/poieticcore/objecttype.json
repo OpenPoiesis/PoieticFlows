@@ -90,6 +90,7 @@
   "topicSections" : [
     {
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Delay",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Drains",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Fills",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/GraphicalFunction",
@@ -97,6 +98,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Note",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Scenario",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Scenario2",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Simulation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/ValueBinding"
       ],
@@ -186,6 +188,51 @@
   "title" : "ObjectType",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Delay": {
+  "abstract" : [
+    {
+      "text" : "An auxiliary node - containing a constant or a formula.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Delay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Delay",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Delay",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/delay"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Drains": {
   "abstract" : [
@@ -495,6 +542,48 @@
   "title" : "Scenario",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/scenario"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Scenario2": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Scenario2"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Scenario2",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Scenario2",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/scenario2"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Simulation": {
   "abstract" : [

@@ -128,9 +128,8 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/controlValues()",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "Simulator\/controlValues()",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : ".",
@@ -380,56 +379,6 @@
   "title" : "Control",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/control"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Simulator/controlValues()": {
-  "abstract" : [
-    {
-      "text" : "Return a mapping of control IDs and values of their targets.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "controlValues"
-    },
-    {
-      "kind" : "text",
-      "text" : "() -> ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/controlValues()",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "controlValues()",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulator\/controlvalues()"
 }
 }
 }

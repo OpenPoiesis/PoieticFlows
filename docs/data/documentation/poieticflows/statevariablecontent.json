@@ -145,6 +145,7 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/builtin(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/internalState(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/object(_:)"
       ],
       "title" : "Enumeration Cases"
@@ -397,6 +398,47 @@
   "title" : "description",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/statevariablecontent\/description"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StateVariableContent/internalState(_:)": {
+  "abstract" : [
+    {
+      "text" : "Internal state of an object.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "internalState"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/internalState(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "StateVariableContent.internalState(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/statevariablecontent\/internalstate(_:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StateVariableContent/object(_:)": {
   "abstract" : [

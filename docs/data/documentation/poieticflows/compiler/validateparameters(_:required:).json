@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Validates parameter  of a node.",
+      "text" : "Validates parameter of a node.",
       "type" : "text"
     }
   ],
@@ -198,7 +198,7 @@
                   "type" : "text"
                 },
                 {
-                  "text" : "with id ",
+                  "text" : "with an id ",
                   "type" : "text"
                 },
                 {
@@ -567,7 +567,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/validateParameters(_:required:)": {
   "abstract" : [
     {
-      "text" : "Validates parameter  of a node.",
+      "text" : "Validates parameter of a node.",
       "type" : "text"
     }
   ],

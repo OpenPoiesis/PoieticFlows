@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Return a dictionary of bound expressions.",
+      "text" : "Compile a node containing a formula.",
       "type" : "text"
     }
   ],
@@ -150,14 +150,27 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "mapping of variable names to their corresponding objects.",
+                  "text" : "node containing already parsed formula in",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent",
+                  "isActive" : true,
+                  "type" : "reference"
+                },
+                {
+                  "text" : ".",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "names"
+          "name" : "node"
         }
       ]
     },
@@ -172,15 +185,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "A dictionary where the keys are expression node IDs and values",
-              "type" : "text"
-            },
-            {
-              "text" : " ",
-              "type" : "text"
-            },
-            {
-              "text" : "are compiled BoundExpressions.",
+              "text" : "Computational representation wrapping a formula.",
               "type" : "text"
             }
           ],
@@ -235,25 +240,16 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "",
+                  "text" : "The node must have ",
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue",
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent",
                   "isActive" : true,
                   "type" : "reference"
                 },
                 {
-                  "text" : " with ",
-                  "type" : "text"
-                },
-                {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/expressionSyntaxError(_:)",
-                  "isActive" : true,
-                  "type" : "reference"
-                },
-                {
-                  "text" : " for each node",
+                  "text" : " associated",
                   "type" : "text"
                 },
                 {
@@ -261,14 +257,14 @@
                   "type" : "text"
                 },
                 {
-                  "text" : "which has a syntax error in the expression.",
+                  "text" : "with it.",
                   "type" : "text"
                 }
               ],
               "type" : "paragraph"
             }
           ],
-          "name" : "Throws",
+          "name" : "Precondition",
           "style" : "note",
           "type" : "aside"
         },
@@ -281,12 +277,19 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "NodeIssueError",
+                  "type" : "codeVoice"
                 },
                 {
-                  "text" : " with list of issues for the node.",
+                  "text" : " if there is an issue with parameters,",
+                  "type" : "text"
+                },
+                {
+                  "text" : " ",
+                  "type" : "text"
+                },
+                {
+                  "text" : "function names or other variable names in the expression.",
                   "type" : "text"
                 }
               ],
@@ -452,7 +455,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileFormulaNode(_:)": {
   "abstract" : [
     {
-      "text" : "Return a dictionary of bound expressions.",
+      "text" : "Compile a node containing a formula.",
       "type" : "text"
     }
   ],
@@ -545,105 +548,9 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue": {
+"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent": {
   "abstract" : [
-    {
-      "text" : "An issue detected by the ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : " or the ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "enum"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "NodeIssue"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "NodeIssue"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "NodeIssue",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/nodeissue"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/expressionSyntaxError(_:)": {
-  "abstract" : [
-    {
-      "text" : "An error caused by a syntax error in the formula (arithmetic expression).",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "case"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "expressionSyntaxError"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore21ExpressionSyntaxErrorO",
-      "text" : "ExpressionSyntaxError"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/expressionSyntaxError(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "NodeIssue.expressionSyntaxError(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/nodeissue\/expressionsyntaxerror(_:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/NodeIssuesError": {
-  "abstract" : [
-    {
-      "text" : "An aggregate error of multiple issues grouped by a node.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -656,21 +563,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "NodeIssuesError"
+      "text" : "ParsedFormulaComponent"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "NodeIssuesError"
+      "text" : "ParsedFormulaComponent"
     }
   ],
   "role" : "symbol",
-  "title" : "NodeIssuesError",
+  "title" : "ParsedFormulaComponent",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/nodeissueserror"
+  "url" : "\/documentation\/poieticflows\/parsedformulacomponent"
 }
 }
 }

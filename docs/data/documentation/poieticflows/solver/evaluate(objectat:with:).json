@@ -20,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows6SolverC8evaluate8objectAt4with0A4Core7VariantOSi_AA15SimulationStateVtKF",
+    "externalID" : "s:12PoieticFlows6SolverC8evaluate8objectAt4with0A4Core7VariantOSi_AA15SimulationStateVztKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -62,6 +62,14 @@
       {
         "kind" : "text",
         "text" : ": "
+      },
+      {
+        "kind" : "keyword",
+        "text" : "inout"
+      },
+      {
+        "kind" : "text",
+        "text" : " "
       },
       {
         "kind" : "typeIdentifier",
@@ -163,6 +171,14 @@
             {
               "kind" : "text",
               "text" : ": "
+            },
+            {
+              "kind" : "keyword",
+              "text" : "inout"
+            },
+            {
+              "kind" : "text",
+              "text" : " "
             },
             {
               "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState",
@@ -477,6 +493,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",

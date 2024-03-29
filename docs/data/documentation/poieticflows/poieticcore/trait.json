@@ -14,7 +14,7 @@
   "kind" : "symbol",
   "metadata" : {
     "extendedModule" : "PoieticCore",
-    "externalID" : "s:e:s:11PoieticCore5TraitC0A5FlowsE7ControlACvpZ",
+    "externalID" : "s:e:s:11PoieticCore5TraitC0A5FlowsE14ParameterValueACvpZ",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -159,6 +159,8 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Control",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Delay",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/ParameterValue",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Simulation"
       ],
       "title" : "Type Properties"
@@ -289,6 +291,90 @@
   "title" : "Control",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/control"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Delay": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Delay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Delay",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Delay",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/delay"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/ParameterValue": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ParameterValue"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore5TraitC",
+      "text" : "Trait"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/ParameterValue",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "ParameterValue",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/parametervalue"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
   "abstract" : [

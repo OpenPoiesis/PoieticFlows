@@ -385,6 +385,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartSeries",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompilationContext",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionTransformer",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsTransformer",
@@ -392,6 +393,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Rect",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationContext",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationObject",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size"
       ],
       "title" : "Structures"
@@ -617,6 +619,37 @@
   "title" : "CompilationContext",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compilationcontext"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledDelay": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledDelay"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledDelay"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledDelay",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compileddelay"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
@@ -1490,6 +1523,40 @@
   "title" : "SimulationContext",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationcontext"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationObject": {
+  "abstract" : [
+    {
+      "text" : "Structure describing an object to be simulated.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationObject"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationObject",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationObject"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationObject",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationobject"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem": {
   "abstract" : [

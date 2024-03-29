@@ -116,9 +116,8 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/setBuiltins(_:time:timeDelta:)",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "Solver\/setBuiltins(_:time:timeDelta:)",
+                  "type" : "codeVoice"
                 },
                 {
                   "text" : ",",
@@ -129,9 +128,8 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/newState(time:timeDelta:)",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "Solver\/newState(time:timeDelta:)",
+                  "type" : "codeVoice"
                 }
               ],
               "type" : "paragraph"
@@ -160,12 +158,10 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType"
@@ -247,40 +243,6 @@
   "title" : "BuiltinVariable",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/builtinvariable"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledAuxiliary": {
-  "abstract" : [
-    {
-      "text" : "Compiled auxiliary node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledAuxiliary",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledauxiliary"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledBuiltin": {
   "abstract" : [
@@ -607,40 +569,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/ComputedObject": {
-  "abstract" : [
-    {
-      "text" : "Structure representing a computation of an object.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ComputedObject",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/computedobject"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
   "abstract" : [
     {
@@ -766,157 +694,6 @@
   "title" : "SimulationVariableType",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationvariabletype"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Solver/newState(time:timeDelta:)": {
-  "abstract" : [
-    {
-      "text" : "Create a new simulation state.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "newState"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "time"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "timeDelta"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/newState(time:timeDelta:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "newState(time:timeDelta:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver\/newstate(time:timedelta:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Solver/setBuiltins(_:time:timeDelta:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "setBuiltins"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "time"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "timeDelta"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/setBuiltins(_:time:timeDelta:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "setBuiltins(_:time:timeDelta:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver\/setbuiltins(_:time:timedelta:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StateVariable": {
   "abstract" : [

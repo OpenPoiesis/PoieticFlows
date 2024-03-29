@@ -184,14 +184,16 @@
             "",
             "let solver = EulerSolver(compiled)",
             "",
-            "var state: StateVector = solver.initialize()",
             "var time: Double = 0.0",
             "let timeDelta: Double = 1.0",
             "",
+            "var state: StateVector = solver.initializeState(time: time,",
+            "                                                timeDelta: timeDelta)",
+            "",
             "for step in (1...100) {",
             "    time += timeDelta",
-            "    state = try solver.compute(at: time,",
-            "                               with: state,",
+            "    state = try solver.compute(state,",
+            "                               at: time,",
             "                               timeDelta: timeDelta)",
             "    print(state)",
             "}"
@@ -273,15 +275,15 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/addStocks(_:delta:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/accumulateStocks(_:delta:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/compute(_:at:timeDelta:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/computeStockDelta(_:at:with:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/evaluate(delay:with:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/evaluate(expression:with:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/evaluate(objectAt:with:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/initializeState(override:time:timeDelta:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/newState(time:timeDelta:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/setBuiltins(_:time:timeDelta:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/stockDifference(state:at:timeDelta:)"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/stockDifference(state:at:timeDelta:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/updateBuiltins(_:time:timeDelta:)"
       ],
       "title" : "Instance Methods"
     },
@@ -529,9 +531,12 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/solver"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Solver/addStocks(_:delta:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/accumulateStocks(_:delta:)": {
   "abstract" : [
-
+    {
+      "text" : "Add stock difference to the simulation state.",
+      "type" : "text"
+    }
   ],
   "fragments" : [
     {
@@ -544,7 +549,7 @@
     },
     {
       "kind" : "identifier",
-      "text" : "addStocks"
+      "text" : "accumulateStocks"
     },
     {
       "kind" : "text",
@@ -585,12 +590,12 @@
       "text" : ")"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/addStocks(_:delta:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/accumulateStocks(_:delta:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "addStocks(_:delta:)",
+  "title" : "accumulateStocks(_:delta:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver\/addstocks(_:delta:)"
+  "url" : "\/documentation\/poieticflows\/solver\/accumulatestocks(_:delta:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Solver/compiledModel": {
   "abstract" : [
@@ -863,6 +868,90 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/solver\/constants"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/evaluate(delay:with:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "evaluate"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "delay"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13CompiledDelayV",
+      "text" : "CompiledDelay"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "with"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore7VariantO",
+      "text" : "Variant"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/evaluate(delay:with:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "evaluate(delay:with:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/solver\/evaluate(delay:with:)"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/Solver/evaluate(expression:with:)": {
   "abstract" : [
 
@@ -987,6 +1076,14 @@
     {
       "kind" : "text",
       "text" : ": "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
     },
     {
       "kind" : "typeIdentifier",
@@ -1155,77 +1252,6 @@
   "title" : "initializeState(override:time:timeDelta:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/solver\/initializestate(override:time:timedelta:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Solver/newState(time:timeDelta:)": {
-  "abstract" : [
-    {
-      "text" : "Create a new simulation state.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "newState"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "time"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "timeDelta"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/newState(time:timeDelta:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "newState(time:timeDelta:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver\/newstate(time:timedelta:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Solver/registerSolver(name:solver:)": {
   "abstract" : [
@@ -1408,86 +1434,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/solver\/registeredsolvers"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Solver/setBuiltins(_:time:timeDelta:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "setBuiltins"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "keyword",
-      "text" : "inout"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "time"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "timeDelta"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/setBuiltins(_:time:timeDelta:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "setBuiltins(_:time:timeDelta:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/solver\/setbuiltins(_:time:timedelta:)"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/Solver/stockDifference(state:at:timeDelta:)": {
   "abstract" : [
     {
@@ -1583,6 +1529,86 @@
   "title" : "stockDifference(state:at:timeDelta:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/solver\/stockdifference(state:at:timedelta:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/updateBuiltins(_:time:timeDelta:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "updateBuiltins"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "time"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "timeDelta"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/updateBuiltins(_:time:timeDelta:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "updateBuiltins(_:time:timeDelta:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/solver\/updatebuiltins(_:time:timedelta:)"
 }
 }
 }

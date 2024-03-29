@@ -134,7 +134,24 @@
               "type" : "codeVoice"
             },
             {
-              "text" : " when the variable is a built-in variable.",
+              "text" : " when the variable is a built-in variable or an internal",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "state variable.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "Each object can be represented by only one state variable.",
               "type" : "text"
             }
           ],

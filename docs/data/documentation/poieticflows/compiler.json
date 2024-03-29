@@ -187,6 +187,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(stocks:flows:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileDelayNode(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileGraphicalFunctionNode(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/createStateVariable(content:valueType:name:)",
@@ -574,10 +575,61 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/compile(stocks:flows:)"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileDelayNode(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "compileDelayNode"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore4NodeV",
+      "text" : "Node"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows27ComputationalRepresentationO",
+      "text" : "ComputationalRepresentation"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileDelayNode(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "compileDelayNode(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiler\/compiledelaynode(_:)"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileFormulaNode(_:)": {
   "abstract" : [
     {
-      "text" : "Return a dictionary of bound expressions.",
+      "text" : "Compile a node containing a formula.",
       "type" : "text"
     }
   ],
@@ -909,7 +961,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/validateParameters(_:required:)": {
   "abstract" : [
     {
-      "text" : "Validates parameter  of a node.",
+      "text" : "Validates parameter of a node.",
       "type" : "text"
     }
   ],

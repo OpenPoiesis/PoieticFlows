@@ -147,7 +147,7 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedObjects",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationObjects",
               "isActive" : true,
               "type" : "reference"
             },
@@ -212,9 +212,8 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/auxiliaries",
-              "isActive" : true,
-              "type" : "reference"
+              "code" : "auxiliaries",
+              "type" : "codeVoice"
             },
             {
               "text" : " or ",
@@ -527,13 +526,11 @@
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType"
@@ -544,13 +541,12 @@
   "topicSections" : [
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/auxiliaries",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/builtins",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/charts",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedObjects",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/flows",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/graphicalFunctions",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationDefaults",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationObjects",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/stateVariables",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/stocks",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/timeVariableIndex",
@@ -560,7 +556,7 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedObject(of:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationObject(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/stockIndex(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/variable(named:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/variableIndex(of:)"
@@ -642,40 +638,6 @@
   "title" : "BuiltinVariable",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/builtinvariable"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledAuxiliary": {
-  "abstract" : [
-    {
-      "text" : "Compiled auxiliary node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledAuxiliary",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledauxiliary"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledBuiltin": {
   "abstract" : [
@@ -871,47 +833,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/auxiliaries": {
-  "abstract" : [
-    {
-      "text" : "Auxiliaries required by stocks, by order of dependency.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "auxiliaries"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows17CompiledAuxiliaryV",
-      "text" : "CompiledAuxiliary"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/auxiliaries",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "auxiliaries",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel\/auxiliaries"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/builtins": {
   "abstract" : [
     {
@@ -993,105 +914,6 @@
   "title" : "charts",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/charts"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/computedObject(of:)": {
-  "abstract" : [
-    {
-      "text" : "Get a simulation variable for an object with given ID, if exists.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "computedObject"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "of"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14ComputedObjectV",
-      "text" : "ComputedObject"
-    },
-    {
-      "kind" : "text",
-      "text" : "?"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedObject(of:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "computedObject(of:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel\/computedobject(of:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/computedObjects": {
-  "abstract" : [
-    {
-      "text" : "List of variables that are computed, ordered by computational dependency.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "computedObjects"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14ComputedObjectV",
-      "text" : "ComputedObject"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/computedObjects",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "computedObjects",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel\/computedobjects"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/flows": {
   "abstract" : [
@@ -1215,6 +1037,97 @@
   "title" : "simulationDefaults",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/simulationdefaults"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/simulationObject(_:)": {
+  "abstract" : [
+    {
+      "text" : "Get a simulation variable for an object with given ID, if exists.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "simulationObject"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows16SimulationObjectV",
+      "text" : "SimulationObject"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationObject(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "simulationObject(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/simulationobject(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/simulationObjects": {
+  "abstract" : [
+    {
+      "text" : "List of variables that are computed, ordered by computational dependency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "simulationObjects"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows16SimulationObjectV",
+      "text" : "SimulationObject"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationObjects",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "simulationObjects",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/simulationobjects"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/stateVariables": {
   "abstract" : [
@@ -1496,8 +1409,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14ComputedObjectV",
-      "text" : "ComputedObject"
+      "preciseIdentifier" : "s:12PoieticFlows16SimulationObjectV",
+      "text" : "SimulationObject"
     },
     {
       "kind" : "text",
@@ -1712,40 +1625,6 @@
   "title" : "ComputationalRepresentation",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ComputedObject": {
-  "abstract" : [
-    {
-      "text" : "Structure representing a computation of an object.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ComputedObject",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/computedobject"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
   "abstract" : [

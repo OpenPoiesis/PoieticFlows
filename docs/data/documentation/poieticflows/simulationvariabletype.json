@@ -137,13 +137,11 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding"
       ],
@@ -154,7 +152,7 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/builtin",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/computed"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/object"
       ],
       "title" : "Enumeration Cases"
     },
@@ -262,40 +260,6 @@
   "title" : "BuiltinVariable",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/builtinvariable"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledAuxiliary": {
-  "abstract" : [
-    {
-      "text" : "Compiled auxiliary node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledAuxiliary",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledAuxiliary"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledAuxiliary",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledauxiliary"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledBuiltin": {
   "abstract" : [
@@ -581,40 +545,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/ComputedObject": {
-  "abstract" : [
-    {
-      "text" : "Structure representing a computation of an object.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ComputedObject"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ComputedObject",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/computedobject"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
   "abstract" : [
     {
@@ -791,42 +721,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationvariabletype\/builtin"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/computed": {
-  "abstract" : [
-    {
-      "text" : "The simulation variable represents a computation defined",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "by a node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "case"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "computed"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/computed",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "SimulationVariableType.computed",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationvariabletype\/computed"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/init(rawValue:)": {
   "abstract" : [
 
@@ -864,6 +758,42 @@
   "title" : "init(rawValue:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationvariabletype\/init(rawvalue:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType/object": {
+  "abstract" : [
+    {
+      "text" : "The simulation variable represents a computation defined",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "by a node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "object"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType\/object",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "SimulationVariableType.object",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationvariabletype\/object"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StateVariable": {
   "abstract" : [

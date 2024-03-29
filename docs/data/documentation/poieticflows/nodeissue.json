@@ -171,7 +171,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/duplicateName(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/expressionError(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/expressionSyntaxError(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/missingGraphicalFunctionParameter",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/missingRequiredParameter",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/unknownParameter(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/unusedInput(_:)"
       ],
@@ -610,7 +610,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissue\/hint"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/missingGraphicalFunctionParameter": {
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/missingRequiredParameter": {
   "abstract" : [
     {
       "text" : "Missing a connection from a parameter node to a graphical function.",
@@ -628,15 +628,15 @@
     },
     {
       "kind" : "identifier",
-      "text" : "missingGraphicalFunctionParameter"
+      "text" : "missingRequiredParameter"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/missingGraphicalFunctionParameter",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/missingRequiredParameter",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "NodeIssue.missingGraphicalFunctionParameter",
+  "title" : "NodeIssue.missingRequiredParameter",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/nodeissue\/missinggraphicalfunctionparameter"
+  "url" : "\/documentation\/poieticflows\/nodeissue\/missingrequiredparameter"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/unknownParameter(_:)": {
   "abstract" : [

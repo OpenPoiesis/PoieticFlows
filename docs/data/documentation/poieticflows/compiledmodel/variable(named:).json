@@ -20,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows13CompiledModelV8variable5namedAA14ComputedObjectVSgSS_tF",
+    "externalID" : "s:12PoieticFlows13CompiledModelV8variable5namedAA16SimulationObjectVSgSS_tF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -57,8 +57,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:12PoieticFlows14ComputedObjectV",
-        "text" : "ComputedObject"
+        "preciseIdentifier" : "s:12PoieticFlows16SimulationObjectV",
+        "text" : "SimulationObject"
       },
       {
         "kind" : "text",
@@ -128,10 +128,10 @@
               "text" : ") -> "
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationObject",
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:12PoieticFlows14ComputedObjectV",
-              "text" : "ComputedObject"
+              "preciseIdentifier" : "s:12PoieticFlows16SimulationObjectV",
+              "text" : "SimulationObject"
             },
             {
               "kind" : "text",
@@ -386,8 +386,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows14ComputedObjectV",
-      "text" : "ComputedObject"
+      "preciseIdentifier" : "s:12PoieticFlows16SimulationObjectV",
+      "text" : "SimulationObject"
     },
     {
       "kind" : "text",
@@ -415,10 +415,10 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/ComputedObject": {
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationObject": {
   "abstract" : [
     {
-      "text" : "Structure representing a computation of an object.",
+      "text" : "Structure describing an object to be simulated.",
       "type" : "text"
     }
   ],
@@ -433,21 +433,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ComputedObject"
+      "text" : "SimulationObject"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputedObject",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationObject",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ComputedObject"
+      "text" : "SimulationObject"
     }
   ],
   "role" : "symbol",
-  "title" : "ComputedObject",
+  "title" : "SimulationObject",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/computedobject"
+  "url" : "\/documentation\/poieticflows\/simulationobject"
 }
 }
 }

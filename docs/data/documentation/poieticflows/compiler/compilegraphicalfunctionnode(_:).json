@@ -688,6 +688,14 @@
       "text" : ": "
     },
     {
+      "kind" : "keyword",
+      "text" : "inout"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
       "kind" : "typeIdentifier",
       "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
       "text" : "SimulationState"

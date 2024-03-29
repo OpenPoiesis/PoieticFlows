@@ -141,7 +141,6 @@
     {
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/description",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/internalStates",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/model",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/values"
       ],
@@ -149,8 +148,13 @@
     },
     {
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/subscript(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/subscript(double:)"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/double(at:)"
+      ],
+      "title" : "Instance Methods"
+    },
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/subscript(_:)"
       ],
       "title" : "Subscripts"
     },
@@ -339,6 +343,69 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/description"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/double(at:)": {
+  "abstract" : [
+    {
+      "text" : "Get or set a simulation variable as double by reference.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "double"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "at"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sd",
+      "text" : "Double"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/double(at:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "double(at:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationstate\/double(at:)"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState/init(_:model:)": {
   "abstract" : [
 
@@ -427,73 +494,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/init(model:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/internalStates": {
-  "abstract" : [
-    {
-      "text" : "Values of built-in variables.",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Values of computed variables.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "internalStates"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
-      "text" : "Index"
-    },
-    {
-      "kind" : "text",
-      "text" : " : ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore7VariantO",
-      "text" : "Variant"
-    },
-    {
-      "kind" : "text",
-      "text" : "]]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/internalStates",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "internalStates",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationstate\/internalstates"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState/model": {
   "abstract" : [
 
@@ -501,7 +501,7 @@
   "fragments" : [
     {
       "kind" : "keyword",
-      "text" : "var"
+      "text" : "let"
     },
     {
       "kind" : "text",
@@ -574,61 +574,6 @@
   "title" : "subscript(_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/subscript(_:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/SimulationState/subscript(double:)": {
-  "abstract" : [
-    {
-      "text" : "Get or set a simulation variable as double by reference.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "subscript"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "double"
-    },
-    {
-      "kind" : "text",
-      "text" : " _: "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
-      "text" : "Index"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:Sd",
-      "text" : "Double"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/subscript(double:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "subscript(double:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulationstate\/subscript(double:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState/values": {
   "abstract" : [
