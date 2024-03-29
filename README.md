@@ -1,7 +1,21 @@
 # Poietic Flows
 
 Systems Dynamics Modelling and simulation toolkit based on the
-[Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow) methodology.
+[Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow) methodology .
+
+## Who it's for
+
+I wrote this when solving problem ???.  It would be applicable to economists, and X and X.
+
+## Quick start
+
+```
+poietic edit add Stock name=water formula=100
+poietic edit add Flow name=outflow formula=10
+poietic edit connect Drains water outflow
+```
+Then show a graph that the tool creates from this.
+
 
 Core functionality:
 
@@ -36,6 +50,8 @@ Planned:
 
 ## Installation
 
+Poietec runs on Mac OS X, ?? and ??.  
+
 To install the `poietic` command-line tool, run the following command in the
 project's top-level directory:
 
@@ -50,6 +66,11 @@ add the following to the end of your `~/.zshrc` or `~/.bashrc` file:
 ```
 export PATH=~/.swiftpm/bin:$PATH
 ```
+
+## Basic concept
+
+Poietic is a convenience tool for manipulating an object model (?) of system dynamics.  object models are stored in json.  Once you store an object model you can graph it or edit it.
+
 
 ## Examples
 
