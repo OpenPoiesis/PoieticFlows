@@ -28,6 +28,7 @@ Current:
 
 See also: [PoieticCore](https://github.com/OpenPoiesis/PoieticCore).
 
+
 Planned:
 
 - More useful built-in functions and variables for the Stock and Flow model.
@@ -64,32 +65,34 @@ repository.
 
 ## Tool
 
-At the moment, the only user-facing interface is a command-line tool called
-``poietic``. The available commands are:
+The Poietic Flows includes a command-line tool to create, edit and run
+Stock and Flow models called `poietic`.
 
-```
-  new                     Create an empty design.
-  info                    Get information about the design
-  list                    List all nodes and edges
-  describe                Describe an object
-  edit                    Edit an object or a selection of objects
-  import                  Import a frame bundle into the design
-  run                     Run a model
-  write-dot               Write a Graphviz DOT file.
-  metamodel               Show the metamodel
-```
+See the [Command Line Tool documentation](Docs/Tool.md).
 
-The edit subcommands are:
+Command summary:
 
-```
-  set                     Set an attribute value
-  undo                    Undo last change
-  redo                    Redo undone change
-  add                     Create a new node
-  connect                 Create a new connection (edge) between two nodes
-```
+- `new`: Create an empty design.
+- `info`: Get information about the design
+- `list`: List design content objects.
+- `show`: Describe an object.
+- `edit`: Edit an object or a selection of objects.
+    - `set`: Set an attribute value
+    - `undo`: Undo last change
+    - `redo`: Redo undone change
+    - `add`: Create a new node
+    - `connect`: Create a new connection (edge) between two nodes
+    - `remove`: Remove an object – a node or a connection
+    - `auto-parameters`: Automatically connect parameter nodes: connect required, disconnect unused
+    - `layout`: Lay out objects
+    - `align`: Align objects on canvas
+- `import`: Import a frame into the design.
+- `run`: Run the simulation and generate output
+- `write-dot`: Write a Graphviz DOT file.
+- `metamodel`: Show the metamodel
+- `create-library` Create a library of multiple models.
 
-Use `--help` with the desired command to learn more.
+Use `--help` with a desired command to learn more.
 
 ### Pseudo-REPL
 
@@ -103,8 +106,6 @@ point to a file where the design is stored.
 Example session:
 
 ```
-export POIETIC_DATABASE="MyDesign.poietic"
-
 poietic new
 poietic info
 
@@ -114,7 +115,7 @@ poietic edit connect Drains water outflow
 
 poietic list formulas
 
-poietic edit add Stock name=unwanted
+poietic edit add Stock name=unwanted formula=0
 poietic list formulas
 poietic edit undo
 
