@@ -47,20 +47,20 @@ directory. Make sure you have the directory in your `PATH`, if you do not, then
 add the following to the end of your `~/.zshrc` or `~/.bashrc` file:
 
 ```
-export PATH=~/.swiftpm/bin:\$PATH"
+export PATH=~/.swiftpm/bin:\$PATH
 ```
 
-## Demos
+## Examples
 
-The examples are located in the [Demos repository](https://github.com/OpenPoiesis/Demos).
+The examples are located in the [Examples repository](https://github.com/OpenPoiesis/PoieticExamples).
 Follow instructions how to run them in the documentation contained within the
 repository.
 
 
 ## Documentation
 
-- [PoieticFlows](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/)
-- [PoieticCore](https://openpoiesis.github.io/PoieticCore/documentation/poieticcore/) (underlying graph design framework)
+- Stock and Flow package: [PoieticFlows](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/)
+- Object Graph modelling package: [PoieticCore](https://openpoiesis.github.io/PoieticCore/documentation/poieticcore/)
 
 ## Tool
 
