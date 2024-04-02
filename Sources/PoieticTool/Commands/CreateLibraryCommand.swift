@@ -24,7 +24,7 @@ Command extracts DesignInfo from the designs. If multiple instances of DesignInf
 """)
 
         @Option(name: [.long, .customShort("o")], help: "Output library file")
-        var outputFile: String = "poietitc-library.json"
+        var outputFile: String = "poietic-library.json"
 
         @Argument(help: "Paths to designs to be referenced by the library")
         var designs: [String]
