@@ -5,17 +5,18 @@ Systems Dynamics Modelling and simulation toolkit based on the
 
 Core functionality:
 
-- Creation and iterative design of [stock and flow](https://en.wikipedia.org/wiki/Stock_and_flow) models.
+- Creation and iterative design of stock and flow models.
 - Simulation of systems dynamics models.
 
 ## Features
 
 Current:
 
-- [Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow) model
-    - Implemented nodes: Stock, Flow, Auxiliary, Graphical Function
-    - Stocks can be either non-negative or can allow negative values
+- Stock and Flow model
+    - Nodes: Stock, Flow, Auxiliary, Graphical Function
+    - Interface nodes: Chart, Control
     - Included [Euler](https://en.wikipedia.org/wiki/Euler_method) and [RK4](https://en.wikipedia.org/wiki/Runge–Kutta_methods) solvers
+    - Experimental features: Delay
 - Simple arithmetic expressions (formulas)
     - Built-in functions: abs, floor, ceiling, round, power, sum, min, max
 - Whole editing history is preserved.
@@ -35,6 +36,8 @@ Planned:
 - Sub-systems.
 
 ## Installation
+
+Available platforms: MacOS 14 (and later), Linux
 
 To install the `poietic` command-line tool, run the following command in the
 project's top-level directory:
