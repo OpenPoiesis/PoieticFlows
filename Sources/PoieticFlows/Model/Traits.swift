@@ -91,6 +91,11 @@ extension Trait {
         attributes: [
             Attribute("delay_duration", type: .double, default: Variant(1),
                       abstract: "Delay duration in time units."),
+            Attribute("delay_output_type", type: .string, default: Variant("delay"), optional: true,
+                      abstract: "Type of delay output computation"),
+//            Attribute("delay_output_order", type: .int, default: Variant(0), optional: true,
+//                      abstract: "Order of the delay"),
+            // TODO: Implement: DELAY1, DELAY3,DELAYN, SMTH1, 3, N
         ]
     )
 
@@ -140,6 +145,9 @@ extension Trait {
                       optional: true,
                       abstract: "Simulation step time delta."
                      ),
+            // TODO: Add stop_time or final_time
+            // TODO: Support date/time
+            // TODO: Add Solver type
         ]
     )
 }

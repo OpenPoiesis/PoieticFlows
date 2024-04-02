@@ -1,6 +1,8 @@
 .DS_Store
 /.build
 /Packages
+/Sandbox
+/out
 xcuserdata/
 DerivedData/
 .swiftpm/configuration/registries.json
