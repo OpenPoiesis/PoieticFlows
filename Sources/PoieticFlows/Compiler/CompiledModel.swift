@@ -34,7 +34,7 @@ public struct SimulationDefaults {
 /// in the order provided without causing broken computational dependencies.
 ///
 /// Additional information about specific object types is provided in stored
-/// properties such as ``stocks``, ``flows``, ``auxiliaries`` or ``charts``.
+/// properties such as ``stocks``, ``flows`` or ``charts``.
 ///
 /// ## Uses by Applications
 ///
@@ -78,7 +78,7 @@ public struct CompiledModel {
     ///         present in the model, the compiled model would not have been
     ///         created.
     ///
-    /// - SeeAlso: ``computedVariableIndex(of:)``
+    /// - SeeAlso: ``variableIndex(of:)``
     ///
     public let simulationObjects: [SimulationObject]
 
@@ -105,7 +105,7 @@ public struct CompiledModel {
     /// The compiled builtin variable references a state variable that holds
     /// the value for the builtin variable and a kind of the builtin variable.
     ///
-    /// - SeeAlso: ``stateVariables``, ``CompiledBuiltin``, ``Variable``,
+    /// - SeeAlso: ``stateVariables``, ``CompiledBuiltin``, ``/PoieticCore/Variable``,
     ///   ``FlowsMetamodel``
     ///
     public let builtins: [CompiledBuiltin]
@@ -123,7 +123,7 @@ public struct CompiledModel {
     /// used during computation.
     ///
     /// - Complexity: O(n)
-    /// - SeeAlso:  ``stateVariables``, ``computedObject(of:)``
+    /// - SeeAlso:  ``stateVariables``, ``simulationObject(_:)``
     ///
     public func variableIndex(of id: ObjectID) -> SimulationState.Index? {
         // TODO: Do we need a pre-computed map here or are we fine with O(n)?
@@ -197,7 +197,7 @@ public struct CompiledModel {
 
     /// Compiled bindings of controls to their value objects.
     ///
-    /// - See also: ``PoieticCore/ObjectType/Control``, ``Simulator/controlValues()``.
+    /// - See also: ``PoieticCore/ObjectType/Control``.
     ///
     public let valueBindings: [CompiledControlBinding]
         

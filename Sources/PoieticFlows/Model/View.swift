@@ -42,7 +42,7 @@ public class StockFlowView {
     /// correspond to the simulation variables, where one node corresponds to
     /// exactly one simulation variable and vice-versa.
     ///
-    /// - SeeAlso: ``SimulationVariable``, ``CompiledModel``
+    /// - SeeAlso: ``StateVariable``, ``CompiledModel``
     ///
     public var simulationNodes: [Node] {
         frame.filterNodes {
@@ -317,7 +317,7 @@ public class StockFlowView {
     /// - Returns: ID of the node being filled, or `nil` if there is no
     ///   fill edge outgoing from the flow.
     /// - Precondition: The object with the ID `flowID` must be a flow
-    /// (``FlowsMetamodel/Flow``)
+    /// (``/PoieticCore/ObjectType/Flow``)
     ///
     /// - SeeAlso: ``flowDrains(_:)``,
     ///
@@ -342,7 +342,7 @@ public class StockFlowView {
     /// - Returns: ID of the node being drained, or `nil` if there is no
     ///   drain edge incoming to the flow.
     /// - Precondition: The object with the ID `flowID` must be a flow
-    /// (``FlowsMetamodel/Flow``)
+    /// (``/PoieticCore/ObjectType/Flow``)
     ///
     /// - SeeAlso: ``flowDrains(_:)``,
     ///
@@ -361,7 +361,7 @@ public class StockFlowView {
     
     /// Return a list of flows that fill a stock.
     ///
-    /// Flow fills a stock if there is an edge of type ``FlowsMetamodel/Fills``
+    /// Flow fills a stock if there is an edge of type ``/PoieticCore/ObjectType/Fills``
     /// that originates in the flow and ends in the stock.
     ///
     /// - Parameters:
@@ -383,7 +383,7 @@ public class StockFlowView {
     /// Return a list of flows that drain a stock.
     ///
     /// A stock outflows are all flow nodes where there is an edge of type
-    /// ``FlowsMetamodel/Drains`` that originates in the stock and ends in
+    /// ``/PoieticCore/ObjectType/Drains`` that originates in the stock and ends in
     /// the flow.
     ///
     /// - Parameters:

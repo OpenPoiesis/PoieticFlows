@@ -25,7 +25,7 @@ Simulation and computation.
 - ``BuiltinVariable``
 - ``bindExpression(_:variables:functions:)``
 - ``ExpressionError``
-- ``ExpressionSyntaxError``
+- ``/PoieticCore/ExpressionSyntaxError``
 
 ### Functions
 

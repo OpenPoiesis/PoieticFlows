@@ -10,7 +10,7 @@ import PoieticCore
 
 /// Type of the simulation variable.
 ///
-/// - SeeAlso: ``SimulationVariable``
+/// - SeeAlso: ``StateVariable``
 ///
 public enum SimulationVariableType: String {
     /// The simulation variable represents a computation defined

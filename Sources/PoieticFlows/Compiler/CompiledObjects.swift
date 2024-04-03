@@ -107,8 +107,8 @@ public struct SimulationObject: CustomStringConvertible {
 /// The enum is used during computation to set value of a builtin variable.
 ///
 /// - SeeAlso: ``CompiledBuiltin``,
-/// ``Solver/setBuiltins(_:time:timeDelta:)``,
-/// ``Solver/newState(time:timeDelta:)``
+/// ``Solver/updateBuiltins(_:time:timeDelta:),
+/// ``Solver/initializeState(override:time:timeDelta:)
 ///
 public enum BuiltinVariable: Equatable, CustomStringConvertible {
     case time
@@ -129,8 +129,8 @@ public enum BuiltinVariable: Equatable, CustomStringConvertible {
 /// variable.
 ///
 /// - SeeAlso: ``CompiledModel/stateVariables``,
-/// ``Solver/setBuiltins(_:time:timeDelta:)``,
-/// ``Solver/newState(time:timeDelta:)``
+/// ``Solver/updateBuiltins(_:time:timeDelta:),
+/// ``Solver/initializeState(override:time:timeDelta:)
 ///
 public struct CompiledBuiltin {
     /// Builtin being represented by a variable.
@@ -185,14 +185,14 @@ public struct CompiledStock {
     /// List indices of simulation variables representing flows
     /// which fill the stock.
     ///
-    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
+    /// - SeeAlso: ``Solver/computeStockDelta(_:at:with:)``
     ///
     public let inflows: [SimulationState.Index]
 
     /// List indices of simulation variables representing flows
     /// which drain the stock.
     ///
-    /// - SeeAlso: ``Solver/computeStock(_:at:with:)``
+    /// - SeeAlso: ``Solver/computeStockDelta(_:at:with:)``
     ///
     public let outflows: [SimulationState.Index]
 }

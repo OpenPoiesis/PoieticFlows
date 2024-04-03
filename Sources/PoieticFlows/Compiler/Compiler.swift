@@ -42,12 +42,12 @@ public class Compiler {
     /// associated with stateful functions or other computation objects.
     ///
     /// The state variables are added to the list using
-    /// ``createStateVariable(content:valueType:)``, which allocates a variable
+    /// ``createStateVariable(content:valueType:name:)``, which allocates a variable
     /// and sets other associated mappings depending on the variable content
     /// type.
     ///
     /// - SeeAlso: ``CompiledModel/stateVariables``,
-    ///   ``createStateVariable(content:valueType:)``
+    ///   ``createStateVariable(content:valueType:name:)``
     ///
     public private(set) var stateVariables: [StateVariable] = []
 
@@ -567,7 +567,7 @@ public class Compiler {
 
     /// Compiles a graphical function.
     ///
-    /// This method creates a ``Function`` object with a single argument and a
+    /// This method creates a ``/PoieticCore/Function`` object with a single argument and a
     /// numeric return value. The function will compute the output based on the
     /// input parameter and on specifics of the graphical function points
     /// interpolation.

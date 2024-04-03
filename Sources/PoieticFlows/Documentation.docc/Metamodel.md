@@ -17,7 +17,6 @@
 - ``/PoieticCore/ObjectType/Auxiliary``
 - ``/PoieticCore/Trait/Stock``
 - ``/PoieticCore/ObjectType/Stock``
-- ``/PoieticCore/Trait/Position``
 - ``/PoieticCore/Trait/GraphicalFunction``
 - ``/PoieticCore/Trait/Chart``
 - ``/PoieticCore/ObjectType/Chart``

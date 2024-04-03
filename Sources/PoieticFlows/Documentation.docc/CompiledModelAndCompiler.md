@@ -13,13 +13,13 @@ Overview...
 - ``CompiledModel``
 - ``SimulationDefaults``
 - ``ComputationalRepresentation``
-- ``ComputedObject``
+- ``SimulationObject``
 - ``StateVariable``
 - ``BuiltinVariable``
 - ``CompiledBuiltin``
 - ``CompiledStock``
 - ``CompiledFlow``
-- ``CompiledAuxiliary``
+- ``CompiledDelay``
 - ``CompiledGraphicalFunction``
 - ``CompiledControlBinding``
 - ``SimulationVariableType``
