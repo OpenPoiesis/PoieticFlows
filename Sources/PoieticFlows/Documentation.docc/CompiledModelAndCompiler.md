@@ -18,7 +18,6 @@ Overview...
 - ``BuiltinVariable``
 - ``CompiledBuiltin``
 - ``CompiledStock``
-- ``CompiledFlow``
 - ``CompiledDelay``
 - ``CompiledGraphicalFunction``
 - ``CompiledControlBinding``

@@ -342,7 +342,6 @@ public class Compiler {
         // =================================================================
 
         var unsortedStocks: [Node] = []
-        var flows: [CompiledFlow] = []
         var flowsByID: [ObjectID:CompiledFlow] = [:]
         
         for (objectIndex, item) in zip(orderedSimulationNodes, simulationObjects).enumerated() {
@@ -356,12 +355,8 @@ public class Compiler {
                 guard let priority = try? node.snapshot["priority"]?.intValue() else {
                     fatalError("Unable to get priority of Stock node \(node.id). Hint: Frame passed constraint validation while it should have not.")
                 }
-                let computed = simulationObjects[objectIndex]
-                let flow = CompiledFlow(id: object.id,
-                                        variableIndex: computed.variableIndex,
-                                        objectIndex: objectIndex,
-                                        priority: priority)
-                flows.append(flow)
+                
+                let flow = CompiledFlow(id: object.id, priority: priority)
                 flowsByID[object.id] = flow
 
             case .auxiliary:
@@ -448,7 +443,6 @@ public class Compiler {
             builtins: builtins,
             timeVariableIndex: timeIndex,
             stocks: compiledStocks,
-            flows: flows,
             charts: charts,
             valueBindings: bindings,
             simulationDefaults: simulationDefaults
@@ -632,7 +626,8 @@ public class Compiler {
     ///
     /// - Returns: Extracted and derived stock node information.
     ///
-    public func compile(stocks: [Node], flows: [ObjectID:CompiledFlow]) -> [CompiledStock] {
+    func compile(stocks: [Node], flows: [ObjectID:CompiledFlow]) -> [CompiledStock] {
+        // TODO: Change `flows` argument to flowsPriority: [ObjectID:Int], remove historical remnant CompiledFlow (formerly richer struct)
         var outflows: [ObjectID: [ObjectID]] = [:]
         var inflows: [ObjectID: [ObjectID]] = [:]
 

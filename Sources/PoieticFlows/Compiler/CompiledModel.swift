@@ -175,15 +175,6 @@ public struct CompiledModel {
         return stocks.first { $0.id == id }!
     }
     
-    /// Flows ordered by the computation (parameter) dependency.
-    ///
-    /// This property is used in computation.
-    ///
-    /// - SeeAlso: ``Solver/stockDifference(state:at:timeDelta:)``,
-    ///
-    public let flows: [CompiledFlow]
-
-    
     /// List of charts.
     ///
     /// This property is not used during computation, it is provided for

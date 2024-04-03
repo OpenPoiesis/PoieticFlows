@@ -203,24 +203,19 @@ public struct CompiledStock {
 ///
 /// - SeeAlso: ``Solver/computeStockDelta(_:at:with:)``
 ///
-public struct CompiledFlow {
+@available(*, deprecated,  message: "Just use priority")
+struct CompiledFlow {
+    // TODO: Remove historical remnant CompiledFlow. See Compiler.compile(stocks:,flows:) -> [CompiledStock]
+
     /// Object ID of the flow that this compiled structure represents.
     ///
     /// This is used mostly for inspection and debugging purposes.
     ///
-    public let id: ObjectID
+    let id: ObjectID
 
-    /// Index to the list of simulation state variables.
-    ///
-    public let variableIndex: SimulationState.Index
-    /// Index in of the simulation state variable that represents the flow.
-    ///
-    /// This is the main information used during the computation.
-    ///
-    public let objectIndex: Int
     /// Component representing the flow as it was at the time of compilation.
     ///
-    public let priority: Int
+    let priority: Int
 }
 
 
