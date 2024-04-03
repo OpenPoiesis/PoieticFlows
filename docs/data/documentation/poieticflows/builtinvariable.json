@@ -121,20 +121,12 @@
                   "type" : "text"
                 },
                 {
-                  "code" : "Solver\/setBuiltins(_:time:timeDelta:)",
+                  "code" : "Solver\/updateBuiltins(_:time:timeDelta:), ",
                   "type" : "codeVoice"
                 },
                 {
-                  "text" : ",",
+                  "text" : "Solver\/initializeState(override:time:timeDelta:)",
                   "type" : "text"
-                },
-                {
-                  "text" : " ",
-                  "type" : "text"
-                },
-                {
-                  "code" : "Solver\/newState(time:timeDelta:)",
-                  "type" : "codeVoice"
                 }
               ],
               "type" : "paragraph"
@@ -175,10 +167,12 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationObject",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationVariableType"
@@ -463,6 +457,37 @@
   "title" : "CompiledControlBinding",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledcontrolbinding"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledDelay": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "CompiledDelay"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "CompiledDelay"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "CompiledDelay",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compileddelay"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow": {
   "abstract" : [
@@ -777,6 +802,40 @@
   "title" : "SimulationDefaults",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationdefaults"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationObject": {
+  "abstract" : [
+    {
+      "text" : "Structure describing an object to be simulated.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationObject"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationObject",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationObject"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationObject",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationobject"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationVariableType": {
   "abstract" : [

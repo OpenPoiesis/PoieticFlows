@@ -178,8 +178,9 @@
               "type" : "text"
             },
             {
-              "code" : "createStateVariable(content:valueType:)",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/createStateVariable(content:valueType:name:)",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : ", which allocates a variable",
@@ -226,8 +227,9 @@
                   "type" : "text"
                 },
                 {
-                  "code" : "createStateVariable(content:valueType:)",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/createStateVariable(content:valueType:name:)",
+                  "isActive" : true,
+                  "type" : "reference"
                 }
               ],
               "type" : "paragraph"
@@ -429,6 +431,103 @@
   "title" : "Compiler",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/createStateVariable(content:valueType:name:)": {
+  "abstract" : [
+    {
+      "text" : "Creates a state variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "createStateVariable"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "content"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows20StateVariableContentO",
+      "text" : "StateVariableContent"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "valueType"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore9ValueTypeO",
+      "text" : "ValueType"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "name"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/createStateVariable(content:valueType:name:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "createStateVariable(content:valueType:name:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiler\/createstatevariable(content:valuetype:name:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/stateVariables": {
   "abstract" : [

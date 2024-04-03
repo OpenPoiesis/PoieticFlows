@@ -139,8 +139,9 @@
                   "type" : "text"
                 },
                 {
-                  "code" : "SimulationVariable",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
+                  "isActive" : true,
+                  "type" : "reference"
                 },
                 {
                   "text" : ", ",
@@ -253,6 +254,40 @@
   "title" : "CompiledModel",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/StateVariable": {
+  "abstract" : [
+    {
+      "text" : "Structure representing a reference to a simulation variable.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "StateVariable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "StateVariable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "StateVariable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/statevariable"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [

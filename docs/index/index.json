@@ -1288,6 +1288,111 @@
                     "type" : "groupMarker"
                   },
                   {
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/computation",
+                    "title" : "let computation: ComputationalRepresentation",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/description",
+                    "title" : "var description: String",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/id",
+                    "title" : "let id: ObjectID",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/name",
+                    "title" : "let name: String",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/type",
+                    "title" : "let type: SimulationObject.SimulationObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/valuetype",
+                    "title" : "var valueType: ValueType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/variableindex",
+                    "title" : "let variableIndex: Int",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Enumerations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Enumeration Cases",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/auxiliary",
+                        "title" : "case auxiliary",
+                        "type" : "case"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/flow",
+                        "title" : "case flow",
+                        "type" : "case"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/stock",
+                        "title" : "case stock",
+                        "type" : "case"
+                      },
+                      {
+                        "title" : "Initializers",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/init(from:)",
+                        "title" : "init(from: any Decoder) throws",
+                        "type" : "init"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Operators",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/!=(_:_:)",
+                            "title" : "static func != (Self, Self) -> Bool",
+                            "type" : "op"
+                          }
+                        ],
+                        "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/equatable-implementations",
+                        "title" : "Equatable Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype",
+                    "title" : "SimulationObject.SimulationObjectType",
+                    "type" : "enum"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/simulationobject",
+                "title" : "SimulationObject",
+                "type" : "struct"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
                     "path" : "\/documentation\/poieticflows\/statevariable\/content",
                     "title" : "let content: StateVariableContent",
                     "type" : "property"
@@ -1452,6 +1557,87 @@
                 ],
                 "path" : "\/documentation\/poieticflows\/compiledflow",
                 "title" : "CompiledFlow",
+                "type" : "struct"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/compileddelay\/duration",
+                    "title" : "let duration: Double",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/compileddelay\/initialvalue",
+                    "title" : "let initialValue: Variant?",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/compileddelay\/parameterindex",
+                    "title" : "let parameterIndex: SimulationState.Index",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/compileddelay\/valuequeueindex",
+                    "title" : "let valueQueueIndex: SimulationState.Index",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/compileddelay\/valuetype",
+                    "title" : "let valueType: ValueType",
+                    "type" : "property"
+                  },
+                  {
+                    "title" : "Enumerations",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "children" : [
+                      {
+                        "title" : "Enumeration Cases",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/delay",
+                        "title" : "case delay",
+                        "type" : "case"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/smooth",
+                        "title" : "case smooth",
+                        "type" : "case"
+                      },
+                      {
+                        "title" : "Default Implementations",
+                        "type" : "groupMarker"
+                      },
+                      {
+                        "children" : [
+                          {
+                            "title" : "Operators",
+                            "type" : "groupMarker"
+                          },
+                          {
+                            "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/!=(_:_:)",
+                            "title" : "static func != (Self, Self) -> Bool",
+                            "type" : "op"
+                          }
+                        ],
+                        "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/equatable-implementations",
+                        "title" : "Equatable Implementations",
+                        "type" : "symbol"
+                      }
+                    ],
+                    "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype",
+                    "title" : "CompiledDelay.OutputType",
+                    "type" : "enum"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/compileddelay",
+                "title" : "CompiledDelay",
                 "type" : "struct"
               },
               {
@@ -2350,87 +2536,6 @@
           {
             "children" : [
               {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/compileddelay\/duration",
-                "title" : "let duration: Double",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/compileddelay\/initialvalue",
-                "title" : "let initialValue: Variant?",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/compileddelay\/parameterindex",
-                "title" : "let parameterIndex: SimulationState.Index",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/compileddelay\/valuequeueindex",
-                "title" : "let valueQueueIndex: SimulationState.Index",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/compileddelay\/valuetype",
-                "title" : "let valueType: ValueType",
-                "type" : "property"
-              },
-              {
-                "title" : "Enumerations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Enumeration Cases",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/delay",
-                    "title" : "case delay",
-                    "type" : "case"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/smooth",
-                    "title" : "case smooth",
-                    "type" : "case"
-                  },
-                  {
-                    "title" : "Default Implementations",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Operators",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/!=(_:_:)",
-                        "title" : "static func != (Self, Self) -> Bool",
-                        "type" : "op"
-                      }
-                    ],
-                    "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype\/equatable-implementations",
-                    "title" : "Equatable Implementations",
-                    "type" : "symbol"
-                  }
-                ],
-                "path" : "\/documentation\/poieticflows\/compileddelay\/outputtype",
-                "title" : "CompiledDelay.OutputType",
-                "type" : "enum"
-              }
-            ],
-            "path" : "\/documentation\/poieticflows\/compileddelay",
-            "title" : "CompiledDelay",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
                 "title" : "Initializers",
                 "type" : "groupMarker"
               },
@@ -2679,111 +2784,6 @@
           {
             "path" : "\/documentation\/poieticflows\/simulationcontext",
             "title" : "SimulationContext",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Instance Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/simulationobject\/computation",
-                "title" : "let computation: ComputationalRepresentation",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/simulationobject\/description",
-                "title" : "var description: String",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/simulationobject\/id",
-                "title" : "let id: ObjectID",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/simulationobject\/name",
-                "title" : "let name: String",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/simulationobject\/type",
-                "title" : "let type: SimulationObject.SimulationObjectType",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/simulationobject\/valuetype",
-                "title" : "var valueType: ValueType",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/simulationobject\/variableindex",
-                "title" : "let variableIndex: Int",
-                "type" : "property"
-              },
-              {
-                "title" : "Enumerations",
-                "type" : "groupMarker"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Enumeration Cases",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/auxiliary",
-                    "title" : "case auxiliary",
-                    "type" : "case"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/flow",
-                    "title" : "case flow",
-                    "type" : "case"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/stock",
-                    "title" : "case stock",
-                    "type" : "case"
-                  },
-                  {
-                    "title" : "Initializers",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/init(from:)",
-                    "title" : "init(from: any Decoder) throws",
-                    "type" : "init"
-                  },
-                  {
-                    "title" : "Default Implementations",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "children" : [
-                      {
-                        "title" : "Operators",
-                        "type" : "groupMarker"
-                      },
-                      {
-                        "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/!=(_:_:)",
-                        "title" : "static func != (Self, Self) -> Bool",
-                        "type" : "op"
-                      }
-                    ],
-                    "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype\/equatable-implementations",
-                    "title" : "Equatable Implementations",
-                    "type" : "symbol"
-                  }
-                ],
-                "path" : "\/documentation\/poieticflows\/simulationobject\/simulationobjecttype",
-                "title" : "SimulationObject.SimulationObjectType",
-                "type" : "enum"
-              }
-            ],
-            "path" : "\/documentation\/poieticflows\/simulationobject",
-            "title" : "SimulationObject",
             "type" : "struct"
           },
           {

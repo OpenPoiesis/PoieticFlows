@@ -124,14 +124,6 @@
                       "type" : "reference"
                     },
                     {
-                      "text" : ", ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "Simulator\/controlValues()",
-                      "type" : "codeVoice"
-                    },
-                    {
                       "text" : ".",
                       "type" : "text"
                     }

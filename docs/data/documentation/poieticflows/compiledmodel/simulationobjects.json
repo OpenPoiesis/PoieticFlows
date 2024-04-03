@@ -199,8 +199,9 @@
                   "type" : "text"
                 },
                 {
-                  "code" : "computedVariableIndex(of:)",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/variableIndex(of:)",
+                  "isActive" : true,
+                  "type" : "reference"
                 }
               ],
               "type" : "paragraph"
@@ -345,6 +346,73 @@
   "title" : "simulationObjects",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/simulationobjects"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/variableIndex(of:)": {
+  "abstract" : [
+    {
+      "text" : "Get index into a list of computed variables for an object with given ID.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "variableIndex"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "of"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
+      "text" : "ObjectID"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
+    },
+    {
+      "kind" : "text",
+      "text" : "?"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/variableIndex(of:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "variableIndex(of:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiledmodel\/variableindex(of:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [

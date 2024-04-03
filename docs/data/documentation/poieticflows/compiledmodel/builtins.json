@@ -152,8 +152,9 @@
                   "type" : "text"
                 },
                 {
-                  "code" : "Variable",
-                  "type" : "codeVoice"
+                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Variable",
+                  "isActive" : true,
+                  "type" : "reference"
                 },
                 {
                   "text" : ",",
@@ -445,6 +446,38 @@
   "title" : "FlowsMetamodel",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowsmetamodel"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Variable": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:11PoieticCore8VariableC",
+      "text" : "Variable"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Variable",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "Variable"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "Variable",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/variable"
 }
 }
 }
