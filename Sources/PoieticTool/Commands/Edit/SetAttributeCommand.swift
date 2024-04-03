@@ -33,14 +33,14 @@ extension PoieticTool {
 
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.currentFrame
+            let design = try openDesign(options: options)
+            let frame = design.currentFrame
             
             guard let object = frame.object(stringReference: reference) else {
                 throw ToolError.unknownObject(reference)
             }
 
-            let newFrame: MutableFrame = memory.deriveFrame(original: frame.id)
+            let newFrame: MutableFrame = design.deriveFrame(original: frame.id)
 
             let mutableObject = newFrame.mutableObject(object.id)
 
@@ -48,11 +48,10 @@ extension PoieticTool {
                                        attribute: attributeName,
                                        string: value)
             
-            try acceptFrame(newFrame, in: memory)
+            try acceptFrame(newFrame, in: design)
 
-            try closeMemory(memory: memory, options: options)
+            try closeDesign(design: design, options: options)
             print("Property set in \(reference): \(attributeName) = \(value)")
-//            print("Current frame ID: \(memory.currentFrame.id)")
         }
     }
 

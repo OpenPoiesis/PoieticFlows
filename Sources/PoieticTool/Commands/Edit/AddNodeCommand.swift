@@ -36,8 +36,8 @@ poietic add Flow name=expenses formula=50
         var attributeAssignments: [String] = []
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.deriveFrame()
+            let design = try openDesign(options: options)
+            let frame = design.deriveFrame()
             
             guard let type = FlowsMetamodel.objectType(name: typeName) else {
                 throw ToolError.unknownObjectType(typeName)
@@ -72,11 +72,10 @@ poietic add Flow name=expenses formula=50
 
             }
 
-            try acceptFrame(frame, in: memory)
-            try closeMemory(memory: memory, options: options)
+            try acceptFrame(frame, in: design)
+            try closeDesign(design: design, options: options)
 
             print("Created node \(id)")
-//            print("Current frame ID: \(memory.currentFrame.id)")
         }
     }
 

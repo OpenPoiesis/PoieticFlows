@@ -28,14 +28,14 @@ extension PoieticTool {
         var autoParameters: Bool = false
         
         mutating func run() throws {
-            let memory = createMemory(options: options)
+            let design = createDesign(options: options)
 
             if !importPaths.isEmpty {
-                let frame = memory.createFrame()
+                let frame = design.createFrame()
                 for path in importPaths {
                     let bundle = try ForeignFrameBundle(path: path)
                     // TODO: Should we share the reader?
-                    let reader = ForeignFrameReader(info: bundle.info, memory: frame.memory)
+                    let reader = ForeignFrameReader(info: bundle.info, design: frame.design)
                     
                     print("Importing from: \(path)")
                     for name in bundle.collectionNames {
@@ -55,10 +55,10 @@ extension PoieticTool {
                     }
                 }
                 
-                try acceptFrame(frame, in: memory)
+                try acceptFrame(frame, in: design)
             }
             
-            try closeMemory(memory: memory, options: options)
+            try closeDesign(design: design, options: options)
             print("Design created.")
         }
     }

@@ -67,8 +67,8 @@ func createLibraryItem(fromDesignAt location: String) throws -> DesignLibraryIte
     }
 
 
-    let memory = try openMemory(url: actualURL)
-    let frame = memory.currentFrame
+    let design = try openDesign(url: actualURL)
+    let frame = design.currentFrame
     
     let info = frame.filter(type: ObjectType.DesignInfo).first?.attributes
                     ?? [:]

@@ -81,7 +81,7 @@ extension PoieticTool {
         var missingLabel = "(none)"
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
+            let design = try openDesign(options: options)
            
             guard let testURL = URL(string: output) else {
                 fatalError("Invalid resource reference: \(output)")
@@ -102,7 +102,7 @@ extension PoieticTool {
                                        style: DefaultDOTStyle)
 
             // TODO: Allow export of a selection
-            let graph = memory.currentFrame.graph
+            let graph = design.currentFrame.graph
             try exporter.export(graph: graph)
         }
     }

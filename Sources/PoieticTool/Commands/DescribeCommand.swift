@@ -36,12 +36,12 @@ extension PoieticTool {
         var reference: String
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            if memory.isEmpty {
-                throw CleanExit.message("The design memory is empty.")
+            let design = try openDesign(options: options)
+            if design.isEmpty {
+                throw CleanExit.message("The design is empty.")
             }
 
-            let frame = memory.currentFrame
+            let frame = design.currentFrame
             
             guard let object = frame.object(stringReference: reference) else {
                 throw ToolError.unknownObject(reference)

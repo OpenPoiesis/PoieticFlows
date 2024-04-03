@@ -38,8 +38,8 @@ extension PoieticTool {
         var references: [String] = []
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.deriveFrame()
+            let design = try openDesign(options: options)
+            let frame = design.deriveFrame()
             
             var objects: [ObjectSnapshot] = []
             if references.isEmpty {
@@ -66,10 +66,8 @@ extension PoieticTool {
                 angle += step
             }
             
-            try acceptFrame(frame, in: memory)
-            try closeMemory(memory: memory, options: options)
-
-//            print("Current frame ID: \(memory.currentFrame.id)")
+            try acceptFrame(frame, in: design)
+            try closeDesign(design: design, options: options)
         }
     }
 }

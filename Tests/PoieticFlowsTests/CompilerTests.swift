@@ -10,11 +10,11 @@ import XCTest
 @testable import PoieticCore
 
 final class TestCompiler: XCTestCase {
-    var db: ObjectMemory!
+    var db: Design!
     var frame: MutableFrame!
     
     override func setUp() {
-        db = ObjectMemory(metamodel: FlowsMetamodel)
+        db = Design(metamodel: FlowsMetamodel)
         frame = db.deriveFrame()
     }
     

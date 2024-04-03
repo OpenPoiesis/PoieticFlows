@@ -24,8 +24,8 @@ extension PoieticTool {
         var verbose: Bool = false
 
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.deriveFrame()
+            let design = try openDesign(options: options)
+            let frame = design.deriveFrame()
 
             let result = try autoConnectParameters(frame)
             
@@ -38,16 +38,16 @@ extension PoieticTool {
                 }
             }
 
-            try acceptFrame(frame, in: memory)
+            try acceptFrame(frame, in: design)
             if result.added.count + result.removed.count > 0 {
                 print("Added \(result.added.count) edges and removed \(result.removed.count) edges.")
             }
             else {
                 print("All parameter connections seem to be ok.")
             }
-            try closeMemory(memory: memory, options: options)
+            try closeDesign(design: design, options: options)
             
-//            print("Current frame ID: \(memory.currentFrame.id)")
+//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 

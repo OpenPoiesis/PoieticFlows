@@ -13,12 +13,12 @@ import XCTest
 final class TestDomainView: XCTestCase {
     // TODO: Split to Compiler and DomainView test cases
     
-    var db: ObjectMemory!
+    var db: Design!
     var frame: MutableFrame!
     var graph: MutableGraph!
     
     override func setUp() {
-        db = ObjectMemory(metamodel: FlowsMetamodel)
+        db = Design(metamodel: FlowsMetamodel)
         frame = db.deriveFrame()
 //        Metamodel = BoundStockFlowMetamodel(FlowsMetamodel)
     }

@@ -20,21 +20,19 @@ extension PoieticTool {
         var fileName: String
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.deriveFrame()
+            let design = try openDesign(options: options)
+            let frame = design.deriveFrame()
             
             let bundle = try ForeignFrameBundle(path: fileName)
-            let reader = ForeignFrameReader(info: bundle.info, memory: memory)
+            let reader = ForeignFrameReader(info: bundle.info, design: design)
 
             for name in bundle.collectionNames {
                 let objects = try bundle.objects(in: name)
                 try reader.read(objects, into: frame)
                 print("Read \(objects.count) objects from collection '\(name)'")
             }
-            try acceptFrame(frame, in: memory)
-            try closeMemory(memory: memory, options: options)
-
-//            print("Current frame ID: \(memory.currentFrame.id)")
+            try acceptFrame(frame, in: design)
+            try closeDesign(design: design, options: options)
         }
     }
 }

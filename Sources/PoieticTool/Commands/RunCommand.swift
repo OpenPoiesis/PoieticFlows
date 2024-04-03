@@ -70,11 +70,11 @@ extension PoieticTool {
         var outputPath: String = "-"
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
+            let design = try openDesign(options: options)
             guard let solverType = Solver.registeredSolvers[solverName] else {
                 throw ToolError.unknownSolver(solverName)
             }
-            let frame = memory.deriveFrame(original: memory.currentFrame.id)
+            let frame = design.deriveFrame(original: design.currentFrame.id)
             let compiledModel = try compile(frame)
             let simulator = Simulator(model: compiledModel, solverType: solverType)
 

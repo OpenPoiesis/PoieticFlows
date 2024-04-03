@@ -11,13 +11,13 @@ import XCTest
 
 
 final class TestControls: XCTestCase {
-    var memory: ObjectMemory!
+    var design: Design!
     var frame: MutableFrame!
     var model: CompiledModel!
     
     override func setUp() {
-        memory = ObjectMemory(metamodel: FlowsMetamodel.self)
-        frame = memory.deriveFrame()
+        design = Design(metamodel: FlowsMetamodel.self)
+        frame = design.deriveFrame()
     }
     
     func compile() throws {

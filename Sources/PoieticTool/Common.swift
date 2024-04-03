@@ -179,30 +179,30 @@ func databaseURL(options: Options? = nil) throws -> URL {
     }
 }
 
-/// Create a new empty memory.
+/// Create a new empty design.
 ///
-func createMemory(options: Options) -> ObjectMemory {
-    return ObjectMemory(metamodel: FlowsMetamodel)
+func createDesign(options: Options) -> Design {
+    return Design(metamodel: FlowsMetamodel)
 }
 
-func openMemory(url: URL, metamodel: Metamodel = FlowsMetamodel) throws -> ObjectMemory {
-    let memory: ObjectMemory = ObjectMemory(metamodel: metamodel)
+func openDesign(url: URL, metamodel: Metamodel = FlowsMetamodel) throws -> Design {
+    let design: Design = Design(metamodel: metamodel)
     do {
-        try memory.restoreAll(from: url)
+        try design.restoreAll(from: url)
     }
     catch let error as FrameValidationError {
         printValidationError(error)
         throw ToolError.validationError(error)
         
     }
-    return memory
+    return design
 }
 
 /// Opens a graph from a package specified in the options.
 ///
-func openMemory(options: Options? = nil, metamodel: Metamodel = FlowsMetamodel) throws -> ObjectMemory {
+func openDesign(options: Options? = nil, metamodel: Metamodel = FlowsMetamodel) throws -> Design {
     let dataURL = try databaseURL(options: options)
-    return try openMemory(url: dataURL, metamodel: metamodel)
+    return try openDesign(url: dataURL, metamodel: metamodel)
 }
 
 func printValidationError(_ error: FrameValidationError) {
@@ -222,29 +222,29 @@ func printValidationError(_ error: FrameValidationError) {
     }
 }
 
-/// Finalise operations on the design memory and save the memory to its store.
+/// Finalise operations on the design design and save the design to its store.
 ///
-func closeMemory(memory: ObjectMemory, options: Options) throws {
+func closeDesign(design: Design, options: Options) throws {
     let dataURL = try databaseURL(options: options)
 
     do {
-        try memory.saveAll(to: dataURL)
+        try design.saveAll(to: dataURL)
     }
     catch {
         throw ToolError.unableToSaveDatabase(error)
     }
 }
 
-/// Try to accept a frame in a memory.
+/// Try to accept a frame in a design.
 ///
 /// Tries to accept the frame. If the frame contains constraint violations, then
 /// the violations are printed out in a more human-readable format.
 ///
-func acceptFrame(_ frame: MutableFrame, in memory: ObjectMemory) throws {
+func acceptFrame(_ frame: MutableFrame, in design: Design) throws {
     // TODO: Print on stderr
     
     do {
-        try memory.accept(frame)
+        try design.accept(frame)
     }
     catch let error as FrameValidationError {
         printValidationError(error)

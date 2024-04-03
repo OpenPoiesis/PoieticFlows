@@ -25,23 +25,23 @@ extension PoieticTool {
 
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.deriveFrame()
+            let design = try openDesign(options: options)
+            let frame = design.deriveFrame()
             
             guard let object = frame.object(stringReference: reference) else {
                 throw ToolError.unknownObject(reference)
             }
 
             let removed = frame.removeCascading(object.id)
-            try acceptFrame(frame, in: memory)
-            try closeMemory(memory: memory, options: options)
+            try acceptFrame(frame, in: design)
+            try closeDesign(design: design, options: options)
 
             print("Removed object: \(object.id)")
             if !removed.isEmpty {
                 let list = removed.map { String($0) }.joined(separator: ", ")
                 print("Removed cascading: \(list)")
             }
-//            print("Current frame ID: \(memory.currentFrame.id)")
+//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 }

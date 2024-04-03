@@ -16,8 +16,8 @@ extension PoieticTool {
         @OptionGroup var options: Options
 
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.currentFrame
+            let design = try openDesign(options: options)
+            let frame = design.currentFrame
             let graph = frame.graph
             
             // At this point the URL is assumed to be well formed, otherwise
@@ -39,7 +39,7 @@ extension PoieticTool {
                 (nil, nil),
                 ("Current frame ID", "\(frame.id)"),
                 ("Frame object count", "\(frame.snapshots.count)"),
-                ("Total snapshot count", "\(memory.validatedSnapshots.count)"),
+                ("Total snapshot count", "\(design.validatedSnapshots.count)"),
 
                 (nil, nil),
                 ("Graph", nil),
@@ -48,9 +48,9 @@ extension PoieticTool {
 
                 (nil, nil),
                 ("History", nil),
-                ("History frames", "\(memory.versionHistory.count)"),
-                ("Undoable frames", "\(memory.undoableFrames.count)"),
-                ("Redoable frames", "\(memory.redoableFrames.count)"),
+                ("History frames", "\(design.versionHistory.count)"),
+                ("Undoable frames", "\(design.undoableFrames.count)"),
+                ("Redoable frames", "\(design.redoableFrames.count)"),
             ]
             
             let formattedItems = formatLabelledList(items)

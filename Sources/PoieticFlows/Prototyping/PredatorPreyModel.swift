@@ -57,7 +57,7 @@ extension MutableGraph {
 }
 
 
-/// Create a demo model in a memory.
+/// Create a demo model in a design.
 ///
 /// This function creates a
 /// [Lotka-Volterra](https://en.wikipedia.org/wiki/Lotka–Volterra_equations)
@@ -67,18 +67,18 @@ extension MutableGraph {
 /// Use:
 ///
 /// ```swift
-/// let memory: ObjectMemory
+/// let design: Design
 ///
-/// CreatePredatorPreyDemo(in: memory)
+/// CreatePredatorPreyDemo(in: design)
 ///
 /// ```
 ///
-/// The created model is accepted into the memory and is available
-/// as the last frame in the memory frame history, also known as the
+/// The created model is accepted into the design and is available
+/// as the last frame in the design frame history, also known as the
 /// "current frame".
 ///
-public func CreatePredatorPreyDemo(in memory: ObjectMemory) throws {
-    let frame = memory.deriveFrame()
+public func CreatePredatorPreyDemo(in design: Design) throws {
+    let frame = design.deriveFrame()
     let frame = frame.mutableGraph
     
     let fish = frame.createStock(name: "fish", expression: "1000")
@@ -113,7 +113,7 @@ public func CreatePredatorPreyDemo(in memory: ObjectMemory) throws {
     frame.connectParameter(from: shark_death_rate, to: shark_deaths)
     frame.connectOutflow(from: shark, to: shark_deaths)
 
-    try memory.accept(frame)
+    try design.accept(frame)
 }
 
 #endif

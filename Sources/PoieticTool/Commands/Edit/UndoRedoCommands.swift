@@ -19,19 +19,19 @@ extension PoieticTool {
         @OptionGroup var options: Options
 
         mutating func run() throws {
-            let memory = try openMemory(options: options)
+            let design = try openDesign(options: options)
             
-            if !memory.canUndo {
+            if !design.canUndo {
                 throw ToolError.noChangesToUndo
             }
             
-            let frameID = memory.undoableFrames.last!
+            let frameID = design.undoableFrames.last!
             
-            memory.undo(to: frameID)
+            design.undo(to: frameID)
 
-            try closeMemory(memory: memory, options: options)
+            try closeDesign(design: design, options: options)
             print("Did undo")
-//            print("Current frame ID: \(memory.currentFrame.id)")
+//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 
@@ -47,19 +47,19 @@ extension PoieticTool {
         @OptionGroup var options: Options
 
         mutating func run() throws {
-            let memory = try openMemory(options: options)
+            let design = try openDesign(options: options)
             
-            if !memory.canRedo {
+            if !design.canRedo {
                 throw ToolError.noChangesToRedo
             }
             
-            let frameID = memory.redoableFrames.first!
+            let frameID = design.redoableFrames.first!
             
-            memory.redo(to: frameID)
+            design.redo(to: frameID)
 
-            try closeMemory(memory: memory, options: options)
+            try closeDesign(design: design, options: options)
             print("Did redo.")
-//            print("Current frame ID: \(memory.currentFrame.id)")
+//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 

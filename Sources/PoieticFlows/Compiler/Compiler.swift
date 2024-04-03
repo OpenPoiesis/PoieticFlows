@@ -179,7 +179,7 @@ public class Compiler {
         //      - (id, name, computationalRepresentation)
         var simulationObjects: [SimulationObject] = []
 
-        try frame.memory.validate(frame)
+        try frame.design.validate(frame)
         
         // 1. Update pre-compilation systems
         // =================================================================
@@ -196,7 +196,7 @@ public class Compiler {
         }
 
         // TODO: Do we need second validation or we trust the systems?
-        try frame.memory.validate(frame)
+        try frame.design.validate(frame)
 
         // 2. Collect nodes that are to be part of the simulation
         // =================================================================
@@ -500,8 +500,8 @@ public class Compiler {
             // Hint: If this error happens, then either check the following:
             // - the condition in the stock-flows view method returning
             //   simulation nodes
-            // - whether the object memory constraints work properly
-            // - whether the object memory metamodel is stock-flows metamodel
+            // - whether the object design constraints work properly
+            // - whether the object design metamodel is stock-flows metamodel
             //   and that it has necessary components
             //
             fatalError("Node \(node.snapshot) is not known as a simulation node, can not be compiled.")

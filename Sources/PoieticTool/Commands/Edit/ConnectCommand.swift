@@ -32,8 +32,8 @@ extension PoieticTool {
 
         
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let frame = memory.deriveFrame()
+            let design = try openDesign(options: options)
+            let frame = design.deriveFrame()
             let graph = frame
             
             guard let type = FlowsMetamodel.objectType(name: typeName) else {
@@ -72,11 +72,11 @@ extension PoieticTool {
                                       target: target.id,
                                       components: [])
             
-            try acceptFrame(frame, in: memory)
-            try closeMemory(memory: memory, options: options)
+            try acceptFrame(frame, in: design)
+            try closeDesign(design: design, options: options)
 
             print("Created edge \(id)")
-//            print("Current frame ID: \(memory.currentFrame.id)")
+//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 

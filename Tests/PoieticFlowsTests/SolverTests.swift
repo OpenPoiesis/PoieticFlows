@@ -23,14 +23,14 @@ extension SimulationState {
 }
 
 final class TestSolver: XCTestCase {
-    var db: ObjectMemory!
+    var db: Design!
     var frame: MutableFrame!
     var compiler: Compiler!
     
     override func setUp() {
-        db = ObjectMemory(metamodel: FlowsMetamodel)
+        db = Design(metamodel: FlowsMetamodel)
         
-        // TODO: This should be passed as an argument to the memory
+        // TODO: This should be passed as an argument to the design
         for constraint in FlowsMetamodel.constraints {
             try! db.addConstraint(constraint)
         }

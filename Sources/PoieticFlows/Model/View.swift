@@ -34,7 +34,7 @@ public class StockFlowView {
     /// Create a new view on top of a graph.
     ///
     public init(_ frame: Frame) {
-        self.metamodel = frame.memory.metamodel
+        self.metamodel = frame.design.metamodel
         self.frame = frame
     }
     

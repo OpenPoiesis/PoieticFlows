@@ -25,8 +25,8 @@ extension PoieticTool {
         var objectType: String?
 
         mutating func run() throws {
-            let memory = try openMemory(options: options)
-            let metamodel = memory.metamodel
+            let design = try openDesign(options: options)
+            let metamodel = design.metamodel
             
             if let typeName = objectType {
                 guard let type = metamodel.objectType(name: typeName) else {
