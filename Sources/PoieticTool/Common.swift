@@ -264,7 +264,7 @@ func compile(_ frame: MutableFrame) throws -> CompiledModel {
     catch let error as NodeIssuesError {
         for (id, issues) in error.issues {
             for issue in issues {
-                let object = frame.object(id)
+                let object = frame[id]
                 let label: String
                 if let name = object.name {
                     label = "\(id)(\(name))"

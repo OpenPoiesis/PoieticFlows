@@ -59,7 +59,7 @@ poietic add Flow name=expenses formula=50
                                                        type.structuralType.rawValue)
             }
             
-            let object = frame.object(id)
+            let object = frame[id]
             
             for item in attributeAssignments {
                 guard let split = parseValueAssignment(item) else {
