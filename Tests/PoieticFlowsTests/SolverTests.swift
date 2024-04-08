@@ -23,19 +23,13 @@ extension SimulationState {
 }
 
 final class TestSolver: XCTestCase {
-    var db: Design!
+    var design: Design!
     var frame: MutableFrame!
     var compiler: Compiler!
     
     override func setUp() {
-        db = Design(metamodel: FlowsMetamodel)
-        
-        // TODO: This should be passed as an argument to the design
-        for constraint in FlowsMetamodel.constraints {
-            try! db.addConstraint(constraint)
-        }
-        
-        frame = db.deriveFrame()
+        design = Design(metamodel: FlowsMetamodel)
+        frame = design.deriveFrame()
         compiler = Compiler(frame: frame)
     }
     func testInitializeStocks() throws {
