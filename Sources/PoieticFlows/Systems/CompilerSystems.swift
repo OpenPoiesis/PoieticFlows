@@ -31,32 +31,12 @@ public struct ParsedFormulaComponent: Component {
 }
 
 /// Input:
-///     - All objects
-/// Output:
-///     - Remove all errors from existing error components
-///     (do not remove the component).
-/// Generates errors
-///
-public struct IssueCleaner: RuntimeSystem {
-    // TODO: Rename to CleanIssuesTransform: FrameTransformation
-    public mutating func update(_ context: RuntimeContext) {
-        let items = context.frame.filter(component: IssueListComponent.self)
-        
-        for (snapshot, _) in items {
-            let mutable = context.frame.mutableObject(snapshot.id)
-            mutable[IssueListComponent.self]?.removeAll()
-        }
-    }
-}
-
-
-/// Input:
 ///     - FormulaComponent
 /// Output:
 ///     - ParsedFormulaComponent
 /// Generates errors
 ///
-public struct ExpressionTransformer: RuntimeSystem {
+public struct FormulaCompilerSystem: RuntimeSystem {
     public init() {}
     public mutating func update(_ context: RuntimeContext) {
         for snapshot in context.frame.snapshots {
@@ -76,9 +56,8 @@ public struct ExpressionTransformer: RuntimeSystem {
                 fatalError("Unknown error during parsing: \(error)")
             }
             
-            let parsedComponent = ParsedFormulaComponent(parsedFormula: expr)
-            let mutable = context.frame.mutableObject(snapshot.id)
-            mutable[ParsedFormulaComponent.self] = parsedComponent
+            context.setComponent(ParsedFormulaComponent(parsedFormula: expr),
+                                 for: snapshot.id)
         }
     }
 }

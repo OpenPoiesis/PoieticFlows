@@ -25,7 +25,7 @@ final class TestControls: XCTestCase {
             XCTFail("No frame to compile")
             return
         }
-        let compiler = Compiler(frame: frame)
+        let compiler = Compiler(frame: try design.accept(frame))
         model = try compiler.compile()
     }
     

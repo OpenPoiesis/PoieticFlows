@@ -10,18 +10,17 @@ import XCTest
 @testable import PoieticCore
 
 final class TestCompiler: XCTestCase {
-    var db: Design!
+    var design: Design!
     var frame: MutableFrame!
     
     override func setUp() {
-        db = Design(metamodel: FlowsMetamodel)
-        frame = db.deriveFrame()
+        design = Design(metamodel: FlowsMetamodel)
+        frame = design.deriveFrame()
     }
     
     func testNoComputedVariables() throws {
-        let compiler = Compiler(frame: frame)
         // TODO: Check using violation checker
-        
+        let compiler = Compiler(frame: try design.accept(frame))
         let model = try compiler.compile()
         
         XCTAssertEqual(model.simulationObjects.count, 0)
@@ -30,7 +29,6 @@ final class TestCompiler: XCTestCase {
     }
     
     func testComputedVariables() throws {
-        let compiler = Compiler(frame: frame)
         frame.createNode(ObjectType.Stock,
                          name: "a",
                          attributes: ["formula": "0"])
@@ -45,6 +43,7 @@ final class TestCompiler: XCTestCase {
                          components: [])
         // TODO: Check using violation checker
         
+        let compiler = Compiler(frame: try design.accept(frame))
         let compiled = try compiler.compile()
         let names = compiled.simulationObjects.map { $0.name }
             .sorted()
@@ -54,11 +53,11 @@ final class TestCompiler: XCTestCase {
                        3 + FlowsMetamodel.variables.count)
     }
     func testBadFunctionName() throws {
-        let compiler = Compiler(frame: frame)
         let aux = frame.createNode(ObjectType.Auxiliary,
                                    name: "a",
                                    attributes: ["formula": "nonexistent(10)"])
         
+        let compiler = Compiler(frame: try design.accept(frame))
         XCTAssertThrowsError(try compiler.compile()) {
             guard let error = $0 as? NodeIssuesError else {
                 XCTFail("Expected DomainError, got: \($0)")
@@ -80,11 +79,11 @@ final class TestCompiler: XCTestCase {
         }
     }
     func testSingleComputedVariable() throws {
-        let compiler = Compiler(frame: frame)
         let _ = frame.createNode(ObjectType.Auxiliary,
                                    name: "a",
                                    attributes: ["formula": "if(time < 2, 0, 1)"])
         
+        let compiler = Compiler(frame: try design.accept(frame))
         let compiled = try compiler.compile()
         let names = compiled.simulationObjects.map { $0.name }
             .sorted()
@@ -93,7 +92,6 @@ final class TestCompiler: XCTestCase {
     }
 
     func testValidateDuplicateName() throws {
-        let compiler = Compiler(frame: frame)
         let c1 = frame.createNode(ObjectType.Stock,
                                   name: "things",
                                   attributes: ["formula": "0"])
@@ -109,6 +107,7 @@ final class TestCompiler: XCTestCase {
 
         // TODO: Check using violation checker
         
+        let compiler = Compiler(frame: try design.accept(frame))
         XCTAssertThrowsError(try compiler.compile()) {
             guard let error = $0 as? NodeIssuesError else {
                 XCTFail("Expected DomainError, got: \($0)")
@@ -142,7 +141,7 @@ final class TestCompiler: XCTestCase {
                          target: sink,
                          components: [])
         
-        let compiler = Compiler(frame: frame)
+        let compiler = Compiler(frame: try design.accept(frame))
         let compiled = try compiler.compile()
         
         XCTAssertEqual(compiled.stocks.count, 2)
@@ -159,10 +158,10 @@ final class TestCompiler: XCTestCase {
     
     
     func testDisconnectedGraphicalFunction() throws {
-        let compiler = Compiler(frame: frame)
         let gf = frame.createNode(ObjectType.GraphicalFunction,
                                   name: "g")
 
+        let compiler = Compiler(frame: try design.accept(frame))
         XCTAssertThrowsError(try compiler.compile()) {
             guard let error = $0 as? NodeIssuesError else {
                 XCTFail("Expected DomainError, got: \($0)")
@@ -186,8 +185,6 @@ final class TestCompiler: XCTestCase {
     }
 
     func testGraphicalFunctionNameReferences() throws {
-        let compiler = Compiler(frame: frame)
-
         let param = frame.createNode(ObjectType.Auxiliary,
                                   name: "p",
                                      attributes: ["formula": "1"])
@@ -200,6 +197,7 @@ final class TestCompiler: XCTestCase {
         frame.createEdge(ObjectType.Parameter, origin: param, target: gf)
         frame.createEdge(ObjectType.Parameter, origin: gf, target: aux)
 
+        let compiler = Compiler(frame: try design.accept(frame))
         let compiled = try compiler.compile()
 
         let funcs = compiled.graphicalFunctions
@@ -231,7 +229,7 @@ final class TestCompiler: XCTestCase {
         frame.createEdge(ObjectType.Parameter, origin: p, target: gf)
         frame.createEdge(ObjectType.Parameter, origin: gf, target: aux)
 
-        let compiler = Compiler(frame: frame)
+        let compiler = Compiler(frame: try design.accept(frame))
         let compiled = try compiler.compile()
         guard let object = compiled.simulationObject(gf) else {
             XCTFail("No compiled variable for the graphical function")

@@ -45,14 +45,14 @@ func autoConnectParameters(_ frame: MutableFrame) throws -> (added: [ParameterIn
     })
 
     let context = RuntimeContext(frame: frame)
-    var transformer = ExpressionTransformer()
-    transformer.update(context)
+    var formulaCompiler = FormulaCompilerSystem()
+    formulaCompiler.update(context)
 
     for target in view.simulationNodes {
-        guard let expression: ParsedFormulaComponent = target[ParsedFormulaComponent.self] else {
+        guard let component: ParsedFormulaComponent = context.component(for: target.id) else {
             continue
         }
-        let allNodeVars: Set<String> = Set(expression.parsedFormula.allVariables)
+        let allNodeVars: Set<String> = Set(component.parsedFormula.allVariables)
         let required = Array(allNodeVars.subtracting(builtinNames))
         let params = view.parameters(target.id, required: required)
         

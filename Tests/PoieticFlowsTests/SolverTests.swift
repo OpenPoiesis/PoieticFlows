@@ -25,13 +25,17 @@ extension SimulationState {
 final class TestSolver: XCTestCase {
     var design: Design!
     var frame: MutableFrame!
-    var compiler: Compiler!
     
     override func setUp() {
         design = Design(metamodel: FlowsMetamodel)
         frame = design.deriveFrame()
-        compiler = Compiler(frame: frame)
     }
+    
+    func compile() throws -> CompiledModel {
+        let compiler = Compiler(frame: try design.accept(frame))
+        return try compiler.compile()
+    }
+    
     func testInitializeStocks() throws {
         
         let a = frame.createNode(ObjectType.Auxiliary,
@@ -54,7 +58,7 @@ final class TestSolver: XCTestCase {
         frame.createEdge(ObjectType.Parameter, origin: a, target: s_a, components: [])
         frame.createEdge(ObjectType.Parameter, origin: b, target: s_b, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = Solver(compiled)
         
         let state = try solver.initializeState()
@@ -70,7 +74,7 @@ final class TestSolver: XCTestCase {
         let a = frame.createNode(ObjectType.Auxiliary,
                                  name: "a",
                                  attributes: ["formula": "1"])
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = Solver(compiled)
         
         let vector = try solver.initializeState()
@@ -88,7 +92,7 @@ final class TestSolver: XCTestCase {
                                     name: "c",
                                     attributes: ["formula": "30"])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = Solver(compiled)
         
         let vector = try solver.initializeState()
@@ -98,7 +102,7 @@ final class TestSolver: XCTestCase {
         XCTAssertEqual(vector[flow], 30)
     }
     func testTime() throws {
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = EulerSolver(compiled)
         let timeIndex = compiled.timeVariableIndex
         
@@ -119,7 +123,7 @@ final class TestSolver: XCTestCase {
                                     name: "f",
                                     attributes: ["formula": "time * 10"])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = EulerSolver(compiled)
         
         var state = try solver.initializeState(time: 1.0)
@@ -149,7 +153,7 @@ final class TestSolver: XCTestCase {
         
         frame.createEdge(ObjectType.Drains, origin: stock, target: flow, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
@@ -171,7 +175,7 @@ final class TestSolver: XCTestCase {
         
         frame.createEdge(ObjectType.Drains, origin: stock, target: flow, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
@@ -193,7 +197,7 @@ final class TestSolver: XCTestCase {
         
         frame.createEdge(ObjectType.Fills, origin: flow, target: stock, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
@@ -215,7 +219,7 @@ final class TestSolver: XCTestCase {
         
         frame.createEdge(ObjectType.Drains, origin: stock, target: flow, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         
         let solver = Solver(compiled)
         let initial = try solver.initializeState()
@@ -260,7 +264,7 @@ final class TestSolver: XCTestCase {
         frame.createEdge(ObjectType.Fills,
                          origin: sadFlow, target: sad, components: [])
         
-        let compiled: CompiledModel = try compiler.compile()
+        let compiled: CompiledModel = try compile()
         // TODO: Needed?
         // let outflows = compiled.outflows[source]
         
@@ -327,7 +331,7 @@ final class TestSolver: XCTestCase {
         frame.createEdge(ObjectType.Fills,
                          origin: flow, target: cup, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = Solver(compiled)
         
         let state = try solver.initializeState(time: 1.0)
@@ -353,7 +357,7 @@ final class TestSolver: XCTestCase {
         frame.createEdge(ObjectType.Fills,
                          origin: flow, target: cup, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = Solver(compiled)
         
         let state = try solver.initializeState(time: 0.0)
@@ -381,7 +385,7 @@ final class TestSolver: XCTestCase {
         frame.createEdge(ObjectType.Fills,
                          origin: flow, target: cup, components: [])
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = EulerSolver(compiled)
         
         var state = try solver.initializeState(time: 1.0)
@@ -419,7 +423,7 @@ final class TestSolver: XCTestCase {
         frame.createEdge(ObjectType.Parameter, origin: p1, target: g1)
         frame.createEdge(ObjectType.Parameter, origin: p2, target: g2)
         
-        let compiled: CompiledModel = try compiler.compile()
+        let compiled: CompiledModel = try compile()
         let solver = EulerSolver(compiled)
         let initial: SimulationState = try solver.initializeState()
         
@@ -433,7 +437,7 @@ final class TestSolver: XCTestCase {
         let aux = frame.createNode(ObjectType.Auxiliary,
                                    name: "aux",
                                    attributes: ["formula": "10"])
-        let compiled: CompiledModel = try compiler.compile()
+        let compiled: CompiledModel = try compile()
         let solver = EulerSolver(compiled)
         
         let initial: SimulationState = try solver.initializeState(override:[aux:20])
@@ -455,7 +459,7 @@ final class TestSolver: XCTestCase {
         frame.createEdge(ObjectType.Drains,
                          origin: stock, target: flow, components: [])
         
-        let compiled: CompiledModel = try compiler.compile()
+        let compiled: CompiledModel = try compile()
         let solver = EulerSolver(compiled)
         
         let initial: SimulationState = try solver.initializeState(override:[stock:20])
@@ -475,7 +479,7 @@ final class TestSolver: XCTestCase {
                                    name: "a",
                                    attributes: ["formula": "if(time < 2, 0, 1)"])
 
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = EulerSolver(compiled)
         
         var state = try solver.initializeState(time: 0.0)
@@ -507,7 +511,7 @@ final class TestSolver: XCTestCase {
         
         frame.createEdge(ObjectType.Parameter, origin: x, target: delay)
         
-        let compiled = try compiler.compile()
+        let compiled = try compile()
         let solver = EulerSolver(compiled)
 
         var state = try solver.initializeState(time: 0.0)

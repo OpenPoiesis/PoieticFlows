@@ -19,9 +19,10 @@ import PoieticCore
 ///
 ///
 public class Compiler {
+    // TODO: Make the compiler into a RuntimeSystem
     /// The frame containing the design to be compiled.
     ///
-    let frame: MutableFrame
+    let frame: StableFrame
 
     /// Flows domain view of the frame.
     let view: StockFlowView
@@ -82,6 +83,7 @@ public class Compiler {
     ///
     private var objectToVariable: [ObjectID: Int]
 
+    // TODO: Change to system dependency chain
     /// List of transformation systems run before the compilation.
     ///
     /// Requirements:
@@ -91,22 +93,20 @@ public class Compiler {
     ///
     /// - Note: This will be public once happy.
     ///
-    private var _preCompilationTransforms: [any RuntimeSystem] = [
-        IssueCleaner(),
-        ExpressionTransformer(),
+    private var _preCompilationSystems: [any RuntimeSystem] = [
+        FormulaCompilerSystem(),
     ]
-//    private var _postCompilationSystems: [any TransformationSystem] = [
+//    private var _postCompilationSystems: [any RuntimeSystem] = [
 //    ]
 
     /// Creates a compiler that will compile within the context of the given
     /// model.
     ///
-    public init(frame: MutableFrame) {
+    public init(frame: StableFrame) {
         // NOTE: [IMPORTANT] The functionality/architectural decision about
         //       mutability is not yet well formed.
         //
-        // FIXME: [IMPORTANT] Compiler should get a stable frame, not a mutable frame!
-        // FIXME: [IMPORTANT] What if frame != view.frame???
+        // TODO: [IMPORTANT] Do not pass frame on init, use it on "compile"
         self.frame = frame
         self.view = StockFlowView(frame)
         
@@ -181,24 +181,19 @@ public class Compiler {
         //      - (id, name, computationalRepresentation)
         var simulationObjects: [SimulationObject] = []
 
-        try frame.design.validate(frame)
-        
         // 1. Update pre-compilation systems
         // =================================================================
 
         // TODO: We are passing view from metamodel just to create view in the context
         let context = RuntimeContext(frame: frame)
 
-        for index in _preCompilationTransforms.indices {
-            _preCompilationTransforms[index].update(context)
+        for index in _preCompilationSystems.indices {
+            _preCompilationSystems[index].update(context)
         }
 
         guard !context.hasIssues else {
             throw NodeIssuesError(errors: context.issues)
         }
-
-        // TODO: Do we need second validation or we trust the systems?
-        try frame.design.validate(frame)
 
         // 2. Collect nodes that are to be part of the simulation
         // =================================================================
@@ -290,7 +285,7 @@ public class Compiler {
 
             let computation: ComputationalRepresentation
             do {
-                computation = try self.compile(node)
+                computation = try self.compile(node, in: context)
             }
             catch let error as NodeIssue {
                 issues.append(error, for:node.id)
@@ -481,10 +476,10 @@ public class Compiler {
     /// - Throws: ``NodeIssuesError`` with list of issues for the node.
     /// - SeeAlso: ``compileFormulaNode(_:)``, ``compileGraphicalFunctionNode(_:)``.
     ///
-    public func compile(_ node: Node) throws -> ComputationalRepresentation {
+    public func compile(_ node: Node, in context: RuntimeContext) throws -> ComputationalRepresentation {
         let rep: ComputationalRepresentation
         if node.snapshot.type.hasTrait(Trait.Formula) {
-            rep = try compileFormulaNode(node)
+            rep = try compileFormulaNode(node, in: context)
         }
         else if node.snapshot.type.hasTrait(Trait.GraphicalFunction) {
             rep = try compileGraphicalFunctionNode(node)
@@ -524,8 +519,8 @@ public class Compiler {
     /// - Throws: ``NodeIssueError`` if there is an issue with parameters,
     ///   function names or other variable names in the expression.
     ///
-    public func compileFormulaNode(_ node: Node) throws -> ComputationalRepresentation {
-        guard let component: ParsedFormulaComponent = node.snapshot[ParsedFormulaComponent.self] else {
+    public func compileFormulaNode(_ node: Node, in context: RuntimeContext) throws -> ComputationalRepresentation {
+        guard let component: ParsedFormulaComponent = context.component(for: node.id) else {
             fatalError("Parsed formula component expected for node \(node.id)")
         }
 

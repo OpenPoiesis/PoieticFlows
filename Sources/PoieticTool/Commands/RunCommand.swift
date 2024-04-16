@@ -74,7 +74,7 @@ extension PoieticTool {
             guard let solverType = Solver.registeredSolvers[solverName] else {
                 throw ToolError.unknownSolver(solverName)
             }
-            let frame = design.deriveFrame(original: design.currentFrame.id)
+            let frame = design.currentFrame
             let compiledModel = try compile(frame)
             let simulator = Simulator(model: compiledModel, solverType: solverType)
 

@@ -253,7 +253,7 @@ func acceptFrame(_ frame: MutableFrame, in design: Design) throws {
     }
 }
 
-func compile(_ frame: MutableFrame) throws -> CompiledModel {
+func compile(_ frame: StableFrame) throws -> CompiledModel {
     // NOTE: Make this in sync with the PoieticServer
     // TODO: Use stderr as output
     let compiledModel: CompiledModel
