@@ -196,32 +196,6 @@ public class StockFlowView {
         frame.selectEdges(IsTypePredicate(ObjectType.Drains))
     }
     
-    /// List of all edges that denotes an implicit flow between
-    /// two stocks.
-    ///
-    /// Implicit flow is an edge between two stocks connected by a flow
-    /// where one stocks fills the flow and another stock drains the flow.
-    ///
-    /// ```
-    ///              Drains           Fills
-    ///    Stock a ==========> Flow =========> Stock b
-    ///       |                                  ^
-    ///       +----------------------------------+
-    ///                   implicit flow
-    ///
-    /// ```
-    ///
-    /// Implicit flows are created by the compiler, they are not supposed to be
-    /// created by the user.
-    ///
-    /// - SeeAlso: ``StockFlowView/implicitFills(_:)``,
-    /// ``StockFlowView/implicitDrains(_:)``,
-    /// ``StockFlowView/sortedStocksByImplicitFlows(_:)``
-    ///
-    public var implicitFlowEdges: [Edge] {
-        frame.selectEdges(IsTypePredicate(ObjectType.ImplicitFlow))
-    }
-
     
     /// A list of variable references to their corresponding objects.
     ///
@@ -289,18 +263,18 @@ public class StockFlowView {
         return result
     }
     
-    // TODO: Add "see also" doc reference for the system updating the flows
+
     /// Sort given list of stocks by the order of their implicit flows.
     ///
     /// Imagine that we replace the flow nodes with a direct edge between
     /// the stocks that the flow connects. The drained stock comes before the
     /// filled stock.
     ///
-    /// - SeeAlso: ``implicitFills(_:)``,
-    ///   ``implicitDrains(_:)``
+    /// - SeeAlso: ``adjacentStocks()``
     ///
     public func sortedStocksByImplicitFlows(_ nodes: [ObjectID]) throws -> [Node] {
-        let sorted = try frame.topologicalSort(nodes, edges: implicitFlowEdges)
+        // TODO: Move this to compiler
+        let sorted = try topologicalSort(nodes, edges: adjacentStocks())
         
         let result: [Node] = sorted.map {
             frame.node($0)
@@ -308,7 +282,46 @@ public class StockFlowView {
         
         return result
     }
+
     
+    /// Get a list of stock-to-stock adjacency.
+    ///
+    /// Two stocks are adjacent if there is a flow that connects the two stocks.
+    /// One stock is being drained – origin of the adjacency,
+    /// another stock is being filled – target of the adjacency.
+    ///
+    /// The following diagram depicts two adjacent stocks, where the stock `a`
+    /// would be the origin and stock `b` would be the target:
+    ///
+    /// ```
+    ///              Drains           Fills
+    ///    Stock a ==========> Flow =========> Stock b
+    ///       ^                                  ^
+    ///       +----------------------------------+
+    ///                  adjacent stocks
+    ///
+    /// ```
+    ///
+    public func adjacentStocks() -> [StockAdjacency] {
+        var adjacencies: [StockAdjacency] = []
+
+        for flow in self.flowNodes {
+            guard let fills = self.flowFills(flow.id) else {
+                continue
+            }
+            guard let drains = self.flowDrains(flow.id) else {
+                continue
+            }
+            
+            let adjacency = StockAdjacency(id: flow.id,
+                                           origin: drains,
+                                           target: fills)
+
+            adjacencies.append(adjacency)
+        }
+        return adjacencies
+    }
+
     /// Get a node that the given flow fills.
     ///
     /// The flow fills a node, usually a stock, if there is an edge
@@ -401,70 +414,4 @@ public class StockFlowView {
         
         return outflows(stockID).nodes.map { $0.id }
     }
-
-    /// Return a list of stock nodes that the given stock fills.
-    ///
-    /// Stock fills another stock if there exist a flow node in between
-    /// the two stocks and the flow drains stock `stockID`.
-    ///
-    /// In the following example, the returned list of stocks for the stock
-    /// `a` would be `[b]`.
-    ///
-    /// ```
-    ///              Drains           Fills
-    ///    Stock a ----------> Flow ---------> Stock b
-    ///
-    /// ```
-    ///
-    /// - SeeAlso: ``StockFlowView/implicitDrains(_:)``,
-    /// ``StockFlowView/sortedStocksByImplicitFlows(_:)``
-    ///
-    /// - Precondition: `stockID` must be an ID of a node that is a stock.
-    ///
-    public func implicitFills(_ stockID: ObjectID) -> [ObjectID] {
-        let stockNode = frame.node(stockID)
-        // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === ObjectType.Stock)
-        
-        let hood = frame.hood(stockID,
-                              selector: NeighborhoodSelector(
-                                predicate: IsTypePredicate(ObjectType.ImplicitFlow),
-                                direction: .outgoing))
-        
-        return hood.nodes.map { $0.id }
-    }
-
-    /// Return a list of stock nodes that the given stock drains.
-    ///
-    /// Stock drains another stock if there exist a flow node in between
-    /// the two stocks and the flow fills stock `stockID`
-    ///
-    /// In the following example, the returned list of stocks for the stock
-    /// `b` would be `[a]`.
-    ///
-    /// ```
-    ///              Drains           Fills
-    ///    Stock a ----------> Flow ---------> Stock b
-    ///
-    /// ```
-    ///
-    /// - SeeAlso: ``StockFlowView/implicitFills(_:)``,
-    /// ``StockFlowView/sortedStocksByImplicitFlows(_:)``
-    ///
-    /// - Precondition: `stockID` must be an ID of a node that is a stock.
-    ///
-    public func implicitDrains(_ stockID: ObjectID) -> [ObjectID] {
-        let stockNode = frame.node(stockID)
-        // TODO: Do we need to check it here? We assume model is valid.
-        precondition(stockNode.type === ObjectType.Stock)
-        
-        let hood = frame.hood(stockID,
-                              selector: NeighborhoodSelector(
-                                predicate: IsTypePredicate(ObjectType.ImplicitFlow),
-                                direction: .incoming))
-
-        return hood.nodes.map { $0.id }
-    }
-    
-
 }

@@ -72,7 +72,7 @@ func printObjectAsText(_ object: ObjectSnapshot) {
         items.append((trait.label, nil))
 
         for attr in trait.attributes {
-            let rawValue = object.attribute(forKey: attr.name)
+            let rawValue = object[attr.name]
             let displayValue: String
             if let rawValue {
                 displayValue = String(describing: rawValue)

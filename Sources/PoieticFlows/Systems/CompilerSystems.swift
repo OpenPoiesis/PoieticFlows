@@ -37,9 +37,9 @@ public struct ParsedFormulaComponent: Component {
 ///     (do not remove the component).
 /// Generates errors
 ///
-public struct IssueCleaner: FrameTransformer {
+public struct IssueCleaner: RuntimeSystem {
     // TODO: Rename to CleanIssuesTransform: FrameTransformation
-    public mutating func update(_ context: TransformationContext) {
+    public mutating func update(_ context: RuntimeContext) {
         let items = context.frame.filter(component: IssueListComponent.self)
         
         for (snapshot, _) in items {
@@ -56,9 +56,9 @@ public struct IssueCleaner: FrameTransformer {
 ///     - ParsedFormulaComponent
 /// Generates errors
 ///
-public struct ExpressionTransformer: FrameTransformer {
+public struct ExpressionTransformer: RuntimeSystem {
     public init() {}
-    public mutating func update(_ context: TransformationContext) {
+    public mutating func update(_ context: RuntimeContext) {
         for snapshot in context.frame.snapshots {
             guard let formula = try? snapshot["formula"]?.stringValue() else {
                 continue
@@ -79,61 +79,6 @@ public struct ExpressionTransformer: FrameTransformer {
             let parsedComponent = ParsedFormulaComponent(parsedFormula: expr)
             let mutable = context.frame.mutableObject(snapshot.id)
             mutable[ParsedFormulaComponent.self] = parsedComponent
-        }
-    }
-}
-
-/// A system that updates edges that denote implicit flows between stocks.
-///
-/// The created edges are of type ``FlowsMetamodel/ImplicitFlow``.
-///
-/// For more information see the ``update(_:)`` method of this system.
-///
-public struct ImplicitFlowsTransformer: FrameTransformer {
-    /// Update edges that denote implicit flows between stocks.
-    ///
-    /// The created edges are of type ``FlowsMetamodel/ImplicitFlow``.
-    ///
-    /// The process:
-    ///
-    /// - create an edge between two stocks that are also connected by
-    ///   a flow
-    /// - clean-up edges between stocks where is no flow
-    ///
-    /// - SeeAlso: ``StockFlowView/implicitFills(_:)``,
-    ///   ``StockFlowView/implicitDrains(_:)``,
-    ///   ``StockFlowView/sortedStocksByImplicitFlows(_:)``
-    ///
-    public mutating func update(_ context: TransformationContext) {
-        let view = StockFlowView(context.frame)
-        var unused: [Edge] = view.implicitFlowEdges
-        
-        for flow in view.flowNodes {
-            guard let fills = view.flowFills(flow.id) else {
-                continue
-            }
-            guard let drains = view.flowDrains(flow.id) else {
-                continue
-            }
-            
-            let index = unused.firstIndex { edge in
-                edge.origin == drains && edge.target == fills
-            }
-            if let index {
-                // Keep the existing, and prevent from deletion later.
-                unused.remove(at: index)
-                continue
-            }
-            
-            context.frame.createEdge(ObjectType.ImplicitFlow,
-                             origin: drains,
-                             target: fills,
-                             attributes: [:],
-                             components: [])
-        }
-        
-        for edge in unused {
-            context.frame.remove(edge: edge.id)
         }
     }
 }

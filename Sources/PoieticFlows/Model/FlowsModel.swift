@@ -52,7 +52,6 @@ public let FlowsMetamodel = Metamodel(
         ObjectType.Drains,
         ObjectType.Fills,
         ObjectType.Parameter,
-        ObjectType.ImplicitFlow,
 
         // UI
         ObjectType.Control,

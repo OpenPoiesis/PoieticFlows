@@ -91,10 +91,9 @@ public class Compiler {
     ///
     /// - Note: This will be public once happy.
     ///
-    private var _preCompilationTransforms: [any FrameTransformer] = [
+    private var _preCompilationTransforms: [any RuntimeSystem] = [
         IssueCleaner(),
         ExpressionTransformer(),
-        ImplicitFlowsTransformer(),
     ]
 //    private var _postCompilationSystems: [any TransformationSystem] = [
 //    ]
@@ -103,6 +102,9 @@ public class Compiler {
     /// model.
     ///
     public init(frame: MutableFrame) {
+        // NOTE: [IMPORTANT] The functionality/architectural decision about
+        //       mutability is not yet well formed.
+        //
         // FIXME: [IMPORTANT] Compiler should get a stable frame, not a mutable frame!
         // FIXME: [IMPORTANT] What if frame != view.frame???
         self.frame = frame
@@ -185,7 +187,7 @@ public class Compiler {
         // =================================================================
 
         // TODO: We are passing view from metamodel just to create view in the context
-        let context = TransformationContext(frame: frame)
+        let context = RuntimeContext(frame: frame)
 
         for index in _preCompilationTransforms.indices {
             _preCompilationTransforms[index].update(context)
@@ -239,7 +241,7 @@ public class Compiler {
             orderedSimulationNodes = try view.sortedNodesByParameter(unsortedSimulationNodes)
         }
         catch let error as GraphCycleError {
-            // FIXME: Handle this.
+            // FIXME: Handle this. Include all involved nodes in the error.
             fatalError("Unhandled graph cycle error: \(error). (Not implemented.)")
         }
         
@@ -725,6 +727,8 @@ public class Compiler {
         return issues
     }
     
+    
+    // FIXME: What was the original intent of this?
     public func appendIssue(_ error: Error, to object: ObjectID) {
         fatalError("\(#function) not implemented")
     }

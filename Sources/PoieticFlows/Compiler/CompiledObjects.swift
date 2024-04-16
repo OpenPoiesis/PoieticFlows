@@ -167,7 +167,7 @@ public struct CompiledStock {
     
     /// Flag whether the value of the node can be negative.
     ///
-    public var allowsNegative: Bool = false
+    public let allowsNegative: Bool
     
     /// Flag that controls how flow for the stock is being computed when the
     /// stock is non-negative.
@@ -180,7 +180,7 @@ public struct CompiledStock {
     /// the actual stock value, ignoring the inflow. The inflow will be added
     /// later to the stock.
     ///
-    public var delayedInflow: Bool = false
+    public let delayedInflow: Bool
 
     /// List indices of simulation variables representing flows
     /// which fill the stock.
@@ -267,4 +267,18 @@ public struct CompiledDelay {
     public let initialValue: Variant?
     public let parameterIndex: SimulationState.Index
     public let valueType: ValueType
+}
+
+
+/// Describes a connection between two stocks through a flow.
+///
+public struct StockAdjacency: EdgeType {
+    // TODO: Add "delayed inflow" flag to prevent cycles
+    // TODO: Maybe just a type alias to some "LightEdge" type?
+    /// OD of a flow that connects the two stocks
+    public let id: ObjectID
+    /// ID of a stock being drained by the flow.
+    public let origin: ObjectID
+    /// ID of a stock being filled by the flow.
+    public let target: ObjectID
 }

@@ -185,32 +185,6 @@ extension ObjectType {
         ]
     )
     
-    /// Edge between two stocks that are connected through a flow.
-    ///
-    /// Implicit flow is an edge between two stocks connected by a flow
-    /// where one stocks fills the flow and another stock drains the flow.
-    ///
-    /// ```
-    ///              Drains           Fills
-    ///    Stock a ==========> Flow =========> Stock b
-    ///       |                                  ^
-    ///       +----------------------------------+
-    ///                   implicit flow
-    ///
-    /// ```
-    
-    /// - Note: This edge is created by the system, not by the user.
-    ///
-    public static let ImplicitFlow = ObjectType(
-        name: "ImplicitFlow",
-        structuralType: .edge,
-        plane: .system,
-        traits: [
-            // None for now
-        ],
-        abstract: "Edge between two stocks."
-    )
-    
     /// An edge type to connect controls with their targets.
     ///
     /// The origin of the node is a control – ``/PoieticCore/ObjectType/Control``, the

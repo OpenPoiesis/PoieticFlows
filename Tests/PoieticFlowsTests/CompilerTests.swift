@@ -157,50 +157,6 @@ final class TestCompiler: XCTestCase {
         XCTAssertEqual(compiled.stocks[1].outflows, [])
     }
     
-    func testUpdateImplicitFlows() throws {
-        // TODO: No compiler needed, now it is using a transformation system
-        let flow = frame.createNode(ObjectType.Flow,
-                                    name: "f",
-                                    attributes: ["formula": "1"])
-        let source = frame.createNode(ObjectType.Stock,
-                                      name: "source",
-                                      attributes: ["formula": "0"])
-        let sink = frame.createNode(ObjectType.Stock,
-                                    name: "sink",
-                                    attributes: ["formula": "0"])
-
-        frame.createEdge(ObjectType.Drains,
-                         origin: source,
-                         target: flow,
-                         components: [])
-        frame.createEdge(ObjectType.Fills,
-                         origin: flow,
-                         target: sink,
-                         components: [])
-        
-        let view = StockFlowView(frame)
-        
-        XCTAssertEqual(view.implicitDrains(source).count, 0)
-        XCTAssertEqual(view.implicitFills(sink).count, 0)
-        XCTAssertEqual(view.implicitDrains(source).count, 0)
-        XCTAssertEqual(view.implicitFills(sink).count, 0)
-        
-        var system = ImplicitFlowsTransformer()
-        let context = TransformationContext(frame: frame)
-        system.update(context)
-        
-        let src_drains = view.implicitDrains(source)
-        let sink_drains = view.implicitDrains(sink)
-        let src_fills = view.implicitFills(source)
-        let sink_fills = view.implicitFills(sink)
-        
-        XCTAssertEqual(src_drains.count, 0)
-        XCTAssertEqual(sink_drains.count, 1)
-        XCTAssertEqual(sink_drains[0], source)
-        XCTAssertEqual(src_fills.count, 1)
-        XCTAssertEqual(src_fills[0], sink)
-        XCTAssertEqual(sink_fills.count, 0)
-    }
     
     func testDisconnectedGraphicalFunction() throws {
         let compiler = Compiler(frame: frame)

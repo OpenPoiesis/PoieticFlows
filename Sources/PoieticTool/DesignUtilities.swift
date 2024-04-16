@@ -44,7 +44,7 @@ func autoConnectParameters(_ frame: MutableFrame) throws -> (added: [ParameterIn
         $0.name
     })
 
-    let context = TransformationContext(frame: frame)
+    let context = RuntimeContext(frame: frame)
     var transformer = ExpressionTransformer()
     transformer.update(context)
 
