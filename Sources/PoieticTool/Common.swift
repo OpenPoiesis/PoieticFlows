@@ -36,7 +36,6 @@ enum ToolError: Error, CustomStringConvertible {
     // Editing errors
     case noChangesToUndo
     case noChangesToRedo
-    case creatingSystemPlaneType(String)
     case structuralTypeMismatch(String, String)
     // Metamodel errors
     case unknownObjectType(String)
@@ -83,8 +82,6 @@ enum ToolError: Error, CustomStringConvertible {
             return "No changes to undo"
         case .noChangesToRedo:
             return "No changes to re-do"
-        case .creatingSystemPlaneType(let value):
-            return "Trying to create an object of type '\(value)'. It can be created only by the system"
         case .structuralTypeMismatch(let given, let expected):
             return "Mismatch of structural type. Expected: \(expected), given: \(given)"
         case .unknownObjectType(let value):
@@ -130,8 +127,6 @@ enum ToolError: Error, CustomStringConvertible {
             return nil
         case .noChangesToRedo:
             return nil
-        case .creatingSystemPlaneType(_):
-            return "Users can not create objects of this type, they can only read it."
         case .structuralTypeMismatch(_, _):
             return "See the metamodel to know structural type of the object type."
         case .unknownObjectType(_):

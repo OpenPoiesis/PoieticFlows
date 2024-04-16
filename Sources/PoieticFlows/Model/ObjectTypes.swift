@@ -193,7 +193,6 @@ extension ObjectType {
     public static let ValueBinding = ObjectType(
         name: "ValueBinding",
         structuralType: .edge,
-        plane: .system,
         traits: [
             // None for now
         ],
@@ -210,7 +209,6 @@ extension ObjectType {
         // TODO: Origin: Chart, target: Expression
         name: "ChartSeries",
         structuralType: .edge,
-        plane: .system,
         traits: [
             // None for now
         ],

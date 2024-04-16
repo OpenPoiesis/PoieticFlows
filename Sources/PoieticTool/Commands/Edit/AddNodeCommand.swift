@@ -42,10 +42,6 @@ poietic add Flow name=expenses formula=50
             guard let type = FlowsMetamodel.objectType(name: typeName) else {
                 throw ToolError.unknownObjectType(typeName)
             }
-            
-            guard type.plane == .user else {
-                throw ToolError.creatingSystemPlaneType(type.name)
-            }
 
             let id: ObjectID
             
