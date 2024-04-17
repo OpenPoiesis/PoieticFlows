@@ -246,4 +246,26 @@ final class TestCompiler: XCTestCase {
         }
     }
 
+    func testGraphCycleError() throws {
+        let a = frame.createNode(ObjectType.Auxiliary,
+                                 name:"a",
+                                 attributes: ["formula": "b"])
+        let b = frame.createNode(ObjectType.Auxiliary,
+                                 name:"b",
+                                 attributes: ["formula": "a"])
+        frame.createEdge(ObjectType.Parameter, origin: a, target: b)
+        frame.createEdge(ObjectType.Parameter, origin: b, target: a)
+        let compiler = Compiler(frame: try design.accept(frame))
+        XCTAssertThrowsError(try compiler.compile()) {
+            guard let error = $0 as? NodeIssuesError else {
+                XCTFail("Expected DomainError, got: \($0)")
+                return
+            }
+            
+            XCTAssertEqual(error.issues.count, 2)
+            XCTAssertEqual(error.issues[a]?.first as? NodeIssue, NodeIssue.computationCycle)
+            XCTAssertEqual(error.issues[b]?.first as? NodeIssue, NodeIssue.computationCycle)
+        }
+    }
+    
 }

@@ -70,7 +70,7 @@ public class Compiler {
     /// Used in binding of arithmetic expressions.
     private let functions: [String: Function]
 
-    // FIXME: [REFACTORING] Change to [String:SimulationState.Index]
+    // FIXME: [IMPROVEMENT] Change to [String:SimulationState.Index]. It is redundant storage of state variables.
     /// Mapping between a variable name and a bound variable reference.
     ///
     /// Used in binding of arithmetic expressions.
@@ -236,8 +236,17 @@ public class Compiler {
             orderedSimulationNodes = try view.sortedNodesByParameter(unsortedSimulationNodes)
         }
         catch let error as GraphCycleError {
-            // FIXME: Handle this. Include all involved nodes in the error.
-            fatalError("Unhandled graph cycle error: \(error). (Not implemented.)")
+            var nodes: Set<ObjectID> = Set()
+            for edgeID in error.edges {
+                let edge = frame.edge(edgeID)
+                nodes.insert(edge.origin)
+                nodes.insert(edge.target)
+                // TODO: Add EdgeIssue.computationCycle
+            }
+            for node in nodes {
+                context.appendIssue(NodeIssue.computationCycle, for: node)
+            }
+            throw NodeIssuesError(errors: context.issues)
         }
         
         // 4. Prepare named references to variables

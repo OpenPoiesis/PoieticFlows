@@ -15,6 +15,7 @@ import PoieticCore
 /// error found.
 ///
 public struct NodeIssuesError: Error {
+    // TODO: Change to AggregateError, DesignErrorCollection
     /// Dictionary of node issues by node. The key is the node ID and the
     /// value is a list of issues.
     ///
@@ -65,6 +66,9 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
     /// Missing a connection from a parameter node to a graphical function.
     case missingRequiredParameter
     
+    /// Node is part of a computation cycle.
+    case computationCycle
+    
     /// Get the human-readable description of the issue.
     public var description: String {
         switch self {
@@ -80,6 +84,8 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
             return "Duplicate node name: '\(name)'"
         case .missingRequiredParameter:
             return "Node is missing a required parameter connection"
+        case .computationCycle:
+            return "Node is part of a computation cycle."
         }
     }
     
@@ -102,8 +108,32 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
             return nil
         case .missingRequiredParameter:
             return "Connect exactly one node as a parameter. Name does not matter."
+        case .computationCycle:
+            return "Follow connections from and to the offending node."
         }
     }
+}
+
+public enum EdgeIssue: Equatable, CustomStringConvertible, Error {
+    case computationCycle
     
+    /// Get the human-readable description of the issue.
+    public var description: String {
+        switch self {
+        case .computationCycle:
+            return "Edge is part of a computation cycle."
+        }
+    }
+    /// Hint for an error.
+    ///
+    /// If it is possible to get some help to the user how to deal with the
+    /// error, then this property provides a hint.
+    ///
+    public var hint: String? {
+        switch self {
+        case .computationCycle:
+            return "Follow connections from and to the edge's endpoints."
+        }
+    }
 }
 
