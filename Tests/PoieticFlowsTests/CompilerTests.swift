@@ -268,4 +268,110 @@ final class TestCompiler: XCTestCase {
         }
     }
     
+    func testStockCycleError() throws {
+        let a = frame.createNode(ObjectType.Stock,
+                                 name:"a",
+                                 attributes: ["formula": "0"])
+        let b = frame.createNode(ObjectType.Stock,
+                                 name:"b",
+                                 attributes: ["formula": "0"])
+        let fab = frame.createNode(ObjectType.Flow,
+                                   name: "fab",
+                                   attributes: ["formula": "0"])
+        let fba = frame.createNode(ObjectType.Flow,
+                                   name: "fba",
+                                   attributes: ["formula": "0"])
+        frame.createEdge(ObjectType.Drains, origin: a, target: fab)
+        frame.createEdge(ObjectType.Fills, origin: fab, target: b)
+        frame.createEdge(ObjectType.Drains, origin: b, target: fba)
+        frame.createEdge(ObjectType.Fills, origin: fba, target: a)
+
+        let compiler = Compiler(frame: try design.accept(frame))
+        XCTAssertThrowsError(try compiler.compile()) {
+            guard let error = $0 as? NodeIssuesError else {
+                XCTFail("Expected DomainError, got: \($0)")
+                return
+            }
+            
+            XCTAssertEqual(error.issues.count, 2)
+            print(error.issues)
+            XCTAssertEqual(error.issues[a]?.first as? NodeIssue, NodeIssue.flowCycle)
+            XCTAssertEqual(error.issues[b]?.first as? NodeIssue, NodeIssue.flowCycle)
+        }
+    }
+    func testDelayedInflowBreaksTheCycle() throws {
+        let a = frame.createNode(ObjectType.Stock,
+                                 name:"a",
+                                 attributes: [
+                                    "formula": "0",
+                                    "delayed_inflow": Variant(true)
+                                 ])
+        let b = frame.createNode(ObjectType.Stock,
+                                 name:"b",
+                                 attributes: ["formula": "0"])
+        let fab = frame.createNode(ObjectType.Flow,
+                                   name: "fab",
+                                   attributes: ["formula": "0"])
+        let fba = frame.createNode(ObjectType.Flow,
+                                   name: "fba",
+                                   attributes: ["formula": "0"])
+        frame.createEdge(ObjectType.Drains, origin: a, target: fab)
+        frame.createEdge(ObjectType.Fills, origin: fab, target: b)
+        frame.createEdge(ObjectType.Drains, origin: b, target: fba)
+        frame.createEdge(ObjectType.Fills, origin: fba, target: a)
+
+        let compiler = Compiler(frame: try design.accept(frame))
+        XCTAssertNoThrow(try compiler.compile())
+    }
+
+    func testStockAdjacency() throws {
+        // TODO: Test loops and delayed inflow
+        let a = frame.createNode(ObjectType.Stock,
+                                      name: "a",
+                                      attributes: ["formula": "0"])
+        let b = frame.createNode(ObjectType.Stock,
+                                    name: "b",
+                                    attributes: ["formula": "0"])
+        let c = frame.createNode(ObjectType.Stock,
+                                    name: "c",
+                                    attributes: ["formula": "0"])
+        let flow = frame.createNode(ObjectType.Flow,
+                                    name: "f",
+                                    attributes: ["formula": "0"])
+        let inflow = frame.createNode(ObjectType.Flow,
+                                    name: "inflow",
+                                    attributes: ["formula": "0"])
+        let outflow = frame.createNode(ObjectType.Flow,
+                                    name: "outflow",
+                                    attributes: ["formula": "0"])
+
+        frame.createEdge(ObjectType.Drains,
+                         origin: a,
+                         target: flow,
+                         components: [])
+        frame.createEdge(ObjectType.Fills,
+                         origin: flow,
+                         target: b,
+                         components: [])
+
+        frame.createEdge(ObjectType.Fills,
+                         origin: inflow,
+                         target: c,
+                         components: [])
+
+        frame.createEdge(ObjectType.Drains,
+                         origin: c,
+                         target: outflow,
+                         components: [])
+
+        let compiler = Compiler(frame: try design.accept(frame))
+
+        let result = compiler.stockAdjacencies()
+        XCTAssertEqual(result.count, 1)
+
+        XCTAssertEqual(result[0].id, flow)
+        XCTAssertEqual(result[0].origin, a)
+        XCTAssertEqual(result[0].target, b)
+    }
+
 }

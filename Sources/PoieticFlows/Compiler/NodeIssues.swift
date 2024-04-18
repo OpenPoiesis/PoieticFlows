@@ -69,6 +69,11 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
     /// Node is part of a computation cycle.
     case computationCycle
     
+    /// Stock is part of a flow cycle. Needs to be broken with
+    /// delayed inflow.
+    ///
+    case flowCycle
+    
     /// Get the human-readable description of the issue.
     public var description: String {
         switch self {
@@ -86,6 +91,8 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
             return "Node is missing a required parameter connection"
         case .computationCycle:
             return "Node is part of a computation cycle."
+        case .flowCycle:
+            return "Stock is part of a flow cycle."
         }
     }
     
@@ -110,6 +117,8 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
             return "Connect exactly one node as a parameter. Name does not matter."
         case .computationCycle:
             return "Follow connections from and to the offending node."
+        case .flowCycle:
+            return "Mark one of the stocks in the cycle to have delayed inflow to break the cycle."
         }
     }
 }

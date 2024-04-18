@@ -263,65 +263,6 @@ public class StockFlowView {
         return result
     }
     
-
-    /// Sort given list of stocks by the order of their implicit flows.
-    ///
-    /// Imagine that we replace the flow nodes with a direct edge between
-    /// the stocks that the flow connects. The drained stock comes before the
-    /// filled stock.
-    ///
-    /// - SeeAlso: ``adjacentStocks()``
-    ///
-    public func sortedStocksByImplicitFlows(_ nodes: [ObjectID]) throws -> [Node] {
-        // TODO: Move this to compiler
-        let sorted = try topologicalSort(nodes, edges: adjacentStocks())
-        
-        let result: [Node] = sorted.map {
-            frame.node($0)
-        }
-        
-        return result
-    }
-
-    
-    /// Get a list of stock-to-stock adjacency.
-    ///
-    /// Two stocks are adjacent if there is a flow that connects the two stocks.
-    /// One stock is being drained – origin of the adjacency,
-    /// another stock is being filled – target of the adjacency.
-    ///
-    /// The following diagram depicts two adjacent stocks, where the stock `a`
-    /// would be the origin and stock `b` would be the target:
-    ///
-    /// ```
-    ///              Drains           Fills
-    ///    Stock a ==========> Flow =========> Stock b
-    ///       ^                                  ^
-    ///       +----------------------------------+
-    ///                  adjacent stocks
-    ///
-    /// ```
-    ///
-    public func adjacentStocks() -> [StockAdjacency] {
-        var adjacencies: [StockAdjacency] = []
-
-        for flow in self.flowNodes {
-            guard let fills = self.flowFills(flow.id) else {
-                continue
-            }
-            guard let drains = self.flowDrains(flow.id) else {
-                continue
-            }
-            
-            let adjacency = StockAdjacency(id: flow.id,
-                                           origin: drains,
-                                           target: fills)
-
-            adjacencies.append(adjacency)
-        }
-        return adjacencies
-    }
-
     /// Get a node that the given flow fills.
     ///
     /// The flow fills a node, usually a stock, if there is an edge

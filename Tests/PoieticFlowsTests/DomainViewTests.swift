@@ -176,38 +176,4 @@ final class TestDomainView: XCTestCase {
         XCTAssertEqual(view.flowDrains(flow), source)
     }
     
-    func testStockAdjacency() throws {
-        // TODO: Test loops and delayed inflow
-        let flow = frame.createNode(ObjectType.Flow,
-                                    name: "f",
-                                    attributes: ["formula": "1"])
-        let source = frame.createNode(ObjectType.Stock,
-                                      name: "source",
-                                      attributes: ["formula": "0"])
-        let sink = frame.createNode(ObjectType.Stock,
-                                    name: "sink",
-                                    attributes: ["formula": "0"])
-
-        let view = StockFlowView(frame)
-        let emptyResult = view.adjacentStocks()
-
-        XCTAssertTrue(emptyResult.isEmpty)
-
-        frame.createEdge(ObjectType.Drains,
-                         origin: source,
-                         target: flow,
-                         components: [])
-        frame.createEdge(ObjectType.Fills,
-                         origin: flow,
-                         target: sink,
-                         components: [])
-
-        let result = view.adjacentStocks()
-
-        XCTAssertEqual(result.count, 1)
-
-        XCTAssertEqual(result[0].id, flow)
-        XCTAssertEqual(result[0].origin, source)
-        XCTAssertEqual(result[0].target, sink)
-    }
 }

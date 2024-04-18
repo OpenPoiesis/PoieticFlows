@@ -281,4 +281,7 @@ public struct StockAdjacency: EdgeType {
     public let origin: ObjectID
     /// ID of a stock being filled by the flow.
     public let target: ObjectID
+
+    /// Flag whether the target has delayed inflow.
+    public let targetHasDelayedInflow: Bool
 }

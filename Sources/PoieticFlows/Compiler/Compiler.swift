@@ -23,13 +23,13 @@ public class Compiler {
     /// The frame containing the design to be compiled.
     ///
     let frame: StableFrame
-
+    
     /// Flows domain view of the frame.
     let view: StockFlowView
-
+    
     // Compiler State
     // -----------------------------------------------------------------
-
+    
     /// List of simulation state variables.
     ///
     /// The list of state variables contain values of builtins, values of
@@ -51,38 +51,38 @@ public class Compiler {
     ///   ``createStateVariable(content:valueType:name:)``
     ///
     public private(set) var stateVariables: [StateVariable] = []
-
+    
     /// Index of the current state
     public private(set) var currentVariableIndex = 0
-
-
+    
+    
     /// List of built-in variables used in the simulation.
     ///
     private let builtinVariables: [Variable]
-
+    
     /// List of built-in variable names, fetched from the metamodel.
     ///
     /// Used in binding of arithmetic expressions.
     private let builtinVariableNames: [String]
-
+    
     /// List of built-in functions.
     ///
     /// Used in binding of arithmetic expressions.
     private let functions: [String: Function]
-
+    
     // FIXME: [IMPROVEMENT] Change to [String:SimulationState.Index]. It is redundant storage of state variables.
     /// Mapping between a variable name and a bound variable reference.
     ///
     /// Used in binding of arithmetic expressions.
     private var namedReferences: [String:StateVariable]
-
+    
     /// Mapping between object ID and index of its corresponding simulation
     /// variable.
     ///
     /// Used in compilation of simulation nodes.
     ///
     private var objectToVariable: [ObjectID: Int]
-
+    
     // TODO: Change to system dependency chain
     /// List of transformation systems run before the compilation.
     ///
@@ -96,9 +96,9 @@ public class Compiler {
     private var _preCompilationSystems: [any RuntimeSystem] = [
         FormulaCompilerSystem(),
     ]
-//    private var _postCompilationSystems: [any RuntimeSystem] = [
-//    ]
-
+    //    private var _postCompilationSystems: [any RuntimeSystem] = [
+    //    ]
+    
     /// Creates a compiler that will compile within the context of the given
     /// model.
     ///
@@ -112,13 +112,13 @@ public class Compiler {
         
         builtinVariables = FlowsMetamodel.variables
         builtinVariableNames = builtinVariables.map { $0.name }
-    
+        
         let items = AllBuiltinFunctions.map { ($0.name, $0) }
         functions = Dictionary(uniqueKeysWithValues: items)
-
+        
         // Intermediated variables and mappigns used for compilation
         objectToVariable = [:]
-
+        
         // Variables for arithmetic expression binding
         namedReferences = [:]
     }
@@ -180,37 +180,37 @@ public class Compiler {
         //  - unsorted simulation nodes
         //      - (id, name, computationalRepresentation)
         var simulationObjects: [SimulationObject] = []
-
+        
         // 1. Update pre-compilation systems
         // =================================================================
-
+        
         // TODO: We are passing view from metamodel just to create view in the context
         let context = RuntimeContext(frame: frame)
-
+        
         for index in _preCompilationSystems.indices {
             _preCompilationSystems[index].update(context)
         }
-
+        
         guard !context.hasIssues else {
             throw NodeIssuesError(errors: context.issues)
         }
-
+        
         // 2. Collect nodes that are to be part of the simulation
         // =================================================================
-
+        
         var unsortedSimulationNodes: [ObjectID] = []
         var homonyms: [String: [ObjectID]] = [:]
-
+        
         for node in view.simulationNodes {
             unsortedSimulationNodes.append(node.id)
             homonyms[node.name!, default: []].append(node.id)
         }
-
+        
         // 2.1 Report the duplicates, if any
         // -----------------------------------------------------------------
-
+        
         var dupes: [String] = []
-
+        
         for (name, ids) in homonyms where ids.count > 1 {
             let issue = NodeIssue.duplicateName(name)
             dupes.append(name)
@@ -218,20 +218,20 @@ public class Compiler {
                 context.appendIssue(issue, for: id)
             }
         }
-
+        
         guard !context.hasIssues else {
             throw NodeIssuesError(errors: context.issues)
         }
-
+        
         // 3. Sort nodes in order of computation
         // =================================================================
         // All the nodes present in this list will form a simulation state.
         // Indices in this vector will be the indices used through out the
         // simulation.
-
+        
         let orderedSimulationNodes: [Node]
         // TODO: orderedSimulationNodes should be (id, name, snapshot)
-
+        
         do {
             orderedSimulationNodes = try view.sortedNodesByParameter(unsortedSimulationNodes)
         }
@@ -252,7 +252,7 @@ public class Compiler {
         // 4. Prepare named references to variables
         // =================================================================
         // This step is necessary for arithmetic expression compilation.
-
+        
         // Collect built-in variables.
         //
         var builtins: [CompiledBuiltin] = []
@@ -268,7 +268,7 @@ public class Compiler {
             else {
                 fatalError("Unknown builtin variable: \(variable)")
             }
-
+            
             let index = createStateVariable(content: .builtin(builtin),
                                             valueType: variable.valueType,
                                             name: variable.name)
@@ -277,12 +277,12 @@ public class Compiler {
             builtins.append(CompiledBuiltin(builtin: builtin,
                                             variableIndex: index))
         }
-
+        
         guard let timeIndex = namedReferences["time"]?.index else {
             fatalError("No time variable within the builtins.")
         }
-
-
+        
+        
         // 5. Compile computational representations
         // =================================================================
         
@@ -291,7 +291,7 @@ public class Compiler {
         
         for node in orderedSimulationNodes {
             assert(node.name != nil, "Node \(node.id) has no name. Validation before compilation failed.")
-
+            
             let computation: ComputationalRepresentation
             do {
                 computation = try self.compile(node, in: context)
@@ -335,7 +335,7 @@ public class Compiler {
                                           name: node.name!)
             simulationObjects.append(object)
             
-
+            
             self.namedReferences[node.name!] = self.stateVariables[index]
             self.objectToVariable[node.id] = index
         }
@@ -343,20 +343,20 @@ public class Compiler {
         guard issues.isEmpty else {
             throw issues
         }
-
+        
         // 6. Filter by node type
         // =================================================================
-
+        
         var unsortedStocks: [Node] = []
         var flowsByID: [ObjectID:CompiledFlow] = [:]
         
         for (objectIndex, item) in zip(orderedSimulationNodes, simulationObjects).enumerated() {
             let (node, object) = item
-
+            
             switch object.type {
             case .stock:
                 unsortedStocks.append(node)
-
+                
             case .flow:
                 guard let priority = try? node.snapshot["priority"]?.intValue() else {
                     fatalError("Unable to get priority of Stock node \(node.id). Hint: Frame passed constraint validation while it should have not.")
@@ -364,7 +364,7 @@ public class Compiler {
                 
                 let flow = CompiledFlow(id: object.id, priority: priority)
                 flowsByID[object.id] = flow
-
+                
             case .auxiliary:
                 // Nothing special to be done
                 break
@@ -373,26 +373,43 @@ public class Compiler {
         
         // 7. Sort stocks in order of flow dependency
         // =================================================================
-
+        
         // This step is needed for proper computation of non-negative stocks
-
+        
         let sortedStocks: [Node]
-        do {
-            let unsorted = unsortedStocks.map { $0.id }
-            sortedStocks = try view.sortedStocksByImplicitFlows(unsorted)
-            
+        // Stock adjacencies without delayed input - break the cycle at stocks
+        // with delayed_input=true.
+        let adjacencies = self.stockAdjacencies().filter {
+            !$0.targetHasDelayedInflow
         }
-        catch is GraphCycleError {
-            // catch let error as GraphCycleError {
-            // FIXME: Handle the error
-            fatalError("Unhandled graph cycle error")
+        do {
+            // TODO: There is too much node/edge wrap/unwrap overhead in here
+            let unsorted = unsortedStocks.map { $0.id }
+            let sorted = try topologicalSort(unsorted, edges: adjacencies)
+            sortedStocks = sorted.map { frame.node($0) }
+        }
+        catch let error as GraphCycleError {
+            var nodes: Set<ObjectID> = Set()
+            for adjacency in adjacencies {
+                // NOTE: The adjacency.id is ID of a flow connecting two stocks,
+                //       not an ID of a graph edge (as structural type)
+                guard error.edges.contains(adjacency.id) else {
+                    continue
+                }
+                nodes.insert(adjacency.origin)
+                nodes.insert(adjacency.target)
+            }
+            for node in nodes {
+                context.appendIssue(NodeIssue.flowCycle, for: node)
+            }
+            throw NodeIssuesError(errors: context.issues)
         }
         
         let compiledStocks = compile(stocks: sortedStocks, flows: flowsByID)
-
+        
         // 8. Value Bindings
         // =================================================================
-
+        
         var bindings: [CompiledControlBinding] = []
         for object in frame.filter(type: ObjectType.ValueBinding) {
             guard let edge = Edge(object) else {
@@ -434,12 +451,9 @@ public class Compiler {
         else {
             simulationDefaults = nil
         }
-
         
         // 999. Misc
-        
-        
-        
+                
         // Finalise
         // =================================================================
         //
@@ -469,7 +483,7 @@ public class Compiler {
         }
         return index
     }
-
+    
     /// Compile a simulation node.
     ///
     /// The function compiles a node that represents a variable or a kind of
@@ -508,7 +522,7 @@ public class Compiler {
         }
         return rep
     }
-
+    
     /// Compile a node containing a formula.
     ///
     /// For each node with an arithmetic expression the expression is parsed
@@ -532,7 +546,7 @@ public class Compiler {
         guard let component: ParsedFormulaComponent = context.component(for: node.id) else {
             fatalError("Parsed formula component expected for node \(node.id)")
         }
-
+        
         let unboundExpression: UnboundExpression = component.parsedFormula
         
         // List of required parameters: variables in the expression that
@@ -541,7 +555,7 @@ public class Compiler {
         let required: [String] = unboundExpression.allVariables.filter {
             !builtinVariableNames.contains($0)
         }
-
+        
         // TODO: [IMPORTANT] Move this outside of this method. This is not required for binding
         // Validate parameters.
         //
@@ -561,10 +575,10 @@ public class Compiler {
         catch let error as ExpressionError {
             throw NodeIssue.expressionError(error)
         }
-
+        
         return .formula(boundExpression)
     }
-
+    
     /// Compiles a graphical function.
     ///
     /// This method creates a ``/PoieticCore/Function`` object with a single argument and a
@@ -592,16 +606,16 @@ public class Compiler {
         
         let funcName = "__graphical_\(node.id)"
         let numericFunc = function.createFunction(name: funcName)
-
+        
         return .graphicalFunction(numericFunc, variableIndex(parameterNode.id))
-
+        
     }
     public func compileDelayNode(_ node: Node) throws -> ComputationalRepresentation{
         // TODO: What to do if the input is not numeric or not an atom?
         let valueQueue = createStateVariable(content: .internalState(node.id),
                                              valueType: .doubles,
                                              name: "delay_\(node.id)")
-
+        
         let hood = view.incomingParameters(node.id)
         guard let parameterNode = hood.nodes.first else {
             throw NodeIssue.missingRequiredParameter
@@ -612,7 +626,7 @@ public class Compiler {
         
         let duration = try! node.snapshot["delay_duration"]!.doubleValue()
         let initialValue = node.snapshot["initial_value"]
-
+        
         // TODO: Check whether the initial value and variable.valueType are the same
         let compiled = CompiledDelay(
             valueQueueIndex: valueQueue,
@@ -636,38 +650,38 @@ public class Compiler {
         // TODO: Change `flows` argument to flowsPriority: [ObjectID:Int], remove historical remnant CompiledFlow (formerly richer struct)
         var outflows: [ObjectID: [ObjectID]] = [:]
         var inflows: [ObjectID: [ObjectID]] = [:]
-
+        
         for edge in view.drainsEdges {
             // Drains edge: stock ---> flow
             let stock = edge.origin
             let flow = edge.target
             outflows[stock,default:[]].append(flow)
         }
-
+        
         for edge in view.fillsEdges {
             // Fills edge: flow ---> stock
             let stock = edge.target
             let flow = edge.origin
             inflows[stock, default: []].append(flow)
         }
-
+        
         // Sort the outflows by priority
         for stock in stocks {
             if let unsorted = outflows[stock.id] {
                 let sorted = unsorted.map {
                     (id: $0, priority: flows[$0]!.priority)
                 }
-                .sorted { (lhs, rhs) in
-                    return lhs.priority < rhs.priority
-                }
-                .map { $0.id }
+                    .sorted { (lhs, rhs) in
+                        return lhs.priority < rhs.priority
+                    }
+                    .map { $0.id }
                 outflows[stock.id] = sorted
             }
             else {
                 outflows[stock.id] = []
             }
         }
-                
+        
         var result: [CompiledStock] = []
         
         for node in stocks {
@@ -678,7 +692,7 @@ public class Compiler {
             // the model was validated
             let allowsNegative = try! node.snapshot["allows_negative"]!.boolValue()
             let delayedInflow = try! node.snapshot["delayed_inflow"]!.boolValue()
-
+            
             let compiled = CompiledStock(
                 id: node.id,
                 variableIndex: variableIndex(node.id),
@@ -731,9 +745,51 @@ public class Compiler {
         return issues
     }
     
-    
+    /// Get a list of stock-to-stock adjacency.
+    ///
+    /// Two stocks are adjacent if there is a flow that connects the two stocks.
+    /// One stock is being drained – origin of the adjacency,
+    /// another stock is being filled – target of the adjacency.
+    ///
+    /// The following diagram depicts two adjacent stocks, where the stock `a`
+    /// would be the origin and stock `b` would be the target:
+    ///
+    /// ```
+    ///              Drains           Fills
+    ///    Stock a ==========> Flow =========> Stock b
+    ///       ^                                  ^
+    ///       +----------------------------------+
+    ///                  adjacent stocks
+    ///
+    /// ```
+    ///
+    public func stockAdjacencies() -> [StockAdjacency] {
+        var adjacencies: [StockAdjacency] = []
+
+        for flow in view.flowNodes {
+            guard let fills = view.flowFills(flow.id) else {
+                continue
+            }
+            guard let drains = view.flowDrains(flow.id) else {
+                continue
+            }
+
+            // TODO: Too much going on in here. Simplify.
+            let delayedInflow = try! frame[drains]["delayed_inflow"]!.boolValue()
+            
+            let adjacency = StockAdjacency(id: flow.id,
+                                           origin: drains,
+                                           target: fills,
+                                           targetHasDelayedInflow: delayedInflow)
+
+            adjacencies.append(adjacency)
+        }
+        return adjacencies
+    }
+
     // FIXME: What was the original intent of this?
     public func appendIssue(_ error: Error, to object: ObjectID) {
         fatalError("\(#function) not implemented")
     }
+    
 }
