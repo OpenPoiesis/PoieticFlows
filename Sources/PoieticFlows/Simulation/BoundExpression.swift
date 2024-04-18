@@ -85,7 +85,8 @@ public enum ExpressionError: Error, CustomStringConvertible, Equatable {
 ///  or when the function arguments do not match the function's requirements.
 ///
 public func bindExpression(_ expression: UnboundExpression,
-                           variables: [String:StateVariable],
+                           variables: [StateVariable],
+                           names: [String:SimulationState.Index],
                            functions: [String:Function]) throws -> BoundExpression {
     
     switch expression {
@@ -93,10 +94,11 @@ public func bindExpression(_ expression: UnboundExpression,
         return .value(value)
 
     case let .variable(name):
-        guard let variable = variables[name] else {
+        guard let index = names[name] else {
             throw ExpressionError.unknownVariable(name)
         }
-        return .variable(BoundVariable(index: variable.index,
+        let variable = variables[index]
+        return .variable(BoundVariable(index: index,
                                        valueType: variable.valueType))
     case let .unary(op, operand):
         let funcName: String = switch op {
@@ -110,6 +112,7 @@ public func bindExpression(_ expression: UnboundExpression,
 
         let boundOperand = try bindExpression(operand,
                                               variables: variables,
+                                              names: names,
                                               functions: functions)
         
         let result = function.signature.validate([boundOperand.valueType])
@@ -145,8 +148,14 @@ public func bindExpression(_ expression: UnboundExpression,
             fatalError("No function '\(funcName)' for binary operator: '\(op)'. Internal hint: Make sure it is defined in the builtin function list.")
         }
 
-        let lBound = try bindExpression(lhs, variables: variables, functions: functions)
-        let rBound = try bindExpression(rhs, variables: variables, functions: functions)
+        let lBound = try bindExpression(lhs,
+                                        variables: variables,
+                                        names: names,
+                                        functions: functions)
+        let rBound = try bindExpression(rhs,
+                                        variables: variables,
+                                        names: names,
+                                        functions: functions)
 
         let args = [lBound.valueType, rBound.valueType]
         let result = function.signature.validate(args)
@@ -167,7 +176,10 @@ public func bindExpression(_ expression: UnboundExpression,
         }
         
         let boundArgs = try arguments.map {
-            try bindExpression($0, variables: variables, functions: functions)
+            try bindExpression($0,
+                               variables: variables,
+                               names: names,
+                               functions: functions)
         }
 
         let types = boundArgs.map { $0.valueType }

@@ -70,11 +70,10 @@ public class Compiler {
     /// Used in binding of arithmetic expressions.
     private let functions: [String: Function]
     
-    // FIXME: [IMPROVEMENT] Change to [String:SimulationState.Index]. It is redundant storage of state variables.
     /// Mapping between a variable name and a bound variable reference.
     ///
     /// Used in binding of arithmetic expressions.
-    private var namedReferences: [String:StateVariable]
+    private var namedReferences: [String:SimulationState.Index]
     
     /// Mapping between object ID and index of its corresponding simulation
     /// variable.
@@ -168,7 +167,7 @@ public class Compiler {
     ///   that are caused by the user. Throws ``/PoieticCore/ConstraintViolation`` if
     ///   the frame constraints were violated. The later error is an
     ///   application error and means that either the provided frame is
-    ///   mal-formed or one of the subsystems mis-behaved.
+    ///   malformed or one of the subsystems mis-behaved.
     /// - Returns: A ``CompiledModel`` that can be used directly by the
     ///   simulator.
     ///
@@ -273,15 +272,14 @@ public class Compiler {
                                             valueType: variable.valueType,
                                             name: variable.name)
             
-            self.namedReferences[variable.name] = self.stateVariables[index]
+            self.namedReferences[variable.name] = index
             builtins.append(CompiledBuiltin(builtin: builtin,
                                             variableIndex: index))
         }
         
-        guard let timeIndex = namedReferences["time"]?.index else {
+        guard let timeIndex = namedReferences["time"] else {
             fatalError("No time variable within the builtins.")
         }
-        
         
         // 5. Compile computational representations
         // =================================================================
@@ -290,7 +288,9 @@ public class Compiler {
         // FIXME: Use context, test whether the errors were appended to the node
         
         for node in orderedSimulationNodes {
-            assert(node.name != nil, "Node \(node.id) has no name. Validation before compilation failed.")
+            guard let name = node.name else {
+                fatalError("Node \(node.id) has no name. Validation before compilation failed.")
+            }
             
             let computation: ComputationalRepresentation
             do {
@@ -308,7 +308,7 @@ public class Compiler {
             
             let index = createStateVariable(content: .object(node.id),
                                             valueType: computation.valueType,
-                                            name: node.name!)
+                                            name: name)
             // Determine simulation type
             //
             let objectType: SimulationObject.SimulationObjectType
@@ -332,11 +332,11 @@ public class Compiler {
                                           variableIndex: index,
                                           valueType: computation.valueType,
                                           computation: computation,
-                                          name: node.name!)
+                                          name: name)
             simulationObjects.append(object)
             
             
-            self.namedReferences[node.name!] = self.stateVariables[index]
+            self.namedReferences[name] = index
             self.objectToVariable[node.id] = index
         }
         
@@ -569,7 +569,8 @@ public class Compiler {
         let boundExpression: BoundExpression
         do {
             boundExpression = try bindExpression(unboundExpression,
-                                                 variables: namedReferences,
+                                                 variables: stateVariables,
+                                                 names: namedReferences,
                                                  functions: functions)
         }
         catch let error as ExpressionError {
@@ -774,7 +775,7 @@ public class Compiler {
                 continue
             }
 
-            // TODO: Too much going on in here. Simplify.
+            // TODO: Too much going on in here. Simplify. Move some of it to where we collect unsortedStocks in the Compiler.
             let delayedInflow = try! frame[drains]["delayed_inflow"]!.boolValue()
             
             let adjacency = StockAdjacency(id: flow.id,
