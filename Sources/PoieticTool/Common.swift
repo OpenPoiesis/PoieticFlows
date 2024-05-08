@@ -181,9 +181,10 @@ func createDesign(options: Options) -> Design {
 }
 
 func openDesign(url: URL, metamodel: Metamodel = FlowsMetamodel) throws -> Design {
-    let design: Design = Design(metamodel: metamodel)
+    let store = MakeshiftDesignStore(url: url)
+    let design: Design
     do {
-        try design.restoreAll(from: url)
+        design = try store.load(metamodel: metamodel)
     }
     catch let error as FrameValidationError {
         printValidationError(error)
@@ -221,9 +222,9 @@ func printValidationError(_ error: FrameValidationError) {
 ///
 func closeDesign(design: Design, options: Options) throws {
     let dataURL = try databaseURL(options: options)
-
+    let store = MakeshiftDesignStore(url: dataURL)
     do {
-        try design.saveAll(to: dataURL)
+        try store.save(design: design)
     }
     catch {
         throw ToolError.unableToSaveDatabase(error)
