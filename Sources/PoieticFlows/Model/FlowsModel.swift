@@ -24,8 +24,9 @@ public let FlowsMetamodel = Metamodel(
     // MARK: Components
     // ---------------------------------------------------------------------
 
+    name: "StockFlow",
     /// List of components that are used in the Stock and Flow models.
-    /// 
+    ///
     traits: BasicMetamodel.traits + [
         Trait.Name,
         Trait.Stock,
