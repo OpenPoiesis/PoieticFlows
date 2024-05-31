@@ -13,7 +13,7 @@ import XCTest
 final class TestFlowsMetamodel: XCTestCase {
     func testUniqueNames() throws {
         
-        for type in FlowsMetamodel.objectTypes {
+        for type in FlowsMetamodel.types {
             var attributes: [String:[String]] = [:]
 
             for trait in type.traits {

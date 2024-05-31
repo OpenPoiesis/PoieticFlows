@@ -45,7 +45,7 @@ extension PoieticTool {
         func printAll(metamodel: Metamodel) throws {
             print("TYPES AND COMPONENTS\n")
 
-            for type in metamodel.objectTypes {
+            for type in metamodel.types {
                 try printType(type,
                               includeAbstract: false,
                               metamodel: metamodel)

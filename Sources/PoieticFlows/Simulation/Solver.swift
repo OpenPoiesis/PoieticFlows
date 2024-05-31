@@ -91,6 +91,11 @@ public class Solver {
     ///
     public var constants: [ObjectID:Variant]
 
+    public static let Variables: [Variable] = [
+        Variable.TimeVariable,
+        Variable.TimeDeltaVariable,
+    ]
+
     /// Return list of registered solver names.
     ///
     /// The list is alphabetically sorted, as the typical usage of this method is

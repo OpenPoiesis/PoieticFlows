@@ -40,7 +40,7 @@ func autoConnectParameters(_ frame: MutableFrame) throws -> (added: [ParameterIn
     var added: [ParameterInfo] = []
     var removed: [ParameterInfo] = []
     
-    let builtinNames: Set<String> = Set(FlowsMetamodel.variables.map {
+    let builtinNames: Set<String> = Set(Solver.Variables.map {
         $0.name
     })
 

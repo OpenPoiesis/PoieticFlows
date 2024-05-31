@@ -12,8 +12,8 @@ let package = Package(
             name: "PoieticFlows",
             targets: ["PoieticFlows"]),
         .executable(
-            name: "poietic",
-            targets: ["PoieticTool"]),
+            name: "poietic-flow",
+            targets: ["PoieticFlowTool"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -33,14 +33,16 @@ let package = Package(
         ),
 
         .executableTarget(
-            name: "PoieticTool",
+            name: "PoieticFlowTool",
             dependencies: [
                 "PoieticCore",
                 "PoieticFlows",
                 .product(name: "SystemPackage", package: "swift-system"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "RealModule", package: "swift-numerics"),
-            ]),
+            ],
+            path: "Sources/PoieticTool"
+        ),
         .testTarget(
             name: "PoieticFlowsTests",
             dependencies: ["PoieticFlows"]),
