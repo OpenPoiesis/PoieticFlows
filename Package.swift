@@ -12,7 +12,7 @@ let package = Package(
             name: "PoieticFlows",
             targets: ["PoieticFlows"]),
         .executable(
-            name: "poietic-flow",
+            name: "poietic",
             targets: ["PoieticFlowTool"]),
     ],
     dependencies: [
