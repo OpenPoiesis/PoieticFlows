@@ -5,7 +5,7 @@
 //  Created by Stefan Urbanek on 30/06/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 
 // TODO: Add output to JSON
@@ -13,7 +13,7 @@ import PoieticCore
 
 extension PoieticTool {
     struct MetamodelCommand: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 commandName: "metamodel",
                 abstract: "Show information about the metamodel and object types"

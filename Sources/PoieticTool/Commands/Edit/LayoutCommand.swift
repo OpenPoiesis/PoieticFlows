@@ -5,7 +5,7 @@
 //  Created by Stefan Urbanek on 19/10/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 import RealModule
@@ -24,7 +24,7 @@ enum LayoutType: String, CaseIterable, ExpressibleByArgument{
 
 extension PoieticTool {
     struct Layout: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 abstract: "Lay out objects"
             )

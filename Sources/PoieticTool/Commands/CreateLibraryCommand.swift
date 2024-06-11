@@ -5,7 +5,7 @@
 //  Created by Stefan Urbanek on 25/03/2024.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 import Foundation
@@ -13,7 +13,7 @@ import Foundation
 
 extension PoieticTool {
     struct CreateLibrary: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 commandName: "create-library",
                 abstract: "Create a library description for multiple models",

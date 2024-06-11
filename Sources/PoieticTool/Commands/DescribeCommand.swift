@@ -5,7 +5,7 @@
 //  Created by Stefan Urbanek on 29/06/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
@@ -15,7 +15,7 @@ let AttributeColumnWidth = 20
 
 extension PoieticTool {
     struct Show: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(abstract: "Describe an object")
         @OptionGroup var options: Options
 

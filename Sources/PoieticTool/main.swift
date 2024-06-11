@@ -7,13 +7,13 @@
 
 import PoieticCore
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 
 // The Command
 // ------------------------------------------------------------------------
 
 struct PoieticTool: ParsableCommand {
-    static var configuration = CommandConfiguration(
+    static let configuration = CommandConfiguration(
         commandName: "poietic",
         abstract: "Poietic design utility.",
         subcommands: [

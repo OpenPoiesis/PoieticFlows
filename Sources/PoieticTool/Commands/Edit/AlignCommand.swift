@@ -5,7 +5,7 @@
 //  Created by Stefan Urbanek on 04/07/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 import RealModule
@@ -37,7 +37,7 @@ enum AlignmentMode: String, CaseIterable, ExpressibleByArgument {
 
 extension PoieticTool {
     struct Align: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 abstract: "Align objects on canvas"
             )

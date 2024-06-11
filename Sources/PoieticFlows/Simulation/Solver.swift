@@ -91,7 +91,7 @@ public class Solver {
     ///
     public var constants: [ObjectID:Variant]
 
-    public static let Variables: [Variable] = [
+    nonisolated(unsafe) public static let Variables: [Variable] = [
         Variable.TimeVariable,
         Variable.TimeDeltaVariable,
     ]
@@ -101,6 +101,7 @@ public class Solver {
     /// The list is alphabetically sorted, as the typical usage of this method is
     /// to display the list to the user.
     ///
+    nonisolated(unsafe)
     public static var registeredSolverNames: [String] {
         return registeredSolvers.keys.sorted()
     }
@@ -109,6 +110,7 @@ public class Solver {
     ///
     /// The key is the solver name and the value is the solver class (type).
     ///
+    nonisolated(unsafe) 
     public static private(set) var registeredSolvers: [String:Solver.Type] = [
         "euler": EulerSolver.self,
         "rk4": RungeKutta4Solver.self,
@@ -122,6 +124,7 @@ public class Solver {
     /// - Note: Solvers do not have to be registered if there is other method
     /// provided for the user to get a desired solver.
     ///
+    @MainActor
     public static func registerSolver(name: String, solver: Solver.Type) {
         registeredSolvers[name] = solver
     }

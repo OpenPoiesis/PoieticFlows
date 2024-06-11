@@ -5,13 +5,13 @@
 //  Created by Stefan Urbanek on 11/01/2022.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticFlows
 import PoieticCore
 
 extension PoieticTool {
     struct CreateDB: ParsableCommand {
-        static var configuration
+        static let configuration
         = CommandConfiguration(
             commandName: "new",
             abstract: "Create an empty design."

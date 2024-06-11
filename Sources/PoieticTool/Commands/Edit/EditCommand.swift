@@ -5,13 +5,13 @@
 //  Created by Stefan Urbanek on 29/06/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
 extension PoieticTool {
     struct Edit: ParsableCommand {
-        static var configuration
+        static let configuration
         = CommandConfiguration(
             abstract: "Edit an object or a selection of objects",
             subcommands: [
