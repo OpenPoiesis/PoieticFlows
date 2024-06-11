@@ -36,7 +36,8 @@ poietic add Flow name=expenses formula=50
         var attributeAssignments: [String] = []
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.deriveFrame()
             
             guard let type = FlowsMetamodel.objectType(name: typeName) else {
@@ -68,8 +69,8 @@ poietic add Flow name=expenses formula=50
 
             }
 
-            try acceptFrame(frame, in: design)
-            try closeDesign(design: design, options: options)
+            try env.accept(frame)
+            try env.close()
 
             print("Created node \(id)")
         }

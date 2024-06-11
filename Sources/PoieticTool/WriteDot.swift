@@ -81,8 +81,9 @@ extension PoieticTool {
         var missingLabel = "(none)"
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
-           
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
+
             guard let testURL = URL(string: output) else {
                 fatalError("Invalid resource reference: \(output)")
             }

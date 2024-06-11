@@ -11,12 +11,22 @@ import PoieticCore
 import PoieticFlows
 import SystemPackage
 
+// FIXME: --vv BEGIN vv--
+
+let DefaultDesignLocation = "design.poietic"
+let DesignEnvironmentVariable = "POIETIC_DESIGN"
+
+// FIXME: --^^ END ^^--
+
 /// Error thrown by the command-line tool.
 ///
 enum ToolError: Error, CustomStringConvertible {
+    // FIXME: Do not have this
+    case unknownError(Error)
+    
     // I/O errors
     case malformedLocation(String)
-    case unableToSaveDatabase(Error)
+    case unableToSaveDesign(Error)
     
     // Database errors
     case validationError(FrameValidationError)
@@ -45,10 +55,13 @@ enum ToolError: Error, CustomStringConvertible {
 
     public var description: String {
         switch self {
+        case .unknownError(let error):
+            return "Unknown error: \(error)"
+
         case .malformedLocation(let value):
             return "Malformed location: \(value)"
-        case .unableToSaveDatabase(let value):
-            return "Unable to save database. Reason: \(value)"
+        case .unableToSaveDesign(let value):
+            return "Unable to save design. Reason: \(value)"
 
         case .validationError(let error):
             var detail: String = ""
@@ -101,9 +114,12 @@ enum ToolError: Error, CustomStringConvertible {
         //       covered.
         
         switch self {
+        case .unknownError(let error):
+            return "Not your fault."
+            
         case .malformedLocation(_):
             return nil
-        case .unableToSaveDatabase(_):
+        case .unableToSaveDesign(_):
             return "Check whether the location is correct and that you have permissions for writing."
 
         case .validationError(_):
@@ -140,113 +156,6 @@ enum ToolError: Error, CustomStringConvertible {
         }
     }
 
-}
-
-let defaultDatabase = "design.poietic"
-let databaseEnvironment = "POIETIC_DESIGN"
-
-/// Get the database URL. The database location can be specified by options,
-/// environment variable or as a default name, in respective order.
-func databaseURL(options: Options? = nil) throws -> URL {
-    let location: String
-    let env = ProcessInfo.processInfo.environment
-    
-    if let path = options?.database {
-        location = path
-    }
-    else if let path = env[databaseEnvironment] {
-        location = path
-    }
-    else {
-        location = defaultDatabase
-    }
-    
-    if let url = URL(string: location) {
-        if url.scheme == nil {
-            return URL(fileURLWithPath: location, isDirectory: false)
-        }
-        else {
-            return url
-        }
-    }
-    else {
-        throw ToolError.malformedLocation(location)
-    }
-}
-
-/// Create a new empty design.
-///
-func createDesign(options: Options) -> Design {
-    return Design(metamodel: FlowsMetamodel)
-}
-
-func openDesign(url: URL, metamodel: Metamodel = FlowsMetamodel) throws -> Design {
-    let store = MakeshiftDesignStore(url: url)
-    let design: Design
-    do {
-        design = try store.load(metamodel: metamodel)
-    }
-    catch let error as FrameValidationError {
-        printValidationError(error)
-        throw ToolError.validationError(error)
-        
-    }
-    return design
-}
-
-/// Opens a graph from a package specified in the options.
-///
-func openDesign(options: Options? = nil, metamodel: Metamodel = FlowsMetamodel) throws -> Design {
-    let dataURL = try databaseURL(options: options)
-    return try openDesign(url: dataURL, metamodel: metamodel)
-}
-
-func printValidationError(_ error: FrameValidationError) {
-    // FIXME: Print to stderr
-    for violation in error.violations {
-        let objects = violation.objects.map { String($0) }.joined(separator: ",")
-        print("Constraint error: \(violation.constraint.name) object IDs: \(objects)")
-        if let abstract = violation.constraint.abstract {
-            print("    - \(abstract)")
-        }
-    }
-    for item in error.typeErrors {
-        let (id, typeErrors) = item
-        for typeError in typeErrors {
-            print("Type error (id:\(id)): \(typeError)")
-        }
-    }
-}
-
-/// Finalise operations on the design design and save the design to its store.
-///
-func closeDesign(design: Design, options: Options) throws {
-    let dataURL = try databaseURL(options: options)
-    let store = MakeshiftDesignStore(url: dataURL)
-    do {
-        try store.save(design: design)
-    }
-    catch {
-        throw ToolError.unableToSaveDatabase(error)
-    }
-}
-
-/// Try to accept a frame in a design.
-///
-/// Tries to accept the frame. If the frame contains constraint violations, then
-/// the violations are printed out in a more human-readable format.
-///
-func acceptFrame(_ frame: MutableFrame, in design: Design) throws {
-    // TODO: Print on stderr
-    
-    do {
-        try design.accept(frame)
-    }
-    catch let error as FrameValidationError {
-        printValidationError(error)
-
-        throw ToolError.constraintError
-    }
 }
 
 func compile(_ frame: StableFrame) throws -> CompiledModel {

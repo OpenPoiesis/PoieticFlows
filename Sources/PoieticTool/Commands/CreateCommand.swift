@@ -17,18 +17,18 @@ extension PoieticTool {
             abstract: "Create an empty design."
         )
         
-        @OptionGroup var options: Options
-
         @Option(name: [.customLong("import"), .customShort("i")],
                 help: "Poietic frame to import into the first frame.")
         var importPaths: [String] = []
 
-        @Flag(name: [.customLong("auto-parameters")],
-                help: "Automatically connect parameter nodes")
-        var autoParameters: Bool = false
+        // FIXME: [REFACTORING] add domains + metamodel
         
+        @Argument(help: "Path of design file to be created")
+        var location: String = DefaultDesignLocation
+
         mutating func run() throws {
-            let design = createDesign(options: options)
+            let design = Design(metamodel: FlowsMetamodel)
+            let env = try ToolEnvironment(location: location, design: design)
 
             if !importPaths.isEmpty {
                 let frame = design.createFrame()
@@ -45,21 +45,11 @@ extension PoieticTool {
                     }
                 }
                 
-                if autoParameters {
-                    let result = try autoConnectParameters(frame)
-                    if result.added.count + result.removed.count > 0 {
-                        print("Added \(result.added.count) parameter edges and removed \(result.removed.count) edges.")
-                    }
-                    else {
-                        print("All parameter connections seem to be ok.")
-                    }
-                }
-                
-                try acceptFrame(frame, in: design)
+                try env.accept(frame)
             }
             
-            try closeDesign(design: design, options: options)
-            print("Design created.")
+            try env.close()
+            print("Design created: \(env.url)")
         }
     }
 }

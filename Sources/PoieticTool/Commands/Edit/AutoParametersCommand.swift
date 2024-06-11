@@ -24,7 +24,8 @@ extension PoieticTool {
         var verbose: Bool = false
 
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.deriveFrame()
 
             let result = try autoConnectParameters(frame)
@@ -38,16 +39,15 @@ extension PoieticTool {
                 }
             }
 
-            try acceptFrame(frame, in: design)
+            try env.accept(frame)
+            try env.close()
+            
             if result.added.count + result.removed.count > 0 {
                 print("Added \(result.added.count) edges and removed \(result.removed.count) edges.")
             }
             else {
                 print("All parameter connections seem to be ok.")
             }
-            try closeDesign(design: design, options: options)
-            
-//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 

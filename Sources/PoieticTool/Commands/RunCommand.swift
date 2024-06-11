@@ -70,7 +70,9 @@ extension PoieticTool {
         var outputPath: String = "-"
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
+
             guard let solverType = Solver.registeredSolvers[solverName] else {
                 throw ToolError.unknownSolver(solverName)
             }

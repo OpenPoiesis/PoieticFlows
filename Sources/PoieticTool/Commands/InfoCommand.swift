@@ -16,26 +16,12 @@ extension PoieticTool {
         @OptionGroup var options: Options
 
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.currentFrame
-            let graph = frame.graph
-            
-            // At this point the URL is assumed to be well formed, otherwise
-            // we would get an error above.
-            //
-            let url = try! databaseURL(options: options)
-            
-            let solverList = Solver.registeredSolverNames.joined(separator: ", ")
-            let functionList = PoieticFlows.BuiltinFunctions.map {
-                $0.name
-            }.joined(separator: ", ")
-            
             
             let items: [(String?, String?)] = [
-                ("Available solvers", solverList),
-                ("Built-in functions", functionList),
-                (nil, nil),
-                ("Design database", url.relativeString),
+                ("Design", env.url.relativeString),
                 (nil, nil),
                 ("Current frame ID", "\(frame.id)"),
                 ("Frame object count", "\(frame.snapshots.count)"),
@@ -43,8 +29,8 @@ extension PoieticTool {
 
                 (nil, nil),
                 ("Graph", nil),
-                ("Nodes", "\(graph.nodes.count)"),
-                ("Edges", "\(graph.edges.count)"),
+                ("Nodes", "\(frame.nodes.count)"),
+                ("Edges", "\(frame.edges.count)"),
 
                 (nil, nil),
                 ("History", nil),

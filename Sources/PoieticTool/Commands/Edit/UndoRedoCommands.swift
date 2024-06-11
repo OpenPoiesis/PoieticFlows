@@ -19,19 +19,18 @@ extension PoieticTool {
         @OptionGroup var options: Options
 
         mutating func run() throws {
-            let design = try openDesign(options: options)
-            
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
+
             if !design.canUndo {
                 throw ToolError.noChangesToUndo
             }
             
             let frameID = design.undoableFrames.last!
-            
             design.undo(to: frameID)
 
-            try closeDesign(design: design, options: options)
+            try env.close()
             print("Did undo")
-//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 
@@ -47,19 +46,18 @@ extension PoieticTool {
         @OptionGroup var options: Options
 
         mutating func run() throws {
-            let design = try openDesign(options: options)
-            
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
+
             if !design.canRedo {
                 throw ToolError.noChangesToRedo
             }
             
             let frameID = design.redoableFrames.first!
-            
             design.redo(to: frameID)
 
-            try closeDesign(design: design, options: options)
+            try env.close()
             print("Did redo.")
-//            print("Current frame ID: \(design.currentFrame.id)")
         }
     }
 

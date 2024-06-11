@@ -36,11 +36,8 @@ extension PoieticTool {
         var reference: String
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
-            if design.isEmpty {
-                throw CleanExit.message("The design is empty.")
-            }
-
+            var env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.currentFrame
             
             guard let object = frame.object(stringReference: reference) else {
@@ -50,9 +47,7 @@ extension PoieticTool {
             switch outputFormat {
             case .text: printObjectAsText(object)
             case .json: printObjectAsJSON(object)
-
             }
-
         }
     }
 }

@@ -66,17 +66,15 @@ func createLibraryItem(fromDesignAt location: String) throws -> DesignLibraryIte
         url
     }
 
-
-    let design = try openDesign(url: actualURL)
+    var env = ToolEnvironment(url: actualURL)
+    let design = try env.open()
     let frame = design.currentFrame
-    
-    let info = frame.filter(type: ObjectType.DesignInfo).first?.attributes
-                    ?? [:]
+
+    let info = frame.filter(type: ObjectType.DesignInfo).first?.attributes ?? [:]
     
     let name: String
     if let infoName = try? info["name"]?.stringValue() {
         name = infoName
-        
     }
     else {
         name = actualURL.lastPathComponent

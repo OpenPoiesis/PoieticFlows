@@ -32,8 +32,9 @@ extension PoieticTool {
         var listType: ListType = .all
 
         mutating func run() throws {
-            let design = try openDesign(options: options)
-            
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
+
             if design.isEmpty {
                 throw CleanExit.message("The design design is empty.")
             }

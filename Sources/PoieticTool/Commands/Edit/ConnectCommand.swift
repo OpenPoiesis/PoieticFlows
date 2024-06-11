@@ -32,7 +32,8 @@ extension PoieticTool {
 
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.deriveFrame()
             let graph = frame
             
@@ -68,8 +69,8 @@ extension PoieticTool {
                                       target: target.id,
                                       components: [])
             
-            try acceptFrame(frame, in: design)
-            try closeDesign(design: design, options: options)
+            try env.accept(frame)
+            try env.close()
 
             print("Created edge \(id)")
 //            print("Current frame ID: \(design.currentFrame.id)")

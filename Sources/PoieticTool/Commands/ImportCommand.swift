@@ -20,7 +20,8 @@ extension PoieticTool {
         var fileName: String
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.deriveFrame()
             
             let bundle = try ForeignFrameBundle(path: fileName)
@@ -31,8 +32,9 @@ extension PoieticTool {
                 try reader.read(objects, into: frame)
                 print("Read \(objects.count) objects from collection '\(name)'")
             }
-            try acceptFrame(frame, in: design)
-            try closeDesign(design: design, options: options)
+
+            try env.accept(frame)
+            try env.close()
         }
     }
 }

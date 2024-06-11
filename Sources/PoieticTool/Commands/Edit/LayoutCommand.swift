@@ -38,7 +38,8 @@ extension PoieticTool {
         var references: [String] = []
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.deriveFrame()
             
             var objects: [ObjectSnapshot] = []
@@ -66,8 +67,8 @@ extension PoieticTool {
                 angle += step
             }
             
-            try acceptFrame(frame, in: design)
-            try closeDesign(design: design, options: options)
+            try env.accept(frame)
+            try env.close()
         }
     }
 }

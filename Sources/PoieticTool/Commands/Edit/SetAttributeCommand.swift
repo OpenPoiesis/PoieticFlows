@@ -33,24 +33,23 @@ extension PoieticTool {
 
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
-            let frame = design.currentFrame
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
+            let frame = design.deriveFrame()
             
             guard let object = frame.object(stringReference: reference) else {
                 throw ToolError.unknownObject(reference)
             }
 
-            let newFrame: MutableFrame = design.deriveFrame(original: frame.id)
-
-            let mutableObject = newFrame.mutableObject(object.id)
+            let mutableObject = frame.mutableObject(object.id)
 
             try setAttributeFromString(object: mutableObject,
                                        attribute: attributeName,
                                        string: value)
             
-            try acceptFrame(newFrame, in: design)
-
-            try closeDesign(design: design, options: options)
+            try env.accept(frame)
+            try env.close()
+            
             print("Property set in \(reference): \(attributeName) = \(value)")
         }
     }

@@ -25,7 +25,8 @@ extension PoieticTool {
 
         
         mutating func run() throws {
-            let design = try openDesign(options: options)
+            let env = try ToolEnvironment(location: options.designLocation)
+            let design = try env.open()
             let frame = design.deriveFrame()
             
             guard let object = frame.object(stringReference: reference) else {
@@ -33,8 +34,9 @@ extension PoieticTool {
             }
 
             let removed = frame.removeCascading(object.id)
-            try acceptFrame(frame, in: design)
-            try closeDesign(design: design, options: options)
+
+            try env.accept(frame)
+            try env.close()
 
             print("Removed object: \(object.id)")
             if !removed.isEmpty {
