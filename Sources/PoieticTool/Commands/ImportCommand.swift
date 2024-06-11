@@ -5,14 +5,14 @@
 //  Created by Stefan Urbanek on 14/08/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
 // TODO: Merge with PrintCommand, use --format=id
 extension PoieticTool {
     struct Import: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(abstract: "Import a frame into the design")
         @OptionGroup var options: Options
 

@@ -7,7 +7,7 @@
 
 import SystemPackage
 import Foundation
-import ArgumentParser
+@preconcurrency import ArgumentParser
 
 import PoieticFlows
 import PoieticCore
@@ -59,7 +59,7 @@ let DefaultDOTStyle = DotStyle(
 
 extension PoieticTool {
     struct WriteDOT: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(abstract: "Write a Graphviz DOT file.")
 
         @OptionGroup var options: Options

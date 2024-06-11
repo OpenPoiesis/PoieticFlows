@@ -12,10 +12,6 @@ public typealias ParsedFormula = Result<UnboundExpression, ExpressionSyntaxError
 public struct ParsedFormulaComponent: Component {
     public let parsedFormula: UnboundExpression
     
-    public static var trait = Trait(
-        name: "ParsedFormula"
-    )
-    
     public init(parsedFormula: UnboundExpression) {
         self.parsedFormula = parsedFormula
     }

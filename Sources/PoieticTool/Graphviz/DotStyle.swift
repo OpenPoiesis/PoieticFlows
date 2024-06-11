@@ -9,7 +9,7 @@ import PoieticCore
 /// Object that encapsulates multiple styles for nodes and edges of a Graphviz
 /// graph.
 ///
-public class DotStyle {
+public final class DotStyle: Sendable {
     /// List of edge styles
     public let edgeStyles: [DotEdgeStyle]
     /// List of node styles
@@ -23,7 +23,7 @@ public class DotStyle {
 
 /// Style of an edge for Graphviz/DOT export.
 ///
-public struct DotEdgeStyle {
+public struct DotEdgeStyle: Sendable {
     /// Predicate that determines which edges match this style.
     ///
     public let predicate: Predicate
@@ -43,7 +43,7 @@ public struct DotEdgeStyle {
 
 /// Style of a node for Graphviz/DOT export.
 ///
-public struct DotNodeStyle {
+public struct DotNodeStyle: Sendable {
     /// Predicate that determines which nodes match this style.
     ///
     public let predicate: Predicate

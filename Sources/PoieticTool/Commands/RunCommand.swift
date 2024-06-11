@@ -5,7 +5,7 @@
 //  Created by Stefan Urbanek on 17/07/2022.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import SystemPackage
 import Foundation
 
@@ -14,7 +14,7 @@ import PoieticFlows
 
 extension PoieticTool {
     struct Run: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(abstract: "Run the simulation and generate output")
 
         @OptionGroup var options: Options

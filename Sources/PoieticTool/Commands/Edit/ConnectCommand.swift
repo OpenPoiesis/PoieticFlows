@@ -5,7 +5,7 @@
 //  Created by Stefan Urbanek on 04/07/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
@@ -13,7 +13,7 @@ import PoieticFlows
 
 extension PoieticTool {
     struct NewConnection: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 commandName: "connect",
                 abstract: "Create a new connection (edge) between two nodes"

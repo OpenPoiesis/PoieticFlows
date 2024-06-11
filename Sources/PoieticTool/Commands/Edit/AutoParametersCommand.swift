@@ -5,13 +5,13 @@
 //  Created by Stefan Urbanek on 04/07/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
 extension PoieticTool {
     struct AutoParameters: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 commandName: "auto-parameters",
                 abstract: "Automatically connect parameter nodes: connect required, disconnect unused"

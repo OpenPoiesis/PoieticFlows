@@ -5,13 +5,13 @@
 //  Created by Stefan Urbanek on 04/07/2023.
 //
 
-import ArgumentParser
+@preconcurrency import ArgumentParser
 import PoieticCore
 import PoieticFlows
 
 extension PoieticTool {
     struct Undo: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 abstract: "Undo last change"
             )
@@ -39,7 +39,7 @@ extension PoieticTool {
 
 extension PoieticTool {
     struct Redo: ParsableCommand {
-        static var configuration
+        static let configuration
             = CommandConfiguration(
                 abstract: "Redo undone change"
             )
