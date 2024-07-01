@@ -31,6 +31,9 @@ enum ToolError: Error, CustomStringConvertible {
     // Database errors
     case validationError(FrameValidationError)
     
+    // Import error
+//    case foreignFrameError(String, ForeignFrameError)
+    
     // Simulation errors
     case unknownObjectName(String)
     case unknownVariables([String])
@@ -53,6 +56,8 @@ enum ToolError: Error, CustomStringConvertible {
     case invalidAttributeAssignment(String)
     case typeMismatch(String, String, String)
 
+    case frameLoadingError(NEWFrameLoaderError)
+    
     public var description: String {
         switch self {
         case .unknownError(let error):
@@ -106,6 +111,8 @@ enum ToolError: Error, CustomStringConvertible {
             return "Invalid attribute assignment: \(value)"
         case .typeMismatch(let subject, let value, let expected):
             return "Type mismatch in \(subject) value '\(value)', expected type: \(expected)"
+        case .frameLoadingError(let error):
+            return "Frame loading error: \(error)"
         }
     }
     
@@ -152,6 +159,8 @@ enum ToolError: Error, CustomStringConvertible {
         case .invalidAttributeAssignment(_):
             return "Attribute assignment should be in a form: `attribute_name=value`, everything after '=' is considered a value. Ex.: `name=account`, `formula=fish * 10`."
         case .typeMismatch(_, _, _):
+            return nil
+        case .frameLoadingError(_):
             return nil
         }
     }

@@ -114,9 +114,7 @@ func printObjectAsText(_ object: ObjectSnapshot) {
 }
 
 func printObjectAsJSON(_ object: ObjectSnapshot) {
-    let foreign = object.asForeignObject()
-    let json = foreign.asJSON()
-    let output = try! json.asJSONString()
-    
+    let data = try! JSONFrameWriter.objectToJSON(object)
+    let output = String(data: data, encoding: .utf8)!
     print(output)
 }

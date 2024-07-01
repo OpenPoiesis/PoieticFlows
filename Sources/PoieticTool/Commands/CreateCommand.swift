@@ -31,17 +31,18 @@ extension PoieticTool {
             let env = try ToolEnvironment(location: location, design: design)
 
             if !importPaths.isEmpty {
+                let loader = ForeignFrameLoader()
                 let frame = design.createFrame()
+
                 for path in importPaths {
-                    let bundle = try ForeignFrameBundle(path: path)
-                    // TODO: Should we share the reader?
-                    let reader = ForeignFrameReader(info: bundle.info, design: frame.design)
-                    
+                    let reader = JSONFrameReader()
+                    let foreignFrame = try reader.read(path: path)
                     print("Importing from: \(path)")
-                    for name in bundle.collectionNames {
-                        let objects = try bundle.objects(in: name)
-                        try reader.read(objects, into: frame)
-                        print("Read \(objects.count) objects from collection '\(name)'")
+                    do {
+                        try loader.load(foreignFrame, into: frame)
+                    }
+                    catch let error as NEWFrameLoaderError {
+                        throw ToolError.frameLoadingError(error)
                     }
                 }
                 

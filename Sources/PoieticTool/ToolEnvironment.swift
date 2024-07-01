@@ -19,7 +19,7 @@ class ToolEnvironment {
     
     /// Get the design URL. The database location can be specified by options,
     /// environment variable or as a default name, in respective order.
-    static func designURL(_ location: String?) throws -> URL {
+    static func designURL(_ location: String?) throws (ToolError) -> URL {
         let actualLocation: String
         let env = ProcessInfo.processInfo.environment
         
@@ -46,7 +46,7 @@ class ToolEnvironment {
         }
     }
     
-    public init(location: String?, design: Design? = nil) throws {
+    public init(location: String?, design: Design? = nil) throws (ToolError) {
         self.url = try Self.designURL(location)
         self.design = design
     }
@@ -91,7 +91,7 @@ class ToolEnvironment {
     /// Tries to accept the frame. If the frame contains constraint violations, then
     /// the violations are printed out in a more human-readable format.
     ///
-    public func accept(_ frame: MutableFrame) throws {
+    public func accept(_ frame: MutableFrame) throws (ToolError) {
         guard let design = self.design else {
             fatalError("Trying to accept already closed design: \(url)")
         }
@@ -102,6 +102,10 @@ class ToolEnvironment {
             printValidationError(error)
 
             throw ToolError.validationError(error)
+        }
+        catch {
+            // FIXME: [REFACTORING] we should not get here
+            throw ToolError.unknownError(error)
         }
     }
     
@@ -122,7 +126,7 @@ class ToolEnvironment {
         }
     }
 
-    public func close() throws {
+    public func close() throws (ToolError) {
         guard let design = self.design else {
             fatalError("Trying to close already closed design: \(url)")
         }

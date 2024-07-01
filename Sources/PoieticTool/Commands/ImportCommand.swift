@@ -24,13 +24,14 @@ extension PoieticTool {
             let design = try env.open()
             let frame = design.deriveFrame()
             
-            let bundle = try ForeignFrameBundle(path: fileName)
-            let reader = ForeignFrameReader(info: bundle.info, design: design)
-
-            for name in bundle.collectionNames {
-                let objects = try bundle.objects(in: name)
-                try reader.read(objects, into: frame)
-                print("Read \(objects.count) objects from collection '\(name)'")
+            let loader = ForeignFrameLoader()
+            let reader = JSONFrameReader()
+            do {
+                let foreignFrame = try reader.read(path: fileName)
+                try loader.load(foreignFrame, into: frame)
+            }
+            catch let error as NEWFrameLoaderError {
+                throw ToolError.frameLoadingError(error)
             }
 
             try env.accept(frame)
