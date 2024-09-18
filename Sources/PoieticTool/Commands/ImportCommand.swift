@@ -30,7 +30,7 @@ extension PoieticTool {
                 let foreignFrame = try reader.read(path: fileName)
                 try loader.load(foreignFrame, into: frame)
             }
-            catch let error as NEWFrameLoaderError {
+            catch let error as FrameLoaderError {
                 throw ToolError.frameLoadingError(error)
             }
 

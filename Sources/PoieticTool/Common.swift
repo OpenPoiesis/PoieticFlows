@@ -56,7 +56,7 @@ enum ToolError: Error, CustomStringConvertible {
     case invalidAttributeAssignment(String)
     case typeMismatch(String, String, String)
 
-    case frameLoadingError(NEWFrameLoaderError)
+    case frameLoadingError(FrameLoaderError)
     
     public var description: String {
         switch self {
