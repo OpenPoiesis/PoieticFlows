@@ -7,5 +7,6 @@
 
 import PoieticCore
 
-public let FlowsMetamodel = Metamodel(domains: [Domain.Basic,
-                                                Domain.StockFlow])
+public let FlowsMetamodel = Metamodel(name: "Flows",
+                                      merging: Metamodel.Basic,
+                                               Metamodel.StockFlow)
