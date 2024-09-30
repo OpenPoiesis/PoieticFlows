@@ -29,7 +29,7 @@ enum ToolError: Error, CustomStringConvertible {
     case unableToSaveDesign(Error)
     
     // Database errors
-    case validationError(FrameValidationError)
+    case constraintViolationError(FrameConstraintError)
     
     // Import error
 //    case foreignFrameError(String, ForeignFrameError)
@@ -68,13 +68,13 @@ enum ToolError: Error, CustomStringConvertible {
         case .unableToSaveDesign(let value):
             return "Unable to save design. Reason: \(value)"
 
-        case .validationError(let error):
+        case .constraintViolationError(let error):
             var detail: String = ""
             if !error.violations.isEmpty {
                 detail += "\(error.violations.count) constraint violation errors"
             }
-            if !error.typeErrors.isEmpty {
-                detail += "\(error.typeErrors.count) objects with type errors"
+            if !error.objectErrors.isEmpty {
+                detail += "\(error.objectErrors.count) objects with errors"
             }
             if detail == "" {
                 detail = "unspecified validation error(s)"
@@ -129,7 +129,7 @@ enum ToolError: Error, CustomStringConvertible {
         case .unableToSaveDesign(_):
             return "Check whether the location is correct and that you have permissions for writing."
 
-        case .validationError(_):
+        case .constraintViolationError(_):
             return "Unfortunately the only way is to inspect the database file. 'doctor' command is not yet implemented."
             
         case .unknownSolver(_):

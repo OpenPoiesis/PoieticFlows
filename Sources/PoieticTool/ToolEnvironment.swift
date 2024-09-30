@@ -68,9 +68,9 @@ class ToolEnvironment {
             // FIXME: [REFACTORING] remove the metamodel here
             design = try store.load(metamodel: FlowsMetamodel)
         }
-        catch let error as FrameValidationError {
+        catch let error as FrameConstraintError {
             printValidationError(error)
-            throw ToolError.validationError(error)
+            throw ToolError.constraintViolationError(error)
             
         }
         catch {
@@ -98,18 +98,14 @@ class ToolEnvironment {
         do {
             try design.accept(frame)
         }
-        catch let error as FrameValidationError {
+        catch let error as FrameConstraintError {
             printValidationError(error)
 
-            throw ToolError.validationError(error)
-        }
-        catch {
-            // FIXME: [REFACTORING] we should not get here
-            throw ToolError.unknownError(error)
+            throw ToolError.constraintViolationError(error)
         }
     }
     
-    private func printValidationError(_ error: FrameValidationError) {
+    private func printValidationError(_ error: FrameConstraintError) {
         // FIXME: Print to stderr
         for violation in error.violations {
             let objects = violation.objects.map { String($0) }.joined(separator: ",")
@@ -118,7 +114,7 @@ class ToolEnvironment {
                 print("    - \(abstract)")
             }
         }
-        for item in error.typeErrors {
+        for item in error.objectErrors {
             let (id, typeErrors) = item
             for typeError in typeErrors {
                 print("Type error (id:\(id)): \(typeError)")
