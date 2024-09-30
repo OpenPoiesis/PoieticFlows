@@ -6,8 +6,11 @@
 //
 
 @preconcurrency import ArgumentParser
+import Foundation
 import PoieticCore
 import PoieticFlows
+
+
 
 // TODO: Merge with PrintCommand, use --format=id
 extension PoieticTool {
@@ -25,9 +28,9 @@ extension PoieticTool {
             let frame = design.deriveFrame()
             
             let loader = ForeignFrameLoader()
-            let reader = JSONFrameReader()
             do {
-                let foreignFrame = try reader.read(path: fileName)
+                let foreignFrame = try readFrame(fromPath: fileName)
+
                 try loader.load(foreignFrame, into: frame)
             }
             catch let error as FrameLoaderError {

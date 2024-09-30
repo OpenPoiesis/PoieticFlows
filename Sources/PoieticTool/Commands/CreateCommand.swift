@@ -35,8 +35,7 @@ extension PoieticTool {
                 let frame = design.createFrame()
 
                 for path in importPaths {
-                    let reader = JSONFrameReader()
-                    let foreignFrame = try reader.read(path: path)
+                    let foreignFrame = try readFrame(fromPath: path)
                     print("Importing from: \(path)")
                     do {
                         try loader.load(foreignFrame, into: frame)

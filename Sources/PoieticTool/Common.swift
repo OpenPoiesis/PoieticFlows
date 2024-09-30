@@ -26,7 +26,9 @@ enum ToolError: Error, CustomStringConvertible {
     
     // I/O errors
     case malformedLocation(String)
+    case fileDoesNotExist(String)
     case unableToSaveDesign(Error)
+    case foreignFrameError(ForeignFrameError)
     
     // Database errors
     case constraintViolationError(FrameConstraintError)
@@ -67,6 +69,8 @@ enum ToolError: Error, CustomStringConvertible {
             return "Malformed location: \(value)"
         case .unableToSaveDesign(let value):
             return "Unable to save design. Reason: \(value)"
+        case .foreignFrameError(let error):
+            return "Foreign frame error: \(error)"
 
         case .constraintViolationError(let error):
             var detail: String = ""
@@ -113,6 +117,8 @@ enum ToolError: Error, CustomStringConvertible {
             return "Type mismatch in \(subject) value '\(value)', expected type: \(expected)"
         case .frameLoadingError(let error):
             return "Frame loading error: \(error)"
+        case .fileDoesNotExist(let file):
+            return "File '\(file)' not found"
         }
     }
     
@@ -161,6 +167,10 @@ enum ToolError: Error, CustomStringConvertible {
         case .typeMismatch(_, _, _):
             return nil
         case .frameLoadingError(_):
+            return nil
+        case .fileDoesNotExist(_):
+            return nil
+        case .foreignFrameError(_):
             return nil
         }
     }
@@ -233,4 +243,53 @@ func setAttributeFromString(object: ObjectSnapshot,
                                 forKey: attributeName)
     }
 
+}
+
+
+// Frame reading
+// ====================================================================
+
+func makeFileURL(fromPath path: String) throws (ToolError) -> URL {
+    let url: URL
+    let manager = FileManager()
+
+    if !manager.fileExists(atPath: path) {
+        throw .fileDoesNotExist(path)
+    }
+    
+    // Determine whether the file is a directory or a file
+    
+    if let attrs = try? manager.attributesOfItem(atPath: path) {
+        if attrs[FileAttributeKey.type] as? FileAttributeType == FileAttributeType.typeDirectory {
+            url = URL(fileURLWithPath: path, isDirectory: true)
+        }
+        else {
+            url = URL(fileURLWithPath: path, isDirectory: false)
+        }
+    }
+    else {
+        url = URL(fileURLWithPath: path)
+    }
+
+    return url
+}
+
+func readFrame(fromPath path: String) throws (ToolError) -> ForeignFrame {
+    let reader = JSONFrameReader()
+    let foreignFrame: ForeignFrame
+    let url = try makeFileURL(fromPath: path)
+    
+    do {
+        if url.hasDirectoryPath {
+            foreignFrame = try reader.read(bundleAtURL: url)
+        }
+        else {
+            foreignFrame = try reader.read(fileAtURL: url)
+        }
+    }
+    catch {
+        throw .foreignFrameError(error)
+    }
+    
+    return foreignFrame
 }
