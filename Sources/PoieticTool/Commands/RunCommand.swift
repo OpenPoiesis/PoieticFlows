@@ -146,7 +146,8 @@ extension PoieticTool {
 //                              variables: outputVariables,
 //                              states: simulator.output)
             }
-            
+
+            try env.close()
         }
     }
 }

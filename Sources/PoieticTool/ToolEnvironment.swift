@@ -83,7 +83,8 @@ class ToolEnvironment {
 
     deinit {
         if self.design != nil {
-            print("FIXME: THE ENVIRONMENT WAS NOT CLOSED")
+            // FIXME: Make sure we close the environment. Then remove this.
+            print("DEBUG: The environment was not closed (the user should not be worried)")
         }
     }
     /// Try to accept a frame in a design.
@@ -117,7 +118,7 @@ class ToolEnvironment {
         for item in error.objectErrors {
             let (id, typeErrors) = item
             for typeError in typeErrors {
-                print("Type error (id:\(id)): \(typeError)")
+                print("Type error:\(id): \(typeError)")
             }
         }
     }
