@@ -8,7 +8,7 @@
 import PoieticCore
 
 /// Defaults fro simulation taken from an object with a trait
-/// ``/PoieticCore/Trait/Simulation``.
+/// ``PoieticCore/Trait/Simulation``.
 ///
 /// - SeeAlso: ``Simulator/init(model:solverType:)``
 ///
@@ -34,7 +34,7 @@ public struct SimulationDefaults {
 /// in the order provided without causing broken computational dependencies.
 ///
 /// Additional information about specific object types is provided in stored
-/// properties such as ``stocks``, ``flows`` or ``charts``.
+/// properties such as ``stocks``, or ``charts``.
 ///
 /// ## Uses by Applications
 ///
@@ -180,15 +180,10 @@ public struct CompiledModel {
     /// This property is not used during computation, it is provided for
     /// consumers of the simulation state or simulation result.
     ///
-    /// - SeeAlso: ``PoieticCore/ObjectType/Chart``,
-    ///   ``PoieticCore/ObjectType/ChartSeries``
-    ///
     public let charts: [Chart]
 
 
     /// Compiled bindings of controls to their value objects.
-    ///
-    /// - See also: ``PoieticCore/ObjectType/Control``.
     ///
     public let valueBindings: [CompiledControlBinding]
         

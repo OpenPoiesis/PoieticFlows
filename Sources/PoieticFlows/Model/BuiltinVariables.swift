@@ -12,7 +12,7 @@ extension Variable {
     // ---------------------------------------------------------------------
     /// Built-in variable reference that represents the simulation time.
     ///
-    nonisolated(unsafe) public static let TimeVariable = Variable(
+    public static let TimeVariable = Variable(
         name: "time",
         abstract: "Current simulation time"
     )
@@ -20,7 +20,7 @@ extension Variable {
     // TODO: Rename to 'dt'?
     /// Built-in variable reference that represents the time delta.
     ///
-    nonisolated(unsafe) public static let TimeDeltaVariable = Variable(
+    public static let TimeDeltaVariable = Variable(
         name: "time_delta",
         abstract: "Simulation time delta - time between discrete steps of the simulation."
     )

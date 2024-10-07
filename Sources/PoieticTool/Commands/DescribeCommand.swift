@@ -48,6 +48,7 @@ extension PoieticTool {
             case .text: printObjectAsText(object)
             case .json: printObjectAsJSON(object)
             }
+            try env.close()
         }
     }
 }

@@ -127,7 +127,7 @@ enum ToolError: Error, CustomStringConvertible {
         //       covered.
         
         switch self {
-        case .unknownError(let error):
+        case .unknownError(_):
             return "Not your fault."
             
         case .malformedLocation(_):
@@ -290,6 +290,5 @@ func readFrame(fromPath path: String) throws (ToolError) -> ForeignFrame {
     catch {
         throw .foreignFrameError(error)
     }
-    
     return foreignFrame
 }

@@ -40,7 +40,7 @@ extension PoieticTool {
                     do {
                         try loader.load(foreignFrame, into: frame)
                     }
-                    catch let error as FrameLoaderError {
+                    catch {
                         throw ToolError.frameLoadingError(error)
                     }
                 }

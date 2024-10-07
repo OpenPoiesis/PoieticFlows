@@ -129,6 +129,7 @@ public class Compiler {
     ///       builtin.
     ///       See ``StateVariableContent`` for more information.
     ///     - valueType: Type of the state variable value.
+    ///     - name: Name of the state variable.
     ///
     public func createStateVariable(content: StateVariableContent,
                                     valueType: ValueType,

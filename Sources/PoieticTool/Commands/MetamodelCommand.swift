@@ -41,6 +41,7 @@ extension PoieticTool {
             else {
                 try printAll(metamodel: metamodel)
             }
+            try env.close()
         }
         
         func printAll(metamodel: Metamodel) throws {

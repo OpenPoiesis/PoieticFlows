@@ -99,7 +99,7 @@ class ToolEnvironment {
         do {
             try design.accept(frame)
         }
-        catch let error as FrameConstraintError {
+        catch {
             printValidationError(error)
 
             throw ToolError.constraintViolationError(error)

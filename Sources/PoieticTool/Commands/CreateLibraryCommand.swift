@@ -80,6 +80,8 @@ func createLibraryItem(fromDesignAt location: String) throws -> DesignLibraryIte
         name = actualURL.lastPathComponent
     }
 
+    try env.close()
+    
     return DesignLibraryItem(
         url: actualURL,
         name: name,

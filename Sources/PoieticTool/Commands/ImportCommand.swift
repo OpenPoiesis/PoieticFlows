@@ -28,12 +28,11 @@ extension PoieticTool {
             let frame = design.deriveFrame()
             
             let loader = ForeignFrameLoader()
+            let foreignFrame = try readFrame(fromPath: fileName)
             do {
-                let foreignFrame = try readFrame(fromPath: fileName)
-
                 try loader.load(foreignFrame, into: frame)
             }
-            catch let error as FrameLoaderError {
+            catch {
                 throw ToolError.frameLoadingError(error)
             }
 
