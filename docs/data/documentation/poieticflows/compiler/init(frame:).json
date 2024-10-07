@@ -28,7 +28,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows8CompilerC5frameAC0A4Core12MutableFrameC_tcfc",
+    "externalID" : "s:12PoieticFlows8CompilerC5frameAC0A4Core11StableFrameC_tcfc",
     "fragments" : [
       {
         "kind" : "identifier",
@@ -48,8 +48,8 @@
       },
       {
         "kind" : "typeIdentifier",
-        "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
-        "text" : "MutableFrame"
+        "preciseIdentifier" : "s:11PoieticCore11StableFrameC",
+        "text" : "StableFrame"
       },
       {
         "kind" : "text",
@@ -95,8 +95,8 @@
             },
             {
               "kind" : "typeIdentifier",
-              "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
-              "text" : "MutableFrame"
+              "preciseIdentifier" : "s:11PoieticCore11StableFrameC",
+              "text" : "StableFrame"
             },
             {
               "kind" : "text",
@@ -290,8 +290,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
-      "text" : "MutableFrame"
+      "preciseIdentifier" : "s:11PoieticCore11StableFrameC",
+      "text" : "StableFrame"
     },
     {
       "kind" : "text",

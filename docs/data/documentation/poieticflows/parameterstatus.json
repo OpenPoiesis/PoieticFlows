@@ -127,6 +127,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParameterStatus\/missing",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParameterStatus\/unused(node:edge:)",
@@ -135,6 +137,7 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParameterStatus\/Equatable-Implementations"

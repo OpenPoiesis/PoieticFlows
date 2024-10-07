@@ -89,6 +89,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Simulator",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState"
@@ -98,12 +99,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/init(model:solverType:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/compiledModel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/currentState",
@@ -119,6 +124,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/dataSeries(index:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/initializeState(override:)",

@@ -137,12 +137,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/==(_:_:)"
       ],
       "title" : "Operators"
     },
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/builtin(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/internalState(_:)",
@@ -151,12 +155,15 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/description"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariableContent\/Equatable-Implementations"

@@ -92,29 +92,29 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/init(parsedFormula:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/parsedFormula"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/attribute(forKey:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/setAttribute(value:forKey:)"
       ],
       "title" : "Instance Methods"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/trait"
-      ],
-      "title" : "Type Properties"
     }
   ],
   "variants" : [
@@ -387,48 +387,6 @@
   "title" : "setAttribute(value:forKey:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/setattribute(value:forkey:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent/trait": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "trait"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5TraitC",
-      "text" : "Trait"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent\/trait",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "trait",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/parsedformulacomponent\/trait"
 }
 }
 }

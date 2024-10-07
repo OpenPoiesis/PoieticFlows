@@ -96,6 +96,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Solver",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver",
@@ -107,6 +108,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Operators",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/*(_:_:)-402xh",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/*(_:_:)-9sb44",
@@ -117,6 +120,8 @@
       "title" : "Operators"
     },
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/init(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/init(zeroCount:)"
@@ -124,6 +129,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/endIndex",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/startIndex",
@@ -132,6 +139,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/adding(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/divided(by:)",
@@ -142,18 +151,23 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Subscripts",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/subscript(_:)"
       ],
       "title" : "Subscripts"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/Index"
       ],
       "title" : "Type Aliases"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/BidirectionalCollection-Implementations",

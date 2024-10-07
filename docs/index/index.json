@@ -1,4 +1,7 @@
 {
+  "includedArchiveIdentifiers" : [
+    "PoieticFlows"
+  ],
   "interfaceLanguages" : {
     "swift" : [
       {
@@ -13,61 +16,6 @@
                 "path" : "\/documentation\/poieticflows\/flowsmetamodel",
                 "title" : "let FlowsMetamodel: Metamodel",
                 "type" : "var"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/formula",
-                "title" : "static let Formula: Trait",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/flow",
-                "title" : "static let Flow: Trait",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/flow",
-                "title" : "static let Flow: ObjectType",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/auxiliary",
-                "title" : "static let Auxiliary: ObjectType",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/stock",
-                "title" : "static let Stock: Trait",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/stock",
-                "title" : "static let Stock: ObjectType",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/graphicalfunction",
-                "title" : "static let GraphicalFunction: Trait",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/chart",
-                "title" : "static let Chart: Trait",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chart",
-                "title" : "static let Chart: ObjectType",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chartseries",
-                "title" : "static let ChartSeries: ObjectType",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/control",
-                "title" : "static let Control: ObjectType",
-                "type" : "property"
               }
             ],
             "path" : "\/documentation\/poieticflows\/metamodel",
@@ -322,6 +270,11 @@
                   {
                     "title" : "Type Properties",
                     "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/solver\/variables",
+                    "title" : "static let Variables: [Variable]",
+                    "type" : "property"
                   },
                   {
                     "path" : "\/documentation\/poieticflows\/solver\/registeredsolvernames",
@@ -640,13 +593,23 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/poieticflows\/numericvector\/indices(of:)",
+                        "title" : "func indices(of: Self.Element) -> RangeSet<Self.Index>",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/numericvector\/indices(where:)",
+                        "title" : "func indices(where: (Self.Element) throws -> Bool) rethrows -> RangeSet<Self.Index>",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/poieticflows\/numericvector\/makeiterator()",
                         "title" : "func makeIterator() -> IndexingIterator<Self>",
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/poieticflows\/numericvector\/map(_:)-49bjt",
-                        "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                        "path" : "\/documentation\/poieticflows\/numericvector\/map(_:)-8ai8o",
+                        "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                         "type" : "method"
                       },
                       {
@@ -682,6 +645,11 @@
                       {
                         "path" : "\/documentation\/poieticflows\/numericvector\/ranges(of:)",
                         "title" : "func ranges<C>(of: C) -> [Range<Self.Index>]",
+                        "type" : "method"
+                      },
+                      {
+                        "path" : "\/documentation\/poieticflows\/numericvector\/removingsubranges(_:)",
+                        "title" : "func removingSubranges(RangeSet<Self.Index>) -> DiscontiguousSlice<Self>",
                         "type" : "method"
                       },
                       {
@@ -776,6 +744,11 @@
                         "type" : "method"
                       },
                       {
+                        "path" : "\/documentation\/poieticflows\/numericvector\/count(where:)",
+                        "title" : "func count<E>(where: (Self.Element) throws(E) -> Bool) throws(E) -> Int",
+                        "type" : "method"
+                      },
+                      {
                         "path" : "\/documentation\/poieticflows\/numericvector\/elementsequal(_:)",
                         "title" : "func elementsEqual<OtherSequence>(OtherSequence) -> Bool",
                         "type" : "method"
@@ -836,8 +809,8 @@
                         "type" : "method"
                       },
                       {
-                        "path" : "\/documentation\/poieticflows\/numericvector\/map(_:)-kmw",
-                        "title" : "func map<T>((Self.Element) throws -> T) rethrows -> [T]",
+                        "path" : "\/documentation\/poieticflows\/numericvector\/map(_:)-ttnw",
+                        "title" : "func map<T, E>((Self.Element) throws(E) -> T) throws(E) -> [T]",
                         "type" : "method"
                       },
                       {
@@ -978,11 +951,6 @@
                 "path" : "\/documentation\/poieticflows\/builtinvariable",
                 "title" : "BuiltinVariable",
                 "type" : "enum"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/bindexpression(_:variables:functions:)",
-                "title" : "func bindExpression(UnboundExpression, variables: [String : StateVariable], functions: [String : Function]) throws -> BoundExpression",
-                "type" : "func"
               },
               {
                 "children" : [
@@ -1144,11 +1112,6 @@
                   {
                     "path" : "\/documentation\/poieticflows\/compiledmodel\/charts",
                     "title" : "let charts: [Chart]",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compiledmodel\/flows",
-                    "title" : "let flows: [CompiledFlow]",
                     "type" : "property"
                   },
                   {
@@ -1495,12 +1458,12 @@
                   },
                   {
                     "path" : "\/documentation\/poieticflows\/compiledstock\/allowsnegative",
-                    "title" : "var allowsNegative: Bool",
+                    "title" : "let allowsNegative: Bool",
                     "type" : "property"
                   },
                   {
                     "path" : "\/documentation\/poieticflows\/compiledstock\/delayedinflow",
-                    "title" : "var delayedInflow: Bool",
+                    "title" : "let delayedInflow: Bool",
                     "type" : "property"
                   },
                   {
@@ -1526,37 +1489,6 @@
                 ],
                 "path" : "\/documentation\/poieticflows\/compiledstock",
                 "title" : "CompiledStock",
-                "type" : "struct"
-              },
-              {
-                "children" : [
-                  {
-                    "title" : "Instance Properties",
-                    "type" : "groupMarker"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compiledflow\/id",
-                    "title" : "let id: ObjectID",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compiledflow\/objectindex",
-                    "title" : "let objectIndex: Int",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compiledflow\/priority",
-                    "title" : "let priority: Int",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compiledflow\/variableindex",
-                    "title" : "let variableIndex: SimulationState.Index",
-                    "type" : "property"
-                  }
-                ],
-                "path" : "\/documentation\/poieticflows\/compiledflow",
-                "title" : "CompiledFlow",
                 "type" : "struct"
               },
               {
@@ -1779,7 +1711,7 @@
                   },
                   {
                     "path" : "\/documentation\/poieticflows\/compiler\/init(frame:)",
-                    "title" : "init(frame: MutableFrame)",
+                    "title" : "init(frame: StableFrame)",
                     "type" : "init"
                   },
                   {
@@ -1811,13 +1743,8 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/poieticflows\/compiler\/compile(_:)",
-                    "title" : "func compile(Node) throws -> ComputationalRepresentation",
-                    "type" : "method"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/compiler\/compile(stocks:flows:)",
-                    "title" : "func compile(stocks: [Node], flows: [ObjectID : CompiledFlow]) -> [CompiledStock]",
+                    "path" : "\/documentation\/poieticflows\/compiler\/compile(_:in:)",
+                    "title" : "func compile(Node, in: RuntimeContext) throws -> ComputationalRepresentation",
                     "type" : "method"
                   },
                   {
@@ -1826,8 +1753,8 @@
                     "type" : "method"
                   },
                   {
-                    "path" : "\/documentation\/poieticflows\/compiler\/compileformulanode(_:)",
-                    "title" : "func compileFormulaNode(Node) throws -> ComputationalRepresentation",
+                    "path" : "\/documentation\/poieticflows\/compiler\/compileformulanode(_:in:)",
+                    "title" : "func compileFormulaNode(Node, in: RuntimeContext) throws -> ComputationalRepresentation",
                     "type" : "method"
                   },
                   {
@@ -1838,6 +1765,11 @@
                   {
                     "path" : "\/documentation\/poieticflows\/compiler\/createstatevariable(content:valuetype:name:)",
                     "title" : "func createStateVariable(content: StateVariableContent, valueType: ValueType, name: String) -> SimulationState.Index",
+                    "type" : "method"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/compiler\/stockadjacencies()",
+                    "title" : "func stockAdjacencies() -> [StockAdjacency]",
                     "type" : "method"
                   },
                   {
@@ -1898,6 +1830,11 @@
                     "type" : "groupMarker"
                   },
                   {
+                    "path" : "\/documentation\/poieticflows\/nodeissue\/computationcycle",
+                    "title" : "case computationCycle",
+                    "type" : "case"
+                  },
+                  {
                     "path" : "\/documentation\/poieticflows\/nodeissue\/duplicatename(_:)",
                     "title" : "case duplicateName(String)",
                     "type" : "case"
@@ -1910,6 +1847,11 @@
                   {
                     "path" : "\/documentation\/poieticflows\/nodeissue\/expressionsyntaxerror(_:)",
                     "title" : "case expressionSyntaxError(ExpressionSyntaxError)",
+                    "type" : "case"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/nodeissue\/flowcycle",
+                    "title" : "case flowCycle",
                     "type" : "case"
                   },
                   {
@@ -2081,11 +2023,6 @@
                 "path" : "\/documentation\/poieticflows\/expressionerror",
                 "title" : "ExpressionError",
                 "type" : "enum"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/bindexpression(_:variables:functions:)",
-                "title" : "func bindExpression(UnboundExpression, variables: [String : StateVariable], functions: [String : Function]) throws -> BoundExpression",
-                "type" : "func"
               }
             ],
             "path" : "\/documentation\/poieticflows\/compiledmodelandcompiler",
@@ -2134,11 +2071,6 @@
               {
                 "path" : "\/documentation\/poieticflows\/stockflowview\/frame",
                 "title" : "let frame: any Frame",
-                "type" : "property"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/stockflowview\/implicitflowedges",
-                "title" : "var implicitFlowEdges: [Edge]",
                 "type" : "property"
               },
               {
@@ -2196,16 +2128,6 @@
                 "type" : "method"
               },
               {
-                "path" : "\/documentation\/poieticflows\/stockflowview\/implicitdrains(_:)",
-                "title" : "func implicitDrains(ObjectID) -> [ObjectID]",
-                "type" : "method"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/stockflowview\/implicitfills(_:)",
-                "title" : "func implicitFills(ObjectID) -> [ObjectID]",
-                "type" : "method"
-              },
-              {
                 "path" : "\/documentation\/poieticflows\/stockflowview\/incomingparameters(_:)",
                 "title" : "func incomingParameters(ObjectID) -> Neighborhood",
                 "type" : "method"
@@ -2233,11 +2155,6 @@
               {
                 "path" : "\/documentation\/poieticflows\/stockflowview\/sortednodesbyparameter(_:)",
                 "title" : "func sortedNodesByParameter([ObjectID]) throws -> [Node]",
-                "type" : "method"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/stockflowview\/sortedstocksbyimplicitflows(_:)",
-                "title" : "func sortedStocksByImplicitFlows([ObjectID]) throws -> [Node]",
                 "type" : "method"
               },
               {
@@ -2562,15 +2479,6 @@
                 "path" : "\/documentation\/poieticflows\/connectorcomponent\/midpoints",
                 "title" : "var midpoints: [Point]",
                 "type" : "property"
-              },
-              {
-                "title" : "Type Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/connectorcomponent\/trait",
-                "title" : "static var trait: Trait",
-                "type" : "property"
               }
             ],
             "path" : "\/documentation\/poieticflows\/connectorcomponent",
@@ -2584,7 +2492,7 @@
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/poieticflows\/expressiontransformer\/init()",
+                "path" : "\/documentation\/poieticflows\/formulacompilersystem\/init()",
                 "title" : "init()",
                 "type" : "init"
               },
@@ -2593,45 +2501,13 @@
                 "type" : "groupMarker"
               },
               {
-                "path" : "\/documentation\/poieticflows\/expressiontransformer\/update(_:)",
-                "title" : "func update(TransformationContext)",
+                "path" : "\/documentation\/poieticflows\/formulacompilersystem\/update(_:)",
+                "title" : "func update(RuntimeContext)",
                 "type" : "method"
               }
             ],
-            "path" : "\/documentation\/poieticflows\/expressiontransformer",
-            "title" : "ExpressionTransformer",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Instance Methods",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/implicitflowstransformer\/update(_:)",
-                "title" : "func update(TransformationContext)",
-                "type" : "method"
-              }
-            ],
-            "path" : "\/documentation\/poieticflows\/implicitflowstransformer",
-            "title" : "ImplicitFlowsTransformer",
-            "type" : "struct"
-          },
-          {
-            "children" : [
-              {
-                "title" : "Instance Methods",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/issuecleaner\/update(_:)",
-                "title" : "func update(TransformationContext)",
-                "type" : "method"
-              }
-            ],
-            "path" : "\/documentation\/poieticflows\/issuecleaner",
-            "title" : "IssueCleaner",
+            "path" : "\/documentation\/poieticflows\/formulacompilersystem",
+            "title" : "FormulaCompilerSystem",
             "type" : "struct"
           },
           {
@@ -2667,15 +2543,6 @@
                 "path" : "\/documentation\/poieticflows\/parsedformulacomponent\/setattribute(value:forkey:)",
                 "title" : "func setAttribute(value: Variant, forKey: AttributeKey) throws",
                 "type" : "method"
-              },
-              {
-                "title" : "Type Properties",
-                "type" : "groupMarker"
-              },
-              {
-                "path" : "\/documentation\/poieticflows\/parsedformulacomponent\/trait",
-                "title" : "static var trait: Trait",
-                "type" : "property"
               }
             ],
             "path" : "\/documentation\/poieticflows\/parsedformulacomponent",
@@ -2832,6 +2699,46 @@
             "type" : "struct"
           },
           {
+            "children" : [
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockadjacency\/id",
+                "title" : "let id: ObjectID",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockadjacency\/origin",
+                "title" : "let origin: ObjectID",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockadjacency\/target",
+                "title" : "let target: ObjectID",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/stockadjacency\/targethasdelayedinflow",
+                "title" : "let targetHasDelayedInflow: Bool",
+                "type" : "property"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/stockadjacency",
+            "title" : "StockAdjacency",
+            "type" : "struct"
+          },
+          {
+            "title" : "Functions",
+            "type" : "groupMarker"
+          },
+          {
+            "path" : "\/documentation\/poieticflows\/bindexpression(_:variables:names:functions:)",
+            "title" : "func bindExpression(UnboundExpression, variables: [StateVariable], names: [String : SimulationState.Index], functions: [String : Function]) throws -> BoundExpression",
+            "type" : "func"
+          },
+          {
             "title" : "Type Aliases",
             "type" : "groupMarker"
           },
@@ -2883,6 +2790,72 @@
             ],
             "path" : "\/documentation\/poieticflows\/arrowendpoint",
             "title" : "ArrowEndpoint",
+            "type" : "enum"
+          },
+          {
+            "children" : [
+              {
+                "title" : "Enumeration Cases",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/edgeissue\/computationcycle",
+                "title" : "case computationCycle",
+                "type" : "case"
+              },
+              {
+                "title" : "Instance Properties",
+                "type" : "groupMarker"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/edgeissue\/description",
+                "title" : "var description: String",
+                "type" : "property"
+              },
+              {
+                "path" : "\/documentation\/poieticflows\/edgeissue\/hint",
+                "title" : "var hint: String?",
+                "type" : "property"
+              },
+              {
+                "title" : "Default Implementations",
+                "type" : "groupMarker"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Operators",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/edgeissue\/!=(_:_:)",
+                    "title" : "static func != (Self, Self) -> Bool",
+                    "type" : "op"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/edgeissue\/equatable-implementations",
+                "title" : "Equatable Implementations",
+                "type" : "symbol"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Instance Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/edgeissue\/localizeddescription",
+                    "title" : "var localizedDescription: String",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/edgeissue\/error-implementations",
+                "title" : "Error Implementations",
+                "type" : "symbol"
+              }
+            ],
+            "path" : "\/documentation\/poieticflows\/edgeissue",
+            "title" : "EdgeIssue",
             "type" : "enum"
           },
           {
@@ -3108,58 +3081,8 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/delay",
-                    "title" : "static let Delay: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/drains",
-                    "title" : "static let Drains: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/fills",
-                    "title" : "static let Fills: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/graphicalfunction",
-                    "title" : "static let GraphicalFunction: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/implicitflow",
-                    "title" : "static let ImplicitFlow: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/note",
-                    "title" : "static let Note: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/parameter",
-                    "title" : "static let Parameter: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/scenario",
-                    "title" : "static let Scenario: ObjectType",
-                    "type" : "property"
-                  },
-                  {
                     "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/scenario2",
                     "title" : "static let Scenario2: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/simulation",
-                    "title" : "static let Simulation: ObjectType",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/valuebinding",
-                    "title" : "static let ValueBinding: ObjectType",
                     "type" : "property"
                   }
                 ],
@@ -3174,23 +3097,8 @@
                     "type" : "groupMarker"
                   },
                   {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/control",
-                    "title" : "static let Control: Trait",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/delay",
-                    "title" : "static let Delay: Trait",
-                    "type" : "property"
-                  },
-                  {
                     "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/parametervalue",
                     "title" : "static let ParameterValue: Trait",
-                    "type" : "property"
-                  },
-                  {
-                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/simulation",
-                    "title" : "static let Simulation: Trait",
                     "type" : "property"
                   }
                 ],
@@ -3254,6 +3162,6 @@
   "schemaVersion" : {
     "major" : 0,
     "minor" : 1,
-    "patch" : 1
+    "patch" : 2
   }
 }

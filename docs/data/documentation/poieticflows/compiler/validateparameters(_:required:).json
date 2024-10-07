@@ -319,9 +319,8 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "\/PoieticCore\/ObjectType\/Parameter",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : " edge from the parameter node",
@@ -362,9 +361,8 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "\/PoieticCore\/ObjectType\/Parameter",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : "connection from",
@@ -798,51 +796,6 @@
   "title" : "NodeIssuesError",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissueserror"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Parameter": {
-  "abstract" : [
-    {
-      "text" : "An edge between a node that serves as a parameter in another node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Parameter"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Parameter",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Parameter",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/parameter"
 }
 }
 }

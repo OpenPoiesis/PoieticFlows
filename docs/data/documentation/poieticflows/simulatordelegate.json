@@ -82,6 +82,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulatorDelegate\/simulatorDidInitialize(_:context:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulatorDelegate\/simulatorDidRun(_:context:)",

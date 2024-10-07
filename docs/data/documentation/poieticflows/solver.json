@@ -250,6 +250,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Solver",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EulerSolver",
@@ -261,12 +262,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/init(_:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/compiledModel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/constants"
@@ -274,6 +279,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/accumulateStocks(_:delta:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/compute(_:at:timeDelta:)",
@@ -288,13 +295,18 @@
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Type-Properties",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/Variables",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/registeredSolverNames",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/registeredSolvers"
       ],
       "title" : "Type Properties"
     },
     {
+      "anchor" : "Type-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/registerSolver(name:solver:)"
       ],
@@ -530,6 +542,52 @@
   "title" : "Solver",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/solver"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Solver/Variables": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Variables"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8VariableC",
+      "text" : "Variable"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver\/Variables",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Variables",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/solver\/variables"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Solver/accumulateStocks(_:delta:)": {
   "abstract" : [

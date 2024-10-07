@@ -125,19 +125,22 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/init(_:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/charts",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/drainsEdges",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/fillsEdges",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowNodes",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/frame",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFlowEdges",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/metamodel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/namedObjects",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameterEdges",
@@ -147,21 +150,20 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/builtinReferences(names:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/drains(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/fills(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowDrains(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/flowFills(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitDrains(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFills(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/incomingParameters(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/inflows(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/objectVariableReferences(names:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/outflows(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/parameters(_:required:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/sortedNodesByParameter(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/sortedStocksByImplicitFlows(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stockInflows(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/stockOutflows(_:)"
       ],
@@ -211,10 +213,7 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
   "abstract" : [
-    {
-      "text" : "The metamodel for Stock-and-Flows domain model.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -787,155 +786,6 @@
   "title" : "frame",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockflowview\/frame"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/implicitDrains(_:)": {
-  "abstract" : [
-    {
-      "text" : "Return a list of stock nodes that the given stock drains.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "implicitDrains"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitDrains(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "implicitDrains(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview\/implicitdrains(_:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/implicitFills(_:)": {
-  "abstract" : [
-    {
-      "text" : "Return a list of stock nodes that the given stock fills.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "implicitFills"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : ") -> ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFills(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "implicitFills(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview\/implicitfills(_:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/implicitFlowEdges": {
-  "abstract" : [
-    {
-      "text" : "List of all edges that denotes an implicit flow between",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "two stocks.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "implicitFlowEdges"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore4EdgeV",
-      "text" : "Edge"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/implicitFlowEdges",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "implicitFlowEdges",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview\/implicitflowedges"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/incomingParameters(_:)": {
   "abstract" : [
@@ -1526,64 +1376,6 @@
   "title" : "sortedNodesByParameter(_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockflowview\/sortednodesbyparameter(_:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/sortedStocksByImplicitFlows(_:)": {
-  "abstract" : [
-    {
-      "text" : "Sort given list of stocks by the order of their implicit flows.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "sortedStocksByImplicitFlows"
-    },
-    {
-      "kind" : "text",
-      "text" : "(["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : "]) "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeV",
-      "text" : "Node"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView\/sortedStocksByImplicitFlows(_:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "sortedStocksByImplicitFlows(_:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/stockflowview\/sortedstocksbyimplicitflows(_:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView/stateNodes": {
   "abstract" : [

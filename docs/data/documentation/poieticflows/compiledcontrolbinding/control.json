@@ -108,9 +108,8 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Control",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "PoieticCore\/ObjectType\/Control",
+                  "type" : "codeVoice"
                 }
               ],
               "type" : "paragraph"
@@ -257,59 +256,6 @@
   "title" : "Compiled Model and Compiler",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Control": {
-  "abstract" : [
-    {
-      "text" : "A user interface mode representing a control that modifies a value of",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "its target node.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Control"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Control",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Control",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/control"
 }
 }
 }

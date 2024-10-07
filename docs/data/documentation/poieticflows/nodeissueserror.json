@@ -154,6 +154,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Compiler",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
@@ -164,12 +165,15 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError\/issues"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError\/Error-Implementations"

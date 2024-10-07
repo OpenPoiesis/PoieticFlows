@@ -99,6 +99,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/init()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/init(midpoints:)"
@@ -106,17 +108,13 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/description",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/midpoints"
       ],
       "title" : "Instance Properties"
-    },
-    {
-      "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/trait"
-      ],
-      "title" : "Type Properties"
     }
   ],
   "variants" : [
@@ -332,48 +330,6 @@
   "title" : "midpoints",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/connectorcomponent\/midpoints"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/ConnectorComponent/trait": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "var"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "trait"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5TraitC",
-      "text" : "Trait"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent\/trait",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "trait",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/connectorcomponent\/trait"
 },
 "doc://PoieticFlows/s23CustomStringConvertibleP": {
   "identifier" : "doc:\/\/PoieticFlows\/s23CustomStringConvertibleP",

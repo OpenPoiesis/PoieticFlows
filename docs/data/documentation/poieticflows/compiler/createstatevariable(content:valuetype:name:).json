@@ -269,6 +269,20 @@
             }
           ],
           "name" : "valueType"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Name of the state variable.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "name"
         }
       ]
     }

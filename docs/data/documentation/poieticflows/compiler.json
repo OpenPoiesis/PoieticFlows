@@ -159,6 +159,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Compiler",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
@@ -169,12 +170,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/init(frame:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/currentVariableIndex",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/stateVariables"
@@ -182,15 +187,17 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/appendIssue(_:to:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile()",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(stocks:flows:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:in:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileDelayNode(_:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:in:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileGraphicalFunctionNode(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/createStateVariable(content:valueType:name:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/stockAdjacencies()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/validateParameters(_:required:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/variableIndex(_:)"
       ],
@@ -437,7 +444,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/compile()"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(_:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(_:in:)": {
   "abstract" : [
     {
       "text" : "Compile a simulation node.",
@@ -468,6 +475,23 @@
     },
     {
       "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "in"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore14RuntimeContextC",
+      "text" : "RuntimeContext"
+    },
+    {
+      "kind" : "text",
       "text" : ") "
     },
     {
@@ -484,96 +508,12 @@
       "text" : "ComputationalRepresentation"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(_:in:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "compile(_:)",
+  "title" : "compile(_:in:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compile(_:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compile(stocks:flows:)": {
-  "abstract" : [
-    {
-      "text" : "Compile all stock nodes.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "compile"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "stocks"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore4NodeV",
-      "text" : "Node"
-    },
-    {
-      "kind" : "text",
-      "text" : "], "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "flows"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8ObjectIDa",
-      "text" : "ObjectID"
-    },
-    {
-      "kind" : "text",
-      "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows12CompiledFlowV",
-      "text" : "CompiledFlow"
-    },
-    {
-      "kind" : "text",
-      "text" : "]) -> ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13CompiledStockV",
-      "text" : "CompiledStock"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compile(stocks:flows:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "compile(stocks:flows:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compile(stocks:flows:)"
+  "url" : "\/documentation\/poieticflows\/compiler\/compile(_:in:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileDelayNode(_:)": {
   "abstract" : [
@@ -626,7 +566,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/compiledelaynode(_:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileFormulaNode(_:)": {
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileFormulaNode(_:in:)": {
   "abstract" : [
     {
       "text" : "Compile a node containing a formula.",
@@ -657,6 +597,23 @@
     },
     {
       "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "in"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore14RuntimeContextC",
+      "text" : "RuntimeContext"
+    },
+    {
+      "kind" : "text",
       "text" : ") "
     },
     {
@@ -673,12 +630,12 @@
       "text" : "ComputationalRepresentation"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:)",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/compileFormulaNode(_:in:)",
   "kind" : "symbol",
   "role" : "symbol",
-  "title" : "compileFormulaNode(_:)",
+  "title" : "compileFormulaNode(_:in:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiler\/compileformulanode(_:)"
+  "url" : "\/documentation\/poieticflows\/compiler\/compileformulanode(_:in:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/compileGraphicalFunctionNode(_:)": {
   "abstract" : [
@@ -902,8 +859,8 @@
     },
     {
       "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore12MutableFrameC",
-      "text" : "MutableFrame"
+      "preciseIdentifier" : "s:11PoieticCore11StableFrameC",
+      "text" : "StableFrame"
     },
     {
       "kind" : "text",
@@ -957,6 +914,47 @@
   "title" : "stateVariables",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiler\/statevariables"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/Compiler/stockAdjacencies()": {
+  "abstract" : [
+    {
+      "text" : "Get a list of stock-to-stock adjacency.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "stockAdjacencies"
+    },
+    {
+      "kind" : "text",
+      "text" : "() -> ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows14StockAdjacencyV",
+      "text" : "StockAdjacency"
+    },
+    {
+      "kind" : "text",
+      "text" : "]"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler\/stockAdjacencies()",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "stockAdjacencies()",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/compiler\/stockadjacencies()"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler/validateParameters(_:required:)": {
   "abstract" : [

@@ -72,6 +72,16 @@
       "kind" : "declarations"
     }
   ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -82,6 +92,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size\/init(square:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size\/init(width:height:)"
@@ -89,6 +101,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size\/circumscribedCircleRadius",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size\/height",
@@ -398,6 +412,11 @@
   "title" : "width",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/size\/width"
+},
+"doc://PoieticFlows/s8SendableP": {
+  "identifier" : "doc:\/\/PoieticFlows\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

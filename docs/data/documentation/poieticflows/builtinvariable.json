@@ -162,6 +162,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Compiled-Model",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
@@ -171,7 +172,6 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StateVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
@@ -182,6 +182,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable\/time",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable\/timeDelta"
@@ -189,12 +191,15 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable\/description"
       ],
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable\/Equatable-Implementations"
@@ -489,40 +494,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compileddelay"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow": {
-  "abstract" : [
-    {
-      "text" : "Compiled representation of a flow.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledFlow"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledFlow"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledFlow",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledflow"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledGraphicalFunction": {
   "abstract" : [
     {
@@ -697,51 +668,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
-  "abstract" : [
-    {
-      "text" : "Trait with simulation defaults.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Simulation"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5TraitC",
-      "text" : "Trait"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Simulation",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Simulation",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/simulation"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
   "abstract" : [
     {
@@ -767,9 +693,8 @@
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Simulation",
-      "isActive" : true,
-      "type" : "reference"
+      "code" : "PoieticCore\/Trait\/Simulation",
+      "type" : "codeVoice"
     },
     {
       "text" : ".",

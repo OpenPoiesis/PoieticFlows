@@ -95,6 +95,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay\/OutputType\/delay",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay\/OutputType\/smooth"
@@ -102,6 +104,7 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay\/OutputType\/Equatable-Implementations"

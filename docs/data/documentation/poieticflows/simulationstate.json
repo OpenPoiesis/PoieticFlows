@@ -123,6 +123,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Simulator",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator"
@@ -132,6 +133,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/init(_:model:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/init(model:)"
@@ -139,6 +142,8 @@
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/description",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/model",
@@ -147,18 +152,24 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/double(at:)"
       ],
       "title" : "Instance Methods"
     },
     {
+      "anchor" : "Subscripts",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/subscript(_:)"
       ],
       "title" : "Subscripts"
     },
     {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationState\/Index"
       ],

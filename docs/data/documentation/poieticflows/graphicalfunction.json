@@ -125,6 +125,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Functions",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinUnaryOperators",
@@ -136,12 +137,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/init(points:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/createFunction(name:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/stepFunction(x:)"

@@ -216,21 +216,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "An arithmetic expression to be evaluated",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "expression"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "simulation state within which the expression is evaluated",
+                  "text" : "Simulation state within which the expression is evaluated",
                   "type" : "text"
                 }
               ],
@@ -238,34 +224,6 @@
             }
           ],
           "name" : "state"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "simulation time at which the evaluation takes place",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "time"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
-                  "text" : "time difference between steps of the simulation",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "timeDelta"
         }
       ]
     },
@@ -280,7 +238,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "an evaluated value of the expression.",
+              "text" : "An evaluated value of the expression.",
               "type" : "text"
             }
           ],

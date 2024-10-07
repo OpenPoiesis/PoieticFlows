@@ -218,9 +218,8 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "\/PoieticCore\/ObjectType\/Flow",
+                  "type" : "codeVoice"
                 },
                 {
                   "text" : ")",
@@ -311,51 +310,6 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Flow": {
-  "abstract" : [
-    {
-      "text" : "A flow node - one of the two core nodes.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Flow"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Flow",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/flow"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [

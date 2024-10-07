@@ -82,12 +82,16 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Initializers",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsPresenter\/init(frame:)"
       ],
       "title" : "Initializers"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsPresenter\/arrowStyle(edge:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsPresenter\/boundingBox(node:)",

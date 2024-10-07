@@ -140,7 +140,7 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "an ID of a node that must be a stock",
+                  "text" : "An ID of a node that must be a stock",
                   "type" : "text"
                 }
               ],
@@ -194,9 +194,8 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Fills",
-              "isActive" : true,
-              "type" : "reference"
+              "code" : "\/PoieticCore\/ObjectType\/Fills",
+              "type" : "codeVoice"
             },
             {
               "text" : " ",
@@ -285,51 +284,6 @@
   "title" : "PoieticFlows",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Fills": {
-  "abstract" : [
-    {
-      "text" : "Edge from a flow to a stock. Denotes “what the flow fills”.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Fills"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Fills",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Fills",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/fills"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [

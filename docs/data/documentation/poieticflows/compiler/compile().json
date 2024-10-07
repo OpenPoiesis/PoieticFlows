@@ -323,7 +323,7 @@
                   "type" : "text"
                 },
                 {
-                  "text" : "mal-formed or one of the subsystems mis-behaved.",
+                  "text" : "malformed or one of the subsystems mis-behaved.",
                   "type" : "text"
                 }
               ],

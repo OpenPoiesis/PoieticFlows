@@ -412,10 +412,7 @@
 },
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
   "abstract" : [
-    {
-      "text" : "The metamodel for Stock-and-Flows domain model.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {

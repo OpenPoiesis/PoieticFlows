@@ -69,6 +69,14 @@
           ],
           "tokens" : [
             {
+              "kind" : "attribute",
+              "text" : "nonisolated"
+            },
+            {
+              "kind" : "text",
+              "text" : "(unsafe) "
+            },
+            {
               "kind" : "keyword",
               "text" : "let"
             },
@@ -253,6 +261,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Functions",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinUnaryOperators",

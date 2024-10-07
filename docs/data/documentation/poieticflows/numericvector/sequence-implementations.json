@@ -33,6 +33,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/lazy",
@@ -41,6 +42,7 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/allSatisfy(_:)",
@@ -48,6 +50,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/compare(_:_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/contains(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/contains(where:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/count(where:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/elementsEqual(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/elementsEqual(_:by:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/enumerated()",
@@ -60,7 +63,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/formatted(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/lexicographicallyPrecedes(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/lexicographicallyPrecedes(_:by:)",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-kmw",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-ttnw",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/max()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/max(by:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/min()",
@@ -556,6 +559,114 @@
   "title" : "contains(where:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/numericvector\/contains(where:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/count(where:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "count"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ">("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "where"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Si",
+      "text" : "Int"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/count(where:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "count(where:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/numericvector\/count(where:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NumericVector/elementsEqual(_:)": {
   "abstract" : [
@@ -1618,7 +1729,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/numericvector\/lexicographicallyprecedes(_:by:)"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/map(_:)-kmw": {
+"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/map(_:)-ttnw": {
   "abstract" : [
 
   ],
@@ -1642,6 +1753,14 @@
     {
       "kind" : "genericParameter",
       "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
     },
     {
       "kind" : "text",
@@ -1670,7 +1789,15 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1682,11 +1809,19 @@
     },
     {
       "kind" : "keyword",
-      "text" : "rethrows"
+      "text" : "throws"
     },
     {
       "kind" : "text",
-      "text" : " -> ["
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
     },
     {
       "kind" : "typeIdentifier",
@@ -1697,12 +1832,12 @@
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-kmw",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-ttnw",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "map(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/numericvector\/map(_:)-kmw"
+  "url" : "\/documentation\/poieticflows\/numericvector\/map(_:)-ttnw"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NumericVector/max()": {
   "abstract" : [

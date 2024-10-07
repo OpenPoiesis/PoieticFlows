@@ -157,6 +157,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Compiler",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
@@ -167,10 +168,14 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/computationCycle",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/duplicateName(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/expressionError(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/expressionSyntaxError(_:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/flowCycle",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/missingRequiredParameter",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/unknownParameter(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/unusedInput(_:)"
@@ -178,6 +183,8 @@
       "title" : "Enumeration Cases"
     },
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/description",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/hint"
@@ -185,6 +192,7 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Default-Implementations",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/Equatable-Implementations",
@@ -412,6 +420,34 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissue\/error-implementations"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/computationCycle": {
+  "abstract" : [
+    {
+      "text" : "Node is part of a computation cycle.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "computationCycle"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/computationCycle",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "NodeIssue.computationCycle",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/nodeissue\/computationcycle"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/description": {
   "abstract" : [
     {
@@ -568,6 +604,42 @@
   "title" : "NodeIssue.expressionSyntaxError(_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissue\/expressionsyntaxerror(_:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/flowCycle": {
+  "abstract" : [
+    {
+      "text" : "Stock is part of a flow cycle. Needs to be broken with",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "delayed inflow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "flowCycle"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue\/flowCycle",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "NodeIssue.flowCycle",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/nodeissue\/flowcycle"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NodeIssue/hint": {
   "abstract" : [

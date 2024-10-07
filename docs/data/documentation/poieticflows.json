@@ -97,9 +97,8 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "\/PoieticCore\/ObjectType\/Stock",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : ",",
@@ -110,18 +109,16 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "\/PoieticCore\/ObjectType\/Flow",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : " and ",
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Auxiliary",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "\/PoieticCore\/ObjectType\/Auxiliary",
+                      "type" : "codeVoice"
                     }
                   ],
                   "type" : "paragraph"
@@ -133,9 +130,8 @@
                 {
                   "inlineContent" : [
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/GraphicalFunction",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "\/PoieticCore\/ObjectType\/GraphicalFunction",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : " node for a function that is represented",
@@ -163,9 +159,8 @@
                       "type" : "text"
                     },
                     {
-                      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
-                      "isActive" : true,
-                      "type" : "reference"
+                      "code" : "\/PoieticCore\/Trait\/Formula",
+                      "type" : "codeVoice"
                     },
                     {
                       "text" : " for all core",
@@ -353,6 +348,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Topics",
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
@@ -360,12 +356,15 @@
       ]
     },
     {
+      "anchor" : "View",
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockFlowView"
       ],
       "title" : "View"
     },
     {
+      "anchor" : "Classes",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsPresenter",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Pictogram"
@@ -373,6 +372,8 @@
       "title" : "Classes"
     },
     {
+      "anchor" : "Protocols",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulatorDelegate"
@@ -380,31 +381,45 @@
       "title" : "Protocols"
     },
     {
+      "anchor" : "Structures",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ArrowStyle",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Chart",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ChartSeries",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompilationContext",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ConnectorComponent",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionTransformer",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsTransformer",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IssueCleaner",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaCompilerSystem",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormulaComponent",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Rect",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationContext",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Size",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockAdjacency"
       ],
       "title" : "Structures"
     },
     {
+      "anchor" : "Functions",
+      "generated" : true,
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:names:functions:)"
+      ],
+      "title" : "Functions"
+    },
+    {
+      "anchor" : "Type-Aliases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParsedFormula"
       ],
       "title" : "Type Aliases"
     },
     {
+      "anchor" : "Enumerations",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ArrowEndpoint",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EdgeIssue",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/InterpolationMethod",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Magnet",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParameterStatus",
@@ -413,6 +428,8 @@
       "title" : "Enumerations"
     },
     {
+      "anchor" : "Extended-Modules",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore"
       ],
@@ -666,6 +683,37 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/connectorcomponent"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/EdgeIssue": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "EdgeIssue"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EdgeIssue",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "EdgeIssue"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "EdgeIssue",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/edgeissue"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/EulerSolver": {
   "abstract" : [
     {
@@ -700,78 +748,9 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/eulersolver"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/ExpressionTransformer": {
-  "abstract" : [
-    {
-      "text" : "Input:",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "- FormulaComponent",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Output:",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "- ParsedFormulaComponent",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Generates errors",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "ExpressionTransformer"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionTransformer",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ExpressionTransformer"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ExpressionTransformer",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/expressiontransformer"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
   "abstract" : [
-    {
-      "text" : "The metamodel for Stock-and-Flows domain model.",
-      "type" : "text"
-    }
+
   ],
   "fragments" : [
     {
@@ -834,10 +813,42 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/flowspresenter"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/ImplicitFlowsTransformer": {
+"doc://PoieticFlows/documentation/PoieticFlows/FormulaCompilerSystem": {
   "abstract" : [
     {
-      "text" : "A system that updates edges that denote implicit flows between stocks.",
+      "text" : "Input:",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "- FormulaComponent",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Output:",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "- ParsedFormulaComponent",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "Generates errors",
       "type" : "text"
     }
   ],
@@ -852,21 +863,21 @@
     },
     {
       "kind" : "identifier",
-      "text" : "ImplicitFlowsTransformer"
+      "text" : "FormulaCompilerSystem"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ImplicitFlowsTransformer",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FormulaCompilerSystem",
   "kind" : "symbol",
   "navigatorTitle" : [
     {
       "kind" : "identifier",
-      "text" : "ImplicitFlowsTransformer"
+      "text" : "FormulaCompilerSystem"
     }
   ],
   "role" : "symbol",
-  "title" : "ImplicitFlowsTransformer",
+  "title" : "FormulaCompilerSystem",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/implicitflowstransformer"
+  "url" : "\/documentation\/poieticflows\/formulacompilersystem"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/InterpolationMethod": {
   "abstract" : [
@@ -898,80 +909,6 @@
   "title" : "InterpolationMethod",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/interpolationmethod"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/IssueCleaner": {
-  "abstract" : [
-    {
-      "text" : "Input:",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "- All objects",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Output:",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "- Remove all errors from existing error components",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "(do not remove the component).",
-      "type" : "text"
-    },
-    {
-      "text" : " ",
-      "type" : "text"
-    },
-    {
-      "text" : "Generates errors",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "IssueCleaner"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/IssueCleaner",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "IssueCleaner"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "IssueCleaner",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/issuecleaner"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Magnet": {
   "abstract" : [
@@ -1155,231 +1092,6 @@
   "title" : "PoieticCore",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Auxiliary": {
-  "abstract" : [
-    {
-      "text" : "An auxiliary node - containing a constant or a formula.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Auxiliary"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Auxiliary",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Auxiliary",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/auxiliary"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Flow": {
-  "abstract" : [
-    {
-      "text" : "A flow node - one of the two core nodes.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Flow"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Flow",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Flow",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/flow"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/GraphicalFunction": {
-  "abstract" : [
-    {
-      "text" : "An auxiliary node with a function that is described by a graph.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "GraphicalFunction"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/GraphicalFunction",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "GraphicalFunction",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/graphicalfunction"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Stock": {
-  "abstract" : [
-    {
-      "text" : "A stock node - one of the two core nodes.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Stock"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Stock",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Stock",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/stock"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Formula": {
-  "abstract" : [
-    {
-      "text" : "Trait of simulation nodes that are computed using an arithmetic formula.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Formula"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5TraitC",
-      "text" : "Trait"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Formula",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Formula",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/formula"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Rect": {
   "abstract" : [
@@ -1621,6 +1333,40 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/statevariablecontent"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/StockAdjacency": {
+  "abstract" : [
+    {
+      "text" : "Describes a connection between two stocks through a flow.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "StockAdjacency"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockAdjacency",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "StockAdjacency"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "StockAdjacency",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/stockadjacency"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [
     {
@@ -1654,6 +1400,138 @@
   "title" : "StockFlowView",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockflowview"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/bindExpression(_:variables:names:functions:)": {
+  "abstract" : [
+    {
+      "text" : "Bind an expression to concrete variable references.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bindExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore17UnboundExpressiona",
+      "text" : "UnboundExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "variables"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13StateVariableV",
+      "text" : "StateVariable"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "names"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "functions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
+      "text" : "BoundExpression"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:names:functions:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bindExpression(_:variables:names:functions:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/bindexpression(_:variables:names:functions:)"
 },
 "https://en.wikipedia.org/wiki/Euler_method": {
   "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Euler_method",

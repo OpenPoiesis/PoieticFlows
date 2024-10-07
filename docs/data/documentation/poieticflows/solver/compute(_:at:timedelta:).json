@@ -227,20 +227,6 @@
             {
               "inlineContent" : [
                 {
-                  "text" : "Time of the computation step.",
-                  "type" : "text"
-                }
-              ],
-              "type" : "paragraph"
-            }
-          ],
-          "name" : "time"
-        },
-        {
-          "content" : [
-            {
-              "inlineContent" : [
-                {
                   "text" : "Previous state of the computation.",
                   "type" : "text"
                 }
@@ -249,6 +235,20 @@
             }
           ],
           "name" : "state"
+        },
+        {
+          "content" : [
+            {
+              "inlineContent" : [
+                {
+                  "text" : "Time of the computation step.",
+                  "type" : "text"
+                }
+              ],
+              "type" : "paragraph"
+            }
+          ],
+          "name" : "time"
         },
         {
           "content" : [

@@ -72,6 +72,16 @@
       "kind" : "declarations"
     }
   ],
+  "relationshipsSections" : [
+    {
+      "identifiers" : [
+        "doc:\/\/PoieticFlows\/s8SendableP"
+      ],
+      "kind" : "relationships",
+      "title" : "Conforms To",
+      "type" : "conformsTo"
+    }
+  ],
   "schemaVersion" : {
     "major" : 0,
     "minor" : 3,
@@ -82,6 +92,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Enumeration-Cases",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Magnet\/boundingBox",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Magnet\/boundingCircle",
@@ -258,6 +270,11 @@
   "title" : "Magnet.point(_:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/magnet\/point(_:)"
+},
+"doc://PoieticFlows/s8SendableP": {
+  "identifier" : "doc:\/\/PoieticFlows\/s8SendableP",
+  "title" : "Swift.Sendable",
+  "type" : "unresolvable"
 }
 }
 }

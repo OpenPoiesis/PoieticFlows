@@ -131,6 +131,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Solver",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Solver",
@@ -142,6 +143,8 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/EulerSolver\/compute(_:at:timeDelta:)"
       ],

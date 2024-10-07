@@ -199,16 +199,7 @@
               "type" : "reference"
             },
             {
-              "text" : ", ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/flows",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : " or ",
+              "text" : ", or ",
               "type" : "text"
             },
             {
@@ -514,6 +505,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Compiled-Model",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
@@ -523,7 +515,6 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinVariable",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledBuiltin",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledStock",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledDelay",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledGraphicalFunction",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledControlBinding",
@@ -534,10 +525,11 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/builtins",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/charts",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/flows",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/graphicalFunctions",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationDefaults",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationObjects",
@@ -549,6 +541,8 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
+      "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/simulationObject(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/stockIndex(_:)",
@@ -740,40 +734,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compileddelay"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledFlow": {
-  "abstract" : [
-    {
-      "text" : "Compiled representation of a flow.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledFlow"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledFlow",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledFlow"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledFlow",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledflow"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledGraphicalFunction": {
   "abstract" : [
     {
@@ -939,47 +899,6 @@
   "title" : "charts",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodel\/charts"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/flows": {
-  "abstract" : [
-    {
-      "text" : "Flows ordered by the computation (parameter) dependency.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "flows"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows12CompiledFlowV",
-      "text" : "CompiledFlow"
-    },
-    {
-      "kind" : "text",
-      "text" : "]"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel\/flows",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "flows",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel\/flows"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModel/graphicalFunctions": {
   "abstract" : [
@@ -1651,51 +1570,6 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait/Simulation": {
-  "abstract" : [
-    {
-      "text" : "Trait with simulation defaults.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "static"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "let"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "Simulation"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore5TraitC",
-      "text" : "Trait"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Simulation",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "Simulation",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/trait\/simulation"
-},
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationDefaults": {
   "abstract" : [
     {
@@ -1707,9 +1581,8 @@
       "type" : "text"
     },
     {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait\/Simulation",
-      "isActive" : true,
-      "type" : "reference"
+      "code" : "PoieticCore\/Trait\/Simulation",
+      "type" : "codeVoice"
     },
     {
       "text" : ".",

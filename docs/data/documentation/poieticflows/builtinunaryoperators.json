@@ -69,6 +69,14 @@
           ],
           "tokens" : [
             {
+              "kind" : "attribute",
+              "text" : "nonisolated"
+            },
+            {
+              "kind" : "text",
+              "text" : "(unsafe) "
+            },
+            {
               "kind" : "keyword",
               "text" : "let"
             },
@@ -154,9 +162,8 @@
                   "type" : "text"
                 },
                 {
-                  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:functions:)",
-                  "isActive" : true,
-                  "type" : "reference"
+                  "code" : "bindExpression(_:variables:functions:)",
+                  "type" : "codeVoice"
                 }
               ],
               "type" : "paragraph"
@@ -180,6 +187,7 @@
   ],
   "seeAlsoSections" : [
     {
+      "anchor" : "Functions",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BuiltinBinaryOperators",
@@ -400,112 +408,6 @@
   "title" : "Simulation and Computation",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulation"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/bindExpression(_:variables:functions:)": {
-  "abstract" : [
-    {
-      "text" : "Bind an expression to concrete variable references.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "bindExpression"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore17UnboundExpressiona",
-      "text" : "UnboundExpression"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "variables"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13StateVariableV",
-      "text" : "StateVariable"
-    },
-    {
-      "kind" : "text",
-      "text" : "], "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "functions"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
-      "text" : "Function"
-    },
-    {
-      "kind" : "text",
-      "text" : "]) "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
-      "text" : "BoundExpression"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:functions:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "bindExpression(_:variables:functions:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/bindexpression(_:variables:functions:)"
 }
 }
 }

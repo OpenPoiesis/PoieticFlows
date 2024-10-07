@@ -33,6 +33,7 @@
   ],
   "topicSections" : [
     {
+      "anchor" : "Instance-Properties",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/count",
@@ -43,6 +44,7 @@
       "title" : "Instance Properties"
     },
     {
+      "anchor" : "Instance-Methods",
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/drop(while:)",
@@ -54,8 +56,10 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/formIndex(_:offsetBy:limitedBy:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/formIndex(after:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/index(of:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/indices(of:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/indices(where:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/makeIterator()",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-49bjt",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-8ai8o",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/prefix(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/prefix(through:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/prefix(upTo:)",
@@ -63,6 +67,7 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/randomElement()",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/randomElement(using:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/ranges(of:)",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/removingSubranges(_:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/split(maxSplits:omittingEmptySubsequences:whereSeparator:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/split(separator:maxSplits:omittingEmptySubsequences:)",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/suffix(from:)",
@@ -1015,6 +1020,223 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/numericvector\/index(of:)"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/indices(of:)": {
+  "abstract" : [
+
+  ],
+  "conformance" : {
+    "availabilityPrefix" : [
+      {
+        "text" : "Available when",
+        "type" : "text"
+      }
+    ],
+    "conformancePrefix" : [
+      {
+        "text" : "Conforms when",
+        "type" : "text"
+      }
+    ],
+    "constraints" : [
+      {
+        "code" : "Element",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : " conforms to ",
+        "type" : "text"
+      },
+      {
+        "code" : "Equatable",
+        "type" : "codeVoice"
+      },
+      {
+        "text" : ".",
+        "type" : "text"
+      }
+    ]
+  },
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "indices"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "of"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8RangeSetV",
+      "text" : "RangeSet"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl5IndexQa",
+      "text" : "Index"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/indices(of:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "indices(of:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/numericvector\/indices(of:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/indices(where:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "indices"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "where"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:ST7ElementQa",
+      "text" : "Element"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sb",
+      "text" : "Bool"
+    },
+    {
+      "kind" : "text",
+      "text" : ") "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "rethrows"
+    },
+    {
+      "kind" : "text",
+      "text" : " -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8RangeSetV",
+      "text" : "RangeSet"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl5IndexQa",
+      "text" : "Index"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/indices(where:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "indices(where:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/numericvector\/indices(where:)"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/NumericVector/isEmpty": {
   "abstract" : [
 
@@ -1127,7 +1349,7 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/numericvector\/makeiterator()"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/map(_:)-49bjt": {
+"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/map(_:)-8ai8o": {
   "abstract" : [
 
   ],
@@ -1151,6 +1373,14 @@
     {
       "kind" : "genericParameter",
       "text" : "T"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "genericParameter",
+      "text" : "E"
     },
     {
       "kind" : "text",
@@ -1179,7 +1409,15 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -1191,11 +1429,19 @@
     },
     {
       "kind" : "keyword",
-      "text" : "rethrows"
+      "text" : "throws"
     },
     {
       "kind" : "text",
-      "text" : " -> ["
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "E"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
     },
     {
       "kind" : "typeIdentifier",
@@ -1206,12 +1452,12 @@
       "text" : "]"
     }
   ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-49bjt",
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/map(_:)-8ai8o",
   "kind" : "symbol",
   "role" : "symbol",
   "title" : "map(_:)",
   "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/numericvector\/map(_:)-49bjt"
+  "url" : "\/documentation\/poieticflows\/numericvector\/map(_:)-8ai8o"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NumericVector/prefix(_:)": {
   "abstract" : [
@@ -1724,6 +1970,78 @@
   "title" : "ranges(of:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/numericvector\/ranges(of:)"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NumericVector/removingSubranges(_:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "removingSubranges"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s8RangeSetV",
+      "text" : "RangeSet"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:Sl5IndexQa",
+      "text" : "Index"
+    },
+    {
+      "kind" : "text",
+      "text" : ">) -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:s18DiscontiguousSliceV",
+      "text" : "DiscontiguousSlice"
+    },
+    {
+      "kind" : "text",
+      "text" : "<"
+    },
+    {
+      "kind" : "typeIdentifier",
+      "text" : "Self"
+    },
+    {
+      "kind" : "text",
+      "text" : ">"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NumericVector\/removingSubranges(_:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "removingSubranges(_:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/numericvector\/removingsubranges(_:)"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/NumericVector/split(maxSplits:omittingEmptySubsequences:whereSeparator:)": {
   "abstract" : [
