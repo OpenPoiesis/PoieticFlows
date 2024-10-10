@@ -381,24 +381,6 @@
             }
           ],
           "type" : "unorderedList"
-        },
-        {
-          "inlineContent" : [
-            {
-              "text" : "More information about the model is contained in the ",
-              "type" : "text"
-            },
-            {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
-              "isActive" : true,
-              "type" : "reference"
-            },
-            {
-              "text" : ".",
-              "type" : "text"
-            }
-          ],
-          "type" : "paragraph"
         }
       ],
       "kind" : "content"
@@ -417,6 +399,7 @@
       "anchor" : "Topics",
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Formulas",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel"
@@ -946,6 +929,20 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/formulacompilersystem"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Formulas": {
+  "abstract" : [
+    {
+      "text" : "Formulas define an arithmetic computation of a node.",
+      "type" : "text"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Formulas",
+  "kind" : "article",
+  "role" : "article",
+  "title" : "Formulas",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/formulas"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/InterpolationMethod": {
   "abstract" : [
 
@@ -1228,7 +1225,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
   "abstract" : [
     {
-      "text" : "Simulation and computation.",
+      "text" : "The Simulator runs the simulation and produces a simulation result as a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "collection of time series.",
       "type" : "text"
     }
   ],

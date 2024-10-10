@@ -361,7 +361,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
   "abstract" : [
     {
-      "text" : "Simulation and computation.",
+      "text" : "The Simulator runs the simulation and produces a simulation result as a",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "collection of time series.",
       "type" : "text"
     }
   ],

@@ -12,6 +12,11 @@
             "type" : "article"
           },
           {
+            "path" : "\/documentation\/poieticflows\/formulas",
+            "title" : "Formulas",
+            "type" : "article"
+          },
+          {
             "children" : [
               {
                 "title" : "Compiled Model",
