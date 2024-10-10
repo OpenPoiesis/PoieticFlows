@@ -29,12 +29,10 @@ in the following diagram:
   and [RK4](https://en.wikipedia.org/wiki/Runge–Kutta_methods) solvers: 
   ``EulerSolver`` and ``RungeKutta4Solver`` respectively.
 
-More information about the model is contained in the ``FlowsMetamodel``.
-
-
 ## Topics
 
 - <doc:Metamodel>
+- <doc:Formulas>
 - <doc:CompiledModelAndCompiler>
 - <doc:Simulation>
 - ``FlowsMetamodel``

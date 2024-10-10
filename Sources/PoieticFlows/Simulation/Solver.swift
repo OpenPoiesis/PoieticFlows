@@ -483,6 +483,8 @@ public class Solver {
     /// - Important: Do not call this method directly. Subclasses are
     ///   expected to implement this method.
     ///
+    /// - SeeAlso: ``EulerSolver/compute(_:at:timeDelta:)``, ``RungeKutta4Solver/compute(_:at:timeDelta:)``
+    /// 
     public func compute(_ state: SimulationState,
                         at time: Double,
                         timeDelta: Double = 1.0) throws -> SimulationState {
