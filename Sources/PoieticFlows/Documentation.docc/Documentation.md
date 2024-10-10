@@ -18,7 +18,6 @@ in the following diagram:
 
 ![Flows Components Overview](flows-overview)
 
-The 
 - Core computational nodes: `Stock`, `Flow` and `Auxiliary`
 - `GraphicalFunction` node for a function that is represented
  by a graph – set of points in a 2D plane.
@@ -36,8 +35,8 @@ More information about the model is contained in the ``FlowsMetamodel``.
 ## Topics
 
 - <doc:Metamodel>
-- <doc:Simulation>
 - <doc:CompiledModelAndCompiler>
+- <doc:Simulation>
 - ``FlowsMetamodel``
 
 ### View

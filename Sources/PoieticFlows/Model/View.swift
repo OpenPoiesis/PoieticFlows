@@ -253,7 +253,7 @@ public class StockFlowView {
     ///
     /// - Throws: ``GraphCycleError`` when cycle was detected.
     ///
-    public func sortedNodesByParameter(_ nodes: [ObjectID]) throws -> [Node] {
+    public func sortedNodesByParameter(_ nodes: [ObjectID]) throws (GraphCycleError) -> [Node] {
         let sorted = try frame.topologicalSort(nodes, edges: parameterEdges)
         
         let result: [Node] = sorted.map {

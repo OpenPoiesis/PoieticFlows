@@ -7,25 +7,25 @@
 
 import PoieticCore
 
-/// An object that compiles the model into a ``CompiledModel``.
+/// An object that compiles the model into an internal representation called Compiled Model.
 ///
-/// We are treating the user's design as a non-linear/graphical
-/// programming language. The compiler transforms the design to a form that
-/// can be interpreted - simulated.
+/// The design represents an idea or a creation of a user in a form that
+/// is closest to the user. To perform a simulation we need a different form
+/// that can be interpreted by a machine.
 ///
-/// The compiler makes sure that the model is valid, references
-/// are resolved. It resolves the order in which the nodes are
-/// to be evaluated.
+/// The purpose of the compiler is to validate the design and
+/// translate it into an internal representation.
 ///
+/// - SeeAlso: ``compile()``, ``CompiledModel``
 ///
 public class Compiler {
     // TODO: Make the compiler into a RuntimeSystem
     /// The frame containing the design to be compiled.
     ///
-    let frame: StableFrame
+    public let frame: StableFrame
     
     /// Flows domain view of the frame.
-    let view: StockFlowView
+    public let view: StockFlowView
     
     // Compiler State
     // -----------------------------------------------------------------
@@ -172,7 +172,7 @@ public class Compiler {
     /// - Returns: A ``CompiledModel`` that can be used directly by the
     ///   simulator.
     ///
-    public func compile() throws -> CompiledModel {
+    public func compile() throws (NodeIssuesError) -> CompiledModel {
         // NOTE: Please use explicit self for instance variables in this function
         //       so we can visually see the shared compilation context.
         //
@@ -500,7 +500,7 @@ public class Compiler {
     /// - Throws: ``NodeIssuesError`` with list of issues for the node.
     /// - SeeAlso: ``compileFormulaNode(_:)``, ``compileGraphicalFunctionNode(_:)``.
     ///
-    public func compile(_ node: Node, in context: RuntimeContext) throws -> ComputationalRepresentation {
+    public func compile(_ node: Node, in context: RuntimeContext) throws (NodeIssuesError) -> ComputationalRepresentation {
         let rep: ComputationalRepresentation
         if node.snapshot.type.hasTrait(Trait.Formula) {
             rep = try compileFormulaNode(node, in: context)
@@ -543,7 +543,7 @@ public class Compiler {
     /// - Throws: ``NodeIssueError`` if there is an issue with parameters,
     ///   function names or other variable names in the expression.
     ///
-    public func compileFormulaNode(_ node: Node, in context: RuntimeContext) throws -> ComputationalRepresentation {
+    public func compileFormulaNode(_ node: Node, in context: RuntimeContext) throws (NodeIssuesError) -> ComputationalRepresentation {
         guard let component: ParsedFormulaComponent = context.component(for: node.id) else {
             fatalError("Parsed formula component expected for node \(node.id)")
         }
@@ -574,8 +574,8 @@ public class Compiler {
                                                  names: namedReferences,
                                                  functions: functions)
         }
-        catch let error as ExpressionError {
-            throw NodeIssue.expressionError(error)
+        catch /* ExpressionError */ {
+            throw NodeIssuesError(errors: [node.id: [NodeIssue.expressionError(error)]])
         }
         
         return .formula(boundExpression)
@@ -593,7 +593,7 @@ public class Compiler {
     ///
     /// - SeeAlso: ``CompiledGraphicalFunction``, ``Solver/evaluate(objectAt:with:)``
     ///
-    public func compileGraphicalFunctionNode(_ node: Node) throws -> ComputationalRepresentation{
+    public func compileGraphicalFunctionNode(_ node: Node) throws (NodeIssuesError) -> ComputationalRepresentation{
         guard let points = try? node.snapshot["graphical_function_points"]?.pointArray() else {
             // TODO: [RELEASE] Better error handling/reporting for these cases
             fatalError("Got graphical function without points attribute")
@@ -603,7 +603,7 @@ public class Compiler {
         
         let hood = view.incomingParameters(node.id)
         guard let parameterNode = hood.nodes.first else {
-            throw NodeIssue.missingRequiredParameter
+            throw NodeIssuesError(errors: [node.id: [NodeIssue.missingRequiredParameter]])
         }
         
         let funcName = "__graphical_\(node.id)"
@@ -612,7 +612,7 @@ public class Compiler {
         return .graphicalFunction(numericFunc, variableIndex(parameterNode.id))
         
     }
-    public func compileDelayNode(_ node: Node) throws -> ComputationalRepresentation{
+    public func compileDelayNode(_ node: Node) throws (NodeIssuesError) -> ComputationalRepresentation{
         // TODO: What to do if the input is not numeric or not an atom?
         let valueQueue = createStateVariable(content: .internalState(node.id),
                                              valueType: .doubles,
@@ -620,7 +620,7 @@ public class Compiler {
         
         let hood = view.incomingParameters(node.id)
         guard let parameterNode = hood.nodes.first else {
-            throw NodeIssue.missingRequiredParameter
+            throw NodeIssuesError(errors: [node.id: [NodeIssue.missingRequiredParameter]])
         }
         
         let parameterIndex = variableIndex(parameterNode.id)

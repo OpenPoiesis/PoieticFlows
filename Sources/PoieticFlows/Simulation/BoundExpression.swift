@@ -61,7 +61,8 @@ public enum ExpressionError: Error, CustomStringConvertible, Equatable {
 /// - Parameters:
 ///     - expression: Unbound arithmetic expression, where the function and
 ///       variable references are strings.
-///     - variables: Dictionary of variables where the keys are variable names
+///     - variables: List of compiled state variables.
+///     - names: Dictionary of variables where the keys are variable names
 ///       and the values are (bound) references to the variables.
 ///     - functions: Dictionary of functions and operators where the keys are
 ///       function names and the values are objects representing functions.
@@ -87,7 +88,7 @@ public enum ExpressionError: Error, CustomStringConvertible, Equatable {
 public func bindExpression(_ expression: UnboundExpression,
                            variables: [StateVariable],
                            names: [String:SimulationState.Index],
-                           functions: [String:Function]) throws -> BoundExpression {
+                           functions: [String:Function]) throws (ExpressionError) -> BoundExpression {
     
     switch expression {
     case let .value(value):
@@ -175,11 +176,15 @@ public func bindExpression(_ expression: UnboundExpression,
             throw ExpressionError.unknownFunction(name)
         }
         
-        let boundArgs = try arguments.map {
-            try bindExpression($0,
-                               variables: variables,
-                               names: names,
-                               functions: functions)
+        var boundArgs: [BoundExpression] = []
+        
+        // NOTE: arguments.map(...) has no typed throw (Swift 6.0)
+        for arg in arguments {
+            let boundArg = try bindExpression(arg,
+                                              variables: variables,
+                                              names: names,
+                                              functions: functions)
+            boundArgs.append(boundArg)
         }
 
         let types = boundArgs.map { $0.valueType }

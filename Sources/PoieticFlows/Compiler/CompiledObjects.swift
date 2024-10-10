@@ -7,6 +7,7 @@
 
 import PoieticCore
 
+// TODO: Move CompiledXXX types into CompiledModel as CompiledModel.XXX
 
 /// Representation of a node in the simulation denoting how the node will
 /// be computed.
