@@ -1,19 +1,28 @@
 # ``PoieticFlows``
 
-Poietic library for modelling and simulation of the _Stock and Flow_ model.
+Poietic package for modelling and simulation _Stock and Flow_ models.
 
 ## Overview
 
-The Poietic package provides functionality for modelling and simulation
-in the the model domain of [Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow).
+The PoieticFlows package provides a domain model and a simulation functionality
+for [Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow) models.
 
-The package provides basic concepts from the modelling domain:
+The major components and capabilities of the Flows package are:
 
-- Core computational nodes: ``/PoieticCore/ObjectType/Stock``,
-``/PoieticCore/ObjectType/Flow`` and ``/PoieticCore/ObjectType/Auxiliary``
-- ``/PoieticCore/ObjectType/GraphicalFunction`` node for a function that is represented
+- Stock and Flow metamodel, object types and validation constraints
+- Design compiler for creating computable model representation
+- Simulator and solver for performing the simulation
+
+The relationship of the components and the flow of data between them is caputred
+in the following diagram:
+
+![Flows Components Overview](flows-overview)
+
+The 
+- Core computational nodes: `Stock`, `Flow` and `Auxiliary`
+- `GraphicalFunction` node for a function that is represented
  by a graph – set of points in a 2D plane.
-- Component for arithmetic formulas ``/PoieticCore/Trait/Formula`` for all core 
+- Component for arithmetic formulas `Formula` for all core 
   computational nodes.
 - Built-in functions: `abs`, `floor`, `ceiling`, `round`, `power`, `sum`, `min`,
   `max`
@@ -29,6 +38,7 @@ More information about the model is contained in the ``FlowsMetamodel``.
 - <doc:Metamodel>
 - <doc:Simulation>
 - <doc:CompiledModelAndCompiler>
+- ``FlowsMetamodel``
 
 ### View
 
