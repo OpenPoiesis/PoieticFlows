@@ -20,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows8CompilerC7compileAA13CompiledModelVyKF",
+    "externalID" : "s:12PoieticFlows8CompilerC7compileAA13CompiledModelVyAA15NodeIssuesErrorVYKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -44,7 +44,16 @@
       },
       {
         "kind" : "text",
-        "text" : " -> "
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows15NodeIssuesErrorV",
+        "text" : "NodeIssuesError"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
       },
       {
         "kind" : "typeIdentifier",
@@ -95,7 +104,17 @@
             },
             {
               "kind" : "text",
-              "text" : " -> "
+              "text" : "("
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows15NodeIssuesErrorV",
+              "text" : "NodeIssuesError"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
             },
             {
               "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
@@ -363,7 +382,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -376,7 +395,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -432,7 +451,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Summary…",
+      "text" : "Compiler creates a compiled model, which is an internal representation of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a design that can be simulated.",
       "type" : "text"
     }
   ],
@@ -446,16 +473,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler": {
   "abstract" : [
     {
-      "text" : "An object that compiles the model into a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "An object that compiles the model into an internal representation called Compiled Model.",
       "type" : "text"
     }
   ],
@@ -516,7 +534,16 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15NodeIssuesErrorV",
+      "text" : "NodeIssuesError"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",

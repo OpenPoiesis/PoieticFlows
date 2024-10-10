@@ -20,7 +20,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows8CompilerC18compileFormulaNode_2inAA27ComputationalRepresentationO0A4Core0F0V_AH14RuntimeContextCtKF",
+    "externalID" : "s:12PoieticFlows8CompilerC18compileFormulaNode_2inAA27ComputationalRepresentationO0A4Core0F0V_AH14RuntimeContextCtAA0F11IssuesErrorVYKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -70,7 +70,16 @@
       },
       {
         "kind" : "text",
-        "text" : " -> "
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:12PoieticFlows15NodeIssuesErrorV",
+        "text" : "NodeIssuesError"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> "
       },
       {
         "kind" : "typeIdentifier",
@@ -171,7 +180,17 @@
             },
             {
               "kind" : "text",
-              "text" : " -> "
+              "text" : "("
+            },
+            {
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:12PoieticFlows15NodeIssuesErrorV",
+              "text" : "NodeIssuesError"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> "
             },
             {
               "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
@@ -371,7 +390,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -384,7 +403,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -395,10 +414,10 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Core structure used by the simulator and the solver to perform the",
+      "text" : "Compiler creates a compiled model, which is an internal representation of",
       "type" : "text"
     },
     {
@@ -406,41 +425,7 @@
       "type" : "text"
     },
     {
-      "text" : "computation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledModel"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledModel"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledModel",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
-  "abstract" : [
-    {
-      "text" : "Summary…",
+      "text" : "a design that can be simulated.",
       "type" : "text"
     }
   ],
@@ -454,16 +439,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler": {
   "abstract" : [
     {
-      "text" : "An object that compiles the model into a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "An object that compiles the model into an internal representation called Compiled Model.",
       "type" : "text"
     }
   ],
@@ -550,7 +526,16 @@
     },
     {
       "kind" : "text",
-      "text" : " -> "
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15NodeIssuesErrorV",
+      "text" : "NodeIssuesError"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
     },
     {
       "kind" : "typeIdentifier",
@@ -606,6 +591,40 @@
   "title" : "ComputationalRepresentation",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/computationalrepresentation"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/NodeIssuesError": {
+  "abstract" : [
+    {
+      "text" : "An aggregate error of multiple issues grouped by a node.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssuesError"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "NodeIssuesError"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "NodeIssuesError",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/nodeissueserror"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/ParsedFormulaComponent": {
   "abstract" : [

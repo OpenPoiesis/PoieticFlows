@@ -19,7 +19,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:12PoieticFlows13StockFlowViewC22sortedNodesByParameterySay0A4Core4NodeVGSays6UInt64VGKF",
+    "externalID" : "s:12PoieticFlows13StockFlowViewC22sortedNodesByParameterySay0A4Core4NodeVGSays6UInt64VGAE15GraphCycleErrorVYKF",
     "fragments" : [
       {
         "kind" : "keyword",
@@ -52,7 +52,16 @@
       },
       {
         "kind" : "text",
-        "text" : " -> ["
+        "text" : "("
+      },
+      {
+        "kind" : "typeIdentifier",
+        "preciseIdentifier" : "s:11PoieticCore15GraphCycleErrorV",
+        "text" : "GraphCycleError"
+      },
+      {
+        "kind" : "text",
+        "text" : ") -> ["
       },
       {
         "kind" : "typeIdentifier",
@@ -132,7 +141,16 @@
             },
             {
               "kind" : "text",
-              "text" : " -> ["
+              "text" : "("
+            },
+            {
+              "kind" : "typeIdentifier",
+              "preciseIdentifier" : "s:11PoieticCore15GraphCycleErrorV",
+              "text" : "GraphCycleError"
+            },
+            {
+              "kind" : "text",
+              "text" : ") -> ["
             },
             {
               "kind" : "typeIdentifier",
@@ -242,7 +260,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -255,7 +273,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -339,7 +357,16 @@
     },
     {
       "kind" : "text",
-      "text" : " -> ["
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore15GraphCycleErrorV",
+      "text" : "GraphCycleError"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> ["
     },
     {
       "kind" : "typeIdentifier",

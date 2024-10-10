@@ -154,13 +154,12 @@
   ],
   "seeAlsoSections" : [
     {
-      "anchor" : "Compiler",
+      "anchor" : "Errors",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue"
       ],
-      "title" : "Compiler"
+      "title" : "Errors"
     }
   ],
   "topicSections" : [
@@ -198,7 +197,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -211,7 +210,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -222,10 +221,10 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModel": {
+"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Core structure used by the simulator and the solver to perform the",
+      "text" : "Compiler creates a compiled model, which is an internal representation of",
       "type" : "text"
     },
     {
@@ -233,41 +232,7 @@
       "type" : "text"
     },
     {
-      "text" : "computation.",
-      "type" : "text"
-    }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "struct"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "CompiledModel"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "CompiledModel"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "CompiledModel",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/compiledmodel"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
-  "abstract" : [
-    {
-      "text" : "Summary…",
+      "text" : "a design that can be simulated.",
       "type" : "text"
     }
   ],
@@ -281,16 +246,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler": {
   "abstract" : [
     {
-      "text" : "An object that compiles the model into a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "An object that compiles the model into an internal representation called Compiled Model.",
       "type" : "text"
     }
   ],

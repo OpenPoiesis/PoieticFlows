@@ -58,7 +58,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -71,7 +71,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -85,7 +85,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Summary…",
+      "text" : "Compiler creates a compiled model, which is an internal representation of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a design that can be simulated.",
       "type" : "text"
     }
   ],

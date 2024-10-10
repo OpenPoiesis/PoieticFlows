@@ -1,7 +1,15 @@
 {
   "abstract" : [
     {
-      "text" : "Summary…",
+      "text" : "Compiler creates a compiled model, which is an internal representation of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a design that can be simulated.",
       "type" : "text"
     }
   ],
@@ -39,8 +47,41 @@
         {
           "inlineContent" : [
             {
-              "text" : "Overview…",
+              "text" : "A design represents user’s idea, user’s creation. To be able to perform the",
               "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "computation, the design has to be validated and converted into a",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "representation understandable by a simulator. That conversion is done by",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "the compiler.",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "compiler-overview",
+              "type" : "image"
             }
           ],
           "type" : "paragraph"
@@ -62,7 +103,8 @@
       "generated" : true,
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel"
       ]
     }
   ],
@@ -70,6 +112,7 @@
     {
       "anchor" : "Compiled-Model",
       "identifiers" : [
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationDefaults",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ComputationalRepresentation",
@@ -86,20 +129,20 @@
       "title" : "Compiled Model"
     },
     {
-      "anchor" : "Compiler",
+      "anchor" : "Errors",
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Compiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssuesError",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue"
       ],
-      "title" : "Compiler"
+      "title" : "Errors"
     },
     {
       "anchor" : "Bound-Expression",
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundExpression",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/BoundVariable",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionError"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ExpressionError",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:names:functions:)"
       ],
       "title" : "Bound Expression"
     }
@@ -118,10 +161,24 @@
   ]
 , 
 "references": {
+"compiler-overview": {
+  "alt" : "Compiler Overview",
+  "identifier" : "compiler-overview",
+  "type" : "image",
+  "variants" : [
+    {
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/PoieticFlows\/compiler-overview@2x.png"
+    }
+  ]
+},
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -134,7 +191,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -469,16 +526,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Compiler": {
   "abstract" : [
     {
-      "text" : "An object that compiles the model into a ",
-      "type" : "text"
-    },
-    {
-      "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModel",
-      "isActive" : true,
-      "type" : "reference"
-    },
-    {
-      "text" : ".",
+      "text" : "An object that compiles the model into an internal representation called Compiled Model.",
       "type" : "text"
     }
   ],
@@ -582,16 +630,50 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/expressionerror"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/FlowsMetamodel": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "FlowsMetamodel"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore9MetamodelC",
+      "text" : "Metamodel"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "FlowsMetamodel",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/flowsmetamodel"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/Metamodel": {
   "abstract" : [
     {
-      "text" : "…",
+      "text" : "Description of the Stock and Flow domain.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
   "kind" : "article",
-  "role" : "collectionGroup",
+  "role" : "article",
   "title" : "Stock and Flow Metamodel",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/metamodel"
@@ -843,6 +925,147 @@
   "title" : "StateVariable",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/statevariable"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/bindExpression(_:variables:names:functions:)": {
+  "abstract" : [
+    {
+      "text" : "Bind an expression to concrete variable references.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "bindExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore17UnboundExpressiona",
+      "text" : "UnboundExpression"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "variables"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows13StateVariableV",
+      "text" : "StateVariable"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "names"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
+      "text" : "SimulationState"
+    },
+    {
+      "kind" : "text",
+      "text" : "."
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
+      "text" : "Index"
+    },
+    {
+      "kind" : "text",
+      "text" : "], "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "functions"
+    },
+    {
+      "kind" : "text",
+      "text" : ": ["
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:SS",
+      "text" : "String"
+    },
+    {
+      "kind" : "text",
+      "text" : " : "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
+      "text" : "Function"
+    },
+    {
+      "kind" : "text",
+      "text" : "]) "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "throws"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15ExpressionErrorO",
+      "text" : "ExpressionError"
+    },
+    {
+      "kind" : "text",
+      "text" : ") -> "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
+      "text" : "BoundExpression"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:names:functions:)",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "bindExpression(_:variables:names:functions:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/bindexpression(_:variables:names:functions:)"
 }
 }
 }

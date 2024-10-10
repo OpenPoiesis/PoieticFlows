@@ -1,7 +1,7 @@
 {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -14,7 +14,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -54,7 +54,7 @@
         {
           "inlineContent" : [
             {
-              "text" : "The Poietic package provides functionality for modelling and simulation",
+              "text" : "The PoieticFlows package provides a domain model and a simulation functionality",
               "type" : "text"
             },
             {
@@ -62,7 +62,7 @@
               "type" : "text"
             },
             {
-              "text" : "in the the model domain of ",
+              "text" : "for ",
               "type" : "text"
             },
             {
@@ -71,7 +71,7 @@
               "type" : "reference"
             },
             {
-              "text" : ".",
+              "text" : " models.",
               "type" : "text"
             }
           ],
@@ -80,8 +80,78 @@
         {
           "inlineContent" : [
             {
-              "text" : "The package provides basic concepts from the modelling domain:",
+              "text" : "The major components and capabilities of the Flows package are:",
               "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "items" : [
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Stock and Flow metamodel, object types and validation constraints",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Design compiler for creating computable model representation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            },
+            {
+              "content" : [
+                {
+                  "inlineContent" : [
+                    {
+                      "text" : "Simulator and solver for performing the simulation",
+                      "type" : "text"
+                    }
+                  ],
+                  "type" : "paragraph"
+                }
+              ]
+            }
+          ],
+          "type" : "unorderedList"
+        },
+        {
+          "inlineContent" : [
+            {
+              "text" : "The relationship of the components and the flow of data between them is caputred",
+              "type" : "text"
+            },
+            {
+              "text" : " ",
+              "type" : "text"
+            },
+            {
+              "text" : "in the following diagram:",
+              "type" : "text"
+            }
+          ],
+          "type" : "paragraph"
+        },
+        {
+          "inlineContent" : [
+            {
+              "identifier" : "flows-overview",
+              "type" : "image"
             }
           ],
           "type" : "paragraph"
@@ -97,19 +167,15 @@
                       "type" : "text"
                     },
                     {
-                      "code" : "\/PoieticCore\/ObjectType\/Stock",
+                      "code" : "Stock",
                       "type" : "codeVoice"
                     },
                     {
-                      "text" : ",",
+                      "text" : ", ",
                       "type" : "text"
                     },
                     {
-                      "text" : " ",
-                      "type" : "text"
-                    },
-                    {
-                      "code" : "\/PoieticCore\/ObjectType\/Flow",
+                      "code" : "Flow",
                       "type" : "codeVoice"
                     },
                     {
@@ -117,7 +183,7 @@
                       "type" : "text"
                     },
                     {
-                      "code" : "\/PoieticCore\/ObjectType\/Auxiliary",
+                      "code" : "Auxiliary",
                       "type" : "codeVoice"
                     }
                   ],
@@ -130,7 +196,7 @@
                 {
                   "inlineContent" : [
                     {
-                      "code" : "\/PoieticCore\/ObjectType\/GraphicalFunction",
+                      "code" : "GraphicalFunction",
                       "type" : "codeVoice"
                     },
                     {
@@ -159,7 +225,7 @@
                       "type" : "text"
                     },
                     {
-                      "code" : "\/PoieticCore\/Trait\/Formula",
+                      "code" : "Formula",
                       "type" : "codeVoice"
                     },
                     {
@@ -351,8 +417,9 @@
       "anchor" : "Topics",
       "identifiers" : [
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulation",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/CompiledModelAndCompiler"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/FlowsMetamodel"
       ]
     },
     {
@@ -397,14 +464,6 @@
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/StockAdjacency"
       ],
       "title" : "Structures"
-    },
-    {
-      "anchor" : "Functions",
-      "generated" : true,
-      "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:names:functions:)"
-      ],
-      "title" : "Functions"
     },
     {
       "anchor" : "Type-Aliases",
@@ -453,7 +512,7 @@
 "doc://PoieticFlows/documentation/PoieticFlows": {
   "abstract" : [
     {
-      "text" : "Poietic library for modelling and simulation of the ",
+      "text" : "Poietic package for modelling and simulation ",
       "type" : "text"
     },
     {
@@ -466,7 +525,7 @@
       "type" : "emphasis"
     },
     {
-      "text" : " model.",
+      "text" : " models.",
       "type" : "text"
     }
   ],
@@ -638,7 +697,15 @@
 "doc://PoieticFlows/documentation/PoieticFlows/CompiledModelAndCompiler": {
   "abstract" : [
     {
-      "text" : "Summary…",
+      "text" : "Compiler creates a compiled model, which is an internal representation of",
+      "type" : "text"
+    },
+    {
+      "text" : " ",
+      "type" : "text"
+    },
+    {
+      "text" : "a design that can be simulated.",
       "type" : "text"
     }
   ],
@@ -944,13 +1011,13 @@
 "doc://PoieticFlows/documentation/PoieticFlows/Metamodel": {
   "abstract" : [
     {
-      "text" : "…",
+      "text" : "Description of the Stock and Flow domain.",
       "type" : "text"
     }
   ],
   "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Metamodel",
   "kind" : "article",
-  "role" : "collectionGroup",
+  "role" : "article",
   "title" : "Stock and Flow Metamodel",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/metamodel"
@@ -1401,137 +1468,19 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/stockflowview"
 },
-"doc://PoieticFlows/documentation/PoieticFlows/bindExpression(_:variables:names:functions:)": {
-  "abstract" : [
+"flows-overview": {
+  "alt" : "Flows Components Overview",
+  "identifier" : "flows-overview",
+  "type" : "image",
+  "variants" : [
     {
-      "text" : "Bind an expression to concrete variable references.",
-      "type" : "text"
+      "traits" : [
+        "2x",
+        "light"
+      ],
+      "url" : "\/images\/PoieticFlows\/flows-overview@2x.png"
     }
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "bindExpression"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore17UnboundExpressiona",
-      "text" : "UnboundExpression"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "variables"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows13StateVariableV",
-      "text" : "StateVariable"
-    },
-    {
-      "kind" : "text",
-      "text" : "], "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "names"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV",
-      "text" : "SimulationState"
-    },
-    {
-      "kind" : "text",
-      "text" : "."
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15SimulationStateV5Indexa",
-      "text" : "Index"
-    },
-    {
-      "kind" : "text",
-      "text" : "], "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "functions"
-    },
-    {
-      "kind" : "text",
-      "text" : ": ["
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:SS",
-      "text" : "String"
-    },
-    {
-      "kind" : "text",
-      "text" : " : "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:11PoieticCore8FunctionC",
-      "text" : "Function"
-    },
-    {
-      "kind" : "text",
-      "text" : "]) "
-    },
-    {
-      "kind" : "keyword",
-      "text" : "throws"
-    },
-    {
-      "kind" : "text",
-      "text" : " -> "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows15BoundExpressiona",
-      "text" : "BoundExpression"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/bindExpression(_:variables:names:functions:)",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "bindExpression(_:variables:names:functions:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/bindexpression(_:variables:names:functions:)"
+  ]
 },
 "https://en.wikipedia.org/wiki/Euler_method": {
   "identifier" : "https:\/\/en.wikipedia.org\/wiki\/Euler_method",
