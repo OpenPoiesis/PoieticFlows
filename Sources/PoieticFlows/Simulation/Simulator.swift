@@ -7,16 +7,16 @@
 
 import PoieticCore
 
-public protocol SimulatorDelegate {
-    func simulatorDidInitialize(_ simulator: Simulator, context: SimulationContext)
-    func simulatorDidStep(_ simulator: Simulator, context: SimulationContext)
-    func simulatorDidRun(_ simulator: Simulator, context: SimulationContext)
-}
-
 /// Object for controlling a simulation session.
 ///
 public class Simulator {
-    var delegate: SimulatorDelegate?
+    public protocol Delegate {
+        func simulatorDidInitialize(_ simulator: Simulator, context: SimulationContext)
+        func simulatorDidStep(_ simulator: Simulator, context: SimulationContext)
+        func simulatorDidRun(_ simulator: Simulator, context: SimulationContext)
+    }
+
+    var delegate: Delegate?
     
     /// Solver to be used for the simulation.
     public var solverType: Solver.Type
@@ -86,7 +86,7 @@ public class Simulator {
     /// - Initial state is created and added to the output.
     ///
     /// If a delegate is set, then delegate's
-    /// ``SimulatorDelegate/simulatorDidInitialize(_:context:)`` is called.
+    /// ``Delegate/simulatorDidInitialize(_:context:)`` is called.
     ///
     /// - Parameters:
     ///     - override: Computed values to override. The keys are computed

@@ -22,6 +22,8 @@ Each step is computed using a solver's ``Solver/compute(_:at:timeDelta:)``.
 
 - ``Simulator``
 - ``SimulationState``
+- ``SimulationSystem``
+- ``SimulationContext``
 
 ### Solver
 

@@ -123,6 +123,7 @@ public enum NodeIssue: Equatable, CustomStringConvertible, Error {
     }
 }
 
+#if false
 public enum EdgeIssue: Equatable, CustomStringConvertible, Error {
     case computationCycle
     
@@ -145,4 +146,4 @@ public enum EdgeIssue: Equatable, CustomStringConvertible, Error {
         }
     }
 }
-
+#endif

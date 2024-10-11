@@ -37,6 +37,3 @@ in the following diagram:
 - <doc:Simulation>
 - ``FlowsMetamodel``
 
-### View
-
-- ``StockFlowView``

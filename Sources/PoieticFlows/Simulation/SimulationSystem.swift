@@ -8,10 +8,6 @@
 
 import PoieticCore
 
-public struct CompilationContext {
-    let frame: MutableFrame
-}
-
 // TODO: [REVIEW] Consolidate SimulationState and SimulationContext
 
 public struct SimulationContext {
@@ -34,7 +30,10 @@ public struct SimulationContext {
 /// 1. Prepare for compilation with ``SimulationContext``
 /// 2. Perform tasks after compilation
 ///
-/// -
+/// - Note: This is experimental protocol for exploring ways of simulator extensibility,
+///   so the simulator can be later generalised and moved into the PoieticCore
+///   package.
+///
 public protocol SimulationSystem {
     /// Update the design with custom objects, before compilation
     ///

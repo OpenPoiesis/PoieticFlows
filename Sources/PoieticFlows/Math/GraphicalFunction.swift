@@ -8,10 +8,6 @@
 import PoieticCore
 
 
-public enum InterpolationMethod: String, CaseIterable {
-    case step = "step"
-}
-
 //enum GraphicalFunctionPresetDirection {
 //    case growth
 //    case decline
@@ -33,6 +29,9 @@ public enum InterpolationMethod: String, CaseIterable {
 /// method.
 ///
 public class GraphicalFunction {
+    public enum InterpolationMethod: String, CaseIterable {
+        case step = "step"
+    }
 
     /// Set of points defining the function.
     ///

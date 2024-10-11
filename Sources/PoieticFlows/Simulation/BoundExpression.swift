@@ -81,7 +81,7 @@ public enum ExpressionError: Error, CustomStringConvertible, Equatable {
 /// - Note: The operator names are similar to the operator method names in
 ///   Python.
 ///
-/// - Returns: ``ArithmeticExpression`` where variables and functions are resolved.
+/// - Returns: ``PoieticCore/ArithmeticExpression`` where variables and functions are resolved.
 /// - Throws: ``ExpressionError`` when a variable or a function is not known
 ///  or when the function arguments do not match the function's requirements.
 ///

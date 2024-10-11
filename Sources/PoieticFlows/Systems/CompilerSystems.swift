@@ -7,8 +7,6 @@
 
 import PoieticCore
 
-public typealias ParsedFormula = Result<UnboundExpression, ExpressionSyntaxError>
-
 public struct ParsedFormulaComponent: Component {
     public let parsedFormula: UnboundExpression
     
