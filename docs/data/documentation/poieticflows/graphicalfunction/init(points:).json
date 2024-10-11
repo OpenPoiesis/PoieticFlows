@@ -114,7 +114,7 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/InterpolationMethod\/step",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/InterpolationMethod\/step",
               "isActive" : true,
               "type" : "reference"
             },
@@ -212,6 +212,31 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunction"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction/InterpolationMethod/step": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "case"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "step"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/GraphicalFunction\/InterpolationMethod\/step",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "GraphicalFunction.InterpolationMethod.step",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/graphicalfunction\/interpolationmethod\/step"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/GraphicalFunction/init(points:)": {
   "abstract" : [
     {
@@ -252,31 +277,6 @@
   "title" : "init(points:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/graphicalfunction\/init(points:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/InterpolationMethod/step": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "case"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "step"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/InterpolationMethod\/step",
-  "kind" : "symbol",
-  "role" : "symbol",
-  "title" : "InterpolationMethod.step",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/interpolationmethod\/step"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Simulation": {
   "abstract" : [

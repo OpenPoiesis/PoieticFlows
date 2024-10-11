@@ -304,7 +304,7 @@
               "type" : "text"
             },
             {
-              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulatorDelegate\/simulatorDidInitialize(_:context:)",
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/Delegate\/simulatorDidInitialize(_:context:)",
               "isActive" : true,
               "type" : "reference"
             },
@@ -482,6 +482,62 @@
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator"
 },
+"doc://PoieticFlows/documentation/PoieticFlows/Simulator/Delegate/simulatorDidInitialize(_:context:)": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "func"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "simulatorDidInitialize"
+    },
+    {
+      "kind" : "text",
+      "text" : "("
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows9SimulatorC",
+      "text" : "Simulator"
+    },
+    {
+      "kind" : "text",
+      "text" : ", "
+    },
+    {
+      "kind" : "externalParam",
+      "text" : "context"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
+      "text" : "SimulationContext"
+    },
+    {
+      "kind" : "text",
+      "text" : ")"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator\/Delegate\/simulatorDidInitialize(_:context:)",
+  "kind" : "symbol",
+  "required" : true,
+  "role" : "symbol",
+  "title" : "simulatorDidInitialize(_:context:)",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulator\/delegate\/simulatordidinitialize(_:context:)"
+},
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator/initialTime": {
   "abstract" : [
     {
@@ -589,62 +645,6 @@
   "title" : "initializeState(override:)",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulator\/initializestate(override:)"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/SimulatorDelegate/simulatorDidInitialize(_:context:)": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "func"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "text" : "simulatorDidInitialize"
-    },
-    {
-      "kind" : "text",
-      "text" : "("
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows9SimulatorC",
-      "text" : "Simulator"
-    },
-    {
-      "kind" : "text",
-      "text" : ", "
-    },
-    {
-      "kind" : "externalParam",
-      "text" : "context"
-    },
-    {
-      "kind" : "text",
-      "text" : ": "
-    },
-    {
-      "kind" : "typeIdentifier",
-      "preciseIdentifier" : "s:12PoieticFlows17SimulationContextV",
-      "text" : "SimulationContext"
-    },
-    {
-      "kind" : "text",
-      "text" : ")"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulatorDelegate\/simulatorDidInitialize(_:context:)",
-  "kind" : "symbol",
-  "required" : true,
-  "role" : "symbol",
-  "title" : "simulatorDidInitialize(_:context:)",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/simulatordelegate\/simulatordidinitialize(_:context:)"
 }
 }
 }

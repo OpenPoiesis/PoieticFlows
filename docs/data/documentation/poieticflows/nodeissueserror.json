@@ -157,7 +157,8 @@
       "anchor" : "Errors",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/NodeIssue",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParameterStatus"
       ],
       "title" : "Errors"
     }
@@ -431,6 +432,40 @@
   "title" : "issues",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/nodeissueserror\/issues"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/ParameterStatus": {
+  "abstract" : [
+    {
+      "text" : "Status of a parameter.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "enum"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "ParameterStatus"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/ParameterStatus",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ParameterStatus"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ParameterStatus",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/parameterstatus"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [

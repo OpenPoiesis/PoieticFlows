@@ -126,7 +126,9 @@
       "anchor" : "Simulator",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator"
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/Simulator",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem",
+        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationContext"
       ],
       "title" : "Simulator"
     }
@@ -238,6 +240,37 @@
   "title" : "Simulation and Computation",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulation"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationContext": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "struct"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationContext"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationContext",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationContext"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationContext",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationcontext"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
   "abstract" : [
@@ -631,6 +664,40 @@
   "title" : "values",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/simulationstate\/values"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/SimulationSystem": {
+  "abstract" : [
+    {
+      "text" : "Protocol for systems that support the simulation.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "protocol"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "SimulationSystem"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/SimulationSystem",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "SimulationSystem"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "SimulationSystem",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/simulationsystem"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/Simulator": {
   "abstract" : [

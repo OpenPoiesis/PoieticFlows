@@ -427,8 +427,9 @@
               "type" : "text"
             },
             {
-              "code" : "ArithmeticExpression",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : " where variables and functions are resolved.",
@@ -832,6 +833,38 @@
   "title" : "ExpressionError",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/expressionerror"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ArithmeticExpression": {
+  "abstract" : [
+
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "extension"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "preciseIdentifier" : "s:11PoieticCore20ArithmeticExpressionO",
+      "text" : "ArithmeticExpression"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ArithmeticExpression",
+  "kind" : "symbol",
+  "navigatorTitle" : [
+    {
+      "kind" : "identifier",
+      "text" : "ArithmeticExpression"
+    }
+  ],
+  "role" : "symbol",
+  "title" : "ArithmeticExpression",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/arithmeticexpression"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/SimulationState": {
   "abstract" : [

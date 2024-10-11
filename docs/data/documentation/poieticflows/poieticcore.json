@@ -12,7 +12,7 @@
   },
   "kind" : "symbol",
   "metadata" : {
-    "externalID" : "s:m:s:e:s:11PoieticCore10ObjectTypeC0A5FlowsE9Scenario2ACvpZ",
+    "externalID" : "s:m:s:e:s:11PoieticCore20ArithmeticExpressionO0A5FlowsAD13BoundVariableVRszAA8FunctionCRs_rlE9valueTypeAA05ValueJ0Ovp",
     "modules" : [
       {
         "name" : "PoieticFlows"
@@ -36,8 +36,6 @@
       "anchor" : "Extended-Classes",
       "generated" : true,
       "identifiers" : [
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType",
-        "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait",
         "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Variable"
       ],
       "title" : "Extended Classes"
@@ -134,70 +132,6 @@
   "title" : "ArithmeticExpression",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/poieticcore\/arithmeticexpression"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
-      "text" : "ObjectType"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "ObjectType"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "ObjectType",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype"
-},
-"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Trait": {
-  "abstract" : [
-
-  ],
-  "fragments" : [
-    {
-      "kind" : "keyword",
-      "text" : "extension"
-    },
-    {
-      "kind" : "text",
-      "text" : " "
-    },
-    {
-      "kind" : "identifier",
-      "preciseIdentifier" : "s:11PoieticCore5TraitC",
-      "text" : "Trait"
-    }
-  ],
-  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/Trait",
-  "kind" : "symbol",
-  "navigatorTitle" : [
-    {
-      "kind" : "identifier",
-      "text" : "Trait"
-    }
-  ],
-  "role" : "symbol",
-  "title" : "Trait",
-  "type" : "topic",
-  "url" : "\/documentation\/poieticflows\/poieticcore\/trait"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/Variable": {
   "abstract" : [
