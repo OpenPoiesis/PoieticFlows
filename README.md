@@ -1,134 +1,58 @@
 # Poietic Flows
 
-Systems Dynamics Modelling and simulation toolkit based on the
-[Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow) methodology.
+Package for simulation of
+[Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow) models.
 
-Core functionality:
 
-- Creation and iterative design of stock and flow models.
-- Simulation of systems dynamics models.
+See the [Poietic Tool](https://github.com/OpenPoiesis/PoieticTool) for
+a command-line tool that uses this library to manipulate
+and run the models.
 
 ## Features
 
-Current:
+### Model Components
 
-- Stock and Flow model
-    - Nodes: Stock, Flow, Auxiliary, Graphical Function
-    - Interface nodes: Chart, Control
-    - Included [Euler](https://en.wikipedia.org/wiki/Euler_method) and [RK4](https://en.wikipedia.org/wiki/Runge–Kutta_methods) solvers
-    - Experimental features: Delay
-- Simple arithmetic expressions (formulas)
-    - Built-in functions: abs, floor, ceiling, round, power, sum, min, max
-- Whole editing history is preserved.
-- Editing is non-destructive and can be reversed using undo and
-  redo commands.
-- Exports:
-    - [Graphviz](https://graphviz.org) dot files.
-    - Export to CSV.
-    - Charts to [Gnuplot](http://gnuplot.info)
+The library provides the following nodes to form stock-flow models:
 
-See also: [PoieticCore](https://github.com/OpenPoiesis/PoieticCore).
+- Stock and Flow computation model nodes:
+    - Stock – value container, accumulator
+    - Flow – flow of material between stocks
+    - Auxiliary – stand-alone computation formula or a constant
+    - Graphical Function – a function defined by a set of 2D _(x, y)_ points
+- Visualisation nodes:
+    - Chart – node representing a chart plotting one or multiple nodes with a computed value
+- Solvers:
+    - [Euler](https://en.wikipedia.org/wiki/Euler_method)
+    - [Runge-Kutta 4](https://en.wikipedia.org/wiki/Runge–Kutta_methods)
+- Experimental features:
+    - Delay node – node providing a delay of a value in time
 
+See [Metamodel](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/metamodel)
+for more information.
 
-Planned:
+### Arithmetic Expressions
 
-- More useful built-in functions and variables for the Stock and Flow model.
-- Sub-systems.
+The arithmetic expression supports the following built-in functions:
+`abs(x)`, `floor(x)`, `ceiling(x)`, `round(x)`, `power(x,e)`,
+`sum(a,c,...)`, `min(a,b,c,...)`, `max(a,b,c,...)`.
 
-## Installation
+Supported logical operations and conditionals: `if(cond,true_val,false_val)`,
+`not(a)`, `or(a,b,...)`, `and(a,b,...)`.
 
-Available platforms: MacOS 14 (and later), Linux
-
-To install the `poietic` command-line tool, run the following command in the
-project's top-level directory:
-
-```
-./install
-```
-
-The tool will be installed in the Swift Package Manager's' `~/.swiftpm/bin`
-directory. Make sure you have the directory in your `PATH`, if you do not, then
-add the following to the end of your `~/.zshrc` or `~/.bashrc` file:
-
-```
-export PATH=~/.swiftpm/bin:$PATH
-```
-
-## Examples
-
-The examples are located in the [Examples repository](https://github.com/OpenPoiesis/PoieticExamples).
-Follow instructions how to run them in the documentation contained within the
-repository.
-
+- See [Formulas](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/formulas)
+  documentation) for more information.
 
 ## Documentation
 
 - Stock and Flow package: [PoieticFlows](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/)
-- Object Graph modelling package: [PoieticCore](https://openpoiesis.github.io/PoieticCore/documentation/poieticcore/)
 
-## Tool
+## See Also
 
-The Poietic Flows includes a command-line tool to create, edit and run
-Stock and Flow models called `poietic`.
+- Poietic Command-line Tool: [repository](https://github.com/OpenPoiesis/PoieticTool)
+- Poietic Core: [repository](https://github.com/openpoiesis/PoieticCore),
+  [documentation](https://openpoiesis.github.io/PoieticCore/documentation/poieticcore/)
 
-See the [Command Line Tool documentation](Docs/Tool.md).
-
-Command summary:
-
-- `new`: Create an empty design.
-- `info`: Get information about the design
-- `list`: List design content objects.
-- `show`: Describe an object.
-- `edit`: Edit an object or a selection of objects.
-    - `set`: Set an attribute value
-    - `undo`: Undo last change
-    - `redo`: Redo undone change
-    - `add`: Create a new node
-    - `connect`: Create a new connection (edge) between two nodes
-    - `remove`: Remove an object – a node or a connection
-    - `auto-parameters`: Automatically connect parameter nodes: connect required, disconnect unused
-    - `layout`: Lay out objects
-    - `align`: Align objects on canvas
-- `import`: Import a frame into the design.
-- `run`: Run the simulation and generate output
-- `write-dot`: Write a Graphviz DOT file.
-- `metamodel`: Show the metamodel
-- `create-library` Create a library of multiple models.
-
-Use `--help` with a desired command to learn more.
-
-### Pseudo-REPL
-
-Think of this tool as [ed](https://en.wikipedia.org/wiki/Ed_(text_editor)) but
-for data represented as a graph. At least for now.
-
-The tool is designed in a way that it is by itself interactive for a single-user. 
-For interactivity in a shell, set the `POIETIC_DATABASE` environment variable to
-point to a file where the design is stored.
-
-Example session:
-
-```
-poietic new
-poietic info
-
-poietic edit add Stock name=water formula=100
-poietic edit add Flow name=outflow formula=10
-poietic edit connect Drains water outflow
-
-poietic list formulas
-
-poietic edit add Stock name=unwanted formula=0
-poietic list formulas
-poietic edit undo
-
-poietic list formulas
-
-poietic run
-```
-
-
-# Author
+## Author
 
 [Stefan Urbanek](mailto:stefan.urbanek@gmail.com)
 
