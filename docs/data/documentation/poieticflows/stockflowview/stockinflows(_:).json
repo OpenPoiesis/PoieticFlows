@@ -195,8 +195,9 @@
               "type" : "text"
             },
             {
-              "code" : "\/PoieticCore\/ObjectType\/Fills",
-              "type" : "codeVoice"
+              "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Fills",
+              "isActive" : true,
+              "type" : "reference"
             },
             {
               "text" : " ",
@@ -307,6 +308,51 @@
   "title" : "Compiled Model and Compiler",
   "type" : "topic",
   "url" : "\/documentation\/poieticflows\/compiledmodelandcompiler"
+},
+"doc://PoieticFlows/documentation/PoieticFlows/PoieticCore/ObjectType/Fills": {
+  "abstract" : [
+    {
+      "text" : "Edge from a flow to a stock. Denotes “what the flow fills”.",
+      "type" : "text"
+    }
+  ],
+  "fragments" : [
+    {
+      "kind" : "keyword",
+      "text" : "static"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "keyword",
+      "text" : "let"
+    },
+    {
+      "kind" : "text",
+      "text" : " "
+    },
+    {
+      "kind" : "identifier",
+      "text" : "Fills"
+    },
+    {
+      "kind" : "text",
+      "text" : ": "
+    },
+    {
+      "kind" : "typeIdentifier",
+      "preciseIdentifier" : "s:11PoieticCore10ObjectTypeC",
+      "text" : "ObjectType"
+    }
+  ],
+  "identifier" : "doc:\/\/PoieticFlows\/documentation\/PoieticFlows\/PoieticCore\/ObjectType\/Fills",
+  "kind" : "symbol",
+  "role" : "symbol",
+  "title" : "Fills",
+  "type" : "topic",
+  "url" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/fills"
 },
 "doc://PoieticFlows/documentation/PoieticFlows/StockFlowView": {
   "abstract" : [

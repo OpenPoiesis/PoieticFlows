@@ -2632,6 +2632,159 @@
                     "type" : "groupMarker"
                   },
                   {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/metamodel\/stockflow",
+                    "title" : "static let StockFlow: Metamodel",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/poieticcore\/metamodel",
+                "title" : "Metamodel",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/auxiliary",
+                    "title" : "static let Auxiliary: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chart",
+                    "title" : "static let Chart: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/chartseries",
+                    "title" : "static let ChartSeries: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/control",
+                    "title" : "static let Control: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/delay",
+                    "title" : "static let Delay: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/drains",
+                    "title" : "static let Drains: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/fills",
+                    "title" : "static let Fills: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/flow",
+                    "title" : "static let Flow: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/graphicalfunction",
+                    "title" : "static let GraphicalFunction: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/note",
+                    "title" : "static let Note: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/parameter",
+                    "title" : "static let Parameter: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/scenario",
+                    "title" : "static let Scenario: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/simulation",
+                    "title" : "static let Simulation: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/stock",
+                    "title" : "static let Stock: ObjectType",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype\/valuebinding",
+                    "title" : "static let ValueBinding: ObjectType",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/poieticcore\/objecttype",
+                "title" : "ObjectType",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/chart",
+                    "title" : "static let Chart: Trait",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/control",
+                    "title" : "static let Control: Trait",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/delay",
+                    "title" : "static let Delay: Trait",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/flow",
+                    "title" : "static let Flow: Trait",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/formula",
+                    "title" : "static let Formula: Trait",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/graphicalfunction",
+                    "title" : "static let GraphicalFunction: Trait",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/simulation",
+                    "title" : "static let Simulation: Trait",
+                    "type" : "property"
+                  },
+                  {
+                    "path" : "\/documentation\/poieticflows\/poieticcore\/trait\/stock",
+                    "title" : "static let Stock: Trait",
+                    "type" : "property"
+                  }
+                ],
+                "path" : "\/documentation\/poieticflows\/poieticcore\/trait",
+                "title" : "Trait",
+                "type" : "extension"
+              },
+              {
+                "children" : [
+                  {
+                    "title" : "Type Properties",
+                    "type" : "groupMarker"
+                  },
+                  {
                     "path" : "\/documentation\/poieticflows\/poieticcore\/variable\/timedeltavariable",
                     "title" : "static let TimeDeltaVariable: Variable",
                     "type" : "property"
