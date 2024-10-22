@@ -13,7 +13,7 @@ let package = Package(
             targets: ["PoieticFlows"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/openpoiesis/PoieticCore", branch: "main"),
+        .package(url: "https://github.com/openpoiesis/poietic-core", branch: "main"),
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.1.0"),
     ],
     targets: [
@@ -21,7 +21,9 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "PoieticFlows",
-            dependencies: ["PoieticCore"]
+            dependencies: [
+                .product(name: "PoieticCore", package: "poietic-core")
+            ]
         ),
 
         .testTarget(

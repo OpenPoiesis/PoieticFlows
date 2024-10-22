@@ -4,7 +4,7 @@ Package for simulation of
 [Stock and Flow](https://en.wikipedia.org/wiki/Stock_and_flow) models.
 
 
-See the [Poietic Tool](https://github.com/OpenPoiesis/PoieticTool) for
+See the [Poietic Tool](https://github.com/OpenPoiesis/poietic-tool) for
 a command-line tool that uses this library to manipulate
 and run the models.
 
@@ -27,7 +27,7 @@ The library provides the following nodes to form stock-flow models:
 - Experimental features:
     - Delay node – node providing a delay of a value in time
 
-See [Metamodel](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/metamodel)
+See [Metamodel](https://openpoiesis.github.io/poietic-flows/documentation/poieticflows/metamodel)
 for more information.
 
 ### Arithmetic Expressions
@@ -39,18 +39,18 @@ The arithmetic expression supports the following built-in functions:
 Supported logical operations and conditionals: `if(cond,true_val,false_val)`,
 `not(a)`, `or(a,b,...)`, `and(a,b,...)`.
 
-- See [Formulas](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/formulas)
+- See [Formulas](https://openpoiesis.github.io/poietic-flows/documentation/poieticflows/formulas)
   documentation) for more information.
 
 ## Documentation
 
-- Stock and Flow package: [PoieticFlows](https://openpoiesis.github.io/PoieticFlows/documentation/poieticflows/)
+- Stock and Flow package: [PoieticFlows](https://openpoiesis.github.io/poietic-flows/documentation/poieticflows/)
 
 ## See Also
 
-- Poietic Command-line Tool: [repository](https://github.com/OpenPoiesis/PoieticTool)
-- Poietic Core: [repository](https://github.com/openpoiesis/PoieticCore),
-  [documentation](https://openpoiesis.github.io/PoieticCore/documentation/poieticcore/)
+- Poietic Command-line Tool: [repository](https://github.com/OpenPoiesis/poietic-tool)
+- Poietic Core: [repository](https://github.com/openpoiesis/poietic-core),
+  [documentation](https://openpoiesis.github.io/poietic-core/documentation/poieticcore/)
 
 ## Author
 

@@ -75,7 +75,7 @@ frame.createEdge(ObjectType.Fills, origin: interest, target: account)
   above example. The purpose of the library is to provide functionality for
   applications that aid in model design.
 
-- SeeAlso: [Repository of model examples](https://github.com/OpenPoiesis/PoieticExamples)
+- SeeAlso: [Repository of model examples](https://github.com/OpenPoiesis/poietic-examples)
 
 ## Attributes
 
