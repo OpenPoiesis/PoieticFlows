@@ -235,7 +235,7 @@ public class Compiler {
         do {
             orderedSimulationNodes = try view.sortedNodesByParameter(unsortedSimulationNodes)
         }
-        catch let error as GraphCycleError {
+        catch {
             var nodes: Set<ObjectID> = Set()
             for edgeID in error.edges {
                 let edge = frame.edge(edgeID)
@@ -297,11 +297,7 @@ public class Compiler {
             do {
                 computation = try self.compile(node, in: context)
             }
-            catch let error as NodeIssue {
-                issues.append(error, for:node.id)
-                continue
-            }
-            catch let error as NodeIssuesError {
+            catch { // NodeIssuesError
                 // TODO: Remove necessity for this catch
                 issues.merge(error)
                 continue
@@ -389,7 +385,7 @@ public class Compiler {
             let sorted = try topologicalSort(unsorted, edges: adjacencies)
             sortedStocks = sorted.map { frame.node($0) }
         }
-        catch let error as GraphCycleError {
+        catch {  // GraphCycleError
             var nodes: Set<ObjectID> = Set()
             for adjacency in adjacencies {
                 // NOTE: The adjacency.id is ID of a flow connecting two stocks,

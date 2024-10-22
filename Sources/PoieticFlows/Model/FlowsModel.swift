@@ -76,7 +76,7 @@ extension Metamodel {
         ///
         constraints: [
             Constraint(
-                name: "flow_fill_is_stock",
+                name: "flow_fills_is_stock",
                 abstract: """
                       Flow must drain (from) a stock, no other kind of node.
                       """,
@@ -90,7 +90,7 @@ extension Metamodel {
             ),
             
             Constraint(
-                name: "flow_drain_is_stock",
+                name: "flow_drains_is_stock",
                 abstract: """
                       Flow must fill (into) a stock, no other kind of node.
                       """,
@@ -104,7 +104,7 @@ extension Metamodel {
             ),
             
             Constraint(
-                name: "one_parameter_for_graphical_function",
+                name: "graph_func_single_param",
                 abstract: """
                       Graphical function must not have more than one incoming parameters.
                       """,
@@ -147,7 +147,7 @@ extension Metamodel {
                 )
             ),
             Constraint(
-                name: "control_target_must_be_aux_or_stock",
+                name: "control_target_is_aux_or_stock",
                 abstract: """
                       Control target must be Auxiliary or a Stock node.
                       """,
